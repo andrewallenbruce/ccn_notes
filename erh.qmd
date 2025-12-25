@@ -1,0 +1,40 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+# Emergency Hospitals
+
+```{r setup}
+#| message: false
+#| warning: false
+#| echo: false
+#| cache: false
+#| comment: ""
+library(ccn)
+```
+
+CCNs assigned to Emergency Hospitals (both Federal and non-Federal) that do not
+participate in the Medicare program.
+
+Emergency hospitals are identified by a 6-position alphanumeric CCN. Positions
+one and two identify the state in which the hospital is located. Position six,
+an alpha character, identifies whether the hospital is Federal (`F`) or
+non-Federal (`E`). Positions three, four and five represent a sequence beginning
+with `001`. This sequence identifies the order, by state, in which the CCN was
+issued.
+
+For example, the CCN of the 34th emergency hospital in Maryland would be 21034E.
+The Regional Office assigns the CCN in strict numerical sequence without regard
+to the Federal or non-Federal status.
+
+## Example
+
+```{r}
+parse("21034E")
+decode("12345F")
+data_frame("11038F") # USAF Hospital (Moody)
+```
+
+

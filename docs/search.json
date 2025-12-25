@@ -61,6 +61,39 @@
     ]
   },
   {
+    "objectID": "erh.html",
+    "href": "erh.html",
+    "title": "\n3  Emergency Hospitals\n",
+    "section": "",
+    "text": "3.1 Example\nCCNs assigned to Emergency Hospitals (both Federal and non-Federal) that do not participate in the Medicare program.\nEmergency hospitals are identified by a 6-position alphanumeric CCN. Positions one and two identify the state in which the hospital is located. Position six, an alpha character, identifies whether the hospital is Federal (F) or non-Federal (E). Positions three, four and five represent a sequence beginning with 001. This sequence identifies the order, by state, in which the CCN was issued.\nFor example, the CCN of the 34th emergency hospital in Maryland would be 21034E. The Regional Office assigns the CCN in strict numerical sequence without regard to the Federal or non-Federal status.\nparse(\"21034E\")\n\n&lt;parsed:emergency&gt;\n\n\n     ccn: 21034E\n   state: 21\nsequence: 034\n    type: E\n\ndecode(\"12345F\")\n\n&lt;ccn::Emergency&gt;\n @ ccn  : chr \"12345F\"\n @ state: &lt;ccn::State&gt;\n .. @ abbr  : chr \"HI\"\n .. @ name  : chr \"Hawaii\"\n .. @ region: chr \"IX\"\n .. @ office: chr \"San Francisco\"\n @ range: chr \"001-999\"\n @ type : &lt;ccn::Type&gt;\n .. @ abbr: chr \"F\"\n .. @ desc: chr \"Federal\"\n\ndata_frame(\"11038F\") # USAF Hospital (Moody)\n\n     ccn             entity        state       region   range eipps        type\n1 11038F Emergency Hospital GA (Georgia) IV (Atlanta) 001-999    NA F (Federal)\n  parent  ext\n1   &lt;NA&gt; &lt;NA&gt;",
+    "crumbs": [
+      "Providers",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Emergency Hospitals</span>"
+    ]
+  },
+  {
+    "objectID": "esrd.html",
+    "href": "esrd.html",
+    "title": "\n5  ESRDs\n",
+    "section": "",
+    "text": "5.1 Facility Ranges\nThe last four characters of a Provider CCN represent the facility type and a unique identifier. The facility type is encoded in the third character of the last four characters. The table below summarizes the valid facility type codes and their corresponding ranges.\nrange\n      abbr\n      desc\n    \n\n\n0001-0879\nSTC\nShort-Term Hospital (General & Specialty)\n\n\n2000-2299\nLTCH\nLong-Term Care Hospital\n\n\n2300-2499\nESRD\nHospital-based Renal Dialysis Facility\n\n\n2500-2899\nESRD\nIndependent Renal Dialysis Facility\n\n\n2900-2999\nESRD\nIndependent Special Purpose Renal Dialysis Facility\n\n\n3300-3399\nCH\nChildren's Hospital\n\n\n3500-3699\nESRD\nHospital-based Satellite Renal Dialysis Facility\n\n\n3700-3799\nESRD\nHospital-based Special Purpose Renal Dialysis Facility",
+    "crumbs": [
+      "Providers",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>ESRDs</span>"
+    ]
+  },
+  {
+    "objectID": "esrd.html#examples",
+    "href": "esrd.html#examples",
+    "title": "\n5  ESRDs\n",
+    "section": "\n5.2 Examples",
+    "text": "5.2 Examples\n\nccn:::get_pin(\"esrd\") |&gt; \n  collapse::descr()\n\nDataset: esrd, 8 Variables, N = 7561\n--------------------------------------------------------------------------------\nccn (character): \nStatistics\n     N  Ndist\n  7561   7561\nTable\n                 Freq   Perc\n012306              1   0.01\n012500              1   0.01\n012501              1   0.01\n012502              1   0.01\n012505              1   0.01\n012506              1   0.01\n012507              1   0.01\n012508              1   0.01\n012512              1   0.01\n012513              1   0.01\n012515              1   0.01\n012516              1   0.01\n012517              1   0.01\n012519              1   0.01\n... 7547 Others  7547  99.81\n\nSummary of Table Frequencies\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n      1       1       1       1       1       1 \n--------------------------------------------------------------------------------\nstate (character): \nStatistics\n     N  Ndist\n  7561     56\nTable\n               Freq   Perc\nTX              746   9.87\nCA              738   9.76\nFL              536   7.09\nGA              359   4.75\nNY              348   4.60\nIL              338   4.47\nOH              315   4.17\nPA              308   4.07\nNC              252   3.33\nMI              223   2.95\nVA              209   2.76\nTN              194   2.57\nNJ              190   2.51\nAL              178   2.35\n... 42 Others  2627  34.74\n\nSummary of Table Frequencies\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n      2      27      76     135     174     746 \n--------------------------------------------------------------------------------\nfacility_name (character): \nStatistics\n     N  Ndist\n  7561   7550\nTable\n                                    Freq   Perc\nDaVita Fayetteville Dialysis           2   0.03\nHOPE DIALYSIS CENTER                   2   0.03\nSatellite Dialysis                     2   0.03\nDaVita Brighton Dialysis               2   0.03\nDaVita Columbus Dialysis               2   0.03\nWAYNESBORO DIALYSIS                    2   0.03\nDaVita Garden City Dialysis Center     2   0.03\nDaVita Memorial Dialysis Center        2   0.03\nDaVita Walker Dialysis                 2   0.03\nDaVita Midland Dialysis                2   0.03\nFRESENIUS MEDICAL CARE BRAZOS          2   0.03\nCHILDRENS HOSPITAL DIALYSIS            1   0.01\nFMC CAPITOL CITY                       1   0.01\nDaVita Gadsden Dialysis                1   0.01\n... 7536 Others                     7536  99.67\n\nSummary of Table Frequencies\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n      1       1       1       1       1       2 \n--------------------------------------------------------------------------------\nchain (character): \nStatistics\n     N  Ndist\n  7561     32\nTable\n                           Freq   Perc\nDaVita                     2798  37.01\nFresenius Medical Care     2767  36.60\nIndependent                 749   9.91\nUS Renal Care, Inc.         370   4.89\nDialysis Clinic, Inc.       240   3.17\nAmerican Renal Associates   223   2.95\nOther                        97   1.28\nSatellite Healthcare         72   0.95\nKaiser Permanente            22   0.29\nState Owned                  19   0.25\nWake Forest University       19   0.25\nNorthwest Kidney Centers     19   0.25\nCenters for Dialysis Care    18   0.24\nAtlantis Healthcare Group    17   0.22\n... 18 Others               131   1.73\n\nSummary of Table Frequencies\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n    1.0     5.8    13.5   236.3    34.5  2798.0 \n--------------------------------------------------------------------------------\nprofit (character): \nStatistics\n     N  Ndist\n  7561      2\nTable\n   Freq  Perc\nP  6775  89.6\nN   786  10.4\n--------------------------------------------------------------------------------\noffice (integer): \nStatistics\n     N  Ndist  Mean    SD  Min  Max   Skew   Kurt\n  7561      2  0.93  0.25    0    1  -3.44  12.84\nQuantiles\n  1%  5%  10%  25%  50%  75%  90%  95%  99%\n   0   0    1    1    1    1    1    1    1\n--------------------------------------------------------------------------------\nperi (integer): \nStatistics\n     N  Ndist  Mean   SD  Min  Max   Skew  Kurt\n  7561      2  0.54  0.5    0    1  -0.16  1.02\nQuantiles\n  1%  5%  10%  25%  50%  75%  90%  95%  99%\n   0   0    0    0    1    1    1    1    1\n--------------------------------------------------------------------------------\nhome (integer): \nStatistics\n     N  Ndist  Mean    SD  Min  Max  Skew  Kurt\n  7561      2  0.32  0.46    0    1   0.8  1.63\nQuantiles\n  1%  5%  10%  25%  50%  75%  90%  95%  99%\n   0   0    0    0    0    1    1    1    1\n--------------------------------------------------------------------------------",
+    "crumbs": [
+      "Providers",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>ESRDs</span>"
+    ]
+  },
+  {
     "objectID": "medicaid.html",
     "href": "medicaid.html",
     "title": "Medicaid-Only Providers",
@@ -81,6 +114,28 @@
     ]
   },
   {
+    "objectID": "moh.html",
+    "href": "moh.html",
+    "title": "\n9  Hospitals\n",
+    "section": "",
+    "text": "9.1 Hospital Ranges\nThe last three characters of a Medicaid-Only Hospital CCN represent the facility range. The facility type is encoded in the third character of the last four characters. The table below summarizes the valid facility type codes and their corresponding ranges.\nabbr\n      desc\n      range\n    \n\n\nSTC\nShort-Term Acute Care Hospital\n001-099\n\n\nCH\nChildren's Hospital\n100-199\n\n\nCPH\nChildren's Psychiatric Hospital\n200-299\n\n\nPH\nPsychiatric Hospital\n300-399\n\n\nIRF\nRehabilitation Hospital\n400-499\n\n\nLTCH\nLong-Term Hospital\n500-599\n\n\nRSVD\nReserved for Future Use\n600-999",
+    "crumbs": [
+      "Medicaid-Only Providers",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Hospitals</span>"
+    ]
+  },
+  {
+    "objectID": "moh.html#examples",
+    "href": "moh.html#examples",
+    "title": "\n9  Hospitals\n",
+    "section": "\n9.2 Examples",
+    "text": "9.2 Examples\n\nparse(\"01J008\")\n\n&lt;parsed:medicaid&gt;\n\n\n     ccn: 01J008\n   state: 01\n    type: J\nsequence: 008\n\ndecode(\"01J008\")\n\n&lt;ccn::Medicaid&gt;\n @ ccn  : chr \"01J008\"\n @ state: &lt;ccn::State&gt;\n .. @ abbr  : chr \"AL\"\n .. @ name  : chr \"Alabama\"\n .. @ region: chr \"IV\"\n .. @ office: chr \"Atlanta\"\n @ range: &lt;ccn::RangeMOH&gt;\n .. @ series: chr \"001-099\"\n .. @ abbr  : chr \"STC\"\n .. @ desc  : chr \"Short-Term Acute Care Hospital\"\n @ type : &lt;ccn::TypeMOF&gt;\n .. @ abbr: chr \"MOH\"\n .. @ desc: chr \"Medicaid-Only Hospital\"\n\npurrr::map(c(\"01J008\", \"A5J508\"), ccn::data_frame) |&gt; \n  collapse::rowbind(fill = TRUE)\n\n# A tibble: 2 × 9\n  ccn    entity        state            region    range eipps type  parent ext  \n  &lt;chr&gt;  &lt;chr&gt;         &lt;chr&gt;            &lt;chr&gt;     &lt;chr&gt; &lt;lgl&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;\n1 01J008 Medicaid-Only AL (Alabama)     IV (Atla… 001-… NA    STC … &lt;NA&gt;   &lt;NA&gt; \n2 A5J508 Medicaid-Only MS (Mississippi) IV (Atla… 500-… NA    LTCH… &lt;NA&gt;   &lt;NA&gt;",
+    "crumbs": [
+      "Medicaid-Only Providers",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Hospitals</span>"
+    ]
+  },
+  {
     "objectID": "supplier.html",
     "href": "supplier.html",
     "title": "Suppliers",
@@ -93,12 +148,12 @@
   {
     "objectID": "asc.html",
     "href": "asc.html",
-    "title": "\n9  ASCs\n",
+    "title": "\n10  ASCs\n",
     "section": "",
     "text": "ccn:::get_pin(\"asc\")\n\n# A tibble: 5,536 × 3\n   ccn        state facility_name                                 \n   &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;                                         \n 1 05C0001831 CA    THE SURGERY CENTER AT NORTHBAY VACA VALLEY    \n 2 05C0001873 CA    CARLSBAD SURGERY CENTER LLC                   \n 3 14C0001134 IL    MIDWEST ENDOSCOPY CENTER LLC                  \n 4 19C0001115 LA    ADVANCED SURGICAL CARE OF BATON ROUGE LLC     \n 5 19C0001088 LA    ENDO CENTER LLC                               \n 6 36C0001248 OH    WASC LLC DBA WOOSTER AMBULATORY SURGERY CENTER\n 7 36C0001267 OH    NEW ALBANY SURGERY CENTER LLC                 \n 8 26C0001033 MO    CITY PL SURGERY CENTER                        \n 9 31C0001270 NJ    NORTHERN NJ ENDOSCOPY CENTER LLC              \n10 46C0001039 UT    MOUNTAIN WEST SURGERY CENTER LLC              \n# ℹ 5,526 more rows",
     "crumbs": [
       "Suppliers",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>ASCs</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>ASCs</span>"
     ]
   },
   {
