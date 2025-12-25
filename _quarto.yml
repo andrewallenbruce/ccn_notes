@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 book:
-  title: "ccn: CMS Certification Numbers"
+  title: "CMS Certification Numbers"
   author: "Andrew Allen Bruce"
   date: "12/24/2025"
   back-to-top-navigation: true
@@ -14,7 +14,7 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
-    - summary.qmd
+    - medicare.qmd
     - references.qmd
 
 bibliography: references.bib
@@ -24,9 +24,12 @@ format:
     theme:
       - cosmo
       - brand
-    code-copy: true
-  pdf:
-    documentclass: scrreprt
+    date: last-modified
+    code-link: true
+    code-fold: false
+    code-tools: true
+    embed-resources: false
+    toc: true
 
 
 

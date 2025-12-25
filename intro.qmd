@@ -1,9 +1,75 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
 # Introduction
 
-This is a book created from markdown and executable code.
+```{r setup}
+#| message: false
+#| warning: false
+#| echo: true
+#| cache: false
+#| comment: ""
 
-See @knuth84 for additional discussion of literate programming.
+library(ccn)
+```
+
+A __CMS Certification Number__ is a uniform way of identifying Healthcare
+Providers or Suppliers who have participated in the Medicare or Medicaid
+programs.
+
+The CCN is used to identify each separately certified Medicare provider or
+supplier. It is used to track provider agreements and cost reports. The national
+provider identifier (NPI) and provider transaction account number (PTAN) are
+tied to the CCN. 
+
+Additionally, CMS data systems use the CCN to identify each individual provider 
+or supplier that has or currently does participate in Medicare and/or Medicaid. 
+The RO, not the SA or MAC, assigns the CCN and maintains adequate controls.
+
+::: {#note-mod .callout-note}
+
+### CCN
+
+__CCN__ replaced the terms _Medicare Provider Number_, _Medicare Identification Number_ 
+and _OSCAR Number_ in [2007](https://www.cms.gov/medicare/provider-enrollment-and-certification/surveycertificationgeninfo/policy-and-memos-to-states-and-regions-items/cms1206256).
+
+:::
+
+## Standard Format
+
+A canonically valid CCN is an alphanumeric string, either 6 or 10 characters in
+length, that encodes a provider/supplier's state and facility type.
+
+## States
+
+The first two characters of the CCN represent the state in which the provider or
+supplier is located. 
 
 ```{r}
-1 + 1
+#| label: ccn-states
+#| echo: false
+ccn::states |>
+  collapse::fgroup_by(abbr, name) |> 
+  collapse::fsummarise(code = paste(code, collapse = ", ")) |> 
+  gt::gt() |> 
+  gtExtras::gt_theme_538(quiet = TRUE) |> 
+  gt::tab_options(quarto.disable_processing = TRUE)
 ```
+
+### Regional Offices
+
+```{r}
+#| label: ccn-regions
+#| echo: false
+ccn::regions |>
+  collapse::sbt(!is.na(region), -ro) |> 
+  collapse::frename(office = city) |>
+  collapse::fgroup_by(region, office) |> 
+  collapse::fsummarise(state = paste(state, collapse = ", ")) |> 
+  gt::gt() |> 
+  gtExtras::gt_theme_538(quiet = TRUE) |>
+  gt::tab_options(quarto.disable_processing = TRUE)
+```
+

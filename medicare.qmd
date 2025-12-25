@@ -1,0 +1,33 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+# Medicare
+
+```{r setup}
+#| message: false
+#| warning: false
+#| echo: true
+#| cache: false
+#| comment: ""
+
+library(ccn)
+```
+
+## Ranges
+
+The first two characters of the CCN represent the state in which the provider or
+supplier is located. 
+
+```{r}
+#| label: medicare-ranges
+#| echo: false
+ccn::medicare_ranges |>
+  collapse::slt(-start, -end) |> 
+  collapse::fgroup_by(abbr, desc) |> 
+  collapse::fsummarise(range = paste(range, collapse = ", ")) |> 
+  gt::gt() |> 
+  gtExtras::gt_theme_538(quiet = TRUE) |> 
+  gt::tab_options(quarto.disable_processing = TRUE)
+```

@@ -5,7 +5,7 @@
 <meta name="generator" content="quarto-1.7.32">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="dcterms.date" content="2025-12-25">
-<title>1&nbsp; Introduction – CMS Certification Numbers</title>
+<title>2&nbsp; Medicare – CMS Certification Numbers</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -62,8 +62,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./medicare.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./intro.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -108,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./medicare.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Medicare</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -140,13 +140,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link active">
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./medicare.html" class="sidebar-item-text sidebar-link">
+  <a href="./medicare.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Medicare</span></span></a>
   </div>
 </li>
@@ -164,19 +164,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#standard-format" id="toc-standard-format" class="nav-link active" data-scroll-target="#standard-format"><span class="header-section-number">1.1</span> Standard Format</a></li>
-  <li>
-<a href="#states" id="toc-states" class="nav-link" data-scroll-target="#states"><span class="header-section-number">1.2</span> States</a>
-  <ul class="collapse">
-<li><a href="#regional-offices" id="toc-regional-offices" class="nav-link" data-scroll-target="#regional-offices"><span class="header-section-number">1.2.1</span> Regional Offices</a></li>
-  </ul>
-</li>
+<li><a href="#ranges" id="toc-ranges" class="nav-link active" data-scroll-target="#ranges"><span class="header-section-number">2.1</span> Ranges</a></li>
   </ul></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title">
-<span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span>
+<span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Medicare</span>
 </h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
@@ -200,27 +194,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header><div class="cell">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/andrewallenbruce/ccn">ccn</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>A <strong>CMS Certification Number</strong> is a uniform way of identifying Healthcare Providers or Suppliers who have participated in the Medicare or Medicaid programs.</p>
-<p>The CCN is used to identify each separately certified Medicare provider or supplier. It is used to track provider agreements and cost reports. The national provider identifier (NPI) and provider transaction account number (PTAN) are tied to the CCN.</p>
-<p>Additionally, CMS data systems use the CCN to identify each individual provider or supplier that has or currently does participate in Medicare and/or Medicaid. The RO, not the SA or MAC, assigns the CCN and maintains adequate controls.</p>
-<div id="note-mod" class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-CCN
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>CCN</strong> replaced the terms <em>Medicare Provider Number</em>, <em>Medicare Identification Number</em> and <em>OSCAR Number</em> in <a href="https://www.cms.gov/medicare/provider-enrollment-and-certification/surveycertificationgeninfo/policy-and-memos-to-states-and-regions-items/cms1206256">2007</a>.</p>
-</div>
-</div>
-<section id="standard-format" class="level2" data-number="1.1"><h2 data-number="1.1" class="anchored" data-anchor-id="standard-format">
-<span class="header-section-number">1.1</span> Standard Format</h2>
-<p>A canonically valid CCN is an alphanumeric string, either 6 or 10 characters in length, that encodes a provider/supplier’s state and facility type.</p>
-</section><section id="states" class="level2" data-number="1.2"><h2 data-number="1.2" class="anchored" data-anchor-id="states">
-<span class="header-section-number">1.2</span> States</h2>
+<section id="ranges" class="level2" data-number="2.1"><h2 data-number="2.1" class="anchored" data-anchor-id="ranges">
+<span class="header-section-number">2.1</span> Ranges</h2>
 <p>The first two characters of the CCN represent the state in which the provider or supplier is located.</p>
 <div class="cell">
 <div class="cell-output cell-output-stderr">
@@ -229,27 +204,27 @@ CCN
   print.unit ccn </code></pre>
 </div>
 <div class="cell-output-display">
-<div id="evnkmsdmra" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="aurzaxbuke" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cairo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#evnkmsdmra table {
+#aurzaxbuke table {
   font-family: Cairo, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#evnkmsdmra thead, #evnkmsdmra tbody, #evnkmsdmra tfoot, #evnkmsdmra tr, #evnkmsdmra td, #evnkmsdmra th {
+#aurzaxbuke thead, #aurzaxbuke tbody, #aurzaxbuke tfoot, #aurzaxbuke tr, #aurzaxbuke td, #aurzaxbuke th {
   border-style: none;
 }
 
-#evnkmsdmra p {
+#aurzaxbuke p {
   margin: 0;
   padding: 0;
 }
 
-#evnkmsdmra .gt_table {
+#aurzaxbuke .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -275,12 +250,12 @@ CCN
   border-left-color: #D3D3D3;
 }
 
-#evnkmsdmra .gt_caption {
+#aurzaxbuke .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#evnkmsdmra .gt_title {
+#aurzaxbuke .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -292,7 +267,7 @@ CCN
   border-bottom-width: 0;
 }
 
-#evnkmsdmra .gt_subtitle {
+#aurzaxbuke .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -304,7 +279,7 @@ CCN
   border-top-width: 0;
 }
 
-#evnkmsdmra .gt_heading {
+#aurzaxbuke .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -316,13 +291,13 @@ CCN
   border-right-color: #D3D3D3;
 }
 
-#evnkmsdmra .gt_bottom_border {
+#aurzaxbuke .gt_bottom_border {
   border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#evnkmsdmra .gt_col_headings {
+#aurzaxbuke .gt_col_headings {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -337,7 +312,7 @@ CCN
   border-right-color: #D3D3D3;
 }
 
-#evnkmsdmra .gt_col_heading {
+#aurzaxbuke .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -357,7 +332,7 @@ CCN
   overflow-x: hidden;
 }
 
-#evnkmsdmra .gt_column_spanner_outer {
+#aurzaxbuke .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -369,15 +344,15 @@ CCN
   padding-right: 4px;
 }
 
-#evnkmsdmra .gt_column_spanner_outer:first-child {
+#aurzaxbuke .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#evnkmsdmra .gt_column_spanner_outer:last-child {
+#aurzaxbuke .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#evnkmsdmra .gt_column_spanner {
+#aurzaxbuke .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #000000;
@@ -389,11 +364,11 @@ CCN
   width: 100%;
 }
 
-#evnkmsdmra .gt_spanner_row {
+#aurzaxbuke .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#evnkmsdmra .gt_group_heading {
+#aurzaxbuke .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -419,7 +394,7 @@ CCN
   text-align: left;
 }
 
-#evnkmsdmra .gt_empty_group_heading {
+#aurzaxbuke .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -434,15 +409,15 @@ CCN
   vertical-align: middle;
 }
 
-#evnkmsdmra .gt_from_md > :first-child {
+#aurzaxbuke .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#evnkmsdmra .gt_from_md > :last-child {
+#aurzaxbuke .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#evnkmsdmra .gt_row {
+#aurzaxbuke .gt_row {
   padding-top: 3px;
   padding-bottom: 3px;
   padding-left: 5px;
@@ -461,7 +436,7 @@ CCN
   overflow-x: hidden;
 }
 
-#evnkmsdmra .gt_stub {
+#aurzaxbuke .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -474,7 +449,7 @@ CCN
   padding-right: 5px;
 }
 
-#evnkmsdmra .gt_stub_row_group {
+#aurzaxbuke .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -488,15 +463,15 @@ CCN
   vertical-align: top;
 }
 
-#evnkmsdmra .gt_row_group_first td {
+#aurzaxbuke .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#evnkmsdmra .gt_row_group_first th {
+#aurzaxbuke .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#evnkmsdmra .gt_summary_row {
+#aurzaxbuke .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -506,16 +481,16 @@ CCN
   padding-right: 5px;
 }
 
-#evnkmsdmra .gt_first_summary_row {
+#aurzaxbuke .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#evnkmsdmra .gt_first_summary_row.thick {
+#aurzaxbuke .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#evnkmsdmra .gt_last_summary_row {
+#aurzaxbuke .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -525,7 +500,7 @@ CCN
   border-bottom-color: #D3D3D3;
 }
 
-#evnkmsdmra .gt_grand_summary_row {
+#aurzaxbuke .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -535,7 +510,7 @@ CCN
   padding-right: 5px;
 }
 
-#evnkmsdmra .gt_first_grand_summary_row {
+#aurzaxbuke .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -545,7 +520,7 @@ CCN
   border-top-color: #D3D3D3;
 }
 
-#evnkmsdmra .gt_last_grand_summary_row_top {
+#aurzaxbuke .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -555,11 +530,11 @@ CCN
   border-bottom-color: #D3D3D3;
 }
 
-#evnkmsdmra .gt_striped {
+#aurzaxbuke .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#evnkmsdmra .gt_table_body {
+#aurzaxbuke .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -568,7 +543,7 @@ CCN
   border-bottom-color: #D3D3D3;
 }
 
-#evnkmsdmra .gt_footnotes {
+#aurzaxbuke .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -582,7 +557,7 @@ CCN
   border-right-color: #D3D3D3;
 }
 
-#evnkmsdmra .gt_footnote {
+#aurzaxbuke .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -591,7 +566,7 @@ CCN
   padding-right: 5px;
 }
 
-#evnkmsdmra .gt_sourcenotes {
+#aurzaxbuke .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -605,7 +580,7 @@ CCN
   border-right-color: #D3D3D3;
 }
 
-#evnkmsdmra .gt_sourcenote {
+#aurzaxbuke .gt_sourcenote {
   font-size: 12px;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -613,903 +588,240 @@ CCN
   padding-right: 5px;
 }
 
-#evnkmsdmra .gt_left {
+#aurzaxbuke .gt_left {
   text-align: left;
 }
 
-#evnkmsdmra .gt_center {
+#aurzaxbuke .gt_center {
   text-align: center;
 }
 
-#evnkmsdmra .gt_right {
+#aurzaxbuke .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#evnkmsdmra .gt_font_normal {
+#aurzaxbuke .gt_font_normal {
   font-weight: normal;
 }
 
-#evnkmsdmra .gt_font_bold {
+#aurzaxbuke .gt_font_bold {
   font-weight: bold;
 }
 
-#evnkmsdmra .gt_font_italic {
+#aurzaxbuke .gt_font_italic {
   font-style: italic;
 }
 
-#evnkmsdmra .gt_super {
+#aurzaxbuke .gt_super {
   font-size: 65%;
 }
 
-#evnkmsdmra .gt_footnote_marks {
+#aurzaxbuke .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#evnkmsdmra .gt_asterisk {
+#aurzaxbuke .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#evnkmsdmra .gt_indent_1 {
+#aurzaxbuke .gt_indent_1 {
   text-indent: 5px;
 }
 
-#evnkmsdmra .gt_indent_2 {
+#aurzaxbuke .gt_indent_2 {
   text-indent: 10px;
 }
 
-#evnkmsdmra .gt_indent_3 {
+#aurzaxbuke .gt_indent_3 {
   text-indent: 15px;
 }
 
-#evnkmsdmra .gt_indent_4 {
+#aurzaxbuke .gt_indent_4 {
   text-indent: 20px;
 }
 
-#evnkmsdmra .gt_indent_5 {
+#aurzaxbuke .gt_indent_5 {
   text-indent: 25px;
 }
 
-#evnkmsdmra .katex-display {
+#aurzaxbuke .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#evnkmsdmra div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#aurzaxbuke div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 
-#evnkmsdmra tbody tr:last-child {
+#aurzaxbuke tbody tr:last-child {
   border-bottom: 2px solid #ffffff00;
 }
 </style>
 <table class="gt_table" data-quarto-disable-processing="true" data-quarto-bootstrap="false">
 <thead><tr class="gt_col_headings">
 <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: Chivo; font-size: 14px; vertical-align: bottom; font-weight: 200; text-transform: uppercase;" scope="col" id="abbr">abbr</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: Chivo; font-size: 14px; vertical-align: bottom; font-weight: 200; text-transform: uppercase;" scope="col" id="name">name</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: Chivo; font-size: 14px; vertical-align: bottom; font-weight: 200; text-transform: uppercase;" scope="col" id="code">code</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: Chivo; font-size: 14px; vertical-align: bottom; font-weight: 200; text-transform: uppercase;" scope="col" id="desc">desc</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: Chivo; font-size: 14px; vertical-align: bottom; font-weight: 200; text-transform: uppercase;" scope="col" id="range">range</th>
     </tr></thead>
 <tbody class="gt_table_body">
 <tr>
-<td headers="abbr" class="gt_row gt_left">AK</td>
-<td headers="name" class="gt_row gt_left">Alaska</td>
-<td headers="code" class="gt_row gt_left">02</td>
+<td headers="abbr" class="gt_row gt_left">ADH (Ret.)</td>
+<td headers="desc" class="gt_row gt_left">Alcohol-Drug Hospital (Retired)</td>
+<td headers="range" class="gt_row gt_right">1200-1224</td>
 </tr>
 <tr>
-<td headers="abbr" class="gt_row gt_left">AL</td>
-<td headers="name" class="gt_row gt_left">Alabama</td>
-<td headers="code" class="gt_row gt_left">01</td>
+<td headers="abbr" class="gt_row gt_left">CAH</td>
+<td headers="desc" class="gt_row gt_left">Critical Access Hospital</td>
+<td headers="range" class="gt_row gt_right">1300-1399</td>
 </tr>
 <tr>
-<td headers="abbr" class="gt_row gt_left">AR</td>
-<td headers="name" class="gt_row gt_left">Arkansas</td>
-<td headers="code" class="gt_row gt_left">04, 89</td>
+<td headers="abbr" class="gt_row gt_left">CH</td>
+<td headers="desc" class="gt_row gt_left">Children's Hospital</td>
+<td headers="range" class="gt_row gt_right">3300-3399</td>
 </tr>
 <tr>
-<td headers="abbr" class="gt_row gt_left">AS</td>
-<td headers="name" class="gt_row gt_left">American Samoa</td>
-<td headers="code" class="gt_row gt_left">64</td>
+<td headers="abbr" class="gt_row gt_left">CMHC</td>
+<td headers="desc" class="gt_row gt_left">Community Mental Health Center</td>
+<td headers="range" class="gt_row gt_right">1400-1499, 4600-4799, 4900-4999</td>
 </tr>
 <tr>
-<td headers="abbr" class="gt_row gt_left">AZ</td>
-<td headers="name" class="gt_row gt_left">Arizona</td>
-<td headers="code" class="gt_row gt_left">00, 03</td>
+<td headers="abbr" class="gt_row gt_left">CORF</td>
+<td headers="desc" class="gt_row gt_left">Comprehensive Outpatient Rehabilitation Facility</td>
+<td headers="range" class="gt_row gt_right">3200-3299, 4500-4599, 4800-4899</td>
 </tr>
 <tr>
-<td headers="abbr" class="gt_row gt_left">CA</td>
-<td headers="name" class="gt_row gt_left">California</td>
-<td headers="code" class="gt_row gt_left">05, 55, 75, 92, A0, A1, B2</td>
+<td headers="abbr" class="gt_row gt_left">FQHC</td>
+<td headers="desc" class="gt_row gt_left">Federally Qualified Health Center</td>
+<td headers="range" class="gt_row gt_right">1000-1199, 1800-1989</td>
 </tr>
 <tr>
-<td headers="abbr" class="gt_row gt_left">CN</td>
-<td headers="name" class="gt_row gt_left">Canada</td>
-<td headers="code" class="gt_row gt_left">56</td>
+<td headers="abbr" class="gt_row gt_left">HBRDF</td>
+<td headers="desc" class="gt_row gt_left">Hospital-based Renal Dialysis Facility</td>
+<td headers="range" class="gt_row gt_right">2300-2499</td>
 </tr>
 <tr>
-<td headers="abbr" class="gt_row gt_left">CO</td>
-<td headers="name" class="gt_row gt_left">Colorado</td>
-<td headers="code" class="gt_row gt_left">06, 91</td>
+<td headers="abbr" class="gt_row gt_left">HBSRDF</td>
+<td headers="desc" class="gt_row gt_left">Hospital-based Satellite Renal Dialysis Facility</td>
+<td headers="range" class="gt_row gt_right">3500-3699</td>
 </tr>
 <tr>
-<td headers="abbr" class="gt_row gt_left">CT</td>
-<td headers="name" class="gt_row gt_left">Connecticut</td>
-<td headers="code" class="gt_row gt_left">07, 81</td>
+<td headers="abbr" class="gt_row gt_left">HHA</td>
+<td headers="desc" class="gt_row gt_left">Home Health Agency</td>
+<td headers="range" class="gt_row gt_right">7000-7299, 7400-7799, 8000-8499, 9000-9799</td>
 </tr>
 <tr>
-<td headers="abbr" class="gt_row gt_left">DC</td>
-<td headers="name" class="gt_row gt_left">District of Columbia</td>
-<td headers="code" class="gt_row gt_left">09</td>
+<td headers="abbr" class="gt_row gt_left">HHA</td>
+<td headers="desc" class="gt_row gt_left">Home Health Agency Subunit (Nonprofit/Proprietary)</td>
+<td headers="range" class="gt_row gt_right">3100-3199, 7300-7399</td>
 </tr>
 <tr>
-<td headers="abbr" class="gt_row gt_left">DE</td>
-<td headers="name" class="gt_row gt_left">Delaware</td>
-<td headers="code" class="gt_row gt_left">08</td>
+<td headers="abbr" class="gt_row gt_left">HHA</td>
+<td headers="desc" class="gt_row gt_left">Home Health Agency Subunit (State/Local)</td>
+<td headers="range" class="gt_row gt_right">7800-7999</td>
 </tr>
 <tr>
-<td headers="abbr" class="gt_row gt_left">FC</td>
-<td headers="name" class="gt_row gt_left">Foreign Country</td>
-<td headers="code" class="gt_row gt_left">99</td>
+<td headers="abbr" class="gt_row gt_left">HSP</td>
+<td headers="desc" class="gt_row gt_left">Hospice</td>
+<td headers="range" class="gt_row gt_right">1500-1799</td>
 </tr>
 <tr>
-<td headers="abbr" class="gt_row gt_left">FL</td>
-<td headers="name" class="gt_row gt_left">Florida</td>
-<td headers="code" class="gt_row gt_left">10, 68, 69, A2</td>
+<td headers="abbr" class="gt_row gt_left">HSPRDF</td>
+<td headers="desc" class="gt_row gt_left">Hospital-based Special Purpose Renal Dialysis Facility</td>
+<td headers="range" class="gt_row gt_right">3700-3799</td>
 </tr>
 <tr>
-<td headers="abbr" class="gt_row gt_left">GA</td>
-<td headers="name" class="gt_row gt_left">Georgia</td>
-<td headers="code" class="gt_row gt_left">11, 85</td>
+<td headers="abbr" class="gt_row gt_left">IRDF</td>
+<td headers="desc" class="gt_row gt_left">Independent Renal Dialysis Facility</td>
+<td headers="range" class="gt_row gt_right">2500-2899</td>
 </tr>
 <tr>
-<td headers="abbr" class="gt_row gt_left">GU</td>
-<td headers="name" class="gt_row gt_left">Guam</td>
-<td headers="code" class="gt_row gt_left">65</td>
+<td headers="abbr" class="gt_row gt_left">IRF</td>
+<td headers="desc" class="gt_row gt_left">Rehabilitation Hospital</td>
+<td headers="range" class="gt_row gt_right">3025-3099</td>
 </tr>
 <tr>
-<td headers="abbr" class="gt_row gt_left">HI</td>
-<td headers="name" class="gt_row gt_left">Hawaii</td>
-<td headers="code" class="gt_row gt_left">12</td>
+<td headers="abbr" class="gt_row gt_left">ISPRDF</td>
+<td headers="desc" class="gt_row gt_left">Independent Special Purpose Renal Dialysis Facility</td>
+<td headers="range" class="gt_row gt_right">2900-2999</td>
 </tr>
 <tr>
-<td headers="abbr" class="gt_row gt_left">IA</td>
-<td headers="name" class="gt_row gt_left">Iowa</td>
-<td headers="code" class="gt_row gt_left">16, 76</td>
+<td headers="abbr" class="gt_row gt_left">LTCH</td>
+<td headers="desc" class="gt_row gt_left">Long-Term Care Hospital</td>
+<td headers="range" class="gt_row gt_right">2000-2299</td>
 </tr>
 <tr>
-<td headers="abbr" class="gt_row gt_left">ID</td>
-<td headers="name" class="gt_row gt_left">Idaho</td>
-<td headers="code" class="gt_row gt_left">13, 54</td>
+<td headers="abbr" class="gt_row gt_left">MAF</td>
+<td headers="desc" class="gt_row gt_left">Medical Assistance Facility</td>
+<td headers="range" class="gt_row gt_right">1225-1299</td>
 </tr>
 <tr>
-<td headers="abbr" class="gt_row gt_left">IL</td>
-<td headers="name" class="gt_row gt_left">Illinois</td>
-<td headers="code" class="gt_row gt_left">14, 78</td>
+<td headers="abbr" class="gt_row gt_left">MHCMC (Ret.)</td>
+<td headers="desc" class="gt_row gt_left">Multiple Hospital Component in a Medical Complex (Retired)</td>
+<td headers="range" class="gt_row gt_right">0900-0999</td>
 </tr>
 <tr>
-<td headers="abbr" class="gt_row gt_left">IN</td>
-<td headers="name" class="gt_row gt_left">Indiana</td>
-<td headers="code" class="gt_row gt_left">15</td>
+<td headers="abbr" class="gt_row gt_left">OCM</td>
+<td headers="desc" class="gt_row gt_left">Hospital Participating in ORD (Oncology Care Model) Demonstration Project</td>
+<td headers="range" class="gt_row gt_right">0880-0899</td>
 </tr>
 <tr>
-<td headers="abbr" class="gt_row gt_left">KS</td>
-<td headers="name" class="gt_row gt_left">Kansas</td>
-<td headers="code" class="gt_row gt_left">17, 70</td>
+<td headers="abbr" class="gt_row gt_left">OPT</td>
+<td headers="desc" class="gt_row gt_left">Outpatient Physical Therapy Services</td>
+<td headers="range" class="gt_row gt_right">6500-6989</td>
 </tr>
 <tr>
-<td headers="abbr" class="gt_row gt_left">KY</td>
-<td headers="name" class="gt_row gt_left">Kentucky</td>
-<td headers="code" class="gt_row gt_left">18, B0</td>
+<td headers="abbr" class="gt_row gt_left">OTP</td>
+<td headers="desc" class="gt_row gt_left">Freestanding Opioid Treatment Program</td>
+<td headers="range" class="gt_row gt_right">9900-9999</td>
 </tr>
 <tr>
-<td headers="abbr" class="gt_row gt_left">LA</td>
-<td headers="name" class="gt_row gt_left">Louisiana</td>
-<td headers="code" class="gt_row gt_left">19, 71, 95, A3</td>
+<td headers="abbr" class="gt_row gt_left">PH</td>
+<td headers="desc" class="gt_row gt_left">Psychiatric Hospital</td>
+<td headers="range" class="gt_row gt_right">4000-4499</td>
 </tr>
 <tr>
-<td headers="abbr" class="gt_row gt_left">MA</td>
-<td headers="name" class="gt_row gt_left">Massachusetts</td>
-<td headers="code" class="gt_row gt_left">22, 82</td>
+<td headers="abbr" class="gt_row gt_left">RHC</td>
+<td headers="desc" class="gt_row gt_left">Rural Health Clinic (Free-standing)</td>
+<td headers="range" class="gt_row gt_right">3800-3974, 8900-8999</td>
 </tr>
 <tr>
-<td headers="abbr" class="gt_row gt_left">MD</td>
-<td headers="name" class="gt_row gt_left">Maryland</td>
-<td headers="code" class="gt_row gt_left">21, 80</td>
+<td headers="abbr" class="gt_row gt_left">RHC</td>
+<td headers="desc" class="gt_row gt_left">Rural Health Clinic (Provider-based)</td>
+<td headers="range" class="gt_row gt_right">3400-3499, 3975-3999, 8500-8899</td>
 </tr>
 <tr>
-<td headers="abbr" class="gt_row gt_left">ME</td>
-<td headers="name" class="gt_row gt_left">Maine</td>
-<td headers="code" class="gt_row gt_left">20</td>
+<td headers="abbr" class="gt_row gt_left">RNHCI</td>
+<td headers="desc" class="gt_row gt_left">Religious Non-medical Health Care Institution</td>
+<td headers="range" class="gt_row gt_right">1990-1999</td>
 </tr>
 <tr>
-<td headers="abbr" class="gt_row gt_left">MI</td>
-<td headers="name" class="gt_row gt_left">Michigan</td>
-<td headers="code" class="gt_row gt_left">23, A4</td>
+<td headers="abbr" class="gt_row gt_left">RSVD</td>
+<td headers="desc" class="gt_row gt_left">Number Reserved (Formerly CSS)</td>
+<td headers="range" class="gt_row gt_right">6990-6999</td>
 </tr>
 <tr>
-<td headers="abbr" class="gt_row gt_left">MN</td>
-<td headers="name" class="gt_row gt_left">Minnesota</td>
-<td headers="code" class="gt_row gt_left">24, 77</td>
+<td headers="abbr" class="gt_row gt_left">SNF</td>
+<td headers="desc" class="gt_row gt_left">Skilled Nursing Facility</td>
+<td headers="range" class="gt_row gt_right">5000-6499</td>
 </tr>
 <tr>
-<td headers="abbr" class="gt_row gt_left">MO</td>
-<td headers="name" class="gt_row gt_left">Missouri</td>
-<td headers="code" class="gt_row gt_left">26, 79</td>
+<td headers="abbr" class="gt_row gt_left">STC</td>
+<td headers="desc" class="gt_row gt_left">Short-Term Hospital (General &amp; Specialty)</td>
+<td headers="range" class="gt_row gt_right">0001-0879</td>
 </tr>
 <tr>
-<td headers="abbr" class="gt_row gt_left">MP</td>
-<td headers="name" class="gt_row gt_left">Northern Marianas Islands</td>
-<td headers="code" class="gt_row gt_left">66</td>
+<td headers="abbr" class="gt_row gt_left">TBH (Ret.)</td>
+<td headers="desc" class="gt_row gt_left">Tuberculosis Hospital (Retired)</td>
+<td headers="range" class="gt_row gt_right">3000-3024</td>
 </tr>
 <tr>
-<td headers="abbr" class="gt_row gt_left">MS</td>
-<td headers="name" class="gt_row gt_left">Mississippi</td>
-<td headers="code" class="gt_row gt_left">25, A5</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left">MT</td>
-<td headers="name" class="gt_row gt_left">Montana</td>
-<td headers="code" class="gt_row gt_left">27</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left">MX</td>
-<td headers="name" class="gt_row gt_left">Mexico</td>
-<td headers="code" class="gt_row gt_left">59</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left">NC</td>
-<td headers="name" class="gt_row gt_left">North Carolina</td>
-<td headers="code" class="gt_row gt_left">34, 86</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left">ND</td>
-<td headers="name" class="gt_row gt_left">North Dakota</td>
-<td headers="code" class="gt_row gt_left">35</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left">NE</td>
-<td headers="name" class="gt_row gt_left">Nebraska</td>
-<td headers="code" class="gt_row gt_left">28</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left">NH</td>
-<td headers="name" class="gt_row gt_left">New Hampshire</td>
-<td headers="code" class="gt_row gt_left">30</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left">NJ</td>
-<td headers="name" class="gt_row gt_left">New Jersey</td>
-<td headers="code" class="gt_row gt_left">31, 83</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left">NM</td>
-<td headers="name" class="gt_row gt_left">New Mexico</td>
-<td headers="code" class="gt_row gt_left">32, 96</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left">NV</td>
-<td headers="name" class="gt_row gt_left">Nevada</td>
-<td headers="code" class="gt_row gt_left">29</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left">NY</td>
-<td headers="name" class="gt_row gt_left">New York</td>
-<td headers="code" class="gt_row gt_left">33, 57</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left">OH</td>
-<td headers="name" class="gt_row gt_left">Ohio</td>
-<td headers="code" class="gt_row gt_left">36, 72, A6</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left">OK</td>
-<td headers="name" class="gt_row gt_left">Oklahoma</td>
-<td headers="code" class="gt_row gt_left">37, 90</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left">OR</td>
-<td headers="name" class="gt_row gt_left">Oregon</td>
-<td headers="code" class="gt_row gt_left">38, 93</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left">PA</td>
-<td headers="name" class="gt_row gt_left">Pennsylvania</td>
-<td headers="code" class="gt_row gt_left">39, 73, A7</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left">PR</td>
-<td headers="name" class="gt_row gt_left">Puerto Rico</td>
-<td headers="code" class="gt_row gt_left">40, 84</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left">RI</td>
-<td headers="name" class="gt_row gt_left">Rhode Island</td>
-<td headers="code" class="gt_row gt_left">41</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left">SC</td>
-<td headers="name" class="gt_row gt_left">South Carolina</td>
-<td headers="code" class="gt_row gt_left">42, 87</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left">SD</td>
-<td headers="name" class="gt_row gt_left">South Dakota</td>
-<td headers="code" class="gt_row gt_left">43</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left">TN</td>
-<td headers="name" class="gt_row gt_left">Tennessee</td>
-<td headers="code" class="gt_row gt_left">44, 88, A8</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left">TX</td>
-<td headers="name" class="gt_row gt_left">Texas</td>
-<td headers="code" class="gt_row gt_left">45, 67, 74, 97, A9</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left">UT</td>
-<td headers="name" class="gt_row gt_left">Utah</td>
-<td headers="code" class="gt_row gt_left">46</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left">VA</td>
-<td headers="name" class="gt_row gt_left">Virginia</td>
-<td headers="code" class="gt_row gt_left">49</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left">VI</td>
-<td headers="name" class="gt_row gt_left">Virgin Islands</td>
-<td headers="code" class="gt_row gt_left">48</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left">VT</td>
-<td headers="name" class="gt_row gt_left">Vermont</td>
-<td headers="code" class="gt_row gt_left">47</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left">WA</td>
-<td headers="name" class="gt_row gt_left">Washington</td>
-<td headers="code" class="gt_row gt_left">50, 94</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left">WI</td>
-<td headers="name" class="gt_row gt_left">Wisconsin</td>
-<td headers="code" class="gt_row gt_left">52</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left">WV</td>
-<td headers="name" class="gt_row gt_left">West Virginia</td>
-<td headers="code" class="gt_row gt_left">51, 58, B1</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left">WY</td>
-<td headers="name" class="gt_row gt_left">Wyoming</td>
-<td headers="code" class="gt_row gt_left">53</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<section id="regional-offices" class="level3" data-number="1.2.1"><h3 data-number="1.2.1" class="anchored" data-anchor-id="regional-offices">
-<span class="header-section-number">1.2.1</span> Regional Offices</h3>
-<div class="cell">
-<div class="cell-output-display">
-<div id="tfgaizknrs" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cairo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#tfgaizknrs table {
-  font-family: Cairo, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#tfgaizknrs thead, #tfgaizknrs tbody, #tfgaizknrs tfoot, #tfgaizknrs tr, #tfgaizknrs td, #tfgaizknrs th {
-  border-style: none;
-}
-
-#tfgaizknrs p {
-  margin: 0;
-  padding: 0;
-}
-
-#tfgaizknrs .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: 400;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: none;
-  border-top-width: 3px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#tfgaizknrs .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#tfgaizknrs .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#tfgaizknrs .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#tfgaizknrs .gt_heading {
-  background-color: #FFFFFF;
-  text-align: left;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#tfgaizknrs .gt_bottom_border {
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#tfgaizknrs .gt_col_headings {
-  border-top-style: none;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #000000;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#tfgaizknrs .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#tfgaizknrs .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#tfgaizknrs .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#tfgaizknrs .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#tfgaizknrs .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #000000;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#tfgaizknrs .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#tfgaizknrs .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: none;
-  border-top-width: 2px;
-  border-top-color: #000000;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#tfgaizknrs .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: none;
-  border-top-width: 2px;
-  border-top-color: #000000;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-bottom-color: #FFFFFF;
-  vertical-align: middle;
-}
-
-#tfgaizknrs .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#tfgaizknrs .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#tfgaizknrs .gt_row {
-  padding-top: 3px;
-  padding-bottom: 3px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#tfgaizknrs .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 0px;
-  border-right-color: #FFFFFF;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#tfgaizknrs .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#tfgaizknrs .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#tfgaizknrs .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#tfgaizknrs .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#tfgaizknrs .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#tfgaizknrs .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#tfgaizknrs .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#tfgaizknrs .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#tfgaizknrs .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#tfgaizknrs .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#tfgaizknrs .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#tfgaizknrs .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#tfgaizknrs .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#tfgaizknrs .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#tfgaizknrs .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#tfgaizknrs .gt_sourcenote {
-  font-size: 12px;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#tfgaizknrs .gt_left {
-  text-align: left;
-}
-
-#tfgaizknrs .gt_center {
-  text-align: center;
-}
-
-#tfgaizknrs .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#tfgaizknrs .gt_font_normal {
-  font-weight: normal;
-}
-
-#tfgaizknrs .gt_font_bold {
-  font-weight: bold;
-}
-
-#tfgaizknrs .gt_font_italic {
-  font-style: italic;
-}
-
-#tfgaizknrs .gt_super {
-  font-size: 65%;
-}
-
-#tfgaizknrs .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#tfgaizknrs .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#tfgaizknrs .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#tfgaizknrs .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#tfgaizknrs .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#tfgaizknrs .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#tfgaizknrs .gt_indent_5 {
-  text-indent: 25px;
-}
-
-#tfgaizknrs .katex-display {
-  display: inline-flex !important;
-  margin-bottom: 0.75em !important;
-}
-
-#tfgaizknrs div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
-  height: 0px !important;
-}
-
-#tfgaizknrs tbody tr:last-child {
-  border-bottom: 2px solid #ffffff00;
-}
-</style>
-<table class="gt_table" data-quarto-disable-processing="true" data-quarto-bootstrap="false">
-<thead><tr class="gt_col_headings">
-<th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: Chivo; font-size: 14px; vertical-align: bottom; font-weight: 200; text-transform: uppercase;" scope="col" id="region">region</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: Chivo; font-size: 14px; vertical-align: bottom; font-weight: 200; text-transform: uppercase;" scope="col" id="office">office</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: Chivo; font-size: 14px; vertical-align: bottom; font-weight: 200; text-transform: uppercase;" scope="col" id="state">state</th>
-    </tr></thead>
-<tbody class="gt_table_body">
-<tr>
-<td headers="region" class="gt_row gt_left">I</td>
-<td headers="office" class="gt_row gt_left">Boston</td>
-<td headers="state" class="gt_row gt_left">CT, MA, ME, NH, RI, VT</td>
-</tr>
-<tr>
-<td headers="region" class="gt_row gt_left">II</td>
-<td headers="office" class="gt_row gt_left">New York</td>
-<td headers="state" class="gt_row gt_left">NJ, NY, PR, VI</td>
-</tr>
-<tr>
-<td headers="region" class="gt_row gt_left">III</td>
-<td headers="office" class="gt_row gt_left">Philadelphia</td>
-<td headers="state" class="gt_row gt_left">DC, DE, MD, PA, VA, WV</td>
-</tr>
-<tr>
-<td headers="region" class="gt_row gt_left">IV</td>
-<td headers="office" class="gt_row gt_left">Atlanta</td>
-<td headers="state" class="gt_row gt_left">AL, FL, GA, KY, MS, NC, SC, TN</td>
-</tr>
-<tr>
-<td headers="region" class="gt_row gt_left">IX</td>
-<td headers="office" class="gt_row gt_left">San Francisco</td>
-<td headers="state" class="gt_row gt_left">AS, AZ, CA, GU, HI, MP, NV</td>
-</tr>
-<tr>
-<td headers="region" class="gt_row gt_left">V</td>
-<td headers="office" class="gt_row gt_left">Chicago</td>
-<td headers="state" class="gt_row gt_left">IL, IN, MI, MN, OH, WI</td>
-</tr>
-<tr>
-<td headers="region" class="gt_row gt_left">VI</td>
-<td headers="office" class="gt_row gt_left">Dallas</td>
-<td headers="state" class="gt_row gt_left">AR, LA, NM, OK, TX</td>
-</tr>
-<tr>
-<td headers="region" class="gt_row gt_left">VII</td>
-<td headers="office" class="gt_row gt_left">Kansas City</td>
-<td headers="state" class="gt_row gt_left">IA, KS, MO, NE</td>
-</tr>
-<tr>
-<td headers="region" class="gt_row gt_left">VIII</td>
-<td headers="office" class="gt_row gt_left">Denver</td>
-<td headers="state" class="gt_row gt_left">CO, MT, ND, SD, UT, WY</td>
-</tr>
-<tr>
-<td headers="region" class="gt_row gt_left">X</td>
-<td headers="office" class="gt_row gt_left">Seattle</td>
-<td headers="state" class="gt_row gt_left">AK, ID, OR, WA</td>
+<td headers="abbr" class="gt_row gt_left">TXC</td>
+<td headers="desc" class="gt_row gt_left">Transplant Center</td>
+<td headers="range" class="gt_row gt_right">9800-9899</td>
 </tr>
 </tbody>
 </table>
@@ -1520,7 +832,7 @@ CCN
 
 <!-- -->
 
-</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
     const anchorJS = new window.AnchorJS();
@@ -1970,13 +1282,13 @@ CCN
     }
   });
   </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Preface">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      <a href="./intro.html" class="pagination-link" aria-label="Introduction">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./medicare.html" class="pagination-link" aria-label="Medicare">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Medicare</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
@@ -1985,7 +1297,7 @@ CCN
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="an">editor_options:</span><span class="co"> </span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">  chunk_output_type: console</span></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># Introduction</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># Medicare</span></span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup}</span></span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
@@ -1997,63 +1309,22 @@ CCN
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ccn)</span>
 <span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>A __CMS Certification Number__ is a uniform way of identifying Healthcare</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>Providers or Suppliers who have participated in the Medicare or Medicaid</span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>programs.</span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>The CCN is used to identify each separately certified Medicare provider or</span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>supplier. It is used to track provider agreements and cost reports. The national</span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>provider identifier (NPI) and provider transaction account number (PTAN) are</span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>tied to the CCN. </span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>Additionally, CMS data systems use the CCN to identify each individual provider </span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>or supplier that has or currently does participate in Medicare and/or Medicaid. </span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>The RO, not the SA or MAC, assigns the CCN and maintains adequate controls.</span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>::: {#note-mod .callout-note}</span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="fu">### CCN</span></span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>__CCN__ replaced the terms _Medicare Provider Number_, _Medicare Identification Number_ </span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>and _OSCAR Number_ in <span class="co">[</span><span class="ot">2007</span><span class="co">](https://www.cms.gov/medicare/provider-enrollment-and-certification/surveycertificationgeninfo/policy-and-memos-to-states-and-regions-items/cms1206256)</span>.</span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a><span class="fu">## Standard Format</span></span>
-<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>A canonically valid CCN is an alphanumeric string, either 6 or 10 characters in</span>
-<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>length, that encodes a provider/supplier's state and facility type.</span>
-<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a><span class="fu">## States</span></span>
-<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>The first two characters of the CCN represent the state in which the provider or</span>
-<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>supplier is located. </span>
-<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn-states</span></span>
-<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>ccn<span class="sc">::</span>states <span class="sc">|&gt;</span></span>
-<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">fgroup_by</span>(abbr, name) <span class="sc">|&gt;</span> </span>
-<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">fsummarise</span>(<span class="at">code =</span> <span class="fu">paste</span>(code, <span class="at">collapse =</span> <span class="st">", "</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>  gtExtras<span class="sc">::</span><span class="fu">gt_theme_538</span>(<span class="at">quiet =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_options</span>(<span class="at">quarto.disable_processing =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a><span class="fu">### Regional Offices</span></span>
-<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn-regions</span></span>
-<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a>ccn<span class="sc">::</span>regions <span class="sc">|&gt;</span></span>
-<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">sbt</span>(<span class="sc">!</span><span class="fu">is.na</span>(region), <span class="sc">-</span>ro) <span class="sc">|&gt;</span> </span>
-<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">frename</span>(<span class="at">office =</span> city) <span class="sc">|&gt;</span></span>
-<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">fgroup_by</span>(region, office) <span class="sc">|&gt;</span> </span>
-<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">fsummarise</span>(<span class="at">state =</span> <span class="fu">paste</span>(state, <span class="at">collapse =</span> <span class="st">", "</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a>  gtExtras<span class="sc">::</span><span class="fu">gt_theme_538</span>(<span class="at">quiet =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
-<span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_options</span>(<span class="at">quarto.disable_processing =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ranges</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>The first two characters of the CCN represent the state in which the provider or</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>supplier is located. </span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: medicare-ranges</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>ccn<span class="sc">::</span>medicare_ranges <span class="sc">|&gt;</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">slt</span>(<span class="sc">-</span>start, <span class="sc">-</span>end) <span class="sc">|&gt;</span> </span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">fgroup_by</span>(abbr, desc) <span class="sc">|&gt;</span> </span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">fsummarise</span>(<span class="at">range =</span> <span class="fu">paste</span>(range, <span class="at">collapse =</span> <span class="st">", "</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>  gtExtras<span class="sc">::</span><span class="fu">gt_theme_538</span>(<span class="at">quiet =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_options</span>(<span class="at">quarto.disable_processing =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
