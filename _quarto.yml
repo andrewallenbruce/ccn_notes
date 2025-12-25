@@ -3,9 +3,14 @@ project:
   output-dir: docs
 
 book:
-  title: "{ccn} Development Notes"
+  title: "ccn: CMS Certification Numbers"
   author: "Andrew Allen Bruce"
   date: "12/24/2025"
+  back-to-top-navigation: true
+  page-navigation: true
+  page-footer: "© Copyright 2026 Andrew Allen Bruce."
+  site-url: https://andrewallenbruce.github.io/ccn_notes/
+  repo-url: https://github.com/andrewallenbruce/ccn_notes
   chapters:
     - index.qmd
     - intro.qmd
@@ -19,6 +24,7 @@ format:
     theme:
       - cosmo
       - brand
+    code-copy: true
   pdf:
     documentclass: scrreprt
 
