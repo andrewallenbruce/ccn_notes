@@ -11,7 +11,6 @@ editor_options:
 #| echo: false
 #| cache: false
 #| comment: ""
-
 library(ccn)
 ```
 
@@ -20,14 +19,17 @@ provider or supplier that has or currently does participate in the Medicare and/
 
 The CCN is used to track provider agreements and cost reports. The National
 Provider Identifier (NPI) and Provider Transaction Account Number (PTAN) are
-tied to an entity's CCN. The Regional Office (RO), not the State Agency (SA) or Medicare Administrative Contractor (MAC), assigns the CCN and maintains adequate controls.
+tied to an entity's CCN. The CMS Regional Office (RO), not the State Agency (SA) or Medicare Administrative Contractor (MAC), assigns the CCN and maintains adequate controls.
 
 ::: {#note-mod .callout-note}
 
 ### One Term to Rule Them All
 
-__CCN__ replaced the terms _Medicare Provider Number_, _Medicare Identification Number_ 
-and _OSCAR Number_ in [2007](https://www.cms.gov/medicare/provider-enrollment-and-certification/surveycertificationgeninfo/policy-and-memos-to-states-and-regions-items/cms1206256).
+In [2007](https://www.cms.gov/medicare/provider-enrollment-and-certification/surveycertificationgeninfo/policy-and-memos-to-states-and-regions-items/cms1206256), the __CCN__ replaced the following terms: 
+
+   * Medicare Provider Number
+   * Medicare Identification Number
+   * OSCAR^[Online Survey, Certification, and Reporting System.] Number
 
 :::
 
@@ -36,7 +38,7 @@ and _OSCAR Number_ in [2007](https://www.cms.gov/medicare/provider-enrollment-an
 A __*canonically valid* CCN__ is an alphanumeric string, either 6 or 10 characters in
 length, that encodes a provider/supplier's state and facility type.
 
-## States
+## CMS State Codes
 
 The first two characters of the CCN represent the state in which the provider or
 supplier is located. 
@@ -47,25 +49,37 @@ supplier is located.
 #| message: false
 ccn::states |>
   collapse::fgroup_by(abbr, name) |> 
-  collapse::fsummarise(code = paste(code, collapse = ", ")) |> 
+  collapse::fsummarise(code = toString(code)) |> 
   gt::gt() |> 
-  gtExtras::gt_theme_538(quiet = TRUE) |> 
-  gt::tab_options(quarto.disable_processing = TRUE)
+  gt::tab_options(quarto.disable_processing = TRUE) |> 
+  gtExtras::gt_theme_nytimes() |> 
+  gt::tab_style(
+    style = gt::cell_text(
+      font = gt::google_font(name = "JetBrains Mono"), color = "grey50", size = "small"), 
+    locations = gt::cells_body(columns = code)) |> 
+  gt::tab_style(
+    style = gt::cell_text(weight = "bold"), 
+    locations = gt::cells_body(columns = abbr))
 ```
 
-### Regional Offices
+### CMS Regional Offices
 
 ```{r}
 #| label: ccn-regions
 #| echo: false
 #| message: false
 ccn::regions |>
-  collapse::sbt(!is.na(region), -ro) |> 
-  collapse::frename(office = city) |>
   collapse::fgroup_by(region, office) |> 
-  collapse::fsummarise(state = paste(state, collapse = ", ")) |> 
+  collapse::fsummarise(state = toString(state)) |> 
   gt::gt() |> 
-  gtExtras::gt_theme_538(quiet = TRUE) |>
-  gt::tab_options(quarto.disable_processing = TRUE)
+  gt::tab_options(quarto.disable_processing = TRUE) |> 
+  gtExtras::gt_theme_nytimes() |> 
+  gt::tab_style(
+    style = gt::cell_text(
+      font = gt::google_font(name = "JetBrains Mono"), color = "grey50", size = "small"), 
+    locations = gt::cells_body(columns = state)) |> 
+  gt::tab_style(
+    style = gt::cell_text(weight = "bold"), 
+    locations = gt::cells_body(columns = region))
 ```
 
