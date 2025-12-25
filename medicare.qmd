@@ -8,7 +8,7 @@ editor_options:
 ```{r setup}
 #| message: false
 #| warning: false
-#| echo: true
+#| echo: false
 #| cache: false
 #| comment: ""
 

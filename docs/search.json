@@ -14,7 +14,7 @@
     "href": "intro.html",
     "title": "\n1  Introduction\n",
     "section": "",
-    "text": "1.1 Standard Format\nA CMS Certification Number is a uniform way of identifying Healthcare Providers or Suppliers who have participated in the Medicare or Medicaid programs.\nThe CCN is used to identify each separately certified Medicare provider or supplier. It is used to track provider agreements and cost reports. The national provider identifier (NPI) and provider transaction account number (PTAN) are tied to the CCN.\nAdditionally, CMS data systems use the CCN to identify each individual provider or supplier that has or currently does participate in Medicare and/or Medicaid. The RO, not the SA or MAC, assigns the CCN and maintains adequate controls.\nA canonically valid CCN is an alphanumeric string, either 6 or 10 characters in length, that encodes a provider/supplier’s state and facility type.",
+    "text": "1.1 Canonical Format\nA CMS Certification Number is a uniform way of identifying a healthcare provider or supplier that has or currently does participate in the Medicare and/or Medicaid programs.\nThe CCN is used to track provider agreements and cost reports. The National Provider Identifier (NPI) and Provider Transaction Account Number (PTAN) are tied to an entity’s CCN. The Regional Office (RO), not the State Agency (SA) or Medicare Administrative Contractor (MAC), assigns the CCN and maintains adequate controls.\nA canonically valid CCN is an alphanumeric string, either 6 or 10 characters in length, that encodes a provider/supplier’s state and facility type.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]

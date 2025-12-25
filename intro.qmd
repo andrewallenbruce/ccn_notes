@@ -8,38 +8,32 @@ editor_options:
 ```{r setup}
 #| message: false
 #| warning: false
-#| echo: true
+#| echo: false
 #| cache: false
 #| comment: ""
 
 library(ccn)
 ```
 
-A __CMS Certification Number__ is a uniform way of identifying Healthcare
-Providers or Suppliers who have participated in the Medicare or Medicaid
-programs.
+A __CMS Certification Number__ is a uniform way of identifying a healthcare
+provider or supplier that has or currently does participate in the Medicare and/or Medicaid programs.
 
-The CCN is used to identify each separately certified Medicare provider or
-supplier. It is used to track provider agreements and cost reports. The national
-provider identifier (NPI) and provider transaction account number (PTAN) are
-tied to the CCN. 
-
-Additionally, CMS data systems use the CCN to identify each individual provider 
-or supplier that has or currently does participate in Medicare and/or Medicaid. 
-The RO, not the SA or MAC, assigns the CCN and maintains adequate controls.
+The CCN is used to track provider agreements and cost reports. The National
+Provider Identifier (NPI) and Provider Transaction Account Number (PTAN) are
+tied to an entity's CCN. The Regional Office (RO), not the State Agency (SA) or Medicare Administrative Contractor (MAC), assigns the CCN and maintains adequate controls.
 
 ::: {#note-mod .callout-note}
 
-### CCN
+### One Term to Rule Them All
 
 __CCN__ replaced the terms _Medicare Provider Number_, _Medicare Identification Number_ 
 and _OSCAR Number_ in [2007](https://www.cms.gov/medicare/provider-enrollment-and-certification/surveycertificationgeninfo/policy-and-memos-to-states-and-regions-items/cms1206256).
 
 :::
 
-## Standard Format
+## Canonical Format
 
-A canonically valid CCN is an alphanumeric string, either 6 or 10 characters in
+A __*canonically valid* CCN__ is an alphanumeric string, either 6 or 10 characters in
 length, that encodes a provider/supplier's state and facility type.
 
 ## States
