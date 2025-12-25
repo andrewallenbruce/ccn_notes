@@ -14,7 +14,7 @@ editor_options:
 library(ccn)
 ```
 
-## Ranges
+## Facility Ranges
 
 The first two characters of the CCN represent the state in which the provider or
 supplier is located. 

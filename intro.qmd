@@ -21,9 +21,9 @@ The CCN is used to track provider agreements and cost reports. The NPI^[National
 Provider Identifier] and PTAN^[Provider Transaction Account Number] are
 tied to an entity's CCN. The RO^[CMS Regional Office], not the SA^[State Agency] or MAC^[Medicare Administrative Contractor], assigns the CCN and maintains adequate controls.
 
-::: {#note-mod .callout-note}
+::: {#tip-ccn .callout-tip}
 
-### One Term to Rule Them All
+## One Term to Rule Them All
 
 In [2007](https://www.cms.gov/medicare/provider-enrollment-and-certification/surveycertificationgeninfo/policy-and-memos-to-states-and-regions-items/cms1206256), the __CCN__ replaced the following terms: 
 

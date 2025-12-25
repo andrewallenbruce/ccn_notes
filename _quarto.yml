@@ -15,14 +15,12 @@ book:
     - index.qmd
     - intro.qmd
     - medicare.qmd
-    - references.qmd
-
-bibliography: references.bib
+    - organ.qmd
 
 format:
   html:
     theme:
-      - zephyr
+      - lumen
       - brand
     date: last-modified
     code-link: true
