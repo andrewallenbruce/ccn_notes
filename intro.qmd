@@ -17,9 +17,9 @@ library(ccn)
 A __CMS Certification Number__ is a uniform way of identifying a healthcare
 provider or supplier that has or currently does participate in the Medicare and/or Medicaid programs.
 
-The CCN is used to track provider agreements and cost reports. The National
-Provider Identifier (NPI) and Provider Transaction Account Number (PTAN) are
-tied to an entity's CCN. The CMS Regional Office (RO), not the State Agency (SA) or Medicare Administrative Contractor (MAC), assigns the CCN and maintains adequate controls.
+The CCN is used to track provider agreements and cost reports. The NPI^[National
+Provider Identifier] and PTAN^[Provider Transaction Account Number] are
+tied to an entity's CCN. The RO^[CMS Regional Office], not the SA^[State Agency] or MAC^[Medicare Administrative Contractor], assigns the CCN and maintains adequate controls.
 
 ::: {#note-mod .callout-note}
 
@@ -48,18 +48,21 @@ supplier is located.
 #| echo: false
 #| message: false
 ccn::states |>
-  collapse::fgroup_by(abbr, name) |> 
-  collapse::fsummarise(code = toString(code)) |> 
-  gt::gt() |> 
-  gt::tab_options(quarto.disable_processing = TRUE) |> 
-  gtExtras::gt_theme_nytimes() |> 
+  collapse::fgroup_by(abbr, name) |>
+  collapse::fsummarise(code = toString(code)) |>
+  gt::gt() |>
+  gt::tab_options(quarto.disable_processing = TRUE) |>
+  gtExtras::gt_theme_nytimes() |>
   gt::tab_style(
     style = gt::cell_text(
-      font = gt::google_font(name = "JetBrains Mono"), color = "grey50", size = "small"), 
-    locations = gt::cells_body(columns = code)) |> 
+      font = gt::google_font(name = "JetBrains Mono"), color = "grey50", size = "small"
+    ),
+    locations = gt::cells_body(columns = code)
+  ) |>
   gt::tab_style(
-    style = gt::cell_text(weight = "bold"), 
-    locations = gt::cells_body(columns = abbr))
+    style = gt::cell_text(weight = "bold"),
+    locations = gt::cells_body(columns = abbr)
+  )
 ```
 
 ### CMS Regional Offices
@@ -69,17 +72,19 @@ ccn::states |>
 #| echo: false
 #| message: false
 ccn::regions |>
-  collapse::fgroup_by(region, office) |> 
-  collapse::fsummarise(state = toString(state)) |> 
-  gt::gt() |> 
-  gt::tab_options(quarto.disable_processing = TRUE) |> 
-  gtExtras::gt_theme_nytimes() |> 
+  collapse::fgroup_by(region, office) |>
+  collapse::fsummarise(state = toString(state)) |>
+  gt::gt() |>
+  gt::tab_options(quarto.disable_processing = TRUE) |>
+  gtExtras::gt_theme_nytimes() |>
   gt::tab_style(
     style = gt::cell_text(
-      font = gt::google_font(name = "JetBrains Mono"), color = "grey50", size = "small"), 
-    locations = gt::cells_body(columns = state)) |> 
+      font = gt::google_font(name = "JetBrains Mono"), color = "grey50", size = "small"
+    ),
+    locations = gt::cells_body(columns = state)
+  ) |>
   gt::tab_style(
-    style = gt::cell_text(weight = "bold"), 
-    locations = gt::cells_body(columns = region))
+    style = gt::cell_text(weight = "bold"),
+    locations = gt::cells_body(columns = region)
+  )
 ```
-
