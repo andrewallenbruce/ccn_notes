@@ -3,7 +3,7 @@ output: html_document
 editor_options: 
   chunk_output_type: console
 ---
-# Medicare
+# Providers
 
 ```{r setup}
 #| message: false
@@ -16,8 +16,10 @@ library(ccn)
 
 ## Facility Ranges
 
-The first two characters of the CCN represent the state in which the provider or
-supplier is located. 
+The last four characters of a Provider CCN represent the facility type and a unique
+identifier. The facility type is encoded in the third character of the last four
+characters. The table below summarizes the valid facility type codes and their
+corresponding ranges. 
 
 ```{r}
 #| label: medicare-ranges

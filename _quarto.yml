@@ -14,8 +14,26 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
-    - medicare.qmd
-    - organ.qmd
+    - part: provider.qmd
+      chapters:
+        - opo.qmd
+        - hha.qmd
+        - esrd.qmd
+        - cah.qmd
+    - part: medicaid.qmd
+      chapters:
+        - nf.qmd
+        - icf.qmd
+        - moh.qmd
+    - part: supplier.qmd
+      chapters:
+        - asc.qmd
+        - clia.qmd
+        - pxrf.qmd
+    - part: eipps.qmd
+      chapters:
+        - unit.qmd
+        - subunit.qmd
 
 format:
   html:
