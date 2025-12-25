@@ -44,6 +44,7 @@ supplier is located.
 ```{r}
 #| label: ccn-states
 #| echo: false
+#| message: false
 ccn::states |>
   collapse::fgroup_by(abbr, name) |> 
   collapse::fsummarise(code = paste(code, collapse = ", ")) |> 
@@ -57,6 +58,7 @@ ccn::states |>
 ```{r}
 #| label: ccn-regions
 #| echo: false
+#| message: false
 ccn::regions |>
   collapse::sbt(!is.na(region), -ro) |> 
   collapse::frename(office = city) |>

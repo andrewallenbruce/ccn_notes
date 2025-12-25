@@ -23,6 +23,7 @@ supplier is located.
 ```{r}
 #| label: medicare-ranges
 #| echo: false
+#| message: false
 ccn::medicare_ranges |>
   collapse::slt(-start, -end) |> 
   collapse::fgroup_by(abbr, desc) |> 
