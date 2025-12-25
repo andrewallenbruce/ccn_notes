@@ -34,6 +34,8 @@ book:
       chapters:
         - unit.qmd
         - subunit.qmd
+  appendices:
+    - resources.qmd
 
 format:
   html:

@@ -1,5 +1,15 @@
 ---
-title: "subunit"
-format: html
+output: html_document
+editor_options: 
+  chunk_output_type: console
 ---
+# Subunits
 
+```{r setup}
+#| message: false
+#| warning: false
+#| echo: false
+#| cache: false
+#| comment: ""
+library(ccn)
+```

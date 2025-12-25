@@ -1,5 +1,17 @@
 ---
-title: "clia"
-format: html
+output: html_document
+editor_options: 
+  chunk_output_type: console
 ---
+
+# CLIAs
+
+```{r setup}
+#| message: false
+#| warning: false
+#| echo: false
+#| cache: false
+#| comment: ""
+library(ccn)
+```
 

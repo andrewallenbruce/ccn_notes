@@ -1,5 +1,19 @@
 ---
-title: "eipps"
-format: html
+output: html_document
+editor_options: 
+  chunk_output_type: console
 ---
+
+# IPPS-Excluded & Swing-Bed Approval
+
+```{r setup}
+#| message: false
+#| warning: false
+#| echo: false
+#| cache: false
+#| comment: ""
+library(ccn)
+```
+
+> Special Numbering System for Units of Hospitals That Are Excluded From the Inpatient Prospective Payment System (IPPS) and Hospitals and CAHs with Swing-Bed Approval
 

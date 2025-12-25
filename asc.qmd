@@ -1,5 +1,21 @@
 ---
-title: "asc"
-format: html
+output: html_document
+editor_options: 
+  chunk_output_type: console
 ---
 
+# ASCs
+
+```{r setup}
+#| message: false
+#| warning: false
+#| echo: false
+#| cache: false
+#| comment: ""
+library(ccn)
+```
+
+
+```{r}
+ccn:::get_pin("asc")
+```

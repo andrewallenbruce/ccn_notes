@@ -14,12 +14,18 @@ editor_options:
 library(ccn)
 ```
 
+Title XIX-only providers are identified by a 6-position alphanumeric CCN.
+Positions one and two identify the state in which the provider is located.
+Position three, an alpha character, identifies the type of facility, by either
+level or type of care being provided. Positions four, five and six represent a
+sequence beginning with `001`.
+
 ## Facility Types
 
-The last three characters of a Medicaid-Only Provider CCN represent the facility type and a unique
-identifier. The facility type is encoded in the third character of the last four
-characters. The table below summarizes the valid facility type codes and their
-corresponding ranges. 
+The third character of a Medicaid-Only Provider CCN represents the facility
+type and a unique identifier. The facility type is encoded in the third
+character of the last four characters. The table below summarizes the valid
+facility type codes and their corresponding ranges.
 
 ```{r}
 #| label: medicaid-types
@@ -71,3 +77,4 @@ ccn::medicaid_ranges |>
     style = gt::cell_text(color = "grey50", size = "small"), 
     locations = gt::cells_body(columns = desc))
 ```
+
