@@ -11,3 +11,4 @@ editor_options:
   - [ResDAC 2](https://resdac.org/cms-data/variables/provider-number)
   - [The Joint Commission](https://manual.jointcommission.org/releases/TJC2025A/DataElem0276.html)
   - [QCOR](https://qcor.cms.gov/main.jsp)
+  - [Policy & Memos to State and CMS Locations](https://www.cms.gov/medicare/health-safety-standards/quality-safety-oversight-general-information/policy-memos/policy-memos-states-regions)

@@ -56,7 +56,66 @@ ccn::medicare_ranges |>
 ## Examples
 
 ```{r}
-ccn:::get_pin("esrd") |> 
-  collapse::descr()
+esrd <- ccn:::get_pin("esrd")$ccn
+
+esrd <- purrr::map(esrd, ccn::data_frame) |> 
+  data.table::rbindlist()
+
+esrd |> collapse::fcount(type, range)
 ```
 
+## Details
+
+   1. __Hospital-Based Renal Dialysis Facilities, [2300, 2499]__: 
+   The physical location of an ESRD facility on the premises of a
+   hospital is not considered when determining if the ESRD facility is
+   hospital-based. Hospital corporate control is a critical factor in
+   determining whether an ESRD facility is hospital-based. Hospitals may have a
+   lease arrangement for the management of a hospital-based ESRD facility by a
+   non-hospital manager. This CCN range is used for ESRD facilities that have 
+   been determined by the CMS to be hospital-owned, hospital-administered ESRD 
+   facilities physically located on the hospital's premises as opposed to 
+   independent ESRD facilities and Hospital-Based Renal Disease Satellite 
+   Facilities. The satellites are hospital-based, but are physically located 
+   off the hospital’s premises.
+   
+   2. __Hospital-Based Renal Dialysis Satellite Facilities, [3500, 3699]__: 
+   This CCN range is used for those ESRD facilities that are hospital-owned and 
+   hospital-administered, but that are not located on the hospital’s premises. 
+   This is why they are referred to as hospital-based satellites. In determining 
+   whether such a satellite facility is hospital-based, use the same criteria as 
+   you would in making a hospital-based determination under the 2300-2499 series, 
+   except that you would assign a 3500-3699 number to such a facility because it 
+   is off the premises of the hospital to which it is based. The word premises 
+   per _se_ is not defined in the statute, regulations, or SOM[^State Operations Manual], 
+   but there is a definition of "furnishes on the premises" that states "the 
+   ESRD facility furnishes services on its main premises; or its other premises 
+   that are: 
+   
+      a. Contiguous with or in immediate proximity to the main premises, and 
+      under the direction of the same professional staff and governing body as 
+      the main premises, or 
+      b. Approved on a time-limited basis as a special purpose renal dialysis facility."
+   
+   Thus, in addition to the regulations, which should assist you in determining 
+   whether the facility is an integral part of the hospital, you may use the 
+   "furnishes on the premises" definition to distinguish between a hospital-based 
+   entity under the 2300-2499 series as opposed to an entity under the 3500-3699 
+   number series. Also, we do not believe that these satellites will be furnishing 
+   inpatient dialysis services. The CMS will make or approve the determination that 
+   a particular ESRD facility meets the requirements to be hospital-based, and if 
+   it is off the hospital’s premises, a hospital- based satellite. It is 
+   conceivable that a hospital-based ESRD facility could have a 2300-2499 number 
+   assigned to the location on the hospital’s premises, and one or more 3500-3699 
+   numbers for those locations (satellites) off the premises (each satellite is 
+   given a separate 3500- 3699 number). If an ESRD facility that is assigned a 
+   2300-2499 number moves off the hospital’s premises and is determined to be a 
+   satellite, it should receive a number in the 3500-3699 series. However, if a
+   satellite changes its address but is still considered off the hospital’s
+   premises, it should retain the 3500-3699 number it was originally issued rather
+   than being issued a new 3500-3699 number. Any questions concerning billing
+   should be referred to the RO financial component or the fiscal intermediary as
+   you determine appropriate. 
+   
+NOTE: In determining whether an entity is hospital-based for reimbursement 
+purposes, the requirements at §2287 must be met.
