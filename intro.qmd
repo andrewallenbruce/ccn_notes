@@ -18,9 +18,9 @@ library(ccn)
 A __CMS Certification Number__ is a uniform way of identifying a healthcare
 provider or supplier that has or currently does participate in the Medicare and/or Medicaid programs.
 
-The CCN is used to track provider agreements and cost reports. The NPI^[National
-Provider Identifier] and PTAN^[Provider Transaction Account Number] are
-tied to an entity's CCN. The RO^[CMS Regional Office], not the SA^[State Agency] or MAC^[Medicare Administrative Contractor], assigns the CCN and maintains adequate controls.
+The __CCN__ is used to track provider agreements and cost reports. The __NPI__^[National
+Provider Identifier] and __PTAN__^[Provider Transaction Account Number] are
+tied to an entity's CCN. The __RO__^[CMS Regional Office], not the __SA__^[State Agency] or __MAC__^[Medicare Administrative Contractor], assigns the CCN and maintains adequate controls.
 
 ::: {#tip-ccn .callout-tip}
 

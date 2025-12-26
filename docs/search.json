@@ -157,6 +157,16 @@
     ]
   },
   {
+    "objectID": "eipps.html",
+    "href": "eipps.html",
+    "title": "IPPS-Excluded & Swing-Bed Approval",
+    "section": "",
+    "text": "Special Numbering System for Units of Hospitals That Are Excluded From the Inpatient Prospective Payment System (IPPS) and Hospitals and CAHs with Swing-Bed Approval",
+    "crumbs": [
+      "IPPS-Excluded & Swing-Bed Approval"
+    ]
+  },
+  {
     "objectID": "supplier.html",
     "href": "supplier.html",
     "title": "Suppliers",
@@ -169,22 +179,12 @@
   {
     "objectID": "asc.html",
     "href": "asc.html",
-    "title": "\n11  ASCs\n",
+    "title": "\n13  ASCs\n",
     "section": "",
     "text": "ccn:::get_pin(\"asc\")\n\n# A tibble: 5,536 × 3\n   ccn        state facility_name                                 \n   &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;                                         \n 1 05C0001831 CA    THE SURGERY CENTER AT NORTHBAY VACA VALLEY    \n 2 05C0001873 CA    CARLSBAD SURGERY CENTER LLC                   \n 3 14C0001134 IL    MIDWEST ENDOSCOPY CENTER LLC                  \n 4 19C0001115 LA    ADVANCED SURGICAL CARE OF BATON ROUGE LLC     \n 5 19C0001088 LA    ENDO CENTER LLC                               \n 6 36C0001248 OH    WASC LLC DBA WOOSTER AMBULATORY SURGERY CENTER\n 7 36C0001267 OH    NEW ALBANY SURGERY CENTER LLC                 \n 8 26C0001033 MO    CITY PL SURGERY CENTER                        \n 9 31C0001270 NJ    NORTHERN NJ ENDOSCOPY CENTER LLC              \n10 46C0001039 UT    MOUNTAIN WEST SURGERY CENTER LLC              \n# ℹ 5,526 more rows",
     "crumbs": [
       "Suppliers",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>ASCs</span>"
-    ]
-  },
-  {
-    "objectID": "eipps.html",
-    "href": "eipps.html",
-    "title": "IPPS-Excluded & Swing-Bed Approval",
-    "section": "",
-    "text": "Special Numbering System for Units of Hospitals That Are Excluded From the Inpatient Prospective Payment System (IPPS) and Hospitals and CAHs with Swing-Bed Approval",
-    "crumbs": [
-      "IPPS-Excluded & Swing-Bed Approval"
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>ASCs</span>"
     ]
   },
   {

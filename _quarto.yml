@@ -27,15 +27,15 @@ book:
         - nf.qmd
         - icf.qmd
         - moh.qmd
+    - part: eipps.qmd
+      chapters:
+        - unit.qmd
+        - subunit.qmd
     - part: supplier.qmd
       chapters:
         - asc.qmd
         - clia.qmd
         - pxrf.qmd
-    - part: eipps.qmd
-      chapters:
-        - unit.qmd
-        - subunit.qmd
   appendices:
     - resources.qmd
 
