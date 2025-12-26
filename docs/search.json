@@ -20,16 +20,6 @@
     ]
   },
   {
-    "objectID": "intro.html#cms-state-codes",
-    "href": "intro.html#cms-state-codes",
-    "title": "\n1  Introduction\n",
-    "section": "\n1.2 CMS State Codes",
-    "text": "1.2 CMS State Codes\nThe first two characters of the CCN represent the state in which the provider or supplier is located.\n\n\n\n\n\n\nabbr\n      name\n      code\n    \n\n\nAK\nAlaska\n02\n\n\nAL\nAlabama\n01\n\n\nAR\nArkansas\n04, 89\n\n\nAS\nAmerican Samoa\n64\n\n\nAZ\nArizona\n00, 03\n\n\nCA\nCalifornia\n05, 55, 75, 92, A0, A1, B2\n\n\nCN\nCanada\n56\n\n\nCO\nColorado\n06, 91\n\n\nCT\nConnecticut\n07, 81\n\n\nDC\nDistrict of Columbia\n09\n\n\nDE\nDelaware\n08\n\n\nFC\nForeign Country\n99\n\n\nFL\nFlorida\n10, 68, 69, A2\n\n\nGA\nGeorgia\n11, 85\n\n\nGU\nGuam\n65\n\n\nHI\nHawaii\n12\n\n\nIA\nIowa\n16, 76\n\n\nID\nIdaho\n13, 54\n\n\nIL\nIllinois\n14, 78\n\n\nIN\nIndiana\n15\n\n\nKS\nKansas\n17, 70\n\n\nKY\nKentucky\n18, B0\n\n\nLA\nLouisiana\n19, 71, 95, A3\n\n\nMA\nMassachusetts\n22, 82\n\n\nMD\nMaryland\n21, 80\n\n\nME\nMaine\n20\n\n\nMI\nMichigan\n23, A4\n\n\nMN\nMinnesota\n24, 77\n\n\nMO\nMissouri\n26, 79\n\n\nMP\nN. Marianas Islands\n66\n\n\nMS\nMississippi\n25, A5\n\n\nMT\nMontana\n27\n\n\nMX\nMexico\n59\n\n\nNC\nNorth Carolina\n34, 86\n\n\nND\nNorth Dakota\n35\n\n\nNE\nNebraska\n28\n\n\nNH\nNew Hampshire\n30\n\n\nNJ\nNew Jersey\n31, 83\n\n\nNM\nNew Mexico\n32, 96\n\n\nNV\nNevada\n29\n\n\nNY\nNew York\n33, 57\n\n\nOH\nOhio\n36, 72, A6\n\n\nOK\nOklahoma\n37, 90\n\n\nOR\nOregon\n38, 93\n\n\nPA\nPennsylvania\n39, 73, A7\n\n\nPR\nPuerto Rico\n40, 84\n\n\nRI\nRhode Island\n41\n\n\nSC\nSouth Carolina\n42, 87\n\n\nSD\nSouth Dakota\n43\n\n\nTN\nTennessee\n44, 88, A8\n\n\nTX\nTexas\n45, 67, 74, 97, A9\n\n\nUT\nUtah\n46\n\n\nVA\nVirginia\n49\n\n\nVI\nVirgin Islands\n48\n\n\nVT\nVermont\n47\n\n\nWA\nWashington\n50, 94\n\n\nWI\nWisconsin\n52\n\n\nWV\nWest Virginia\n51, 58, B1\n\n\nWY\nWyoming\n53\n\n\n\n\n\n\n\n1.2.1 CMS Regional Offices\n\n\n\n\n\n\nregion\n      office\n      state\n    \n\n\nI\nBoston\nCT, MA, ME, NH, RI, VT\n\n\nII\nNew York\nNJ, NY, PR, VI\n\n\nIII\nPhiladelphia\nDC, DE, MD, PA, VA, WV\n\n\nIV\nAtlanta\nAL, FL, GA, KY, MS, NC, SC, TN\n\n\nIX\nSan Francisco\nAS, AZ, CA, GU, HI, MP, NV\n\n\nV\nChicago\nIL, IN, MI, MN, OH, WI\n\n\nVI\nDallas\nAR, LA, NM, OK, TX\n\n\nVII\nKansas City\nIA, KS, MO, NE\n\n\nVIII\nDenver\nCO, MT, ND, SD, UT, WY\n\n\nX\nSeattle\nAK, ID, OR, WA\n\n\nNA\nNA\nCN, FC, MX",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
-    ]
-  },
-  {
     "objectID": "intro.html#footnotes",
     "href": "intro.html#footnotes",
     "title": "\n1  Introduction\n",
@@ -37,6 +27,26 @@
     "text": "National Provider Identifier↩︎\nProvider Transaction Account Number↩︎\nCMS Regional Office↩︎\nState Agency↩︎\nMedicare Administrative Contractor↩︎\nOnline Survey, Certification, and Reporting System.↩︎",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "location.html",
+    "href": "location.html",
+    "title": "\n2  Location\n",
+    "section": "",
+    "text": "2.1 CMS State Codes\nThe first two characters of each CCN represents the state in which the provider or supplier is located.\nabbr\n      name\n      code\n    \n\n\nAK\nAlaska\n02\n\n\nAL\nAlabama\n01\n\n\nAR\nArkansas\n04, 89\n\n\nAS\nAmerican Samoa\n64\n\n\nAZ\nArizona\n00, 03\n\n\nCA\nCalifornia\n05, 55, 75, 92, A0, A1, B2\n\n\nCN\nCanada\n56\n\n\nCO\nColorado\n06, 91\n\n\nCT\nConnecticut\n07, 81\n\n\nDC\nDistrict of Columbia\n09\n\n\nDE\nDelaware\n08\n\n\nFC\nForeign Country\n99\n\n\nFL\nFlorida\n10, 68, 69, A2\n\n\nGA\nGeorgia\n11, 85\n\n\nGU\nGuam\n65\n\n\nHI\nHawaii\n12\n\n\nIA\nIowa\n16, 76\n\n\nID\nIdaho\n13, 54\n\n\nIL\nIllinois\n14, 78\n\n\nIN\nIndiana\n15\n\n\nKS\nKansas\n17, 70\n\n\nKY\nKentucky\n18, B0\n\n\nLA\nLouisiana\n19, 71, 95, A3\n\n\nMA\nMassachusetts\n22, 82\n\n\nMD\nMaryland\n21, 80\n\n\nME\nMaine\n20\n\n\nMI\nMichigan\n23, A4\n\n\nMN\nMinnesota\n24, 77\n\n\nMO\nMissouri\n26, 79\n\n\nMP\nN. Marianas Islands\n66\n\n\nMS\nMississippi\n25, A5\n\n\nMT\nMontana\n27\n\n\nMX\nMexico\n59\n\n\nNC\nNorth Carolina\n34, 86\n\n\nND\nNorth Dakota\n35\n\n\nNE\nNebraska\n28\n\n\nNH\nNew Hampshire\n30\n\n\nNJ\nNew Jersey\n31, 83\n\n\nNM\nNew Mexico\n32, 96\n\n\nNV\nNevada\n29\n\n\nNY\nNew York\n33, 57\n\n\nOH\nOhio\n36, 72, A6\n\n\nOK\nOklahoma\n37, 90\n\n\nOR\nOregon\n38, 93\n\n\nPA\nPennsylvania\n39, 73, A7\n\n\nPR\nPuerto Rico\n40, 84\n\n\nRI\nRhode Island\n41\n\n\nSC\nSouth Carolina\n42, 87\n\n\nSD\nSouth Dakota\n43\n\n\nTN\nTennessee\n44, 88, A8\n\n\nTX\nTexas\n45, 67, 74, 97, A9\n\n\nUT\nUtah\n46\n\n\nVA\nVirginia\n49\n\n\nVI\nVirgin Islands\n48\n\n\nVT\nVermont\n47\n\n\nWA\nWashington\n50, 94\n\n\nWI\nWisconsin\n52\n\n\nWV\nWest Virginia\n51, 58, B1\n\n\nWY\nWyoming\n53",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Location</span>"
+    ]
+  },
+  {
+    "objectID": "location.html#cms-state-codes",
+    "href": "location.html#cms-state-codes",
+    "title": "\n2  Location\n",
+    "section": "",
+    "text": "2.1.1 CMS Regional Offices\n\n\n\n\n\n\nregion\n      office\n      state\n    \n\n\nI\nBoston\nCT, MA, ME, NH, RI, VT\n\n\nII\nNew York\nNJ, NY, PR, VI\n\n\nIII\nPhiladelphia\nDC, DE, MD, PA, VA, WV\n\n\nIV\nAtlanta\nAL, FL, GA, KY, MS, NC, SC, TN\n\n\nIX\nSan Francisco\nAS, AZ, CA, GU, HI, MP, NV\n\n\nV\nChicago\nIL, IN, MI, MN, OH, WI\n\n\nVI\nDallas\nAR, LA, NM, OK, TX\n\n\nVII\nKansas City\nIA, KS, MO, NE\n\n\nVIII\nDenver\nCO, MT, ND, SD, UT, WY\n\n\nX\nSeattle\nAK, ID, OR, WA\n\n\nNA\nNA\nCN, FC, MX",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Location</span>"
     ]
   },
   {
@@ -52,45 +62,56 @@
   {
     "objectID": "opo.html",
     "href": "opo.html",
-    "title": "\n2  OPOs\n",
+    "title": "\n3  OPOs\n",
     "section": "",
     "text": "Organ procurement organizations (OPOs) are assigned a 6-digit alphanumeric CCN. The first 2 digits identify the State code. The third digit is the alpha character P. The remaining 3 digits are the unique facility identifier.\n\norgan(\"05P001\")\n\n&lt;ccn::Organ&gt;\n @ ccn  : chr \"05P001\"\n @ state: &lt;ccn::State&gt;\n .. @ abbr  : chr \"CA\"\n .. @ name  : chr \"California\"\n .. @ region: chr \"IX\"\n .. @ office: chr \"San Francisco\"\n @ range: chr \"001-099\"\n @ type : &lt;ccn::Type&gt;\n .. @ abbr: chr \"OPO\"\n .. @ desc: chr \"Organ Procurement Organization\"",
     "crumbs": [
       "Providers",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>OPOs</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>OPOs</span>"
     ]
   },
   {
     "objectID": "erh.html",
     "href": "erh.html",
-    "title": "\n3  Emergency Hospitals\n",
+    "title": "\n4  Emergency Hospitals\n",
     "section": "",
-    "text": "3.1 Example\nCCNs assigned to Emergency Hospitals (both Federal and non-Federal) that do not participate in the Medicare program.\nEmergency hospitals are identified by a 6-position alphanumeric CCN. Positions one and two identify the state in which the hospital is located. Position six, an alpha character, identifies whether the hospital is Federal (F) or non-Federal (E). Positions three, four and five represent a sequence beginning with 001. This sequence identifies the order, by state, in which the CCN was issued.\nFor example, the CCN of the 34th emergency hospital in Maryland would be 21034E. The Regional Office assigns the CCN in strict numerical sequence without regard to the Federal or non-Federal status.\nparse(\"21034E\")\n\n&lt;parsed:emergency&gt;\n\n\n     ccn: 21034E\n   state: 21\nsequence: 034\n    type: E\n\ndecode(\"12345F\")\n\n&lt;ccn::Emergency&gt;\n @ ccn  : chr \"12345F\"\n @ state: &lt;ccn::State&gt;\n .. @ abbr  : chr \"HI\"\n .. @ name  : chr \"Hawaii\"\n .. @ region: chr \"IX\"\n .. @ office: chr \"San Francisco\"\n @ range: chr \"001-999\"\n @ type : &lt;ccn::Type&gt;\n .. @ abbr: chr \"F\"\n .. @ desc: chr \"Federal\"\n\ndata_frame(\"11038F\") # USAF Hospital (Moody)\n\n     ccn             entity        state       region   range eipps        type\n1 11038F Emergency Hospital GA (Georgia) IV (Atlanta) 001-999    NA F (Federal)\n  parent  ext\n1   &lt;NA&gt; &lt;NA&gt;",
+    "text": "4.1 Example\nCCNs assigned to Emergency Hospitals (both Federal and non-Federal) that do not participate in the Medicare program.\nEmergency hospitals are identified by a 6-position alphanumeric CCN. Positions one and two identify the state in which the hospital is located. Position six, an alpha character, identifies whether the hospital is Federal (F) or non-Federal (E). Positions three, four and five represent a sequence beginning with 001. This sequence identifies the order, by state, in which the CCN was issued.\nFor example, the CCN of the 34th emergency hospital in Maryland would be 21034E. The Regional Office assigns the CCN in strict numerical sequence without regard to the Federal or non-Federal status.\nparse(\"21034E\")\n\n&lt;parsed:emergency&gt;\n\n\n     ccn: 21034E\n   state: 21\nsequence: 034\n    type: E\n\ndecode(\"12345F\")\n\n&lt;ccn::Emergency&gt;\n @ ccn  : chr \"12345F\"\n @ state: &lt;ccn::State&gt;\n .. @ abbr  : chr \"HI\"\n .. @ name  : chr \"Hawaii\"\n .. @ region: chr \"IX\"\n .. @ office: chr \"San Francisco\"\n @ range: chr \"001-999\"\n @ type : &lt;ccn::Type&gt;\n .. @ abbr: chr \"F\"\n .. @ desc: chr \"Federal\"\n\ndata_frame(\"11038F\") # USAF Hospital (Moody)\n\n     ccn             entity        state       region   range eipps        type\n1 11038F Emergency Hospital GA (Georgia) IV (Atlanta) 001-999    NA F (Federal)\n  parent  ext\n1   &lt;NA&gt; &lt;NA&gt;",
     "crumbs": [
       "Providers",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Emergency Hospitals</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Emergency Hospitals</span>"
     ]
   },
   {
     "objectID": "esrd.html",
     "href": "esrd.html",
-    "title": "\n5  ESRDs\n",
+    "title": "\n6  ESRDs\n",
     "section": "",
-    "text": "5.1 Facility Ranges\nThe last four characters of a Provider CCN represent the facility type and a unique identifier. The facility type is encoded in the third character of the last four characters. The table below summarizes the valid facility type codes and their corresponding ranges.\nrange\n      abbr\n      desc\n    \n\n\n0001-0879\nSTC\nShort-Term Hospital (General & Specialty)\n\n\n2000-2299\nLTCH\nLong-Term Care Hospital\n\n\n2300-2499\nESRD\nHospital-based Renal Dialysis Facility\n\n\n2500-2899\nESRD\nIndependent Renal Dialysis Facility\n\n\n2900-2999\nESRD\nIndependent Special Purpose Renal Dialysis Facility\n\n\n3300-3399\nCH\nChildren's Hospital\n\n\n3500-3699\nESRD\nHospital-based Satellite Renal Dialysis Facility\n\n\n3700-3799\nESRD\nHospital-based Special Purpose Renal Dialysis Facility",
+    "text": "6.1 Facility Ranges\nThe last four characters of a Provider CCN represent the facility type and a unique identifier. The facility type is encoded in the third character of the last four characters. The table below summarizes the valid facility type codes and their corresponding ranges.\nrange\n      abbr\n      desc\n    \n\n\n0001-0879\nSTC\nShort-Term Hospital (General & Specialty)\n\n\n2000-2299\nLTCH\nLong-Term Care Hospital\n\n\n2300-2499\nESRD\nHospital-based Renal Dialysis Facility\n\n\n2500-2899\nESRD\nIndependent Renal Dialysis Facility\n\n\n2900-2999\nESRD\nIndependent Special Purpose Renal Dialysis Facility\n\n\n3300-3399\nCH\nChildren's Hospital\n\n\n3500-3699\nESRD\nHospital-based Satellite Renal Dialysis Facility\n\n\n3700-3799\nESRD\nHospital-based Special Purpose Renal Dialysis Facility",
     "crumbs": [
       "Providers",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>ESRDs</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>ESRDs</span>"
     ]
   },
   {
     "objectID": "esrd.html#examples",
     "href": "esrd.html#examples",
-    "title": "\n5  ESRDs\n",
-    "section": "\n5.2 Examples",
-    "text": "5.2 Examples\n\nccn:::get_pin(\"esrd\") |&gt; \n  collapse::descr()\n\nDataset: esrd, 8 Variables, N = 7561\n--------------------------------------------------------------------------------\nccn (character): \nStatistics\n     N  Ndist\n  7561   7561\nTable\n                 Freq   Perc\n012306              1   0.01\n012500              1   0.01\n012501              1   0.01\n012502              1   0.01\n012505              1   0.01\n012506              1   0.01\n012507              1   0.01\n012508              1   0.01\n012512              1   0.01\n012513              1   0.01\n012515              1   0.01\n012516              1   0.01\n012517              1   0.01\n012519              1   0.01\n... 7547 Others  7547  99.81\n\nSummary of Table Frequencies\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n      1       1       1       1       1       1 \n--------------------------------------------------------------------------------\nstate (character): \nStatistics\n     N  Ndist\n  7561     56\nTable\n               Freq   Perc\nTX              746   9.87\nCA              738   9.76\nFL              536   7.09\nGA              359   4.75\nNY              348   4.60\nIL              338   4.47\nOH              315   4.17\nPA              308   4.07\nNC              252   3.33\nMI              223   2.95\nVA              209   2.76\nTN              194   2.57\nNJ              190   2.51\nAL              178   2.35\n... 42 Others  2627  34.74\n\nSummary of Table Frequencies\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n      2      27      76     135     174     746 \n--------------------------------------------------------------------------------\nfacility_name (character): \nStatistics\n     N  Ndist\n  7561   7550\nTable\n                                    Freq   Perc\nDaVita Fayetteville Dialysis           2   0.03\nHOPE DIALYSIS CENTER                   2   0.03\nSatellite Dialysis                     2   0.03\nDaVita Brighton Dialysis               2   0.03\nDaVita Columbus Dialysis               2   0.03\nWAYNESBORO DIALYSIS                    2   0.03\nDaVita Garden City Dialysis Center     2   0.03\nDaVita Memorial Dialysis Center        2   0.03\nDaVita Walker Dialysis                 2   0.03\nDaVita Midland Dialysis                2   0.03\nFRESENIUS MEDICAL CARE BRAZOS          2   0.03\nCHILDRENS HOSPITAL DIALYSIS            1   0.01\nFMC CAPITOL CITY                       1   0.01\nDaVita Gadsden Dialysis                1   0.01\n... 7536 Others                     7536  99.67\n\nSummary of Table Frequencies\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n      1       1       1       1       1       2 \n--------------------------------------------------------------------------------\nchain (character): \nStatistics\n     N  Ndist\n  7561     32\nTable\n                           Freq   Perc\nDaVita                     2798  37.01\nFresenius Medical Care     2767  36.60\nIndependent                 749   9.91\nUS Renal Care, Inc.         370   4.89\nDialysis Clinic, Inc.       240   3.17\nAmerican Renal Associates   223   2.95\nOther                        97   1.28\nSatellite Healthcare         72   0.95\nKaiser Permanente            22   0.29\nState Owned                  19   0.25\nWake Forest University       19   0.25\nNorthwest Kidney Centers     19   0.25\nCenters for Dialysis Care    18   0.24\nAtlantis Healthcare Group    17   0.22\n... 18 Others               131   1.73\n\nSummary of Table Frequencies\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n    1.0     5.8    13.5   236.3    34.5  2798.0 \n--------------------------------------------------------------------------------\nprofit (character): \nStatistics\n     N  Ndist\n  7561      2\nTable\n   Freq  Perc\nP  6775  89.6\nN   786  10.4\n--------------------------------------------------------------------------------\noffice (integer): \nStatistics\n     N  Ndist  Mean    SD  Min  Max   Skew   Kurt\n  7561      2  0.93  0.25    0    1  -3.44  12.84\nQuantiles\n  1%  5%  10%  25%  50%  75%  90%  95%  99%\n   0   0    1    1    1    1    1    1    1\n--------------------------------------------------------------------------------\nperi (integer): \nStatistics\n     N  Ndist  Mean   SD  Min  Max   Skew  Kurt\n  7561      2  0.54  0.5    0    1  -0.16  1.02\nQuantiles\n  1%  5%  10%  25%  50%  75%  90%  95%  99%\n   0   0    0    0    1    1    1    1    1\n--------------------------------------------------------------------------------\nhome (integer): \nStatistics\n     N  Ndist  Mean    SD  Min  Max  Skew  Kurt\n  7561      2  0.32  0.46    0    1   0.8  1.63\nQuantiles\n  1%  5%  10%  25%  50%  75%  90%  95%  99%\n   0   0    0    0    0    1    1    1    1\n--------------------------------------------------------------------------------",
+    "title": "\n6  ESRDs\n",
+    "section": "\n6.2 Examples",
+    "text": "6.2 Examples\n\nesrd &lt;- ccn:::get_pin(\"esrd\")$ccn\n\nesrd &lt;- purrr::map(esrd, ccn::data_frame) |&gt; \n  data.table::rbindlist()\n\nesrd |&gt; collapse::fcount(type, range)\n\n                                                            type     range\n                                                          &lt;char&gt;    &lt;char&gt;\n1:                 ESRD (Hospital-based Renal Dialysis Facility) 2300-2499\n2:                    ESRD (Independent Renal Dialysis Facility) 2500-2899\n3:       ESRD (Hospital-based Satellite Renal Dialysis Facility) 3500-3699\n4:    ESRD (Independent Special Purpose Renal Dialysis Facility) 2900-2999\n5: ESRD (Hospital-based Special Purpose Renal Dialysis Facility) 3700-3799\n       N\n   &lt;int&gt;\n1:   214\n2:  7206\n3:   139\n4:     1\n5:     1",
     "crumbs": [
       "Providers",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>ESRDs</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>ESRDs</span>"
+    ]
+  },
+  {
+    "objectID": "esrd.html#details",
+    "href": "esrd.html#details",
+    "title": "\n6  ESRDs\n",
+    "section": "\n6.3 Details",
+    "text": "6.3 Details\n\nHospital-Based Renal Dialysis Facilities, [2300, 2499]: The physical location of an ESRD facility on the premises of a hospital is not considered when determining if the ESRD facility is hospital-based. Hospital corporate control is a critical factor in determining whether an ESRD facility is hospital-based. Hospitals may have a lease arrangement for the management of a hospital-based ESRD facility by a non-hospital manager. This CCN range is used for ESRD facilities that have been determined by the CMS to be hospital-owned, hospital-administered ESRD facilities physically located on the hospital’s premises as opposed to independent ESRD facilities and Hospital-Based Renal Disease Satellite Facilities. The satellites are hospital-based, but are physically located off the hospital’s premises.\n\nHospital-Based Renal Dialysis Satellite Facilities, [3500, 3699]: This CCN range is used for those ESRD facilities that are hospital-owned and hospital-administered, but that are not located on the hospital’s premises. This is why they are referred to as hospital-based satellites. In determining whether such a satellite facility is hospital-based, use the same criteria as you would in making a hospital-based determination under the 2300-2499 series, except that you would assign a 3500-3699 number to such a facility because it is off the premises of the hospital to which it is based. The word premises per se is not defined in the statute, regulations, or SOM[^State Operations Manual], but there is a definition of “furnishes on the premises” that states “the ESRD facility furnishes services on its main premises; or its other premises that are:\n\nContiguous with or in immediate proximity to the main premises, and under the direction of the same professional staff and governing body as the main premises, or\nApproved on a time-limited basis as a special purpose renal dialysis facility.”\n\n\n\nThus, in addition to the regulations, which should assist you in determining whether the facility is an integral part of the hospital, you may use the “furnishes on the premises” definition to distinguish between a hospital-based entity under the 2300-2499 series as opposed to an entity under the 3500-3699 number series. Also, we do not believe that these satellites will be furnishing inpatient dialysis services. The CMS will make or approve the determination that a particular ESRD facility meets the requirements to be hospital-based, and if it is off the hospital’s premises, a hospital- based satellite. It is conceivable that a hospital-based ESRD facility could have a 2300-2499 number assigned to the location on the hospital’s premises, and one or more 3500-3699 numbers for those locations (satellites) off the premises (each satellite is given a separate 3500- 3699 number). If an ESRD facility that is assigned a 2300-2499 number moves off the hospital’s premises and is determined to be a satellite, it should receive a number in the 3500-3699 series. However, if a satellite changes its address but is still considered off the hospital’s premises, it should retain the 3500-3699 number it was originally issued rather than being issued a new 3500-3699 number. Any questions concerning billing should be referred to the RO financial component or the fiscal intermediary as you determine appropriate.\nNOTE: In determining whether an entity is hospital-based for reimbursement purposes, the requirements at §2287 must be met.",
+    "crumbs": [
+      "Providers",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>ESRDs</span>"
     ]
   },
   {
@@ -116,23 +137,23 @@
   {
     "objectID": "moh.html",
     "href": "moh.html",
-    "title": "\n9  Hospitals\n",
+    "title": "\n10  Hospitals\n",
     "section": "",
-    "text": "9.1 Hospital Ranges\nThe last three characters of a Medicaid-Only Hospital CCN represent the facility range. The facility type is encoded in the third character of the last four characters. The table below summarizes the valid facility type codes and their corresponding ranges.\nabbr\n      desc\n      range\n    \n\n\nSTC\nShort-Term Acute Care Hospital\n001-099\n\n\nCH\nChildren's Hospital\n100-199\n\n\nCPH\nChildren's Psychiatric Hospital\n200-299\n\n\nPH\nPsychiatric Hospital\n300-399\n\n\nIRF\nRehabilitation Hospital\n400-499\n\n\nLTCH\nLong-Term Hospital\n500-599\n\n\nRSVD\nReserved for Future Use\n600-999",
+    "text": "10.1 Hospital Ranges\nThe last three characters of a Medicaid-Only Hospital CCN represent the facility range. The facility type is encoded in the third character of the last four characters. The table below summarizes the valid facility type codes and their corresponding ranges.\nabbr\n      desc\n      range\n    \n\n\nSTC\nShort-Term Acute Care Hospital\n001-099\n\n\nCH\nChildren's Hospital\n100-199\n\n\nCPH\nChildren's Psychiatric Hospital\n200-299\n\n\nPH\nPsychiatric Hospital\n300-399\n\n\nIRF\nRehabilitation Hospital\n400-499\n\n\nLTCH\nLong-Term Hospital\n500-599\n\n\nRSVD\nReserved for Future Use\n600-999",
     "crumbs": [
       "Medicaid-Only Providers",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Hospitals</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Hospitals</span>"
     ]
   },
   {
     "objectID": "moh.html#examples",
     "href": "moh.html#examples",
-    "title": "\n9  Hospitals\n",
-    "section": "\n9.2 Examples",
-    "text": "9.2 Examples\n\nparse(\"01J008\")\n\n&lt;parsed:medicaid&gt;\n\n\n     ccn: 01J008\n   state: 01\n    type: J\nsequence: 008\n\ndecode(\"01J008\")\n\n&lt;ccn::Medicaid&gt;\n @ ccn  : chr \"01J008\"\n @ state: &lt;ccn::State&gt;\n .. @ abbr  : chr \"AL\"\n .. @ name  : chr \"Alabama\"\n .. @ region: chr \"IV\"\n .. @ office: chr \"Atlanta\"\n @ range: &lt;ccn::RangeMOH&gt;\n .. @ series: chr \"001-099\"\n .. @ abbr  : chr \"STC\"\n .. @ desc  : chr \"Short-Term Acute Care Hospital\"\n @ type : &lt;ccn::TypeMOF&gt;\n .. @ abbr: chr \"MOH\"\n .. @ desc: chr \"Medicaid-Only Hospital\"\n\npurrr::map(c(\"01J008\", \"A5J508\"), ccn::data_frame) |&gt; \n  collapse::rowbind(fill = TRUE)\n\n# A tibble: 2 × 9\n  ccn    entity        state            region    range eipps type  parent ext  \n  &lt;chr&gt;  &lt;chr&gt;         &lt;chr&gt;            &lt;chr&gt;     &lt;chr&gt; &lt;lgl&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;\n1 01J008 Medicaid-Only AL (Alabama)     IV (Atla… 001-… NA    STC … &lt;NA&gt;   &lt;NA&gt; \n2 A5J508 Medicaid-Only MS (Mississippi) IV (Atla… 500-… NA    LTCH… &lt;NA&gt;   &lt;NA&gt;",
+    "title": "\n10  Hospitals\n",
+    "section": "\n10.2 Examples",
+    "text": "10.2 Examples\n\nparse(\"01J008\")\n\n&lt;parsed:medicaid&gt;\n\n\n     ccn: 01J008\n   state: 01\n    type: J\nsequence: 008\n\ndecode(\"01J008\")\n\n&lt;ccn::Medicaid&gt;\n @ ccn  : chr \"01J008\"\n @ state: &lt;ccn::State&gt;\n .. @ abbr  : chr \"AL\"\n .. @ name  : chr \"Alabama\"\n .. @ region: chr \"IV\"\n .. @ office: chr \"Atlanta\"\n @ range: &lt;ccn::RangeMOH&gt;\n .. @ series: chr \"001-099\"\n .. @ abbr  : chr \"STC\"\n .. @ desc  : chr \"Short-Term Acute Care Hospital\"\n @ type : &lt;ccn::TypeMOF&gt;\n .. @ abbr: chr \"MOH\"\n .. @ desc: chr \"Medicaid-Only Hospital\"\n\npurrr::map(c(\"01J008\", \"A5J508\"), ccn::data_frame) |&gt; \n  collapse::rowbind(fill = TRUE)\n\n# A tibble: 2 × 9\n  ccn    entity        state            region    range eipps type  parent ext  \n  &lt;chr&gt;  &lt;chr&gt;         &lt;chr&gt;            &lt;chr&gt;     &lt;chr&gt; &lt;lgl&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;\n1 01J008 Medicaid-Only AL (Alabama)     IV (Atla… 001-… NA    STC … &lt;NA&gt;   &lt;NA&gt; \n2 A5J508 Medicaid-Only MS (Mississippi) IV (Atla… 500-… NA    LTCH… &lt;NA&gt;   &lt;NA&gt;",
     "crumbs": [
       "Medicaid-Only Providers",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Hospitals</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Hospitals</span>"
     ]
   },
   {
@@ -148,12 +169,12 @@
   {
     "objectID": "asc.html",
     "href": "asc.html",
-    "title": "\n10  ASCs\n",
+    "title": "\n11  ASCs\n",
     "section": "",
     "text": "ccn:::get_pin(\"asc\")\n\n# A tibble: 5,536 × 3\n   ccn        state facility_name                                 \n   &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;                                         \n 1 05C0001831 CA    THE SURGERY CENTER AT NORTHBAY VACA VALLEY    \n 2 05C0001873 CA    CARLSBAD SURGERY CENTER LLC                   \n 3 14C0001134 IL    MIDWEST ENDOSCOPY CENTER LLC                  \n 4 19C0001115 LA    ADVANCED SURGICAL CARE OF BATON ROUGE LLC     \n 5 19C0001088 LA    ENDO CENTER LLC                               \n 6 36C0001248 OH    WASC LLC DBA WOOSTER AMBULATORY SURGERY CENTER\n 7 36C0001267 OH    NEW ALBANY SURGERY CENTER LLC                 \n 8 26C0001033 MO    CITY PL SURGERY CENTER                        \n 9 31C0001270 NJ    NORTHERN NJ ENDOSCOPY CENTER LLC              \n10 46C0001039 UT    MOUNTAIN WEST SURGERY CENTER LLC              \n# ℹ 5,526 more rows",
     "crumbs": [
       "Suppliers",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>ASCs</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>ASCs</span>"
     ]
   },
   {
@@ -171,7 +192,7 @@
     "href": "resources.html",
     "title": "Appendix A — Resources",
     "section": "",
-    "text": "CMS Manual\nResDAC 1\nResDAC 2\nThe Joint Commission\nQCOR",
+    "text": "CMS Manual\nResDAC 1\nResDAC 2\nThe Joint Commission\nQCOR\nPolicy & Memos to State and CMS Locations",
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>A</span>  <span class='chapter-title'>Resources</span>"

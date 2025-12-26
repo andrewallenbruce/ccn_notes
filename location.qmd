@@ -1,0 +1,61 @@
+# Location
+
+```{r setup}
+#| message: false
+#| warning: false
+#| echo: false
+#| cache: false
+#| comment: ""
+library(ccn)
+```
+
+## CMS State Codes
+
+The first two characters of each CCN represents the state in which the provider or
+supplier is located. 
+
+```{r}
+#| label: ccn-states
+#| echo: false
+#| message: false
+ccn::states |>
+  collapse::fgroup_by(abbr, name) |>
+  collapse::fsummarise(code = toString(code)) |>
+  gt::gt() |>
+  gt::tab_options(quarto.disable_processing = TRUE) |>
+  gtExtras::gt_theme_nytimes() |>
+  gt::tab_style(
+    style = gt::cell_text(
+      font = gt::google_font(name = "JetBrains Mono"), color = "grey50", size = "small"
+    ),
+    locations = gt::cells_body(columns = code)
+  ) |>
+  gt::tab_style(
+    style = gt::cell_text(weight = "bold"),
+    locations = gt::cells_body(columns = abbr)
+  )
+```
+
+### CMS Regional Offices
+
+```{r}
+#| label: ccn-regions
+#| echo: false
+#| message: false
+ccn::regions |>
+  collapse::fgroup_by(region, office) |>
+  collapse::fsummarise(state = toString(state)) |>
+  gt::gt() |>
+  gt::tab_options(quarto.disable_processing = TRUE) |>
+  gtExtras::gt_theme_nytimes() |>
+  gt::tab_style(
+    style = gt::cell_text(
+      font = gt::google_font(name = "JetBrains Mono"), color = "grey50", size = "small"
+    ),
+    locations = gt::cells_body(columns = state)
+  ) |>
+  gt::tab_style(
+    style = gt::cell_text(weight = "bold"),
+    locations = gt::cells_body(columns = region)
+  )
+```
