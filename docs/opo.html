@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.15">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="dcterms.date" content="2025-12-25">
+<meta name="dcterms.date" content="2026-01-26">
 <title>3&nbsp; OPOs – CMS Certification Numbers</title>
 <style>
 code{white-space: pre-wrap;}
@@ -312,7 +312,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 25, 2025</p>
+      <p class="date">January 26, 2026</p>
     </div>
   </div>
   
@@ -323,19 +323,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header><p>Organ procurement organizations (OPOs) are assigned a 6-digit alphanumeric CCN. The first 2 digits identify the State code. The third digit is the alpha character P. The remaining 3 digits are the unique facility identifier.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">organ</span><span class="op">(</span><span class="st">"05P001"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">organ</span><span class="op">(</span><span class="st">"05P001"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">data_frame</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;ccn::Organ&gt;
- @ ccn  : chr "05P001"
- @ state: &lt;ccn::State&gt;
- .. @ abbr  : chr "CA"
- .. @ name  : chr "California"
- .. @ region: chr "IX"
- .. @ office: chr "San Francisco"
- @ range: chr "001-099"
- @ type : &lt;ccn::Type&gt;
- .. @ abbr: chr "OPO"
- .. @ desc: chr "Organ Procurement Organization"</code></pre>
+<pre><code>Classes 'tbl_df', 'tbl' and 'data.frame':   1 obs. of  9 variables:
+ $ ccn   : chr "05P001"
+ $ entity: chr "Medicare"
+ $ state : chr "CA (California)"
+ $ region: chr "IX (SF)"
+ $ range : chr "001-099"
+ $ eipps : logi NA
+ $ type  : chr "OPO (Organ Procurement Organization)"
+ $ parent: chr NA
+ $ ext   : chr NA</code></pre>
 </div>
 </div>
 
@@ -826,8 +827,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: opo-example</span></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="fu">organ</span>(<span class="st">"05P001"</span>)</span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="fu">organ</span>(<span class="st">"05P001"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data_frame</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">str</span>()</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
