@@ -299,8 +299,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
 <li><a href="#facility-ranges" id="toc-facility-ranges" class="nav-link active" data-scroll-target="#facility-ranges"><span class="header-section-number">6.1</span> Facility Ranges</a></li>
-  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">6.2</span> Examples</a></li>
-  <li><a href="#details" id="toc-details" class="nav-link" data-scroll-target="#details"><span class="header-section-number">6.3</span> Details</a></li>
+  <li>
+<a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">6.2</span> Examples</a>
+  <ul class="collapse">
+<li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview"><span class="header-section-number">6.2.1</span> Overview</a></li>
+  </ul>
+</li>
+  <li><a href="#counts" id="toc-counts" class="nav-link" data-scroll-target="#counts"><span class="header-section-number">6.3</span> Counts</a></li>
+  <li><a href="#details" id="toc-details" class="nav-link" data-scroll-target="#details"><span class="header-section-number">6.4</span> Details</a></li>
   </ul></nav>
     </div>
 <!-- main -->
@@ -337,27 +343,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The last four characters of a Provider CCN represent the facility type and a unique identifier. The facility type is encoded in the third character of the last four characters. The table below summarizes the valid facility type codes and their corresponding ranges.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="eutrcvmmlv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="heeippbbst" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#eutrcvmmlv table {
+#heeippbbst table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#eutrcvmmlv thead, #eutrcvmmlv tbody, #eutrcvmmlv tfoot, #eutrcvmmlv tr, #eutrcvmmlv td, #eutrcvmmlv th {
+#heeippbbst thead, #heeippbbst tbody, #heeippbbst tfoot, #heeippbbst tr, #heeippbbst td, #heeippbbst th {
   border-style: none;
 }
 
-#eutrcvmmlv p {
+#heeippbbst p {
   margin: 0;
   padding: 0;
 }
 
-#eutrcvmmlv .gt_table {
+#heeippbbst .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -383,12 +389,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#eutrcvmmlv .gt_caption {
+#heeippbbst .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#eutrcvmmlv .gt_title {
+#heeippbbst .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -400,7 +406,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#eutrcvmmlv .gt_subtitle {
+#heeippbbst .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -412,7 +418,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#eutrcvmmlv .gt_heading {
+#heeippbbst .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -424,13 +430,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#eutrcvmmlv .gt_bottom_border {
+#heeippbbst .gt_bottom_border {
   border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#eutrcvmmlv .gt_col_headings {
+#heeippbbst .gt_col_headings {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -445,7 +451,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#eutrcvmmlv .gt_col_heading {
+#heeippbbst .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 12px;
@@ -465,7 +471,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#eutrcvmmlv .gt_column_spanner_outer {
+#heeippbbst .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 12px;
@@ -477,15 +483,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#eutrcvmmlv .gt_column_spanner_outer:first-child {
+#heeippbbst .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#eutrcvmmlv .gt_column_spanner_outer:last-child {
+#heeippbbst .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#eutrcvmmlv .gt_column_spanner {
+#heeippbbst .gt_column_spanner {
   border-bottom-style: none;
   border-bottom-width: 1px;
   border-bottom-color: #334422;
@@ -497,11 +503,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#eutrcvmmlv .gt_spanner_row {
+#heeippbbst .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#eutrcvmmlv .gt_group_heading {
+#heeippbbst .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -527,7 +533,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#eutrcvmmlv .gt_empty_group_heading {
+#heeippbbst .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -542,15 +548,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#eutrcvmmlv .gt_from_md > :first-child {
+#heeippbbst .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#eutrcvmmlv .gt_from_md > :last-child {
+#heeippbbst .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#eutrcvmmlv .gt_row {
+#heeippbbst .gt_row {
   padding-top: 7px;
   padding-bottom: 7px;
   padding-left: 5px;
@@ -569,7 +575,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#eutrcvmmlv .gt_stub {
+#heeippbbst .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -582,7 +588,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#eutrcvmmlv .gt_stub_row_group {
+#heeippbbst .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -596,15 +602,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#eutrcvmmlv .gt_row_group_first td {
+#heeippbbst .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#eutrcvmmlv .gt_row_group_first th {
+#heeippbbst .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#eutrcvmmlv .gt_summary_row {
+#heeippbbst .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -614,16 +620,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#eutrcvmmlv .gt_first_summary_row {
+#heeippbbst .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#eutrcvmmlv .gt_first_summary_row.thick {
+#heeippbbst .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#eutrcvmmlv .gt_last_summary_row {
+#heeippbbst .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -633,7 +639,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#eutrcvmmlv .gt_grand_summary_row {
+#heeippbbst .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -643,7 +649,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#eutrcvmmlv .gt_first_grand_summary_row {
+#heeippbbst .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -653,7 +659,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#eutrcvmmlv .gt_last_grand_summary_row_top {
+#heeippbbst .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -663,11 +669,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#eutrcvmmlv .gt_striped {
+#heeippbbst .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#eutrcvmmlv .gt_table_body {
+#heeippbbst .gt_table_body {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -676,7 +682,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #FFFFFF;
 }
 
-#eutrcvmmlv .gt_footnotes {
+#heeippbbst .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -690,7 +696,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#eutrcvmmlv .gt_footnote {
+#heeippbbst .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -699,7 +705,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#eutrcvmmlv .gt_sourcenotes {
+#heeippbbst .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -713,7 +719,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#eutrcvmmlv .gt_sourcenote {
+#heeippbbst .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -721,72 +727,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#eutrcvmmlv .gt_left {
+#heeippbbst .gt_left {
   text-align: left;
 }
 
-#eutrcvmmlv .gt_center {
+#heeippbbst .gt_center {
   text-align: center;
 }
 
-#eutrcvmmlv .gt_right {
+#heeippbbst .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#eutrcvmmlv .gt_font_normal {
+#heeippbbst .gt_font_normal {
   font-weight: normal;
 }
 
-#eutrcvmmlv .gt_font_bold {
+#heeippbbst .gt_font_bold {
   font-weight: bold;
 }
 
-#eutrcvmmlv .gt_font_italic {
+#heeippbbst .gt_font_italic {
   font-style: italic;
 }
 
-#eutrcvmmlv .gt_super {
+#heeippbbst .gt_super {
   font-size: 65%;
 }
 
-#eutrcvmmlv .gt_footnote_marks {
+#heeippbbst .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#eutrcvmmlv .gt_asterisk {
+#heeippbbst .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#eutrcvmmlv .gt_indent_1 {
+#heeippbbst .gt_indent_1 {
   text-indent: 5px;
 }
 
-#eutrcvmmlv .gt_indent_2 {
+#heeippbbst .gt_indent_2 {
   text-indent: 10px;
 }
 
-#eutrcvmmlv .gt_indent_3 {
+#heeippbbst .gt_indent_3 {
   text-indent: 15px;
 }
 
-#eutrcvmmlv .gt_indent_4 {
+#heeippbbst .gt_indent_4 {
   text-indent: 20px;
 }
 
-#eutrcvmmlv .gt_indent_5 {
+#heeippbbst .gt_indent_5 {
   text-indent: 25px;
 }
 
-#eutrcvmmlv .katex-display {
+#heeippbbst .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#eutrcvmmlv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#heeippbbst div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -846,35 +852,58 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="header-section-number">6.2</span> Examples</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">esrd</span> <span class="op">&lt;-</span> <span class="fu">ccn</span><span class="fu">:::</span><span class="fu">get_pin</span><span class="op">(</span><span class="st">"esrd"</span><span class="op">)</span></span>
-<span><span class="va">over</span> <span class="op">&lt;-</span> <span class="fu">cheapr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/cheapr/man/overview.html">overview</a></span><span class="op">(</span><span class="va">esrd</span><span class="op">)</span></span>
+<span><span class="va">esrd</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 7,561 × 8
+   ccn    state facility_name                    chain profit office  peri  home
+   &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;                            &lt;chr&gt; &lt;chr&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt;
+ 1 012306 AL    CHILDRENS HOSPITAL DIALYSIS      Inde… N           1     1     1
+ 2 012500 AL    FMC CAPITOL CITY                 Fres… P           1     1     1
+ 3 012501 AL    DaVita Gadsden Dialysis          DaVi… P           1     0     0
+ 4 012502 AL    DaVita Tuscaloosa University Di… DaVi… P           1     1     0
+ 5 012505 AL    DaVita PDI-Montgomery            DaVi… P           1     1     1
+ 6 012506 AL    DaVita Dothan Dialysis           DaVi… P           1     1     1
+ 7 012507 AL    FMC MOBILE                       Fres… P           1     0     0
+ 8 012508 AL    DaVita Birmingham East Dialysis  DaVi… P           1     0     0
+ 9 012512 AL    FMC SELMA                        Fres… P           1     0     0
+10 012513 AL    BMA LANGDALE                     Fres… P           1     0     0
+# ℹ 7,551 more rows</code></pre>
+</div>
+</div>
+<section id="overview" class="level3" data-number="6.2.1"><h3 data-number="6.2.1" class="anchored" data-anchor-id="overview">
+<span class="header-section-number">6.2.1</span> Overview</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">over</span> <span class="op">&lt;-</span> <span class="fu">cheapr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/cheapr/man/overview.html">overview</a></span><span class="op">(</span><span class="va">esrd</span><span class="op">)</span></span>
+<span></span>
 <span><span class="va">over</span><span class="op">$</span><span class="va">numeric</span> <span class="op">|&gt;</span> </span>
 <span>   <span class="fu">fastplyr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/fastplyr/man/new_tbl.html">as_tbl</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>   <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/select_replace_vars.html">slt</a></span><span class="op">(</span><span class="va">col</span>, <span class="va">p_complete</span>, <span class="va">n_unique</span><span class="op">:</span><span class="va">hist</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>   <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/gt.html">gt</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>   <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/tab_options.html">tab_options</a></span><span class="op">(</span>quarto.disable_processing <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>   <span class="fu">gtUtils</span><span class="fu">::</span><span class="fu"><a href="https://andreweatherman.github.io/gtUtils/reference/gt_theme_athletic.html">gt_theme_athletic</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span>   <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/select_replace_vars.html">slt</a></span><span class="op">(</span><span class="va">col</span>, unique <span class="op">=</span> <span class="va">n_unique</span>, <span class="va">mean</span>, <span class="va">sd</span>, <span class="va">p0</span><span class="op">:</span><span class="va">iqr</span>, <span class="va">hist</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>   <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/gt/man/gt.html">gt</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>   <span class="fu">gtUtils</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/gtUtils/man/gt_theme_athletic.html">gt_theme_athletic</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>   <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/gt/man/tab_options.html">tab_options</a></span><span class="op">(</span>quarto.disable_processing <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>   <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/gt/man/fmt_number.html">fmt_number</a></span><span class="op">(</span>columns <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">mean</span>, <span class="va">sd</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="otitjwbxlf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="vmsetttzaz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#otitjwbxlf table {
+#vmsetttzaz table {
   font-family: 'Spline Sans Mono', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#otitjwbxlf thead, #otitjwbxlf tbody, #otitjwbxlf tfoot, #otitjwbxlf tr, #otitjwbxlf td, #otitjwbxlf th {
+#vmsetttzaz thead, #vmsetttzaz tbody, #vmsetttzaz tfoot, #vmsetttzaz tr, #vmsetttzaz td, #vmsetttzaz th {
   border-style: none;
 }
 
-#otitjwbxlf p {
+#vmsetttzaz p {
   margin: 0;
   padding: 0;
 }
 
-#otitjwbxlf .gt_table {
+#vmsetttzaz .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -900,12 +929,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#otitjwbxlf .gt_caption {
+#vmsetttzaz .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#otitjwbxlf .gt_title {
+#vmsetttzaz .gt_title {
   color: #333333;
   font-size: 26px;
   font-weight: initial;
@@ -917,7 +946,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#otitjwbxlf .gt_subtitle {
+#vmsetttzaz .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -929,7 +958,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#otitjwbxlf .gt_heading {
+#vmsetttzaz .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -941,13 +970,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#otitjwbxlf .gt_bottom_border {
+#vmsetttzaz .gt_bottom_border {
   border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#otitjwbxlf .gt_col_headings {
+#vmsetttzaz .gt_col_headings {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -962,7 +991,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#otitjwbxlf .gt_col_heading {
+#vmsetttzaz .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -982,7 +1011,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#otitjwbxlf .gt_column_spanner_outer {
+#vmsetttzaz .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -994,15 +1023,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#otitjwbxlf .gt_column_spanner_outer:first-child {
+#vmsetttzaz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#otitjwbxlf .gt_column_spanner_outer:last-child {
+#vmsetttzaz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#otitjwbxlf .gt_column_spanner {
+#vmsetttzaz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-bottom-color: #000000;
@@ -1014,11 +1043,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#otitjwbxlf .gt_spanner_row {
+#vmsetttzaz .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#otitjwbxlf .gt_group_heading {
+#vmsetttzaz .gt_group_heading {
   padding-top: 1.5px;
   padding-bottom: 1.5px;
   padding-left: 5px;
@@ -1044,7 +1073,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#otitjwbxlf .gt_empty_group_heading {
+#vmsetttzaz .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1059,15 +1088,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#otitjwbxlf .gt_from_md > :first-child {
+#vmsetttzaz .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#otitjwbxlf .gt_from_md > :last-child {
+#vmsetttzaz .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#otitjwbxlf .gt_row {
+#vmsetttzaz .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1086,7 +1115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#otitjwbxlf .gt_stub {
+#vmsetttzaz .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1099,7 +1128,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#otitjwbxlf .gt_stub_row_group {
+#vmsetttzaz .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1113,15 +1142,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#otitjwbxlf .gt_row_group_first td {
+#vmsetttzaz .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#otitjwbxlf .gt_row_group_first th {
+#vmsetttzaz .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#otitjwbxlf .gt_summary_row {
+#vmsetttzaz .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1131,16 +1160,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#otitjwbxlf .gt_first_summary_row {
+#vmsetttzaz .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#otitjwbxlf .gt_first_summary_row.thick {
+#vmsetttzaz .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#otitjwbxlf .gt_last_summary_row {
+#vmsetttzaz .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1150,7 +1179,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#otitjwbxlf .gt_grand_summary_row {
+#vmsetttzaz .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1160,7 +1189,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#otitjwbxlf .gt_first_grand_summary_row {
+#vmsetttzaz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1170,7 +1199,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#otitjwbxlf .gt_last_grand_summary_row_top {
+#vmsetttzaz .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1180,11 +1209,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#otitjwbxlf .gt_striped {
+#vmsetttzaz .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#otitjwbxlf .gt_table_body {
+#vmsetttzaz .gt_table_body {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1193,7 +1222,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#otitjwbxlf .gt_footnotes {
+#vmsetttzaz .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1207,7 +1236,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#otitjwbxlf .gt_footnote {
+#vmsetttzaz .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1216,7 +1245,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#otitjwbxlf .gt_sourcenotes {
+#vmsetttzaz .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1230,7 +1259,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#otitjwbxlf .gt_sourcenote {
+#vmsetttzaz .gt_sourcenote {
   font-size: 10px;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1238,183 +1267,184 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#otitjwbxlf .gt_left {
+#vmsetttzaz .gt_left {
   text-align: left;
 }
 
-#otitjwbxlf .gt_center {
+#vmsetttzaz .gt_center {
   text-align: center;
 }
 
-#otitjwbxlf .gt_right {
+#vmsetttzaz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#otitjwbxlf .gt_font_normal {
+#vmsetttzaz .gt_font_normal {
   font-weight: normal;
 }
 
-#otitjwbxlf .gt_font_bold {
+#vmsetttzaz .gt_font_bold {
   font-weight: bold;
 }
 
-#otitjwbxlf .gt_font_italic {
+#vmsetttzaz .gt_font_italic {
   font-style: italic;
 }
 
-#otitjwbxlf .gt_super {
+#vmsetttzaz .gt_super {
   font-size: 65%;
 }
 
-#otitjwbxlf .gt_footnote_marks {
+#vmsetttzaz .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#otitjwbxlf .gt_asterisk {
+#vmsetttzaz .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#otitjwbxlf .gt_indent_1 {
+#vmsetttzaz .gt_indent_1 {
   text-indent: 5px;
 }
 
-#otitjwbxlf .gt_indent_2 {
+#vmsetttzaz .gt_indent_2 {
   text-indent: 10px;
 }
 
-#otitjwbxlf .gt_indent_3 {
+#vmsetttzaz .gt_indent_3 {
   text-indent: 15px;
 }
 
-#otitjwbxlf .gt_indent_4 {
+#vmsetttzaz .gt_indent_4 {
   text-indent: 20px;
 }
 
-#otitjwbxlf .gt_indent_5 {
+#vmsetttzaz .gt_indent_5 {
   text-indent: 25px;
 }
 
-#otitjwbxlf .katex-display {
+#vmsetttzaz .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#otitjwbxlf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#vmsetttzaz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 
-#tqqnwbvcrb tbody tr:last-child {
+#vmsetttzaz tbody tr:last-child {
   border-bottom: 2px solid #ffffff00;
 }
 
-#tqqnwbvcrb .gt_subtitle {
+#vmsetttzaz .gt_subtitle {
   padding-top: 0px !important;
   padding-bottom: 4px !important;
 }
 
-#tqqnwbvcrb .gt_sourcenote {
+#vmsetttzaz .gt_sourcenote {
   border-bottom-color: #FFFDF5 !important;
 }
 
-#tqqnwbvcrb .gt_heading {
+#vmsetttzaz .gt_heading {
   padding-bottom: 0px;
   padding-top: 6px;
 }
 </style>
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
-<thead><tr class="gt_col_headings header">
-<th id="col" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="font-family: 'Work Sans'; font-size: 12px; font-weight: 650; text-transform: uppercase" scope="col">col</th>
-<th id="p_complete" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="font-family: 'Work Sans'; font-size: 12px; font-weight: 650; text-transform: uppercase" scope="col">p_complete</th>
-<th id="n_unique" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="font-family: 'Work Sans'; font-size: 12px; font-weight: 650; text-transform: uppercase" scope="col">n_unique</th>
-<th id="mean" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="font-family: 'Work Sans'; font-size: 12px; font-weight: 650; text-transform: uppercase" scope="col">mean</th>
-<th id="p0" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="font-family: 'Work Sans'; font-size: 12px; font-weight: 650; text-transform: uppercase" scope="col">p0</th>
-<th id="p25" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="font-family: 'Work Sans'; font-size: 12px; font-weight: 650; text-transform: uppercase" scope="col">p25</th>
-<th id="p50" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="font-family: 'Work Sans'; font-size: 12px; font-weight: 650; text-transform: uppercase" scope="col">p50</th>
-<th id="p75" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="font-family: 'Work Sans'; font-size: 12px; font-weight: 650; text-transform: uppercase" scope="col">p75</th>
-<th id="p100" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="font-family: 'Work Sans'; font-size: 12px; font-weight: 650; text-transform: uppercase" scope="col">p100</th>
-<th id="iqr" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="font-family: 'Work Sans'; font-size: 12px; font-weight: 650; text-transform: uppercase" scope="col">iqr</th>
-<th id="sd" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="font-family: 'Work Sans'; font-size: 12px; font-weight: 650; text-transform: uppercase" scope="col">sd</th>
-<th id="hist" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="font-family: 'Work Sans'; font-size: 12px; font-weight: 650; text-transform: uppercase" scope="col">hist</th>
-</tr></thead>
+<table class="gt_table" data-quarto-disable-processing="true" data-quarto-bootstrap="false">
+<thead><tr class="gt_col_headings">
+<th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="font-family: 'Work Sans'; font-size: 12px; font-weight: 650; text-transform: uppercase;" scope="col" id="col">col</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="font-family: 'Work Sans'; font-size: 12px; font-weight: 650; text-transform: uppercase;" scope="col" id="unique">unique</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="font-family: 'Work Sans'; font-size: 12px; font-weight: 650; text-transform: uppercase;" scope="col" id="mean">mean</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="font-family: 'Work Sans'; font-size: 12px; font-weight: 650; text-transform: uppercase;" scope="col" id="sd">sd</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="font-family: 'Work Sans'; font-size: 12px; font-weight: 650; text-transform: uppercase;" scope="col" id="p0">p0</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="font-family: 'Work Sans'; font-size: 12px; font-weight: 650; text-transform: uppercase;" scope="col" id="p25">p25</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="font-family: 'Work Sans'; font-size: 12px; font-weight: 650; text-transform: uppercase;" scope="col" id="p50">p50</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="font-family: 'Work Sans'; font-size: 12px; font-weight: 650; text-transform: uppercase;" scope="col" id="p75">p75</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="font-family: 'Work Sans'; font-size: 12px; font-weight: 650; text-transform: uppercase;" scope="col" id="p100">p100</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="font-family: 'Work Sans'; font-size: 12px; font-weight: 650; text-transform: uppercase;" scope="col" id="iqr">iqr</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="font-family: 'Work Sans'; font-size: 12px; font-weight: 650; text-transform: uppercase;" scope="col" id="hist">hist</th>
+    </tr></thead>
 <tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_center" headers="col" style="border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">office</td>
-<td class="gt_row gt_center" headers="p_complete" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">1</td>
-<td class="gt_row gt_center" headers="n_unique" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">2</td>
-<td class="gt_row gt_center" headers="mean" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">0.9322841</td>
-<td class="gt_row gt_center" headers="p0" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">0</td>
-<td class="gt_row gt_center" headers="p25" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">1</td>
-<td class="gt_row gt_center" headers="p50" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">1</td>
-<td class="gt_row gt_center" headers="p75" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">1</td>
-<td class="gt_row gt_center" headers="p100" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">1</td>
-<td class="gt_row gt_center" headers="iqr" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">0</td>
-<td class="gt_row gt_center" headers="sd" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">0.2512744</td>
-<td class="gt_row gt_center" headers="hist" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">▁▁▁▁▇</td>
+<tr>
+<td headers="col" class="gt_row gt_center" style="border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">office</td>
+<td headers="unique" class="gt_row gt_center" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">2</td>
+<td headers="mean" class="gt_row gt_center" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">0.93</td>
+<td headers="sd" class="gt_row gt_center" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">0.25</td>
+<td headers="p0" class="gt_row gt_center" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">0</td>
+<td headers="p25" class="gt_row gt_center" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">1</td>
+<td headers="p50" class="gt_row gt_center" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">1</td>
+<td headers="p75" class="gt_row gt_center" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">1</td>
+<td headers="p100" class="gt_row gt_center" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">1</td>
+<td headers="iqr" class="gt_row gt_center" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">0</td>
+<td headers="hist" class="gt_row gt_center" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">▁▁▁▁▇</td>
 </tr>
-<tr class="even">
-<td class="gt_row gt_center" headers="col" style="border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">peri</td>
-<td class="gt_row gt_center" headers="p_complete" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">1</td>
-<td class="gt_row gt_center" headers="n_unique" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">2</td>
-<td class="gt_row gt_center" headers="mean" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">0.5389499</td>
-<td class="gt_row gt_center" headers="p0" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">0</td>
-<td class="gt_row gt_center" headers="p25" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">0</td>
-<td class="gt_row gt_center" headers="p50" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">1</td>
-<td class="gt_row gt_center" headers="p75" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">1</td>
-<td class="gt_row gt_center" headers="p100" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">1</td>
-<td class="gt_row gt_center" headers="iqr" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">1</td>
-<td class="gt_row gt_center" headers="sd" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">0.4985136</td>
-<td class="gt_row gt_center" headers="hist" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">▇▁▁▁▇</td>
+<tr>
+<td headers="col" class="gt_row gt_center" style="border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">peri</td>
+<td headers="unique" class="gt_row gt_center" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">2</td>
+<td headers="mean" class="gt_row gt_center" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">0.54</td>
+<td headers="sd" class="gt_row gt_center" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">0.50</td>
+<td headers="p0" class="gt_row gt_center" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">0</td>
+<td headers="p25" class="gt_row gt_center" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">0</td>
+<td headers="p50" class="gt_row gt_center" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">1</td>
+<td headers="p75" class="gt_row gt_center" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">1</td>
+<td headers="p100" class="gt_row gt_center" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">1</td>
+<td headers="iqr" class="gt_row gt_center" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">1</td>
+<td headers="hist" class="gt_row gt_center" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">▇▁▁▁▇</td>
 </tr>
-<tr class="odd">
-<td class="gt_row gt_center" headers="col" style="border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">home</td>
-<td class="gt_row gt_center" headers="p_complete" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">1</td>
-<td class="gt_row gt_center" headers="n_unique" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">2</td>
-<td class="gt_row gt_center" headers="mean" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">0.3151700</td>
-<td class="gt_row gt_center" headers="p0" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">0</td>
-<td class="gt_row gt_center" headers="p25" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">0</td>
-<td class="gt_row gt_center" headers="p50" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">0</td>
-<td class="gt_row gt_center" headers="p75" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">1</td>
-<td class="gt_row gt_center" headers="p100" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">1</td>
-<td class="gt_row gt_center" headers="iqr" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">1</td>
-<td class="gt_row gt_center" headers="sd" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">0.4646143</td>
-<td class="gt_row gt_center" headers="hist" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">▇▁▁▁▃</td>
+<tr>
+<td headers="col" class="gt_row gt_center" style="border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">home</td>
+<td headers="unique" class="gt_row gt_center" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">2</td>
+<td headers="mean" class="gt_row gt_center" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">0.32</td>
+<td headers="sd" class="gt_row gt_center" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">0.46</td>
+<td headers="p0" class="gt_row gt_center" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">0</td>
+<td headers="p25" class="gt_row gt_center" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">0</td>
+<td headers="p50" class="gt_row gt_center" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">0</td>
+<td headers="p75" class="gt_row gt_center" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">1</td>
+<td headers="p100" class="gt_row gt_center" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">1</td>
+<td headers="iqr" class="gt_row gt_center" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">1</td>
+<td headers="hist" class="gt_row gt_center" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">▇▁▁▁▃</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">over</span><span class="op">$</span><span class="va">categorical</span> <span class="op">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">over</span><span class="op">$</span><span class="va">categorical</span> <span class="op">|&gt;</span> </span>
 <span>   <span class="fu">fastplyr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/fastplyr/man/new_tbl.html">as_tbl</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>   <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/select_replace_vars.html">slt</a></span><span class="op">(</span><span class="va">col</span>, <span class="va">p_complete</span>, <span class="va">n_unique</span>, <span class="va">min</span>, <span class="va">max</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>   <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/gt.html">gt</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>   <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/tab_options.html">tab_options</a></span><span class="op">(</span>quarto.disable_processing <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>   <span class="fu">gtUtils</span><span class="fu">::</span><span class="fu"><a href="https://andreweatherman.github.io/gtUtils/reference/gt_theme_athletic.html">gt_theme_athletic</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span>   <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/select_replace_vars.html">slt</a></span><span class="op">(</span><span class="va">col</span>, unique <span class="op">=</span> <span class="va">n_unique</span>, <span class="va">min</span>, <span class="va">max</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>   <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/ftransform.html">mtt</a></span><span class="op">(</span></span>
+<span>      min <span class="op">=</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_wrap.html">str_wrap</a></span><span class="op">(</span><span class="va">min</span>, width <span class="op">=</span> <span class="fl">40</span><span class="op">)</span>, </span>
+<span>      max <span class="op">=</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_wrap.html">str_wrap</a></span><span class="op">(</span><span class="va">max</span>, width <span class="op">=</span> <span class="fl">40</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>   <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/gt/man/gt.html">gt</a></span><span class="op">(</span>process_md <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>   <span class="fu">gtUtils</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/gtUtils/man/gt_theme_athletic.html">gt_theme_athletic</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>   <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/gt/man/tab_options.html">tab_options</a></span><span class="op">(</span>quarto.disable_processing <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>   <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/gt/man/cols_align.html">cols_align</a></span><span class="op">(</span><span class="st">"left"</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">min</span>, <span class="va">max</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>   <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/gt/man/cols_align.html">cols_align</a></span><span class="op">(</span><span class="st">"right"</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">col</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="ajywpipqah" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="axlzymzgmy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#ajywpipqah table {
+#axlzymzgmy table {
   font-family: 'Spline Sans Mono', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ajywpipqah thead, #ajywpipqah tbody, #ajywpipqah tfoot, #ajywpipqah tr, #ajywpipqah td, #ajywpipqah th {
+#axlzymzgmy thead, #axlzymzgmy tbody, #axlzymzgmy tfoot, #axlzymzgmy tr, #axlzymzgmy td, #axlzymzgmy th {
   border-style: none;
 }
 
-#ajywpipqah p {
+#axlzymzgmy p {
   margin: 0;
   padding: 0;
 }
 
-#ajywpipqah .gt_table {
+#axlzymzgmy .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1440,12 +1470,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#ajywpipqah .gt_caption {
+#axlzymzgmy .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ajywpipqah .gt_title {
+#axlzymzgmy .gt_title {
   color: #333333;
   font-size: 26px;
   font-weight: initial;
@@ -1457,7 +1487,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#ajywpipqah .gt_subtitle {
+#axlzymzgmy .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1469,7 +1499,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#ajywpipqah .gt_heading {
+#axlzymzgmy .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -1481,13 +1511,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ajywpipqah .gt_bottom_border {
+#axlzymzgmy .gt_bottom_border {
   border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ajywpipqah .gt_col_headings {
+#axlzymzgmy .gt_col_headings {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1502,7 +1532,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ajywpipqah .gt_col_heading {
+#axlzymzgmy .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1522,7 +1552,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#ajywpipqah .gt_column_spanner_outer {
+#axlzymzgmy .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1534,15 +1564,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#ajywpipqah .gt_column_spanner_outer:first-child {
+#axlzymzgmy .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ajywpipqah .gt_column_spanner_outer:last-child {
+#axlzymzgmy .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ajywpipqah .gt_column_spanner {
+#axlzymzgmy .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-bottom-color: #000000;
@@ -1554,11 +1584,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#ajywpipqah .gt_spanner_row {
+#axlzymzgmy .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ajywpipqah .gt_group_heading {
+#axlzymzgmy .gt_group_heading {
   padding-top: 1.5px;
   padding-bottom: 1.5px;
   padding-left: 5px;
@@ -1584,7 +1614,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#ajywpipqah .gt_empty_group_heading {
+#axlzymzgmy .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1599,15 +1629,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#ajywpipqah .gt_from_md > :first-child {
+#axlzymzgmy .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ajywpipqah .gt_from_md > :last-child {
+#axlzymzgmy .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ajywpipqah .gt_row {
+#axlzymzgmy .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1626,7 +1656,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#ajywpipqah .gt_stub {
+#axlzymzgmy .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1639,7 +1669,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ajywpipqah .gt_stub_row_group {
+#axlzymzgmy .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1653,15 +1683,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#ajywpipqah .gt_row_group_first td {
+#axlzymzgmy .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ajywpipqah .gt_row_group_first th {
+#axlzymzgmy .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ajywpipqah .gt_summary_row {
+#axlzymzgmy .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1671,16 +1701,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ajywpipqah .gt_first_summary_row {
+#axlzymzgmy .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ajywpipqah .gt_first_summary_row.thick {
+#axlzymzgmy .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ajywpipqah .gt_last_summary_row {
+#axlzymzgmy .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1690,7 +1720,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#ajywpipqah .gt_grand_summary_row {
+#axlzymzgmy .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1700,7 +1730,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ajywpipqah .gt_first_grand_summary_row {
+#axlzymzgmy .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1710,7 +1740,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#ajywpipqah .gt_last_grand_summary_row_top {
+#axlzymzgmy .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1720,11 +1750,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#ajywpipqah .gt_striped {
+#axlzymzgmy .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ajywpipqah .gt_table_body {
+#axlzymzgmy .gt_table_body {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1733,7 +1763,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#ajywpipqah .gt_footnotes {
+#axlzymzgmy .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1747,7 +1777,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ajywpipqah .gt_footnote {
+#axlzymzgmy .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1756,7 +1786,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ajywpipqah .gt_sourcenotes {
+#axlzymzgmy .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1770,7 +1800,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ajywpipqah .gt_sourcenote {
+#axlzymzgmy .gt_sourcenote {
   font-size: 10px;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1778,192 +1808,190 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ajywpipqah .gt_left {
+#axlzymzgmy .gt_left {
   text-align: left;
 }
 
-#ajywpipqah .gt_center {
+#axlzymzgmy .gt_center {
   text-align: center;
 }
 
-#ajywpipqah .gt_right {
+#axlzymzgmy .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ajywpipqah .gt_font_normal {
+#axlzymzgmy .gt_font_normal {
   font-weight: normal;
 }
 
-#ajywpipqah .gt_font_bold {
+#axlzymzgmy .gt_font_bold {
   font-weight: bold;
 }
 
-#ajywpipqah .gt_font_italic {
+#axlzymzgmy .gt_font_italic {
   font-style: italic;
 }
 
-#ajywpipqah .gt_super {
+#axlzymzgmy .gt_super {
   font-size: 65%;
 }
 
-#ajywpipqah .gt_footnote_marks {
+#axlzymzgmy .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ajywpipqah .gt_asterisk {
+#axlzymzgmy .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ajywpipqah .gt_indent_1 {
+#axlzymzgmy .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ajywpipqah .gt_indent_2 {
+#axlzymzgmy .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ajywpipqah .gt_indent_3 {
+#axlzymzgmy .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ajywpipqah .gt_indent_4 {
+#axlzymzgmy .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ajywpipqah .gt_indent_5 {
+#axlzymzgmy .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ajywpipqah .katex-display {
+#axlzymzgmy .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ajywpipqah div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#axlzymzgmy div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 
-#gecgqwockl tbody tr:last-child {
+#axlzymzgmy tbody tr:last-child {
   border-bottom: 2px solid #ffffff00;
 }
 
-#gecgqwockl .gt_subtitle {
+#axlzymzgmy .gt_subtitle {
   padding-top: 0px !important;
   padding-bottom: 4px !important;
 }
 
-#gecgqwockl .gt_sourcenote {
+#axlzymzgmy .gt_sourcenote {
   border-bottom-color: #FFFDF5 !important;
 }
 
-#gecgqwockl .gt_heading {
+#axlzymzgmy .gt_heading {
   padding-bottom: 0px;
   padding-top: 6px;
 }
 </style>
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
-<thead><tr class="gt_col_headings header">
-<th id="col" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="font-family: 'Work Sans'; font-size: 12px; font-weight: 650; text-transform: uppercase" scope="col">col</th>
-<th id="p_complete" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="font-family: 'Work Sans'; font-size: 12px; font-weight: 650; text-transform: uppercase" scope="col">p_complete</th>
-<th id="n_unique" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="font-family: 'Work Sans'; font-size: 12px; font-weight: 650; text-transform: uppercase" scope="col">n_unique</th>
-<th id="min" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="font-family: 'Work Sans'; font-size: 12px; font-weight: 650; text-transform: uppercase" scope="col">min</th>
-<th id="max" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="font-family: 'Work Sans'; font-size: 12px; font-weight: 650; text-transform: uppercase" scope="col">max</th>
-</tr></thead>
+<table class="gt_table" data-quarto-disable-processing="true" data-quarto-bootstrap="false">
+<thead><tr class="gt_col_headings">
+<th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-family: 'Work Sans'; font-size: 12px; font-weight: 650; text-transform: uppercase;" scope="col" id="col">col</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="font-family: 'Work Sans'; font-size: 12px; font-weight: 650; text-transform: uppercase;" scope="col" id="unique">unique</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="font-family: 'Work Sans'; font-size: 12px; font-weight: 650; text-transform: uppercase;" scope="col" id="min">min</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="font-family: 'Work Sans'; font-size: 12px; font-weight: 650; text-transform: uppercase;" scope="col" id="max">max</th>
+    </tr></thead>
 <tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_center" headers="col" style="border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">ccn</td>
-<td class="gt_row gt_center" headers="p_complete" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">1</td>
-<td class="gt_row gt_center" headers="n_unique" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">7561</td>
-<td class="gt_row gt_center" headers="min" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">012306</td>
-<td class="gt_row gt_center" headers="max" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">852609</td>
+<tr>
+<td headers="col" class="gt_row gt_right" style="border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">ccn</td>
+<td headers="unique" class="gt_row gt_center" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">7561</td>
+<td headers="min" class="gt_row gt_left" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">012306</td>
+<td headers="max" class="gt_row gt_left" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">852609</td>
 </tr>
-<tr class="even">
-<td class="gt_row gt_center" headers="col" style="border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">state</td>
-<td class="gt_row gt_center" headers="p_complete" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">1</td>
-<td class="gt_row gt_center" headers="n_unique" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">56</td>
-<td class="gt_row gt_center" headers="min" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">AK</td>
-<td class="gt_row gt_center" headers="max" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">WY</td>
+<tr>
+<td headers="col" class="gt_row gt_right" style="border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">state</td>
+<td headers="unique" class="gt_row gt_center" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">56</td>
+<td headers="min" class="gt_row gt_left" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">AK</td>
+<td headers="max" class="gt_row gt_left" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">WY</td>
 </tr>
-<tr class="odd">
-<td class="gt_row gt_center" headers="col" style="border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">facility_name</td>
-<td class="gt_row gt_center" headers="p_complete" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">1</td>
-<td class="gt_row gt_center" headers="n_unique" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">7550</td>
-<td class="gt_row gt_center" headers="min" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">032314 PHOENIX CHILDRENS HOSPITAL- DIALYSIS CENTER</td>
-<td class="gt_row gt_center" headers="max" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">zz_closed_DIALYSIS CARE CENTER TIPTON COUNTY LLC</td>
+<tr>
+<td headers="col" class="gt_row gt_right" style="border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">facility_name</td>
+<td headers="unique" class="gt_row gt_center" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">7550</td>
+<td headers="min" class="gt_row gt_left" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">032314 PHOENIX CHILDRENS HOSPITAL-
+DIALYSIS CENTER</td>
+<td headers="max" class="gt_row gt_left" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">zz_closed_DIALYSIS CARE CENTER TIPTON
+COUNTY LLC</td>
 </tr>
-<tr class="even">
-<td class="gt_row gt_center" headers="col" style="border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">chain</td>
-<td class="gt_row gt_center" headers="p_complete" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">1</td>
-<td class="gt_row gt_center" headers="n_unique" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">32</td>
-<td class="gt_row gt_center" headers="min" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">American Renal Associates</td>
-<td class="gt_row gt_center" headers="max" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">Wake Forest University</td>
+<tr>
+<td headers="col" class="gt_row gt_right" style="border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">chain</td>
+<td headers="unique" class="gt_row gt_center" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">32</td>
+<td headers="min" class="gt_row gt_left" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">American Renal Associates</td>
+<td headers="max" class="gt_row gt_left" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">Wake Forest University</td>
 </tr>
-<tr class="odd">
-<td class="gt_row gt_center" headers="col" style="border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">profit</td>
-<td class="gt_row gt_center" headers="p_complete" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">1</td>
-<td class="gt_row gt_center" headers="n_unique" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">2</td>
-<td class="gt_row gt_center" headers="min" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">N</td>
-<td class="gt_row gt_center" headers="max" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black">P</td>
+<tr>
+<td headers="col" class="gt_row gt_right" style="border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">profit</td>
+<td headers="unique" class="gt_row gt_center" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">2</td>
+<td headers="min" class="gt_row gt_left" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">N</td>
+<td headers="max" class="gt_row gt_left" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">P</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 </div>
+</section></section><section id="counts" class="level2" data-number="6.3"><h2 data-number="6.3" class="anchored" data-anchor-id="counts">
+<span class="header-section-number">6.3</span> Counts</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span><span class="op">(</span><span class="va">esrd</span><span class="op">$</span><span class="va">ccn</span>, <span class="fu">ccn</span><span class="fu">::</span><span class="va">data_frame</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span><span class="op">(</span><span class="va">esrd</span><span class="op">$</span><span class="va">ccn</span>, <span class="fu">ccn</span><span class="fu">::</span><span class="va">data_frame</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">data.table</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/data.table/man/rbindlist.html">rbindlist</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">df</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/fcount.html">fcount</a></span><span class="op">(</span><span class="va">type</span>, <span class="va">range</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/roworder.html">roworder</a></span><span class="op">(</span><span class="op">-</span><span class="va">N</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/gt.html">gt</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/tab_options.html">tab_options</a></span><span class="op">(</span>quarto.disable_processing <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/gt/man/gt.html">gt</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/gt/man/tab_options.html">tab_options</a></span><span class="op">(</span>quarto.disable_processing <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">gtExtras</span><span class="fu">::</span><span class="fu"><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_nytimes.html">gt_theme_nytimes</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/tab_style.html">tab_style</a></span><span class="op">(</span></span>
-<span>    style <span class="op">=</span> <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/cell_text.html">cell_text</a></span><span class="op">(</span></span>
-<span>      font <span class="op">=</span> <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/google_font.html">google_font</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"JetBrains Mono"</span><span class="op">)</span>,</span>
+<span>  <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/gt/man/tab_style.html">tab_style</a></span><span class="op">(</span></span>
+<span>    style <span class="op">=</span> <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/gt/man/cell_text.html">cell_text</a></span><span class="op">(</span></span>
+<span>      font <span class="op">=</span> <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/gt/man/google_font.html">google_font</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"JetBrains Mono"</span><span class="op">)</span>,</span>
 <span>      color <span class="op">=</span> <span class="st">"grey60"</span>,</span>
 <span>      size <span class="op">=</span> <span class="st">"small"</span></span>
 <span>    <span class="op">)</span>,</span>
-<span>    locations <span class="op">=</span> <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/cells_body.html">cells_body</a></span><span class="op">(</span>columns <span class="op">=</span> <span class="va">range</span><span class="op">)</span></span>
+<span>    locations <span class="op">=</span> <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/gt/man/cells_body.html">cells_body</a></span><span class="op">(</span>columns <span class="op">=</span> <span class="va">range</span><span class="op">)</span></span>
 <span>  <span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/tab_style.html">tab_style</a></span><span class="op">(</span></span>
-<span>    style <span class="op">=</span> <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/cell_text.html">cell_text</a></span><span class="op">(</span></span>
+<span>  <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/gt/man/tab_style.html">tab_style</a></span><span class="op">(</span></span>
+<span>    style <span class="op">=</span> <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/gt/man/cell_text.html">cell_text</a></span><span class="op">(</span></span>
 <span>       color <span class="op">=</span> <span class="st">"grey40"</span>, </span>
 <span>       weight <span class="op">=</span> <span class="st">"bold"</span>,</span>
 <span>       size <span class="op">=</span> <span class="st">"small"</span>,</span>
-<span>       font <span class="op">=</span> <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/google_font.html">google_font</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"JetBrains Mono"</span><span class="op">)</span></span>
+<span>       font <span class="op">=</span> <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/gt/man/google_font.html">google_font</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"JetBrains Mono"</span><span class="op">)</span></span>
 <span>       <span class="op">)</span>,</span>
-<span>    locations <span class="op">=</span> <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/cells_body.html">cells_body</a></span><span class="op">(</span>columns <span class="op">=</span> <span class="va">type</span><span class="op">)</span></span>
+<span>    locations <span class="op">=</span> <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/gt/man/cells_body.html">cells_body</a></span><span class="op">(</span>columns <span class="op">=</span> <span class="va">type</span><span class="op">)</span></span>
 <span>  <span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="xyszzzxqtd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="ocwzalpxzt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#xyszzzxqtd table {
+#ocwzalpxzt table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#xyszzzxqtd thead, #xyszzzxqtd tbody, #xyszzzxqtd tfoot, #xyszzzxqtd tr, #xyszzzxqtd td, #xyszzzxqtd th {
+#ocwzalpxzt thead, #ocwzalpxzt tbody, #ocwzalpxzt tfoot, #ocwzalpxzt tr, #ocwzalpxzt td, #ocwzalpxzt th {
   border-style: none;
 }
 
-#xyszzzxqtd p {
+#ocwzalpxzt p {
   margin: 0;
   padding: 0;
 }
 
-#xyszzzxqtd .gt_table {
+#ocwzalpxzt .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1989,12 +2017,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#xyszzzxqtd .gt_caption {
+#ocwzalpxzt .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#xyszzzxqtd .gt_title {
+#ocwzalpxzt .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2006,7 +2034,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#xyszzzxqtd .gt_subtitle {
+#ocwzalpxzt .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2018,7 +2046,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#xyszzzxqtd .gt_heading {
+#ocwzalpxzt .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -2030,13 +2058,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#xyszzzxqtd .gt_bottom_border {
+#ocwzalpxzt .gt_bottom_border {
   border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xyszzzxqtd .gt_col_headings {
+#ocwzalpxzt .gt_col_headings {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2051,7 +2079,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#xyszzzxqtd .gt_col_heading {
+#ocwzalpxzt .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 12px;
@@ -2071,7 +2099,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#xyszzzxqtd .gt_column_spanner_outer {
+#ocwzalpxzt .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 12px;
@@ -2083,15 +2111,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#xyszzzxqtd .gt_column_spanner_outer:first-child {
+#ocwzalpxzt .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xyszzzxqtd .gt_column_spanner_outer:last-child {
+#ocwzalpxzt .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xyszzzxqtd .gt_column_spanner {
+#ocwzalpxzt .gt_column_spanner {
   border-bottom-style: none;
   border-bottom-width: 1px;
   border-bottom-color: #334422;
@@ -2103,11 +2131,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#xyszzzxqtd .gt_spanner_row {
+#ocwzalpxzt .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#xyszzzxqtd .gt_group_heading {
+#ocwzalpxzt .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2133,7 +2161,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#xyszzzxqtd .gt_empty_group_heading {
+#ocwzalpxzt .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2148,15 +2176,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#xyszzzxqtd .gt_from_md > :first-child {
+#ocwzalpxzt .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xyszzzxqtd .gt_from_md > :last-child {
+#ocwzalpxzt .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xyszzzxqtd .gt_row {
+#ocwzalpxzt .gt_row {
   padding-top: 7px;
   padding-bottom: 7px;
   padding-left: 5px;
@@ -2175,7 +2203,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#xyszzzxqtd .gt_stub {
+#ocwzalpxzt .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2188,7 +2216,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#xyszzzxqtd .gt_stub_row_group {
+#ocwzalpxzt .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2202,15 +2230,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#xyszzzxqtd .gt_row_group_first td {
+#ocwzalpxzt .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#xyszzzxqtd .gt_row_group_first th {
+#ocwzalpxzt .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#xyszzzxqtd .gt_summary_row {
+#ocwzalpxzt .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2220,16 +2248,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#xyszzzxqtd .gt_first_summary_row {
+#ocwzalpxzt .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#xyszzzxqtd .gt_first_summary_row.thick {
+#ocwzalpxzt .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#xyszzzxqtd .gt_last_summary_row {
+#ocwzalpxzt .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2239,7 +2267,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#xyszzzxqtd .gt_grand_summary_row {
+#ocwzalpxzt .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2249,7 +2277,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#xyszzzxqtd .gt_first_grand_summary_row {
+#ocwzalpxzt .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2259,7 +2287,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#xyszzzxqtd .gt_last_grand_summary_row_top {
+#ocwzalpxzt .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2269,11 +2297,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#xyszzzxqtd .gt_striped {
+#ocwzalpxzt .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xyszzzxqtd .gt_table_body {
+#ocwzalpxzt .gt_table_body {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2282,7 +2310,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #FFFFFF;
 }
 
-#xyszzzxqtd .gt_footnotes {
+#ocwzalpxzt .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2296,7 +2324,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#xyszzzxqtd .gt_footnote {
+#ocwzalpxzt .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2305,7 +2333,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#xyszzzxqtd .gt_sourcenotes {
+#ocwzalpxzt .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2319,7 +2347,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#xyszzzxqtd .gt_sourcenote {
+#ocwzalpxzt .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2327,72 +2355,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#xyszzzxqtd .gt_left {
+#ocwzalpxzt .gt_left {
   text-align: left;
 }
 
-#xyszzzxqtd .gt_center {
+#ocwzalpxzt .gt_center {
   text-align: center;
 }
 
-#xyszzzxqtd .gt_right {
+#ocwzalpxzt .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xyszzzxqtd .gt_font_normal {
+#ocwzalpxzt .gt_font_normal {
   font-weight: normal;
 }
 
-#xyszzzxqtd .gt_font_bold {
+#ocwzalpxzt .gt_font_bold {
   font-weight: bold;
 }
 
-#xyszzzxqtd .gt_font_italic {
+#ocwzalpxzt .gt_font_italic {
   font-style: italic;
 }
 
-#xyszzzxqtd .gt_super {
+#ocwzalpxzt .gt_super {
   font-size: 65%;
 }
 
-#xyszzzxqtd .gt_footnote_marks {
+#ocwzalpxzt .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#xyszzzxqtd .gt_asterisk {
+#ocwzalpxzt .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#xyszzzxqtd .gt_indent_1 {
+#ocwzalpxzt .gt_indent_1 {
   text-indent: 5px;
 }
 
-#xyszzzxqtd .gt_indent_2 {
+#ocwzalpxzt .gt_indent_2 {
   text-indent: 10px;
 }
 
-#xyszzzxqtd .gt_indent_3 {
+#ocwzalpxzt .gt_indent_3 {
   text-indent: 15px;
 }
 
-#xyszzzxqtd .gt_indent_4 {
+#ocwzalpxzt .gt_indent_4 {
   text-indent: 20px;
 }
 
-#xyszzzxqtd .gt_indent_5 {
+#ocwzalpxzt .gt_indent_5 {
   text-indent: 25px;
 }
 
-#xyszzzxqtd .katex-display {
+#ocwzalpxzt .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#xyszzzxqtd div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ocwzalpxzt div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2433,8 +2461,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</section><section id="details" class="level2" data-number="6.3"><h2 data-number="6.3" class="anchored" data-anchor-id="details">
-<span class="header-section-number">6.3</span> Details</h2>
+</section><section id="details" class="level2" data-number="6.4"><h2 data-number="6.4" class="anchored" data-anchor-id="details">
+<span class="header-section-number">6.4</span> Details</h2>
 <ol type="1">
 <li><p><strong>Hospital-Based Renal Dialysis Facilities, [2300, 2499]</strong>: The physical location of an ESRD facility on the premises of a hospital is not considered when determining if the ESRD facility is hospital-based. Hospital corporate control is a critical factor in determining whether an ESRD facility is hospital-based. Hospitals may have a lease arrangement for the management of a hospital-based ESRD facility by a non-hospital manager. This CCN range is used for ESRD facilities that have been determined by the CMS to be hospital-owned, hospital-administered ESRD facilities physically located on the hospital’s premises as opposed to independent ESRD facilities and Hospital-Based Renal Disease Satellite Facilities. The satellites are hospital-based, but are physically located off the hospital’s premises.</p></li>
 <li>
@@ -2912,172 +2940,198 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span><span class="co"> html_document</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="an">editor_options:</span><span class="co"> </span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">  chunk_output_type: console</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># ESRDs</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup}</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co">#| cache: false</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co">#| comment: ""</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ccn)</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: pkg-version</span></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="st">"ccn version:"</span>, <span class="fu">sQuote</span>(utils<span class="sc">::</span><span class="fu">packageVersion</span>(<span class="st">"ccn"</span>)), <span class="st">"loaded"</span>) <span class="sc">|&gt;</span> <span class="fu">cat</span>()</span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="fu">## Facility Ranges</span></span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>The last four characters of a Provider CCN represent the facility type and a unique</span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>identifier. The facility type is encoded in the third character of the last four</span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>characters. The table below summarizes the valid facility type codes and their</span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>corresponding ranges. </span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: esrd-ranges</span></span>
-<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>ccn<span class="sc">::</span>medicare_ranges <span class="sc">|&gt;</span></span>
-<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">sbt</span>(</span>
-<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>    start <span class="sc">==</span> <span class="dv">1</span>L <span class="sc">|</span> </span>
-<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>    start <span class="sc">==</span> <span class="dv">2000</span>L <span class="sc">|</span> </span>
-<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>    start <span class="sc">==</span> <span class="dv">3300</span>L <span class="sc">|</span> </span>
-<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>    abbr <span class="sc">==</span> <span class="st">"ESRD"</span>, </span>
-<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>    <span class="sc">-</span>start, </span>
-<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>    <span class="sc">-</span>end) <span class="sc">|&gt;</span></span>
-<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
-<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_options</span>(<span class="at">quarto.disable_processing =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
-<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>  gtExtras<span class="sc">::</span><span class="fu">gt_theme_nytimes</span>() <span class="sc">|&gt;</span></span>
-<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_style</span>(</span>
-<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> gt<span class="sc">::</span><span class="fu">cell_text</span>(</span>
-<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a>      <span class="at">font =</span> gt<span class="sc">::</span><span class="fu">google_font</span>(<span class="at">name =</span> <span class="st">"JetBrains Mono"</span>), </span>
-<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>      <span class="at">color =</span> <span class="st">"grey60"</span>, </span>
-<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>      <span class="at">size =</span> <span class="st">"small"</span>),</span>
-<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> gt<span class="sc">::</span><span class="fu">cells_body</span>(<span class="at">columns =</span> range)</span>
-<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_style</span>(</span>
-<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> gt<span class="sc">::</span><span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>),</span>
-<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> gt<span class="sc">::</span><span class="fu">cells_body</span>(<span class="at">columns =</span> abbr)</span>
-<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_style</span>(</span>
-<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> gt<span class="sc">::</span><span class="fu">cell_text</span>(<span class="at">color =</span> <span class="st">"grey50"</span>, <span class="at">size =</span> <span class="st">"small"</span>),</span>
-<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> gt<span class="sc">::</span><span class="fu">cells_body</span>(<span class="at">columns =</span> desc)</span>
-<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a><span class="fu">## Examples</span></span>
-<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a>esrd <span class="ot">&lt;-</span> ccn<span class="sc">:::</span><span class="fu">get_pin</span>(<span class="st">"esrd"</span>)</span>
-<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a>over <span class="ot">&lt;-</span> cheapr<span class="sc">::</span><span class="fu">overview</span>(esrd)</span>
-<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a>over<span class="sc">$</span>numeric <span class="sc">|&gt;</span> </span>
-<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a>   fastplyr<span class="sc">::</span><span class="fu">as_tbl</span>() <span class="sc">|&gt;</span></span>
-<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a>   collapse<span class="sc">::</span><span class="fu">slt</span>(col, p_complete, n_unique<span class="sc">:</span>hist) <span class="sc">|&gt;</span></span>
-<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a>   gt<span class="sc">::</span><span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a>   gt<span class="sc">::</span><span class="fu">tab_options</span>(<span class="at">quarto.disable_processing =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
-<span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a>   gtUtils<span class="sc">::</span><span class="fu">gt_theme_athletic</span>()</span>
-<span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-80"><a href="#cb5-80" aria-hidden="true" tabindex="-1"></a>over<span class="sc">$</span>categorical <span class="sc">|&gt;</span> </span>
-<span id="cb5-81"><a href="#cb5-81" aria-hidden="true" tabindex="-1"></a>   fastplyr<span class="sc">::</span><span class="fu">as_tbl</span>() <span class="sc">|&gt;</span></span>
-<span id="cb5-82"><a href="#cb5-82" aria-hidden="true" tabindex="-1"></a>   collapse<span class="sc">::</span><span class="fu">slt</span>(col, p_complete, n_unique, min, max) <span class="sc">|&gt;</span></span>
-<span id="cb5-83"><a href="#cb5-83" aria-hidden="true" tabindex="-1"></a>   gt<span class="sc">::</span><span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb5-84"><a href="#cb5-84" aria-hidden="true" tabindex="-1"></a>   gt<span class="sc">::</span><span class="fu">tab_options</span>(<span class="at">quarto.disable_processing =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
-<span id="cb5-85"><a href="#cb5-85" aria-hidden="true" tabindex="-1"></a>   gtUtils<span class="sc">::</span><span class="fu">gt_theme_athletic</span>()</span>
-<span id="cb5-86"><a href="#cb5-86" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-87"><a href="#cb5-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-88"><a href="#cb5-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-91"><a href="#cb5-91" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb5-92"><a href="#cb5-92" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> purrr<span class="sc">::</span><span class="fu">map</span>(esrd<span class="sc">$</span>ccn, ccn<span class="sc">::</span>data_frame) <span class="sc">|&gt;</span> </span>
-<span id="cb5-93"><a href="#cb5-93" aria-hidden="true" tabindex="-1"></a>  data.table<span class="sc">::</span><span class="fu">rbindlist</span>()</span>
-<span id="cb5-94"><a href="#cb5-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-95"><a href="#cb5-95" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span></span>
-<span id="cb5-96"><a href="#cb5-96" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">fcount</span>(type, range) <span class="sc">|&gt;</span></span>
-<span id="cb5-97"><a href="#cb5-97" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">roworder</span>(<span class="sc">-</span>N) <span class="sc">|&gt;</span></span>
-<span id="cb5-98"><a href="#cb5-98" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
-<span id="cb5-99"><a href="#cb5-99" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_options</span>(<span class="at">quarto.disable_processing =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
-<span id="cb5-100"><a href="#cb5-100" aria-hidden="true" tabindex="-1"></a>  gtExtras<span class="sc">::</span><span class="fu">gt_theme_nytimes</span>() <span class="sc">|&gt;</span></span>
-<span id="cb5-101"><a href="#cb5-101" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_style</span>(</span>
-<span id="cb5-102"><a href="#cb5-102" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> gt<span class="sc">::</span><span class="fu">cell_text</span>(</span>
-<span id="cb5-103"><a href="#cb5-103" aria-hidden="true" tabindex="-1"></a>      <span class="at">font =</span> gt<span class="sc">::</span><span class="fu">google_font</span>(<span class="at">name =</span> <span class="st">"JetBrains Mono"</span>),</span>
-<span id="cb5-104"><a href="#cb5-104" aria-hidden="true" tabindex="-1"></a>      <span class="at">color =</span> <span class="st">"grey60"</span>,</span>
-<span id="cb5-105"><a href="#cb5-105" aria-hidden="true" tabindex="-1"></a>      <span class="at">size =</span> <span class="st">"small"</span></span>
-<span id="cb5-106"><a href="#cb5-106" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb5-107"><a href="#cb5-107" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> gt<span class="sc">::</span><span class="fu">cells_body</span>(<span class="at">columns =</span> range)</span>
-<span id="cb5-108"><a href="#cb5-108" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb5-109"><a href="#cb5-109" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_style</span>(</span>
-<span id="cb5-110"><a href="#cb5-110" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> gt<span class="sc">::</span><span class="fu">cell_text</span>(</span>
-<span id="cb5-111"><a href="#cb5-111" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"grey40"</span>, </span>
-<span id="cb5-112"><a href="#cb5-112" aria-hidden="true" tabindex="-1"></a>       <span class="at">weight =</span> <span class="st">"bold"</span>,</span>
-<span id="cb5-113"><a href="#cb5-113" aria-hidden="true" tabindex="-1"></a>       <span class="at">size =</span> <span class="st">"small"</span>,</span>
-<span id="cb5-114"><a href="#cb5-114" aria-hidden="true" tabindex="-1"></a>       <span class="at">font =</span> gt<span class="sc">::</span><span class="fu">google_font</span>(<span class="at">name =</span> <span class="st">"JetBrains Mono"</span>)</span>
-<span id="cb5-115"><a href="#cb5-115" aria-hidden="true" tabindex="-1"></a>       ),</span>
-<span id="cb5-116"><a href="#cb5-116" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> gt<span class="sc">::</span><span class="fu">cells_body</span>(<span class="at">columns =</span> type)</span>
-<span id="cb5-117"><a href="#cb5-117" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb5-118"><a href="#cb5-118" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-119"><a href="#cb5-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-120"><a href="#cb5-120" aria-hidden="true" tabindex="-1"></a><span class="fu">## Details</span></span>
-<span id="cb5-121"><a href="#cb5-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-122"><a href="#cb5-122" aria-hidden="true" tabindex="-1"></a><span class="ss">   1. </span>__Hospital-Based Renal Dialysis Facilities, [2300, 2499]__: </span>
-<span id="cb5-123"><a href="#cb5-123" aria-hidden="true" tabindex="-1"></a>   The physical location of an ESRD facility on the premises of a</span>
-<span id="cb5-124"><a href="#cb5-124" aria-hidden="true" tabindex="-1"></a>   hospital is not considered when determining if the ESRD facility is</span>
-<span id="cb5-125"><a href="#cb5-125" aria-hidden="true" tabindex="-1"></a>   hospital-based. Hospital corporate control is a critical factor in</span>
-<span id="cb5-126"><a href="#cb5-126" aria-hidden="true" tabindex="-1"></a>   determining whether an ESRD facility is hospital-based. Hospitals may have a</span>
-<span id="cb5-127"><a href="#cb5-127" aria-hidden="true" tabindex="-1"></a>   lease arrangement for the management of a hospital-based ESRD facility by a</span>
-<span id="cb5-128"><a href="#cb5-128" aria-hidden="true" tabindex="-1"></a>   non-hospital manager. This CCN range is used for ESRD facilities that have </span>
-<span id="cb5-129"><a href="#cb5-129" aria-hidden="true" tabindex="-1"></a>   been determined by the CMS to be hospital-owned, hospital-administered ESRD </span>
-<span id="cb5-130"><a href="#cb5-130" aria-hidden="true" tabindex="-1"></a>   facilities physically located on the hospital's premises as opposed to </span>
-<span id="cb5-131"><a href="#cb5-131" aria-hidden="true" tabindex="-1"></a>   independent ESRD facilities and Hospital-Based Renal Disease Satellite </span>
-<span id="cb5-132"><a href="#cb5-132" aria-hidden="true" tabindex="-1"></a>   Facilities. The satellites are hospital-based, but are physically located </span>
-<span id="cb5-133"><a href="#cb5-133" aria-hidden="true" tabindex="-1"></a>   off the hospital’s premises.</span>
-<span id="cb5-134"><a href="#cb5-134" aria-hidden="true" tabindex="-1"></a>   </span>
-<span id="cb5-135"><a href="#cb5-135" aria-hidden="true" tabindex="-1"></a><span class="ss">   2. </span>__Hospital-Based Renal Dialysis Satellite Facilities, [3500, 3699]__: </span>
-<span id="cb5-136"><a href="#cb5-136" aria-hidden="true" tabindex="-1"></a>   This CCN range is used for those ESRD facilities that are hospital-owned and </span>
-<span id="cb5-137"><a href="#cb5-137" aria-hidden="true" tabindex="-1"></a>   hospital-administered, but that are not located on the hospital’s premises. </span>
-<span id="cb5-138"><a href="#cb5-138" aria-hidden="true" tabindex="-1"></a>   This is why they are referred to as hospital-based satellites. In determining </span>
-<span id="cb5-139"><a href="#cb5-139" aria-hidden="true" tabindex="-1"></a>   whether such a satellite facility is hospital-based, use the same criteria as </span>
-<span id="cb5-140"><a href="#cb5-140" aria-hidden="true" tabindex="-1"></a>   you would in making a hospital-based determination under the 2300-2499 series, </span>
-<span id="cb5-141"><a href="#cb5-141" aria-hidden="true" tabindex="-1"></a>   except that you would assign a 3500-3699 number to such a facility because it </span>
-<span id="cb5-142"><a href="#cb5-142" aria-hidden="true" tabindex="-1"></a>   is off the premises of the hospital to which it is based. The word premises </span>
-<span id="cb5-143"><a href="#cb5-143" aria-hidden="true" tabindex="-1"></a>   per _se_ is not defined in the statute, regulations, or SOM<span class="ot">[^State Operations Manual]</span>, </span>
-<span id="cb5-144"><a href="#cb5-144" aria-hidden="true" tabindex="-1"></a>   but there is a definition of "furnishes on the premises" that states "the </span>
-<span id="cb5-145"><a href="#cb5-145" aria-hidden="true" tabindex="-1"></a>   ESRD facility furnishes services on its main premises; or its other premises </span>
-<span id="cb5-146"><a href="#cb5-146" aria-hidden="true" tabindex="-1"></a>   that are: </span>
-<span id="cb5-147"><a href="#cb5-147" aria-hidden="true" tabindex="-1"></a>   </span>
-<span id="cb5-148"><a href="#cb5-148" aria-hidden="true" tabindex="-1"></a>      a. Contiguous with or in immediate proximity to the main premises, and </span>
-<span id="cb5-149"><a href="#cb5-149" aria-hidden="true" tabindex="-1"></a>      under the direction of the same professional staff and governing body as </span>
-<span id="cb5-150"><a href="#cb5-150" aria-hidden="true" tabindex="-1"></a>      the main premises, or </span>
-<span id="cb5-151"><a href="#cb5-151" aria-hidden="true" tabindex="-1"></a>      b. Approved on a time-limited basis as a special purpose renal dialysis facility."</span>
-<span id="cb5-152"><a href="#cb5-152" aria-hidden="true" tabindex="-1"></a>   </span>
-<span id="cb5-153"><a href="#cb5-153" aria-hidden="true" tabindex="-1"></a>   Thus, in addition to the regulations, which should assist you in determining </span>
-<span id="cb5-154"><a href="#cb5-154" aria-hidden="true" tabindex="-1"></a>   whether the facility is an integral part of the hospital, you may use the </span>
-<span id="cb5-155"><a href="#cb5-155" aria-hidden="true" tabindex="-1"></a>   "furnishes on the premises" definition to distinguish between a hospital-based </span>
-<span id="cb5-156"><a href="#cb5-156" aria-hidden="true" tabindex="-1"></a>   entity under the 2300-2499 series as opposed to an entity under the 3500-3699 </span>
-<span id="cb5-157"><a href="#cb5-157" aria-hidden="true" tabindex="-1"></a>   number series. Also, we do not believe that these satellites will be furnishing </span>
-<span id="cb5-158"><a href="#cb5-158" aria-hidden="true" tabindex="-1"></a>   inpatient dialysis services. The CMS will make or approve the determination that </span>
-<span id="cb5-159"><a href="#cb5-159" aria-hidden="true" tabindex="-1"></a>   a particular ESRD facility meets the requirements to be hospital-based, and if </span>
-<span id="cb5-160"><a href="#cb5-160" aria-hidden="true" tabindex="-1"></a>   it is off the hospital’s premises, a hospital- based satellite. It is </span>
-<span id="cb5-161"><a href="#cb5-161" aria-hidden="true" tabindex="-1"></a>   conceivable that a hospital-based ESRD facility could have a 2300-2499 number </span>
-<span id="cb5-162"><a href="#cb5-162" aria-hidden="true" tabindex="-1"></a>   assigned to the location on the hospital’s premises, and one or more 3500-3699 </span>
-<span id="cb5-163"><a href="#cb5-163" aria-hidden="true" tabindex="-1"></a>   numbers for those locations (satellites) off the premises (each satellite is </span>
-<span id="cb5-164"><a href="#cb5-164" aria-hidden="true" tabindex="-1"></a>   given a separate 3500- 3699 number). If an ESRD facility that is assigned a </span>
-<span id="cb5-165"><a href="#cb5-165" aria-hidden="true" tabindex="-1"></a>   2300-2499 number moves off the hospital’s premises and is determined to be a </span>
-<span id="cb5-166"><a href="#cb5-166" aria-hidden="true" tabindex="-1"></a>   satellite, it should receive a number in the 3500-3699 series. However, if a</span>
-<span id="cb5-167"><a href="#cb5-167" aria-hidden="true" tabindex="-1"></a>   satellite changes its address but is still considered off the hospital’s</span>
-<span id="cb5-168"><a href="#cb5-168" aria-hidden="true" tabindex="-1"></a>   premises, it should retain the 3500-3699 number it was originally issued rather</span>
-<span id="cb5-169"><a href="#cb5-169" aria-hidden="true" tabindex="-1"></a>   than being issued a new 3500-3699 number. Any questions concerning billing</span>
-<span id="cb5-170"><a href="#cb5-170" aria-hidden="true" tabindex="-1"></a>   should be referred to the RO financial component or the fiscal intermediary as</span>
-<span id="cb5-171"><a href="#cb5-171" aria-hidden="true" tabindex="-1"></a>   you determine appropriate. </span>
-<span id="cb5-172"><a href="#cb5-172" aria-hidden="true" tabindex="-1"></a>   </span>
-<span id="cb5-173"><a href="#cb5-173" aria-hidden="true" tabindex="-1"></a>NOTE: In determining whether an entity is hospital-based for reimbursement </span>
-<span id="cb5-174"><a href="#cb5-174" aria-hidden="true" tabindex="-1"></a>purposes, the requirements at §2287 must be met.</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span><span class="co"> html_document</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="an">editor_options:</span><span class="co"> </span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">  chunk_output_type: console</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># ESRDs</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup}</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co">#| cache: false</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co">#| comment: ""</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ccn)</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: pkg-version</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="st">"ccn version:"</span>, <span class="fu">sQuote</span>(utils<span class="sc">::</span><span class="fu">packageVersion</span>(<span class="st">"ccn"</span>)), <span class="st">"loaded"</span>) <span class="sc">|&gt;</span> <span class="fu">cat</span>()</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a><span class="fu">## Facility Ranges</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>The last four characters of a Provider CCN represent the facility type and a unique</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>identifier. The facility type is encoded in the third character of the last four</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>characters. The table below summarizes the valid facility type codes and their</span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>corresponding ranges. </span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: esrd-ranges</span></span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>ccn<span class="sc">::</span>medicare_ranges <span class="sc">|&gt;</span></span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">sbt</span>(</span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>    start <span class="sc">==</span> <span class="dv">1</span>L <span class="sc">|</span> </span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>    start <span class="sc">==</span> <span class="dv">2000</span>L <span class="sc">|</span> </span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>    start <span class="sc">==</span> <span class="dv">3300</span>L <span class="sc">|</span> </span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>    abbr <span class="sc">==</span> <span class="st">"ESRD"</span>, </span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>    <span class="sc">-</span>start, </span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a>    <span class="sc">-</span>end) <span class="sc">|&gt;</span></span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_options</span>(<span class="at">quarto.disable_processing =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>  gtExtras<span class="sc">::</span><span class="fu">gt_theme_nytimes</span>() <span class="sc">|&gt;</span></span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_style</span>(</span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> gt<span class="sc">::</span><span class="fu">cell_text</span>(</span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a>      <span class="at">font =</span> gt<span class="sc">::</span><span class="fu">google_font</span>(<span class="at">name =</span> <span class="st">"JetBrains Mono"</span>), </span>
+<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a>      <span class="at">color =</span> <span class="st">"grey60"</span>, </span>
+<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a>      <span class="at">size =</span> <span class="st">"small"</span>),</span>
+<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> gt<span class="sc">::</span><span class="fu">cells_body</span>(<span class="at">columns =</span> range)</span>
+<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_style</span>(</span>
+<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> gt<span class="sc">::</span><span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>),</span>
+<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> gt<span class="sc">::</span><span class="fu">cells_body</span>(<span class="at">columns =</span> abbr)</span>
+<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_style</span>(</span>
+<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> gt<span class="sc">::</span><span class="fu">cell_text</span>(<span class="at">color =</span> <span class="st">"grey50"</span>, <span class="at">size =</span> <span class="st">"small"</span>),</span>
+<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> gt<span class="sc">::</span><span class="fu">cells_body</span>(<span class="at">columns =</span> desc)</span>
+<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a><span class="fu">## Examples</span></span>
+<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: esrd-data</span></span>
+<span id="cb7-72"><a href="#cb7-72" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a>esrd <span class="ot">&lt;-</span> ccn<span class="sc">:::</span><span class="fu">get_pin</span>(<span class="st">"esrd"</span>)</span>
+<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a>esrd</span>
+<span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a><span class="fu">### Overview</span></span>
+<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: esrd-overview</span></span>
+<span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb7-86"><a href="#cb7-86" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb7-88"><a href="#cb7-88" aria-hidden="true" tabindex="-1"></a>over <span class="ot">&lt;-</span> cheapr<span class="sc">::</span><span class="fu">overview</span>(esrd)</span>
+<span id="cb7-89"><a href="#cb7-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-90"><a href="#cb7-90" aria-hidden="true" tabindex="-1"></a>over<span class="sc">$</span>numeric <span class="sc">|&gt;</span> </span>
+<span id="cb7-91"><a href="#cb7-91" aria-hidden="true" tabindex="-1"></a>   fastplyr<span class="sc">::</span><span class="fu">as_tbl</span>() <span class="sc">|&gt;</span></span>
+<span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a>   collapse<span class="sc">::</span><span class="fu">slt</span>(col, <span class="at">unique =</span> n_unique, mean, sd, p0<span class="sc">:</span>iqr, hist) <span class="sc">|&gt;</span></span>
+<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a>   gt<span class="sc">::</span><span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a>   gtUtils<span class="sc">::</span><span class="fu">gt_theme_athletic</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a>   gt<span class="sc">::</span><span class="fu">tab_options</span>(<span class="at">quarto.disable_processing =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb7-96"><a href="#cb7-96" aria-hidden="true" tabindex="-1"></a>   gt<span class="sc">::</span><span class="fu">fmt_number</span>(<span class="at">columns =</span> <span class="fu">c</span>(mean, sd))</span>
+<span id="cb7-97"><a href="#cb7-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-98"><a href="#cb7-98" aria-hidden="true" tabindex="-1"></a>over<span class="sc">$</span>categorical <span class="sc">|&gt;</span> </span>
+<span id="cb7-99"><a href="#cb7-99" aria-hidden="true" tabindex="-1"></a>   fastplyr<span class="sc">::</span><span class="fu">as_tbl</span>() <span class="sc">|&gt;</span></span>
+<span id="cb7-100"><a href="#cb7-100" aria-hidden="true" tabindex="-1"></a>   collapse<span class="sc">::</span><span class="fu">slt</span>(col, <span class="at">unique =</span> n_unique, min, max) <span class="sc">|&gt;</span></span>
+<span id="cb7-101"><a href="#cb7-101" aria-hidden="true" tabindex="-1"></a>   collapse<span class="sc">::</span><span class="fu">mtt</span>(</span>
+<span id="cb7-102"><a href="#cb7-102" aria-hidden="true" tabindex="-1"></a>      <span class="at">min =</span> stringr<span class="sc">::</span><span class="fu">str_wrap</span>(min, <span class="at">width =</span> <span class="dv">40</span>), </span>
+<span id="cb7-103"><a href="#cb7-103" aria-hidden="true" tabindex="-1"></a>      <span class="at">max =</span> stringr<span class="sc">::</span><span class="fu">str_wrap</span>(max, <span class="at">width =</span> <span class="dv">40</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb7-104"><a href="#cb7-104" aria-hidden="true" tabindex="-1"></a>   gt<span class="sc">::</span><span class="fu">gt</span>(<span class="at">process_md =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb7-105"><a href="#cb7-105" aria-hidden="true" tabindex="-1"></a>   gtUtils<span class="sc">::</span><span class="fu">gt_theme_athletic</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb7-106"><a href="#cb7-106" aria-hidden="true" tabindex="-1"></a>   gt<span class="sc">::</span><span class="fu">tab_options</span>(<span class="at">quarto.disable_processing =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb7-107"><a href="#cb7-107" aria-hidden="true" tabindex="-1"></a>   gt<span class="sc">::</span><span class="fu">cols_align</span>(<span class="st">"left"</span>, <span class="fu">c</span>(min, max)) <span class="sc">|&gt;</span> </span>
+<span id="cb7-108"><a href="#cb7-108" aria-hidden="true" tabindex="-1"></a>   gt<span class="sc">::</span><span class="fu">cols_align</span>(<span class="st">"right"</span>, <span class="fu">c</span>(col))</span>
+<span id="cb7-109"><a href="#cb7-109" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-110"><a href="#cb7-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-111"><a href="#cb7-111" aria-hidden="true" tabindex="-1"></a><span class="fu">## Counts</span></span>
+<span id="cb7-112"><a href="#cb7-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-115"><a href="#cb7-115" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-116"><a href="#cb7-116" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: esrd-counts</span></span>
+<span id="cb7-117"><a href="#cb7-117" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb7-118"><a href="#cb7-118" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb7-119"><a href="#cb7-119" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb7-120"><a href="#cb7-120" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> purrr<span class="sc">::</span><span class="fu">map</span>(esrd<span class="sc">$</span>ccn, ccn<span class="sc">::</span>data_frame) <span class="sc">|&gt;</span> </span>
+<span id="cb7-121"><a href="#cb7-121" aria-hidden="true" tabindex="-1"></a>  data.table<span class="sc">::</span><span class="fu">rbindlist</span>()</span>
+<span id="cb7-122"><a href="#cb7-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-123"><a href="#cb7-123" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span></span>
+<span id="cb7-124"><a href="#cb7-124" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">fcount</span>(type, range) <span class="sc">|&gt;</span></span>
+<span id="cb7-125"><a href="#cb7-125" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">roworder</span>(<span class="sc">-</span>N) <span class="sc">|&gt;</span></span>
+<span id="cb7-126"><a href="#cb7-126" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb7-127"><a href="#cb7-127" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_options</span>(<span class="at">quarto.disable_processing =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb7-128"><a href="#cb7-128" aria-hidden="true" tabindex="-1"></a>  gtExtras<span class="sc">::</span><span class="fu">gt_theme_nytimes</span>() <span class="sc">|&gt;</span></span>
+<span id="cb7-129"><a href="#cb7-129" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_style</span>(</span>
+<span id="cb7-130"><a href="#cb7-130" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> gt<span class="sc">::</span><span class="fu">cell_text</span>(</span>
+<span id="cb7-131"><a href="#cb7-131" aria-hidden="true" tabindex="-1"></a>      <span class="at">font =</span> gt<span class="sc">::</span><span class="fu">google_font</span>(<span class="at">name =</span> <span class="st">"JetBrains Mono"</span>),</span>
+<span id="cb7-132"><a href="#cb7-132" aria-hidden="true" tabindex="-1"></a>      <span class="at">color =</span> <span class="st">"grey60"</span>,</span>
+<span id="cb7-133"><a href="#cb7-133" aria-hidden="true" tabindex="-1"></a>      <span class="at">size =</span> <span class="st">"small"</span></span>
+<span id="cb7-134"><a href="#cb7-134" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb7-135"><a href="#cb7-135" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> gt<span class="sc">::</span><span class="fu">cells_body</span>(<span class="at">columns =</span> range)</span>
+<span id="cb7-136"><a href="#cb7-136" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb7-137"><a href="#cb7-137" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_style</span>(</span>
+<span id="cb7-138"><a href="#cb7-138" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> gt<span class="sc">::</span><span class="fu">cell_text</span>(</span>
+<span id="cb7-139"><a href="#cb7-139" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"grey40"</span>, </span>
+<span id="cb7-140"><a href="#cb7-140" aria-hidden="true" tabindex="-1"></a>       <span class="at">weight =</span> <span class="st">"bold"</span>,</span>
+<span id="cb7-141"><a href="#cb7-141" aria-hidden="true" tabindex="-1"></a>       <span class="at">size =</span> <span class="st">"small"</span>,</span>
+<span id="cb7-142"><a href="#cb7-142" aria-hidden="true" tabindex="-1"></a>       <span class="at">font =</span> gt<span class="sc">::</span><span class="fu">google_font</span>(<span class="at">name =</span> <span class="st">"JetBrains Mono"</span>)</span>
+<span id="cb7-143"><a href="#cb7-143" aria-hidden="true" tabindex="-1"></a>       ),</span>
+<span id="cb7-144"><a href="#cb7-144" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> gt<span class="sc">::</span><span class="fu">cells_body</span>(<span class="at">columns =</span> type)</span>
+<span id="cb7-145"><a href="#cb7-145" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb7-146"><a href="#cb7-146" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-147"><a href="#cb7-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-148"><a href="#cb7-148" aria-hidden="true" tabindex="-1"></a><span class="fu">## Details</span></span>
+<span id="cb7-149"><a href="#cb7-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-150"><a href="#cb7-150" aria-hidden="true" tabindex="-1"></a><span class="ss">   1. </span>__Hospital-Based Renal Dialysis Facilities, [2300, 2499]__: </span>
+<span id="cb7-151"><a href="#cb7-151" aria-hidden="true" tabindex="-1"></a>   The physical location of an ESRD facility on the premises of a</span>
+<span id="cb7-152"><a href="#cb7-152" aria-hidden="true" tabindex="-1"></a>   hospital is not considered when determining if the ESRD facility is</span>
+<span id="cb7-153"><a href="#cb7-153" aria-hidden="true" tabindex="-1"></a>   hospital-based. Hospital corporate control is a critical factor in</span>
+<span id="cb7-154"><a href="#cb7-154" aria-hidden="true" tabindex="-1"></a>   determining whether an ESRD facility is hospital-based. Hospitals may have a</span>
+<span id="cb7-155"><a href="#cb7-155" aria-hidden="true" tabindex="-1"></a>   lease arrangement for the management of a hospital-based ESRD facility by a</span>
+<span id="cb7-156"><a href="#cb7-156" aria-hidden="true" tabindex="-1"></a>   non-hospital manager. This CCN range is used for ESRD facilities that have </span>
+<span id="cb7-157"><a href="#cb7-157" aria-hidden="true" tabindex="-1"></a>   been determined by the CMS to be hospital-owned, hospital-administered ESRD </span>
+<span id="cb7-158"><a href="#cb7-158" aria-hidden="true" tabindex="-1"></a>   facilities physically located on the hospital's premises as opposed to </span>
+<span id="cb7-159"><a href="#cb7-159" aria-hidden="true" tabindex="-1"></a>   independent ESRD facilities and Hospital-Based Renal Disease Satellite </span>
+<span id="cb7-160"><a href="#cb7-160" aria-hidden="true" tabindex="-1"></a>   Facilities. The satellites are hospital-based, but are physically located </span>
+<span id="cb7-161"><a href="#cb7-161" aria-hidden="true" tabindex="-1"></a>   off the hospital’s premises.</span>
+<span id="cb7-162"><a href="#cb7-162" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb7-163"><a href="#cb7-163" aria-hidden="true" tabindex="-1"></a><span class="ss">   2. </span>__Hospital-Based Renal Dialysis Satellite Facilities, [3500, 3699]__: </span>
+<span id="cb7-164"><a href="#cb7-164" aria-hidden="true" tabindex="-1"></a>   This CCN range is used for those ESRD facilities that are hospital-owned and </span>
+<span id="cb7-165"><a href="#cb7-165" aria-hidden="true" tabindex="-1"></a>   hospital-administered, but that are not located on the hospital’s premises. </span>
+<span id="cb7-166"><a href="#cb7-166" aria-hidden="true" tabindex="-1"></a>   This is why they are referred to as hospital-based satellites. In determining </span>
+<span id="cb7-167"><a href="#cb7-167" aria-hidden="true" tabindex="-1"></a>   whether such a satellite facility is hospital-based, use the same criteria as </span>
+<span id="cb7-168"><a href="#cb7-168" aria-hidden="true" tabindex="-1"></a>   you would in making a hospital-based determination under the 2300-2499 series, </span>
+<span id="cb7-169"><a href="#cb7-169" aria-hidden="true" tabindex="-1"></a>   except that you would assign a 3500-3699 number to such a facility because it </span>
+<span id="cb7-170"><a href="#cb7-170" aria-hidden="true" tabindex="-1"></a>   is off the premises of the hospital to which it is based. The word premises </span>
+<span id="cb7-171"><a href="#cb7-171" aria-hidden="true" tabindex="-1"></a>   per _se_ is not defined in the statute, regulations, or SOM<span class="ot">[^State Operations Manual]</span>, </span>
+<span id="cb7-172"><a href="#cb7-172" aria-hidden="true" tabindex="-1"></a>   but there is a definition of "furnishes on the premises" that states "the </span>
+<span id="cb7-173"><a href="#cb7-173" aria-hidden="true" tabindex="-1"></a>   ESRD facility furnishes services on its main premises; or its other premises </span>
+<span id="cb7-174"><a href="#cb7-174" aria-hidden="true" tabindex="-1"></a>   that are: </span>
+<span id="cb7-175"><a href="#cb7-175" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb7-176"><a href="#cb7-176" aria-hidden="true" tabindex="-1"></a>      a. Contiguous with or in immediate proximity to the main premises, and </span>
+<span id="cb7-177"><a href="#cb7-177" aria-hidden="true" tabindex="-1"></a>      under the direction of the same professional staff and governing body as </span>
+<span id="cb7-178"><a href="#cb7-178" aria-hidden="true" tabindex="-1"></a>      the main premises, or </span>
+<span id="cb7-179"><a href="#cb7-179" aria-hidden="true" tabindex="-1"></a>      b. Approved on a time-limited basis as a special purpose renal dialysis facility."</span>
+<span id="cb7-180"><a href="#cb7-180" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb7-181"><a href="#cb7-181" aria-hidden="true" tabindex="-1"></a>   Thus, in addition to the regulations, which should assist you in determining </span>
+<span id="cb7-182"><a href="#cb7-182" aria-hidden="true" tabindex="-1"></a>   whether the facility is an integral part of the hospital, you may use the </span>
+<span id="cb7-183"><a href="#cb7-183" aria-hidden="true" tabindex="-1"></a>   "furnishes on the premises" definition to distinguish between a hospital-based </span>
+<span id="cb7-184"><a href="#cb7-184" aria-hidden="true" tabindex="-1"></a>   entity under the 2300-2499 series as opposed to an entity under the 3500-3699 </span>
+<span id="cb7-185"><a href="#cb7-185" aria-hidden="true" tabindex="-1"></a>   number series. Also, we do not believe that these satellites will be furnishing </span>
+<span id="cb7-186"><a href="#cb7-186" aria-hidden="true" tabindex="-1"></a>   inpatient dialysis services. The CMS will make or approve the determination that </span>
+<span id="cb7-187"><a href="#cb7-187" aria-hidden="true" tabindex="-1"></a>   a particular ESRD facility meets the requirements to be hospital-based, and if </span>
+<span id="cb7-188"><a href="#cb7-188" aria-hidden="true" tabindex="-1"></a>   it is off the hospital’s premises, a hospital- based satellite. It is </span>
+<span id="cb7-189"><a href="#cb7-189" aria-hidden="true" tabindex="-1"></a>   conceivable that a hospital-based ESRD facility could have a 2300-2499 number </span>
+<span id="cb7-190"><a href="#cb7-190" aria-hidden="true" tabindex="-1"></a>   assigned to the location on the hospital’s premises, and one or more 3500-3699 </span>
+<span id="cb7-191"><a href="#cb7-191" aria-hidden="true" tabindex="-1"></a>   numbers for those locations (satellites) off the premises (each satellite is </span>
+<span id="cb7-192"><a href="#cb7-192" aria-hidden="true" tabindex="-1"></a>   given a separate 3500- 3699 number). If an ESRD facility that is assigned a </span>
+<span id="cb7-193"><a href="#cb7-193" aria-hidden="true" tabindex="-1"></a>   2300-2499 number moves off the hospital’s premises and is determined to be a </span>
+<span id="cb7-194"><a href="#cb7-194" aria-hidden="true" tabindex="-1"></a>   satellite, it should receive a number in the 3500-3699 series. However, if a</span>
+<span id="cb7-195"><a href="#cb7-195" aria-hidden="true" tabindex="-1"></a>   satellite changes its address but is still considered off the hospital’s</span>
+<span id="cb7-196"><a href="#cb7-196" aria-hidden="true" tabindex="-1"></a>   premises, it should retain the 3500-3699 number it was originally issued rather</span>
+<span id="cb7-197"><a href="#cb7-197" aria-hidden="true" tabindex="-1"></a>   than being issued a new 3500-3699 number. Any questions concerning billing</span>
+<span id="cb7-198"><a href="#cb7-198" aria-hidden="true" tabindex="-1"></a>   should be referred to the RO financial component or the fiscal intermediary as</span>
+<span id="cb7-199"><a href="#cb7-199" aria-hidden="true" tabindex="-1"></a>   you determine appropriate. </span>
+<span id="cb7-200"><a href="#cb7-200" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb7-201"><a href="#cb7-201" aria-hidden="true" tabindex="-1"></a>NOTE: In determining whether an entity is hospital-based for reimbursement </span>
+<span id="cb7-202"><a href="#cb7-202" aria-hidden="true" tabindex="-1"></a>purposes, the requirements at §2287 must be met.</span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

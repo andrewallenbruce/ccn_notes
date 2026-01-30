@@ -62,25 +62,51 @@ ccn::medicare_ranges |>
 ## Examples
 
 ```{r}
+#| label: esrd-data
+#| message: false
+#| warning: false
+#| echo: true
 esrd <- ccn:::get_pin("esrd")
+esrd
+```
+
+### Overview
+
+```{r}
+#| label: esrd-overview
+#| message: false
+#| warning: false
+#| echo: true
 over <- cheapr::overview(esrd)
+
 over$numeric |> 
    fastplyr::as_tbl() |>
-   collapse::slt(col, p_complete, n_unique:hist) |>
+   collapse::slt(col, unique = n_unique, mean, sd, p0:iqr, hist) |>
    gt::gt() |> 
-   gt::tab_options(quarto.disable_processing = TRUE) |>
-   gtUtils::gt_theme_athletic()
+   gtUtils::gt_theme_athletic() |> 
+   gt::tab_options(quarto.disable_processing = TRUE) |> 
+   gt::fmt_number(columns = c(mean, sd))
 
 over$categorical |> 
    fastplyr::as_tbl() |>
-   collapse::slt(col, p_complete, n_unique, min, max) |>
-   gt::gt() |> 
-   gt::tab_options(quarto.disable_processing = TRUE) |>
-   gtUtils::gt_theme_athletic()
+   collapse::slt(col, unique = n_unique, min, max) |>
+   collapse::mtt(
+      min = stringr::str_wrap(min, width = 40), 
+      max = stringr::str_wrap(max, width = 40)) |>
+   gt::gt(process_md = TRUE) |> 
+   gtUtils::gt_theme_athletic() |> 
+   gt::tab_options(quarto.disable_processing = TRUE) |> 
+   gt::cols_align("left", c(min, max)) |> 
+   gt::cols_align("right", c(col))
 ```
 
+## Counts
 
 ```{r}
+#| label: esrd-counts
+#| message: false
+#| warning: false
+#| echo: true
 df <- purrr::map(esrd$ccn, ccn::data_frame) |> 
   data.table::rbindlist()
 
