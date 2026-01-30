@@ -15,6 +15,12 @@ editor_options:
 library(ccn)
 ```
 
+```{r}
+#| label: pkg-version
+#| echo: false
+paste("ccn version:", sQuote(utils::packageVersion("ccn")), "loaded") |> cat()
+```
+
 A __CMS Certification Number__ is a uniform way of identifying a healthcare
 provider or supplier that has or currently does participate in the Medicare and/or Medicaid programs.
 

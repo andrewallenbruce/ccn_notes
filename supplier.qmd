@@ -14,6 +14,12 @@ editor_options:
 library(ccn)
 ```
 
+```{r}
+#| label: pkg-version
+#| echo: false
+paste("ccn version:", sQuote(utils::packageVersion("ccn")), "loaded") |> cat()
+```
+
 Suppliers that are paid by Part B carriers have a 10-digit alphanumeric CCN. The
 first 2 digits identify the State in which the supplier is located. The third
 digit is an alpha character that identifies the type of facility. The remaining

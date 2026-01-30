@@ -14,6 +14,12 @@ editor_options:
 library(ccn)
 ```
 
+```{r}
+#| label: pkg-version
+#| echo: false
+paste("ccn version:", sQuote(utils::packageVersion("ccn")), "loaded") |> cat()
+```
+
 ## Facility Ranges
 
 The last four characters of a Provider CCN represent the facility type and a unique
@@ -57,8 +63,20 @@ ccn::medicare_ranges |>
 
 ```{r}
 esrd <- ccn:::get_pin("esrd")
-esrd |> 
-   gtExtras::gt_plt_summary()
+over <- cheapr::overview(esrd)
+over$numeric |> 
+   fastplyr::as_tbl() |>
+   collapse::slt(col, p_complete, n_unique:hist) |>
+   gt::gt() |> 
+   gt::tab_options(quarto.disable_processing = TRUE) |>
+   gtUtils::gt_theme_athletic()
+
+over$categorical |> 
+   fastplyr::as_tbl() |>
+   collapse::slt(col, p_complete, n_unique, min, max) |>
+   gt::gt() |> 
+   gt::tab_options(quarto.disable_processing = TRUE) |>
+   gtUtils::gt_theme_athletic()
 ```
 
 

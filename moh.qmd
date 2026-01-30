@@ -15,6 +15,12 @@ editor_options:
 library(ccn)
 ```
 
+```{r}
+#| label: pkg-version
+#| echo: false
+paste("ccn version:", sQuote(utils::packageVersion("ccn")), "loaded") |> cat()
+```
+
 ## Hospital Ranges
 
 The last three characters of a Medicaid-Only Hospital CCN represent the facility range. The facility type is encoded in the third character of the last four

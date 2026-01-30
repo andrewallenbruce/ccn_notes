@@ -14,6 +14,12 @@ editor_options:
 library(ccn)
 ```
 
+```{r}
+#| label: pkg-version
+#| echo: false
+paste("ccn version:", sQuote(utils::packageVersion("ccn")), "loaded") |> cat()
+```
+
 Organ procurement organizations (OPOs) are assigned a 6-digit alphanumeric CCN.
 The first 2 digits identify the State code. The third digit is the alpha
 character P. The remaining 3 digits are the unique facility identifier.

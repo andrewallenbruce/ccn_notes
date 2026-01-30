@@ -14,6 +14,12 @@ editor_options:
 library(ccn)
 ```
 
+```{r}
+#| label: pkg-version
+#| echo: false
+paste("ccn version:", sQuote(utils::packageVersion("ccn")), "loaded") |> cat()
+```
+
 CCNs for Providers and Suppliers paid under _Medicare Part A_ have __6 digits__. The first two characters represent the state and the last four characters represent the facility type and a unique
 identifier.
 
