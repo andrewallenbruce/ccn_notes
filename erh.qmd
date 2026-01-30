@@ -34,7 +34,7 @@ to the Federal or non-Federal status.
 ```{r}
 parse("21034E")
 decode("12345F")
-data_frame("11038F") # USAF Hospital (Moody)
+as_data_frame("11038F") # USAF Hospital (Moody)
 ```
 
 

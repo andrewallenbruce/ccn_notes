@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.15">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="dcterms.date" content="2026-01-29">
+<meta name="dcterms.date" content="2026-01-30">
 <title>3&nbsp; OPOs – CMS Certification Numbers</title>
 <style>
 code{white-space: pre-wrap;}
@@ -312,7 +312,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 29, 2026</p>
+      <p class="date">January 30, 2026</p>
     </div>
   </div>
   
@@ -323,13 +323,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header><div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>ccn version: '0.0.0.9087' loaded</code></pre>
+<pre><code>ccn version: '0.0.0.9088' loaded</code></pre>
 </div>
 </div>
 <p>Organ procurement organizations (OPOs) are assigned a 6-digit alphanumeric CCN. The first 2 digits identify the State code. The third digit is the alpha character P. The remaining 3 digits are the unique facility identifier.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">organ</span><span class="op">(</span><span class="st">"05P001"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">data_frame</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">as_data_frame</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Classes 'tbl_df', 'tbl' and 'data.frame':   1 obs. of  9 variables:
@@ -839,7 +839,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: opo-example</span></span>
 <span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="fu">organ</span>(<span class="st">"05P001"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data_frame</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_data_frame</span>() <span class="sc">|&gt;</span> </span>
 <span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">str</span>()</span>
 <span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>

@@ -27,7 +27,7 @@ character P. The remaining 3 digits are the unique facility identifier.
 ```{r}
 #| label: opo-example
 organ("05P001") |> 
-  data_frame() |> 
+  as_data_frame() |> 
   str()
 ```
 
