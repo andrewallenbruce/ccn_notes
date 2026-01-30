@@ -15,3 +15,10 @@ editor_options:
 library(ccn)
 ```
 
+```{r}
+ccn:::get_pin("hha") |> 
+  collapse::fcount(state) |> 
+  collapse::roworder(-N) |> 
+  print(n = Inf)
+```
+

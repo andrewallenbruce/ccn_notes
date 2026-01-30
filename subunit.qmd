@@ -12,4 +12,28 @@ editor_options:
 #| cache: false
 #| comment: ""
 library(ccn)
+library(cheapr)
 ```
+
+```{r}
+aff <- ccn:::get_pin("aff")
+
+aff$fac |> 
+  collapse::fcount(facility_type) |> 
+  collapse::roworder(-N)
+
+aff$sub |> 
+  collapse::fcount(facility_type) |> 
+  collapse::roworder(-N)
+
+aff$fac[cheapr::which_(aff$sub$parent %in_% aff$fac$ccn), ] |> 
+  collapse::fcount(facility_type) |> 
+  collapse::roworder(-N)
+```
+
+
+```{r}
+aff$fac
+aff$sub
+```
+

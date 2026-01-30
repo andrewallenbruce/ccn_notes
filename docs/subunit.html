@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.15">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="dcterms.date" content="2025-12-25">
+<meta name="dcterms.date" content="2026-01-30">
 <title>12&nbsp; Subunits – CMS Certification Numbers</title>
 <style>
 code{white-space: pre-wrap;}
@@ -312,7 +312,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 25, 2025</p>
+      <p class="date">January 30, 2026</p>
     </div>
   </div>
   
@@ -321,7 +321,87 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header>
+</header><div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">aff</span> <span class="op">&lt;-</span> <span class="fu">ccn</span><span class="fu">:::</span><span class="fu">get_pin</span><span class="op">(</span><span class="st">"aff"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">aff</span><span class="op">$</span><span class="va">fac</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/fcount.html">fcount</a></span><span class="op">(</span><span class="va">facility_type</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/roworder.html">roworder</a></span><span class="op">(</span><span class="op">-</span><span class="va">N</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 7 × 2
+  facility_type                         N
+  &lt;chr&gt;                             &lt;int&gt;
+1 Nursing home                      12682
+2 Dialysis facility                  7248
+3 Home health agency                 6919
+4 Hospice                            5114
+5 Hospital                           4576
+6 Inpatient rehabilitation facility   396
+7 Long-term care hospital             306</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">aff</span><span class="op">$</span><span class="va">sub</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/fcount.html">fcount</a></span><span class="op">(</span><span class="va">facility_type</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/roworder.html">roworder</a></span><span class="op">(</span><span class="op">-</span><span class="va">N</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  facility_type                         N
+  &lt;chr&gt;                             &lt;int&gt;
+1 Nursing home                       1151
+2 Inpatient rehabilitation facility   738</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">aff</span><span class="op">$</span><span class="va">fac</span><span class="op">[</span><span class="fu">cheapr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/cheapr/man/which_.html">which_</a></span><span class="op">(</span><span class="va">aff</span><span class="op">$</span><span class="va">sub</span><span class="op">$</span><span class="va">parent</span> <span class="op">%in_%</span> <span class="va">aff</span><span class="op">$</span><span class="va">fac</span><span class="op">$</span><span class="va">ccn</span><span class="op">)</span>, <span class="op">]</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/fcount.html">fcount</a></span><span class="op">(</span><span class="va">facility_type</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/roworder.html">roworder</a></span><span class="op">(</span><span class="op">-</span><span class="va">N</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 7 × 2
+  facility_type                         N
+  &lt;chr&gt;                             &lt;int&gt;
+1 Nursing home                        527
+2 Dialysis facility                   358
+3 Hospice                             318
+4 Home health agency                  318
+5 Hospital                            314
+6 Inpatient rehabilitation facility    35
+7 Long-term care hospital              17</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">aff</span><span class="op">$</span><span class="va">fac</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 37,241 × 2
+   ccn    facility_type
+   &lt;chr&gt;  &lt;chr&gt;        
+ 1 001500 Hospice      
+ 2 001502 Hospice      
+ 3 001503 Hospice      
+ 4 001509 Hospice      
+ 5 001510 Hospice      
+ 6 001511 Hospice      
+ 7 001513 Hospice      
+ 8 001514 Hospice      
+ 9 001515 Hospice      
+10 001517 Hospice      
+# ℹ 37,231 more rows</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">aff</span><span class="op">$</span><span class="va">sub</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,889 × 3
+   ccn    parent facility_type                    
+   &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;                            
+ 1 01T011 010011 Inpatient rehabilitation facility
+ 2 01T033 010033 Inpatient rehabilitation facility
+ 3 01T092 010092 Inpatient rehabilitation facility
+ 4 01T100 010100 Inpatient rehabilitation facility
+ 5 01T104 010104 Inpatient rehabilitation facility
+ 6 01T113 010113 Inpatient rehabilitation facility
+ 7 01T114 010114 Inpatient rehabilitation facility
+ 8 01T139 010139 Inpatient rehabilitation facility
+ 9 01T144 010144 Inpatient rehabilitation facility
+10 01T157 010157 Inpatient rehabilitation facility
+# ℹ 1,879 more rows</code></pre>
+</div>
+</div>
+
 
 <!-- -->
 
@@ -787,21 +867,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span><span class="co"> html_document</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">editor_options:</span><span class="co"> </span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">  chunk_output_type: console</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># Subunits</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup}</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">#| cache: false</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">#| comment: ""</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ccn)</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span><span class="co"> html_document</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="an">editor_options:</span><span class="co"> </span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">  chunk_output_type: console</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># Subunits</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup}</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="co">#| cache: false</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="co">#| comment: ""</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ccn)</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(cheapr)</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>aff <span class="ot">&lt;-</span> ccn<span class="sc">:::</span><span class="fu">get_pin</span>(<span class="st">"aff"</span>)</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>aff<span class="sc">$</span>fac <span class="sc">|&gt;</span> </span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">fcount</span>(facility_type) <span class="sc">|&gt;</span> </span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">roworder</span>(<span class="sc">-</span>N)</span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>aff<span class="sc">$</span>sub <span class="sc">|&gt;</span> </span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">fcount</span>(facility_type) <span class="sc">|&gt;</span> </span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">roworder</span>(<span class="sc">-</span>N)</span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>aff<span class="sc">$</span>fac[cheapr<span class="sc">::</span><span class="fu">which_</span>(aff<span class="sc">$</span>sub<span class="sc">$</span>parent <span class="sc">%in_%</span> aff<span class="sc">$</span>fac<span class="sc">$</span>ccn), ] <span class="sc">|&gt;</span> </span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">fcount</span>(facility_type) <span class="sc">|&gt;</span> </span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">roworder</span>(<span class="sc">-</span>N)</span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a>aff<span class="sc">$</span>fac</span>
+<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a>aff<span class="sc">$</span>sub</span>
+<span id="cb11-42"><a href="#cb11-42" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">

@@ -14,3 +14,31 @@ editor_options:
 #| comment: ""
 library(ccn)
 ```
+
+## Inpatient Rehabilitation Facilities (IRF)
+
+```{r}
+ccn:::get_pin("irf") |> 
+  collapse::fcount(state) |> 
+  collapse::roworder(-N) |> 
+  print(n = Inf)
+```
+
+## Long-Term Care Hospitals (LTCH)
+
+```{r}
+ccn:::get_pin("ltch") |> 
+  collapse::fcount(state) |> 
+  collapse::roworder(-N) |> 
+  print(n = Inf)
+```
+
+## Rural Health Clinics (RHC)
+
+```{r}
+ccn:::get_pin("rhc") |> 
+  collapse::fcount(state) |> 
+  collapse::roworder(-N) |> 
+  print(n = Inf)
+```
+

@@ -31,3 +31,15 @@ organ("05P001") |>
   str()
 ```
 
+## Pin
+
+```{r}
+o <- ccn:::get_pin("opo")
+
+o$opo_codes
+
+o$opo_county
+
+o$opo_active
+```
+

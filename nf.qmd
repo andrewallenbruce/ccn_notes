@@ -14,5 +14,11 @@ editor_options:
 library(ccn)
 ```
 
+```{r}
+ccn:::get_pin("snf") |> 
+  collapse::fcount(state) |> 
+  collapse::roworder(-N) |> 
+  print(n = Inf)
+```
 
 

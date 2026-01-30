@@ -64,7 +64,7 @@
     "href": "opo.html",
     "title": "\n3  OPOs\n",
     "section": "",
-    "text": "ccn version: '0.0.0.9088' loaded\n\n\nOrgan procurement organizations (OPOs) are assigned a 6-digit alphanumeric CCN. The first 2 digits identify the State code. The third digit is the alpha character P. The remaining 3 digits are the unique facility identifier.\n\norgan(\"05P001\") |&gt; \n  as_data_frame() |&gt; \n  str()\n\nClasses 'tbl_df', 'tbl' and 'data.frame':   1 obs. of  9 variables:\n $ ccn   : chr \"05P001\"\n $ entity: chr \"Medicare\"\n $ state : chr \"CA (California)\"\n $ region: chr \"IX (San Francisco)\"\n $ range : chr \"001-099\"\n $ eipps : logi NA\n $ type  : chr \"OPO (Organ Procurement Organization)\"\n $ parent: chr NA\n $ ext   : chr NA",
+    "text": "3.1 Pin\nOrgan procurement organizations (OPOs) are assigned a 6-digit alphanumeric CCN. The first 2 digits identify the State code. The third digit is the alpha character P. The remaining 3 digits are the unique facility identifier.\no &lt;- ccn:::get_pin(\"opo\")\n\no$opo_codes\n\n# A tibble: 56 × 2\n   code  opo                                    \n   &lt;chr&gt; &lt;chr&gt;                                  \n 1 ALOB  Legacy of Hope                         \n 2 AROR  Arkansas Regional Organ Recovery Agency\n 3 AZOB  Donor Network of Arizona               \n 4 CADN  Donor Network West                     \n 5 CAGS  Sierra Donor Services                  \n 6 CAOP  OneLegacy                              \n 7 CASD  Lifesharing                            \n 8 CORS  Donor Alliance                         \n 9 FLFH  OurLegacy                              \n10 FLMP  Life Alliance Organ Recovery Agency    \n# ℹ 46 more rows\n\no$opo_county\n\n# A tibble: 3,223 × 3\n   code  state county  \n   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;   \n 1 ALOB  AL    Autauga \n 2 ALOB  AL    Baldwin \n 3 ALOB  AL    Barbour \n 4 ALOB  AL    Bibb    \n 5 ALOB  AL    Blount  \n 6 ALOB  AL    Bullock \n 7 ALOB  AL    Butler  \n 8 ALOB  AL    Calhoun \n 9 ALOB  AL    Chambers\n10 ALOB  AL    Cherokee\n# ℹ 3,213 more rows\n\no$opo_active\n\n# A tibble: 55 × 6\n   ccn    opo                                     state county region orig_date \n   &lt;chr&gt;  &lt;chr&gt;                                   &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;  &lt;date&gt;    \n 1 04P001 ARKANSAS REGIONAL ORGAN RECOVERY AGENCY AR    Pulas… (VI) … 1991-03-01\n 2 38P001 CASCADE LIFE ALLIANCE                   OR    Multn… (X) S… 1988-04-01\n 3 33P004 CENTER FOR DONATION AND TRANSPLANT      NY    Albany (II) … 1988-04-01\n 4 39P002 CENTER FOR ORGAN RECOVERY AND EDUCATION PA    Alleg… (III)… 1989-03-31\n 5 33P001 CONNECTLIFE                             NY    Erie   (II) … 1988-04-01\n 6 06P001 DONOR ALLIANCE                          CO    Denver (VIII… 1988-04-01\n 7 03P001 DONOR NETWORK OF ARIZONA                AZ    Maric… (IX) … 1991-03-01\n 8 05P005 DONOR NETWORK WEST                      CA    Contr… (IX) … 1991-03-01\n 9 46P001 DONORCONNECT                            UT    Salt … (VIII… 1988-04-01\n10 33P005 FINGER LAKES DONOR RECOVERY NETWORK     NY    Monroe (II) … 1988-04-01\n# ℹ 45 more rows",
     "crumbs": [
       "Medicare Providers",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>OPOs</span>"
@@ -90,6 +90,17 @@
     "crumbs": [
       "Medicare Providers",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Emergency Hospitals</span>"
+    ]
+  },
+  {
+    "objectID": "hha.html",
+    "href": "hha.html",
+    "title": "\n5  HHAs\n",
+    "section": "",
+    "text": "ccn:::get_pin(\"hha\") |&gt; \n  collapse::fcount(state) |&gt; \n  collapse::roworder(-N) |&gt; \n  print(n = Inf)\n\n# A tibble: 55 × 2\n   state     N\n   &lt;chr&gt; &lt;int&gt;\n 1 CA     2923\n 2 TX     1742\n 3 FL     1078\n 4 OH      752\n 5 IL      510\n 6 PA      393\n 7 MI      349\n 8 MA      243\n 9 VA      227\n10 CO      218\n11 OK      212\n12 NV      207\n13 LA      175\n14 IN      169\n15 AZ      165\n16 NC      162\n17 MN      140\n18 IA      128\n19 TN      125\n20 MO      121\n21 AL      113\n22 KS      106\n23 GA      103\n24 NY       99\n25 AR       92\n26 KY       89\n27 WI       88\n28 UT       81\n29 WA       70\n30 CT       69\n31 NM       69\n32 SC       68\n33 NE       59\n34 OR       51\n35 MD       51\n36 ID       50\n37 WV       46\n38 MS       42\n39 PR       39\n40 NJ       38\n41 DC       35\n42 WY       29\n43 NH       27\n44 SD       24\n45 RI       23\n46 DE       21\n47 ND       20\n48 MT       19\n49 ME       19\n50 HI       16\n51 AK       13\n52 VT        9\n53 GU        3\n54 VI        2\n55 MP        1",
+    "crumbs": [
+      "Medicare Providers",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>HHAs</span>"
     ]
   },
   {
@@ -157,6 +168,50 @@
     ]
   },
   {
+    "objectID": "nf.html",
+    "href": "nf.html",
+    "title": "\n8  Nursing Facilities\n",
+    "section": "",
+    "text": "ccn:::get_pin(\"snf\") |&gt; \n  collapse::fcount(state) |&gt; \n  collapse::roworder(-N) |&gt; \n  print(n = Inf)\n\n# A tibble: 53 × 2\n   state     N\n   &lt;chr&gt; &lt;int&gt;\n 1 TX     1161\n 2 CA     1133\n 3 OH      924\n 4 FL      691\n 5 PA      652\n 6 IL      650\n 7 NY      601\n 8 IN      506\n 9 MO      474\n10 MI      423\n11 NC      414\n12 IA      379\n13 GA      352\n14 NJ      344\n15 MA      340\n16 MN      331\n17 WI      318\n18 TN      299\n19 OK      279\n20 VA      279\n21 KS      271\n22 KY      268\n23 LA      266\n24 AL      222\n25 AR      218\n26 MD      218\n27 CO      204\n28 CT      192\n29 WA      191\n30 SC      186\n31 MS      183\n32 NE      168\n33 AZ      139\n34 OR      117\n35 WV      115\n36 UT       92\n37 SD       83\n38 ID       80\n39 ME       78\n40 ND       73\n41 NH       71\n42 RI       70\n43 NM       66\n44 NV       63\n45 MT       59\n46 HI       43\n47 DE       41\n48 VT       34\n49 WY       33\n50 AK       17\n51 DC       16\n52 PR        9\n53 GU        1",
+    "crumbs": [
+      "Medicaid-Only Providers",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Nursing Facilities</span>"
+    ]
+  },
+  {
+    "objectID": "icf.html",
+    "href": "icf.html",
+    "title": "\n9  ICFs\n",
+    "section": "",
+    "text": "9.1 Inpatient Rehabilitation Facilities (IRF)\nccn:::get_pin(\"irf\") |&gt; \n  collapse::fcount(state) |&gt; \n  collapse::roworder(-N) |&gt; \n  print(n = Inf)\n\n# A tibble: 52 × 2\n   state     N\n   &lt;chr&gt; &lt;int&gt;\n 1 TX      152\n 2 CA       85\n 3 FL       83\n 4 PA       66\n 5 LA       55\n 6 OH       53\n 7 IL       43\n 8 NY       42\n 9 MI       41\n10 IN       35\n11 GA       34\n12 TN       33\n13 MO       31\n14 SC       29\n15 VA       27\n16 AR       26\n17 NC       26\n18 AZ       25\n19 OK       24\n20 WI       24\n21 CO       23\n22 KS       21\n23 KY       19\n24 AL       18\n25 WA       18\n26 IA       17\n27 MA       13\n28 NJ       13\n29 NV       12\n30 MN       11\n31 NM       11\n32 UT       11\n33 MS       10\n34 NE        9\n35 WV        9\n36 PR        8\n37 CT        7\n38 ID        7\n39 OR        7\n40 NH        5\n41 RI        5\n42 SD        5\n43 DE        4\n44 ME        4\n45 ND        4\n46 MD        3\n47 MT        3\n48 WY        3\n49 AK        2\n50 DC        2\n51 VT        2\n52 HI        1",
+    "crumbs": [
+      "Medicaid-Only Providers",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>ICFs</span>"
+    ]
+  },
+  {
+    "objectID": "icf.html#long-term-care-hospitals-ltch",
+    "href": "icf.html#long-term-care-hospitals-ltch",
+    "title": "\n9  ICFs\n",
+    "section": "\n9.2 Long-Term Care Hospitals (LTCH)",
+    "text": "9.2 Long-Term Care Hospitals (LTCH)\n\nccn:::get_pin(\"ltch\") |&gt; \n  collapse::fcount(state) |&gt; \n  collapse::roworder(-N) |&gt; \n  print(n = Inf)\n\n# A tibble: 47 × 2\n   state     N\n   &lt;chr&gt; &lt;int&gt;\n 1 TX       41\n 2 FL       23\n 3 LA       22\n 4 CA       20\n 5 OH       18\n 6 MI       12\n 7 PA       12\n 8 GA       11\n 9 KY       10\n10 MA       10\n11 NJ        9\n12 MO        8\n13 OK        8\n14 TN        8\n15 AL        7\n16 AR        7\n17 IL        7\n18 IN        7\n19 MS        7\n20 CO        6\n21 NV        6\n22 NC        6\n23 SC        6\n24 VA        6\n25 AZ        4\n26 WV        4\n27 KS        3\n28 NE        3\n29 NM        3\n30 UT        3\n31 WI        3\n32 CT        2\n33 DC        2\n34 ID        2\n35 IA        2\n36 MD        2\n37 MN        2\n38 ND        2\n39 SD        2\n40 AK        1\n41 DE        1\n42 HI        1\n43 MT        1\n44 NY        1\n45 OR        1\n46 RI        1\n47 WA        1",
+    "crumbs": [
+      "Medicaid-Only Providers",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>ICFs</span>"
+    ]
+  },
+  {
+    "objectID": "icf.html#rural-health-clinics-rhc",
+    "href": "icf.html#rural-health-clinics-rhc",
+    "title": "\n9  ICFs\n",
+    "section": "\n9.3 Rural Health Clinics (RHC)",
+    "text": "9.3 Rural Health Clinics (RHC)\n\nccn:::get_pin(\"rhc\") |&gt; \n  collapse::fcount(state) |&gt; \n  collapse::roworder(-N) |&gt; \n  print(n = Inf)\n\n# A tibble: 45 × 2\n   state     N\n   &lt;chr&gt; &lt;int&gt;\n 1 KY      407\n 2 TX      349\n 3 TN      322\n 4 MO      313\n 5 IL      273\n 6 CA      264\n 7 LA      241\n 8 MS      238\n 9 IA      215\n10 MI      208\n11 KS      181\n12 AR      160\n13 AL      155\n14 IN      149\n15 WI      144\n16 FL      141\n17 OK      138\n18 NE      125\n19 WA      113\n20 MN      104\n21 SC       99\n22 OR       97\n23 NC       91\n24 GA       81\n25 VA       78\n26 PA       77\n27 OH       71\n28 WV       64\n29 MT       61\n30 CO       57\n31 ND       57\n32 SD       56\n33 NY       54\n34 ID       52\n35 AZ       50\n36 ME       34\n37 WY       29\n38 NM       21\n39 UT       20\n40 HI       19\n41 NV       19\n42 NH       18\n43 VT        8\n44 MA        7\n45 RI        1",
+    "crumbs": [
+      "Medicaid-Only Providers",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>ICFs</span>"
+    ]
+  },
+  {
     "objectID": "moh.html",
     "href": "moh.html",
     "title": "\n10  Hospitals\n",
@@ -189,11 +244,22 @@
     ]
   },
   {
+    "objectID": "subunit.html",
+    "href": "subunit.html",
+    "title": "\n12  Subunits\n",
+    "section": "",
+    "text": "aff &lt;- ccn:::get_pin(\"aff\")\n\naff$fac |&gt; \n  collapse::fcount(facility_type) |&gt; \n  collapse::roworder(-N)\n\n# A tibble: 7 × 2\n  facility_type                         N\n  &lt;chr&gt;                             &lt;int&gt;\n1 Nursing home                      12682\n2 Dialysis facility                  7248\n3 Home health agency                 6919\n4 Hospice                            5114\n5 Hospital                           4576\n6 Inpatient rehabilitation facility   396\n7 Long-term care hospital             306\n\naff$sub |&gt; \n  collapse::fcount(facility_type) |&gt; \n  collapse::roworder(-N)\n\n# A tibble: 2 × 2\n  facility_type                         N\n  &lt;chr&gt;                             &lt;int&gt;\n1 Nursing home                       1151\n2 Inpatient rehabilitation facility   738\n\naff$fac[cheapr::which_(aff$sub$parent %in_% aff$fac$ccn), ] |&gt; \n  collapse::fcount(facility_type) |&gt; \n  collapse::roworder(-N)\n\n# A tibble: 7 × 2\n  facility_type                         N\n  &lt;chr&gt;                             &lt;int&gt;\n1 Nursing home                        527\n2 Dialysis facility                   358\n3 Hospice                             318\n4 Home health agency                  318\n5 Hospital                            314\n6 Inpatient rehabilitation facility    35\n7 Long-term care hospital              17\n\n\n\naff$fac\n\n# A tibble: 37,241 × 2\n   ccn    facility_type\n   &lt;chr&gt;  &lt;chr&gt;        \n 1 001500 Hospice      \n 2 001502 Hospice      \n 3 001503 Hospice      \n 4 001509 Hospice      \n 5 001510 Hospice      \n 6 001511 Hospice      \n 7 001513 Hospice      \n 8 001514 Hospice      \n 9 001515 Hospice      \n10 001517 Hospice      \n# ℹ 37,231 more rows\n\naff$sub\n\n# A tibble: 1,889 × 3\n   ccn    parent facility_type                    \n   &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;                            \n 1 01T011 010011 Inpatient rehabilitation facility\n 2 01T033 010033 Inpatient rehabilitation facility\n 3 01T092 010092 Inpatient rehabilitation facility\n 4 01T100 010100 Inpatient rehabilitation facility\n 5 01T104 010104 Inpatient rehabilitation facility\n 6 01T113 010113 Inpatient rehabilitation facility\n 7 01T114 010114 Inpatient rehabilitation facility\n 8 01T139 010139 Inpatient rehabilitation facility\n 9 01T144 010144 Inpatient rehabilitation facility\n10 01T157 010157 Inpatient rehabilitation facility\n# ℹ 1,879 more rows",
+    "crumbs": [
+      "IPPS-Excluded & Swing-Bed Approval",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Subunits</span>"
+    ]
+  },
+  {
     "objectID": "supplier.html",
     "href": "supplier.html",
     "title": "Suppliers",
     "section": "",
-    "text": "ccn version: '0.0.0.9088' loaded\n\n\nSuppliers that are paid by Part B carriers have a 10-digit alphanumeric CCN. The first 2 digits identify the State in which the supplier is located. The third digit is an alpha character that identifies the type of facility. The remaining 7 digits are the unique facility identifier.\nThe following characters in the third position indicate:\n\n\nC [ASC]: Ambulatory Surgical Centers\n\nD [CLIA]: Clinical Laboratory Improvement Amendments of 1988 (CLIA) Laboratories\n\nX [PXRF]: Portable X-Ray Facilities\n\nThe last 7 digits of the CCN for the above suppliers will be within the number series 0000001-9999999.\n\nccn:::get_pin(\"asc\")\n\n# A tibble: 5,536 × 3\n   ccn        state facility_name                                 \n   &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;                                         \n 1 05C0001831 CA    THE SURGERY CENTER AT NORTHBAY VACA VALLEY    \n 2 05C0001873 CA    CARLSBAD SURGERY CENTER LLC                   \n 3 14C0001134 IL    MIDWEST ENDOSCOPY CENTER LLC                  \n 4 19C0001115 LA    ADVANCED SURGICAL CARE OF BATON ROUGE LLC     \n 5 19C0001088 LA    ENDO CENTER LLC                               \n 6 36C0001248 OH    WASC LLC DBA WOOSTER AMBULATORY SURGERY CENTER\n 7 36C0001267 OH    NEW ALBANY SURGERY CENTER LLC                 \n 8 26C0001033 MO    CITY PL SURGERY CENTER                        \n 9 31C0001270 NJ    NORTHERN NJ ENDOSCOPY CENTER LLC              \n10 46C0001039 UT    MOUNTAIN WEST SURGERY CENTER LLC              \n# ℹ 5,526 more rows",
+    "text": "ccn version: '0.0.0.9088' loaded\n\n\nSuppliers that are paid by Part B carriers have a 10-digit alphanumeric CCN. The first 2 digits identify the State in which the supplier is located. The third digit is an alpha character that identifies the type of facility. The remaining 7 digits are the unique facility identifier.\nThe following characters in the third position indicate:\n\n\nC [ASC]: Ambulatory Surgical Centers\n\nD [CLIA]: Clinical Laboratory Improvement Amendments of 1988 (CLIA) Laboratories\n\nX [PXRF]: Portable X-Ray Facilities\n\nThe last 7 digits of the CCN for the above suppliers will be within the number series 0000001-9999999.",
     "crumbs": [
       "Suppliers"
     ]
@@ -203,7 +269,7 @@
     "href": "asc.html",
     "title": "\n13  ASCs\n",
     "section": "",
-    "text": "ccn:::get_pin(\"asc\")\n\n# A tibble: 5,536 × 3\n   ccn        state facility_name                                 \n   &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;                                         \n 1 05C0001831 CA    THE SURGERY CENTER AT NORTHBAY VACA VALLEY    \n 2 05C0001873 CA    CARLSBAD SURGERY CENTER LLC                   \n 3 14C0001134 IL    MIDWEST ENDOSCOPY CENTER LLC                  \n 4 19C0001115 LA    ADVANCED SURGICAL CARE OF BATON ROUGE LLC     \n 5 19C0001088 LA    ENDO CENTER LLC                               \n 6 36C0001248 OH    WASC LLC DBA WOOSTER AMBULATORY SURGERY CENTER\n 7 36C0001267 OH    NEW ALBANY SURGERY CENTER LLC                 \n 8 26C0001033 MO    CITY PL SURGERY CENTER                        \n 9 31C0001270 NJ    NORTHERN NJ ENDOSCOPY CENTER LLC              \n10 46C0001039 UT    MOUNTAIN WEST SURGERY CENTER LLC              \n# ℹ 5,526 more rows",
+    "text": "Ambulatory Surgery Centers (ASCs) are healthcare facilities that provide same-day surgical care, including diagnostic and preventive procedures. They are designed to offer a more convenient and cost-effective alternative to hospital-based surgeries.\n\nccn:::get_pin(\"asc\") |&gt; \n  collapse::fcount(state) |&gt; \n  collapse::roworder(-N) |&gt; \n  print(n = Inf)\n\n# A tibble: 54 × 2\n   state     N\n   &lt;chr&gt; &lt;int&gt;\n 1 CA      651\n 2 FL      466\n 3 TX      419\n 4 GA      331\n 5 MD      288\n 6 PA      228\n 7 NJ      214\n 8 AZ      192\n 9 OH      184\n10 WA      168\n11 NY      161\n12 IN      140\n13 TN      133\n14 NC      131\n15 CO      127\n16 IL      125\n17 MI      111\n18 MO       99\n19 OR       89\n20 LA       86\n21 MN       83\n22 WI       80\n23 AR       71\n24 SC       70\n25 KS       69\n26 MS       67\n27 NV       65\n28 VA       63\n29 MA       55\n30 ID       53\n31 CT       51\n32 AL       50\n33 UT       46\n34 NE       46\n35 OK       38\n36 KY       33\n37 IA       29\n38 NH       28\n39 MT       21\n40 DE       21\n41 HI       20\n42 WY       19\n43 RI       17\n44 NM       17\n45 ME       14\n46 PR       14\n47 SD       13\n48 AK       13\n49 ND       12\n50 WV        6\n51 VI        3\n52 DC        2\n53 GU        2\n54 VT        2",
     "crumbs": [
       "Suppliers",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>ASCs</span>"

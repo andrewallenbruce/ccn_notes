@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.15">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="dcterms.date" content="2025-12-25">
+<meta name="dcterms.date" content="2026-01-30">
 <title>13&nbsp; ASCs – CMS Certification Numbers</title>
 <style>
 code{white-space: pre-wrap;}
@@ -312,7 +312,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 25, 2025</p>
+      <p class="date">January 30, 2026</p>
     </div>
   </div>
   
@@ -321,23 +321,70 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ccn</span><span class="fu">:::</span><span class="fu">get_pin</span><span class="op">(</span><span class="st">"asc"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</header><p>Ambulatory Surgery Centers (ASCs) are healthcare facilities that provide same-day surgical care, including diagnostic and preventive procedures. They are designed to offer a more convenient and cost-effective alternative to hospital-based surgeries.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ccn</span><span class="fu">:::</span><span class="fu">get_pin</span><span class="op">(</span><span class="st">"asc"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/fcount.html">fcount</a></span><span class="op">(</span><span class="va">state</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/roworder.html">roworder</a></span><span class="op">(</span><span class="op">-</span><span class="va">N</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span>n <span class="op">=</span> <span class="cn">Inf</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5,536 × 3
-   ccn        state facility_name                                 
-   &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;                                         
- 1 05C0001831 CA    THE SURGERY CENTER AT NORTHBAY VACA VALLEY    
- 2 05C0001873 CA    CARLSBAD SURGERY CENTER LLC                   
- 3 14C0001134 IL    MIDWEST ENDOSCOPY CENTER LLC                  
- 4 19C0001115 LA    ADVANCED SURGICAL CARE OF BATON ROUGE LLC     
- 5 19C0001088 LA    ENDO CENTER LLC                               
- 6 36C0001248 OH    WASC LLC DBA WOOSTER AMBULATORY SURGERY CENTER
- 7 36C0001267 OH    NEW ALBANY SURGERY CENTER LLC                 
- 8 26C0001033 MO    CITY PL SURGERY CENTER                        
- 9 31C0001270 NJ    NORTHERN NJ ENDOSCOPY CENTER LLC              
-10 46C0001039 UT    MOUNTAIN WEST SURGERY CENTER LLC              
-# ℹ 5,526 more rows</code></pre>
+<pre><code># A tibble: 54 × 2
+   state     N
+   &lt;chr&gt; &lt;int&gt;
+ 1 CA      651
+ 2 FL      466
+ 3 TX      419
+ 4 GA      331
+ 5 MD      288
+ 6 PA      228
+ 7 NJ      214
+ 8 AZ      192
+ 9 OH      184
+10 WA      168
+11 NY      161
+12 IN      140
+13 TN      133
+14 NC      131
+15 CO      127
+16 IL      125
+17 MI      111
+18 MO       99
+19 OR       89
+20 LA       86
+21 MN       83
+22 WI       80
+23 AR       71
+24 SC       70
+25 KS       69
+26 MS       67
+27 NV       65
+28 VA       63
+29 MA       55
+30 ID       53
+31 CT       51
+32 AL       50
+33 UT       46
+34 NE       46
+35 OK       38
+36 KY       33
+37 IA       29
+38 NH       28
+39 MT       21
+40 DE       21
+41 HI       20
+42 WY       19
+43 RI       17
+44 NM       17
+45 ME       14
+46 PR       14
+47 SD       13
+48 AK       13
+49 ND       12
+50 WV        6
+51 VI        3
+52 DC        2
+53 GU        2
+54 VT        2</code></pre>
 </div>
 </div>
 
@@ -814,19 +861,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu"># ASCs</span></span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup}</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">#| cache: false</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">#| comment: ""</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ccn)</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>ccn<span class="sc">:::</span><span class="fu">get_pin</span>(<span class="st">"asc"</span>)</span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>Ambulatory Surgery Centers (ASCs) are healthcare facilities that provide same-day surgical care, including diagnostic and preventive procedures. They are designed to offer a more convenient and cost-effective alternative to hospital-based surgeries.</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup}</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">#| cache: false</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">#| comment: ""</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ccn)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>ccn<span class="sc">:::</span><span class="fu">get_pin</span>(<span class="st">"asc"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">fcount</span>(state) <span class="sc">|&gt;</span> </span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">roworder</span>(<span class="sc">-</span>N) <span class="sc">|&gt;</span> </span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="cn">Inf</span>)</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

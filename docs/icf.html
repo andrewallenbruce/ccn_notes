@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.15">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="dcterms.date" content="2025-12-25">
+<meta name="dcterms.date" content="2026-01-30">
 <title>9&nbsp; ICFs – CMS Certification Numbers</title>
 <style>
 code{white-space: pre-wrap;}
@@ -294,8 +294,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+<li><a href="#inpatient-rehabilitation-facilities-irf" id="toc-inpatient-rehabilitation-facilities-irf" class="nav-link active" data-scroll-target="#inpatient-rehabilitation-facilities-irf"><span class="header-section-number">9.1</span> Inpatient Rehabilitation Facilities (IRF)</a></li>
+  <li><a href="#long-term-care-hospitals-ltch" id="toc-long-term-care-hospitals-ltch" class="nav-link" data-scroll-target="#long-term-care-hospitals-ltch"><span class="header-section-number">9.2</span> Long-Term Care Hospitals (LTCH)</a></li>
+  <li><a href="#rural-health-clinics-rhc" id="toc-rural-health-clinics-rhc" class="nav-link" data-scroll-target="#rural-health-clinics-rhc"><span class="header-section-number">9.3</span> Rural Health Clinics (RHC)</a></li>
+  </ul></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./medicaid.html">Medicaid-Only Providers</a></li><li class="breadcrumb-item"><a href="./icf.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">ICFs</span></a></li></ol></nav><div class="quarto-title">
@@ -312,7 +318,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 25, 2025</p>
+      <p class="date">January 30, 2026</p>
     </div>
   </div>
   
@@ -321,12 +327,194 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header>
+</header><section id="inpatient-rehabilitation-facilities-irf" class="level2" data-number="9.1"><h2 data-number="9.1" class="anchored" data-anchor-id="inpatient-rehabilitation-facilities-irf">
+<span class="header-section-number">9.1</span> Inpatient Rehabilitation Facilities (IRF)</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ccn</span><span class="fu">:::</span><span class="fu">get_pin</span><span class="op">(</span><span class="st">"irf"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/fcount.html">fcount</a></span><span class="op">(</span><span class="va">state</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/roworder.html">roworder</a></span><span class="op">(</span><span class="op">-</span><span class="va">N</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span>n <span class="op">=</span> <span class="cn">Inf</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 52 × 2
+   state     N
+   &lt;chr&gt; &lt;int&gt;
+ 1 TX      152
+ 2 CA       85
+ 3 FL       83
+ 4 PA       66
+ 5 LA       55
+ 6 OH       53
+ 7 IL       43
+ 8 NY       42
+ 9 MI       41
+10 IN       35
+11 GA       34
+12 TN       33
+13 MO       31
+14 SC       29
+15 VA       27
+16 AR       26
+17 NC       26
+18 AZ       25
+19 OK       24
+20 WI       24
+21 CO       23
+22 KS       21
+23 KY       19
+24 AL       18
+25 WA       18
+26 IA       17
+27 MA       13
+28 NJ       13
+29 NV       12
+30 MN       11
+31 NM       11
+32 UT       11
+33 MS       10
+34 NE        9
+35 WV        9
+36 PR        8
+37 CT        7
+38 ID        7
+39 OR        7
+40 NH        5
+41 RI        5
+42 SD        5
+43 DE        4
+44 ME        4
+45 ND        4
+46 MD        3
+47 MT        3
+48 WY        3
+49 AK        2
+50 DC        2
+51 VT        2
+52 HI        1</code></pre>
+</div>
+</div>
+</section><section id="long-term-care-hospitals-ltch" class="level2" data-number="9.2"><h2 data-number="9.2" class="anchored" data-anchor-id="long-term-care-hospitals-ltch">
+<span class="header-section-number">9.2</span> Long-Term Care Hospitals (LTCH)</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ccn</span><span class="fu">:::</span><span class="fu">get_pin</span><span class="op">(</span><span class="st">"ltch"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/fcount.html">fcount</a></span><span class="op">(</span><span class="va">state</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/roworder.html">roworder</a></span><span class="op">(</span><span class="op">-</span><span class="va">N</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span>n <span class="op">=</span> <span class="cn">Inf</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 47 × 2
+   state     N
+   &lt;chr&gt; &lt;int&gt;
+ 1 TX       41
+ 2 FL       23
+ 3 LA       22
+ 4 CA       20
+ 5 OH       18
+ 6 MI       12
+ 7 PA       12
+ 8 GA       11
+ 9 KY       10
+10 MA       10
+11 NJ        9
+12 MO        8
+13 OK        8
+14 TN        8
+15 AL        7
+16 AR        7
+17 IL        7
+18 IN        7
+19 MS        7
+20 CO        6
+21 NV        6
+22 NC        6
+23 SC        6
+24 VA        6
+25 AZ        4
+26 WV        4
+27 KS        3
+28 NE        3
+29 NM        3
+30 UT        3
+31 WI        3
+32 CT        2
+33 DC        2
+34 ID        2
+35 IA        2
+36 MD        2
+37 MN        2
+38 ND        2
+39 SD        2
+40 AK        1
+41 DE        1
+42 HI        1
+43 MT        1
+44 NY        1
+45 OR        1
+46 RI        1
+47 WA        1</code></pre>
+</div>
+</div>
+</section><section id="rural-health-clinics-rhc" class="level2" data-number="9.3"><h2 data-number="9.3" class="anchored" data-anchor-id="rural-health-clinics-rhc">
+<span class="header-section-number">9.3</span> Rural Health Clinics (RHC)</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ccn</span><span class="fu">:::</span><span class="fu">get_pin</span><span class="op">(</span><span class="st">"rhc"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/fcount.html">fcount</a></span><span class="op">(</span><span class="va">state</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/roworder.html">roworder</a></span><span class="op">(</span><span class="op">-</span><span class="va">N</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span>n <span class="op">=</span> <span class="cn">Inf</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 45 × 2
+   state     N
+   &lt;chr&gt; &lt;int&gt;
+ 1 KY      407
+ 2 TX      349
+ 3 TN      322
+ 4 MO      313
+ 5 IL      273
+ 6 CA      264
+ 7 LA      241
+ 8 MS      238
+ 9 IA      215
+10 MI      208
+11 KS      181
+12 AR      160
+13 AL      155
+14 IN      149
+15 WI      144
+16 FL      141
+17 OK      138
+18 NE      125
+19 WA      113
+20 MN      104
+21 SC       99
+22 OR       97
+23 NC       91
+24 GA       81
+25 VA       78
+26 PA       77
+27 OH       71
+28 WV       64
+29 MT       61
+30 CO       57
+31 ND       57
+32 SD       56
+33 NY       54
+34 ID       52
+35 AZ       50
+36 ME       34
+37 WY       29
+38 NM       21
+39 UT       20
+40 HI       19
+41 NV       19
+42 NH       18
+43 VT        8
+44 MA        7
+45 RI        1</code></pre>
+</div>
+</div>
+
 
 <!-- -->
 
-
-</main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
     const anchorJS = new window.AnchorJS();
@@ -787,22 +975,50 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span><span class="co"> html_document</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">editor_options:</span><span class="co"> </span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">  chunk_output_type: console</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu"># ICFs</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup}</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">#| cache: false</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">#| comment: ""</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ccn)</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span><span class="co"> html_document</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="an">editor_options:</span><span class="co"> </span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">  chunk_output_type: console</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="fu"># ICFs</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup}</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co">#| cache: false</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co">#| comment: ""</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ccn)</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="fu">## Inpatient Rehabilitation Facilities (IRF)</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>ccn<span class="sc">:::</span><span class="fu">get_pin</span>(<span class="st">"irf"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">fcount</span>(state) <span class="sc">|&gt;</span> </span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">roworder</span>(<span class="sc">-</span>N) <span class="sc">|&gt;</span> </span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="cn">Inf</span>)</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a><span class="fu">## Long-Term Care Hospitals (LTCH)</span></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>ccn<span class="sc">:::</span><span class="fu">get_pin</span>(<span class="st">"ltch"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">fcount</span>(state) <span class="sc">|&gt;</span> </span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">roworder</span>(<span class="sc">-</span>N) <span class="sc">|&gt;</span> </span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="cn">Inf</span>)</span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a><span class="fu">## Rural Health Clinics (RHC)</span></span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a>ccn<span class="sc">:::</span><span class="fu">get_pin</span>(<span class="st">"rhc"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">fcount</span>(state) <span class="sc">|&gt;</span> </span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">roworder</span>(<span class="sc">-</span>N) <span class="sc">|&gt;</span> </span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="at">n =</span> <span class="cn">Inf</span>)</span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">

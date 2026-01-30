@@ -34,7 +34,3 @@ The following characters in the third position indicate:
 The last 7 digits of the CCN for the above suppliers will be within the number
 series `0000001-9999999`.
 
-```{r}
-ccn:::get_pin("asc")
-```
-
