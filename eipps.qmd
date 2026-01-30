@@ -13,6 +13,7 @@ editor_options:
 #| cache: false
 #| comment: ""
 library(ccn)
+source("code/gt_theme.R")
 ```
 
 > Special Numbering System for Units of Hospitals That Are Excluded From the Inpatient Prospective Payment System (IPPS) and Hospitals and CAHs with Swing-Bed Approval

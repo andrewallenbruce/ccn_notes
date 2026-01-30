@@ -13,6 +13,7 @@ editor_options:
 #| cache: false
 #| comment: ""
 library(ccn)
+source("code/gt_theme.R")
 ```
 
 ```{r}
@@ -61,22 +62,46 @@ ccn::medicaid_ranges |>
 parse("01J008")
 decode("01J008")
 purrr::map(c("01J008", "A5J508"), ccn::as_data_frame) |> 
-  collapse::rowbind(fill = TRUE)
+  collapse::rowbind(fill = TRUE) |> 
+  gt::gt() |> 
+  gt_chamber_theme() |>
+  gt::tab_options(quarto.disable_processing = TRUE)
 ```
 
 
 ```{r}
 purrr::map(c("050599", "440058"), ccn::as_data_frame) |> 
   collapse::rowbind(fill = TRUE)
+```
 
-ccn:::get_pin("hosp") |> 
+
+```{r}
+hosp <- ccn:::get_pin("hosp")
+
+hcount <- hosp |> 
+  collapse::sbt(!is.na(subgroup)) |>
   collapse::sbt(
-    !is.na(subgroup)
-    # ccn == "440058"
-    # subgroup == "Other, General, Acute, ORGAN TRANSPLANT UNIT"
-    ) |>
+    stringi::stri_detect_regex(subgroup, "REH[:]", negate = TRUE)) |> 
   collapse::fcount(subgroup) |> 
-  collapse::roworder(-N) |> 
-  print(n = Inf)
+  collapse::roworder(-N)
+
+hcount |> 
+  collapse::sbt(N > 11) |>
+  gt::gt() |> 
+  gt_chamber_theme() |>
+  gt::tab_options(quarto.disable_processing = TRUE)
+
+hcount |> 
+  collapse::sbt(N <= 11) |>
+  gt::gt(groupname_col = "N", row_group_as_column = TRUE) |> 
+  gt_chamber_theme() |>
+  gt::tab_options(quarto.disable_processing = TRUE)
+
+hosp |> 
+  collapse::sbt(!is.na(subgroup)) |>
+  collapse::sbt(stringi::stri_detect_regex(subgroup, "REH[:]")) |> 
+  gt::gt() |> 
+  gt_chamber_theme() |>
+  gt::tab_options(quarto.disable_processing = TRUE)
 ```
 

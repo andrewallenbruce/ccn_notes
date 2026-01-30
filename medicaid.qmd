@@ -12,6 +12,7 @@ editor_options:
 #| cache: false
 #| comment: ""
 library(ccn)
+source("code/gt_theme.R")
 ```
 
 Title XIX-only providers are identified by a 6-position alphanumeric CCN.

@@ -7,6 +7,7 @@
 #| cache: false
 #| comment: ""
 library(ccn)
+source("code/gt_theme.R")
 ```
 
 ## CMS State Codes

@@ -13,6 +13,7 @@ editor_options:
 #| comment: ""
 library(ccn)
 library(cheapr)
+source("code/gt_theme.R")
 ```
 
 ```{r}

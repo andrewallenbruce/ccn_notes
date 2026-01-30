@@ -12,6 +12,7 @@ editor_options:
 #| cache: false
 #| comment: ""
 library(ccn)
+source("code/gt_theme.R")
 ```
 
 ```{r}
@@ -31,15 +32,46 @@ organ("05P001") |>
   str()
 ```
 
-## Pin
+## Examples
 
 ```{r}
 o <- ccn:::get_pin("opo")
 
-o$opo_codes
+o$opo_county |>
+  collapse::roworder(code, state, county) |>
+  fastplyr::f_group_by(code, state) |>
+  fastplyr::f_summarise(
+    n = length(county),
+    county = stringr::str_to_title(toString(county))
+  ) |> 
+  fastplyr::f_arrange(-n) |> 
+  collapse::rnm(
+    n = counties,
+    county = county_names
+  ) |> 
+  collapse::join(o$opo_codes) |> 
+  collapse::colorder(code, opo) |>
+   gt::gt() |> 
+   gt_chamber_theme() |>
+   gt::tab_options(quarto.disable_processing = TRUE)
+```
 
-o$opo_county
+### Active
 
-o$opo_active
+```{r}
+o$opo_active |> 
+  collapse::roworder(-orig_date) |>
+   gt::gt() |> 
+   gt_chamber_theme() |>
+   gt::tab_options(quarto.disable_processing = TRUE)
+```
+
+### Approved Transplant Programs
+
+```{r}
+ccn:::get_pin("txc") |>
+   gt::gt() |> 
+   gt_chamber_theme() |>
+   gt::tab_options(quarto.disable_processing = TRUE)
 ```
 

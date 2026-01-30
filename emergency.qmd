@@ -1,0 +1,125 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+# Emergency Hospitals
+
+```{r setup}
+#| message: false
+#| warning: false
+#| echo: false
+#| cache: false
+#| comment: ""
+library(ccn)
+source("code/gt_theme.R")
+# c(
+#   "45D0501072",
+#   "14D2326049",
+#   "05D0975224",
+#   "02012F",
+#   "02011F",
+#   "04008F",
+#   "04013F",
+#   "03006F"
+#   )
+```
+
+CCNs assigned to Emergency Hospitals (both Federal and non-Federal) that do not
+participate in the Medicare program.
+
+Emergency hospitals are identified by a 6-position alphanumeric CCN. Positions
+one and two identify the state in which the hospital is located. Position six,
+an alpha character, identifies whether the hospital is Federal (`F`) or
+non-Federal (`E`). Positions three, four and five represent a sequence beginning
+with `001`. This sequence identifies the order, by state, in which the CCN was
+issued.
+
+For example, the CCN of the 34th emergency hospital in Maryland would be `21034E`.
+The Regional Office assigns the CCN in strict numerical sequence without regard
+to the Federal or non-Federal status.
+
+## Example
+
+```{r}
+# USAF Hospital (Moody)
+parse("11038F")
+decode("11038F")
+as_data_frame("11038F") |> str()
+```
+
+   * Provider Name: `US AIR FORCE HOSP`
+   * CCN: `11038F`
+   * Provider Type: `Hospital`
+   * Address: `3278 MITCHELL BLVD, BLD 900 VALDOSTA, GA 31601`
+   * Phone: `(229) 257-2778`
+   * Participation Date: `1991-03-01`
+   * Region: `(IV) Atlanta`
+   * Accreditation Type: `Non-Accredited`
+   * Number of Certified Beds: `38`
+   * Ownership Type: Unrecognized Hospital Ownership (`CNTL_TYPE_CD = 0`)
+   * Subtype: `00`
+
+```{r}
+parse("45D0501072")
+decode("45D0501072")
+as_data_frame("45D0501072")
+```
+
+   * Supplier Name: `MISSION AT AIR FORCE VILLAGE I, THE`
+   * CCN: `45D0501072`
+   * Supplier Type: `Laboratory`
+   * Address: `4949 RAVENSWOOD DRIVE SAN ANTONIO, TX 78227`
+   * Phone Number: `(210) 568-5162`
+   * Participation Date: `1993-02-18`
+   * Region: `(VI) Dallas`
+   * Ownership Type: `Private`
+
+```{r}
+parse("14D2326049")
+decode("14D2326049")
+as_data_frame("14D2326049")
+```
+
+   * Supplier Name: `SCOTT AIR FORCE BASE OUTPATIENT CLINIC`
+   * CCN: `14D2326049`
+   * Supplier Type: `Laboratory`
+   * Address: `310 W LOSEY ST SCOTT AIR FORCE BASE, IL 62225`
+   * Phone Number: `(314) 652-4100`
+   * Participation Date: `2025-06-26`
+   * Region: `(V) Chicago`
+   * Ownership Type: `Government - Federal`
+
+```{r}
+parse("05D0975224")
+decode("05D0975224")
+as_data_frame("05D0975224")
+```
+
+   * Supplier Name: `AIR FORCE VILLAGE WEST`
+   * CCN: `05D0975224`
+   * Supplier Type: `Laboratory`
+   * Address: `17050 ARNOLD DR RIVERSIDE, CA 92518`
+   * Phone Number: `(909) 697-2059`
+   * Participation Date: `2000-06-29`
+   * Region: `(IX) San Francisco`
+   * Ownership Type: `Private`
+
+```{r}
+parse("02012F")
+decode("02012F")
+as_data_frame("02012F")
+```
+
+   * Provider Name: `US AIR FORCE HOSP`
+   * CCN: `02012F`
+   * Provider Type: `Hospital`
+   * Address: `ELLISTON AFB APO 937 SEATTLE WASH FAIRBANKS, AK 99702`
+   * Participation Date: `1991-03-01`
+   * Region: `(X) Seattle`
+   * Ownership Type: `Unrecognized Hospital Ownership (CNTL_TYPE_CD = 0)`
+   * Accreditation Type: 	`Non-Accredited`
+   * Number of Certified Beds: 	`20`
+   * Subtype: `00`
+

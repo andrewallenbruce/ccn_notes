@@ -15,6 +15,7 @@ Ambulatory Surgery Centers (ASCs) are healthcare facilities that provide same-da
 #| cache: false
 #| comment: ""
 library(ccn)
+source("code/gt_theme.R")
 ```
 
 
@@ -22,5 +23,7 @@ library(ccn)
 ccn:::get_pin("asc") |> 
   collapse::fcount(state) |> 
   collapse::roworder(-N) |> 
-  print(n = Inf)
+  gt::gt() |> 
+  gt_chamber_theme() |>
+  gt::tab_options(quarto.disable_processing = TRUE)
 ```
