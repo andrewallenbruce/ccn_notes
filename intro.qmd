@@ -13,6 +13,7 @@ editor_options:
 #| cache: false
 #| comment: ""
 library(ccn)
+source("code/gt_theme.R")
 ```
 
 ```{r}
@@ -44,4 +45,33 @@ In [2007](https://www.cms.gov/medicare/provider-enrollment-and-certification/sur
 
 A __*canonically valid* CCN__ is an alphanumeric string, either 6 or 10 characters in
 length, that encodes a provider/supplier's state and facility type.
+
+```{r}
+#| label: canonical-ccns
+"670055" |>
+  strsplit("") |>
+  _[[1]] |>
+  as.integer() |>
+  rlang::set_names(1:6) |>
+  as.list() |>
+  list2DF() |>
+  gt::gt() |>
+  gt::fmt_integer(columns = gt::everything()) |>
+  gt::tab_style(
+    style = gt::cell_fill(
+      color = "yellow",
+      alpha = 0.4
+    ),
+    locations = gt::cells_body(columns = c(1:2))
+  ) |>
+  gt::tab_style(
+    style = list(
+      gt::cell_fill(color = "red", alpha = 0.5),
+      gt::cell_text(color = "white", weight = "bold")
+    ),
+    locations = gt::cells_body(columns = c(3:6))
+  ) |>
+  gt_chamber_theme()
+```
+
 

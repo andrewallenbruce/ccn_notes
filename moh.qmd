@@ -33,20 +33,26 @@ corresponding ranges.
 #| message: false
 ccn::medicaid_ranges |>
   collapse::slt(abbr, desc, range) |>
-  collapse::roworder(range) |> 
-  gt::gt() |> 
-  gt::tab_options(quarto.disable_processing = TRUE) |> 
-  gtExtras::gt_theme_nytimes() |> 
+  collapse::roworder(range) |>
+  gt::gt() |>
+  gt::tab_options(quarto.disable_processing = TRUE) |>
+  gtExtras::gt_theme_nytimes() |>
   gt::tab_style(
     style = gt::cell_text(
-      font = gt::google_font(name = "JetBrains Mono"), color = "grey60", size = "small"), 
-    locations = gt::cells_body(columns = range)) |> 
+      font = gt::google_font(name = "JetBrains Mono"),
+      color = "grey60",
+      size = "small"
+    ),
+    locations = gt::cells_body(columns = range)
+  ) |>
   gt::tab_style(
-    style = gt::cell_text(weight = "bold"), 
-    locations = gt::cells_body(columns = abbr)) |> 
+    style = gt::cell_text(weight = "bold"),
+    locations = gt::cells_body(columns = abbr)
+  ) |>
   gt::tab_style(
-    style = gt::cell_text(color = "grey50", size = "small"), 
-    locations = gt::cells_body(columns = desc))
+    style = gt::cell_text(color = "grey50", size = "small"),
+    locations = gt::cells_body(columns = desc)
+  )
 ```
 
 ## Examples
@@ -56,5 +62,21 @@ parse("01J008")
 decode("01J008")
 purrr::map(c("01J008", "A5J508"), ccn::as_data_frame) |> 
   collapse::rowbind(fill = TRUE)
+```
+
+
+```{r}
+purrr::map(c("050599", "440058"), ccn::as_data_frame) |> 
+  collapse::rowbind(fill = TRUE)
+
+ccn:::get_pin("hosp") |> 
+  collapse::sbt(
+    !is.na(subgroup)
+    # ccn == "440058"
+    # subgroup == "Other, General, Acute, ORGAN TRANSPLANT UNIT"
+    ) |>
+  collapse::fcount(subgroup) |> 
+  collapse::roworder(-N) |> 
+  print(n = Inf)
 ```
 

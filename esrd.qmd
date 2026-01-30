@@ -12,6 +12,7 @@ editor_options:
 #| cache: false
 #| comment: ""
 library(ccn)
+source("code/gt_theme.R")
 ```
 
 ```{r}
@@ -192,7 +193,7 @@ over$numeric |>
    fastplyr::as_tbl() |>
    collapse::slt(col, unique = n_unique, mean, sd, p0:iqr, hist) |>
    gt::gt() |> 
-   gtUtils::gt_theme_athletic() |> 
+   gt_chamber_theme() |>
    gt::tab_options(quarto.disable_processing = TRUE) |> 
    gt::fmt_number(columns = c(mean, sd))
 
@@ -203,7 +204,7 @@ over$categorical |>
       min = stringr::str_wrap(min, width = 40), 
       max = stringr::str_wrap(max, width = 40)) |>
    gt::gt(process_md = TRUE) |> 
-   gtUtils::gt_theme_athletic() |> 
+   gt_chamber_theme() |>
    gt::tab_options(quarto.disable_processing = TRUE) |> 
    gt::cols_align("left", c(min, max)) |> 
    gt::cols_align("right", c(col))
