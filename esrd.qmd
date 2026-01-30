@@ -56,12 +56,39 @@ ccn::medicare_ranges |>
 ## Examples
 
 ```{r}
-esrd <- ccn:::get_pin("esrd")$ccn
+esrd <- ccn:::get_pin("esrd")
+esrd |> 
+   gtExtras::gt_plt_summary()
+```
 
-esrd <- purrr::map(esrd, ccn::data_frame) |> 
+
+```{r}
+df <- purrr::map(esrd$ccn, ccn::data_frame) |> 
   data.table::rbindlist()
 
-esrd |> collapse::fcount(type, range)
+df |>
+  collapse::fcount(type, range) |>
+  collapse::roworder(-N) |>
+  gt::gt() |>
+  gt::tab_options(quarto.disable_processing = TRUE) |>
+  gtExtras::gt_theme_nytimes() |>
+  gt::tab_style(
+    style = gt::cell_text(
+      font = gt::google_font(name = "JetBrains Mono"),
+      color = "grey60",
+      size = "small"
+    ),
+    locations = gt::cells_body(columns = range)
+  ) |>
+  gt::tab_style(
+    style = gt::cell_text(
+       color = "grey40", 
+       weight = "bold",
+       size = "small",
+       font = gt::google_font(name = "JetBrains Mono")
+       ),
+    locations = gt::cells_body(columns = type)
+  )
 ```
 
 ## Details
