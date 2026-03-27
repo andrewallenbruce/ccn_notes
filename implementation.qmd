@@ -1,0 +1,117 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+# Implementation
+
+```{r setup}
+#| message: false
+#| warning: false
+#| echo: false
+#| cache: false
+#| comment: ""
+library(vctrs)
+library(rlang)
+library(zeallot)
+library(ccn)
+ccn_examples <- ccn:::get_pin("ccn")
+```
+
+## `ccn` class
+
+In this section, I’ll make a `ccn` class, i.e., a character vector that is printed as a CCN. We start by defining a low-level [constructor](https://adv-r.hadley.nz/s3.html#s3-constrcutor) to check types and/or sizes and call `new_vctr()`.
+
+`ccn` is built on a character vector of any length and doesn’t have any attributes.
+
+
+```{r}
+#| label: new_ccn
+new_ccn <- function(x = character()) {
+  if (!is_character(x)) {
+    abort("`x` must be a character vector.")
+  }
+  new_vctr(x, class = "ccn")
+}
+
+x <- new_ccn(ccn_examples[1:25])
+
+x
+
+str(x)
+```
+
+We then follow up with a user friendly helper. Here we’ll use `vec_cast()` to allow it to accept anything coercible to a character:
+
+```{r}
+#| label: ccn-cast
+ccn <- function(x = character()) {
+  x <- vec_cast(x, character())
+  new_ccn(x)
+}
+```
+
+Before you go on, check that user-friendly constructor returns a zero-length vector when called with no arguments. This makes it easy to use as a prototype.
+
+```{r}
+#| label: ccn-prototype
+new_ccn()
+ccn()
+```
+
+For the convenience of your users, consider implementing an is_percent() function:
+
+```{r}
+#| label: ccn-inherits
+is_ccn <- function(x) {
+  inherits(x, "ccn")
+}
+```
+
+## `format()` method
+
+The first method for every class should almost always be a `format()` method. This should return a character vector the same length as x. The easiest way to do this is to rely on one of R’s low-level formatting functions like `formatC()`:
+
+```{r}
+format.ccn <- function(x, ...) {
+  out <- formatC(vec_data(x))
+  out[is.na(x)] <- NA
+  out
+}
+
+x <- ccn(ccn_examples[1:25])
+
+x
+```
+
+(Note the use of `vec_data()` so `format()` doesn’t get stuck in an infinite loop, and that I take a little care to not convert `NA` to `"NA"`; this leads to better printing.)
+
+The format method is also used by data frames, tibbles, and `str()`:
+
+```{r}
+data.frame(x)
+```
+
+For optimal display, I recommend also defining an abbreviated type name, which should be 4-5 letters for commonly used vectors. This is used in tibbles and in `str()`:
+
+```{r}
+vec_ptype_abbr.ccn <- function(x, ...) {
+  "ccn"
+}
+
+tibble::tibble(x)
+
+str(x)
+```
+
+If you need more control over printing in tibbles, implement a method for `pillar::pillar_shaft()`. See `vignette("pillar", package = "vctrs")` for details.
+
+## Casting and coercion
+
+The next set of methods you are likely to need are those related to coercion and casting. Coercion and casting are two sides of the same coin: changing the prototype of an existing object. When the change happens implicitly (e.g in c()) we call it coercion; when the change happens explicitly (e.g. with as.integer(x)), we call it casting.
+
+One of the main goals of vctrs is to put coercion and casting on a robust theoretical footing so it’s possible to make accurate predictions about what (e.g.) c(x, y) should do when x and y have different prototypes. vctrs achieves this goal through two generics:
+
+   - vec_ptype2(x, y) defines possible set of coercions. It returns a prototype if x and y can be safely coerced to the same prototype; otherwise it returns an error. The set of automatic coercions is usually quite small because too many tend to make code harder to reason about and silently propagate mistakes.
+   - vec_cast(x, to) defines the possible sets of casts. It returns x translated to have prototype to, or throws an error if the conversion isn’t possible. The set of possible casts is a superset of possible coercions because they’re requested explicitly.

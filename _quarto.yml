@@ -36,6 +36,7 @@ book:
         - asc.qmd
         - clia.qmd
         - pxrf.qmd
+    - implementation.qmd
   appendices:
     - resources.qmd
 

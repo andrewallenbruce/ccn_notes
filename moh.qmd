@@ -60,7 +60,9 @@ ccn::medicaid_ranges |>
 
 ```{r examples}
 parse("01J008")
+
 decode("01J008")
+
 purrr::map(c("01J008", "A5J508"), ccn::as_data_frame) |> 
   collapse::rowbind(fill = TRUE) |> 
   gt::gt() |> 

@@ -270,7 +270,7 @@
     "href": "supplier.html",
     "title": "Suppliers",
     "section": "",
-    "text": "ccn version: '0.0.0.9088' loaded\n\n\nSuppliers that are paid by Part B carriers have a 10-digit alphanumeric CCN. The first 2 digits identify the State in which the supplier is located. The third digit is an alpha character that identifies the type of facility. The remaining 7 digits are the unique facility identifier.\nThe following characters in the third position indicate:\n\n\nC [ASC]: Ambulatory Surgical Centers\n\nD [CLIA]: Clinical Laboratory Improvement Amendments of 1988 (CLIA) Laboratories\n\nX [PXRF]: Portable X-Ray Facilities\n\nThe last 7 digits of the CCN for the above suppliers will be within the number series 0000001-9999999.",
+    "text": "ccn version: '0.0.0.9091' loaded\n\n\nSuppliers that are paid by Part B carriers have a 10-digit alphanumeric CCN. The first 2 digits identify the State in which the supplier is located. The third digit is an alpha character that identifies the type of facility. The remaining 7 digits are the unique facility identifier.\nThe following characters in the third position indicate:\n\n\nC [ASC]: Ambulatory Surgical Centers\n\nD [CLIA]: Clinical Laboratory Improvement Amendments of 1988 (CLIA) Laboratories\n\nX [PXRF]: Portable X-Ray Facilities\n\nThe last 7 digits of the CCN for the above suppliers will be within the number series 0000001-9999999.",
     "crumbs": [
       "Suppliers"
     ]
@@ -284,6 +284,36 @@
     "crumbs": [
       "Suppliers",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>ASCs</span>"
+    ]
+  },
+  {
+    "objectID": "implementation.html",
+    "href": "implementation.html",
+    "title": "\n16  Implementation\n",
+    "section": "",
+    "text": "16.1 ccn class\nIn this section, I’ll make a ccn class, i.e., a character vector that is printed as a CCN. We start by defining a low-level constructor to check types and/or sizes and call new_vctr().\nccn is built on a character vector of any length and doesn’t have any attributes.\nnew_ccn &lt;- function(x = character()) {\n  if (!is_character(x)) {\n    abort(\"`x` must be a character vector.\")\n  }\n  new_vctr(x, class = \"ccn\")\n}\n\nx &lt;- new_ccn(ccn_examples[1:25])\n\nx\n\n&lt;ccn[25]&gt;\n [1] 001500 001502 001503 001509 001510 001511 001513 001514 001515 001517\n[11] 001518 001524 001527 001528 001529 001530 001534 001535 001536 001541\n[21] 001545 001550 001552 001556 001557\n\nstr(x)\n\n ccn [1:25] 001500, 001502, 001503, 001509, 001510, 001511, 001513, 001514,...\nWe then follow up with a user friendly helper. Here we’ll use vec_cast() to allow it to accept anything coercible to a character:\nccn &lt;- function(x = character()) {\n  x &lt;- vec_cast(x, character())\n  new_ccn(x)\n}\nBefore you go on, check that user-friendly constructor returns a zero-length vector when called with no arguments. This makes it easy to use as a prototype.\nnew_ccn()\n\n&lt;ccn[0]&gt;\n\nccn()\n\n&lt;ccn[0]&gt;\nFor the convenience of your users, consider implementing an is_percent() function:\nis_ccn &lt;- function(x) {\n  inherits(x, \"ccn\")\n}",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Implementation</span>"
+    ]
+  },
+  {
+    "objectID": "implementation.html#format-method",
+    "href": "implementation.html#format-method",
+    "title": "\n16  Implementation\n",
+    "section": "\n16.2 format() method",
+    "text": "16.2 format() method\nThe first method for every class should almost always be a format() method. This should return a character vector the same length as x. The easiest way to do this is to rely on one of R’s low-level formatting functions like formatC():\n\nformat.ccn &lt;- function(x, ...) {\n  out &lt;- formatC(vec_data(x))\n  out[is.na(x)] &lt;- NA\n  out\n}\n\nx &lt;- ccn(ccn_examples[1:25])\n\nx\n\n&lt;ccn[25]&gt;\n [1] 001500 001502 001503 001509 001510 001511 001513 001514 001515 001517\n[11] 001518 001524 001527 001528 001529 001530 001534 001535 001536 001541\n[21] 001545 001550 001552 001556 001557\n\n\n(Note the use of vec_data() so format() doesn’t get stuck in an infinite loop, and that I take a little care to not convert NA to \"NA\"; this leads to better printing.)\nThe format method is also used by data frames, tibbles, and str():\n\ndata.frame(x)\n\n        x\n1  001500\n2  001502\n3  001503\n4  001509\n5  001510\n6  001511\n7  001513\n8  001514\n9  001515\n10 001517\n11 001518\n12 001524\n13 001527\n14 001528\n15 001529\n16 001530\n17 001534\n18 001535\n19 001536\n20 001541\n21 001545\n22 001550\n23 001552\n24 001556\n25 001557\n\n\nFor optimal display, I recommend also defining an abbreviated type name, which should be 4-5 letters for commonly used vectors. This is used in tibbles and in str():\n\nvec_ptype_abbr.ccn &lt;- function(x, ...) {\n  \"ccn\"\n}\n\ntibble::tibble(x)\n\n# A tibble: 25 × 1\n   x     \n   &lt;ccn&gt; \n 1 001500\n 2 001502\n 3 001503\n 4 001509\n 5 001510\n 6 001511\n 7 001513\n 8 001514\n 9 001515\n10 001517\n# ℹ 15 more rows\n\nstr(x)\n\n ccn [1:25] 001500, 001502, 001503, 001509, 001510, 001511, 001513, 001514,...\n\n\nIf you need more control over printing in tibbles, implement a method for pillar::pillar_shaft(). See vignette(\"pillar\", package = \"vctrs\") for details.",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Implementation</span>"
+    ]
+  },
+  {
+    "objectID": "implementation.html#casting-and-coercion",
+    "href": "implementation.html#casting-and-coercion",
+    "title": "\n16  Implementation\n",
+    "section": "\n16.3 Casting and coercion",
+    "text": "16.3 Casting and coercion\nThe next set of methods you are likely to need are those related to coercion and casting. Coercion and casting are two sides of the same coin: changing the prototype of an existing object. When the change happens implicitly (e.g in c()) we call it coercion; when the change happens explicitly (e.g. with as.integer(x)), we call it casting.\nOne of the main goals of vctrs is to put coercion and casting on a robust theoretical footing so it’s possible to make accurate predictions about what (e.g.) c(x, y) should do when x and y have different prototypes. vctrs achieves this goal through two generics:\n\nvec_ptype2(x, y) defines possible set of coercions. It returns a prototype if x and y can be safely coerced to the same prototype; otherwise it returns an error. The set of automatic coercions is usually quite small because too many tend to make code harder to reason about and silently propagate mistakes.\nvec_cast(x, to) defines the possible sets of casts. It returns x translated to have prototype to, or throws an error if the conversion isn’t possible. The set of possible casts is a superset of possible coercions because they’re requested explicitly.",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Implementation</span>"
     ]
   },
   {
