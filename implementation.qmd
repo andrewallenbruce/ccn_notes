@@ -6,9 +6,11 @@ editor_options:
 
 # Implementation
 
-```{r setup}
-#| message: false
-#| warning: false
+```{r}
+#| label: setup
+#| message: true
+#| warning: true
+#| error: true
 #| echo: false
 #| cache: false
 #| comment: ""
@@ -16,26 +18,99 @@ library(vctrs)
 library(rlang)
 library(zeallot)
 library(ccn)
-ccn_examples <- ccn:::get_pin("ccn")
+
+in_between <- function(x, min, max) {
+  (x - min) * (max - x) >= 0L
+}
+
+examples <- c(ccn:::get_pin("ccn"), "02", NA_character_)
 ```
+
+## `ccn` Validation
+
+```{r}
+#| label: ccn_validation
+#| error: true
+is_valid_nchar <- function(x) {
+  N <- collapse::vlengths(x)
+  (N - 6L) * (14L - N) >= 0L
+}
+
+is_valid_nchar(examples[1:10])
+
+all_valid_nchar <- function(x) {
+  collapse::allv(is_valid_nchar(x), TRUE)
+}
+
+all_valid_nchar(examples)
+
+which_not_valid_nchar <- function(x) {
+  collapse::whichv(is_valid_nchar(x), FALSE)
+}
+
+which_not_valid_nchar(examples)
+examples[which_not_valid_nchar(examples)]
+```
+
+## `ccn` Checks
+
+```{r}
+#| label: ccn_checks
+#| error: true
+check_valid_nchar <- function(
+  x,
+  arg = rlang::caller_arg(x),
+  call = rlang::caller_env()
+) {
+  if (!all_valid_nchar(x)) {
+    i <- which_not_valid_nchar(x)
+    n <- length(i)
+    cli::cli_abort(
+      c(
+        "{.strong {n}} Invalid {cli::qty(n)} CCN{?s}:",
+        "x" = "{.val {x[i]}}"
+      ),
+      arg = arg,
+      call = call
+    )
+  }
+}
+
+# check_valid_nchar(examples)
+
+check_character <- function(
+    x,
+    arg = rlang::caller_arg(x),
+    call = rlang::caller_env()
+    ) {
+  if (!is_character(x)) {
+    cli::cli_abort(
+      "`x` must be a character vector.",
+      arg = arg,
+      call = call
+      )
+  }
+}
+```
+
 
 ## `ccn` class
 
-In this section, I’ll make a `ccn` class, i.e., a character vector that is printed as a CCN. We start by defining a low-level [constructor](https://adv-r.hadley.nz/s3.html#s3-constrcutor) to check types and/or sizes and call `new_vctr()`.
+First, make a `ccn` class, i.e., a character vector that is printed as a `ccn`. Start by defining a low-level [constructor](https://adv-r.hadley.nz/s3.html#s3-constrcutor) to check types and/or sizes and call `new_vctr()`.
 
 `ccn` is built on a character vector of any length and doesn’t have any attributes.
 
 
 ```{r}
 #| label: new_ccn
+#| error: true
 new_ccn <- function(x = character()) {
-  if (!is_character(x)) {
-    abort("`x` must be a character vector.")
-  }
+  # check_character(x)
+  # check_valid_nchar(x)
   new_vctr(x, class = "ccn")
 }
 
-x <- new_ccn(ccn_examples[1:25])
+x <- new_ccn(examples[1:25])
 
 x
 
@@ -45,7 +120,8 @@ str(x)
 We then follow up with a user friendly helper. Here we’ll use `vec_cast()` to allow it to accept anything coercible to a character:
 
 ```{r}
-#| label: ccn-cast
+#| label: ccn-helper
+#| error: true
 ccn <- function(x = character()) {
   x <- vec_cast(x, character())
   new_ccn(x)
@@ -56,14 +132,16 @@ Before you go on, check that user-friendly constructor returns a zero-length vec
 
 ```{r}
 #| label: ccn-prototype
+#| error: true
 new_ccn()
 ccn()
 ```
 
-For the convenience of your users, consider implementing an is_percent() function:
+For the convenience of your users, consider implementing an `is_ccn()` function:
 
 ```{r}
 #| label: ccn-inherits
+#| error: true
 is_ccn <- function(x) {
   inherits(x, "ccn")
 }
@@ -74,14 +152,16 @@ is_ccn <- function(x) {
 The first method for every class should almost always be a `format()` method. This should return a character vector the same length as x. The easiest way to do this is to rely on one of R’s low-level formatting functions like `formatC()`:
 
 ```{r}
+#| label: ccn-format
+#| error: true
 format.ccn <- function(x, ...) {
   out <- formatC(vec_data(x))
-  out[is.na(x)] <- NA
+  out[is.na(x)] <- NA_character_
   out
 }
 
-x <- ccn(ccn_examples[1:25])
-
+# x <- ccn(examples[52000:52272])
+x <- ccn(examples[1:2000])
 x
 ```
 
@@ -90,12 +170,16 @@ x
 The format method is also used by data frames, tibbles, and `str()`:
 
 ```{r}
+#| label: ccn-data.frame
+#| error: true
 data.frame(x)
 ```
 
 For optimal display, I recommend also defining an abbreviated type name, which should be 4-5 letters for commonly used vectors. This is used in tibbles and in `str()`:
 
 ```{r}
+#| label: ccn-abbr
+#| error: true
 vec_ptype_abbr.ccn <- function(x, ...) {
   "ccn"
 }
@@ -109,9 +193,112 @@ If you need more control over printing in tibbles, implement a method for `pilla
 
 ## Casting and coercion
 
-The next set of methods you are likely to need are those related to coercion and casting. Coercion and casting are two sides of the same coin: changing the prototype of an existing object. When the change happens implicitly (e.g in c()) we call it coercion; when the change happens explicitly (e.g. with as.integer(x)), we call it casting.
+The next set of methods you are likely to need are those related to coercion and casting. Coercion and casting are two sides of the same coin: changing the prototype of an existing object. When the change happens implicitly (e.g in `c()`) we call it __coercion__; when the change happens explicitly (e.g. with `as.integer(x)`), we call it __casting__.
 
-One of the main goals of vctrs is to put coercion and casting on a robust theoretical footing so it’s possible to make accurate predictions about what (e.g.) c(x, y) should do when x and y have different prototypes. vctrs achieves this goal through two generics:
+One of the main goals of __vctrs__ is to put coercion and casting on a robust theoretical footing so it’s possible to make accurate predictions about what (e.g.) `c(x, y)` should do when `x` and `y` have different prototypes. `vctrs` achieves this goal through two generics:
 
-   - vec_ptype2(x, y) defines possible set of coercions. It returns a prototype if x and y can be safely coerced to the same prototype; otherwise it returns an error. The set of automatic coercions is usually quite small because too many tend to make code harder to reason about and silently propagate mistakes.
-   - vec_cast(x, to) defines the possible sets of casts. It returns x translated to have prototype to, or throws an error if the conversion isn’t possible. The set of possible casts is a superset of possible coercions because they’re requested explicitly.
+   - `vec_ptype2(x, y)` defines a possible set of __coercions__. It returns a prototype if `x` and `y` can be safely coerced to the same prototype; otherwise it returns an error. The set of automatic coercions is usually quite small because too many tend to make code harder to reason about and silently propagate mistakes.
+   - `vec_cast(x, to)` defines the possible sets of __casts__. It returns `x` translated to have prototype `to`, or throws an error if the conversion isn’t possible. The set of possible casts is a _superset_ of possible __coercions__ because they’re requested explicitly.
+
+### Double dispatch
+
+Both generics use [double dispatch](https://en.wikipedia.org/wiki/Double_dispatch) which means that the implementation is selected based on the class of two arguments, not just one. __S3__ does not natively support double dispatch, so we implement our own dispatch mechanism. In practice, this means:
+
+   - You end up with method names with two classes, like `vec_ptype2.foo.bar()`.
+   - You don’t need to implement default methods (they would never be called if you do).
+   - You can’t call `NextMethod()`.
+
+### CCN class
+
+We’ll make our `ccn` class coercible back and forth with character vectors.
+
+`vec_ptype2()` provides a user friendly error message if the coercion doesn’t exist and makes sure `NA` is handled in a standard way. `NA` is technically a `logical` vector, but we want it to stand in for a missing value of any type.
+
+```{r}
+#| label: ccn-ptype2-1
+#| error: true
+vec_ptype2("bogus", ccn())
+vec_ptype2(ccn(), NA)
+vec_ptype2(NA, ccn())
+```
+
+By default and in simple cases, an object of the same class is compatible with itself:
+
+```{r}
+#| label: ccn-ptype2-2
+#| error: true
+vec_ptype2(ccn(), ccn())
+```
+
+However this only works if the attributes for both objects are the same. Also the default methods are a bit slower. It is always a good idea to provide an explicit coercion method for the case of identical classes. So we’ll start by saying that a `ccn` combined with a `ccn` yields a `ccn`, which we indicate by returning a prototype generated by the constructor.
+
+```{r}
+#| label: ccn-ptype2-3
+#| error: true
+vec_ptype2.ccn.ccn <- function(x, y, ...) new_ccn()
+```
+
+Next we define methods that say that combining a `ccn` and `character` should yield a `character`.
+
+Because double dispatch is a bit of a hack, we need to provide two methods. It’s your responsibility to ensure that each member of the pair returns the same result: if they don’t you will get weird and unpredictable behaviour.
+
+The double dispatch mechanism requires us to refer to the underlying type, `character`, in the method name. If we implemented `vec_ptype2.ccn.numeric()`, it would never be called.
+
+```{r}
+#| label: ccn-ptype2-4
+#| error: true
+vec_ptype2.ccn.character <- function(x, y, ...) character()
+vec_ptype2.character.ccn <- function(x, y, ...) character()
+```
+
+We can check that we’ve implemented this correctly with `vec_ptype_show()`:
+
+```{r}
+#| label: ccn-ptype-show
+#| error: true
+vec_ptype_show(ccn(), character(), ccn())
+```
+
+The `vec_ptype2()` methods define which input is the richer type that `vctrs` should coerce to. However, they don’t perform any conversion. This is the job of `vec_cast()`, which we implement next. We’ll provide a method to cast a `ccn` to a `ccn`:
+
+```{r}
+#| label: ccn-cast
+#| error: true
+vec_cast.ccn.ccn <- function(x, to, ...) x
+```
+
+And then for converting back and forth between `character`s. To convert a `character` to a `ccn` we use the `ccn()` helper (not the constructor; this is un-validated user input). To convert a `ccn` to a `character`, we strip the attributes.
+
+Note that for historical reasons the order of argument in the signature is the opposite as for `vec_ptype2()`. The class for `to` comes first, and the class for `x` comes second.
+
+Again, the double dispatch mechanism requires us to refer to the underlying type, `character`, in the method name:
+
+```{r}
+#| error: true
+vec_cast.ccn.character <- function(x, to, ...) ccn(x)
+vec_cast.character.ccn <- function(x, to, ...) vec_data(x)
+```
+
+Then we can check this works with `vec_cast()`:
+
+```{r}
+#| error: true
+vec_cast("030113", ccn())
+vec_cast(ccn("030113"), character())
+```
+
+Once you’ve implemented `vec_ptype2()` and `vec_cast()`, you get `vec_c()`, `[<-`, and `[[<-` implementations for free.
+
+```{r}
+#| error: true
+vec_c(ccn("030113"), "1")
+vec_c(NA, ccn("030113"))
+# but
+vec_c(TRUE, ccn("030113"))
+
+x <- ccn(examples[1:5])
+x[1:2] <- LETTERS[1:5]
+x[[3]] <- LETTERS[5]
+x
+```
+

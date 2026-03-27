@@ -306,9 +306,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#ccn-class" id="toc-ccn-class" class="nav-link active" data-scroll-target="#ccn-class"><span class="header-section-number">16.1</span> <code>ccn</code> class</a></li>
-  <li><a href="#format-method" id="toc-format-method" class="nav-link" data-scroll-target="#format-method"><span class="header-section-number">16.2</span> <code>format()</code> method</a></li>
-  <li><a href="#casting-and-coercion" id="toc-casting-and-coercion" class="nav-link" data-scroll-target="#casting-and-coercion"><span class="header-section-number">16.3</span> Casting and coercion</a></li>
+<li><a href="#ccn-validation" id="toc-ccn-validation" class="nav-link active" data-scroll-target="#ccn-validation"><span class="header-section-number">16.1</span> <code>ccn</code> Validation</a></li>
+  <li><a href="#ccn-checks" id="toc-ccn-checks" class="nav-link" data-scroll-target="#ccn-checks"><span class="header-section-number">16.2</span> <code>ccn</code> Checks</a></li>
+  <li><a href="#ccn-class" id="toc-ccn-class" class="nav-link" data-scroll-target="#ccn-class"><span class="header-section-number">16.3</span> <code>ccn</code> class</a></li>
+  <li><a href="#format-method" id="toc-format-method" class="nav-link" data-scroll-target="#format-method"><span class="header-section-number">16.4</span> <code>format()</code> method</a></li>
+  <li>
+<a href="#casting-and-coercion" id="toc-casting-and-coercion" class="nav-link" data-scroll-target="#casting-and-coercion"><span class="header-section-number">16.5</span> Casting and coercion</a>
+  <ul class="collapse">
+<li><a href="#double-dispatch" id="toc-double-dispatch" class="nav-link" data-scroll-target="#double-dispatch"><span class="header-section-number">16.5.1</span> Double dispatch</a></li>
+  <li><a href="#ccn-class-1" id="toc-ccn-class-1" class="nav-link" data-scroll-target="#ccn-class-1"><span class="header-section-number">16.5.2</span> CCN class</a></li>
+  </ul>
+</li>
   </ul></nav>
     </div>
 <!-- main -->
@@ -335,19 +343,103 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><section id="ccn-class" class="level2" data-number="16.1"><h2 data-number="16.1" class="anchored" data-anchor-id="ccn-class">
-<span class="header-section-number">16.1</span> <code>ccn</code> class</h2>
-<p>In this section, I’ll make a <code>ccn</code> class, i.e., a character vector that is printed as a CCN. We start by defining a low-level <a href="https://adv-r.hadley.nz/s3.html#s3-constrcutor">constructor</a> to check types and/or sizes and call <code>new_vctr()</code>.</p>
+</header><div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'zeallot' was built under R version 4.4.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'ccn'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:base':
+
+    parse</code></pre>
+</div>
+</div>
+<section id="ccn-validation" class="level2" data-number="16.1"><h2 data-number="16.1" class="anchored" data-anchor-id="ccn-validation">
+<span class="header-section-number">16.1</span> <code>ccn</code> Validation</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">is_valid_nchar</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">N</span> <span class="op">&lt;-</span> <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/efficient-programming.html">vlengths</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
+<span>  <span class="op">(</span><span class="va">N</span> <span class="op">-</span> <span class="fl">6L</span><span class="op">)</span> <span class="op">*</span> <span class="op">(</span><span class="fl">14L</span> <span class="op">-</span> <span class="va">N</span><span class="op">)</span> <span class="op">&gt;=</span> <span class="fl">0L</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="fu">is_valid_nchar</span><span class="op">(</span><span class="va">examples</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">]</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">all_valid_nchar</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/efficient-programming.html">allv</a></span><span class="op">(</span><span class="fu">is_valid_nchar</span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="fu">all_valid_nchar</span><span class="op">(</span><span class="va">examples</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">which_not_valid_nchar</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/efficient-programming.html">whichv</a></span><span class="op">(</span><span class="fu">is_valid_nchar</span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, <span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="fu">which_not_valid_nchar</span><span class="op">(</span><span class="va">examples</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 52271 52272</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">examples</span><span class="op">[</span><span class="fu">which_not_valid_nchar</span><span class="op">(</span><span class="va">examples</span><span class="op">)</span><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "02" NA  </code></pre>
+</div>
+</div>
+</section><section id="ccn-checks" class="level2" data-number="16.2"><h2 data-number="16.2" class="anchored" data-anchor-id="ccn-checks">
+<span class="header-section-number">16.2</span> <code>ccn</code> Checks</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">check_valid_nchar</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span></span>
+<span>  <span class="va">x</span>,</span>
+<span>  <span class="va">arg</span> <span class="op">=</span> <span class="fu">rlang</span><span class="fu">::</span><span class="fu"><a href="https://rlang.r-lib.org/reference/caller_arg.html">caller_arg</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>,</span>
+<span>  <span class="va">call</span> <span class="op">=</span> <span class="fu">rlang</span><span class="fu">::</span><span class="fu"><a href="https://rlang.r-lib.org/reference/stack.html">caller_env</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu">all_valid_nchar</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="va">i</span> <span class="op">&lt;-</span> <span class="fu">which_not_valid_nchar</span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
+<span>    <span class="va">n</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">i</span><span class="op">)</span></span>
+<span>    <span class="fu">cli</span><span class="fu">::</span><span class="fu"><a href="https://cli.r-lib.org/reference/cli_abort.html">cli_abort</a></span><span class="op">(</span></span>
+<span>      <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span></span>
+<span>        <span class="st">"{.strong {n}} Invalid {cli::qty(n)} CCN{?s}:"</span>,</span>
+<span>        <span class="st">"x"</span> <span class="op">=</span> <span class="st">"{.val {x[i]}}"</span></span>
+<span>      <span class="op">)</span>,</span>
+<span>      arg <span class="op">=</span> <span class="va">arg</span>,</span>
+<span>      call <span class="op">=</span> <span class="va">call</span></span>
+<span>    <span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="co"># check_valid_nchar(examples)</span></span>
+<span></span>
+<span><span class="va">check_character</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span></span>
+<span>    <span class="va">x</span>,</span>
+<span>    <span class="va">arg</span> <span class="op">=</span> <span class="fu">rlang</span><span class="fu">::</span><span class="fu"><a href="https://rlang.r-lib.org/reference/caller_arg.html">caller_arg</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>,</span>
+<span>    <span class="va">call</span> <span class="op">=</span> <span class="fu">rlang</span><span class="fu">::</span><span class="fu"><a href="https://rlang.r-lib.org/reference/stack.html">caller_env</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>    <span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu">is_character</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="fu">cli</span><span class="fu">::</span><span class="fu"><a href="https://cli.r-lib.org/reference/cli_abort.html">cli_abort</a></span><span class="op">(</span></span>
+<span>      <span class="st">"`x` must be a character vector."</span>,</span>
+<span>      arg <span class="op">=</span> <span class="va">arg</span>,</span>
+<span>      call <span class="op">=</span> <span class="va">call</span></span>
+<span>      <span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section><section id="ccn-class" class="level2" data-number="16.3"><h2 data-number="16.3" class="anchored" data-anchor-id="ccn-class">
+<span class="header-section-number">16.3</span> <code>ccn</code> class</h2>
+<p>First, make a <code>ccn</code> class, i.e., a character vector that is printed as a <code>ccn</code>. Start by defining a low-level <a href="https://adv-r.hadley.nz/s3.html#s3-constrcutor">constructor</a> to check types and/or sizes and call <code>new_vctr()</code>.</p>
 <p><code>ccn</code> is built on a character vector of any length and doesn’t have any attributes.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">new_ccn</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html">character</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu">is_character</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="fu">abort</span><span class="op">(</span><span class="st">"`x` must be a character vector."</span><span class="op">)</span></span>
-<span>  <span class="op">}</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">new_ccn</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html">character</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="co"># check_character(x)</span></span>
+<span>  <span class="co"># check_valid_nchar(x)</span></span>
 <span>  <span class="fu">new_vctr</span><span class="op">(</span><span class="va">x</span>, class <span class="op">=</span> <span class="st">"ccn"</span><span class="op">)</span></span>
 <span><span class="op">}</span></span>
 <span></span>
-<span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu">new_ccn</span><span class="op">(</span><span class="va">ccn_examples</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">25</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu">new_ccn</span><span class="op">(</span><span class="va">examples</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">25</span><span class="op">]</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">x</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -356,97 +448,2403 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 [11] 001518 001524 001527 001528 001529 001530 001534 001535 001536 001541
 [21] 001545 001550 001552 001556 001557</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> ccn [1:25] 001500, 001502, 001503, 001509, 001510, 001511, 001513, 001514,...</code></pre>
 </div>
 </div>
 <p>We then follow up with a user friendly helper. Here we’ll use <code>vec_cast()</code> to allow it to accept anything coercible to a character:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ccn</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html">character</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ccn</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html">character</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="va">x</span> <span class="op">&lt;-</span> <span class="fu">vec_cast</span><span class="op">(</span><span class="va">x</span>, <span class="fu"><a href="https://rdrr.io/r/base/character.html">character</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span>  <span class="fu">new_ccn</span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
 <span><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Before you go on, check that user-friendly constructor returns a zero-length vector when called with no arguments. This makes it easy to use as a prototype.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">new_ccn</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">new_ccn</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;ccn[0]&gt;</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ccn</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ccn</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;ccn[0]&gt;</code></pre>
 </div>
 </div>
-<p>For the convenience of your users, consider implementing an is_percent() function:</p>
+<p>For the convenience of your users, consider implementing an <code>is_ccn()</code> function:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">is_ccn</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">is_ccn</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/class.html">inherits</a></span><span class="op">(</span><span class="va">x</span>, <span class="st">"ccn"</span><span class="op">)</span></span>
 <span><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section><section id="format-method" class="level2" data-number="16.2"><h2 data-number="16.2" class="anchored" data-anchor-id="format-method">
-<span class="header-section-number">16.2</span> <code>format()</code> method</h2>
+</section><section id="format-method" class="level2" data-number="16.4"><h2 data-number="16.4" class="anchored" data-anchor-id="format-method">
+<span class="header-section-number">16.4</span> <code>format()</code> method</h2>
 <p>The first method for every class should almost always be a <code><a href="https://rdrr.io/r/base/format.html">format()</a></code> method. This should return a character vector the same length as x. The easiest way to do this is to rely on one of R’s low-level formatting functions like <code><a href="https://rdrr.io/r/base/formatc.html">formatC()</a></code>:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">format.ccn</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">...</span><span class="op">)</span> <span class="op">{</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">format.ccn</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">...</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="va">out</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/formatc.html">formatC</a></span><span class="op">(</span><span class="fu">vec_data</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span>
-<span>  <span class="va">out</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="cn">NA</span></span>
+<span>  <span class="va">out</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="cn">NA_character_</span></span>
 <span>  <span class="va">out</span></span>
 <span><span class="op">}</span></span>
 <span></span>
-<span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu">ccn</span><span class="op">(</span><span class="va">ccn_examples</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">25</span><span class="op">]</span><span class="op">)</span></span>
-<span></span>
+<span><span class="co"># x &lt;- ccn(examples[52000:52272])</span></span>
+<span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu">ccn</span><span class="op">(</span><span class="va">examples</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">2000</span><span class="op">]</span><span class="op">)</span></span>
 <span><span class="va">x</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;ccn[25]&gt;
- [1] 001500 001502 001503 001509 001510 001511 001513 001514 001515 001517
-[11] 001518 001524 001527 001528 001529 001530 001534 001535 001536 001541
-[21] 001545 001550 001552 001556 001557</code></pre>
+<pre><code>&lt;ccn[2000]&gt;
+   [1]     001500     001502     001503     001509     001510     001511
+   [7]     001513     001514     001515     001517     001518     001524
+  [13]     001527     001528     001529     001530     001534     001535
+  [19]     001536     001541     001545     001550     001552     001556
+  [25]     001557     001561     001562     001563     001568     001570
+  [31]     001571     001572     001574     001575     010001     010005
+  [37]     010006     010007     010008     010011     010012     010016
+  [43]     010018     010019     010021     010022     010023     010024
+  [49]     010029     010033     010034     010035     010036     010039
+  [55]     010040     010044     010045     010046     010049     010051
+  [61]     010052     010055     010056     010058     010059     010061
+  [67]     010062     010065     010073     010078     010079     010083
+  [73]     010085     010086     010087     010089     010090     010091
+  [79]     010092     010095     010097     010099     010100     010101
+  [85]     010102     010103     010104     010108     010110     010112
+  [91]     010113     010114     010118     010120     010125     010126
+  [97]     010128     010129     010130     010131     010138     010139
+ [103]     010144     010148     010149     01014F     010150     010157
+ [109]     010158     010164     010168     010169     010173     010175
+ [115]     01019F     01021F     010779     010780     010781     011300
+ [121]     011302     011304     011305     011306     011307     011308
+ [127]     011309     011500     011501     011502     011503     011505
+ [133]     011506     011508     011510     011511     011512     011513
+ [139]     011514     011516     011517     011522     011524     011526
+ [145]     011527     011528     011534     011538     011543     011546
+ [151]     011548     011549     011558     011566     011567     011576
+ [157]     011577     011579     011582     011583     011586     011591
+ [163]     011592     011597     011598     011600     011602     011603
+ [169]     011604     011605     011607     011612     011617     011621
+ [175]     011622     011623     011624     011626     011628     011629
+ [181]     011632     011634     011635     011636     011638     011642
+ [187]     011643     011654     011655     011656     011657     011660
+ [193]     011661     011662     011663     011664     011669     011670
+ [199]     011671     011673     011674     011675     011676     011677
+ [205]     011678     011680     011681     011682     011684     011685
+ [211]     011686     012006     012008     012009     012010     012011
+ [217]     012012     012014     012306     012500     012501     012502
+ [223]     012505     012506     012507     012508     012512     012513
+ [229]     012515     012516     012517     012519     012520     012521
+ [235]     012522     012523     012524     012525     012526     012527
+ [241]     012528     012529     012530     012531     012532     012533
+ [247]     012534     012535     012536     012537     012538     012540
+ [253]     012541     012542     012543     012544     012545     012546
+ [259]     012547     012548     012550     012551     012552     012553
+ [265]     012556     012558     012559     012561     012562     012563
+ [271]     012566     012568     012570     012572     012573     012575
+ [277]     012576     012579     012580     012582     012585     012588
+ [283]     012589     012590     012591     012592     012593     012594
+ [289]     012595     012596     012597     012598     012599     012600
+ [295]     012602     012603     012604     012606     012607     012608
+ [301]     012609     012610     012611     012612     012613     012614
+ [307]     012615     012616     012617     012618     012619     012620
+ [313]     012621     012622     012623     012624     012625     012626
+ [319]     012628     012629     012630     012631     012632     012633
+ [325]     012634     012636     012638     012639     012640     012641
+ [331]     012642     012643     012644     012645     012646     012647
+ [337]     012648     012649     012650     012651     012652     012653
+ [343]     012654     012656     012657     012659     012660     012662
+ [349]     012663     012664     012665     012666     012667     012669
+ [355]     012670     012671     012672     012673     012676     012678
+ [361]     012679     012680     012681     012684     012685     012686
+ [367]     012687     012688     012692     012693     012695     012696
+ [373]     012697     012699     012700     012701     012702     012703
+ [379]     012704     012706     012707     012708     012709     012710
+ [385]     012711     012712     012714     012716     012717     012718
+ [391]     012719     012720     012721     012722     012723     012725
+ [397]     013025     013028     013029     013030     013031     013032
+ [403]     013033     013300     013301     014000     014006     014007
+ [409]     014012     014013     014014     014015     014016     014017
+ [415]     014018     014019     015009     015010     015012     015015
+ [421]     015016     015019     015024     015027     015031     015032
+ [427]     015034     015035     015040     015042     015044     015045
+ [433]     015048     015049     015053     015063     015065     015066
+ [439]     015071     015073     015075     015076     015083     015084
+ [445]     015089     015091     015097     015100     015101     015103
+ [451]     015104     015111     015112     015113     015114     015115
+ [457]     015117     015120     015121     015123     015124     015126
+ [463]     015127     015128     015129     015132     015134     015135
+ [469]     015136     015137     015138     015139     015141     015142
+ [475]     015143     015145     015148     015149     015150     015151
+ [481]     015152     015153     015154     015155     015156     015157
+ [487]     015158     015159     015160     015162     015163     015164
+ [493]     015166     015167     015169     015171     015174     015175
+ [499]     015176     015177     015178     015179     015180     015182
+ [505]     015184     015186     015187     015188     015189     015191
+ [511]     015192     015193     015194     015195     015196     015197
+ [517]     015199     015200     015201     015202     015203     015206
+ [523]     015207     015208     015210     015211     015212     015213
+ [529]     015214     015215     015216     015217     015220     015221
+ [535]     015222     015223     015225     015227     015228     015315
+ [541]     015320     015322     015326     015330     015336     015361
+ [547]     015369     015371     015372     015373     015374     015375
+ [553]     015376     015378     015379     015381     015383     015386
+ [559]     015388     015390     015392     015393     015396     015397
+ [565]     015398     015400     015403     015404     015406     015411
+ [571]     015413     015414     015416     015417     015419     015420
+ [577]     015422     015423     015424     015425     015426     015429
+ [583]     015431     015433     015434     015435     015436     015437
+ [589]     015440     015442     015443     015446     015447     015448
+ [595]     015450     015451     015452     015453     015454     015455
+ [601]     015456     015457     015459     015460     015461     015463
+ [607]     015464     015465     015467     015468     017000     017009
+ [613]     017013     017014     017016     017018     017020     017024
+ [619]     017025     017026     017027     017034     017035     017037
+ [625]     017039     017048     017050     017051     017052     017053
+ [631]     017054     017055     017058     017063     017066     017069
+ [637]     017070     017071     017072     017078     017079     017080
+ [643]     017082     017084     017085     017086     017088     017089
+ [649]     017090     017091     017092     017093     017094     017095
+ [655]     017096     017097     017100     017103     017104     017106
+ [661]     017107     017109     017112     017115     017116     017117
+ [667]     017118     017119     017121    017121A     017123     017124
+ [673]     017125     017128     017129     017132     017134     017135
+ [679]     017136     017142     017143     017145     017146     017147
+ [685]     017148     017149     017151     017152     017153     017154
+ [691]     017155     017157     017158     017159     017160     017161
+ [697]     017163     017164     017165     017166     017167     017168
+ [703]     017170     017171     017175     017176     017177     017178
+ [709]     017179     017180     017182     017300     017305     017307
+ [715]     017319     017320     017323     017324     017326     017327
+ [721]     017328     017878     017879     017880     017881 01C0001000
+ [727] 01C0001002 01C0001008 01C0001009 01C0001010 01C0001011 01C0001013
+ [733] 01C0001014 01C0001017 01C0001018 01C0001020 01C0001021 01C0001022
+ [739] 01C0001024 01C0001025 01C0001026 01C0001027 01C0001029 01C0001035
+ [745] 01C0001037 01C0001039 01C0001040 01C0001041 01C0001042 01C0001043
+ [751] 01C0001044 01C0001045 01C0001046 01C0001048 01C0001050 01C0001051
+ [757] 01C0001053 01C0001054 01C0001055 01C0001056 01C0001057 01C0001058
+ [763] 01C0001059 01C0001060 01C0001061 01C0001062 01C0001063 01C0001064
+ [769] 01C0001065 01C0001066 01C0001068 01C0001069 01C0001070 01C0001104
+ [775] 01C0001106     01M307     01M308     01S007     01S011     01S012
+ [781]     01S016     01S021     01S023     01S033     01S034     01S039
+ [787]     01S040     01S046     01S078     01S085     01S086     01S089
+ [793]     01S092     01S103     01S104     01S108     01S112     01S113
+ [799]     01S114     01S126     01S129     01S139     01S150     01S157
+ [805]     01S164     01T011     01T029     01T033     01T092     01T100
+ [811]     01T104     01T113     01T114     01T139     01T144     01T157
+ [817]     01U007     01U012     01U021     01U034     01U044     01U045
+ [823]     01U046     01U049     01U051     01U052     01U058     01U059
+ [829]     01U065     01U073     01U083     01U086     01U095     01U097
+ [835]     01U112     01U125     01U126     01U128     01U130     01U148
+ [841]     01U150     01U158     01U169     01U173     01Z300     01Z302
+ [847]     01Z304     01Z305     01Z306     01Z307     01Z308     01Z309
+ [853]     020001     020006     020008     020012     020017     020018
+ [859]     020024     020026     02013F     02014F     021301     021302
+ [865]     021304     021305     021306     021307     021308     021309
+ [871]     021310     021311     021312     021313     021314     021500
+ [877]     021506     021507     021508     021509     021510     022001
+ [883]     022500     022502     022503     022504     022506     022508
+ [889]     022509     024001     024002     025018     025020     025021
+ [895]     025025     025027     025036     025038     025039     027001
+ [901]     027006     027008     027009     027010     027014     027022
+ [907]    027022A     027032     027034     027035     027036     027038
+ [913]     027305 02C0001000 02C0001001 02C0001002 02C0001004 02C0001005
+ [919] 02C0001007 02C0001008 02C0001011 02C0001012 02C0001014 02C0001015
+ [925] 02C0001016 02C0001018 02D0873639     02S008     02T017     02TA01
+ [931]     02U006     02U024     02Z301     02Z302     02Z304     02Z305
+ [937]     02Z306     02Z307     02Z308     02Z309     02Z311     02Z312
+ [943]     02Z313     02Z314     030002     030006     030007     030010
+ [949]     030011     030012     030013     030014     030016     030022
+ [955]     030023     030024     030030     030036     030037     030038
+ [961]     030043     030055     030061     030062     030064     030065
+ [967]     030069     030071     030073     030074     030078     030083
+ [973]     030084     030085     030087     030088     030089     030092
+ [979]     030093     030094     030101     030103     030105     030107
+ [985]     030108     030110     030111     030112     030113     030114
+ [991]     030115     030117     030119     030121     030122     030123
+ [997]     03012F     030130     030134     030136     030138     030139
+[1003]     03013F     030146     030147     030148     030152     030153
+[1009]     030154     030155     03033F     031300     031301     031302
+[1015]     031304     031305     031307     031308     031309     031311
+[1021]     031312     031313     031314     031315     031317     031318
+[1027]     031319     031320     031500     031501     031502     031505
+[1033]     031508     031512     031514     031515     031517     031519
+[1039]     031521     031522     031523     031529     031537     031543
+[1045]     031547     031550     031551     031552     031555     031556
+[1051]     031559     031560     031562     031563     031565     031573
+[1057]     031577     031578     031579     031581     031586     031588
+[1063]     031591     031592     031593     031594     031595     031598
+[1069]     031599     031600     031601     031602     031605     031606
+[1075]     031607     031609     031610     031611     031613     031614
+[1081]     031616     031622     031623     031624     031625     031627
+[1087]     031628     031630     031631     031633     031634     031635
+[1093]     031636     031642     031645     031646     031649     031650
+[1099]     031651     031652     031654     031656     031658     031659
+[1105]     031661     031662     031665     031669     031670     031672
+[1111]     031673     031674     031675     031676     031678     031679
+[1117]     031680     031681     031682     031685     031687     031688
+[1123]     031689     031692     031693     031694     031695     031696
+[1129]     031699     031700     031701     031702     031703     031705
+[1135]     031706     031708     031709     031710     031711     031713
+[1141]     031717     031721     031722     031723     031724     031727
+[1147]     031728     031731     031733     031734     031735     031738
+[1153]     031742     031746     031748     031749     031751     031755
+[1159]     031756     031757     031758     031760     031761     031762
+[1165]     031765     031766     031769     031770     031774     031775
+[1171]     031776     031777     031779     031789     031790     031795
+[1177]     031796     031798     032001     032002     032004     032005
+[1183]     032006     032302     032314     032315     032316     032500
+[1189]     032501     032502     032503     032506     032508     032509
+[1195]     032513     032514     032516     032517     032518     032520
+[1201]     032521     032522     032523     032524     032525     032526
+[1207]     032528     032530     032533     032536     032537     032539
+[1213]     032540     032541     032542     032543     032544     032545
+[1219]     032546     032549     032550     032551     032553     032556
+[1225]     032558     032559     032561     032562     032563     032564
+[1231]     032565     032568     032571     032572     032573     032575
+[1237]     032578     032579     032580     032583     032587     032589
+[1243]     032592     032593     032594     032596     032597     032599
+[1249]     032601     032604     032605     032607     032608     032609
+[1255]     032610     032611     032612     032613     032614     032616
+[1261]     032617     032618     032619     032620     032622     032624
+[1267]     032625     032626     032627     032628     032629     032630
+[1273]     032631     032632     032633     032634     032635     032636
+[1279]     032637     032638     032639     032640     032642     032643
+[1285]     032644     032645     032646     032647     032648     032650
+[1291]     032651     032652     032653     032654     032655     032656
+[1297]     032657     032658     032659     032660     032661     032662
+[1303]     032663     032664     033025     033028     033029     033032
+[1309]     033034     033036     033037     033038     033039     033040
+[1315]     033041     033042     033043     033044     033045     033046
+[1321]     033047     033302     033503     033504     034004     034013
+[1327]     034020     034021     034022     034023     034024     034025
+[1333]     034026     034027     034028     034029     034030     034031
+[1339]     034032     034033     034034     034035     034038     034040
+[1345]     034041     035003     035004     035014     035016     035059
+[1351]     035062     035064     035068     035070     035071     035072
+[1357]     035073     035074     035076     035083     035084     035085
+[1363]     035086     035087     035088     035091     035092     035093
+[1369]     035094     035095     035096     035097     035099     035100
+[1375]     035101     035103     035105     035106     035107     035110
+[1381]     035111     035112     035116     035117     035118     035120
+[1387]     035121     035125     035126     035130     035131     035132
+[1393]     035133     035134     035135     035136     035139     035140
+[1399]     035141     035143     035144     035145     035146     035147
+[1405]     035151     035152     035154     035159     035164     035165
+[1411]     035166     035169     035171     035172     035173     035174
+[1417]     035175     035176     035180     035183     035189     035190
+[1423]     035193     035196     035197     035205     035207     035214
+[1429]     035216     035217     035225     035231     035232     035233
+[1435]     035240     035241     035245     035247     035249     035251
+[1441]     035253     035254     035255     035256     035257     035260
+[1447]     035262     035263     035264     035265     035266     035268
+[1453]     035270     035272     035273     035275     035276     035277
+[1459]     035279     035280     035281     035282     035283     035285
+[1465]     035286     035289     035290     035291     035292     035295
+[1471]     035296     035297     035298     035299     035300     035301
+[1477]     035302     037015     037016     037024     037027     037030
+[1483]     037036     037037     037042     037047     037050     037057
+[1489]     037068     037070     037099     037106     037114     037125
+[1495]     037129     037130     037132     037139     037144     037154
+[1501]     037162     037178     037185     037188     037192     037199
+[1507]     037202     037204     037205     037212     037213     037215
+[1513]     037217     037220     037221     037226     037228     037230
+[1519]     037232     037233     037234     037235     037239     037242
+[1525]     037243     037245     037246     037247     037248     037249
+[1531]     037250     037251     037252     037253     037257     037258
+[1537]     037260     037261     037262     037263     037264     037269
+[1543]     037271     037273     037274     037280     037281     037282
+[1549]     037285     037286     037288     037290     037295     037297
+[1555]     037298     037299     037402     037403     037404     037405
+[1561]     037410     037412     037413     037414     037416     037417
+[1567]     037418     037419     037422     037425     037426     037431
+[1573]     037432     037433     037436     037437     037438     037439
+[1579]     037442     037443     037447     037450     037451     037452
+[1585]     037453     037455     037456     037458     037459     037462
+[1591]     037463     037464     037468     037469     037470     037471
+[1597]     037472     037475     037476     037477     037478     037479
+[1603]     037481     037482     037485     037486     037489     037492
+[1609]     037493     037494     037496     037498     037500     037502
+[1615]     037802     037804     037805     037806     037807     037808
+[1621]     037809     037810     037811     037813     037814     037815
+[1627]     037817     037819     037820     037821     037822     037824
+[1633]     037825     037826     037827     037828     037830     037831
+[1639]     037832     037833     037834     037835 03C0001001 03C0001013
+[1645] 03C0001016 03C0001020 03C0001021 03C0001023 03C0001024 03C0001041
+[1651] 03C0001042 03C0001043 03C0001044 03C0001045 03C0001047 03C0001052
+[1657] 03C0001053 03C0001054 03C0001056 03C0001057 03C0001059 03C0001063
+[1663] 03C0001070 03C0001071 03C0001078 03C0001080 03C0001087 03C0001092
+[1669] 03C0001093 03C0001202 03C0001203 03C0001207 03C0001212 03C0001214
+[1675] 03C0001215 03C0001217 03C0001220 03C0001223 03C0001224 03C0001228
+[1681] 03C0001233 03C0001235 03C0001236 03C0001239 03C0001240 03C0001242
+[1687] 03C0001244 03C0001247 03C0001248 03C0001249 03C0001253 03C0001256
+[1693] 03C0001259 03C0001260 03C0001261 03C0001262 03C0001265 03C0001266
+[1699] 03C0001268 03C0001274 03C0001275 03C0001278 03C0001279 03C0001280
+[1705] 03C0001283 03C0001284 03C0001285 03C0001286 03C0001290 03C0001291
+[1711] 03C0001293 03C0001294 03C0001295 03C0001296 03C0001297 03C0001298
+[1717] 03C0001299 03C0001300 03C0001302 03C0001303 03C0001304 03C0001305
+[1723] 03C0001306 03C0001308 03C0001310 03C0001313 03C0001314 03C0001319
+[1729] 03C0001322 03C0001324 03C0001325 03C0001326 03C0001327 03C0001328
+[1735] 03C0001330 03C0001334 03C0001335 03C0001339 03C0001341 03C0001342
+[1741] 03C0001343 03C0001344 03C0001345 03C0001346 03C0001347 03C0001348
+[1747] 03C0001349 03C0001352 03C0001354 03C0001355 03C0001356 03C0001357
+[1753] 03C0001359 03C0001360 03C0001361 03C0001362 03C0001363 03C0001364
+[1759] 03C0001367 03C0001368 03C0001369 03C0001371 03C0001373 03C0001375
+[1765] 03C0001376 03C0001378 03C0001379 03C0001380 03C0001381 03C0001382
+[1771] 03C0001383 03C0001384 03C0001385 03C0001386 03C0001387 03C0001391
+[1777] 03C0001393 03C0001394 03C0001395 03C0001396 03C0001398 03C0001399
+[1783] 03C0001403 03C0001406 03C0001408 03C0001409 03C0001410 03C0001412
+[1789] 03C0001413 03C0001414 03C0001416 03C0001417 03C0001418 03C0001419
+[1795] 03C0001423 03C0001425 03C0001426 03C0001428 03C0001429 03C0001430
+[1801] 03C0001431 03C0001432 03C0001433 03C0001434 03C0001435 03C0001436
+[1807] 03C0001438 03C0001439 03C0001441 03C0001442 03C0001445 03C0001450
+[1813] 03C0001451 03C0001453 03C0001454 03C0001455 03C0001456 03C0001457
+[1819] 03C0001458 03C0001460 03C0001461 03C0001462 03C0001463 03C0001465
+[1825] 03C0001466 03C0001469 03C0001471 03C0001473 03C0001475 03C0001476
+[1831] 03C0001480     03S002     03S010     03S022     03S023     03S043
+[1837]     03S062     03S089     03S093     03S111     03S114     03S121
+[1843]     03T010     03T024     03T030     03T038     03T043     03T055
+[1849]     03T085     03T114     03T117     03Z300     03Z301     03Z302
+[1855]     03Z304     03Z307     03Z309     03Z311     03Z312     03Z313
+[1861]     03Z314     03Z315     03Z317     03Z318     03Z319     040001
+[1867]     040002     040004     040007     040010     040011     040014
+[1873]     040015     040016     040017     040018     040019     040020
+[1879]     040022     040026     040027     040029     040036     040039
+[1885]     040041     040050     040051     040055     040062     040067
+[1891]     040069     040071     040072     040076     040078     040084
+[1897]     040088     04009F     04010F     040114     040118     040119
+[1903]     040132     040134     040137     040147     040153     040154
+[1909]     040156     040161     040164     040779     040780     040781
+[1915]     040782     040783     041300     041302     041303     041305
+[1921]     041306     041307     041308     041309     041310     041311
+[1927]     041312     041313     041317     041318     041320     041321
+[1933]     041322     041323     041324     041326     041327     041328
+[1939]     041329     041330     041331     041332     041333     041334
+[1945]     041500     041501     041502     041503     041504     041507
+[1951]     041510     041511     041512     041515     041518     041519
+[1957]     041520     041521     041522     041523     041524     041525
+[1963]     041528     041529     041531     041532     041534     041535
+[1969]     041537     041538     041539     041547     041550     041552
+[1975]     041554     041559     041560     041561     041564     041568
+[1981]     041571     041572     041573     041574     041575     041577
+[1987]     041578     041580     042004     042008     042009     042010
+[1993]     042011     042012     042013     042303     042310     042501
+[1999]     042508     042510</code></pre>
 </div>
 </div>
 <p>(Note the use of <code>vec_data()</code> so <code><a href="https://rdrr.io/r/base/format.html">format()</a></code> doesn’t get stuck in an infinite loop, and that I take a little care to not convert <code>NA</code> to <code>"NA"</code>; this leads to better printing.)</p>
 <p>The format method is also used by data frames, tibbles, and <code><a href="https://rdrr.io/r/utils/str.html">str()</a></code>:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>        x
-1  001500
-2  001502
-3  001503
-4  001509
-5  001510
-6  001511
-7  001513
-8  001514
-9  001515
-10 001517
-11 001518
-12 001524
-13 001527
-14 001528
-15 001529
-16 001530
-17 001534
-18 001535
-19 001536
-20 001541
-21 001545
-22 001550
-23 001552
-24 001556
-25 001557</code></pre>
+<pre><code>              x
+1        001500
+2        001502
+3        001503
+4        001509
+5        001510
+6        001511
+7        001513
+8        001514
+9        001515
+10       001517
+11       001518
+12       001524
+13       001527
+14       001528
+15       001529
+16       001530
+17       001534
+18       001535
+19       001536
+20       001541
+21       001545
+22       001550
+23       001552
+24       001556
+25       001557
+26       001561
+27       001562
+28       001563
+29       001568
+30       001570
+31       001571
+32       001572
+33       001574
+34       001575
+35       010001
+36       010005
+37       010006
+38       010007
+39       010008
+40       010011
+41       010012
+42       010016
+43       010018
+44       010019
+45       010021
+46       010022
+47       010023
+48       010024
+49       010029
+50       010033
+51       010034
+52       010035
+53       010036
+54       010039
+55       010040
+56       010044
+57       010045
+58       010046
+59       010049
+60       010051
+61       010052
+62       010055
+63       010056
+64       010058
+65       010059
+66       010061
+67       010062
+68       010065
+69       010073
+70       010078
+71       010079
+72       010083
+73       010085
+74       010086
+75       010087
+76       010089
+77       010090
+78       010091
+79       010092
+80       010095
+81       010097
+82       010099
+83       010100
+84       010101
+85       010102
+86       010103
+87       010104
+88       010108
+89       010110
+90       010112
+91       010113
+92       010114
+93       010118
+94       010120
+95       010125
+96       010126
+97       010128
+98       010129
+99       010130
+100      010131
+101      010138
+102      010139
+103      010144
+104      010148
+105      010149
+106      01014F
+107      010150
+108      010157
+109      010158
+110      010164
+111      010168
+112      010169
+113      010173
+114      010175
+115      01019F
+116      01021F
+117      010779
+118      010780
+119      010781
+120      011300
+121      011302
+122      011304
+123      011305
+124      011306
+125      011307
+126      011308
+127      011309
+128      011500
+129      011501
+130      011502
+131      011503
+132      011505
+133      011506
+134      011508
+135      011510
+136      011511
+137      011512
+138      011513
+139      011514
+140      011516
+141      011517
+142      011522
+143      011524
+144      011526
+145      011527
+146      011528
+147      011534
+148      011538
+149      011543
+150      011546
+151      011548
+152      011549
+153      011558
+154      011566
+155      011567
+156      011576
+157      011577
+158      011579
+159      011582
+160      011583
+161      011586
+162      011591
+163      011592
+164      011597
+165      011598
+166      011600
+167      011602
+168      011603
+169      011604
+170      011605
+171      011607
+172      011612
+173      011617
+174      011621
+175      011622
+176      011623
+177      011624
+178      011626
+179      011628
+180      011629
+181      011632
+182      011634
+183      011635
+184      011636
+185      011638
+186      011642
+187      011643
+188      011654
+189      011655
+190      011656
+191      011657
+192      011660
+193      011661
+194      011662
+195      011663
+196      011664
+197      011669
+198      011670
+199      011671
+200      011673
+201      011674
+202      011675
+203      011676
+204      011677
+205      011678
+206      011680
+207      011681
+208      011682
+209      011684
+210      011685
+211      011686
+212      012006
+213      012008
+214      012009
+215      012010
+216      012011
+217      012012
+218      012014
+219      012306
+220      012500
+221      012501
+222      012502
+223      012505
+224      012506
+225      012507
+226      012508
+227      012512
+228      012513
+229      012515
+230      012516
+231      012517
+232      012519
+233      012520
+234      012521
+235      012522
+236      012523
+237      012524
+238      012525
+239      012526
+240      012527
+241      012528
+242      012529
+243      012530
+244      012531
+245      012532
+246      012533
+247      012534
+248      012535
+249      012536
+250      012537
+251      012538
+252      012540
+253      012541
+254      012542
+255      012543
+256      012544
+257      012545
+258      012546
+259      012547
+260      012548
+261      012550
+262      012551
+263      012552
+264      012553
+265      012556
+266      012558
+267      012559
+268      012561
+269      012562
+270      012563
+271      012566
+272      012568
+273      012570
+274      012572
+275      012573
+276      012575
+277      012576
+278      012579
+279      012580
+280      012582
+281      012585
+282      012588
+283      012589
+284      012590
+285      012591
+286      012592
+287      012593
+288      012594
+289      012595
+290      012596
+291      012597
+292      012598
+293      012599
+294      012600
+295      012602
+296      012603
+297      012604
+298      012606
+299      012607
+300      012608
+301      012609
+302      012610
+303      012611
+304      012612
+305      012613
+306      012614
+307      012615
+308      012616
+309      012617
+310      012618
+311      012619
+312      012620
+313      012621
+314      012622
+315      012623
+316      012624
+317      012625
+318      012626
+319      012628
+320      012629
+321      012630
+322      012631
+323      012632
+324      012633
+325      012634
+326      012636
+327      012638
+328      012639
+329      012640
+330      012641
+331      012642
+332      012643
+333      012644
+334      012645
+335      012646
+336      012647
+337      012648
+338      012649
+339      012650
+340      012651
+341      012652
+342      012653
+343      012654
+344      012656
+345      012657
+346      012659
+347      012660
+348      012662
+349      012663
+350      012664
+351      012665
+352      012666
+353      012667
+354      012669
+355      012670
+356      012671
+357      012672
+358      012673
+359      012676
+360      012678
+361      012679
+362      012680
+363      012681
+364      012684
+365      012685
+366      012686
+367      012687
+368      012688
+369      012692
+370      012693
+371      012695
+372      012696
+373      012697
+374      012699
+375      012700
+376      012701
+377      012702
+378      012703
+379      012704
+380      012706
+381      012707
+382      012708
+383      012709
+384      012710
+385      012711
+386      012712
+387      012714
+388      012716
+389      012717
+390      012718
+391      012719
+392      012720
+393      012721
+394      012722
+395      012723
+396      012725
+397      013025
+398      013028
+399      013029
+400      013030
+401      013031
+402      013032
+403      013033
+404      013300
+405      013301
+406      014000
+407      014006
+408      014007
+409      014012
+410      014013
+411      014014
+412      014015
+413      014016
+414      014017
+415      014018
+416      014019
+417      015009
+418      015010
+419      015012
+420      015015
+421      015016
+422      015019
+423      015024
+424      015027
+425      015031
+426      015032
+427      015034
+428      015035
+429      015040
+430      015042
+431      015044
+432      015045
+433      015048
+434      015049
+435      015053
+436      015063
+437      015065
+438      015066
+439      015071
+440      015073
+441      015075
+442      015076
+443      015083
+444      015084
+445      015089
+446      015091
+447      015097
+448      015100
+449      015101
+450      015103
+451      015104
+452      015111
+453      015112
+454      015113
+455      015114
+456      015115
+457      015117
+458      015120
+459      015121
+460      015123
+461      015124
+462      015126
+463      015127
+464      015128
+465      015129
+466      015132
+467      015134
+468      015135
+469      015136
+470      015137
+471      015138
+472      015139
+473      015141
+474      015142
+475      015143
+476      015145
+477      015148
+478      015149
+479      015150
+480      015151
+481      015152
+482      015153
+483      015154
+484      015155
+485      015156
+486      015157
+487      015158
+488      015159
+489      015160
+490      015162
+491      015163
+492      015164
+493      015166
+494      015167
+495      015169
+496      015171
+497      015174
+498      015175
+499      015176
+500      015177
+501      015178
+502      015179
+503      015180
+504      015182
+505      015184
+506      015186
+507      015187
+508      015188
+509      015189
+510      015191
+511      015192
+512      015193
+513      015194
+514      015195
+515      015196
+516      015197
+517      015199
+518      015200
+519      015201
+520      015202
+521      015203
+522      015206
+523      015207
+524      015208
+525      015210
+526      015211
+527      015212
+528      015213
+529      015214
+530      015215
+531      015216
+532      015217
+533      015220
+534      015221
+535      015222
+536      015223
+537      015225
+538      015227
+539      015228
+540      015315
+541      015320
+542      015322
+543      015326
+544      015330
+545      015336
+546      015361
+547      015369
+548      015371
+549      015372
+550      015373
+551      015374
+552      015375
+553      015376
+554      015378
+555      015379
+556      015381
+557      015383
+558      015386
+559      015388
+560      015390
+561      015392
+562      015393
+563      015396
+564      015397
+565      015398
+566      015400
+567      015403
+568      015404
+569      015406
+570      015411
+571      015413
+572      015414
+573      015416
+574      015417
+575      015419
+576      015420
+577      015422
+578      015423
+579      015424
+580      015425
+581      015426
+582      015429
+583      015431
+584      015433
+585      015434
+586      015435
+587      015436
+588      015437
+589      015440
+590      015442
+591      015443
+592      015446
+593      015447
+594      015448
+595      015450
+596      015451
+597      015452
+598      015453
+599      015454
+600      015455
+601      015456
+602      015457
+603      015459
+604      015460
+605      015461
+606      015463
+607      015464
+608      015465
+609      015467
+610      015468
+611      017000
+612      017009
+613      017013
+614      017014
+615      017016
+616      017018
+617      017020
+618      017024
+619      017025
+620      017026
+621      017027
+622      017034
+623      017035
+624      017037
+625      017039
+626      017048
+627      017050
+628      017051
+629      017052
+630      017053
+631      017054
+632      017055
+633      017058
+634      017063
+635      017066
+636      017069
+637      017070
+638      017071
+639      017072
+640      017078
+641      017079
+642      017080
+643      017082
+644      017084
+645      017085
+646      017086
+647      017088
+648      017089
+649      017090
+650      017091
+651      017092
+652      017093
+653      017094
+654      017095
+655      017096
+656      017097
+657      017100
+658      017103
+659      017104
+660      017106
+661      017107
+662      017109
+663      017112
+664      017115
+665      017116
+666      017117
+667      017118
+668      017119
+669      017121
+670     017121A
+671      017123
+672      017124
+673      017125
+674      017128
+675      017129
+676      017132
+677      017134
+678      017135
+679      017136
+680      017142
+681      017143
+682      017145
+683      017146
+684      017147
+685      017148
+686      017149
+687      017151
+688      017152
+689      017153
+690      017154
+691      017155
+692      017157
+693      017158
+694      017159
+695      017160
+696      017161
+697      017163
+698      017164
+699      017165
+700      017166
+701      017167
+702      017168
+703      017170
+704      017171
+705      017175
+706      017176
+707      017177
+708      017178
+709      017179
+710      017180
+711      017182
+712      017300
+713      017305
+714      017307
+715      017319
+716      017320
+717      017323
+718      017324
+719      017326
+720      017327
+721      017328
+722      017878
+723      017879
+724      017880
+725      017881
+726  01C0001000
+727  01C0001002
+728  01C0001008
+729  01C0001009
+730  01C0001010
+731  01C0001011
+732  01C0001013
+733  01C0001014
+734  01C0001017
+735  01C0001018
+736  01C0001020
+737  01C0001021
+738  01C0001022
+739  01C0001024
+740  01C0001025
+741  01C0001026
+742  01C0001027
+743  01C0001029
+744  01C0001035
+745  01C0001037
+746  01C0001039
+747  01C0001040
+748  01C0001041
+749  01C0001042
+750  01C0001043
+751  01C0001044
+752  01C0001045
+753  01C0001046
+754  01C0001048
+755  01C0001050
+756  01C0001051
+757  01C0001053
+758  01C0001054
+759  01C0001055
+760  01C0001056
+761  01C0001057
+762  01C0001058
+763  01C0001059
+764  01C0001060
+765  01C0001061
+766  01C0001062
+767  01C0001063
+768  01C0001064
+769  01C0001065
+770  01C0001066
+771  01C0001068
+772  01C0001069
+773  01C0001070
+774  01C0001104
+775  01C0001106
+776      01M307
+777      01M308
+778      01S007
+779      01S011
+780      01S012
+781      01S016
+782      01S021
+783      01S023
+784      01S033
+785      01S034
+786      01S039
+787      01S040
+788      01S046
+789      01S078
+790      01S085
+791      01S086
+792      01S089
+793      01S092
+794      01S103
+795      01S104
+796      01S108
+797      01S112
+798      01S113
+799      01S114
+800      01S126
+801      01S129
+802      01S139
+803      01S150
+804      01S157
+805      01S164
+806      01T011
+807      01T029
+808      01T033
+809      01T092
+810      01T100
+811      01T104
+812      01T113
+813      01T114
+814      01T139
+815      01T144
+816      01T157
+817      01U007
+818      01U012
+819      01U021
+820      01U034
+821      01U044
+822      01U045
+823      01U046
+824      01U049
+825      01U051
+826      01U052
+827      01U058
+828      01U059
+829      01U065
+830      01U073
+831      01U083
+832      01U086
+833      01U095
+834      01U097
+835      01U112
+836      01U125
+837      01U126
+838      01U128
+839      01U130
+840      01U148
+841      01U150
+842      01U158
+843      01U169
+844      01U173
+845      01Z300
+846      01Z302
+847      01Z304
+848      01Z305
+849      01Z306
+850      01Z307
+851      01Z308
+852      01Z309
+853      020001
+854      020006
+855      020008
+856      020012
+857      020017
+858      020018
+859      020024
+860      020026
+861      02013F
+862      02014F
+863      021301
+864      021302
+865      021304
+866      021305
+867      021306
+868      021307
+869      021308
+870      021309
+871      021310
+872      021311
+873      021312
+874      021313
+875      021314
+876      021500
+877      021506
+878      021507
+879      021508
+880      021509
+881      021510
+882      022001
+883      022500
+884      022502
+885      022503
+886      022504
+887      022506
+888      022508
+889      022509
+890      024001
+891      024002
+892      025018
+893      025020
+894      025021
+895      025025
+896      025027
+897      025036
+898      025038
+899      025039
+900      027001
+901      027006
+902      027008
+903      027009
+904      027010
+905      027014
+906      027022
+907     027022A
+908      027032
+909      027034
+910      027035
+911      027036
+912      027038
+913      027305
+914  02C0001000
+915  02C0001001
+916  02C0001002
+917  02C0001004
+918  02C0001005
+919  02C0001007
+920  02C0001008
+921  02C0001011
+922  02C0001012
+923  02C0001014
+924  02C0001015
+925  02C0001016
+926  02C0001018
+927  02D0873639
+928      02S008
+929      02T017
+930      02TA01
+931      02U006
+932      02U024
+933      02Z301
+934      02Z302
+935      02Z304
+936      02Z305
+937      02Z306
+938      02Z307
+939      02Z308
+940      02Z309
+941      02Z311
+942      02Z312
+943      02Z313
+944      02Z314
+945      030002
+946      030006
+947      030007
+948      030010
+949      030011
+950      030012
+951      030013
+952      030014
+953      030016
+954      030022
+955      030023
+956      030024
+957      030030
+958      030036
+959      030037
+960      030038
+961      030043
+962      030055
+963      030061
+964      030062
+965      030064
+966      030065
+967      030069
+968      030071
+969      030073
+970      030074
+971      030078
+972      030083
+973      030084
+974      030085
+975      030087
+976      030088
+977      030089
+978      030092
+979      030093
+980      030094
+981      030101
+982      030103
+983      030105
+984      030107
+985      030108
+986      030110
+987      030111
+988      030112
+989      030113
+990      030114
+991      030115
+992      030117
+993      030119
+994      030121
+995      030122
+996      030123
+997      03012F
+998      030130
+999      030134
+1000     030136
+1001     030138
+1002     030139
+1003     03013F
+1004     030146
+1005     030147
+1006     030148
+1007     030152
+1008     030153
+1009     030154
+1010     030155
+1011     03033F
+1012     031300
+1013     031301
+1014     031302
+1015     031304
+1016     031305
+1017     031307
+1018     031308
+1019     031309
+1020     031311
+1021     031312
+1022     031313
+1023     031314
+1024     031315
+1025     031317
+1026     031318
+1027     031319
+1028     031320
+1029     031500
+1030     031501
+1031     031502
+1032     031505
+1033     031508
+1034     031512
+1035     031514
+1036     031515
+1037     031517
+1038     031519
+1039     031521
+1040     031522
+1041     031523
+1042     031529
+1043     031537
+1044     031543
+1045     031547
+1046     031550
+1047     031551
+1048     031552
+1049     031555
+1050     031556
+1051     031559
+1052     031560
+1053     031562
+1054     031563
+1055     031565
+1056     031573
+1057     031577
+1058     031578
+1059     031579
+1060     031581
+1061     031586
+1062     031588
+1063     031591
+1064     031592
+1065     031593
+1066     031594
+1067     031595
+1068     031598
+1069     031599
+1070     031600
+1071     031601
+1072     031602
+1073     031605
+1074     031606
+1075     031607
+1076     031609
+1077     031610
+1078     031611
+1079     031613
+1080     031614
+1081     031616
+1082     031622
+1083     031623
+1084     031624
+1085     031625
+1086     031627
+1087     031628
+1088     031630
+1089     031631
+1090     031633
+1091     031634
+1092     031635
+1093     031636
+1094     031642
+1095     031645
+1096     031646
+1097     031649
+1098     031650
+1099     031651
+1100     031652
+1101     031654
+1102     031656
+1103     031658
+1104     031659
+1105     031661
+1106     031662
+1107     031665
+1108     031669
+1109     031670
+1110     031672
+1111     031673
+1112     031674
+1113     031675
+1114     031676
+1115     031678
+1116     031679
+1117     031680
+1118     031681
+1119     031682
+1120     031685
+1121     031687
+1122     031688
+1123     031689
+1124     031692
+1125     031693
+1126     031694
+1127     031695
+1128     031696
+1129     031699
+1130     031700
+1131     031701
+1132     031702
+1133     031703
+1134     031705
+1135     031706
+1136     031708
+1137     031709
+1138     031710
+1139     031711
+1140     031713
+1141     031717
+1142     031721
+1143     031722
+1144     031723
+1145     031724
+1146     031727
+1147     031728
+1148     031731
+1149     031733
+1150     031734
+1151     031735
+1152     031738
+1153     031742
+1154     031746
+1155     031748
+1156     031749
+1157     031751
+1158     031755
+1159     031756
+1160     031757
+1161     031758
+1162     031760
+1163     031761
+1164     031762
+1165     031765
+1166     031766
+1167     031769
+1168     031770
+1169     031774
+1170     031775
+1171     031776
+1172     031777
+1173     031779
+1174     031789
+1175     031790
+1176     031795
+1177     031796
+1178     031798
+1179     032001
+1180     032002
+1181     032004
+1182     032005
+1183     032006
+1184     032302
+1185     032314
+1186     032315
+1187     032316
+1188     032500
+1189     032501
+1190     032502
+1191     032503
+1192     032506
+1193     032508
+1194     032509
+1195     032513
+1196     032514
+1197     032516
+1198     032517
+1199     032518
+1200     032520
+1201     032521
+1202     032522
+1203     032523
+1204     032524
+1205     032525
+1206     032526
+1207     032528
+1208     032530
+1209     032533
+1210     032536
+1211     032537
+1212     032539
+1213     032540
+1214     032541
+1215     032542
+1216     032543
+1217     032544
+1218     032545
+1219     032546
+1220     032549
+1221     032550
+1222     032551
+1223     032553
+1224     032556
+1225     032558
+1226     032559
+1227     032561
+1228     032562
+1229     032563
+1230     032564
+1231     032565
+1232     032568
+1233     032571
+1234     032572
+1235     032573
+1236     032575
+1237     032578
+1238     032579
+1239     032580
+1240     032583
+1241     032587
+1242     032589
+1243     032592
+1244     032593
+1245     032594
+1246     032596
+1247     032597
+1248     032599
+1249     032601
+1250     032604
+1251     032605
+1252     032607
+1253     032608
+1254     032609
+1255     032610
+1256     032611
+1257     032612
+1258     032613
+1259     032614
+1260     032616
+1261     032617
+1262     032618
+1263     032619
+1264     032620
+1265     032622
+1266     032624
+1267     032625
+1268     032626
+1269     032627
+1270     032628
+1271     032629
+1272     032630
+1273     032631
+1274     032632
+1275     032633
+1276     032634
+1277     032635
+1278     032636
+1279     032637
+1280     032638
+1281     032639
+1282     032640
+1283     032642
+1284     032643
+1285     032644
+1286     032645
+1287     032646
+1288     032647
+1289     032648
+1290     032650
+1291     032651
+1292     032652
+1293     032653
+1294     032654
+1295     032655
+1296     032656
+1297     032657
+1298     032658
+1299     032659
+1300     032660
+1301     032661
+1302     032662
+1303     032663
+1304     032664
+1305     033025
+1306     033028
+1307     033029
+1308     033032
+1309     033034
+1310     033036
+1311     033037
+1312     033038
+1313     033039
+1314     033040
+1315     033041
+1316     033042
+1317     033043
+1318     033044
+1319     033045
+1320     033046
+1321     033047
+1322     033302
+1323     033503
+1324     033504
+1325     034004
+1326     034013
+1327     034020
+1328     034021
+1329     034022
+1330     034023
+1331     034024
+1332     034025
+1333     034026
+1334     034027
+1335     034028
+1336     034029
+1337     034030
+1338     034031
+1339     034032
+1340     034033
+1341     034034
+1342     034035
+1343     034038
+1344     034040
+1345     034041
+1346     035003
+1347     035004
+1348     035014
+1349     035016
+1350     035059
+1351     035062
+1352     035064
+1353     035068
+1354     035070
+1355     035071
+1356     035072
+1357     035073
+1358     035074
+1359     035076
+1360     035083
+1361     035084
+1362     035085
+1363     035086
+1364     035087
+1365     035088
+1366     035091
+1367     035092
+1368     035093
+1369     035094
+1370     035095
+1371     035096
+1372     035097
+1373     035099
+1374     035100
+1375     035101
+1376     035103
+1377     035105
+1378     035106
+1379     035107
+1380     035110
+1381     035111
+1382     035112
+1383     035116
+1384     035117
+1385     035118
+1386     035120
+1387     035121
+1388     035125
+1389     035126
+1390     035130
+1391     035131
+1392     035132
+1393     035133
+1394     035134
+1395     035135
+1396     035136
+1397     035139
+1398     035140
+1399     035141
+1400     035143
+1401     035144
+1402     035145
+1403     035146
+1404     035147
+1405     035151
+1406     035152
+1407     035154
+1408     035159
+1409     035164
+1410     035165
+1411     035166
+1412     035169
+1413     035171
+1414     035172
+1415     035173
+1416     035174
+1417     035175
+1418     035176
+1419     035180
+1420     035183
+1421     035189
+1422     035190
+1423     035193
+1424     035196
+1425     035197
+1426     035205
+1427     035207
+1428     035214
+1429     035216
+1430     035217
+1431     035225
+1432     035231
+1433     035232
+1434     035233
+1435     035240
+1436     035241
+1437     035245
+1438     035247
+1439     035249
+1440     035251
+1441     035253
+1442     035254
+1443     035255
+1444     035256
+1445     035257
+1446     035260
+1447     035262
+1448     035263
+1449     035264
+1450     035265
+1451     035266
+1452     035268
+1453     035270
+1454     035272
+1455     035273
+1456     035275
+1457     035276
+1458     035277
+1459     035279
+1460     035280
+1461     035281
+1462     035282
+1463     035283
+1464     035285
+1465     035286
+1466     035289
+1467     035290
+1468     035291
+1469     035292
+1470     035295
+1471     035296
+1472     035297
+1473     035298
+1474     035299
+1475     035300
+1476     035301
+1477     035302
+1478     037015
+1479     037016
+1480     037024
+1481     037027
+1482     037030
+1483     037036
+1484     037037
+1485     037042
+1486     037047
+1487     037050
+1488     037057
+1489     037068
+1490     037070
+1491     037099
+1492     037106
+1493     037114
+1494     037125
+1495     037129
+1496     037130
+1497     037132
+1498     037139
+1499     037144
+1500     037154
+1501     037162
+1502     037178
+1503     037185
+1504     037188
+1505     037192
+1506     037199
+1507     037202
+1508     037204
+1509     037205
+1510     037212
+1511     037213
+1512     037215
+1513     037217
+1514     037220
+1515     037221
+1516     037226
+1517     037228
+1518     037230
+1519     037232
+1520     037233
+1521     037234
+1522     037235
+1523     037239
+1524     037242
+1525     037243
+1526     037245
+1527     037246
+1528     037247
+1529     037248
+1530     037249
+1531     037250
+1532     037251
+1533     037252
+1534     037253
+1535     037257
+1536     037258
+1537     037260
+1538     037261
+1539     037262
+1540     037263
+1541     037264
+1542     037269
+1543     037271
+1544     037273
+1545     037274
+1546     037280
+1547     037281
+1548     037282
+1549     037285
+1550     037286
+1551     037288
+1552     037290
+1553     037295
+1554     037297
+1555     037298
+1556     037299
+1557     037402
+1558     037403
+1559     037404
+1560     037405
+1561     037410
+1562     037412
+1563     037413
+1564     037414
+1565     037416
+1566     037417
+1567     037418
+1568     037419
+1569     037422
+1570     037425
+1571     037426
+1572     037431
+1573     037432
+1574     037433
+1575     037436
+1576     037437
+1577     037438
+1578     037439
+1579     037442
+1580     037443
+1581     037447
+1582     037450
+1583     037451
+1584     037452
+1585     037453
+1586     037455
+1587     037456
+1588     037458
+1589     037459
+1590     037462
+1591     037463
+1592     037464
+1593     037468
+1594     037469
+1595     037470
+1596     037471
+1597     037472
+1598     037475
+1599     037476
+1600     037477
+1601     037478
+1602     037479
+1603     037481
+1604     037482
+1605     037485
+1606     037486
+1607     037489
+1608     037492
+1609     037493
+1610     037494
+1611     037496
+1612     037498
+1613     037500
+1614     037502
+1615     037802
+1616     037804
+1617     037805
+1618     037806
+1619     037807
+1620     037808
+1621     037809
+1622     037810
+1623     037811
+1624     037813
+1625     037814
+1626     037815
+1627     037817
+1628     037819
+1629     037820
+1630     037821
+1631     037822
+1632     037824
+1633     037825
+1634     037826
+1635     037827
+1636     037828
+1637     037830
+1638     037831
+1639     037832
+1640     037833
+1641     037834
+1642     037835
+1643 03C0001001
+1644 03C0001013
+1645 03C0001016
+1646 03C0001020
+1647 03C0001021
+1648 03C0001023
+1649 03C0001024
+1650 03C0001041
+1651 03C0001042
+1652 03C0001043
+1653 03C0001044
+1654 03C0001045
+1655 03C0001047
+1656 03C0001052
+1657 03C0001053
+1658 03C0001054
+1659 03C0001056
+1660 03C0001057
+1661 03C0001059
+1662 03C0001063
+1663 03C0001070
+1664 03C0001071
+1665 03C0001078
+1666 03C0001080
+1667 03C0001087
+1668 03C0001092
+1669 03C0001093
+1670 03C0001202
+1671 03C0001203
+1672 03C0001207
+1673 03C0001212
+1674 03C0001214
+1675 03C0001215
+1676 03C0001217
+1677 03C0001220
+1678 03C0001223
+1679 03C0001224
+1680 03C0001228
+1681 03C0001233
+1682 03C0001235
+1683 03C0001236
+1684 03C0001239
+1685 03C0001240
+1686 03C0001242
+1687 03C0001244
+1688 03C0001247
+1689 03C0001248
+1690 03C0001249
+1691 03C0001253
+1692 03C0001256
+1693 03C0001259
+1694 03C0001260
+1695 03C0001261
+1696 03C0001262
+1697 03C0001265
+1698 03C0001266
+1699 03C0001268
+1700 03C0001274
+1701 03C0001275
+1702 03C0001278
+1703 03C0001279
+1704 03C0001280
+1705 03C0001283
+1706 03C0001284
+1707 03C0001285
+1708 03C0001286
+1709 03C0001290
+1710 03C0001291
+1711 03C0001293
+1712 03C0001294
+1713 03C0001295
+1714 03C0001296
+1715 03C0001297
+1716 03C0001298
+1717 03C0001299
+1718 03C0001300
+1719 03C0001302
+1720 03C0001303
+1721 03C0001304
+1722 03C0001305
+1723 03C0001306
+1724 03C0001308
+1725 03C0001310
+1726 03C0001313
+1727 03C0001314
+1728 03C0001319
+1729 03C0001322
+1730 03C0001324
+1731 03C0001325
+1732 03C0001326
+1733 03C0001327
+1734 03C0001328
+1735 03C0001330
+1736 03C0001334
+1737 03C0001335
+1738 03C0001339
+1739 03C0001341
+1740 03C0001342
+1741 03C0001343
+1742 03C0001344
+1743 03C0001345
+1744 03C0001346
+1745 03C0001347
+1746 03C0001348
+1747 03C0001349
+1748 03C0001352
+1749 03C0001354
+1750 03C0001355
+1751 03C0001356
+1752 03C0001357
+1753 03C0001359
+1754 03C0001360
+1755 03C0001361
+1756 03C0001362
+1757 03C0001363
+1758 03C0001364
+1759 03C0001367
+1760 03C0001368
+1761 03C0001369
+1762 03C0001371
+1763 03C0001373
+1764 03C0001375
+1765 03C0001376
+1766 03C0001378
+1767 03C0001379
+1768 03C0001380
+1769 03C0001381
+1770 03C0001382
+1771 03C0001383
+1772 03C0001384
+1773 03C0001385
+1774 03C0001386
+1775 03C0001387
+1776 03C0001391
+1777 03C0001393
+1778 03C0001394
+1779 03C0001395
+1780 03C0001396
+1781 03C0001398
+1782 03C0001399
+1783 03C0001403
+1784 03C0001406
+1785 03C0001408
+1786 03C0001409
+1787 03C0001410
+1788 03C0001412
+1789 03C0001413
+1790 03C0001414
+1791 03C0001416
+1792 03C0001417
+1793 03C0001418
+1794 03C0001419
+1795 03C0001423
+1796 03C0001425
+1797 03C0001426
+1798 03C0001428
+1799 03C0001429
+1800 03C0001430
+1801 03C0001431
+1802 03C0001432
+1803 03C0001433
+1804 03C0001434
+1805 03C0001435
+1806 03C0001436
+1807 03C0001438
+1808 03C0001439
+1809 03C0001441
+1810 03C0001442
+1811 03C0001445
+1812 03C0001450
+1813 03C0001451
+1814 03C0001453
+1815 03C0001454
+1816 03C0001455
+1817 03C0001456
+1818 03C0001457
+1819 03C0001458
+1820 03C0001460
+1821 03C0001461
+1822 03C0001462
+1823 03C0001463
+1824 03C0001465
+1825 03C0001466
+1826 03C0001469
+1827 03C0001471
+1828 03C0001473
+1829 03C0001475
+1830 03C0001476
+1831 03C0001480
+1832     03S002
+1833     03S010
+1834     03S022
+1835     03S023
+1836     03S043
+1837     03S062
+1838     03S089
+1839     03S093
+1840     03S111
+1841     03S114
+1842     03S121
+1843     03T010
+1844     03T024
+1845     03T030
+1846     03T038
+1847     03T043
+1848     03T055
+1849     03T085
+1850     03T114
+1851     03T117
+1852     03Z300
+1853     03Z301
+1854     03Z302
+1855     03Z304
+1856     03Z307
+1857     03Z309
+1858     03Z311
+1859     03Z312
+1860     03Z313
+1861     03Z314
+1862     03Z315
+1863     03Z317
+1864     03Z318
+1865     03Z319
+1866     040001
+1867     040002
+1868     040004
+1869     040007
+1870     040010
+1871     040011
+1872     040014
+1873     040015
+1874     040016
+1875     040017
+1876     040018
+1877     040019
+1878     040020
+1879     040022
+1880     040026
+1881     040027
+1882     040029
+1883     040036
+1884     040039
+1885     040041
+1886     040050
+1887     040051
+1888     040055
+1889     040062
+1890     040067
+1891     040069
+1892     040071
+1893     040072
+1894     040076
+1895     040078
+1896     040084
+1897     040088
+1898     04009F
+1899     04010F
+1900     040114
+1901     040118
+1902     040119
+1903     040132
+1904     040134
+1905     040137
+1906     040147
+1907     040153
+1908     040154
+1909     040156
+1910     040161
+1911     040164
+1912     040779
+1913     040780
+1914     040781
+1915     040782
+1916     040783
+1917     041300
+1918     041302
+1919     041303
+1920     041305
+1921     041306
+1922     041307
+1923     041308
+1924     041309
+1925     041310
+1926     041311
+1927     041312
+1928     041313
+1929     041317
+1930     041318
+1931     041320
+1932     041321
+1933     041322
+1934     041323
+1935     041324
+1936     041326
+1937     041327
+1938     041328
+1939     041329
+1940     041330
+1941     041331
+1942     041332
+1943     041333
+1944     041334
+1945     041500
+1946     041501
+1947     041502
+1948     041503
+1949     041504
+1950     041507
+1951     041510
+1952     041511
+1953     041512
+1954     041515
+1955     041518
+1956     041519
+1957     041520
+1958     041521
+1959     041522
+1960     041523
+1961     041524
+1962     041525
+1963     041528
+1964     041529
+1965     041531
+1966     041532
+1967     041534
+1968     041535
+1969     041537
+1970     041538
+1971     041539
+1972     041547
+1973     041550
+1974     041552
+1975     041554
+1976     041559
+1977     041560
+1978     041561
+1979     041564
+1980     041568
+1981     041571
+1982     041572
+1983     041573
+1984     041574
+1985     041575
+1986     041577
+1987     041578
+1988     041580
+1989     042004
+1990     042008
+1991     042009
+1992     042010
+1993     042011
+1994     042012
+1995     042013
+1996     042303
+1997     042310
+1998     042501
+1999     042508
+2000     042510</code></pre>
 </div>
 </div>
 <p>For optimal display, I recommend also defining an abbreviated type name, which should be 4-5 letters for commonly used vectors. This is used in tibbles and in <code><a href="https://rdrr.io/r/utils/str.html">str()</a></code>:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">vec_ptype_abbr.ccn</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">...</span><span class="op">)</span> <span class="op">{</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">vec_ptype_abbr.ccn</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">...</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="st">"ccn"</span></span>
 <span><span class="op">}</span></span>
 <span></span>
 <span><span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 25 × 1
+<pre><code># A tibble: 2,000 × 1
    x     
    &lt;ccn&gt; 
  1 001500
@@ -459,27 +2857,136 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  8 001514
  9 001515
 10 001517
-# ℹ 15 more rows</code></pre>
+# ℹ 1,990 more rows</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> ccn [1:25] 001500, 001502, 001503, 001509, 001510, 001511, 001513, 001514,...</code></pre>
+<pre><code> ccn [1:2000] 001500, 001502, 001503, 001509, 001510, 001511, 001513, 00151...</code></pre>
 </div>
 </div>
 <p>If you need more control over printing in tibbles, implement a method for <code><a href="https://pillar.r-lib.org/reference/pillar_shaft.html">pillar::pillar_shaft()</a></code>. See <code><a href="https://vctrs.r-lib.org/articles/pillar.html">vignette("pillar", package = "vctrs")</a></code> for details.</p>
-</section><section id="casting-and-coercion" class="level2" data-number="16.3"><h2 data-number="16.3" class="anchored" data-anchor-id="casting-and-coercion">
-<span class="header-section-number">16.3</span> Casting and coercion</h2>
-<p>The next set of methods you are likely to need are those related to coercion and casting. Coercion and casting are two sides of the same coin: changing the prototype of an existing object. When the change happens implicitly (e.g in c()) we call it coercion; when the change happens explicitly (e.g.&nbsp;with as.integer(x)), we call it casting.</p>
-<p>One of the main goals of vctrs is to put coercion and casting on a robust theoretical footing so it’s possible to make accurate predictions about what (e.g.) c(x, y) should do when x and y have different prototypes. vctrs achieves this goal through two generics:</p>
+</section><section id="casting-and-coercion" class="level2" data-number="16.5"><h2 data-number="16.5" class="anchored" data-anchor-id="casting-and-coercion">
+<span class="header-section-number">16.5</span> Casting and coercion</h2>
+<p>The next set of methods you are likely to need are those related to coercion and casting. Coercion and casting are two sides of the same coin: changing the prototype of an existing object. When the change happens implicitly (e.g in <code><a href="https://rdrr.io/r/base/c.html">c()</a></code>) we call it <strong>coercion</strong>; when the change happens explicitly (e.g.&nbsp;with <code>as.integer(x)</code>), we call it <strong>casting</strong>.</p>
+<p>One of the main goals of <strong>vctrs</strong> is to put coercion and casting on a robust theoretical footing so it’s possible to make accurate predictions about what (e.g.) <code>c(x, y)</code> should do when <code>x</code> and <code>y</code> have different prototypes. <code>vctrs</code> achieves this goal through two generics:</p>
 <ul>
-<li>vec_ptype2(x, y) defines possible set of coercions. It returns a prototype if x and y can be safely coerced to the same prototype; otherwise it returns an error. The set of automatic coercions is usually quite small because too many tend to make code harder to reason about and silently propagate mistakes.</li>
-<li>vec_cast(x, to) defines the possible sets of casts. It returns x translated to have prototype to, or throws an error if the conversion isn’t possible. The set of possible casts is a superset of possible coercions because they’re requested explicitly.</li>
+<li>
+<code>vec_ptype2(x, y)</code> defines a possible set of <strong>coercions</strong>. It returns a prototype if <code>x</code> and <code>y</code> can be safely coerced to the same prototype; otherwise it returns an error. The set of automatic coercions is usually quite small because too many tend to make code harder to reason about and silently propagate mistakes.</li>
+<li>
+<code>vec_cast(x, to)</code> defines the possible sets of <strong>casts</strong>. It returns <code>x</code> translated to have prototype <code>to</code>, or throws an error if the conversion isn’t possible. The set of possible casts is a <em>superset</em> of possible <strong>coercions</strong> because they’re requested explicitly.</li>
 </ul>
+<section id="double-dispatch" class="level3" data-number="16.5.1"><h3 data-number="16.5.1" class="anchored" data-anchor-id="double-dispatch">
+<span class="header-section-number">16.5.1</span> Double dispatch</h3>
+<p>Both generics use <a href="https://en.wikipedia.org/wiki/Double_dispatch">double dispatch</a> which means that the implementation is selected based on the class of two arguments, not just one. <strong>S3</strong> does not natively support double dispatch, so we implement our own dispatch mechanism. In practice, this means:</p>
+<ul>
+<li>You end up with method names with two classes, like <code>vec_ptype2.foo.bar()</code>.</li>
+<li>You don’t need to implement default methods (they would never be called if you do).</li>
+<li>You can’t call <code><a href="https://rdrr.io/r/base/UseMethod.html">NextMethod()</a></code>.</li>
+</ul></section><section id="ccn-class-1" class="level3" data-number="16.5.2"><h3 data-number="16.5.2" class="anchored" data-anchor-id="ccn-class-1">
+<span class="header-section-number">16.5.2</span> CCN class</h3>
+<p>We’ll make our <code>ccn</code> class coercible back and forth with character vectors.</p>
+<p><code>vec_ptype2()</code> provides a user friendly error message if the coercion doesn’t exist and makes sure <code>NA</code> is handled in a standard way. <code>NA</code> is technically a <code>logical</code> vector, but we want it to stand in for a missing value of any type.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">vec_ptype2</span><span class="op">(</span><span class="st">"bogus"</span>, <span class="fu">ccn</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error:
+! Can't combine `"bogus"` &lt;character&gt; and `ccn()` &lt;ccn&gt;.</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">vec_ptype2</span><span class="op">(</span><span class="fu">ccn</span><span class="op">(</span><span class="op">)</span>, <span class="cn">NA</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;ccn[0]&gt;</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">vec_ptype2</span><span class="op">(</span><span class="cn">NA</span>, <span class="fu">ccn</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;ccn[0]&gt;</code></pre>
+</div>
+</div>
+<p>By default and in simple cases, an object of the same class is compatible with itself:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb37"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">vec_ptype2</span><span class="op">(</span><span class="fu">ccn</span><span class="op">(</span><span class="op">)</span>, <span class="fu">ccn</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;ccn[0]&gt;</code></pre>
+</div>
+</div>
+<p>However this only works if the attributes for both objects are the same. Also the default methods are a bit slower. It is always a good idea to provide an explicit coercion method for the case of identical classes. So we’ll start by saying that a <code>ccn</code> combined with a <code>ccn</code> yields a <code>ccn</code>, which we indicate by returning a prototype generated by the constructor.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">vec_ptype2.ccn.ccn</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span>, <span class="va">...</span><span class="op">)</span> <span class="fu">new_ccn</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Next we define methods that say that combining a <code>ccn</code> and <code>character</code> should yield a <code>character</code>.</p>
+<p>Because double dispatch is a bit of a hack, we need to provide two methods. It’s your responsibility to ensure that each member of the pair returns the same result: if they don’t you will get weird and unpredictable behaviour.</p>
+<p>The double dispatch mechanism requires us to refer to the underlying type, <code>character</code>, in the method name. If we implemented <code>vec_ptype2.ccn.numeric()</code>, it would never be called.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb40"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">vec_ptype2.ccn.character</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span>, <span class="va">...</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html">character</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">vec_ptype2.character.ccn</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span>, <span class="va">...</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html">character</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>We can check that we’ve implemented this correctly with <code>vec_ptype_show()</code>:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">vec_ptype_show</span><span class="op">(</span><span class="fu">ccn</span><span class="op">(</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/character.html">character</a></span><span class="op">(</span><span class="op">)</span>, <span class="fu">ccn</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Prototype: &lt;character&gt;
+0. (             , &lt;ccn&gt;       ) = &lt;ccn&gt;      
+1. ( &lt;ccn&gt;       , &lt;character&gt; ) = &lt;character&gt;
+2. ( &lt;character&gt; , &lt;ccn&gt;       ) = &lt;character&gt;</code></pre>
+</div>
+</div>
+<p>The <code>vec_ptype2()</code> methods define which input is the richer type that <code>vctrs</code> should coerce to. However, they don’t perform any conversion. This is the job of <code>vec_cast()</code>, which we implement next. We’ll provide a method to cast a <code>ccn</code> to a <code>ccn</code>:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb43"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">vec_cast.ccn.ccn</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">to</span>, <span class="va">...</span><span class="op">)</span> <span class="va">x</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>And then for converting back and forth between <code>character</code>s. To convert a <code>character</code> to a <code>ccn</code> we use the <code>ccn()</code> helper (not the constructor; this is un-validated user input). To convert a <code>ccn</code> to a <code>character</code>, we strip the attributes.</p>
+<p>Note that for historical reasons the order of argument in the signature is the opposite as for <code>vec_ptype2()</code>. The class for <code>to</code> comes first, and the class for <code>x</code> comes second.</p>
+<p>Again, the double dispatch mechanism requires us to refer to the underlying type, <code>character</code>, in the method name:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb44"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">vec_cast.ccn.character</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">to</span>, <span class="va">...</span><span class="op">)</span> <span class="fu">ccn</span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
+<span><span class="va">vec_cast.character.ccn</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">to</span>, <span class="va">...</span><span class="op">)</span> <span class="fu">vec_data</span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Then we can check this works with <code>vec_cast()</code>:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb45"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">vec_cast</span><span class="op">(</span><span class="st">"030113"</span>, <span class="fu">ccn</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;ccn[1]&gt;
+[1] 030113</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb47"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">vec_cast</span><span class="op">(</span><span class="fu">ccn</span><span class="op">(</span><span class="st">"030113"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/character.html">character</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "030113"</code></pre>
+</div>
+</div>
+<p>Once you’ve implemented <code>vec_ptype2()</code> and <code>vec_cast()</code>, you get <code>vec_c()</code>, <code>[&lt;-</code>, and <code>[[&lt;-</code> implementations for free.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb49"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">vec_c</span><span class="op">(</span><span class="fu">ccn</span><span class="op">(</span><span class="st">"030113"</span><span class="op">)</span>, <span class="st">"1"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "030113" "1"     </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb51"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">vec_c</span><span class="op">(</span><span class="cn">NA</span>, <span class="fu">ccn</span><span class="op">(</span><span class="st">"030113"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;ccn[2]&gt;
+[1] &lt;NA&gt;   030113</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb53"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># but</span></span>
+<span><span class="fu">vec_c</span><span class="op">(</span><span class="cn">TRUE</span>, <span class="fu">ccn</span><span class="op">(</span><span class="st">"030113"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in `vec_c()`:
+! Can't combine `..1` &lt;logical&gt; and `..2` &lt;ccn&gt;.</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb55"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu">ccn</span><span class="op">(</span><span class="va">examples</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="va">x</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">LETTERS</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in NextMethod(): number of items to replace is not a multiple of
+replacement length</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb57"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">x</span><span class="op">[[</span><span class="fl">3</span><span class="op">]</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">LETTERS</span><span class="op">[</span><span class="fl">5</span><span class="op">]</span></span>
+<span><span class="va">x</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;ccn[5]&gt;
+[1]      A      B      E 001509 001510</code></pre>
+</div>
+</div>
 
 
 <!-- -->
 
-</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
     const anchorJS = new window.AnchorJS();
@@ -940,123 +3447,309 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span><span class="co"> html_document</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="an">editor_options:</span><span class="co"> </span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co">  chunk_output_type: console</span></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="fu"># Implementation</span></span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup}</span></span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a><span class="co">#| cache: false</span></span>
-<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a><span class="co">#| comment: ""</span></span>
-<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(vctrs)</span>
-<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rlang)</span>
-<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(zeallot)</span>
-<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ccn)</span>
-<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>ccn_examples <span class="ot">&lt;-</span> ccn<span class="sc">:::</span><span class="fu">get_pin</span>(<span class="st">"ccn"</span>)</span>
-<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## `ccn` class</span></span>
-<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>In this section, I’ll make a <span class="in">`ccn`</span> class, i.e., a character vector that is printed as a CCN. We start by defining a low-level <span class="co">[</span><span class="ot">constructor</span><span class="co">](https://adv-r.hadley.nz/s3.html#s3-constrcutor)</span> to check types and/or sizes and call <span class="in">`new_vctr()`</span>.</span>
-<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a><span class="in">`ccn`</span> is built on a character vector of any length and doesn’t have any attributes.</span>
-<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: new_ccn</span></span>
-<span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a>new_ccn <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">x =</span> <span class="fu">character</span>()) {</span>
-<span id="cb19-34"><a href="#cb19-34" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is_character</span>(x)) {</span>
-<span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a>    <span class="fu">abort</span>(<span class="st">"`x` must be a character vector."</span>)</span>
-<span id="cb19-36"><a href="#cb19-36" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb19-37"><a href="#cb19-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">new_vctr</span>(x, <span class="at">class =</span> <span class="st">"ccn"</span>)</span>
-<span id="cb19-38"><a href="#cb19-38" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb19-39"><a href="#cb19-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-40"><a href="#cb19-40" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">new_ccn</span>(ccn_examples[<span class="dv">1</span><span class="sc">:</span><span class="dv">25</span>])</span>
-<span id="cb19-41"><a href="#cb19-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-42"><a href="#cb19-42" aria-hidden="true" tabindex="-1"></a>x</span>
-<span id="cb19-43"><a href="#cb19-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-44"><a href="#cb19-44" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(x)</span>
-<span id="cb19-45"><a href="#cb19-45" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb19-46"><a href="#cb19-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-47"><a href="#cb19-47" aria-hidden="true" tabindex="-1"></a>We then follow up with a user friendly helper. Here we’ll use <span class="in">`vec_cast()`</span> to allow it to accept anything coercible to a character:</span>
-<span id="cb19-48"><a href="#cb19-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-51"><a href="#cb19-51" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb19-52"><a href="#cb19-52" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn-cast</span></span>
-<span id="cb19-53"><a href="#cb19-53" aria-hidden="true" tabindex="-1"></a>ccn <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">x =</span> <span class="fu">character</span>()) {</span>
-<span id="cb19-54"><a href="#cb19-54" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">vec_cast</span>(x, <span class="fu">character</span>())</span>
-<span id="cb19-55"><a href="#cb19-55" aria-hidden="true" tabindex="-1"></a>  <span class="fu">new_ccn</span>(x)</span>
-<span id="cb19-56"><a href="#cb19-56" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb19-57"><a href="#cb19-57" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb19-58"><a href="#cb19-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-59"><a href="#cb19-59" aria-hidden="true" tabindex="-1"></a>Before you go on, check that user-friendly constructor returns a zero-length vector when called with no arguments. This makes it easy to use as a prototype.</span>
-<span id="cb19-60"><a href="#cb19-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-63"><a href="#cb19-63" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb19-64"><a href="#cb19-64" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn-prototype</span></span>
-<span id="cb19-65"><a href="#cb19-65" aria-hidden="true" tabindex="-1"></a><span class="fu">new_ccn</span>()</span>
-<span id="cb19-66"><a href="#cb19-66" aria-hidden="true" tabindex="-1"></a><span class="fu">ccn</span>()</span>
-<span id="cb19-67"><a href="#cb19-67" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb19-68"><a href="#cb19-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-69"><a href="#cb19-69" aria-hidden="true" tabindex="-1"></a>For the convenience of your users, consider implementing an is_percent() function:</span>
-<span id="cb19-70"><a href="#cb19-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-73"><a href="#cb19-73" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb19-74"><a href="#cb19-74" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn-inherits</span></span>
-<span id="cb19-75"><a href="#cb19-75" aria-hidden="true" tabindex="-1"></a>is_ccn <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb19-76"><a href="#cb19-76" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inherits</span>(x, <span class="st">"ccn"</span>)</span>
-<span id="cb19-77"><a href="#cb19-77" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb19-78"><a href="#cb19-78" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb19-79"><a href="#cb19-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-80"><a href="#cb19-80" aria-hidden="true" tabindex="-1"></a><span class="fu">## `format()` method</span></span>
-<span id="cb19-81"><a href="#cb19-81" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-82"><a href="#cb19-82" aria-hidden="true" tabindex="-1"></a>The first method for every class should almost always be a <span class="in">`format()`</span> method. This should return a character vector the same length as x. The easiest way to do this is to rely on one of R’s low-level formatting functions like <span class="in">`formatC()`</span>:</span>
-<span id="cb19-83"><a href="#cb19-83" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-86"><a href="#cb19-86" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb19-87"><a href="#cb19-87" aria-hidden="true" tabindex="-1"></a>format.ccn <span class="ot">&lt;-</span> <span class="cf">function</span>(x, ...) {</span>
-<span id="cb19-88"><a href="#cb19-88" aria-hidden="true" tabindex="-1"></a>  out <span class="ot">&lt;-</span> <span class="fu">formatC</span>(<span class="fu">vec_data</span>(x))</span>
-<span id="cb19-89"><a href="#cb19-89" aria-hidden="true" tabindex="-1"></a>  out[<span class="fu">is.na</span>(x)] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
-<span id="cb19-90"><a href="#cb19-90" aria-hidden="true" tabindex="-1"></a>  out</span>
-<span id="cb19-91"><a href="#cb19-91" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb19-92"><a href="#cb19-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-93"><a href="#cb19-93" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">ccn</span>(ccn_examples[<span class="dv">1</span><span class="sc">:</span><span class="dv">25</span>])</span>
-<span id="cb19-94"><a href="#cb19-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-95"><a href="#cb19-95" aria-hidden="true" tabindex="-1"></a>x</span>
-<span id="cb19-96"><a href="#cb19-96" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb19-97"><a href="#cb19-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-98"><a href="#cb19-98" aria-hidden="true" tabindex="-1"></a>(Note the use of <span class="in">`vec_data()`</span> so <span class="in">`format()`</span> doesn’t get stuck in an infinite loop, and that I take a little care to not convert <span class="in">`NA`</span> to <span class="in">`"NA"`</span>; this leads to better printing.)</span>
-<span id="cb19-99"><a href="#cb19-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-100"><a href="#cb19-100" aria-hidden="true" tabindex="-1"></a>The format method is also used by data frames, tibbles, and <span class="in">`str()`</span>:</span>
-<span id="cb19-101"><a href="#cb19-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-104"><a href="#cb19-104" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb19-105"><a href="#cb19-105" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(x)</span>
-<span id="cb19-106"><a href="#cb19-106" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb19-107"><a href="#cb19-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-108"><a href="#cb19-108" aria-hidden="true" tabindex="-1"></a>For optimal display, I recommend also defining an abbreviated type name, which should be 4-5 letters for commonly used vectors. This is used in tibbles and in <span class="in">`str()`</span>:</span>
-<span id="cb19-109"><a href="#cb19-109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-112"><a href="#cb19-112" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb19-113"><a href="#cb19-113" aria-hidden="true" tabindex="-1"></a>vec_ptype_abbr.ccn <span class="ot">&lt;-</span> <span class="cf">function</span>(x, ...) {</span>
-<span id="cb19-114"><a href="#cb19-114" aria-hidden="true" tabindex="-1"></a>  <span class="st">"ccn"</span></span>
-<span id="cb19-115"><a href="#cb19-115" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb19-116"><a href="#cb19-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-117"><a href="#cb19-117" aria-hidden="true" tabindex="-1"></a>tibble<span class="sc">::</span><span class="fu">tibble</span>(x)</span>
-<span id="cb19-118"><a href="#cb19-118" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-119"><a href="#cb19-119" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(x)</span>
-<span id="cb19-120"><a href="#cb19-120" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb19-121"><a href="#cb19-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-122"><a href="#cb19-122" aria-hidden="true" tabindex="-1"></a>If you need more control over printing in tibbles, implement a method for <span class="in">`pillar::pillar_shaft()`</span>. See <span class="in">`vignette("pillar", package = "vctrs")`</span> for details.</span>
-<span id="cb19-123"><a href="#cb19-123" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-124"><a href="#cb19-124" aria-hidden="true" tabindex="-1"></a><span class="fu">## Casting and coercion</span></span>
-<span id="cb19-125"><a href="#cb19-125" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-126"><a href="#cb19-126" aria-hidden="true" tabindex="-1"></a>The next set of methods you are likely to need are those related to coercion and casting. Coercion and casting are two sides of the same coin: changing the prototype of an existing object. When the change happens implicitly (e.g in c()) we call it coercion; when the change happens explicitly (e.g. with as.integer(x)), we call it casting.</span>
-<span id="cb19-127"><a href="#cb19-127" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-128"><a href="#cb19-128" aria-hidden="true" tabindex="-1"></a>One of the main goals of vctrs is to put coercion and casting on a robust theoretical footing so it’s possible to make accurate predictions about what (e.g.) c(x, y) should do when x and y have different prototypes. vctrs achieves this goal through two generics:</span>
-<span id="cb19-129"><a href="#cb19-129" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-130"><a href="#cb19-130" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>vec_ptype2(x, y) defines possible set of coercions. It returns a prototype if x and y can be safely coerced to the same prototype; otherwise it returns an error. The set of automatic coercions is usually quite small because too many tend to make code harder to reason about and silently propagate mistakes.</span>
-<span id="cb19-131"><a href="#cb19-131" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>vec_cast(x, to) defines the possible sets of casts. It returns x translated to have prototype to, or throws an error if the conversion isn’t possible. The set of possible casts is a superset of possible coercions because they’re requested explicitly.</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb59" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span><span class="co"> html_document</span></span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a><span class="an">editor_options:</span><span class="co"> </span></span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a><span class="co">  chunk_output_type: console</span></span>
+<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb59-6"><a href="#cb59-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-7"><a href="#cb59-7" aria-hidden="true" tabindex="-1"></a><span class="fu"># Implementation</span></span>
+<span id="cb59-8"><a href="#cb59-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-11"><a href="#cb59-11" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb59-12"><a href="#cb59-12" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup</span></span>
+<span id="cb59-13"><a href="#cb59-13" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: true</span></span>
+<span id="cb59-14"><a href="#cb59-14" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: true</span></span>
+<span id="cb59-15"><a href="#cb59-15" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
+<span id="cb59-16"><a href="#cb59-16" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb59-17"><a href="#cb59-17" aria-hidden="true" tabindex="-1"></a><span class="co">#| cache: false</span></span>
+<span id="cb59-18"><a href="#cb59-18" aria-hidden="true" tabindex="-1"></a><span class="co">#| comment: ""</span></span>
+<span id="cb59-19"><a href="#cb59-19" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(vctrs)</span>
+<span id="cb59-20"><a href="#cb59-20" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rlang)</span>
+<span id="cb59-21"><a href="#cb59-21" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(zeallot)</span>
+<span id="cb59-22"><a href="#cb59-22" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ccn)</span>
+<span id="cb59-23"><a href="#cb59-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-24"><a href="#cb59-24" aria-hidden="true" tabindex="-1"></a>in_between <span class="ot">&lt;-</span> <span class="cf">function</span>(x, min, max) {</span>
+<span id="cb59-25"><a href="#cb59-25" aria-hidden="true" tabindex="-1"></a>  (x <span class="sc">-</span> min) <span class="sc">*</span> (max <span class="sc">-</span> x) <span class="sc">&gt;=</span> <span class="dv">0</span>L</span>
+<span id="cb59-26"><a href="#cb59-26" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb59-27"><a href="#cb59-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-28"><a href="#cb59-28" aria-hidden="true" tabindex="-1"></a>examples <span class="ot">&lt;-</span> <span class="fu">c</span>(ccn<span class="sc">:::</span><span class="fu">get_pin</span>(<span class="st">"ccn"</span>), <span class="st">"02"</span>, <span class="cn">NA_character_</span>)</span>
+<span id="cb59-29"><a href="#cb59-29" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb59-30"><a href="#cb59-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-31"><a href="#cb59-31" aria-hidden="true" tabindex="-1"></a><span class="fu">## `ccn` Validation</span></span>
+<span id="cb59-32"><a href="#cb59-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-35"><a href="#cb59-35" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb59-36"><a href="#cb59-36" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn_validation</span></span>
+<span id="cb59-37"><a href="#cb59-37" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
+<span id="cb59-38"><a href="#cb59-38" aria-hidden="true" tabindex="-1"></a>is_valid_nchar <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb59-39"><a href="#cb59-39" aria-hidden="true" tabindex="-1"></a>  N <span class="ot">&lt;-</span> collapse<span class="sc">::</span><span class="fu">vlengths</span>(x)</span>
+<span id="cb59-40"><a href="#cb59-40" aria-hidden="true" tabindex="-1"></a>  (N <span class="sc">-</span> <span class="dv">6</span>L) <span class="sc">*</span> (<span class="dv">14</span>L <span class="sc">-</span> N) <span class="sc">&gt;=</span> <span class="dv">0</span>L</span>
+<span id="cb59-41"><a href="#cb59-41" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb59-42"><a href="#cb59-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-43"><a href="#cb59-43" aria-hidden="true" tabindex="-1"></a><span class="fu">is_valid_nchar</span>(examples[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>])</span>
+<span id="cb59-44"><a href="#cb59-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-45"><a href="#cb59-45" aria-hidden="true" tabindex="-1"></a>all_valid_nchar <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb59-46"><a href="#cb59-46" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">allv</span>(<span class="fu">is_valid_nchar</span>(x), <span class="cn">TRUE</span>)</span>
+<span id="cb59-47"><a href="#cb59-47" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb59-48"><a href="#cb59-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-49"><a href="#cb59-49" aria-hidden="true" tabindex="-1"></a><span class="fu">all_valid_nchar</span>(examples)</span>
+<span id="cb59-50"><a href="#cb59-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-51"><a href="#cb59-51" aria-hidden="true" tabindex="-1"></a>which_not_valid_nchar <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb59-52"><a href="#cb59-52" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">whichv</span>(<span class="fu">is_valid_nchar</span>(x), <span class="cn">FALSE</span>)</span>
+<span id="cb59-53"><a href="#cb59-53" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb59-54"><a href="#cb59-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-55"><a href="#cb59-55" aria-hidden="true" tabindex="-1"></a><span class="fu">which_not_valid_nchar</span>(examples)</span>
+<span id="cb59-56"><a href="#cb59-56" aria-hidden="true" tabindex="-1"></a>examples[<span class="fu">which_not_valid_nchar</span>(examples)]</span>
+<span id="cb59-57"><a href="#cb59-57" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb59-58"><a href="#cb59-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-59"><a href="#cb59-59" aria-hidden="true" tabindex="-1"></a><span class="fu">## `ccn` Checks</span></span>
+<span id="cb59-60"><a href="#cb59-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-63"><a href="#cb59-63" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb59-64"><a href="#cb59-64" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn_checks</span></span>
+<span id="cb59-65"><a href="#cb59-65" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
+<span id="cb59-66"><a href="#cb59-66" aria-hidden="true" tabindex="-1"></a>check_valid_nchar <span class="ot">&lt;-</span> <span class="cf">function</span>(</span>
+<span id="cb59-67"><a href="#cb59-67" aria-hidden="true" tabindex="-1"></a>  x,</span>
+<span id="cb59-68"><a href="#cb59-68" aria-hidden="true" tabindex="-1"></a>  <span class="at">arg =</span> rlang<span class="sc">::</span><span class="fu">caller_arg</span>(x),</span>
+<span id="cb59-69"><a href="#cb59-69" aria-hidden="true" tabindex="-1"></a>  <span class="at">call =</span> rlang<span class="sc">::</span><span class="fu">caller_env</span>()</span>
+<span id="cb59-70"><a href="#cb59-70" aria-hidden="true" tabindex="-1"></a>) {</span>
+<span id="cb59-71"><a href="#cb59-71" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">all_valid_nchar</span>(x)) {</span>
+<span id="cb59-72"><a href="#cb59-72" aria-hidden="true" tabindex="-1"></a>    i <span class="ot">&lt;-</span> <span class="fu">which_not_valid_nchar</span>(x)</span>
+<span id="cb59-73"><a href="#cb59-73" aria-hidden="true" tabindex="-1"></a>    n <span class="ot">&lt;-</span> <span class="fu">length</span>(i)</span>
+<span id="cb59-74"><a href="#cb59-74" aria-hidden="true" tabindex="-1"></a>    cli<span class="sc">::</span><span class="fu">cli_abort</span>(</span>
+<span id="cb59-75"><a href="#cb59-75" aria-hidden="true" tabindex="-1"></a>      <span class="fu">c</span>(</span>
+<span id="cb59-76"><a href="#cb59-76" aria-hidden="true" tabindex="-1"></a>        <span class="st">"{.strong {n}} Invalid {cli::qty(n)} CCN{?s}:"</span>,</span>
+<span id="cb59-77"><a href="#cb59-77" aria-hidden="true" tabindex="-1"></a>        <span class="st">"x"</span> <span class="ot">=</span> <span class="st">"{.val {x[i]}}"</span></span>
+<span id="cb59-78"><a href="#cb59-78" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb59-79"><a href="#cb59-79" aria-hidden="true" tabindex="-1"></a>      <span class="at">arg =</span> arg,</span>
+<span id="cb59-80"><a href="#cb59-80" aria-hidden="true" tabindex="-1"></a>      <span class="at">call =</span> call</span>
+<span id="cb59-81"><a href="#cb59-81" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb59-82"><a href="#cb59-82" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb59-83"><a href="#cb59-83" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb59-84"><a href="#cb59-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-85"><a href="#cb59-85" aria-hidden="true" tabindex="-1"></a><span class="co"># check_valid_nchar(examples)</span></span>
+<span id="cb59-86"><a href="#cb59-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-87"><a href="#cb59-87" aria-hidden="true" tabindex="-1"></a>check_character <span class="ot">&lt;-</span> <span class="cf">function</span>(</span>
+<span id="cb59-88"><a href="#cb59-88" aria-hidden="true" tabindex="-1"></a>    x,</span>
+<span id="cb59-89"><a href="#cb59-89" aria-hidden="true" tabindex="-1"></a>    <span class="at">arg =</span> rlang<span class="sc">::</span><span class="fu">caller_arg</span>(x),</span>
+<span id="cb59-90"><a href="#cb59-90" aria-hidden="true" tabindex="-1"></a>    <span class="at">call =</span> rlang<span class="sc">::</span><span class="fu">caller_env</span>()</span>
+<span id="cb59-91"><a href="#cb59-91" aria-hidden="true" tabindex="-1"></a>    ) {</span>
+<span id="cb59-92"><a href="#cb59-92" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is_character</span>(x)) {</span>
+<span id="cb59-93"><a href="#cb59-93" aria-hidden="true" tabindex="-1"></a>    cli<span class="sc">::</span><span class="fu">cli_abort</span>(</span>
+<span id="cb59-94"><a href="#cb59-94" aria-hidden="true" tabindex="-1"></a>      <span class="st">"`x` must be a character vector."</span>,</span>
+<span id="cb59-95"><a href="#cb59-95" aria-hidden="true" tabindex="-1"></a>      <span class="at">arg =</span> arg,</span>
+<span id="cb59-96"><a href="#cb59-96" aria-hidden="true" tabindex="-1"></a>      <span class="at">call =</span> call</span>
+<span id="cb59-97"><a href="#cb59-97" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb59-98"><a href="#cb59-98" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb59-99"><a href="#cb59-99" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb59-100"><a href="#cb59-100" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb59-101"><a href="#cb59-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-102"><a href="#cb59-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-103"><a href="#cb59-103" aria-hidden="true" tabindex="-1"></a><span class="fu">## `ccn` class</span></span>
+<span id="cb59-104"><a href="#cb59-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-105"><a href="#cb59-105" aria-hidden="true" tabindex="-1"></a>First, make a <span class="in">`ccn`</span> class, i.e., a character vector that is printed as a <span class="in">`ccn`</span>. Start by defining a low-level <span class="co">[</span><span class="ot">constructor</span><span class="co">](https://adv-r.hadley.nz/s3.html#s3-constrcutor)</span> to check types and/or sizes and call <span class="in">`new_vctr()`</span>.</span>
+<span id="cb59-106"><a href="#cb59-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-107"><a href="#cb59-107" aria-hidden="true" tabindex="-1"></a><span class="in">`ccn`</span> is built on a character vector of any length and doesn’t have any attributes.</span>
+<span id="cb59-108"><a href="#cb59-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-109"><a href="#cb59-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-112"><a href="#cb59-112" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb59-113"><a href="#cb59-113" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: new_ccn</span></span>
+<span id="cb59-114"><a href="#cb59-114" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
+<span id="cb59-115"><a href="#cb59-115" aria-hidden="true" tabindex="-1"></a>new_ccn <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">x =</span> <span class="fu">character</span>()) {</span>
+<span id="cb59-116"><a href="#cb59-116" aria-hidden="true" tabindex="-1"></a>  <span class="co"># check_character(x)</span></span>
+<span id="cb59-117"><a href="#cb59-117" aria-hidden="true" tabindex="-1"></a>  <span class="co"># check_valid_nchar(x)</span></span>
+<span id="cb59-118"><a href="#cb59-118" aria-hidden="true" tabindex="-1"></a>  <span class="fu">new_vctr</span>(x, <span class="at">class =</span> <span class="st">"ccn"</span>)</span>
+<span id="cb59-119"><a href="#cb59-119" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb59-120"><a href="#cb59-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-121"><a href="#cb59-121" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">new_ccn</span>(examples[<span class="dv">1</span><span class="sc">:</span><span class="dv">25</span>])</span>
+<span id="cb59-122"><a href="#cb59-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-123"><a href="#cb59-123" aria-hidden="true" tabindex="-1"></a>x</span>
+<span id="cb59-124"><a href="#cb59-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-125"><a href="#cb59-125" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(x)</span>
+<span id="cb59-126"><a href="#cb59-126" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb59-127"><a href="#cb59-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-128"><a href="#cb59-128" aria-hidden="true" tabindex="-1"></a>We then follow up with a user friendly helper. Here we’ll use <span class="in">`vec_cast()`</span> to allow it to accept anything coercible to a character:</span>
+<span id="cb59-129"><a href="#cb59-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-132"><a href="#cb59-132" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb59-133"><a href="#cb59-133" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn-helper</span></span>
+<span id="cb59-134"><a href="#cb59-134" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
+<span id="cb59-135"><a href="#cb59-135" aria-hidden="true" tabindex="-1"></a>ccn <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">x =</span> <span class="fu">character</span>()) {</span>
+<span id="cb59-136"><a href="#cb59-136" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">vec_cast</span>(x, <span class="fu">character</span>())</span>
+<span id="cb59-137"><a href="#cb59-137" aria-hidden="true" tabindex="-1"></a>  <span class="fu">new_ccn</span>(x)</span>
+<span id="cb59-138"><a href="#cb59-138" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb59-139"><a href="#cb59-139" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb59-140"><a href="#cb59-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-141"><a href="#cb59-141" aria-hidden="true" tabindex="-1"></a>Before you go on, check that user-friendly constructor returns a zero-length vector when called with no arguments. This makes it easy to use as a prototype.</span>
+<span id="cb59-142"><a href="#cb59-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-145"><a href="#cb59-145" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb59-146"><a href="#cb59-146" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn-prototype</span></span>
+<span id="cb59-147"><a href="#cb59-147" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
+<span id="cb59-148"><a href="#cb59-148" aria-hidden="true" tabindex="-1"></a><span class="fu">new_ccn</span>()</span>
+<span id="cb59-149"><a href="#cb59-149" aria-hidden="true" tabindex="-1"></a><span class="fu">ccn</span>()</span>
+<span id="cb59-150"><a href="#cb59-150" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb59-151"><a href="#cb59-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-152"><a href="#cb59-152" aria-hidden="true" tabindex="-1"></a>For the convenience of your users, consider implementing an <span class="in">`is_ccn()`</span> function:</span>
+<span id="cb59-153"><a href="#cb59-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-156"><a href="#cb59-156" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb59-157"><a href="#cb59-157" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn-inherits</span></span>
+<span id="cb59-158"><a href="#cb59-158" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
+<span id="cb59-159"><a href="#cb59-159" aria-hidden="true" tabindex="-1"></a>is_ccn <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb59-160"><a href="#cb59-160" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inherits</span>(x, <span class="st">"ccn"</span>)</span>
+<span id="cb59-161"><a href="#cb59-161" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb59-162"><a href="#cb59-162" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb59-163"><a href="#cb59-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-164"><a href="#cb59-164" aria-hidden="true" tabindex="-1"></a><span class="fu">## `format()` method</span></span>
+<span id="cb59-165"><a href="#cb59-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-166"><a href="#cb59-166" aria-hidden="true" tabindex="-1"></a>The first method for every class should almost always be a <span class="in">`format()`</span> method. This should return a character vector the same length as x. The easiest way to do this is to rely on one of R’s low-level formatting functions like <span class="in">`formatC()`</span>:</span>
+<span id="cb59-167"><a href="#cb59-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-170"><a href="#cb59-170" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb59-171"><a href="#cb59-171" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn-format</span></span>
+<span id="cb59-172"><a href="#cb59-172" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
+<span id="cb59-173"><a href="#cb59-173" aria-hidden="true" tabindex="-1"></a>format.ccn <span class="ot">&lt;-</span> <span class="cf">function</span>(x, ...) {</span>
+<span id="cb59-174"><a href="#cb59-174" aria-hidden="true" tabindex="-1"></a>  out <span class="ot">&lt;-</span> <span class="fu">formatC</span>(<span class="fu">vec_data</span>(x))</span>
+<span id="cb59-175"><a href="#cb59-175" aria-hidden="true" tabindex="-1"></a>  out[<span class="fu">is.na</span>(x)] <span class="ot">&lt;-</span> <span class="cn">NA_character_</span></span>
+<span id="cb59-176"><a href="#cb59-176" aria-hidden="true" tabindex="-1"></a>  out</span>
+<span id="cb59-177"><a href="#cb59-177" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb59-178"><a href="#cb59-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-179"><a href="#cb59-179" aria-hidden="true" tabindex="-1"></a><span class="co"># x &lt;- ccn(examples[52000:52272])</span></span>
+<span id="cb59-180"><a href="#cb59-180" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">ccn</span>(examples[<span class="dv">1</span><span class="sc">:</span><span class="dv">2000</span>])</span>
+<span id="cb59-181"><a href="#cb59-181" aria-hidden="true" tabindex="-1"></a>x</span>
+<span id="cb59-182"><a href="#cb59-182" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb59-183"><a href="#cb59-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-184"><a href="#cb59-184" aria-hidden="true" tabindex="-1"></a>(Note the use of <span class="in">`vec_data()`</span> so <span class="in">`format()`</span> doesn’t get stuck in an infinite loop, and that I take a little care to not convert <span class="in">`NA`</span> to <span class="in">`"NA"`</span>; this leads to better printing.)</span>
+<span id="cb59-185"><a href="#cb59-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-186"><a href="#cb59-186" aria-hidden="true" tabindex="-1"></a>The format method is also used by data frames, tibbles, and <span class="in">`str()`</span>:</span>
+<span id="cb59-187"><a href="#cb59-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-190"><a href="#cb59-190" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb59-191"><a href="#cb59-191" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn-data.frame</span></span>
+<span id="cb59-192"><a href="#cb59-192" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
+<span id="cb59-193"><a href="#cb59-193" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(x)</span>
+<span id="cb59-194"><a href="#cb59-194" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb59-195"><a href="#cb59-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-196"><a href="#cb59-196" aria-hidden="true" tabindex="-1"></a>For optimal display, I recommend also defining an abbreviated type name, which should be 4-5 letters for commonly used vectors. This is used in tibbles and in <span class="in">`str()`</span>:</span>
+<span id="cb59-197"><a href="#cb59-197" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-200"><a href="#cb59-200" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb59-201"><a href="#cb59-201" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn-abbr</span></span>
+<span id="cb59-202"><a href="#cb59-202" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
+<span id="cb59-203"><a href="#cb59-203" aria-hidden="true" tabindex="-1"></a>vec_ptype_abbr.ccn <span class="ot">&lt;-</span> <span class="cf">function</span>(x, ...) {</span>
+<span id="cb59-204"><a href="#cb59-204" aria-hidden="true" tabindex="-1"></a>  <span class="st">"ccn"</span></span>
+<span id="cb59-205"><a href="#cb59-205" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb59-206"><a href="#cb59-206" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-207"><a href="#cb59-207" aria-hidden="true" tabindex="-1"></a>tibble<span class="sc">::</span><span class="fu">tibble</span>(x)</span>
+<span id="cb59-208"><a href="#cb59-208" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-209"><a href="#cb59-209" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(x)</span>
+<span id="cb59-210"><a href="#cb59-210" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb59-211"><a href="#cb59-211" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-212"><a href="#cb59-212" aria-hidden="true" tabindex="-1"></a>If you need more control over printing in tibbles, implement a method for <span class="in">`pillar::pillar_shaft()`</span>. See <span class="in">`vignette("pillar", package = "vctrs")`</span> for details.</span>
+<span id="cb59-213"><a href="#cb59-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-214"><a href="#cb59-214" aria-hidden="true" tabindex="-1"></a><span class="fu">## Casting and coercion</span></span>
+<span id="cb59-215"><a href="#cb59-215" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-216"><a href="#cb59-216" aria-hidden="true" tabindex="-1"></a>The next set of methods you are likely to need are those related to coercion and casting. Coercion and casting are two sides of the same coin: changing the prototype of an existing object. When the change happens implicitly (e.g in <span class="in">`c()`</span>) we call it __coercion__; when the change happens explicitly (e.g. with `as.integer(x)`), we call it __casting__.</span>
+<span id="cb59-217"><a href="#cb59-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-218"><a href="#cb59-218" aria-hidden="true" tabindex="-1"></a>One of the main goals of __vctrs__ is to put coercion and casting on a robust theoretical footing so it’s possible to make accurate predictions about what (e.g.) <span class="in">`c(x, y)`</span> should do when <span class="in">`x`</span> and <span class="in">`y`</span> have different prototypes. <span class="in">`vctrs`</span> achieves this goal through two generics:</span>
+<span id="cb59-219"><a href="#cb59-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-220"><a href="#cb59-220" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span><span class="in">`vec_ptype2(x, y)`</span> defines a possible set of __coercions__. It returns a prototype if <span class="in">`x`</span> and <span class="in">`y`</span> can be safely coerced to the same prototype; otherwise it returns an error. The set of automatic coercions is usually quite small because too many tend to make code harder to reason about and silently propagate mistakes.</span>
+<span id="cb59-221"><a href="#cb59-221" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span><span class="in">`vec_cast(x, to)`</span> defines the possible sets of __casts__. It returns `x` translated to have prototype `to`, or throws an error if the conversion isn’t possible. The set of possible casts is a _superset_ of possible __coercions__ because they’re requested explicitly.</span>
+<span id="cb59-222"><a href="#cb59-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-223"><a href="#cb59-223" aria-hidden="true" tabindex="-1"></a><span class="fu">### Double dispatch</span></span>
+<span id="cb59-224"><a href="#cb59-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-225"><a href="#cb59-225" aria-hidden="true" tabindex="-1"></a>Both generics use <span class="co">[</span><span class="ot">double dispatch</span><span class="co">](https://en.wikipedia.org/wiki/Double_dispatch)</span> which means that the implementation is selected based on the class of two arguments, not just one. __S3__ does not natively support double dispatch, so we implement our own dispatch mechanism. In practice, this means:</span>
+<span id="cb59-226"><a href="#cb59-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-227"><a href="#cb59-227" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>You end up with method names with two classes, like <span class="in">`vec_ptype2.foo.bar()`</span>.</span>
+<span id="cb59-228"><a href="#cb59-228" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>You don’t need to implement default methods (they would never be called if you do).</span>
+<span id="cb59-229"><a href="#cb59-229" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>You can’t call <span class="in">`NextMethod()`</span>.</span>
+<span id="cb59-230"><a href="#cb59-230" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-231"><a href="#cb59-231" aria-hidden="true" tabindex="-1"></a><span class="fu">### CCN class</span></span>
+<span id="cb59-232"><a href="#cb59-232" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-233"><a href="#cb59-233" aria-hidden="true" tabindex="-1"></a>We’ll make our <span class="in">`ccn`</span> class coercible back and forth with character vectors.</span>
+<span id="cb59-234"><a href="#cb59-234" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-235"><a href="#cb59-235" aria-hidden="true" tabindex="-1"></a><span class="in">`vec_ptype2()`</span> provides a user friendly error message if the coercion doesn’t exist and makes sure <span class="in">`NA`</span> is handled in a standard way. <span class="in">`NA`</span> is technically a <span class="in">`logical`</span> vector, but we want it to stand in for a missing value of any type.</span>
+<span id="cb59-236"><a href="#cb59-236" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-239"><a href="#cb59-239" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb59-240"><a href="#cb59-240" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn-ptype2-1</span></span>
+<span id="cb59-241"><a href="#cb59-241" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
+<span id="cb59-242"><a href="#cb59-242" aria-hidden="true" tabindex="-1"></a><span class="fu">vec_ptype2</span>(<span class="st">"bogus"</span>, <span class="fu">ccn</span>())</span>
+<span id="cb59-243"><a href="#cb59-243" aria-hidden="true" tabindex="-1"></a><span class="fu">vec_ptype2</span>(<span class="fu">ccn</span>(), <span class="cn">NA</span>)</span>
+<span id="cb59-244"><a href="#cb59-244" aria-hidden="true" tabindex="-1"></a><span class="fu">vec_ptype2</span>(<span class="cn">NA</span>, <span class="fu">ccn</span>())</span>
+<span id="cb59-245"><a href="#cb59-245" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb59-246"><a href="#cb59-246" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-247"><a href="#cb59-247" aria-hidden="true" tabindex="-1"></a>By default and in simple cases, an object of the same class is compatible with itself:</span>
+<span id="cb59-248"><a href="#cb59-248" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-251"><a href="#cb59-251" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb59-252"><a href="#cb59-252" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn-ptype2-2</span></span>
+<span id="cb59-253"><a href="#cb59-253" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
+<span id="cb59-254"><a href="#cb59-254" aria-hidden="true" tabindex="-1"></a><span class="fu">vec_ptype2</span>(<span class="fu">ccn</span>(), <span class="fu">ccn</span>())</span>
+<span id="cb59-255"><a href="#cb59-255" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb59-256"><a href="#cb59-256" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-257"><a href="#cb59-257" aria-hidden="true" tabindex="-1"></a>However this only works if the attributes for both objects are the same. Also the default methods are a bit slower. It is always a good idea to provide an explicit coercion method for the case of identical classes. So we’ll start by saying that a <span class="in">`ccn`</span> combined with a <span class="in">`ccn`</span> yields a <span class="in">`ccn`</span>, which we indicate by returning a prototype generated by the constructor.</span>
+<span id="cb59-258"><a href="#cb59-258" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-261"><a href="#cb59-261" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb59-262"><a href="#cb59-262" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn-ptype2-3</span></span>
+<span id="cb59-263"><a href="#cb59-263" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
+<span id="cb59-264"><a href="#cb59-264" aria-hidden="true" tabindex="-1"></a>vec_ptype2.ccn.ccn <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y, ...) <span class="fu">new_ccn</span>()</span>
+<span id="cb59-265"><a href="#cb59-265" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb59-266"><a href="#cb59-266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-267"><a href="#cb59-267" aria-hidden="true" tabindex="-1"></a>Next we define methods that say that combining a <span class="in">`ccn`</span> and <span class="in">`character`</span> should yield a <span class="in">`character`</span>.</span>
+<span id="cb59-268"><a href="#cb59-268" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-269"><a href="#cb59-269" aria-hidden="true" tabindex="-1"></a>Because double dispatch is a bit of a hack, we need to provide two methods. It’s your responsibility to ensure that each member of the pair returns the same result: if they don’t you will get weird and unpredictable behaviour.</span>
+<span id="cb59-270"><a href="#cb59-270" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-271"><a href="#cb59-271" aria-hidden="true" tabindex="-1"></a>The double dispatch mechanism requires us to refer to the underlying type, <span class="in">`character`</span>, in the method name. If we implemented <span class="in">`vec_ptype2.ccn.numeric()`</span>, it would never be called.</span>
+<span id="cb59-272"><a href="#cb59-272" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-275"><a href="#cb59-275" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb59-276"><a href="#cb59-276" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn-ptype2-4</span></span>
+<span id="cb59-277"><a href="#cb59-277" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
+<span id="cb59-278"><a href="#cb59-278" aria-hidden="true" tabindex="-1"></a>vec_ptype2.ccn.character <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y, ...) <span class="fu">character</span>()</span>
+<span id="cb59-279"><a href="#cb59-279" aria-hidden="true" tabindex="-1"></a>vec_ptype2.character.ccn <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y, ...) <span class="fu">character</span>()</span>
+<span id="cb59-280"><a href="#cb59-280" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb59-281"><a href="#cb59-281" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-282"><a href="#cb59-282" aria-hidden="true" tabindex="-1"></a>We can check that we’ve implemented this correctly with <span class="in">`vec_ptype_show()`</span>:</span>
+<span id="cb59-283"><a href="#cb59-283" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-286"><a href="#cb59-286" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb59-287"><a href="#cb59-287" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn-ptype-show</span></span>
+<span id="cb59-288"><a href="#cb59-288" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
+<span id="cb59-289"><a href="#cb59-289" aria-hidden="true" tabindex="-1"></a><span class="fu">vec_ptype_show</span>(<span class="fu">ccn</span>(), <span class="fu">character</span>(), <span class="fu">ccn</span>())</span>
+<span id="cb59-290"><a href="#cb59-290" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb59-291"><a href="#cb59-291" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-292"><a href="#cb59-292" aria-hidden="true" tabindex="-1"></a>The <span class="in">`vec_ptype2()`</span> methods define which input is the richer type that <span class="in">`vctrs`</span> should coerce to. However, they don’t perform any conversion. This is the job of <span class="in">`vec_cast()`</span>, which we implement next. We’ll provide a method to cast a <span class="in">`ccn`</span> to a <span class="in">`ccn`</span>:</span>
+<span id="cb59-293"><a href="#cb59-293" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-296"><a href="#cb59-296" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb59-297"><a href="#cb59-297" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn-cast</span></span>
+<span id="cb59-298"><a href="#cb59-298" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
+<span id="cb59-299"><a href="#cb59-299" aria-hidden="true" tabindex="-1"></a>vec_cast.ccn.ccn <span class="ot">&lt;-</span> <span class="cf">function</span>(x, to, ...) x</span>
+<span id="cb59-300"><a href="#cb59-300" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb59-301"><a href="#cb59-301" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-302"><a href="#cb59-302" aria-hidden="true" tabindex="-1"></a>And then for converting back and forth between <span class="in">`character`</span>s. To convert a <span class="in">`character`</span> to a <span class="in">`ccn`</span> we use the <span class="in">`ccn()`</span> helper (not the constructor; this is un-validated user input). To convert a <span class="in">`ccn`</span> to a <span class="in">`character`</span>, we strip the attributes.</span>
+<span id="cb59-303"><a href="#cb59-303" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-304"><a href="#cb59-304" aria-hidden="true" tabindex="-1"></a>Note that for historical reasons the order of argument in the signature is the opposite as for <span class="in">`vec_ptype2()`</span>. The class for <span class="in">`to`</span> comes first, and the class for <span class="in">`x`</span> comes second.</span>
+<span id="cb59-305"><a href="#cb59-305" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-306"><a href="#cb59-306" aria-hidden="true" tabindex="-1"></a>Again, the double dispatch mechanism requires us to refer to the underlying type, <span class="in">`character`</span>, in the method name:</span>
+<span id="cb59-307"><a href="#cb59-307" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-310"><a href="#cb59-310" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb59-311"><a href="#cb59-311" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
+<span id="cb59-312"><a href="#cb59-312" aria-hidden="true" tabindex="-1"></a>vec_cast.ccn.character <span class="ot">&lt;-</span> <span class="cf">function</span>(x, to, ...) <span class="fu">ccn</span>(x)</span>
+<span id="cb59-313"><a href="#cb59-313" aria-hidden="true" tabindex="-1"></a>vec_cast.character.ccn <span class="ot">&lt;-</span> <span class="cf">function</span>(x, to, ...) <span class="fu">vec_data</span>(x)</span>
+<span id="cb59-314"><a href="#cb59-314" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb59-315"><a href="#cb59-315" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-316"><a href="#cb59-316" aria-hidden="true" tabindex="-1"></a>Then we can check this works with <span class="in">`vec_cast()`</span>:</span>
+<span id="cb59-317"><a href="#cb59-317" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-320"><a href="#cb59-320" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb59-321"><a href="#cb59-321" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
+<span id="cb59-322"><a href="#cb59-322" aria-hidden="true" tabindex="-1"></a><span class="fu">vec_cast</span>(<span class="st">"030113"</span>, <span class="fu">ccn</span>())</span>
+<span id="cb59-323"><a href="#cb59-323" aria-hidden="true" tabindex="-1"></a><span class="fu">vec_cast</span>(<span class="fu">ccn</span>(<span class="st">"030113"</span>), <span class="fu">character</span>())</span>
+<span id="cb59-324"><a href="#cb59-324" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb59-325"><a href="#cb59-325" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-326"><a href="#cb59-326" aria-hidden="true" tabindex="-1"></a>Once you’ve implemented <span class="in">`vec_ptype2()`</span> and <span class="in">`vec_cast()`</span>, you get <span class="in">`vec_c()`</span>, <span class="in">`[&lt;-`</span>, and <span class="in">`[[&lt;-`</span> implementations for free.</span>
+<span id="cb59-327"><a href="#cb59-327" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-330"><a href="#cb59-330" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb59-331"><a href="#cb59-331" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
+<span id="cb59-332"><a href="#cb59-332" aria-hidden="true" tabindex="-1"></a><span class="fu">vec_c</span>(<span class="fu">ccn</span>(<span class="st">"030113"</span>), <span class="st">"1"</span>)</span>
+<span id="cb59-333"><a href="#cb59-333" aria-hidden="true" tabindex="-1"></a><span class="fu">vec_c</span>(<span class="cn">NA</span>, <span class="fu">ccn</span>(<span class="st">"030113"</span>))</span>
+<span id="cb59-334"><a href="#cb59-334" aria-hidden="true" tabindex="-1"></a><span class="co"># but</span></span>
+<span id="cb59-335"><a href="#cb59-335" aria-hidden="true" tabindex="-1"></a><span class="fu">vec_c</span>(<span class="cn">TRUE</span>, <span class="fu">ccn</span>(<span class="st">"030113"</span>))</span>
+<span id="cb59-336"><a href="#cb59-336" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-337"><a href="#cb59-337" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">ccn</span>(examples[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>])</span>
+<span id="cb59-338"><a href="#cb59-338" aria-hidden="true" tabindex="-1"></a>x[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>] <span class="ot">&lt;-</span> LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span>
+<span id="cb59-339"><a href="#cb59-339" aria-hidden="true" tabindex="-1"></a>x[[<span class="dv">3</span>]] <span class="ot">&lt;-</span> LETTERS[<span class="dv">5</span>]</span>
+<span id="cb59-340"><a href="#cb59-340" aria-hidden="true" tabindex="-1"></a>x</span>
+<span id="cb59-341"><a href="#cb59-341" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
