@@ -20,10 +20,5 @@ source("code/gt_theme.R")
 
 
 ```{r}
-ccn:::get_pin("asc") |> 
-  collapse::fcount(state) |> 
-  collapse::roworder(-N) |> 
-  gt::gt() |> 
-  gt_chamber_theme() |>
-  gt::tab_options(quarto.disable_processing = TRUE)
+ccn:::get_pin("asc")
 ```

@@ -3,7 +3,7 @@ output: html_document
 editor_options: 
   chunk_output_type: console
 ---
-# Medicaid-Only Providers
+# Medicaid
 
 ```{r setup}
 #| message: false

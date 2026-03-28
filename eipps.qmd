@@ -4,7 +4,9 @@ editor_options:
   chunk_output_type: console
 ---
 
-# IPPS-Excluded & Swing-Bed Approval
+# IPPS-Excluded
+
+Special Numbering System for Units of Hospitals That Are Excluded From the Inpatient Prospective Payment System (IPPS) and Hospitals and CAHs with Swing-Bed Approval
 
 ```{r setup}
 #| message: false
@@ -15,6 +17,4 @@ editor_options:
 library(ccn)
 source("code/gt_theme.R")
 ```
-
-> Special Numbering System for Units of Hospitals That Are Excluded From the Inpatient Prospective Payment System (IPPS) and Hospitals and CAHs with Swing-Bed Approval
 

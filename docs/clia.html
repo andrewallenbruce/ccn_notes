@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.35">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="dcterms.date" content="2026-01-30">
-<title>14&nbsp; CLIAs – CMS Certification Numbers</title>
+<meta name="dcterms.date" content="2026-03-28">
+<title>14&nbsp; CLIAs – CCNs</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -122,7 +122,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">CMS Certification Numbers</a> 
+      <a href="./">CCNs</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/andrewallenbruce/ccn_notes" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
 </div>
@@ -138,19 +138,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./location.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Location</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">State</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -197,7 +191,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./medicaid.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Medicaid-Only Providers</span></a>
+ <span class="menu-text">Medicaid</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -226,7 +220,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./eipps.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">IPPS-Excluded &amp; Swing-Bed Approval</span></a>
+ <span class="menu-text">IPPS-Excluded</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -275,12 +269,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
       </ul>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./implementation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Implementation</span></span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
@@ -292,8 +280,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./implementation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Implementation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./resources.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Resources</span></span></a>
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Resources</span></span></a>
   </div>
 </li>
       </ul>
@@ -320,7 +314,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 30, 2026</p>
+      <p class="date">March 28, 2026</p>
     </div>
   </div>
   
@@ -329,7 +323,48 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header>
+</header><div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">provider</span><span class="fu">::</span><span class="fu"><a href="https://andrewallenbruce.github.io/provider/reference/clia.html">clia</a></span><span class="op">(</span>count <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>✔ `clia` returned 671,570 results.</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">provider</span><span class="fu">::</span><span class="fu"><a href="https://andrewallenbruce.github.io/provider/reference/clia.html">clia</a></span><span class="op">(</span>ccn <span class="op">=</span> <span class="fu">provider</span><span class="fu">::</span><span class="fu"><a href="https://andrewallenbruce.github.io/provider/reference/modifier.html">starts_with</a></span><span class="op">(</span><span class="st">"11D0"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>✔ `clia` returned 7,928 results.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>ℹ Retrieving 2 pages...</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>[working] (0 + 0) -&gt; 1 -&gt; 1 | ■■■■■■■■■■■■■■■■                  50%</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>[working] (0 + 0) -&gt; 0 -&gt; 2 | ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  100%</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A data frame: 7,928 × 82
+   name_1  name_2 ccn   xref  chow_n chow_date chow_prv pos   status add_1 add_2
+ * &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;
+ 1 WELLST… &lt;NA&gt;   11D0… &lt;NA&gt;  0      &lt;NA&gt;      &lt;NA&gt;     N     &lt;NA&gt;   3950… &lt;NA&gt; 
+ 2 DEKALB… &lt;NA&gt;   11D0… &lt;NA&gt;  0      &lt;NA&gt;      &lt;NA&gt;     Y     A      440 … PO B…
+ 3 DECATU… &lt;NA&gt;   11D0… &lt;NA&gt;  0      &lt;NA&gt;      &lt;NA&gt;     N     &lt;NA&gt;   450 … &lt;NA&gt; 
+ 4 AGNES … CENTER 11D0… &lt;NA&gt;  0      &lt;NA&gt;      &lt;NA&gt;     N     &lt;NA&gt;   141 … &lt;NA&gt; 
+ 5 EMORY … &lt;NA&gt;   11D0… &lt;NA&gt;  0      &lt;NA&gt;      &lt;NA&gt;     N     &lt;NA&gt;   1000… &lt;NA&gt; 
+ 6 BRAWNE… &lt;NA&gt;   11D0… &lt;NA&gt;  0      &lt;NA&gt;      &lt;NA&gt;     N     &lt;NA&gt;   3180… &lt;NA&gt; 
+ 7 BOWDON… &lt;NA&gt;   11D0… &lt;NA&gt;  0      &lt;NA&gt;      &lt;NA&gt;     N     A      501 … &lt;NA&gt; 
+ 8 TANNER… &lt;NA&gt;   11D0… &lt;NA&gt;  0      &lt;NA&gt;      &lt;NA&gt;     N     &lt;NA&gt;   705 … &lt;NA&gt; 
+ 9 NORTHW… &lt;NA&gt;   11D0… &lt;NA&gt;  0      &lt;NA&gt;      &lt;NA&gt;     N     A      705 … &lt;NA&gt; 
+10 SOUTHE… &lt;NA&gt;   11D0… &lt;NA&gt;  0      &lt;NA&gt;      &lt;NA&gt;     Y     A      11 U… ATTN…
+# ℹ 7,918 more rows
+# ℹ 71 more variables: phone_1 &lt;chr&gt;, phone_2 &lt;chr&gt;, city &lt;chr&gt;, state &lt;chr&gt;,
+#   zip &lt;chr&gt;, region &lt;chr&gt;, region_st &lt;chr&gt;, ssa_st &lt;chr&gt;, ssa_cty &lt;chr&gt;,
+#   fips_st &lt;chr&gt;, fips_cty &lt;chr&gt;, cbsa_1 &lt;chr&gt;, cbsa_2 &lt;chr&gt;, eligible &lt;chr&gt;,
+#   term_pgm &lt;chr&gt;, term_clia &lt;chr&gt;, apl_type &lt;chr&gt;, cert_type &lt;chr&gt;,
+#   fac_type &lt;chr&gt;, owner &lt;chr&gt;, cert_action &lt;chr&gt;, orig_date &lt;chr&gt;,
+#   apl_date &lt;chr&gt;, cert_date &lt;chr&gt;, eff_date &lt;chr&gt;, mail_date &lt;chr&gt;, …</code></pre>
+</div>
+</div>
+
 
 <!-- -->
 
@@ -795,23 +830,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span><span class="co"> html_document</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">editor_options:</span><span class="co"> </span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">  chunk_output_type: console</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu"># CLIAs</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup}</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">#| cache: false</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">#| comment: ""</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ccn)</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"code/gt_theme.R"</span>)</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span><span class="co"> html_document</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="an">editor_options:</span><span class="co"> </span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co">  chunk_output_type: console</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="fu"># CLIAs</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup}</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co">#| cache: false</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="co">#| comment: ""</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ccn)</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"code/gt_theme.R"</span>)</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>provider<span class="sc">::</span><span class="fu">clia</span>(<span class="at">count =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>provider<span class="sc">::</span><span class="fu">clia</span>(<span class="at">ccn =</span> provider<span class="sc">::</span><span class="fu">starts_with</span>(<span class="st">"11D0"</span>))</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">

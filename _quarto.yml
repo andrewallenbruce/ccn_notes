@@ -3,7 +3,8 @@ project:
   output-dir: docs
 
 book:
-  title: "CMS Certification Numbers"
+  title: "CCNs"
+  subtitle: "CMS Certification Numbers"
   author: "Andrew Allen Bruce"
   date: "12/24/2025"
   back-to-top-navigation: true
@@ -13,7 +14,6 @@ book:
   repo-url: https://github.com/andrewallenbruce/ccn_notes
   chapters:
     - index.qmd
-    - intro.qmd
     - location.qmd
     - part: provider.qmd
       chapters:
@@ -36,8 +36,8 @@ book:
         - asc.qmd
         - clia.qmd
         - pxrf.qmd
-    - implementation.qmd
   appendices:
+    - implementation.qmd
     - resources.qmd
 
 format:

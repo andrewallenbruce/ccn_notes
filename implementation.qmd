@@ -21,9 +21,8 @@ library(ccn)
 
 in_between <- function(x, min, max) {
   (x - min) * (max - x) >= 0L
-}
-
 # (N - 6L) * (14L - N) >= 0L
+}
 
 examples <- cheapr::na_insert(ccn:::get_pin("ccn"), prop = 0.25)
 ```

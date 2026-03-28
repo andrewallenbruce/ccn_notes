@@ -16,3 +16,9 @@ library(ccn)
 source("code/gt_theme.R")
 ```
 
+
+```{r}
+provider::clia(count = TRUE)
+provider::clia(ccn = provider::starts_with("11D0"))
+```
+

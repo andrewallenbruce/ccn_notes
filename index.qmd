@@ -1,3 +1,69 @@
-# Preface {.unnumbered}
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
 
-This is a dev notebook for the package ccn.
+# Preface
+
+```{r setup}
+#| message: false
+#| warning: false
+#| echo: false
+#| cache: false
+#| comment: ""
+library(ccn)
+source("code/gt_theme.R")
+```
+
+A __CMS Certification Number__ is a uniform way of identifying a healthcare
+provider or supplier that has or currently does participate in the Medicare and/or Medicaid programs.
+
+The __CCN__ is used to track provider agreements and cost reports. The __NPI__^[National
+Provider Identifier] and __PTAN__^[Provider Transaction Account Number] are
+tied to an entity's CCN. The __RO__^[CMS Regional Office], not the __SA__^[State Agency] or __MAC__^[Medicare Administrative Contractor], assigns the CCN and maintains adequate controls.
+
+::: {#tip-ccn .callout-tip}
+
+## One Term to Rule Them All
+
+In [2007](https://www.cms.gov/medicare/provider-enrollment-and-certification/surveycertificationgeninfo/policy-and-memos-to-states-and-regions-items/cms1206256), the __CCN__ replaced the following terms: 
+
+   * Medicare Provider Number
+   * Medicare Identification Number
+   * OSCAR^[Online Survey, Certification, and Reporting System.] Number
+
+:::
+
+## Canonical Format
+
+A __*canonically valid* CCN__ is an alphanumeric string, either 6 or 10 characters in
+length, that encodes a provider/supplier's state and facility type.
+
+```{r}
+#| label: canonical-ccns
+"670055" |>
+  strsplit("") |>
+  _[[1]] |>
+  as.integer() |>
+  rlang::set_names(1:6) |>
+  as.list() |>
+  list2DF() |>
+  gt::gt() |>
+  gt::fmt_integer(columns = gt::everything()) |>
+  gt::tab_style(
+    style = gt::cell_fill(
+      color = "yellow",
+      alpha = 0.4
+    ),
+    locations = gt::cells_body(columns = c(1:2))
+  ) |>
+  gt::tab_style(
+    style = list(
+      gt::cell_fill(color = "red", alpha = 0.5),
+      gt::cell_text(color = "white", weight = "bold")
+    ),
+    locations = gt::cells_body(columns = c(3:6))
+  ) |>
+  gt_chamber_theme()
+```

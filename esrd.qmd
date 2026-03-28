@@ -15,12 +15,6 @@ library(ccn)
 source("code/gt_theme.R")
 ```
 
-```{r}
-#| label: pkg-version
-#| echo: false
-paste("ccn version:", sQuote(utils::packageVersion("ccn")), "loaded") |> cat()
-```
-
 ## Facility Ranges
 
 The last four characters of a Provider CCN represent the facility type and a unique

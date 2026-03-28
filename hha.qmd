@@ -17,9 +17,6 @@ source("code/gt_theme.R")
 ```
 
 ```{r}
-ccn:::get_pin("hha") |> 
-  collapse::fcount(state) |> 
-  collapse::roworder(-N) |> 
-  print(n = Inf)
+ccn:::get_pin("hha")
 ```
 
