@@ -44,8 +44,10 @@ book:
 format:
   html:
     theme:
-      - zephyr
-      - brand
+      light: flatly
+      dark: darkly
+    mainfont: "Roboto Slab"
+    monofont: "JetBrains Mono"
     date: last-modified
     code-link: true
     code-fold: false

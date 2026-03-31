@@ -73,10 +73,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-22b4aaf4c2978829df3684e8f2c068db.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-821df295893d80c1402da552d3ebd13d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-d9beead67853bfb272464bc60f7305eb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-09ced81515fa05e341d8d71cfc407293.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-d9beead67853bfb272464bc60f7305eb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -104,7 +108,169 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 </head>
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
@@ -125,6 +291,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <a href="./">CCNs</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/andrewallenbruce/ccn_notes" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
     </div>
       </div>
@@ -398,27 +565,27 @@ This message is displayed once per session.</code></pre>
 <pre><code>left join: x[code] 107/113 (94.7%) &lt;1.91:1st&gt; y[code] 56/56 (100%)</code></pre>
 </div>
 <div class="cell-output-display">
-<div id="tzpzswnbvh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="ynbymqsrdj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#tzpzswnbvh table {
+#ynbymqsrdj table {
   font-family: 'Spline Sans Mono', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#tzpzswnbvh thead, #tzpzswnbvh tbody, #tzpzswnbvh tfoot, #tzpzswnbvh tr, #tzpzswnbvh td, #tzpzswnbvh th {
+#ynbymqsrdj thead, #ynbymqsrdj tbody, #ynbymqsrdj tfoot, #ynbymqsrdj tr, #ynbymqsrdj td, #ynbymqsrdj th {
   border-style: none;
 }
 
-#tzpzswnbvh p {
+#ynbymqsrdj p {
   margin: 0;
   padding: 0;
 }
 
-#tzpzswnbvh .gt_table {
+#ynbymqsrdj .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -444,12 +611,12 @@ This message is displayed once per session.</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#tzpzswnbvh .gt_caption {
+#ynbymqsrdj .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#tzpzswnbvh .gt_title {
+#ynbymqsrdj .gt_title {
   color: #333333;
   font-size: 26px;
   font-weight: initial;
@@ -461,7 +628,7 @@ This message is displayed once per session.</code></pre>
   border-bottom-width: 0;
 }
 
-#tzpzswnbvh .gt_subtitle {
+#ynbymqsrdj .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -473,7 +640,7 @@ This message is displayed once per session.</code></pre>
   border-top-width: 0;
 }
 
-#tzpzswnbvh .gt_heading {
+#ynbymqsrdj .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -485,13 +652,13 @@ This message is displayed once per session.</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#tzpzswnbvh .gt_bottom_border {
+#ynbymqsrdj .gt_bottom_border {
   border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#tzpzswnbvh .gt_col_headings {
+#ynbymqsrdj .gt_col_headings {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -506,7 +673,7 @@ This message is displayed once per session.</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#tzpzswnbvh .gt_col_heading {
+#ynbymqsrdj .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -526,7 +693,7 @@ This message is displayed once per session.</code></pre>
   overflow-x: hidden;
 }
 
-#tzpzswnbvh .gt_column_spanner_outer {
+#ynbymqsrdj .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -538,15 +705,15 @@ This message is displayed once per session.</code></pre>
   padding-right: 4px;
 }
 
-#tzpzswnbvh .gt_column_spanner_outer:first-child {
+#ynbymqsrdj .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#tzpzswnbvh .gt_column_spanner_outer:last-child {
+#ynbymqsrdj .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#tzpzswnbvh .gt_column_spanner {
+#ynbymqsrdj .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 0.5px;
   border-bottom-color: #000000;
@@ -558,11 +725,11 @@ This message is displayed once per session.</code></pre>
   width: 100%;
 }
 
-#tzpzswnbvh .gt_spanner_row {
+#ynbymqsrdj .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#tzpzswnbvh .gt_group_heading {
+#ynbymqsrdj .gt_group_heading {
   padding-top: 1.5px;
   padding-bottom: 1.5px;
   padding-left: 5px;
@@ -588,7 +755,7 @@ This message is displayed once per session.</code></pre>
   text-align: left;
 }
 
-#tzpzswnbvh .gt_empty_group_heading {
+#ynbymqsrdj .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -603,15 +770,15 @@ This message is displayed once per session.</code></pre>
   vertical-align: middle;
 }
 
-#tzpzswnbvh .gt_from_md > :first-child {
+#ynbymqsrdj .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#tzpzswnbvh .gt_from_md > :last-child {
+#ynbymqsrdj .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#tzpzswnbvh .gt_row {
+#ynbymqsrdj .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -630,7 +797,7 @@ This message is displayed once per session.</code></pre>
   overflow-x: hidden;
 }
 
-#tzpzswnbvh .gt_stub {
+#ynbymqsrdj .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -643,7 +810,7 @@ This message is displayed once per session.</code></pre>
   padding-right: 5px;
 }
 
-#tzpzswnbvh .gt_stub_row_group {
+#ynbymqsrdj .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -657,15 +824,15 @@ This message is displayed once per session.</code></pre>
   vertical-align: top;
 }
 
-#tzpzswnbvh .gt_row_group_first td {
+#ynbymqsrdj .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#tzpzswnbvh .gt_row_group_first th {
+#ynbymqsrdj .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#tzpzswnbvh .gt_summary_row {
+#ynbymqsrdj .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -675,16 +842,16 @@ This message is displayed once per session.</code></pre>
   padding-right: 5px;
 }
 
-#tzpzswnbvh .gt_first_summary_row {
+#ynbymqsrdj .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#tzpzswnbvh .gt_first_summary_row.thick {
+#ynbymqsrdj .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#tzpzswnbvh .gt_last_summary_row {
+#ynbymqsrdj .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -694,7 +861,7 @@ This message is displayed once per session.</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#tzpzswnbvh .gt_grand_summary_row {
+#ynbymqsrdj .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -704,7 +871,7 @@ This message is displayed once per session.</code></pre>
   padding-right: 5px;
 }
 
-#tzpzswnbvh .gt_first_grand_summary_row {
+#ynbymqsrdj .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -714,7 +881,7 @@ This message is displayed once per session.</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#tzpzswnbvh .gt_last_grand_summary_row_top {
+#ynbymqsrdj .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -724,11 +891,11 @@ This message is displayed once per session.</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#tzpzswnbvh .gt_striped {
+#ynbymqsrdj .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#tzpzswnbvh .gt_table_body {
+#ynbymqsrdj .gt_table_body {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -737,7 +904,7 @@ This message is displayed once per session.</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#tzpzswnbvh .gt_footnotes {
+#ynbymqsrdj .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -751,7 +918,7 @@ This message is displayed once per session.</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#tzpzswnbvh .gt_footnote {
+#ynbymqsrdj .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -760,7 +927,7 @@ This message is displayed once per session.</code></pre>
   padding-right: 5px;
 }
 
-#tzpzswnbvh .gt_sourcenotes {
+#ynbymqsrdj .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -774,7 +941,7 @@ This message is displayed once per session.</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#tzpzswnbvh .gt_sourcenote {
+#ynbymqsrdj .gt_sourcenote {
   font-size: 10px;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -782,89 +949,89 @@ This message is displayed once per session.</code></pre>
   padding-right: 5px;
 }
 
-#tzpzswnbvh .gt_left {
+#ynbymqsrdj .gt_left {
   text-align: left;
 }
 
-#tzpzswnbvh .gt_center {
+#ynbymqsrdj .gt_center {
   text-align: center;
 }
 
-#tzpzswnbvh .gt_right {
+#ynbymqsrdj .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#tzpzswnbvh .gt_font_normal {
+#ynbymqsrdj .gt_font_normal {
   font-weight: normal;
 }
 
-#tzpzswnbvh .gt_font_bold {
+#ynbymqsrdj .gt_font_bold {
   font-weight: bold;
 }
 
-#tzpzswnbvh .gt_font_italic {
+#ynbymqsrdj .gt_font_italic {
   font-style: italic;
 }
 
-#tzpzswnbvh .gt_super {
+#ynbymqsrdj .gt_super {
   font-size: 65%;
 }
 
-#tzpzswnbvh .gt_footnote_marks {
+#ynbymqsrdj .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#tzpzswnbvh .gt_asterisk {
+#ynbymqsrdj .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#tzpzswnbvh .gt_indent_1 {
+#ynbymqsrdj .gt_indent_1 {
   text-indent: 5px;
 }
 
-#tzpzswnbvh .gt_indent_2 {
+#ynbymqsrdj .gt_indent_2 {
   text-indent: 10px;
 }
 
-#tzpzswnbvh .gt_indent_3 {
+#ynbymqsrdj .gt_indent_3 {
   text-indent: 15px;
 }
 
-#tzpzswnbvh .gt_indent_4 {
+#ynbymqsrdj .gt_indent_4 {
   text-indent: 20px;
 }
 
-#tzpzswnbvh .gt_indent_5 {
+#ynbymqsrdj .gt_indent_5 {
   text-indent: 25px;
 }
 
-#tzpzswnbvh .katex-display {
+#ynbymqsrdj .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#tzpzswnbvh div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ynbymqsrdj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 
-#tzpzswnbvh tbody tr:last-child {
+#ynbymqsrdj tbody tr:last-child {
   border-bottom: 2px solid #ffffff00;
 }
 
-#tzpzswnbvh .gt_subtitle {
+#ynbymqsrdj .gt_subtitle {
   padding-top: 0px !important;
   padding-bottom: 4px !important;
 }
 
-#tzpzswnbvh .gt_sourcenote {
+#ynbymqsrdj .gt_sourcenote {
   border-bottom-color: #FFFDF5 !important;
 }
 
-#tzpzswnbvh .gt_heading {
+#ynbymqsrdj .gt_heading {
   padding-bottom: 0px;
   padding-top: 6px;
 }
@@ -1569,27 +1736,27 @@ This message is displayed once per session.</code></pre>
 <span>   <span class="fu">gt_chamber_theme</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>   <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/tab_options.html">tab_options</a></span><span class="op">(</span>quarto.disable_processing <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="tjokcctfnj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="reacrqfnxt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#tjokcctfnj table {
+#reacrqfnxt table {
   font-family: 'Spline Sans Mono', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#tjokcctfnj thead, #tjokcctfnj tbody, #tjokcctfnj tfoot, #tjokcctfnj tr, #tjokcctfnj td, #tjokcctfnj th {
+#reacrqfnxt thead, #reacrqfnxt tbody, #reacrqfnxt tfoot, #reacrqfnxt tr, #reacrqfnxt td, #reacrqfnxt th {
   border-style: none;
 }
 
-#tjokcctfnj p {
+#reacrqfnxt p {
   margin: 0;
   padding: 0;
 }
 
-#tjokcctfnj .gt_table {
+#reacrqfnxt .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1615,12 +1782,12 @@ This message is displayed once per session.</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#tjokcctfnj .gt_caption {
+#reacrqfnxt .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#tjokcctfnj .gt_title {
+#reacrqfnxt .gt_title {
   color: #333333;
   font-size: 26px;
   font-weight: initial;
@@ -1632,7 +1799,7 @@ This message is displayed once per session.</code></pre>
   border-bottom-width: 0;
 }
 
-#tjokcctfnj .gt_subtitle {
+#reacrqfnxt .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1644,7 +1811,7 @@ This message is displayed once per session.</code></pre>
   border-top-width: 0;
 }
 
-#tjokcctfnj .gt_heading {
+#reacrqfnxt .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -1656,13 +1823,13 @@ This message is displayed once per session.</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#tjokcctfnj .gt_bottom_border {
+#reacrqfnxt .gt_bottom_border {
   border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#tjokcctfnj .gt_col_headings {
+#reacrqfnxt .gt_col_headings {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1677,7 +1844,7 @@ This message is displayed once per session.</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#tjokcctfnj .gt_col_heading {
+#reacrqfnxt .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1697,7 +1864,7 @@ This message is displayed once per session.</code></pre>
   overflow-x: hidden;
 }
 
-#tjokcctfnj .gt_column_spanner_outer {
+#reacrqfnxt .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1709,15 +1876,15 @@ This message is displayed once per session.</code></pre>
   padding-right: 4px;
 }
 
-#tjokcctfnj .gt_column_spanner_outer:first-child {
+#reacrqfnxt .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#tjokcctfnj .gt_column_spanner_outer:last-child {
+#reacrqfnxt .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#tjokcctfnj .gt_column_spanner {
+#reacrqfnxt .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 0.5px;
   border-bottom-color: #000000;
@@ -1729,11 +1896,11 @@ This message is displayed once per session.</code></pre>
   width: 100%;
 }
 
-#tjokcctfnj .gt_spanner_row {
+#reacrqfnxt .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#tjokcctfnj .gt_group_heading {
+#reacrqfnxt .gt_group_heading {
   padding-top: 1.5px;
   padding-bottom: 1.5px;
   padding-left: 5px;
@@ -1759,7 +1926,7 @@ This message is displayed once per session.</code></pre>
   text-align: left;
 }
 
-#tjokcctfnj .gt_empty_group_heading {
+#reacrqfnxt .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1774,15 +1941,15 @@ This message is displayed once per session.</code></pre>
   vertical-align: middle;
 }
 
-#tjokcctfnj .gt_from_md > :first-child {
+#reacrqfnxt .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#tjokcctfnj .gt_from_md > :last-child {
+#reacrqfnxt .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#tjokcctfnj .gt_row {
+#reacrqfnxt .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1801,7 +1968,7 @@ This message is displayed once per session.</code></pre>
   overflow-x: hidden;
 }
 
-#tjokcctfnj .gt_stub {
+#reacrqfnxt .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1814,7 +1981,7 @@ This message is displayed once per session.</code></pre>
   padding-right: 5px;
 }
 
-#tjokcctfnj .gt_stub_row_group {
+#reacrqfnxt .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1828,15 +1995,15 @@ This message is displayed once per session.</code></pre>
   vertical-align: top;
 }
 
-#tjokcctfnj .gt_row_group_first td {
+#reacrqfnxt .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#tjokcctfnj .gt_row_group_first th {
+#reacrqfnxt .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#tjokcctfnj .gt_summary_row {
+#reacrqfnxt .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1846,16 +2013,16 @@ This message is displayed once per session.</code></pre>
   padding-right: 5px;
 }
 
-#tjokcctfnj .gt_first_summary_row {
+#reacrqfnxt .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#tjokcctfnj .gt_first_summary_row.thick {
+#reacrqfnxt .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#tjokcctfnj .gt_last_summary_row {
+#reacrqfnxt .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1865,7 +2032,7 @@ This message is displayed once per session.</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#tjokcctfnj .gt_grand_summary_row {
+#reacrqfnxt .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1875,7 +2042,7 @@ This message is displayed once per session.</code></pre>
   padding-right: 5px;
 }
 
-#tjokcctfnj .gt_first_grand_summary_row {
+#reacrqfnxt .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1885,7 +2052,7 @@ This message is displayed once per session.</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#tjokcctfnj .gt_last_grand_summary_row_top {
+#reacrqfnxt .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1895,11 +2062,11 @@ This message is displayed once per session.</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#tjokcctfnj .gt_striped {
+#reacrqfnxt .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#tjokcctfnj .gt_table_body {
+#reacrqfnxt .gt_table_body {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1908,7 +2075,7 @@ This message is displayed once per session.</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#tjokcctfnj .gt_footnotes {
+#reacrqfnxt .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1922,7 +2089,7 @@ This message is displayed once per session.</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#tjokcctfnj .gt_footnote {
+#reacrqfnxt .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1931,7 +2098,7 @@ This message is displayed once per session.</code></pre>
   padding-right: 5px;
 }
 
-#tjokcctfnj .gt_sourcenotes {
+#reacrqfnxt .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1945,7 +2112,7 @@ This message is displayed once per session.</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#tjokcctfnj .gt_sourcenote {
+#reacrqfnxt .gt_sourcenote {
   font-size: 10px;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1953,89 +2120,89 @@ This message is displayed once per session.</code></pre>
   padding-right: 5px;
 }
 
-#tjokcctfnj .gt_left {
+#reacrqfnxt .gt_left {
   text-align: left;
 }
 
-#tjokcctfnj .gt_center {
+#reacrqfnxt .gt_center {
   text-align: center;
 }
 
-#tjokcctfnj .gt_right {
+#reacrqfnxt .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#tjokcctfnj .gt_font_normal {
+#reacrqfnxt .gt_font_normal {
   font-weight: normal;
 }
 
-#tjokcctfnj .gt_font_bold {
+#reacrqfnxt .gt_font_bold {
   font-weight: bold;
 }
 
-#tjokcctfnj .gt_font_italic {
+#reacrqfnxt .gt_font_italic {
   font-style: italic;
 }
 
-#tjokcctfnj .gt_super {
+#reacrqfnxt .gt_super {
   font-size: 65%;
 }
 
-#tjokcctfnj .gt_footnote_marks {
+#reacrqfnxt .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#tjokcctfnj .gt_asterisk {
+#reacrqfnxt .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#tjokcctfnj .gt_indent_1 {
+#reacrqfnxt .gt_indent_1 {
   text-indent: 5px;
 }
 
-#tjokcctfnj .gt_indent_2 {
+#reacrqfnxt .gt_indent_2 {
   text-indent: 10px;
 }
 
-#tjokcctfnj .gt_indent_3 {
+#reacrqfnxt .gt_indent_3 {
   text-indent: 15px;
 }
 
-#tjokcctfnj .gt_indent_4 {
+#reacrqfnxt .gt_indent_4 {
   text-indent: 20px;
 }
 
-#tjokcctfnj .gt_indent_5 {
+#reacrqfnxt .gt_indent_5 {
   text-indent: 25px;
 }
 
-#tjokcctfnj .katex-display {
+#reacrqfnxt .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#tjokcctfnj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#reacrqfnxt div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 
-#tjokcctfnj tbody tr:last-child {
+#reacrqfnxt tbody tr:last-child {
   border-bottom: 2px solid #ffffff00;
 }
 
-#tjokcctfnj .gt_subtitle {
+#reacrqfnxt .gt_subtitle {
   padding-top: 0px !important;
   padding-bottom: 4px !important;
 }
 
-#tjokcctfnj .gt_sourcenote {
+#reacrqfnxt .gt_sourcenote {
   border-bottom-color: #FFFDF5 !important;
 }
 
-#tjokcctfnj .gt_heading {
+#reacrqfnxt .gt_heading {
   padding-bottom: 0px;
   padding-top: 6px;
 }
@@ -2503,27 +2670,27 @@ This message is displayed once per session.</code></pre>
 <span>   <span class="fu">gt_chamber_theme</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>   <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/tab_options.html">tab_options</a></span><span class="op">(</span>quarto.disable_processing <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="chgipoafgw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="yglrkkvird" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#chgipoafgw table {
+#yglrkkvird table {
   font-family: 'Spline Sans Mono', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#chgipoafgw thead, #chgipoafgw tbody, #chgipoafgw tfoot, #chgipoafgw tr, #chgipoafgw td, #chgipoafgw th {
+#yglrkkvird thead, #yglrkkvird tbody, #yglrkkvird tfoot, #yglrkkvird tr, #yglrkkvird td, #yglrkkvird th {
   border-style: none;
 }
 
-#chgipoafgw p {
+#yglrkkvird p {
   margin: 0;
   padding: 0;
 }
 
-#chgipoafgw .gt_table {
+#yglrkkvird .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2549,12 +2716,12 @@ This message is displayed once per session.</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#chgipoafgw .gt_caption {
+#yglrkkvird .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#chgipoafgw .gt_title {
+#yglrkkvird .gt_title {
   color: #333333;
   font-size: 26px;
   font-weight: initial;
@@ -2566,7 +2733,7 @@ This message is displayed once per session.</code></pre>
   border-bottom-width: 0;
 }
 
-#chgipoafgw .gt_subtitle {
+#yglrkkvird .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2578,7 +2745,7 @@ This message is displayed once per session.</code></pre>
   border-top-width: 0;
 }
 
-#chgipoafgw .gt_heading {
+#yglrkkvird .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -2590,13 +2757,13 @@ This message is displayed once per session.</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#chgipoafgw .gt_bottom_border {
+#yglrkkvird .gt_bottom_border {
   border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#chgipoafgw .gt_col_headings {
+#yglrkkvird .gt_col_headings {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2611,7 +2778,7 @@ This message is displayed once per session.</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#chgipoafgw .gt_col_heading {
+#yglrkkvird .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2631,7 +2798,7 @@ This message is displayed once per session.</code></pre>
   overflow-x: hidden;
 }
 
-#chgipoafgw .gt_column_spanner_outer {
+#yglrkkvird .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2643,15 +2810,15 @@ This message is displayed once per session.</code></pre>
   padding-right: 4px;
 }
 
-#chgipoafgw .gt_column_spanner_outer:first-child {
+#yglrkkvird .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#chgipoafgw .gt_column_spanner_outer:last-child {
+#yglrkkvird .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#chgipoafgw .gt_column_spanner {
+#yglrkkvird .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 0.5px;
   border-bottom-color: #000000;
@@ -2663,11 +2830,11 @@ This message is displayed once per session.</code></pre>
   width: 100%;
 }
 
-#chgipoafgw .gt_spanner_row {
+#yglrkkvird .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#chgipoafgw .gt_group_heading {
+#yglrkkvird .gt_group_heading {
   padding-top: 1.5px;
   padding-bottom: 1.5px;
   padding-left: 5px;
@@ -2693,7 +2860,7 @@ This message is displayed once per session.</code></pre>
   text-align: left;
 }
 
-#chgipoafgw .gt_empty_group_heading {
+#yglrkkvird .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2708,15 +2875,15 @@ This message is displayed once per session.</code></pre>
   vertical-align: middle;
 }
 
-#chgipoafgw .gt_from_md > :first-child {
+#yglrkkvird .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#chgipoafgw .gt_from_md > :last-child {
+#yglrkkvird .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#chgipoafgw .gt_row {
+#yglrkkvird .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2735,7 +2902,7 @@ This message is displayed once per session.</code></pre>
   overflow-x: hidden;
 }
 
-#chgipoafgw .gt_stub {
+#yglrkkvird .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2748,7 +2915,7 @@ This message is displayed once per session.</code></pre>
   padding-right: 5px;
 }
 
-#chgipoafgw .gt_stub_row_group {
+#yglrkkvird .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2762,15 +2929,15 @@ This message is displayed once per session.</code></pre>
   vertical-align: top;
 }
 
-#chgipoafgw .gt_row_group_first td {
+#yglrkkvird .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#chgipoafgw .gt_row_group_first th {
+#yglrkkvird .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#chgipoafgw .gt_summary_row {
+#yglrkkvird .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2780,16 +2947,16 @@ This message is displayed once per session.</code></pre>
   padding-right: 5px;
 }
 
-#chgipoafgw .gt_first_summary_row {
+#yglrkkvird .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#chgipoafgw .gt_first_summary_row.thick {
+#yglrkkvird .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#chgipoafgw .gt_last_summary_row {
+#yglrkkvird .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2799,7 +2966,7 @@ This message is displayed once per session.</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#chgipoafgw .gt_grand_summary_row {
+#yglrkkvird .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2809,7 +2976,7 @@ This message is displayed once per session.</code></pre>
   padding-right: 5px;
 }
 
-#chgipoafgw .gt_first_grand_summary_row {
+#yglrkkvird .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2819,7 +2986,7 @@ This message is displayed once per session.</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#chgipoafgw .gt_last_grand_summary_row_top {
+#yglrkkvird .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2829,11 +2996,11 @@ This message is displayed once per session.</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#chgipoafgw .gt_striped {
+#yglrkkvird .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#chgipoafgw .gt_table_body {
+#yglrkkvird .gt_table_body {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2842,7 +3009,7 @@ This message is displayed once per session.</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#chgipoafgw .gt_footnotes {
+#yglrkkvird .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2856,7 +3023,7 @@ This message is displayed once per session.</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#chgipoafgw .gt_footnote {
+#yglrkkvird .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2865,7 +3032,7 @@ This message is displayed once per session.</code></pre>
   padding-right: 5px;
 }
 
-#chgipoafgw .gt_sourcenotes {
+#yglrkkvird .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2879,7 +3046,7 @@ This message is displayed once per session.</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#chgipoafgw .gt_sourcenote {
+#yglrkkvird .gt_sourcenote {
   font-size: 10px;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2887,89 +3054,89 @@ This message is displayed once per session.</code></pre>
   padding-right: 5px;
 }
 
-#chgipoafgw .gt_left {
+#yglrkkvird .gt_left {
   text-align: left;
 }
 
-#chgipoafgw .gt_center {
+#yglrkkvird .gt_center {
   text-align: center;
 }
 
-#chgipoafgw .gt_right {
+#yglrkkvird .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#chgipoafgw .gt_font_normal {
+#yglrkkvird .gt_font_normal {
   font-weight: normal;
 }
 
-#chgipoafgw .gt_font_bold {
+#yglrkkvird .gt_font_bold {
   font-weight: bold;
 }
 
-#chgipoafgw .gt_font_italic {
+#yglrkkvird .gt_font_italic {
   font-style: italic;
 }
 
-#chgipoafgw .gt_super {
+#yglrkkvird .gt_super {
   font-size: 65%;
 }
 
-#chgipoafgw .gt_footnote_marks {
+#yglrkkvird .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#chgipoafgw .gt_asterisk {
+#yglrkkvird .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#chgipoafgw .gt_indent_1 {
+#yglrkkvird .gt_indent_1 {
   text-indent: 5px;
 }
 
-#chgipoafgw .gt_indent_2 {
+#yglrkkvird .gt_indent_2 {
   text-indent: 10px;
 }
 
-#chgipoafgw .gt_indent_3 {
+#yglrkkvird .gt_indent_3 {
   text-indent: 15px;
 }
 
-#chgipoafgw .gt_indent_4 {
+#yglrkkvird .gt_indent_4 {
   text-indent: 20px;
 }
 
-#chgipoafgw .gt_indent_5 {
+#yglrkkvird .gt_indent_5 {
   text-indent: 25px;
 }
 
-#chgipoafgw .katex-display {
+#yglrkkvird .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#chgipoafgw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#yglrkkvird div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 
-#chgipoafgw tbody tr:last-child {
+#yglrkkvird tbody tr:last-child {
   border-bottom: 2px solid #ffffff00;
 }
 
-#chgipoafgw .gt_subtitle {
+#yglrkkvird .gt_subtitle {
   padding-top: 0px !important;
   padding-bottom: 4px !important;
 }
 
-#chgipoafgw .gt_sourcenote {
+#yglrkkvird .gt_sourcenote {
   border-bottom-color: #FFFDF5 !important;
 }
 
-#chgipoafgw .gt_heading {
+#yglrkkvird .gt_heading {
   padding-bottom: 0px;
   padding-top: 6px;
 }
@@ -8867,6 +9034,19 @@ This message is displayed once per session.</code></pre>
 
 </section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
