@@ -21,9 +21,9 @@ provider or supplier that has or currently does participate in the Medicare and/
 
 The __CCN__ is used to track provider agreements and cost reports. The __NPI__^[National
 Provider Identifier] and __PTAN__^[Provider Transaction Account Number] are
-tied to an entity's CCN. The __RO__^[CMS Regional Office], not the __SA__^[State Agency] or __MAC__^[Medicare Administrative Contractor], assigns the CCN and maintains adequate controls.
+tied to an entity's CCN. The __RO__^[CMS Regional Office] (not the __SA__^[State Agency] or __MAC__^[Medicare Administrative Contractor]) assigns the CCN and maintains adequate controls.
 
-::: {#tip-ccn .callout-tip}
+::: {.callout-tip}
 
 ## One Term to Rule Them All
 
@@ -31,7 +31,7 @@ In [2007](https://www.cms.gov/medicare/provider-enrollment-and-certification/sur
 
    * Medicare Provider Number
    * Medicare Identification Number
-   * OSCAR^[Online Survey, Certification, and Reporting System.] Number
+   * OSCAR Number^[Online Survey, Certification, and Reporting System.]
 
 :::
 

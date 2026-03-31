@@ -3,7 +3,8 @@ output: html_document
 editor_options: 
   chunk_output_type: console
 ---
-# Medicare Providers
+
+# Medicare (Part A)
 
 ```{r setup}
 #| message: false
@@ -15,13 +16,28 @@ library(ccn)
 source("code/gt_theme.R")
 ```
 
-CCNs for Providers paid under _Medicare Part A_ have __6 digits__. The first two characters represent the state and the last four characters represent the facility type and a unique
-identifier.
+<br>
+
+The CCN for providers and suppliers paid under _Medicare Part A_ have __6 digits__. 
+
+The first two characters represent the state in which the provider is located. 
+
+The last four characters identify the type of facility.
+
+::: {.callout-tip}
+
+## OPO Exception
+
+Organ procurement organizations (OPOs) are assigned a 6-digit alphanumeric CCN. 
+   * The first 2 digits identify the State code. 
+   * The third digit is the alpha character "P". 
+   * The final 3 digits are the unique facility identifier.
+
+:::
 
 ## Facility Ranges
 
-The last four characters of a Provider CCN represent the facility type and a unique
-identifier. The facility type is encoded in the third character of the last four
+The facility type is encoded in the third character of the last four
 characters. The table below summarizes the valid facility type codes and their
 corresponding ranges. 
 
