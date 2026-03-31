@@ -14,7 +14,7 @@ color:
     warmgraymedium: "#C4C4C4"
   foreground: black
   background: white
-  primary: warmgraylight
+  primary: warmgraydark
   secondary: warmgraydark
   light: warmgraylight
   dark: warmgraydark

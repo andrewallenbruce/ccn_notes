@@ -71,7 +71,7 @@ format:
     toc-title: "Contents"
     urlcolor: "#FC4C02"
     linkcolor: "darkred"
-    fontcolor: "#43464b"
+    fontcolor: "#43466b"
     default-image-extension: png
     fig-cap-location: margin
     fig-width: 5

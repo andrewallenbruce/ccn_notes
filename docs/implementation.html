@@ -78,9 +78,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-da20407cf26fa8485970518743f0f7f9.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-cd443bb8154a274f38b0e5d19289d860.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-cd443bb8154a274f38b0e5d19289d860.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-cd443bb8154a274f38b0e5d19289d860.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-613ea41385c225beb313dc9ccd172745.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-613ea41385c225beb313dc9ccd172745.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-613ea41385c225beb313dc9ccd172745.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -401,13 +401,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="va">x</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;ccn[25]&gt;
- [1] 001500 001502 001503 001509 001510 NA     001513 NA     001515 001517
-[11] 001518 001524 NA     001528 001529 001530 NA     001535 001536 001541
-[21] 001545 NA     001552 001556 001557</code></pre>
+ [1] 001500 NA     NA     001509 001510 001511 NA     001514 001515 001517
+[11] 001518 NA     001527 001528 001529 NA     001534 001535 001536 001541
+[21] NA     NA     001552 NA     NA    </code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> ccn [1:25] 001500, 001502, 001503, 001509, 001510, NA    , 001513, NA    ,...</code></pre>
+<pre><code> ccn [1:25] 001500, NA    , NA    , 001509, 001510, 001511, NA    , 001514,...</code></pre>
 </div>
 </div>
 <p>We then follow up with a user friendly helper. Here we’ll use <code><a href="https://vctrs.r-lib.org/reference/vec_cast.html">vec_cast()</a></code> to allow it to accept anything coercible to a character:</p>
@@ -448,8 +448,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="va">x</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;ccn[20]&gt;
- [1] 001500 001502 001503 001509 001510 &lt;NA&gt;   001513 &lt;NA&gt;   001515 001517
-[11] 001518 001524 &lt;NA&gt;   001528 001529 001530 &lt;NA&gt;   001535 001536 001541</code></pre>
+ [1] 001500 &lt;NA&gt;   &lt;NA&gt;   001509 001510 001511 &lt;NA&gt;   001514 001515 001517
+[11] 001518 &lt;NA&gt;   001527 001528 001529 &lt;NA&gt;   001534 001535 001536 001541</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -471,22 +471,22 @@ Tip
 <div class="cell-output cell-output-stdout">
 <pre><code>        x
 1  001500
-2  001502
-3  001503
+2    &lt;NA&gt;
+3    &lt;NA&gt;
 4  001509
 5  001510
-6    &lt;NA&gt;
-7  001513
-8    &lt;NA&gt;
+6  001511
+7    &lt;NA&gt;
+8  001514
 9  001515
 10 001517
 11 001518
-12 001524
-13   &lt;NA&gt;
+12   &lt;NA&gt;
+13 001527
 14 001528
 15 001529
-16 001530
-17   &lt;NA&gt;
+16   &lt;NA&gt;
+17 001534
 18 001535
 19 001536
 20 001541</code></pre>
@@ -504,29 +504,29 @@ Tip
    x     
    &lt;ccn&gt; 
  1 001500
- 2 001502
- 3 001503
+ 2 NA    
+ 3 NA    
  4 001509
  5 001510
- 6 NA    
- 7 001513
- 8 NA    
+ 6 001511
+ 7 NA    
+ 8 001514
  9 001515
 10 001517
 11 001518
-12 001524
-13 NA    
+12 NA    
+13 001527
 14 001528
 15 001529
-16 001530
-17 NA    
+16 NA    
+17 001534
 18 001535
 19 001536
 20 001541</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> ccn [1:20] 001500, 001502, 001503, 001509, 001510, &lt;NA&gt;, 001513, &lt;NA&gt;, 001...</code></pre>
+<pre><code> ccn [1:20] 001500, &lt;NA&gt;, &lt;NA&gt;, 001509, 001510, 001511, &lt;NA&gt;, 001514, 00151...</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">

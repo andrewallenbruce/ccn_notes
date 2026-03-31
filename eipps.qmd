@@ -19,6 +19,7 @@ The first 2 digits identify the State in which the provider is located. The thir
 (which is alpha) identifies the type of unit or swing-bed designation. The last 3 digits
 must be exactly the same as the last 3 digits of the parent provider.
 
+
 ```{r setup}
 #| message: false
 #| warning: false
@@ -29,9 +30,11 @@ library(ccn)
 source("code/gt_theme.R")
 ```
 
-| EXAMPLE: 21-0101 - ABC Hospital
-|          21-T101 - ABC Hospital Rehabilitation Unit
+| EXAMPLE
+|    21-0101 - ABC Hospital
+|    21-T101 - ABC Hospital Rehabilitation Unit
 |
+
 
 The RO assigns the following alpha-characters in the third position as indicated:
 

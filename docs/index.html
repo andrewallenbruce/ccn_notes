@@ -78,9 +78,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-da20407cf26fa8485970518743f0f7f9.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-cd443bb8154a274f38b0e5d19289d860.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-cd443bb8154a274f38b0e5d19289d860.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-cd443bb8154a274f38b0e5d19289d860.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-613ea41385c225beb313dc9ccd172745.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-613ea41385c225beb313dc9ccd172745.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-613ea41385c225beb313dc9ccd172745.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -296,8 +296,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>
 <a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a>
   <ul class="collapse">
-<li><a href="#one-term-to-rule-them-all" id="toc-one-term-to-rule-them-all" class="nav-link" data-scroll-target="#one-term-to-rule-them-all">One Term to Rule Them All</a></li>
-  <li><a href="#canonical-format" id="toc-canonical-format" class="nav-link" data-scroll-target="#canonical-format">Canonical Format</a></li>
+<li><a href="#canonical-format" id="toc-canonical-format" class="nav-link" data-scroll-target="#canonical-format">Canonical Format</a></li>
   <li><a href="#providers-vs.-suppliers" id="toc-providers-vs.-suppliers" class="nav-link" data-scroll-target="#providers-vs.-suppliers">Providers Vs. Suppliers</a></li>
   </ul>
 </li>
@@ -336,38 +335,50 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>A <strong>CMS Certification Number</strong> is a uniform way of identifying a healthcare provider or supplier that has or currently does participate in the Medicare and/or Medicaid programs.</p>
 <p>The <strong>CCN</strong> is used to track provider agreements and cost reports. The <strong>NPI</strong><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> and <strong>PTAN</strong><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> are tied to an entity’s CCN. The <strong>RO</strong><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> (not the <strong>SA</strong><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> or <strong>MAC</strong><a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>) assigns the CCN and maintains adequate controls.</p>
 <div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;National Provider Identifier</p></div><div id="fn2"><p><sup>2</sup>&nbsp;Provider Transaction Account Number</p></div><div id="fn3"><p><sup>3</sup>&nbsp;CMS Regional Office</p></div><div id="fn4"><p><sup>4</sup>&nbsp;State Agency</p></div><div id="fn5"><p><sup>5</sup>&nbsp;Medicare Administrative Contractor</p></div></div><p><br></p>
-<section id="one-term-to-rule-them-all" class="level2 callout-info page-columns page-full"><h2 class="anchored" data-anchor-id="one-term-to-rule-them-all">One Term to Rule Them All</h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>One Term to Rule Them All
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>In <a href="https://www.cms.gov/medicare/provider-enrollment-and-certification/surveycertificationgeninfo/policy-and-memos-to-states-and-regions-items/cms1206256">2007</a>, the <strong>CCN</strong> replaced the following terms:</p>
 <ul>
 <li>Medicare Provider Number</li>
 <li>Medicare Identification Number</li>
 <li>OSCAR Number<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>
 </li>
-</ul><div class="no-row-height column-margin column-container"><div id="fn6"><p><sup>6</sup>&nbsp;Online Survey, Certification, and Reporting System.</p></div></div></section><section id="canonical-format" class="level2"><h2 class="anchored" data-anchor-id="canonical-format">Canonical Format</h2>
+</ul>
+</div>
+</div>
+<div class="no-row-height column-margin column-container"><div id="fn6"><p><sup>6</sup>&nbsp;Online Survey, Certification, and Reporting System.</p></div></div><section id="canonical-format" class="level2"><h2 class="anchored" data-anchor-id="canonical-format">Canonical Format</h2>
 <p>A <strong><em>canonically valid</em> CCN</strong> is an alphanumeric string, either 6 or 10 characters in length, that encodes a provider/supplier’s state and facility type.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="bhthpxrutu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="rzuwaxhfxj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#bhthpxrutu table {
+#rzuwaxhfxj table {
   font-family: 'Spline Sans Mono', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#bhthpxrutu thead, #bhthpxrutu tbody, #bhthpxrutu tfoot, #bhthpxrutu tr, #bhthpxrutu td, #bhthpxrutu th {
+#rzuwaxhfxj thead, #rzuwaxhfxj tbody, #rzuwaxhfxj tfoot, #rzuwaxhfxj tr, #rzuwaxhfxj td, #rzuwaxhfxj th {
   border-style: none;
 }
 
-#bhthpxrutu p {
+#rzuwaxhfxj p {
   margin: 0;
   padding: 0;
 }
 
-#bhthpxrutu .gt_table {
+#rzuwaxhfxj .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -393,12 +404,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#bhthpxrutu .gt_caption {
+#rzuwaxhfxj .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#bhthpxrutu .gt_title {
+#rzuwaxhfxj .gt_title {
   color: #333333;
   font-size: 26px;
   font-weight: initial;
@@ -410,7 +421,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#bhthpxrutu .gt_subtitle {
+#rzuwaxhfxj .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -422,7 +433,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#bhthpxrutu .gt_heading {
+#rzuwaxhfxj .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -434,13 +445,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#bhthpxrutu .gt_bottom_border {
+#rzuwaxhfxj .gt_bottom_border {
   border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#bhthpxrutu .gt_col_headings {
+#rzuwaxhfxj .gt_col_headings {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -455,7 +466,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#bhthpxrutu .gt_col_heading {
+#rzuwaxhfxj .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -475,7 +486,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#bhthpxrutu .gt_column_spanner_outer {
+#rzuwaxhfxj .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -487,15 +498,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#bhthpxrutu .gt_column_spanner_outer:first-child {
+#rzuwaxhfxj .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#bhthpxrutu .gt_column_spanner_outer:last-child {
+#rzuwaxhfxj .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#bhthpxrutu .gt_column_spanner {
+#rzuwaxhfxj .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 0.5px;
   border-bottom-color: #000000;
@@ -507,11 +518,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#bhthpxrutu .gt_spanner_row {
+#rzuwaxhfxj .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#bhthpxrutu .gt_group_heading {
+#rzuwaxhfxj .gt_group_heading {
   padding-top: 1.5px;
   padding-bottom: 1.5px;
   padding-left: 5px;
@@ -537,7 +548,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#bhthpxrutu .gt_empty_group_heading {
+#rzuwaxhfxj .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -552,15 +563,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#bhthpxrutu .gt_from_md > :first-child {
+#rzuwaxhfxj .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#bhthpxrutu .gt_from_md > :last-child {
+#rzuwaxhfxj .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#bhthpxrutu .gt_row {
+#rzuwaxhfxj .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -579,7 +590,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#bhthpxrutu .gt_stub {
+#rzuwaxhfxj .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -592,7 +603,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#bhthpxrutu .gt_stub_row_group {
+#rzuwaxhfxj .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -606,15 +617,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#bhthpxrutu .gt_row_group_first td {
+#rzuwaxhfxj .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#bhthpxrutu .gt_row_group_first th {
+#rzuwaxhfxj .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#bhthpxrutu .gt_summary_row {
+#rzuwaxhfxj .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -624,16 +635,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#bhthpxrutu .gt_first_summary_row {
+#rzuwaxhfxj .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#bhthpxrutu .gt_first_summary_row.thick {
+#rzuwaxhfxj .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#bhthpxrutu .gt_last_summary_row {
+#rzuwaxhfxj .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -643,7 +654,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#bhthpxrutu .gt_grand_summary_row {
+#rzuwaxhfxj .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -653,7 +664,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#bhthpxrutu .gt_first_grand_summary_row {
+#rzuwaxhfxj .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -663,7 +674,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#bhthpxrutu .gt_last_grand_summary_row_top {
+#rzuwaxhfxj .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -673,11 +684,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#bhthpxrutu .gt_striped {
+#rzuwaxhfxj .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#bhthpxrutu .gt_table_body {
+#rzuwaxhfxj .gt_table_body {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -686,7 +697,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#bhthpxrutu .gt_footnotes {
+#rzuwaxhfxj .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -700,7 +711,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#bhthpxrutu .gt_footnote {
+#rzuwaxhfxj .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -709,7 +720,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#bhthpxrutu .gt_sourcenotes {
+#rzuwaxhfxj .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -723,7 +734,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#bhthpxrutu .gt_sourcenote {
+#rzuwaxhfxj .gt_sourcenote {
   font-size: 10px;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -731,89 +742,89 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#bhthpxrutu .gt_left {
+#rzuwaxhfxj .gt_left {
   text-align: left;
 }
 
-#bhthpxrutu .gt_center {
+#rzuwaxhfxj .gt_center {
   text-align: center;
 }
 
-#bhthpxrutu .gt_right {
+#rzuwaxhfxj .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#bhthpxrutu .gt_font_normal {
+#rzuwaxhfxj .gt_font_normal {
   font-weight: normal;
 }
 
-#bhthpxrutu .gt_font_bold {
+#rzuwaxhfxj .gt_font_bold {
   font-weight: bold;
 }
 
-#bhthpxrutu .gt_font_italic {
+#rzuwaxhfxj .gt_font_italic {
   font-style: italic;
 }
 
-#bhthpxrutu .gt_super {
+#rzuwaxhfxj .gt_super {
   font-size: 65%;
 }
 
-#bhthpxrutu .gt_footnote_marks {
+#rzuwaxhfxj .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#bhthpxrutu .gt_asterisk {
+#rzuwaxhfxj .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#bhthpxrutu .gt_indent_1 {
+#rzuwaxhfxj .gt_indent_1 {
   text-indent: 5px;
 }
 
-#bhthpxrutu .gt_indent_2 {
+#rzuwaxhfxj .gt_indent_2 {
   text-indent: 10px;
 }
 
-#bhthpxrutu .gt_indent_3 {
+#rzuwaxhfxj .gt_indent_3 {
   text-indent: 15px;
 }
 
-#bhthpxrutu .gt_indent_4 {
+#rzuwaxhfxj .gt_indent_4 {
   text-indent: 20px;
 }
 
-#bhthpxrutu .gt_indent_5 {
+#rzuwaxhfxj .gt_indent_5 {
   text-indent: 25px;
 }
 
-#bhthpxrutu .katex-display {
+#rzuwaxhfxj .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#bhthpxrutu div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#rzuwaxhfxj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 
-#bhthpxrutu tbody tr:last-child {
+#rzuwaxhfxj tbody tr:last-child {
   border-bottom: 2px solid #ffffff00;
 }
 
-#bhthpxrutu .gt_subtitle {
+#rzuwaxhfxj .gt_subtitle {
   padding-top: 0px !important;
   padding-bottom: 4px !important;
 }
 
-#bhthpxrutu .gt_sourcenote {
+#rzuwaxhfxj .gt_sourcenote {
   border-bottom-color: #FFFDF5 !important;
 }
 
-#bhthpxrutu .gt_heading {
+#rzuwaxhfxj .gt_heading {
   padding-bottom: 0px;
   padding-top: 6px;
 }
@@ -1353,7 +1364,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>::: {.callout-info}</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>:::{.callout-important}</span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="fu">## One Term to Rule Them All</span></span>
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
