@@ -6,6 +6,13 @@ editor_options:
 
 # CLIA
 
+<br>
+
+Laboratories that examine human specimens for the diagnosis, prevention, or
+treatment of any disease or impairment of, or the assessment of the health of,
+human beings are yet another category of suppliers and must meet Clinical
+Laboratory Improvements of 1988 Act (CLIA) requirements. 
+
 ```{r setup}
 #| message: false
 #| warning: false

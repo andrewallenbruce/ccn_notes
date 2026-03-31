@@ -37,29 +37,8 @@ typography:
   headings:
     family: Atkinson Hyperlegible Next
     weight: 600
-  link:
-    color: darkblue
   monospace:
     family: JetBrains Mono
     # size: 0.9em
     weight: 400
 
-
-defaults:
-  quarto:
-    format:
-      html:
-        grid:
-          body-width: 1000px
-        anchor-sections: true
-        code-fold: false
-        code-link: true
-        code-overflow: scroll
-        code-tools: true
-        date: last-modified
-        embed-resources: false
-        fig-cap-location: margin
-        footnotes-hover: true
-        highlight-style: tango
-        reference-location: margin
-        toc: true

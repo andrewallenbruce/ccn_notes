@@ -4,7 +4,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-# Preface
+# Preface {.unnumbered}
 
 ```{r setup}
 #| message: false
@@ -23,8 +23,9 @@ The __CCN__ is used to track provider agreements and cost reports. The __NPI__^[
 Provider Identifier] and __PTAN__^[Provider Transaction Account Number] are
 tied to an entity's CCN. The __RO__^[CMS Regional Office] (not the __SA__^[State Agency] or __MAC__^[Medicare Administrative Contractor]) assigns the CCN and maintains adequate controls.
 
+<br>
 
-::: {.callout-tip}
+::: {.callout-info}
 
 ## One Term to Rule Them All
 
@@ -71,48 +72,52 @@ length, that encodes a provider/supplier's state and facility type.
 ```
 
 
-## Meaning of Providers and Suppliers
+## Providers Vs. Suppliers
 
-Medicare differentiates between __providers__ and __suppliers__, the
-general distinction being that providers are parties who care for patients
-awaiting, receiving, or recuperating from treatment by intervening
-practitioners while suppliers include those who furnish goods and services
-used in care and treatment. Medicaid terminology, by contrast, uses "provider"
-generically to include all health care vendors. (See 42 CFR 431.107(a) and
-433.37.)
+Medicare differentiates between __providers__ and __suppliers__, the general
+distinction being that providers are parties who care for patients awaiting,
+receiving, or recuperating from treatment by intervening practitioners while
+suppliers include those who furnish goods and services used in care and
+treatment. 
 
 Medicare providers and suppliers are defined at 42 CFR 498.2. In Medicare, as
-specified in §1861(u) of the Social Security Act, providers include Hospitals,
-Critical Access Hospitals (CAHs), Skilled Nursing Facilities (SNFs), Home Health
-Agencies (HHAs), Hospices and Comprehensive Outpatient Rehabilitation Facilities
-(CORFs). Under §1835(a)(2) of the Act, clinics, rehabilitation agencies, or
-public health agencies are included as providers if such clinic or agency meets
-the requirements of §1861(p)(4)(A). Community Mental Health Centers (CMHC) are
-providers of services for partial hospitalization services only. Providers must
-meet CoPs or Requirements for SNFs to participate in Medicare. (See definitions
-at 42 CFR 498.2.)
+specified in §1861(u) of the Social Security Act, providers include:
 
-Portable X-Ray Services, End-Stage Renal Disease (ESRD) facilities, Ambulatory
-Surgical Centers (ASCs), and Organ Procurement Organizations (OPOs) are
-_suppliers_ that must meet conditions for coverage to participate in Medicare.
-Rural Health Clinics (RHCs) are suppliers that must meet conditions for
-certification to participate in Medicare. Federally Qualified Health Centers
-(FQHCs) are also recognized as suppliers of services and provide ambulatory care
-services similar to those provided by RHCs. FQHCs may be located in urban, as
-well as rural, areas. FQHCs are required to meet the same health and safety
-standards as RHCs, with the exception of the certification procedures. FQHCs
-self-attest to their compliance with Medicare conditions for coverage and are
-only surveyed by CMS in connection with complaint investigations. The above
-types of suppliers are distinguished from other suppliers, e.g., pharmacies,
-prosthesis suppliers, etc., for which there are no conditions for coverage or
-certification, and which qualify for Medicare through the enrollment process.
+   - Hospitals
+   - Critical Access Hospitals (CAHs)
+   - Skilled Nursing Facilities (SNFs)
+   - Home Health Agencies (HHAs)
+   - Hospices
+   - Comprehensive Outpatient Rehabilitation Facilities (CORFs)
 
-Laboratories that examine human specimens for the diagnosis, prevention, or
-treatment of any disease or impairment of, or the assessment of the health of,
-human beings are yet another category of suppliers and must meet Clinical
-Laboratory Improvements of 1988 Act (CLIA) requirements. As previously stated,
-Medicaid does not distinguish between providers and suppliers. Section
-1902(a)(27) of the Act provides for agreements with every person or institution
-providing services under the State plan. 42 CFR 431.107(a) refers to all
-providers of services (including individual practitioners and groups of
-practitioners).
+Under §1835(a)(2) of the Act, clinics, rehabilitation agencies, or public health
+agencies are included as providers if such clinic or agency meets the
+requirements of §1861(p)(4)(A).
+
+Community Mental Health Centers (CMHC) are providers of services for partial
+hospitalization services only. Providers must meet CoPs or Requirements for SNFs
+to participate in Medicare. (See definitions at 42 CFR 498.2.)
+
+
+_Suppliers_ that must meet conditions for coverage/certification to participate
+in Medicare are:
+
+   - Portable X-Ray Services (PXRF)
+   - End-Stage Renal Disease (ESRD) facilities
+   - Ambulatory Surgical Centers (ASC)
+   - Organ Procurement Organizations (OPO)
+   - Rural Health Clinics (RHC)
+   - Federally Qualified Health Centers (FQHC)
+   - Laboratories (CLIA)
+
+The above types of suppliers are distinguished from other suppliers, e.g.,
+pharmacies, prosthesis suppliers, etc., for which there are no conditions for
+coverage or certification, and which qualify for Medicare through the enrollment
+process.
+
+Medicaid, by contrast, uses __provider__ generically to include all health care
+vendors. (See 42 CFR 431.107(a) and 433.37) and does not distinguish between
+providers and suppliers. Section 1902(a)(27) of the Act provides for agreements
+with every person or institution providing services under the State plan. 42 CFR
+431.107(a) refers to all providers of services (including individual
+practitioners and groups of practitioners).

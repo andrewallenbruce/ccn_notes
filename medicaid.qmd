@@ -3,6 +3,7 @@ output: html_document
 editor_options: 
   chunk_output_type: console
 ---
+
 # Medicaid
 
 ```{r setup}
@@ -14,6 +15,8 @@ editor_options:
 library(ccn)
 source("code/gt_theme.R")
 ```
+
+<br>
 
 Title XIX-only providers are identified by a 6-position alphanumeric CCN.
 Positions one and two identify the state in which the provider is located.

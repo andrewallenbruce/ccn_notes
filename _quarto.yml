@@ -1,6 +1,13 @@
 project:
   type: book
   output-dir: docs
+execute: 
+  eval: true
+  echo: true
+  warning: false
+fig-align: center
+fig-height: 4
+fig-width: 6
 
 book:
   title: "CCNs"
@@ -12,6 +19,7 @@ book:
   page-footer: "© Copyright 2026 Andrew Allen Bruce."
   site-url: https://andrewallenbruce.github.io/ccn_notes/
   repo-url: https://github.com/andrewallenbruce/ccn_notes
+  
   chapters:
     - index.qmd
     - state.qmd
@@ -41,5 +49,32 @@ book:
     - implementation.qmd
     - resources.qmd
 
-
-
+format:
+  html:
+    grid:
+      body-width: 1000px
+    anchor-sections: true
+    code-fold: false
+    code-link: true
+    code-overflow: scroll
+    code-tools: true
+    code-copy: true
+    date: last-modified
+    embed-resources: false
+    footnotes-hover: true
+    reference-location: margin
+    toc: true
+    toc-depth: 2
+    toc-title: "Contents"
+    urlcolor: "darkred"
+    linkcolor: "darkred"
+    fontcolor: "darkgrey"
+    default-image-extension: png
+    fig-cap-location: margin
+    fig-width: 5
+    fig-asp: 0.67
+    fig-align: center
+    fig-dpi: 300
+    fig-format: png
+    smooth-scroll: true
+    syntax-highlighting: tango

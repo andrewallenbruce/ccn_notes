@@ -17,6 +17,7 @@ source("code/gt_theme.R")
 ```
 
 ```{r}
-ccn:::get_pin("hha")
+ccn:::get_pin("hha") |> 
+  collapse::roworder(ccn)
 ```
 

@@ -3,6 +3,7 @@ output: html_document
 editor_options: 
   chunk_output_type: console
 ---
+
 # OPO
 
 ```{r setup}
@@ -13,7 +14,10 @@ editor_options:
 #| comment: ""
 library(ccn)
 source("code/gt_theme.R")
+x <- ccn:::get_pin("opo")
 ```
+
+<br>
 
 Organ procurement organizations (OPOs) are assigned a 6-digit alphanumeric CCN.
 The first 2 digits identify the State code. The third digit is the alpha
@@ -26,48 +30,124 @@ organ("05P001") |>
   str()
 ```
 
-## Examples
+## Codes
 
 ```{r}
-o <- ccn:::get_pin("opo")
+x$opo_codes |> 
+  collapse::roworder(code) |> 
+  gt::gt() |> 
+  gt::tab_options(quarto.disable_processing = TRUE) |> 
+  gtExtras::gt_theme_nytimes() |> 
+  gt::tab_style(
+    style = gt::cell_text(
+      font = gt::google_font(name = "JetBrains Mono"), color = "grey30", size = "small"), 
+    locations = gt::cells_body(columns = c(code, opo))) |> 
+  gt::tab_style(
+    style = gt::cell_text(weight = "bold"), 
+    locations = gt::cells_body(columns = code)) |> 
+  gt::tab_style(
+    style = gt::cell_text(color = "grey25"), 
+    locations = gt::cells_body(columns = opo))
+```
 
-o$opo_county |>
-  collapse::roworder(code, state, county) |>
-  fastplyr::f_group_by(code, state) |>
-  fastplyr::f_summarise(
-    n = length(county),
-    county = stringr::str_to_title(toString(county))
-  ) |> 
-  fastplyr::f_arrange(-n) |> 
-  collapse::rnm(
-    n = counties,
-    county = county_names
-  ) |> 
-  collapse::join(o$opo_codes) |> 
-  collapse::colorder(code, state, opo) |>
-  collapse::slt(-county_names) |> 
+
+## Counties
+
+```{r}
+#| label: opo-county
+cnty <- x$opo_county |>
+  collapse::slt(-code) |> 
+  collapse::roworder(state, county) |>
+  collapse::fgroup_by(state) |>
+  collapse::fsummarise(counties = length(county)) |> 
+  collapse::fungroup()
+
+x$opo_county |> 
+  collapse::slt(-county) |> 
+  collapse::funique() |> 
+  collapse::fgroup_by(state) |>
+  collapse::fsummarise(codes = toString(code)) |> 
+  collapse::join(cnty, verbose = 0L) |> 
   collapse::roworder(state) |> 
-   gt::gt() |> 
-   gt_chamber_theme() |>
-   gt::tab_options(quarto.disable_processing = TRUE)
+  gt::gt() |> 
+  gt::tab_options(quarto.disable_processing = TRUE) |> 
+  gtExtras::gt_theme_nytimes() |> 
+  gt::tab_style(
+    style = gt::cell_text(
+      font = gt::google_font(name = "JetBrains Mono"), color = "grey30", size = "small"), 
+    locations = gt::cells_body(columns = c(codes, counties))) |> 
+  gt::tab_style(
+    style = gt::cell_text(weight = "bold"), 
+    locations = gt::cells_body(columns = state)) |> 
+  gt::tab_style(
+    style = gt::cell_text(color = "grey25"), 
+    locations = gt::cells_body(columns = state))
 ```
 
 ### Active
 
 ```{r}
-o$opo_active |> 
-  collapse::roworder(-orig_date) |>
+x$opo_active |> 
+  collapse::roworder(ccn) |>
+  collapse::slt(-region, -orig_date) |> 
    gt::gt() |> 
-   gt_chamber_theme() |>
-   gt::tab_options(quarto.disable_processing = TRUE)
+   gt::tab_options(quarto.disable_processing = TRUE) |> 
+  gtExtras::gt_theme_nytimes() |> 
+  gt::tab_style(
+    style = gt::cell_text(
+      font = gt::google_font(name = "JetBrains Mono"), color = "grey30", size = "small"), 
+    locations = gt::cells_body(columns = ccn)) |> 
+  gt::tab_style(
+    style = gt::cell_text(weight = "bold"), 
+    locations = gt::cells_body(columns = state)) |> 
+  gt::tab_style(
+    style = gt::cell_text(color = "grey50", size = "small"), 
+    locations = gt::cells_body(columns = opo))
 ```
 
 ### Approved Transplant Programs
 
 ```{r}
-ccn:::get_pin("txc") |>
-   gt::gt() |> 
-   gt_chamber_theme() |>
-   gt::tab_options(quarto.disable_processing = TRUE)
+ccn:::get_pin("txc") |> 
+  collapse::slt(code = txc_code, desc = txc_type) |> 
+  collapse::funique() |> 
+  gt::gt() |> 
+  gt::tab_options(quarto.disable_processing = TRUE) |> 
+  gtExtras::gt_theme_nytimes() |> 
+  gt::tab_style(
+    style = gt::cell_text(
+      font = gt::google_font(name = "JetBrains Mono"), color = "grey30", size = "small"), 
+    locations = gt::cells_body(columns = code)) |> 
+  gt::tab_style(
+    style = gt::cell_text(weight = "bold"), 
+    locations = gt::cells_body(columns = code)) |> 
+  gt::tab_style(
+    style = gt::cell_text(color = "grey50", size = "small"), 
+    locations = gt::cells_body(columns = desc))
+```
+
+
+```{r}
+ccn:::get_pin("txc") |> 
+  collapse::slt(-txc_type) |> 
+  collapse::rnm(code = optn_code, txc = txc_code) |> 
+  collapse::funique() |> 
+  collapse::roworder(ccn, state, code) |>
+  collapse::fgroup_by(ccn, state, code) |>
+  collapse::fsummarise(txc = toString(txc)) |> 
+  collapse::fungroup() |> 
+  gt::gt() |> 
+  gt::tab_options(quarto.disable_processing = TRUE) |> 
+  gtExtras::gt_theme_nytimes() |> 
+  gt::tab_style(
+    style = gt::cell_text(
+      font = gt::google_font(name = "JetBrains Mono"), color = "grey30", size = "small"), 
+    locations = gt::cells_body(columns = c(ccn, txc))) |> 
+  gt::tab_style(
+    style = gt::cell_text(weight = "bold"), 
+    locations = gt::cells_body(columns = state)) |> 
+  gt::tab_style(
+    style = gt::cell_text(color = "grey50", size = "small"), 
+    locations = gt::cells_body(columns = code))
 ```
 
