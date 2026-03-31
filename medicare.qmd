@@ -18,10 +18,8 @@ source("code/gt_theme.R")
 
 <br>
 
-The CCN for providers and suppliers paid under _Medicare Part A_ have __6 digits__. 
-
-The first two characters represent the state in which the provider is located. 
-
+Providers and Suppliers paid under _Medicare Part A_ have __6 digit__ CCNs.
+The first two characters represent the state in which the provider is located.
 The last four characters identify the type of facility.
 
 ::: {.callout-tip}
@@ -30,9 +28,9 @@ The last four characters identify the type of facility.
 
 Organ procurement organizations (OPOs) are assigned a 6-digit alphanumeric CCN.
 
-    * The first 2 digits identify the State code. 
-    * The third digit is the alpha character "P". 
-    * The final 3 digits are the unique facility identifier.
+   * The first 2 digits identify the State code. 
+   * The third digit is the alpha character "P". 
+   * The final 3 digits are the unique facility identifier.
 
 :::
 

@@ -6,7 +6,7 @@ book:
   title: "CCNs"
   subtitle: "CMS Certification Numbers"
   author: "Andrew Allen Bruce"
-  date: "03/30/2026"
+  date: "03/31/2026"
   back-to-top-navigation: true
   page-navigation: true
   page-footer: "© Copyright 2026 Andrew Allen Bruce."
@@ -40,20 +40,6 @@ book:
   appendices:
     - implementation.qmd
     - resources.qmd
-
-format:
-  html:
-    theme:
-      light: flatly
-      dark: darkly
-    mainfont: "Roboto Slab"
-    monofont: "JetBrains Mono"
-    date: last-modified
-    code-link: true
-    code-fold: false
-    code-tools: true
-    embed-resources: false
-    toc: true
 
 
 

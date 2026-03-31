@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.35">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
 <meta name="dcterms.date" content="2026-03-28">
+
 <title>2&nbsp; State – CCNs</title>
 <style>
 /* Default styles provided by pandoc.
@@ -21,42 +24,8 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
+
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
@@ -73,14 +42,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-22b4aaf4c2978829df3684e8f2c068db.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-c943065d77282ebd5d9e65b63875d113.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-6ca64512da29a85853d1208ba0fb1440.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-c943065d77282ebd5d9e65b63875d113.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-d9beead67853bfb272464bc60f7305eb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-09ced81515fa05e341d8d71cfc407293.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-d9beead67853bfb272464bc60f7305eb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-8d894f5bccf40d72b3f72cda0efa201e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-8d894f5bccf40d72b3f72cda0efa201e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-8d894f5bccf40d72b3f72cda0efa201e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -107,173 +77,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+
+
 </head>
-<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
-    const toggleBodyColorMode = (bsSheetEl) => {
-      const mode = bsSheetEl.getAttribute("data-mode");
-      const bodyEl = window.document.querySelector("body");
-      if (mode === "dark") {
-        bodyEl.classList.add("quarto-dark");
-        bodyEl.classList.remove("quarto-light");
-      } else {
-        bodyEl.classList.add("quarto-light");
-        bodyEl.classList.remove("quarto-dark");
-      }
-    }
-    const toggleBodyColorPrimary = () => {
-      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
-      if (bsSheetEl) {
-        toggleBodyColorMode(bsSheetEl);
-      }
-    }
-    const setColorSchemeToggle = (alternate) => {
-      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-      for (let i=0; i < toggles.length; i++) {
-        const toggle = toggles[i];
-        if (toggle) {
-          if (alternate) {
-            toggle.classList.add("alternate");
-          } else {
-            toggle.classList.remove("alternate");
-          }
-        }
-      }
-    };
-    const toggleColorMode = (alternate) => {
-      // Switch the stylesheets
-      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
-      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-      manageTransitions('#quarto-margin-sidebar .nav-link', false);
-      if (alternate) {
-        // note: dark is layered on light, we don't disable primary!
-        enableStylesheet(alternateStylesheets);
-        for (const sheetNode of alternateStylesheets) {
-          if (sheetNode.id === "quarto-bootstrap") {
-            toggleBodyColorMode(sheetNode);
-          }
-        }
-      } else {
-        disableStylesheet(alternateStylesheets);
-        enableStylesheet(primaryStylesheets)
-        toggleBodyColorPrimary();
-      }
-      manageTransitions('#quarto-margin-sidebar .nav-link', true);
-      // Switch the toggles
-      setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
-      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-        manageTransitions("body", false);
-        window.scrollTo(0, 1);
-        setTimeout(() => {
-          window.scrollTo(0, 0);
-          manageTransitions("body", true);
-        }, 40);
-      }
-    }
-    const disableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        stylesheet.rel = 'disabled-stylesheet';
-      }
-    }
-    const enableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
-          stylesheet.rel = 'stylesheet';
-        }
-      }
-    }
-    const manageTransitions = (selector, allowTransitions) => {
-      const els = window.document.querySelectorAll(selector);
-      for (let i=0; i < els.length; i++) {
-        const el = els[i];
-        if (allowTransitions) {
-          el.classList.remove('notransition');
-        } else {
-          el.classList.add('notransition');
-        }
-      }
-    }
-    const isFileUrl = () => {
-      return window.location.protocol === 'file:';
-    }
-    const hasAlternateSentinel = () => {
-      let styleSentinel = getColorSchemeSentinel();
-      if (styleSentinel !== null) {
-        return styleSentinel === "alternate";
-      } else {
-        return false;
-      }
-    }
-    const setStyleSentinel = (alternate) => {
-      const value = alternate ? "alternate" : "default";
-      if (!isFileUrl()) {
-        window.localStorage.setItem("quarto-color-scheme", value);
-      } else {
-        localAlternateSentinel = value;
-      }
-    }
-    const getColorSchemeSentinel = () => {
-      if (!isFileUrl()) {
-        const storageValue = window.localStorage.getItem("quarto-color-scheme");
-        return storageValue != null ? storageValue : localAlternateSentinel;
-      } else {
-        return localAlternateSentinel;
-      }
-    }
-    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-      let newTheme = '';
-      if(authorPrefersDark) {
-        newTheme = isAlternate ? baseTheme : alternateTheme;
-      } else {
-        newTheme = isAlternate ? alternateTheme : baseTheme;
-      }
-      const changeGiscusTheme = () => {
-        // From: https://github.com/giscus/giscus/issues/336
-        const sendMessage = (message) => {
-          const iframe = document.querySelector('iframe.giscus-frame');
-          if (!iframe) return;
-          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-        }
-        sendMessage({
-          setConfig: {
-            theme: newTheme
-          }
-        });
-      }
-      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-      if (isGiscussLoaded) {
-        changeGiscusTheme();
-      }
-    };
-    const authorPrefersDark = false;
-    const darkModeDefault = authorPrefersDark;
-      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-    // Dark / light mode switch
-    window.quartoToggleColorScheme = () => {
-      // Read the current dark / light value
-      let toAlternate = !hasAlternateSentinel();
-      toggleColorMode(toAlternate);
-      setStyleSentinel(toAlternate);
-      toggleGiscusIfUsed(toAlternate, darkModeDefault);
-      window.dispatchEvent(new Event('resize'));
-    };
-    // Switch to dark mode if need be
-    if (hasAlternateSentinel()) {
-      toggleColorMode(true);
-    } else {
-      toggleColorMode(false);
-    }
-  </script>
+
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -284,14 +97,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">CCNs</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/andrewallenbruce/ccn_notes" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
     </div>
       </div>
@@ -302,7 +118,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
@@ -322,8 +138,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./opo.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">OPO</span></span></a>
@@ -354,7 +170,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./medicaid.html" class="sidebar-item-text sidebar-link">
@@ -363,8 +179,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./nf.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Nursing</span></span></a>
@@ -383,7 +199,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./eipps.html" class="sidebar-item-text sidebar-link">
@@ -392,8 +208,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./unit.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Unit</span></span></a>
@@ -412,7 +228,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./supplier.html" class="sidebar-item-text sidebar-link">
@@ -421,8 +237,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./asc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">ASC</span></span></a>
@@ -441,7 +257,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
@@ -450,8 +266,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./implementation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Implementation</span></span></a>
@@ -464,28 +280,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-</li>
+  </li>
     </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li>
-<a href="#cms-state-codes" id="toc-cms-state-codes" class="nav-link active" data-scroll-target="#cms-state-codes"><span class="header-section-number">2.1</span> CMS State Codes</a>
+  <li><a href="#cms-state-codes" id="toc-cms-state-codes" class="nav-link active" data-scroll-target="#cms-state-codes"><span class="header-section-number">2.1</span> CMS State Codes</a>
   <ul class="collapse">
-<li><a href="#cms-regional-offices" id="toc-cms-regional-offices" class="nav-link" data-scroll-target="#cms-regional-offices"><span class="header-section-number">2.1.1</span> CMS Regional Offices</a></li>
+  <li><a href="#cms-regional-offices" id="toc-cms-regional-offices" class="nav-link" data-scroll-target="#cms-regional-offices"><span class="header-section-number">2.1.1</span> CMS Regional Offices</a></li>
+  </ul></li>
   </ul>
-</li>
-  </ul></nav>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">
-<span class="chapter-number">2</span>&nbsp; <span class="chapter-title">State</span>
-</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">State</span></h1>
 </div>
 
 
@@ -505,32 +323,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><section id="cms-state-codes" class="level2" data-number="2.1"><h2 data-number="2.1" class="anchored" data-anchor-id="cms-state-codes">
-<span class="header-section-number">2.1</span> CMS State Codes</h2>
+</header>
+
+
+<section id="cms-state-codes" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="cms-state-codes"><span class="header-section-number">2.1</span> CMS State Codes</h2>
 <p>The first two characters of each CCN represents the state in which the provider or supplier is located.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fdpexhqgxl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="jelgremxht" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#fdpexhqgxl table {
+#jelgremxht table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#fdpexhqgxl thead, #fdpexhqgxl tbody, #fdpexhqgxl tfoot, #fdpexhqgxl tr, #fdpexhqgxl td, #fdpexhqgxl th {
+#jelgremxht thead, #jelgremxht tbody, #jelgremxht tfoot, #jelgremxht tr, #jelgremxht td, #jelgremxht th {
   border-style: none;
 }
 
-#fdpexhqgxl p {
+#jelgremxht p {
   margin: 0;
   padding: 0;
 }
 
-#fdpexhqgxl .gt_table {
+#jelgremxht .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -556,12 +377,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#fdpexhqgxl .gt_caption {
+#jelgremxht .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#fdpexhqgxl .gt_title {
+#jelgremxht .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -573,7 +394,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#fdpexhqgxl .gt_subtitle {
+#jelgremxht .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -585,7 +406,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#fdpexhqgxl .gt_heading {
+#jelgremxht .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -597,13 +418,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#fdpexhqgxl .gt_bottom_border {
+#jelgremxht .gt_bottom_border {
   border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#fdpexhqgxl .gt_col_headings {
+#jelgremxht .gt_col_headings {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -618,7 +439,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#fdpexhqgxl .gt_col_heading {
+#jelgremxht .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 12px;
@@ -638,7 +459,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#fdpexhqgxl .gt_column_spanner_outer {
+#jelgremxht .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 12px;
@@ -650,15 +471,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#fdpexhqgxl .gt_column_spanner_outer:first-child {
+#jelgremxht .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#fdpexhqgxl .gt_column_spanner_outer:last-child {
+#jelgremxht .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#fdpexhqgxl .gt_column_spanner {
+#jelgremxht .gt_column_spanner {
   border-bottom-style: none;
   border-bottom-width: 1px;
   border-bottom-color: #334422;
@@ -670,11 +491,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#fdpexhqgxl .gt_spanner_row {
+#jelgremxht .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#fdpexhqgxl .gt_group_heading {
+#jelgremxht .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -700,7 +521,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#fdpexhqgxl .gt_empty_group_heading {
+#jelgremxht .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -715,15 +536,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#fdpexhqgxl .gt_from_md > :first-child {
+#jelgremxht .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#fdpexhqgxl .gt_from_md > :last-child {
+#jelgremxht .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#fdpexhqgxl .gt_row {
+#jelgremxht .gt_row {
   padding-top: 7px;
   padding-bottom: 7px;
   padding-left: 5px;
@@ -742,7 +563,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#fdpexhqgxl .gt_stub {
+#jelgremxht .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -755,7 +576,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#fdpexhqgxl .gt_stub_row_group {
+#jelgremxht .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -769,15 +590,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#fdpexhqgxl .gt_row_group_first td {
+#jelgremxht .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#fdpexhqgxl .gt_row_group_first th {
+#jelgremxht .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#fdpexhqgxl .gt_summary_row {
+#jelgremxht .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -787,16 +608,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#fdpexhqgxl .gt_first_summary_row {
+#jelgremxht .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#fdpexhqgxl .gt_first_summary_row.thick {
+#jelgremxht .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#fdpexhqgxl .gt_last_summary_row {
+#jelgremxht .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -806,7 +627,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#fdpexhqgxl .gt_grand_summary_row {
+#jelgremxht .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -816,7 +637,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#fdpexhqgxl .gt_first_grand_summary_row {
+#jelgremxht .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -826,7 +647,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#fdpexhqgxl .gt_last_grand_summary_row_top {
+#jelgremxht .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -836,11 +657,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#fdpexhqgxl .gt_striped {
+#jelgremxht .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#fdpexhqgxl .gt_table_body {
+#jelgremxht .gt_table_body {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -849,7 +670,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #FFFFFF;
 }
 
-#fdpexhqgxl .gt_footnotes {
+#jelgremxht .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -863,7 +684,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#fdpexhqgxl .gt_footnote {
+#jelgremxht .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -872,7 +693,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#fdpexhqgxl .gt_sourcenotes {
+#jelgremxht .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -886,7 +707,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#fdpexhqgxl .gt_sourcenote {
+#jelgremxht .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -894,407 +715,292 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#fdpexhqgxl .gt_left {
+#jelgremxht .gt_left {
   text-align: left;
 }
 
-#fdpexhqgxl .gt_center {
+#jelgremxht .gt_center {
   text-align: center;
 }
 
-#fdpexhqgxl .gt_right {
+#jelgremxht .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#fdpexhqgxl .gt_font_normal {
+#jelgremxht .gt_font_normal {
   font-weight: normal;
 }
 
-#fdpexhqgxl .gt_font_bold {
+#jelgremxht .gt_font_bold {
   font-weight: bold;
 }
 
-#fdpexhqgxl .gt_font_italic {
+#jelgremxht .gt_font_italic {
   font-style: italic;
 }
 
-#fdpexhqgxl .gt_super {
+#jelgremxht .gt_super {
   font-size: 65%;
 }
 
-#fdpexhqgxl .gt_footnote_marks {
+#jelgremxht .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#fdpexhqgxl .gt_asterisk {
+#jelgremxht .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#fdpexhqgxl .gt_indent_1 {
+#jelgremxht .gt_indent_1 {
   text-indent: 5px;
 }
 
-#fdpexhqgxl .gt_indent_2 {
+#jelgremxht .gt_indent_2 {
   text-indent: 10px;
 }
 
-#fdpexhqgxl .gt_indent_3 {
+#jelgremxht .gt_indent_3 {
   text-indent: 15px;
 }
 
-#fdpexhqgxl .gt_indent_4 {
+#jelgremxht .gt_indent_4 {
   text-indent: 20px;
 }
 
-#fdpexhqgxl .gt_indent_5 {
+#jelgremxht .gt_indent_5 {
   text-indent: 25px;
 }
 
-#fdpexhqgxl .katex-display {
+#jelgremxht .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#fdpexhqgxl div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#jelgremxht div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 <table class="gt_table" data-quarto-disable-processing="true" data-quarto-bootstrap="false">
-<thead><tr class="gt_col_headings">
-<th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase;" scope="col" id="abbr">abbr</th>
+  <thead>
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase;" scope="col" id="abbr">abbr</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase;" scope="col" id="name">name</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase;" scope="col" id="code">code</th>
-    </tr></thead>
-<tbody class="gt_table_body">
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">AK</td>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">AK</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Alaska</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">02</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">AL</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">02</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">AL</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Alabama</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">01</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">AR</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">01</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">AR</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Arkansas</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">04, 89</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">AS</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">04, 89</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">AS</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">American Samoa</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">64</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">AZ</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">64</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">AZ</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Arizona</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">00, 03</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">CA</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">00, 03</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">CA</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">California</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">05, 55, 75, 92, A0, A1, B2</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">CN</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">05, 55, 75, 92, A0, A1, B2</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">CN</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Canada</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">56</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">CO</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">56</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">CO</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Colorado</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">06, 91</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">CT</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">06, 91</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">CT</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Connecticut</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">07, 81</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">DC</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">07, 81</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">DC</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">District of Columbia</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">09</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">DE</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">09</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">DE</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Delaware</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">08</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">FC</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">08</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">FC</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Foreign Country</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">99</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">FL</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">99</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">FL</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Florida</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">10, 68, 69, A2</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">GA</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">10, 68, 69, A2</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">GA</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Georgia</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">11, 85</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">GU</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">11, 85</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">GU</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Guam</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">65</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">HI</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">65</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">HI</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Hawaii</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">12</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">IA</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">12</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">IA</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Iowa</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">16, 76</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">ID</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">16, 76</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">ID</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Idaho</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">13, 54</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">IL</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">13, 54</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">IL</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Illinois</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">14, 78</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">IN</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">14, 78</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">IN</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Indiana</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">15</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">KS</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">15</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">KS</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Kansas</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">17, 70</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">KY</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">17, 70</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">KY</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Kentucky</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">18, B0</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">LA</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">18, B0</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">LA</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Louisiana</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">19, 71, 95, A3</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">MA</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">19, 71, 95, A3</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">MA</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Massachusetts</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">22, 82</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">MD</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">22, 82</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">MD</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Maryland</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">21, 80</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">ME</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">21, 80</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">ME</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Maine</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">20</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">MI</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">20</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">MI</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Michigan</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">23, A4</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">MN</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">23, A4</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">MN</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Minnesota</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">24, 77</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">MO</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">24, 77</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">MO</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Missouri</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">26, 79</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">MP</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">26, 79</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">MP</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Mariana Islands</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">66</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">MS</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">66</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">MS</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Mississippi</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">25, A5</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">MT</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">25, A5</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">MT</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Montana</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">27</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">MX</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">27</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">MX</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Mexico</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">59</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">NC</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">59</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">NC</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">North Carolina</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">34, 86</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">ND</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">34, 86</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">ND</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">North Dakota</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">35</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">NE</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">35</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">NE</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Nebraska</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">28</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">NH</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">28</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">NH</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">New Hampshire</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">30</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">NJ</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">30</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">NJ</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">New Jersey</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">31, 83</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">NM</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">31, 83</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">NM</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">New Mexico</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">32, 96</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">NV</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">32, 96</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">NV</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Nevada</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">29</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">NY</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">29</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">NY</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">New York</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">33, 57</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">OH</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">33, 57</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">OH</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Ohio</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">36, 72, A6</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">OK</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">36, 72, A6</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">OK</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Oklahoma</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">37, 90</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">OR</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">37, 90</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">OR</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Oregon</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">38, 93</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">PA</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">38, 93</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">PA</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Pennsylvania</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">39, 73, A7</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">PR</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">39, 73, A7</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">PR</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Puerto Rico</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">40, 84</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">RI</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">40, 84</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">RI</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Rhode Island</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">41</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">SC</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">41</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">SC</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">South Carolina</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">42, 87</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">SD</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">42, 87</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">SD</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">South Dakota</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">43</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">TN</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">43</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">TN</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Tennessee</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">44, 88, A8</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">TX</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">44, 88, A8</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">TX</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Texas</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">45, 67, 74, 97, A9</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">UT</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">45, 67, 74, 97, A9</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">UT</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Utah</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">46</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">VA</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">46</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">VA</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Virginia</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">49</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">VI</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">49</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">VI</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Virgin Islands</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">48</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">VT</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">48</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">VT</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Vermont</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">47</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">WA</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">47</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">WA</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Washington</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">50, 94</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">WI</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">50, 94</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">WI</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Wisconsin</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">52</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">WV</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">52</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">WV</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">West Virginia</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">51, 58, B1</td>
-</tr>
-<tr>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">WY</td>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">51, 58, B1</td></tr>
+    <tr><td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">WY</td>
 <td headers="name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Wyoming</td>
-<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">53</td>
-</tr>
-</tbody>
+<td headers="code" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">53</td></tr>
+  </tbody>
+  
 </table>
 </div>
 </div>
 </div>
-<section id="cms-regional-offices" class="level3" data-number="2.1.1"><h3 data-number="2.1.1" class="anchored" data-anchor-id="cms-regional-offices">
-<span class="header-section-number">2.1.1</span> CMS Regional Offices</h3>
+<section id="cms-regional-offices" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="cms-regional-offices"><span class="header-section-number">2.1.1</span> CMS Regional Offices</h3>
 <div class="cell">
 <div class="cell-output-display">
-<div id="ithgghlrqu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="ancfhhwkgm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#ithgghlrqu table {
+#ancfhhwkgm table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ithgghlrqu thead, #ithgghlrqu tbody, #ithgghlrqu tfoot, #ithgghlrqu tr, #ithgghlrqu td, #ithgghlrqu th {
+#ancfhhwkgm thead, #ancfhhwkgm tbody, #ancfhhwkgm tfoot, #ancfhhwkgm tr, #ancfhhwkgm td, #ancfhhwkgm th {
   border-style: none;
 }
 
-#ithgghlrqu p {
+#ancfhhwkgm p {
   margin: 0;
   padding: 0;
 }
 
-#ithgghlrqu .gt_table {
+#ancfhhwkgm .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1320,12 +1026,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#ithgghlrqu .gt_caption {
+#ancfhhwkgm .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ithgghlrqu .gt_title {
+#ancfhhwkgm .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1337,7 +1043,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#ithgghlrqu .gt_subtitle {
+#ancfhhwkgm .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1349,7 +1055,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#ithgghlrqu .gt_heading {
+#ancfhhwkgm .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -1361,13 +1067,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ithgghlrqu .gt_bottom_border {
+#ancfhhwkgm .gt_bottom_border {
   border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ithgghlrqu .gt_col_headings {
+#ancfhhwkgm .gt_col_headings {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1382,7 +1088,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ithgghlrqu .gt_col_heading {
+#ancfhhwkgm .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 12px;
@@ -1402,7 +1108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#ithgghlrqu .gt_column_spanner_outer {
+#ancfhhwkgm .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 12px;
@@ -1414,15 +1120,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#ithgghlrqu .gt_column_spanner_outer:first-child {
+#ancfhhwkgm .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ithgghlrqu .gt_column_spanner_outer:last-child {
+#ancfhhwkgm .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ithgghlrqu .gt_column_spanner {
+#ancfhhwkgm .gt_column_spanner {
   border-bottom-style: none;
   border-bottom-width: 1px;
   border-bottom-color: #334422;
@@ -1434,11 +1140,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#ithgghlrqu .gt_spanner_row {
+#ancfhhwkgm .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ithgghlrqu .gt_group_heading {
+#ancfhhwkgm .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1464,7 +1170,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#ithgghlrqu .gt_empty_group_heading {
+#ancfhhwkgm .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1479,15 +1185,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#ithgghlrqu .gt_from_md > :first-child {
+#ancfhhwkgm .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ithgghlrqu .gt_from_md > :last-child {
+#ancfhhwkgm .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ithgghlrqu .gt_row {
+#ancfhhwkgm .gt_row {
   padding-top: 7px;
   padding-bottom: 7px;
   padding-left: 5px;
@@ -1506,7 +1212,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#ithgghlrqu .gt_stub {
+#ancfhhwkgm .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1519,7 +1225,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ithgghlrqu .gt_stub_row_group {
+#ancfhhwkgm .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1533,15 +1239,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#ithgghlrqu .gt_row_group_first td {
+#ancfhhwkgm .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ithgghlrqu .gt_row_group_first th {
+#ancfhhwkgm .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ithgghlrqu .gt_summary_row {
+#ancfhhwkgm .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1551,16 +1257,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ithgghlrqu .gt_first_summary_row {
+#ancfhhwkgm .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ithgghlrqu .gt_first_summary_row.thick {
+#ancfhhwkgm .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ithgghlrqu .gt_last_summary_row {
+#ancfhhwkgm .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1570,7 +1276,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#ithgghlrqu .gt_grand_summary_row {
+#ancfhhwkgm .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1580,7 +1286,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ithgghlrqu .gt_first_grand_summary_row {
+#ancfhhwkgm .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1590,7 +1296,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#ithgghlrqu .gt_last_grand_summary_row_top {
+#ancfhhwkgm .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1600,11 +1306,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#ithgghlrqu .gt_striped {
+#ancfhhwkgm .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ithgghlrqu .gt_table_body {
+#ancfhhwkgm .gt_table_body {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1613,7 +1319,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #FFFFFF;
 }
 
-#ithgghlrqu .gt_footnotes {
+#ancfhhwkgm .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1627,7 +1333,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ithgghlrqu .gt_footnote {
+#ancfhhwkgm .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1636,7 +1342,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ithgghlrqu .gt_sourcenotes {
+#ancfhhwkgm .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1650,7 +1356,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ithgghlrqu .gt_sourcenote {
+#ancfhhwkgm .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1658,161 +1364,131 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ithgghlrqu .gt_left {
+#ancfhhwkgm .gt_left {
   text-align: left;
 }
 
-#ithgghlrqu .gt_center {
+#ancfhhwkgm .gt_center {
   text-align: center;
 }
 
-#ithgghlrqu .gt_right {
+#ancfhhwkgm .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ithgghlrqu .gt_font_normal {
+#ancfhhwkgm .gt_font_normal {
   font-weight: normal;
 }
 
-#ithgghlrqu .gt_font_bold {
+#ancfhhwkgm .gt_font_bold {
   font-weight: bold;
 }
 
-#ithgghlrqu .gt_font_italic {
+#ancfhhwkgm .gt_font_italic {
   font-style: italic;
 }
 
-#ithgghlrqu .gt_super {
+#ancfhhwkgm .gt_super {
   font-size: 65%;
 }
 
-#ithgghlrqu .gt_footnote_marks {
+#ancfhhwkgm .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ithgghlrqu .gt_asterisk {
+#ancfhhwkgm .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ithgghlrqu .gt_indent_1 {
+#ancfhhwkgm .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ithgghlrqu .gt_indent_2 {
+#ancfhhwkgm .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ithgghlrqu .gt_indent_3 {
+#ancfhhwkgm .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ithgghlrqu .gt_indent_4 {
+#ancfhhwkgm .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ithgghlrqu .gt_indent_5 {
+#ancfhhwkgm .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ithgghlrqu .katex-display {
+#ancfhhwkgm .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ithgghlrqu div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ancfhhwkgm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 <table class="gt_table" data-quarto-disable-processing="true" data-quarto-bootstrap="false">
-<thead><tr class="gt_col_headings">
-<th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase;" scope="col" id="region">region</th>
+  <thead>
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase;" scope="col" id="region">region</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase;" scope="col" id="office">office</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase;" scope="col" id="state">state</th>
-    </tr></thead>
-<tbody class="gt_table_body">
-<tr>
-<td headers="region" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">I</td>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="region" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">I</td>
 <td headers="office" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Boston</td>
-<td headers="state" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">CT, MA, ME, NH, RI, VT</td>
-</tr>
-<tr>
-<td headers="region" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">II</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">CT, MA, ME, NH, RI, VT</td></tr>
+    <tr><td headers="region" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">II</td>
 <td headers="office" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">New York City</td>
-<td headers="state" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">NJ, NY, PR, VI</td>
-</tr>
-<tr>
-<td headers="region" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">III</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">NJ, NY, PR, VI</td></tr>
+    <tr><td headers="region" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">III</td>
 <td headers="office" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Philadelphia</td>
-<td headers="state" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">DC, DE, MD, PA, VA, WV</td>
-</tr>
-<tr>
-<td headers="region" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">IV</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">DC, DE, MD, PA, VA, WV</td></tr>
+    <tr><td headers="region" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">IV</td>
 <td headers="office" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Atlanta</td>
-<td headers="state" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">AL, FL, GA, KY, MS, NC, SC, TN</td>
-</tr>
-<tr>
-<td headers="region" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">IX</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">AL, FL, GA, KY, MS, NC, SC, TN</td></tr>
+    <tr><td headers="region" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">IX</td>
 <td headers="office" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">San Francisco</td>
-<td headers="state" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">AS, AZ, CA, GU, HI, MP, NV</td>
-</tr>
-<tr>
-<td headers="region" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">V</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">AS, AZ, CA, GU, HI, MP, NV</td></tr>
+    <tr><td headers="region" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">V</td>
 <td headers="office" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Chicago</td>
-<td headers="state" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">IL, IN, MI, MN, OH, WI</td>
-</tr>
-<tr>
-<td headers="region" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">VI</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">IL, IN, MI, MN, OH, WI</td></tr>
+    <tr><td headers="region" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">VI</td>
 <td headers="office" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Dallas</td>
-<td headers="state" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">AR, LA, NM, OK, TX</td>
-</tr>
-<tr>
-<td headers="region" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">VII</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">AR, LA, NM, OK, TX</td></tr>
+    <tr><td headers="region" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">VII</td>
 <td headers="office" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Kansas City</td>
-<td headers="state" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">IA, KS, MO, NE</td>
-</tr>
-<tr>
-<td headers="region" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">VIII</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">IA, KS, MO, NE</td></tr>
+    <tr><td headers="region" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">VIII</td>
 <td headers="office" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Denver</td>
-<td headers="state" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">CO, MT, ND, SD, UT, WY</td>
-</tr>
-<tr>
-<td headers="region" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">X</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">CO, MT, ND, SD, UT, WY</td></tr>
+    <tr><td headers="region" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">X</td>
 <td headers="office" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Seattle</td>
-<td headers="state" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">AK, ID, OR, WA</td>
-</tr>
-<tr>
-<td headers="region" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">-</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">AK, ID, OR, WA</td></tr>
+    <tr><td headers="region" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">-</td>
 <td headers="office" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">-</td>
-<td headers="state" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">CN, FC, MX</td>
-</tr>
-</tbody>
+<td headers="state" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">CN, FC, MX</td></tr>
+  </tbody>
+  
 </table>
 </div>
 </div>
 </div>
 
 
-<!-- -->
+</section>
+</section>
 
-</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    // Ensure there is a toggle, if there isn't float one in the top right
-    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-      const i = window.document.createElement("i");
-      i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
-    }
-    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -1881,57 +1557,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
       clipboardModal.on('success', onCopySuccess);
-    }
-    const viewSource = window.document.getElementById('quarto-view-source') ||
-                       window.document.getElementById('quarto-code-tools-source');
-    if (viewSource) {
-      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-      viewSource.addEventListener("click", function(e) {
-        if (sourceUrl) {
-          // rstudio viewer pane
-          if (/\bcapabilities=\b/.test(window.location)) {
-            window.open(sourceUrl);
-          } else {
-            window.location.href = sourceUrl;
-          }
-        } else {
-          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-          modal.show();
-        }
-        return false;
-      });
-    }
-    function toggleCodeHandler(show) {
-      return function(e) {
-        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-        for (let i=0; i<detailsSrc.length; i++) {
-          const details = detailsSrc[i].parentElement;
-          if (show) {
-            details.open = true;
-          } else {
-            details.removeAttribute("open");
-          }
-        }
-        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
-        const fromCls = show ? "hidden" : "unhidden";
-        const toCls = show ? "unhidden" : "hidden";
-        for (let i=0; i<cellCodeDivs.length; i++) {
-          const codeDiv = cellCodeDivs[i];
-          if (codeDiv.classList.contains(fromCls)) {
-            codeDiv.classList.remove(fromCls);
-            codeDiv.classList.add(toCls);
-          } 
-        }
-        return false;
-      }
-    }
-    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-    if (hideAllCode) {
-      hideAllCode.addEventListener("click", toggleCodeHandler(false));
-    }
-    const showAllCode = window.document.getElementById("quarto-show-all-code");
-    if (showAllCode) {
-      showAllCode.addEventListener("click", toggleCodeHandler(true));
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
@@ -2261,7 +1886,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       }
     }
   });
-  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
       <a href="./index.html" class="pagination-link" aria-label="Preface">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span>
       </a>          
@@ -2271,73 +1898,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <span class="nav-page-text">Medicare</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
-</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># State</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup}</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">#| cache: false</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">#| comment: ""</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ccn)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"code/gt_theme.R"</span>)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">## CMS State Codes</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>The first two characters of each CCN represents the state in which the provider or supplier is located. </span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn-states</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>ccn<span class="sc">::</span>states <span class="sc">|&gt;</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">fgroup_by</span>(abbr, name) <span class="sc">|&gt;</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">fsummarise</span>(<span class="at">code =</span> <span class="fu">toString</span>(code)) <span class="sc">|&gt;</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_options</span>(<span class="at">quarto.disable_processing =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  gtExtras<span class="sc">::</span><span class="fu">gt_theme_nytimes</span>() <span class="sc">|&gt;</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_style</span>(</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> gt<span class="sc">::</span><span class="fu">cell_text</span>(</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>      <span class="at">font =</span> gt<span class="sc">::</span><span class="fu">google_font</span>(<span class="at">name =</span> <span class="st">"JetBrains Mono"</span>), <span class="at">color =</span> <span class="st">"grey50"</span>, <span class="at">size =</span> <span class="st">"small"</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> gt<span class="sc">::</span><span class="fu">cells_body</span>(<span class="at">columns =</span> code)</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_style</span>(</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> gt<span class="sc">::</span><span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>),</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> gt<span class="sc">::</span><span class="fu">cells_body</span>(<span class="at">columns =</span> abbr)</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="fu">### CMS Regional Offices</span></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn-regions</span></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>ccn<span class="sc">::</span>regions <span class="sc">|&gt;</span></span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">fgroup_by</span>(region, office) <span class="sc">|&gt;</span></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">fsummarise</span>(<span class="at">state =</span> <span class="fu">toString</span>(state)) <span class="sc">|&gt;</span></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_options</span>(<span class="at">quarto.disable_processing =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">sub_missing</span>(<span class="at">missing_text =</span> <span class="st">"-"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>  gtExtras<span class="sc">::</span><span class="fu">gt_theme_nytimes</span>() <span class="sc">|&gt;</span></span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_style</span>(</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> gt<span class="sc">::</span><span class="fu">cell_text</span>(</span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>      <span class="at">font =</span> gt<span class="sc">::</span><span class="fu">google_font</span>(<span class="at">name =</span> <span class="st">"JetBrains Mono"</span>), <span class="at">color =</span> <span class="st">"grey50"</span>, <span class="at">size =</span> <span class="st">"small"</span></span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> gt<span class="sc">::</span><span class="fu">cells_body</span>(<span class="at">columns =</span> state)</span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_style</span>(</span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> gt<span class="sc">::</span><span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>),</span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> gt<span class="sc">::</span><span class="fu">cells_body</span>(<span class="at">columns =</span> region)</span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
-</div></div></div></div></div>
+</nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
+<footer class="footer">
+  <div class="nav-footer">
     <div class="nav-footer-left">
       &nbsp;
     </div>   
@@ -2349,6 +1913,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </div>
   </div>
 </footer>
+
+
 
 
 </body></html>
