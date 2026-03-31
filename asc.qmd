@@ -4,9 +4,12 @@ editor_options:
   chunk_output_type: console
 ---
 
-# ASCs
+# ASC
 
-Ambulatory Surgery Centers (ASCs) are healthcare facilities that provide same-day surgical care, including diagnostic and preventive procedures. They are designed to offer a more convenient and cost-effective alternative to hospital-based surgeries.
+Ambulatory Surgery Centers (ASCs) are healthcare facilities that provide
+same-day surgical care, including diagnostic and preventive procedures. They are
+designed to offer a more convenient and cost-effective alternative to
+hospital-based surgeries.
 
 ```{r setup}
 #| message: false

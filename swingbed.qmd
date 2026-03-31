@@ -1,0 +1,75 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+# Swing-Bed
+
+```{r setup}
+#| message: false
+#| warning: false
+#| echo: false
+#| cache: false
+#| comment: ""
+library(ccn)
+source("code/gt_theme.R")
+```
+
+<br>
+
+Hospital Providers of Extended Care Services ("Swing-Beds"):
+
+"Swing-bed" is a reimbursement term that means the care and reimbursement for
+the care of a patient in a small rural hospital or CAH "swings" from acute care
+to post hospital skilled nursing care (SNF). A swing-bed hospital means a
+hospital or CAH participating in Medicare that has an approval from CMS to
+provide post hospital SNF care and meets the requirements specified in §482.66
+for a hospital or §485.645 for a CAH.
+
+Certification to provide swing-beds is an approval separate from the
+certification to operate as a hospital or CAH. When a survey of swing-beds is
+completed, any deficiencies and Plans of Correction (PoC) must be documented on
+a separate Form CMS-2567. If the swing-beds are voluntary terminated or
+terminated by CMS, that action does not affect the continuing operation of the
+provider as a hospital or CAH. It terminates the approval to operate and receive
+reimbursement for the swing-beds.
+
+The swing-beds in a hospital or CAH do not have to be separated from the acute
+patients although the facility may choose to do so. The patients do not have to
+move to a different location in the facility when changing from acute care
+status to swing-bed status unless the facility requires it.
+
+There is no length of stay restriction for a swing-bed patient whether they are
+in a hospital or a CAH. There is no required discharge to a nursing home and no
+transfer agreement. Patients may be discharged to a nursing home as part of
+discharge planning, but it is not required.
+
+A medical order in the chart by the physician is required to change status from
+acute care to swing-bed because the patient is being discharge from acute care
+status and admitted to swing-bed status. This is necessary for reimbursement
+purposes because the billing and reimbursement change or "swing." Accordingly,
+the facility is given a subprovider number for billing swing-bed services.
+
+For Medicare patients, a 3-day qualifying stay in any hospital or CAH is
+required to prior to admission to a swing-bed and the admission must be for
+treatment of the same condition. This 3-day qualifying stay only applies to a
+Medicare patient.
+
+Section 1883 of the Act authorizes payment under Medicare for post-hospital SNF
+services provided by any hospital that meets the following requirements at 42
+CFR 482.66. These requirements include the following.
+
+### Calculation of Bed Count
+
+Exclude from the bed count newborn and intensive care beds. A hospital licensed
+for more than 100 beds may be eligible for swing-bed approval if it utilizes and
+staffs for fewer than 100 beds. The SA forwards to the RO documentation that the
+hospital is operating within the bed category. Include in the packet floor
+plans, bed assignments by room number, staffing schedules, and census
+information for the previous 12 months.
+
+The SA obtains written assurance from appropriate hospital officials that the
+hospital will not operate with a greater number of inpatient hospital beds than
+permitted by the category for which approval is requested.
+

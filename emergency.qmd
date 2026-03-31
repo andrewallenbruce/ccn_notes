@@ -4,7 +4,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-# Emergency Hospitals
+# Emergency Hospital
 
 ```{r setup}
 #| message: false
@@ -25,6 +25,8 @@ source("code/gt_theme.R")
 #   "03006F"
 #   )
 ```
+
+<br>
 
 CCNs assigned to Emergency Hospitals (both Federal and non-Federal) that do not
 participate in the Medicare program.
@@ -62,51 +64,6 @@ as_data_frame("11038F") |> str()
    * Subtype: `00`
 
 ```{r}
-parse("45D0501072")
-decode("45D0501072")
-as_data_frame("45D0501072")
-```
-
-   * Supplier Name: `MISSION AT AIR FORCE VILLAGE I, THE`
-   * CCN: `45D0501072`
-   * Supplier Type: `Laboratory`
-   * Address: `4949 RAVENSWOOD DRIVE SAN ANTONIO, TX 78227`
-   * Phone Number: `(210) 568-5162`
-   * Participation Date: `1993-02-18`
-   * Region: `(VI) Dallas`
-   * Ownership Type: `Private`
-
-```{r}
-parse("14D2326049")
-decode("14D2326049")
-as_data_frame("14D2326049")
-```
-
-   * Supplier Name: `SCOTT AIR FORCE BASE OUTPATIENT CLINIC`
-   * CCN: `14D2326049`
-   * Supplier Type: `Laboratory`
-   * Address: `310 W LOSEY ST SCOTT AIR FORCE BASE, IL 62225`
-   * Phone Number: `(314) 652-4100`
-   * Participation Date: `2025-06-26`
-   * Region: `(V) Chicago`
-   * Ownership Type: `Government - Federal`
-
-```{r}
-parse("05D0975224")
-decode("05D0975224")
-as_data_frame("05D0975224")
-```
-
-   * Supplier Name: `AIR FORCE VILLAGE WEST`
-   * CCN: `05D0975224`
-   * Supplier Type: `Laboratory`
-   * Address: `17050 ARNOLD DR RIVERSIDE, CA 92518`
-   * Phone Number: `(909) 697-2059`
-   * Participation Date: `2000-06-29`
-   * Region: `(IX) San Francisco`
-   * Ownership Type: `Private`
-
-```{r}
 parse("02012F")
 decode("02012F")
 as_data_frame("02012F")
@@ -123,3 +80,17 @@ as_data_frame("02012F")
    * Number of Certified Beds: 	`20`
    * Subtype: `00`
 
+## 2052A - Emergency Hospital Services
+
+Any nonparticipating hospital meeting the definition of an emergency hospital
+for Medicare purposes may claim payment for emergency inpatient and outpatient
+diagnostic services furnished to Medicare patients. There are six statutory
+requirements that a hospital must meet to qualify as an emergency hospital
+(§1861(e)(1), (2), (3), (4), (5), and (7)). The hospital must:
+
+   - Be primarily engaged in providing, by or under the supervision of physicians, to inpatients, diagnostic and therapeutic services or rehabilitation services
+   - Maintain clinical records on all patients
+   - Have bylaws in effect with respect to its staff of physicians
+   - Have a requirement that every patient must be under the care of a physician
+   - Provide 24-hour nursing service rendered or supervised by a registered professional nurse and have a licensed, practical, or registered professional nurse on duty at all times
+   - Be licensed or meet standards for licensing pursuant to State and local law

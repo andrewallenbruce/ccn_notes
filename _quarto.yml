@@ -6,7 +6,7 @@ book:
   title: "CCNs"
   subtitle: "CMS Certification Numbers"
   author: "Andrew Allen Bruce"
-  date: "12/24/2025"
+  date: "03/30/2026"
   back-to-top-navigation: true
   page-navigation: true
   page-footer: "© Copyright 2026 Andrew Allen Bruce."
@@ -14,8 +14,8 @@ book:
   repo-url: https://github.com/andrewallenbruce/ccn_notes
   chapters:
     - index.qmd
-    - location.qmd
-    - part: provider.qmd
+    - state.qmd
+    - part: medicare.qmd
       chapters:
         - opo.qmd
         - emergency.qmd
@@ -31,6 +31,7 @@ book:
       chapters:
         - unit.qmd
         - subunit.qmd
+        - swingbed.qmd
     - part: supplier.qmd
       chapters:
         - asc.qmd
@@ -43,7 +44,7 @@ book:
 format:
   html:
     theme:
-      - lumen
+      - zephyr
       - brand
     date: last-modified
     code-link: true

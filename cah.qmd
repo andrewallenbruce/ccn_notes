@@ -3,9 +3,10 @@ output: html_document
 editor_options: 
   chunk_output_type: console
 ---
-# CAHs
 
-Critical Access Hospitals
+# CAH
+
+Critical Access Hospital
 
 ```{r setup}
 #| message: false

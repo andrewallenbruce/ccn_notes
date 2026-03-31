@@ -4,7 +4,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-# CLIAs
+# CLIA
 
 ```{r setup}
 #| message: false
@@ -16,9 +16,53 @@ library(ccn)
 source("code/gt_theme.R")
 ```
 
-
 ```{r}
 provider::clia(count = TRUE)
-provider::clia(ccn = provider::starts_with("11D0"))
+# provider::clia(ccn = provider::starts_with("11D0"))
 ```
+
+```{r}
+parse("45D0501072")
+decode("45D0501072")
+as_data_frame("45D0501072")
+```
+
+   * Supplier Name: `MISSION AT AIR FORCE VILLAGE I, THE`
+   * CCN: `45D0501072`
+   * Supplier Type: `Laboratory`
+   * Address: `4949 RAVENSWOOD DRIVE SAN ANTONIO, TX 78227`
+   * Phone Number: `(210) 568-5162`
+   * Participation Date: `1993-02-18`
+   * Region: `(VI) Dallas`
+   * Ownership Type: `Private`
+
+```{r}
+parse("14D2326049")
+decode("14D2326049")
+as_data_frame("14D2326049")
+```
+
+   * Supplier Name: `SCOTT AIR FORCE BASE OUTPATIENT CLINIC`
+   * CCN: `14D2326049`
+   * Supplier Type: `Laboratory`
+   * Address: `310 W LOSEY ST SCOTT AIR FORCE BASE, IL 62225`
+   * Phone Number: `(314) 652-4100`
+   * Participation Date: `2025-06-26`
+   * Region: `(V) Chicago`
+   * Ownership Type: `Government - Federal`
+
+```{r}
+parse("05D0975224")
+decode("05D0975224")
+as_data_frame("05D0975224")
+```
+
+   * Supplier Name: `AIR FORCE VILLAGE WEST`
+   * CCN: `05D0975224`
+   * Supplier Type: `Laboratory`
+   * Address: `17050 ARNOLD DR RIVERSIDE, CA 92518`
+   * Phone Number: `(909) 697-2059`
+   * Participation Date: `2000-06-29`
+   * Region: `(IX) San Francisco`
+   * Ownership Type: `Private`
 

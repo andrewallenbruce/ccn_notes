@@ -4,7 +4,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-# Medicare (Part A)
+# Medicare
 
 ```{r setup}
 #| message: false
@@ -28,10 +28,11 @@ The last four characters identify the type of facility.
 
 ## OPO Exception
 
-Organ procurement organizations (OPOs) are assigned a 6-digit alphanumeric CCN. 
-   * The first 2 digits identify the State code. 
-   * The third digit is the alpha character "P". 
-   * The final 3 digits are the unique facility identifier.
+Organ procurement organizations (OPOs) are assigned a 6-digit alphanumeric CCN.
+
+    * The first 2 digits identify the State code. 
+    * The third digit is the alpha character "P". 
+    * The final 3 digits are the unique facility identifier.
 
 :::
 
