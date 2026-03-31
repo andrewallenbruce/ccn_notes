@@ -1,6 +1,7 @@
 project:
   type: book
   output-dir: docs
+
 execute: 
   eval: true
   echo: true
@@ -53,6 +54,8 @@ format:
   html:
     grid:
       body-width: 1000px
+    backgroundcolor: "#F2E9EA"
+    number-sections: false
     anchor-sections: true
     code-fold: false
     code-link: true
@@ -66,9 +69,9 @@ format:
     toc: true
     toc-depth: 2
     toc-title: "Contents"
-    urlcolor: "darkred"
+    urlcolor: "#FC4C02"
     linkcolor: "darkred"
-    fontcolor: "darkgrey"
+    fontcolor: "#43464b"
     default-image-extension: png
     fig-cap-location: margin
     fig-width: 5
