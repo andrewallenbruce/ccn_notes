@@ -21,26 +21,26 @@ color:
 
 typography:
   fonts:
-    - family: Open Sans
+    - family: Roboto Slab
       source: google
       weight: [300, 400, 600, 700]
-    - family: IBM Plex Mono
+    - family: JetBrains Mono
       source: google
       weight: [400, 600]
-    - family: Rubik
+    - family: Atkinson Hyperlegible Next
       source: google
       weight: [400, 600, 700]
   base:
-    family: Open Sans
+    family: Roboto Slab
     line-height: 1.5
     size: 0.9em
   headings:
-    family: Rubik
+    family: Atkinson Hyperlegible Next
     weight: 600
   link:
-    color: purple
+    color: darkblue
   monospace:
-    family: IBM Plex Mono
+    family: JetBrains Mono
     # size: 0.9em
     weight: 400
 
@@ -60,6 +60,6 @@ defaults:
         embed-resources: false
         fig-cap-location: margin
         footnotes-hover: true
-        highlight-style: monokai
+        highlight-style: tango
         reference-location: margin
         toc: true
