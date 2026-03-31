@@ -4,9 +4,32 @@ editor_options:
   chunk_output_type: console
 ---
 
-# CAH
+# CAHs
 
-Critical Access Hospital
+A __Critical Access Hospital__ is a facility that is designated as a CAH by the
+State in which it is located and meets the following criteria:
+
+   - Meets the Conditions of Participation found at _42 CFR Part 485 subpart F_
+   - Is one of the following:
+      - A rural, public non- or for-profit Hospital
+      - A Hospital that closed within the previous 10 years
+      - An RHC that was downsized from a Hospital
+   - Is in a State with an established plan with CMS for the MRHFP
+   - Is either:
+      - Located more than 35 miles (15 in mountainous/rural areas) from another Hospital/CAH
+      - Certified in the State plan as being a necessary provider of healthcare services to area residents
+   - Makes Emergency Care services available 24-hours a day, 7 days a week
+   - Provides not more than 15 beds for acute (hospital-level) inpatient care. (An exception is made for swing-bed facilities, which are allowed to have up to 25 inpatient beds that can be used interchangeably for acute or SNF-level care, provided that not more than 15 beds are used at any one time for acute care.)
+   - Provides an annual average length of stay of 96 hours per patient for acute care patients
+
+Section 4201 of the Balanced Budget Act of 1997, Public Law 105-33, amended
+§1820 of the Social Security Act and created the Medicare Rural Hospital
+Flexibility Program (MRHFP). The program allows for the creation of Critical
+Access Hospitals and is designed to promote rural health planning, network
+development, and improve access to health services for rural residents of the
+State. The program is available in any State having rural facilities and which
+chooses to set up such a program and submits an acceptable State plan to CMS.
+
 
 ```{r setup}
 #| message: false

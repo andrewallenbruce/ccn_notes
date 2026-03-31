@@ -4,7 +4,29 @@ editor_options:
   chunk_output_type: console
 ---
 
-# OPO
+# OPOs
+
+<br>
+
+An Organ Procurement Organization performs or coordinates the procurement,
+preservation, and transport of organs and maintains a system for locating
+prospective recipients for available organs.
+
+An OPO must have been certified as a qualified OPO by CMS under 42 U.S.C. 273(b)
+and § 486.303 to be eligible for designation. In order to be certified as a
+qualified OPO, an OPO must have received a grant under 42 U.S.C. 273(a) or have
+been certified or re-certified by the Secretary within the previous four years
+as being a qualified OPO. Under the statute, no new OPOs can enroll into the
+Medicare program.
+
+An OPO is designated for a 4-year agreement cycle. The period may be shorter,
+for example, if an OPO has voluntarily terminated its agreement with CMS and CMS
+selects a successor OPO for the balance of the 4-year agreement cycle.
+Re-certification must occur not more frequently than once every 4 years. The SOG
+Location is responsible for conducting the re-certification surveys every 4
+years; the OPO must sign a new provider agreement (Form CMS-576A) and
+participate in the Organ Procurement and Transplantation Network. (See CMS Pub.
+100-07, chapter 2, sections 2810 and 2811.)
 
 ```{r setup}
 #| message: false
@@ -40,7 +62,9 @@ x$opo_codes |>
   gtExtras::gt_theme_nytimes() |> 
   gt::tab_style(
     style = gt::cell_text(
-      font = gt::google_font(name = "JetBrains Mono"), color = "grey30", size = "small"), 
+      font = gt::google_font(name = "JetBrains Mono"), 
+      color = "grey30", 
+      size = "small"), 
     locations = gt::cells_body(columns = c(code, opo))) |> 
   gt::tab_style(
     style = gt::cell_text(weight = "bold"), 
@@ -95,7 +119,9 @@ x$opo_active |>
   gtExtras::gt_theme_nytimes() |> 
   gt::tab_style(
     style = gt::cell_text(
-      font = gt::google_font(name = "JetBrains Mono"), color = "grey30", size = "small"), 
+      font = gt::google_font(name = "JetBrains Mono"), 
+      color = "grey30", 
+      size = "small"), 
     locations = gt::cells_body(columns = ccn)) |> 
   gt::tab_style(
     style = gt::cell_text(weight = "bold"), 
@@ -116,7 +142,9 @@ ccn:::get_pin("txc") |>
   gtExtras::gt_theme_nytimes() |> 
   gt::tab_style(
     style = gt::cell_text(
-      font = gt::google_font(name = "JetBrains Mono"), color = "grey30", size = "small"), 
+      font = gt::google_font(name = "JetBrains Mono"), 
+      color = "grey30", 
+      size = "small"), 
     locations = gt::cells_body(columns = code)) |> 
   gt::tab_style(
     style = gt::cell_text(weight = "bold"), 
@@ -141,7 +169,9 @@ ccn:::get_pin("txc") |>
   gtExtras::gt_theme_nytimes() |> 
   gt::tab_style(
     style = gt::cell_text(
-      font = gt::google_font(name = "JetBrains Mono"), color = "grey30", size = "small"), 
+      font = gt::google_font(name = "JetBrains Mono"), 
+      color = "grey30", 
+      size = "small"), 
     locations = gt::cells_body(columns = c(ccn, txc))) |> 
   gt::tab_style(
     style = gt::cell_text(weight = "bold"), 

@@ -6,9 +6,18 @@ editor_options:
 
 # IPPS-Excluded
 
-Special Numbering System for Units of Hospitals That Are Excluded From the
-Inpatient Prospective Payment System (IPPS) and Hospitals and CAHs with
-Swing-Bed Approval
+<br>
+
+Units of Hospitals That Are Excluded From the Inpatient Prospective Payment System (IPPS) 
+
+and Hospitals and CAHs with Swing-Bed Approval
+
+An alpha character in the third position of the CCN identifies either hospitals with swing-
+bed approval, or rehabilitation units, or psychiatric units excluded from PPS payment.
+
+The first 2 digits identify the State in which the provider is located. The third position
+(which is alpha) identifies the type of unit or swing-bed designation. The last 3 digits
+must be exactly the same as the last 3 digits of the parent provider.
 
 ```{r setup}
 #| message: false
@@ -19,4 +28,19 @@ Swing-Bed Approval
 library(ccn)
 source("code/gt_theme.R")
 ```
+
+| EXAMPLE: 21-0101 - ABC Hospital
+|          21-T101 - ABC Hospital Rehabilitation Unit
+|
+
+The RO assigns the following alpha-characters in the third position as indicated:
+
+   - M = Psychiatric Unit in Critical Access Hospital
+   - R = Rehabilitation Unit in Critical Access Hospital
+   - S = Psychiatric Unit
+   - T = Rehabilitation Unit
+   - U = Swing-Bed Hospital Designation for Short-Term Hospitals
+   - W = Swing-Bed Hospital Designation for Long Term Care Hospitals
+   - Y = Swing-Bed Hospital Designation for Rehabilitation Hospitals
+   - Z = Swing-Bed Designation for Critical Access Hospitals
 

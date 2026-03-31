@@ -32,11 +32,11 @@ typography:
       weight: [400, 600, 700]
   base:
     family: Roboto Slab
-    line-height: 1.5
+    line-height: 1.75
     size: 0.9em
   headings:
     family: Atkinson Hyperlegible Next
-    weight: 600
+    weight: 700
   monospace:
     family: JetBrains Mono
     # size: 0.9em
