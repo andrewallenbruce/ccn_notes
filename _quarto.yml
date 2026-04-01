@@ -54,7 +54,7 @@ format:
   html:
     grid:
       body-width: 1000px
-    backgroundcolor: "#F2E9EA"
+    backgroundcolor: "#FFFFFF"
     number-sections: false
     anchor-sections: true
     code-fold: false

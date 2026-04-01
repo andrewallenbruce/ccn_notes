@@ -16,18 +16,13 @@ library(ccn)
 source("code/gt_theme.R")
 ```
 
-A __CMS Certification Number__ is a uniform way of identifying a healthcare
-provider or supplier that has or currently does participate in the Medicare and/or Medicaid programs.
+<br>
+
+A __CMS Certification Number__ is a standardized^[_State Operations Manual_, CMS publication number 100-07](https://www.cms.gov/Regulations-and-Guidance/Guidance/Manuals/Internet-Only-Manuals-IOMs-Items/CMS1201984) sequence of alphanumeric characters that uniquely identify health care providers and suppliers who interact with the United States Medicare and Medicaid programs.
 
 The __CCN__ is used to track provider agreements and cost reports. The __NPI__^[National
 Provider Identifier] and __PTAN__^[Provider Transaction Account Number] are
 tied to an entity's CCN. The __RO__^[CMS Regional Office] (not the __SA__^[State Agency] or __MAC__^[Medicare Administrative Contractor]) assigns the CCN and maintains adequate controls.
-
-<br>
-
-:::{.callout-important}
-
-## One Term to Rule Them All
 
 In [2007](https://www.cms.gov/medicare/provider-enrollment-and-certification/surveycertificationgeninfo/policy-and-memos-to-states-and-regions-items/cms1206256), the __CCN__ replaced the following terms: 
 
@@ -35,12 +30,42 @@ In [2007](https://www.cms.gov/medicare/provider-enrollment-and-certification/sur
    * Medicare Identification Number
    * OSCAR Number^[Online Survey, Certification, and Reporting System.]
 
+<br>
+
+:::{.callout-important}
+
 :::
 
-## Canonical Format
+## CCN Format
 
-A __*canonically valid* CCN__ is an alphanumeric string, either 6 or 10 characters in
-length, that encodes a provider/supplier's state and facility type.
+The canonical format observes the following constraints:
+
+   1. Strings represented as sequences of UTF-8 characters.
+   2. Only characters in the Latin Alphabet are used: 
+      - Uppercase (`U+0041` - `U+005A`) 
+      - ASCII Digits (`U+0030` - `U+0039`)
+   3. **Providers** -> *6 characters*
+   4. **Suppliers** -> *10 characters*
+
+and reflects the following structure, by character position:
+
+   - `1:2` -> Entity's __State Code__[^includes certain countries and territories.].
+   - `3` -> __Facility Type/Supplier Type__. Otherwise, part of __Sequence Number__.
+   - `4` -> Subunit's Parent __Facility Type__. Otherwise, part of __Sequence Number__.
+   - `5` -> Part of __Sequence Number__.
+   - `6` -> __Emergency Hospital Type__. Otherwise, part of __Sequence Number__.
+   - `7:10` -> Only for __Suppliers__, part of __Sequence Number__.
+
+Because the structure of the CCN depends on the type of Provider, Supplier, or
+Facility it is describing, the following examples are provided:
+
+   - ProviderCCN
+   - MedicareProviderCCN
+   - MedicaidOnlyProviderCCN
+   - IPPSExcludedProviderCCN
+   - EmergencyHospitalCCN
+   - SupplierCCN
+
 
 ```{r}
 #| label: canonical-ccns
