@@ -12,7 +12,8 @@ source("code/gt_theme.R")
 
 ## CMS State Codes
 
-The first two characters of each CCN represents the state in which the provider or supplier is located. 
+The first two characters of each CCN represents the state in which the provider
+or supplier is located.
 
 ```{r}
 #| label: ccn-states
@@ -26,7 +27,9 @@ ccn::states |>
   gtExtras::gt_theme_nytimes() |>
   gt::tab_style(
     style = gt::cell_text(
-      font = gt::google_font(name = "JetBrains Mono"), color = "grey50", size = "small"
+      font = gt::google_font(name = "JetBrains Mono"),
+      color = "grey50",
+      size = "small"
     ),
     locations = gt::cells_body(columns = code)
   ) |>
@@ -51,7 +54,9 @@ ccn::regions |>
   gtExtras::gt_theme_nytimes() |>
   gt::tab_style(
     style = gt::cell_text(
-      font = gt::google_font(name = "JetBrains Mono"), color = "grey50", size = "small"
+      font = gt::google_font(name = "JetBrains Mono"),
+      color = "grey50",
+      size = "small"
     ),
     locations = gt::cells_body(columns = state)
   ) |>

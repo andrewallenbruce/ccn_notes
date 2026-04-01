@@ -365,7 +365,7 @@ sequence: 038
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">as_data_frame</span><span class="op">(</span><span class="st">"11038F"</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>tibble [1 × 9] (S3: tbl_df/tbl/data.frame)
+<pre><code>Classes 'tbl_df', 'tbl' and 'data.frame':   1 obs. of  9 variables:
  $ ccn   : chr "11038F"
  $ entity: chr "Emergency Hospital"
  $ state : chr "GA (Georgia)"
@@ -425,10 +425,10 @@ sequence: 012
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">as_data_frame</span><span class="op">(</span><span class="st">"02012F"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 9
-  ccn    entity             state       region    range eipps type  parent ext  
-  &lt;chr&gt;  &lt;chr&gt;              &lt;chr&gt;       &lt;chr&gt;     &lt;chr&gt; &lt;lgl&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;
-1 02012F Emergency Hospital AK (Alaska) X (Seatt… 001-… NA    F (F… &lt;NA&gt;   &lt;NA&gt; </code></pre>
+<pre><code>     ccn             entity       state      region   range eipps        type
+1 02012F Emergency Hospital AK (Alaska) X (Seattle) 001-999    NA F (Federal)
+  parent  ext
+1   &lt;NA&gt; &lt;NA&gt;</code></pre>
 </div>
 </div>
 <ul>

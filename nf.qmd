@@ -22,6 +22,7 @@ snf <- ccn:::get_pin("snf")
 snf <- snf[substr(snf$ccn, 1L, 6L) %!iin% substr(hrsa$ccn, 1L, 6L), ]
 ```
 
+### Overview
 
 ```{r}
 ov <- hrsa |> 
@@ -60,4 +61,15 @@ list(
   gtExtras::gt_theme_nytimes()
 ```
 
+### Parse
+
+```{r}
+x <- purrr::map(
+  collapse::funique(hrsa$ccn), \(x) as.data.frame(ccn::parse(x))) |> 
+  collapse::rowbind()
+x$type <- "SNF"
+x$state <- ccn::state_abbr(x$state)
+x$sequence <- as.integer(x$sequence)
+cheapr::overview(x)
+```
 
