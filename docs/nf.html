@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.35">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="dcterms.date" content="2026-03-30">
+<meta name="dcterms.date" content="2026-04-01">
 <title>Nursing – CCNs</title>
 <style>
 /* Default styles provided by pandoc.
@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./icf.html" rel="next">
+<link href="./icf-iid.html" rel="next">
 <link href="./medicaid.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -78,9 +78,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-da20407cf26fa8485970518743f0f7f9.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5fe506295995ccb32ce9120622cf609f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-5fe506295995ccb32ce9120622cf609f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-5fe506295995ccb32ce9120622cf609f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-b4e155474cb502a750d249776b6f914c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-b4e155474cb502a750d249776b6f914c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b4e155474cb502a750d249776b6f914c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -181,6 +181,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./ltch.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">LTCH</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rhc.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">RHC</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./irf.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">IRF</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./cah.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">CAHs</span></a>
   </div>
 </li>
@@ -202,7 +217,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./icf.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">ICF-IID</span></a>
+  <a href="./icf-iid.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">ICF-IID</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -233,7 +248,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./swingbed.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Swing-Bed</span></a>
+  <a href="./swing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Swing-Bed</span></a>
   </div>
 </li>
       </ul>
@@ -305,7 +320,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 30, 2026</p>
+      <p class="date">April 1, 2026</p>
     </div>
   </div>
   
@@ -315,59 +330,1254 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 </header><div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ccn</span><span class="fu">:::</span><span class="fu">get_pin</span><span class="op">(</span><span class="st">"snf_hrsa"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>   <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/rsplit.html">rsplit</a></span><span class="op">(</span><span class="op">~</span> <span class="va">cat</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>$`Skilled Nursing Facilities/Nursing Facility (Distinct Part)`
-# A tibble: 2,097 × 11
-   .id      name   ccn   city  state sub   beds_mcd beds_mcr beds_dual beds_cert
-   &lt;chr&gt;    &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;    &lt;int&gt;    &lt;int&gt;     &lt;int&gt;     &lt;int&gt;
- 1 SNF Dist ELITE… 0154… Home… AL    Titl…       NA        0        71       143
- 2 SNF Dist THE T… 0350… Phoe… AZ    Titl…       NA       54         0        64
- 3 SNF Dist SANTA… 0350… Tucs… AZ    Titl…       NA        0        28       144
- 4 SNF Dist HAVEN… 0350… Tucs… AZ    Titl…       NA       10        59       112
- 5 SNF Dist RIM C… 0351… Pays… AZ    Titl…       NA        0        84       109
- 6 SNF Dist VILLA… 0351… Tucs… AZ    Titl…       NA       21        62        83
- 7 SNF Dist HAVEN… 0351… Tucs… AZ    Titl…       NA       46        72       118
- 8 SNF Dist SUNCR… 0352… Phoe… AZ    Titl…       NA        0        16       115
- 9 SNF Dist WOODR… 0452… Mc C… AR    Titl…       NA        0        15       120
-10 SNF Dist PREMI… 0453… Nort… AR    Titl…       NA       12       120       132
-# ℹ 2,087 more rows
-# ℹ 1 more variable: beds_tot &lt;int&gt;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">hrsa</span> <span class="op">&lt;-</span> <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/select_replace_vars.html">gv</a></span><span class="op">(</span><span class="fu">ccn</span><span class="fu">:::</span><span class="fu">get_pin</span><span class="op">(</span><span class="st">"snf_hrsa"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">7</span>, <span class="fl">9</span><span class="op">:</span><span class="fl">12</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">snf</span> <span class="op">&lt;-</span> <span class="fu">ccn</span><span class="fu">:::</span><span class="fu">get_pin</span><span class="op">(</span><span class="st">"snf"</span><span class="op">)</span></span>
+<span><span class="va">snf</span> <span class="op">&lt;-</span> <span class="va">snf</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/substr.html">substr</a></span><span class="op">(</span><span class="va">snf</span><span class="op">$</span><span class="va">ccn</span>, <span class="fl">1L</span>, <span class="fl">6L</span><span class="op">)</span> <span class="op">%!iin%</span> <span class="fu"><a href="https://rdrr.io/r/base/substr.html">substr</a></span><span class="op">(</span><span class="va">hrsa</span><span class="op">$</span><span class="va">ccn</span>, <span class="fl">1L</span>, <span class="fl">6L</span><span class="op">)</span>, <span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ov</span> <span class="op">&lt;-</span> <span class="va">hrsa</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/rsplit.html">rsplit</a></span><span class="op">(</span><span class="op">~</span><span class="va">.id</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span><span class="op">(</span><span class="fu">cheapr</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/cheapr/man/overview.html">overview</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
+<span>  all <span class="op">=</span> <span class="va">ov</span><span class="op">$</span><span class="va">`SNF All`</span><span class="op">$</span><span class="va">numeric</span>,</span>
+<span>  dist <span class="op">=</span> <span class="va">ov</span><span class="op">$</span><span class="va">`SNF Dist`</span><span class="op">$</span><span class="va">numeric</span>,</span>
+<span>  dual <span class="op">=</span> <span class="va">ov</span><span class="op">$</span><span class="va">`SNF Dual`</span><span class="op">$</span><span class="va">numeric</span></span>
+<span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/rowbind.html">rowbind</a></span><span class="op">(</span>idcol <span class="op">=</span> <span class="st">"id"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/select_replace_vars.html">slt</a></span><span class="op">(</span><span class="va">id</span>, <span class="va">col</span>, uniq <span class="op">=</span> <span class="va">n_unique</span>, <span class="va">mean</span><span class="op">:</span><span class="va">hist</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/roworder.html">roworder</a></span><span class="op">(</span><span class="va">col</span>, <span class="va">id</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/gt.html">gt</a></span><span class="op">(</span></span>
+<span>    rowname_col <span class="op">=</span> <span class="st">"id"</span>, </span>
+<span>    groupname_col <span class="op">=</span> <span class="st">"col"</span>,</span>
+<span>    row_group_as_column <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/fmt_auto.html">fmt_auto</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">gtExtras</span><span class="fu">::</span><span class="fu"><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_nytimes.html">gt_theme_nytimes</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="kicwzwdkcy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+#kicwzwdkcy table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-$`Skilled Nursing Facilities/Nursing Facility (Dually Certified)`
-# A tibble: 11,820 × 11
-   .id      name   ccn   city  state sub   beds_mcd beds_mcr beds_dual beds_cert
-   &lt;chr&gt;    &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;    &lt;int&gt;    &lt;int&gt;     &lt;int&gt;     &lt;int&gt;
- 1 SNF Dual BURNS… 0150… Russ… AL    Titl…       NA        0        57        57
- 2 SNF Dual COOSA… 0150… Syla… AL    Titl…       NA        0        85        85
- 3 SNF Dual HIGHL… 0150… Scot… AL    Titl…       NA        0        50        50
- 4 SNF Dual EASTV… 0150… Birm… AL    Titl…       NA        0        92        92
- 5 SNF Dual PLANT… 0150… Mc C… AL    Titl…       NA        0       103       103
- 6 SNF Dual ATHEN… 0150… Athe… AL    Titl…       NA        0       149       149
- 7 SNF Dual MERRY… 0150… Elmo… AL    Titl…       NA        0       124       124
- 8 SNF Dual HATLE… 0150… Clan… AL    Titl…       NA        0       201       201
- 9 SNF Dual LIMES… 0150… Athe… AL    Titl…       NA        0       170       170
-10 SNF Dual WETUM… 0150… Wetu… AL    Titl…       NA        0       121       121
-# ℹ 11,810 more rows
-# ℹ 1 more variable: beds_tot &lt;int&gt;
+#kicwzwdkcy thead, #kicwzwdkcy tbody, #kicwzwdkcy tfoot, #kicwzwdkcy tr, #kicwzwdkcy td, #kicwzwdkcy th {
+  border-style: none;
+}
 
-$`Skilled Nursing Facility`
-# A tibble: 553 × 11
-   .id     name    ccn   city  state sub   beds_mcd beds_mcr beds_dual beds_cert
-   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;    &lt;int&gt;    &lt;int&gt;     &lt;int&gt;     &lt;int&gt;
- 1 SNF All BROOKD… 0154… Birm… AL    Titl…       NA       66         0        66
- 2 SNF All CROWNE… 0154… Mobi… AL    Titl…       NA        0        46        46
- 3 SNF All WILLOW… 0154… Hunt… AL    Titl…       NA       59         0        59
- 4 SNF All FAIRVI… 0154… Hunt… AL    Titl…       NA       56         0        56
- 5 SNF All KIRKWO… 0154… Birm… AL    Titl…       NA       61         0        61
- 6 SNF All GALLER… 0154… Hoov… AL    Titl…       NA       30         0        30
- 7 SNF All FRIEND… 0350… Tempe AZ    Titl…       NA      128         0       128
- 8 SNF All LIFE C… 0351… Scot… AZ    Titl…       NA      132         0       132
- 9 SNF All BROOKD… 0352… Tucs… AZ    Titl…       NA       42         0        42
-10 SNF All FREEDO… 0352… Peor… AZ    Titl…       NA      111         0       111
-# ℹ 543 more rows
-# ℹ 1 more variable: beds_tot &lt;int&gt;</code></pre>
+#kicwzwdkcy p {
+  margin: 0;
+  padding: 0;
+}
+
+#kicwzwdkcy .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#kicwzwdkcy .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#kicwzwdkcy .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#kicwzwdkcy .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#kicwzwdkcy .gt_heading {
+  background-color: #FFFFFF;
+  text-align: left;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#kicwzwdkcy .gt_bottom_border {
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#kicwzwdkcy .gt_col_headings {
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: none;
+  border-bottom-width: 1px;
+  border-bottom-color: #334422;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#kicwzwdkcy .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 12px;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#kicwzwdkcy .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 12px;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#kicwzwdkcy .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#kicwzwdkcy .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#kicwzwdkcy .gt_column_spanner {
+  border-bottom-style: none;
+  border-bottom-width: 1px;
+  border-bottom-color: #334422;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#kicwzwdkcy .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#kicwzwdkcy .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#kicwzwdkcy .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#kicwzwdkcy .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#kicwzwdkcy .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#kicwzwdkcy .gt_row {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#kicwzwdkcy .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#kicwzwdkcy .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#kicwzwdkcy .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#kicwzwdkcy .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#kicwzwdkcy .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#kicwzwdkcy .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#kicwzwdkcy .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#kicwzwdkcy .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#kicwzwdkcy .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#kicwzwdkcy .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#kicwzwdkcy .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#kicwzwdkcy .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#kicwzwdkcy .gt_table_body {
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #FFFFFF;
+}
+
+#kicwzwdkcy .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#kicwzwdkcy .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#kicwzwdkcy .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#kicwzwdkcy .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#kicwzwdkcy .gt_left {
+  text-align: left;
+}
+
+#kicwzwdkcy .gt_center {
+  text-align: center;
+}
+
+#kicwzwdkcy .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#kicwzwdkcy .gt_font_normal {
+  font-weight: normal;
+}
+
+#kicwzwdkcy .gt_font_bold {
+  font-weight: bold;
+}
+
+#kicwzwdkcy .gt_font_italic {
+  font-style: italic;
+}
+
+#kicwzwdkcy .gt_super {
+  font-size: 65%;
+}
+
+#kicwzwdkcy .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#kicwzwdkcy .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#kicwzwdkcy .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#kicwzwdkcy .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#kicwzwdkcy .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#kicwzwdkcy .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#kicwzwdkcy .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#kicwzwdkcy .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#kicwzwdkcy div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<thead><tr class="gt_col_headings header">
+<th colspan="2" id="a::stub" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase" scope="colgroup"></th>
+<th id="uniq" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase" scope="col">uniq</th>
+<th id="mean" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase" scope="col">mean</th>
+<th id="p0" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase" scope="col">p0</th>
+<th id="p25" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase" scope="col">p25</th>
+<th id="p50" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase" scope="col">p50</th>
+<th id="p75" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase" scope="col">p75</th>
+<th id="p100" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase" scope="col">p100</th>
+<th id="iqr" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase" scope="col">iqr</th>
+<th id="sd" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase" scope="col">sd</th>
+<th id="hist" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase" scope="col">hist</th>
+</tr></thead>
+<tbody class="gt_table_body">
+<tr class="gt_row_group_first odd">
+<td rowspan="3" class="gt_row gt_left gt_stub_row_group" headers="beds_cert stub_2_1 stub_1">beds_cert</td>
+<th id="stub_2_1" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">all</th>
+<td class="gt_row gt_right" headers="beds_cert stub_2_1 uniq" style="font-family: 'Source Sans Pro'; font-weight: 400">121&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_cert stub_2_1 mean" style="font-family: 'Source Sans Pro'; font-weight: 400"> 52.58 </td>
+<td class="gt_row gt_right" headers="beds_cert stub_2_1 p0" style="font-family: 'Source Sans Pro'; font-weight: 400">2&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_cert stub_2_1 p25" style="font-family: 'Source Sans Pro'; font-weight: 400">30&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_cert stub_2_1 p50" style="font-family: 'Source Sans Pro'; font-weight: 400"> 45&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_cert stub_2_1 p75" style="font-family: 'Source Sans Pro'; font-weight: 400"> 64&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_cert stub_2_1 p100" style="font-family: 'Source Sans Pro'; font-weight: 400">336&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_cert stub_2_1 iqr" style="font-family: 'Source Sans Pro'; font-weight: 400">34&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_cert stub_2_1 sd" style="font-family: 'Source Sans Pro'; font-weight: 400">37.965</td>
+<td class="gt_row gt_left" headers="beds_cert stub_2_1 hist" style="font-family: 'Source Sans Pro'; font-weight: 400">▇▂▁▁▁</td>
+</tr>
+<tr class="even">
+<th id="stub_2_2" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">dist</th>
+<td class="gt_row gt_right" headers="beds_cert stub_2_2 uniq" style="font-family: 'Source Sans Pro'; font-weight: 400">236&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_cert stub_2_2 mean" style="font-family: 'Source Sans Pro'; font-weight: 400">115.92 </td>
+<td class="gt_row gt_right" headers="beds_cert stub_2_2 p0" style="font-family: 'Source Sans Pro'; font-weight: 400">0&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_cert stub_2_2 p25" style="font-family: 'Source Sans Pro'; font-weight: 400">88&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_cert stub_2_2 p50" style="font-family: 'Source Sans Pro'; font-weight: 400">117&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_cert stub_2_2 p75" style="font-family: 'Source Sans Pro'; font-weight: 400">134&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_cert stub_2_2 p100" style="font-family: 'Source Sans Pro'; font-weight: 400">485&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_cert stub_2_2 iqr" style="font-family: 'Source Sans Pro'; font-weight: 400">46&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_cert stub_2_2 sd" style="font-family: 'Source Sans Pro'; font-weight: 400">47.102</td>
+<td class="gt_row gt_left" headers="beds_cert stub_2_2 hist" style="font-family: 'Source Sans Pro'; font-weight: 400">▅▇▁▁▁</td>
+</tr>
+<tr class="odd">
+<th id="stub_2_3" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">dual</th>
+<td class="gt_row gt_right" headers="beds_cert stub_2_3 uniq" style="font-family: 'Source Sans Pro'; font-weight: 400">379&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_cert stub_2_3 mean" style="font-family: 'Source Sans Pro'; font-weight: 400">108.375</td>
+<td class="gt_row gt_right" headers="beds_cert stub_2_3 p0" style="font-family: 'Source Sans Pro'; font-weight: 400">0&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_cert stub_2_3 p25" style="font-family: 'Source Sans Pro'; font-weight: 400">68&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_cert stub_2_3 p50" style="font-family: 'Source Sans Pro'; font-weight: 400">100&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_cert stub_2_3 p75" style="font-family: 'Source Sans Pro'; font-weight: 400">128&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_cert stub_2_3 p100" style="font-family: 'Source Sans Pro'; font-weight: 400">843&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_cert stub_2_3 iqr" style="font-family: 'Source Sans Pro'; font-weight: 400">60&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_cert stub_2_3 sd" style="font-family: 'Source Sans Pro'; font-weight: 400">60.403</td>
+<td class="gt_row gt_left" headers="beds_cert stub_2_3 hist" style="font-family: 'Source Sans Pro'; font-weight: 400">▇▁▁▁▁</td>
+</tr>
+<tr class="gt_row_group_first even">
+<td rowspan="3" class="gt_row gt_left gt_stub_row_group" headers="beds_dual stub_2_4 stub_1">beds_dual</td>
+<th id="stub_2_4" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">all</th>
+<td class="gt_row gt_right" headers="beds_dual stub_2_4 uniq" style="font-family: 'Source Sans Pro'; font-weight: 400">  9&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_dual stub_2_4 mean" style="font-family: 'Source Sans Pro'; font-weight: 400">  0.633</td>
+<td class="gt_row gt_right" headers="beds_dual stub_2_4 p0" style="font-family: 'Source Sans Pro'; font-weight: 400">0&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_dual stub_2_4 p25" style="font-family: 'Source Sans Pro'; font-weight: 400"> 0&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_dual stub_2_4 p50" style="font-family: 'Source Sans Pro'; font-weight: 400">  0&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_dual stub_2_4 p75" style="font-family: 'Source Sans Pro'; font-weight: 400">  0&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_dual stub_2_4 p100" style="font-family: 'Source Sans Pro'; font-weight: 400">130&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_dual stub_2_4 iqr" style="font-family: 'Source Sans Pro'; font-weight: 400"> 0&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_dual stub_2_4 sd" style="font-family: 'Source Sans Pro'; font-weight: 400"> 6.674</td>
+<td class="gt_row gt_left" headers="beds_dual stub_2_4 hist" style="font-family: 'Source Sans Pro'; font-weight: 400">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<th id="stub_2_5" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">dist</th>
+<td class="gt_row gt_right" headers="beds_dual stub_2_5 uniq" style="font-family: 'Source Sans Pro'; font-weight: 400">216&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_dual stub_2_5 mean" style="font-family: 'Source Sans Pro'; font-weight: 400"> 82.891</td>
+<td class="gt_row gt_right" headers="beds_dual stub_2_5 p0" style="font-family: 'Source Sans Pro'; font-weight: 400">0&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_dual stub_2_5 p25" style="font-family: 'Source Sans Pro'; font-weight: 400">51&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_dual stub_2_5 p50" style="font-family: 'Source Sans Pro'; font-weight: 400"> 84&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_dual stub_2_5 p75" style="font-family: 'Source Sans Pro'; font-weight: 400">109&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_dual stub_2_5 p100" style="font-family: 'Source Sans Pro'; font-weight: 400">382&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_dual stub_2_5 iqr" style="font-family: 'Source Sans Pro'; font-weight: 400">58&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_dual stub_2_5 sd" style="font-family: 'Source Sans Pro'; font-weight: 400">45.396</td>
+<td class="gt_row gt_left" headers="beds_dual stub_2_5 hist" style="font-family: 'Source Sans Pro'; font-weight: 400">▇▇▁▁▁</td>
+</tr>
+<tr class="even">
+<th id="stub_2_6" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">dual</th>
+<td class="gt_row gt_right" headers="beds_dual stub_2_6 uniq" style="font-family: 'Source Sans Pro'; font-weight: 400">379&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_dual stub_2_6 mean" style="font-family: 'Source Sans Pro'; font-weight: 400">108.224</td>
+<td class="gt_row gt_right" headers="beds_dual stub_2_6 p0" style="font-family: 'Source Sans Pro'; font-weight: 400">0&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_dual stub_2_6 p25" style="font-family: 'Source Sans Pro'; font-weight: 400">68&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_dual stub_2_6 p50" style="font-family: 'Source Sans Pro'; font-weight: 400">100&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_dual stub_2_6 p75" style="font-family: 'Source Sans Pro'; font-weight: 400">128&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_dual stub_2_6 p100" style="font-family: 'Source Sans Pro'; font-weight: 400">843&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_dual stub_2_6 iqr" style="font-family: 'Source Sans Pro'; font-weight: 400">60&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_dual stub_2_6 sd" style="font-family: 'Source Sans Pro'; font-weight: 400">60.471</td>
+<td class="gt_row gt_left" headers="beds_dual stub_2_6 hist" style="font-family: 'Source Sans Pro'; font-weight: 400">▇▁▁▁▁</td>
+</tr>
+<tr class="gt_row_group_first odd">
+<td rowspan="3" class="gt_row gt_left gt_stub_row_group" headers="beds_mcr stub_2_7 stub_1">beds_mcr</td>
+<th id="stub_2_7" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">all</th>
+<td class="gt_row gt_right" headers="beds_mcr stub_2_7 uniq" style="font-family: 'Source Sans Pro'; font-weight: 400">122&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_mcr stub_2_7 mean" style="font-family: 'Source Sans Pro'; font-weight: 400"> 51.948</td>
+<td class="gt_row gt_right" headers="beds_mcr stub_2_7 p0" style="font-family: 'Source Sans Pro'; font-weight: 400">0&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_mcr stub_2_7 p25" style="font-family: 'Source Sans Pro'; font-weight: 400">30&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_mcr stub_2_7 p50" style="font-family: 'Source Sans Pro'; font-weight: 400"> 45&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_mcr stub_2_7 p75" style="font-family: 'Source Sans Pro'; font-weight: 400"> 64&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_mcr stub_2_7 p100" style="font-family: 'Source Sans Pro'; font-weight: 400">336&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_mcr stub_2_7 iqr" style="font-family: 'Source Sans Pro'; font-weight: 400">34&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_mcr stub_2_7 sd" style="font-family: 'Source Sans Pro'; font-weight: 400">38.225</td>
+<td class="gt_row gt_left" headers="beds_mcr stub_2_7 hist" style="font-family: 'Source Sans Pro'; font-weight: 400">▇▂▁▁▁</td>
+</tr>
+<tr class="even">
+<th id="stub_2_8" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">dist</th>
+<td class="gt_row gt_right" headers="beds_mcr stub_2_8 uniq" style="font-family: 'Source Sans Pro'; font-weight: 400">125&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_mcr stub_2_8 mean" style="font-family: 'Source Sans Pro'; font-weight: 400"> 25.041</td>
+<td class="gt_row gt_right" headers="beds_mcr stub_2_8 p0" style="font-family: 'Source Sans Pro'; font-weight: 400">0&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_mcr stub_2_8 p25" style="font-family: 'Source Sans Pro'; font-weight: 400"> 7&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_mcr stub_2_8 p50" style="font-family: 'Source Sans Pro'; font-weight: 400"> 19&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_mcr stub_2_8 p75" style="font-family: 'Source Sans Pro'; font-weight: 400"> 36&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_mcr stub_2_8 p100" style="font-family: 'Source Sans Pro'; font-weight: 400">198&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_mcr stub_2_8 iqr" style="font-family: 'Source Sans Pro'; font-weight: 400">29&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_mcr stub_2_8 sd" style="font-family: 'Source Sans Pro'; font-weight: 400">24.835</td>
+<td class="gt_row gt_left" headers="beds_mcr stub_2_8 hist" style="font-family: 'Source Sans Pro'; font-weight: 400">▇▂▁▁▁</td>
+</tr>
+<tr class="odd">
+<th id="stub_2_9" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">dual</th>
+<td class="gt_row gt_right" headers="beds_mcr stub_2_9 uniq" style="font-family: 'Source Sans Pro'; font-weight: 400"> 31&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_mcr stub_2_9 mean" style="font-family: 'Source Sans Pro'; font-weight: 400">  0.098</td>
+<td class="gt_row gt_right" headers="beds_mcr stub_2_9 p0" style="font-family: 'Source Sans Pro'; font-weight: 400">0&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_mcr stub_2_9 p25" style="font-family: 'Source Sans Pro'; font-weight: 400"> 0&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_mcr stub_2_9 p50" style="font-family: 'Source Sans Pro'; font-weight: 400">  0&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_mcr stub_2_9 p75" style="font-family: 'Source Sans Pro'; font-weight: 400">  0&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_mcr stub_2_9 p100" style="font-family: 'Source Sans Pro'; font-weight: 400"> 92&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_mcr stub_2_9 iqr" style="font-family: 'Source Sans Pro'; font-weight: 400"> 0&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_mcr stub_2_9 sd" style="font-family: 'Source Sans Pro'; font-weight: 400"> 1.793</td>
+<td class="gt_row gt_left" headers="beds_mcr stub_2_9 hist" style="font-family: 'Source Sans Pro'; font-weight: 400">▇▁▁▁▁</td>
+</tr>
+<tr class="gt_row_group_first even">
+<td rowspan="3" class="gt_row gt_left gt_stub_row_group" headers="beds_tot stub_2_10 stub_1">beds_tot</td>
+<th id="stub_2_10" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">all</th>
+<td class="gt_row gt_right" headers="beds_tot stub_2_10 uniq" style="font-family: 'Source Sans Pro'; font-weight: 400">131&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_tot stub_2_10 mean" style="font-family: 'Source Sans Pro'; font-weight: 400"> 60.716</td>
+<td class="gt_row gt_right" headers="beds_tot stub_2_10 p0" style="font-family: 'Source Sans Pro'; font-weight: 400">4&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_tot stub_2_10 p25" style="font-family: 'Source Sans Pro'; font-weight: 400">33&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_tot stub_2_10 p50" style="font-family: 'Source Sans Pro'; font-weight: 400"> 50&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_tot stub_2_10 p75" style="font-family: 'Source Sans Pro'; font-weight: 400"> 72&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_tot stub_2_10 p100" style="font-family: 'Source Sans Pro'; font-weight: 400">462&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_tot stub_2_10 iqr" style="font-family: 'Source Sans Pro'; font-weight: 400">39&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_tot stub_2_10 sd" style="font-family: 'Source Sans Pro'; font-weight: 400">47.192</td>
+<td class="gt_row gt_left" headers="beds_tot stub_2_10 hist" style="font-family: 'Source Sans Pro'; font-weight: 400">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<th id="stub_2_11" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">dist</th>
+<td class="gt_row gt_right" headers="beds_tot stub_2_11 uniq" style="font-family: 'Source Sans Pro'; font-weight: 400">243&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_tot stub_2_11 mean" style="font-family: 'Source Sans Pro'; font-weight: 400">121.122</td>
+<td class="gt_row gt_right" headers="beds_tot stub_2_11 p0" style="font-family: 'Source Sans Pro'; font-weight: 400">0&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_tot stub_2_11 p25" style="font-family: 'Source Sans Pro'; font-weight: 400">92&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_tot stub_2_11 p50" style="font-family: 'Source Sans Pro'; font-weight: 400">120&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_tot stub_2_11 p75" style="font-family: 'Source Sans Pro'; font-weight: 400">138&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_tot stub_2_11 p100" style="font-family: 'Source Sans Pro'; font-weight: 400">667&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_tot stub_2_11 iqr" style="font-family: 'Source Sans Pro'; font-weight: 400">46&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_tot stub_2_11 sd" style="font-family: 'Source Sans Pro'; font-weight: 400">49.345</td>
+<td class="gt_row gt_left" headers="beds_tot stub_2_11 hist" style="font-family: 'Source Sans Pro'; font-weight: 400">▇▃▁▁▁</td>
+</tr>
+<tr class="even">
+<th id="stub_2_12" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">dual</th>
+<td class="gt_row gt_right" headers="beds_tot stub_2_12 uniq" style="font-family: 'Source Sans Pro'; font-weight: 400">381&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_tot stub_2_12 mean" style="font-family: 'Source Sans Pro'; font-weight: 400">109.665</td>
+<td class="gt_row gt_right" headers="beds_tot stub_2_12 p0" style="font-family: 'Source Sans Pro'; font-weight: 400">0&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_tot stub_2_12 p25" style="font-family: 'Source Sans Pro'; font-weight: 400">69&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_tot stub_2_12 p50" style="font-family: 'Source Sans Pro'; font-weight: 400">100&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_tot stub_2_12 p75" style="font-family: 'Source Sans Pro'; font-weight: 400">130&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_tot stub_2_12 p100" style="font-family: 'Source Sans Pro'; font-weight: 400">874&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_tot stub_2_12 iqr" style="font-family: 'Source Sans Pro'; font-weight: 400">61&nbsp;</td>
+<td class="gt_row gt_right" headers="beds_tot stub_2_12 sd" style="font-family: 'Source Sans Pro'; font-weight: 400">60.926</td>
+<td class="gt_row gt_left" headers="beds_tot stub_2_12 hist" style="font-family: 'Source Sans Pro'; font-weight: 400">▇▁▁▁▁</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
+<span>  all <span class="op">=</span> <span class="va">ov</span><span class="op">$</span><span class="va">`SNF All`</span><span class="op">$</span><span class="va">categorical</span>,</span>
+<span>  dist <span class="op">=</span> <span class="va">ov</span><span class="op">$</span><span class="va">`SNF Dist`</span><span class="op">$</span><span class="va">categorical</span>,</span>
+<span>  dual <span class="op">=</span> <span class="va">ov</span><span class="op">$</span><span class="va">`SNF Dual`</span><span class="op">$</span><span class="va">categorical</span></span>
+<span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/rowbind.html">rowbind</a></span><span class="op">(</span>idcol <span class="op">=</span> <span class="st">"id"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/select_replace_vars.html">slt</a></span><span class="op">(</span><span class="va">id</span>, <span class="va">col</span>, uniq <span class="op">=</span> <span class="va">n_unique</span>, <span class="va">min</span>, <span class="va">max</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/roworder.html">roworder</a></span><span class="op">(</span><span class="va">col</span>, <span class="va">id</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/gt.html">gt</a></span><span class="op">(</span></span>
+<span>    rowname_col <span class="op">=</span> <span class="st">"id"</span>, </span>
+<span>    groupname_col <span class="op">=</span> <span class="st">"col"</span>,</span>
+<span>    row_group_as_column <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">gtExtras</span><span class="fu">::</span><span class="fu"><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_nytimes.html">gt_theme_nytimes</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="hhwbiiciqa" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+#hhwbiiciqa table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#hhwbiiciqa thead, #hhwbiiciqa tbody, #hhwbiiciqa tfoot, #hhwbiiciqa tr, #hhwbiiciqa td, #hhwbiiciqa th {
+  border-style: none;
+}
+
+#hhwbiiciqa p {
+  margin: 0;
+  padding: 0;
+}
+
+#hhwbiiciqa .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#hhwbiiciqa .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#hhwbiiciqa .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#hhwbiiciqa .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#hhwbiiciqa .gt_heading {
+  background-color: #FFFFFF;
+  text-align: left;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#hhwbiiciqa .gt_bottom_border {
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hhwbiiciqa .gt_col_headings {
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: none;
+  border-bottom-width: 1px;
+  border-bottom-color: #334422;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#hhwbiiciqa .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 12px;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#hhwbiiciqa .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 12px;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#hhwbiiciqa .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#hhwbiiciqa .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#hhwbiiciqa .gt_column_spanner {
+  border-bottom-style: none;
+  border-bottom-width: 1px;
+  border-bottom-color: #334422;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#hhwbiiciqa .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#hhwbiiciqa .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#hhwbiiciqa .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#hhwbiiciqa .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#hhwbiiciqa .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#hhwbiiciqa .gt_row {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#hhwbiiciqa .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hhwbiiciqa .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#hhwbiiciqa .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#hhwbiiciqa .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#hhwbiiciqa .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hhwbiiciqa .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#hhwbiiciqa .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#hhwbiiciqa .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hhwbiiciqa .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hhwbiiciqa .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#hhwbiiciqa .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hhwbiiciqa .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#hhwbiiciqa .gt_table_body {
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #FFFFFF;
+}
+
+#hhwbiiciqa .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#hhwbiiciqa .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hhwbiiciqa .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#hhwbiiciqa .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hhwbiiciqa .gt_left {
+  text-align: left;
+}
+
+#hhwbiiciqa .gt_center {
+  text-align: center;
+}
+
+#hhwbiiciqa .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#hhwbiiciqa .gt_font_normal {
+  font-weight: normal;
+}
+
+#hhwbiiciqa .gt_font_bold {
+  font-weight: bold;
+}
+
+#hhwbiiciqa .gt_font_italic {
+  font-style: italic;
+}
+
+#hhwbiiciqa .gt_super {
+  font-size: 65%;
+}
+
+#hhwbiiciqa .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#hhwbiiciqa .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#hhwbiiciqa .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#hhwbiiciqa .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#hhwbiiciqa .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#hhwbiiciqa .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#hhwbiiciqa .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#hhwbiiciqa .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#hhwbiiciqa div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<thead><tr class="gt_col_headings header">
+<th colspan="2" id="a::stub" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase" scope="colgroup"></th>
+<th id="uniq" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase" scope="col">uniq</th>
+<th id="min" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase" scope="col">min</th>
+<th id="max" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase" scope="col">max</th>
+</tr></thead>
+<tbody class="gt_table_body">
+<tr class="gt_row_group_first odd">
+<td rowspan="3" class="gt_row gt_left gt_stub_row_group" headers="cat stub_2_1 stub_1">cat</td>
+<th id="stub_2_1" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">all</th>
+<td class="gt_row gt_right" headers="cat stub_2_1 uniq" style="font-family: 'Source Sans Pro'; font-weight: 400">1</td>
+<td class="gt_row gt_left" headers="cat stub_2_1 min" style="font-family: 'Source Sans Pro'; font-weight: 400">Skilled Nursing Facility</td>
+<td class="gt_row gt_left" headers="cat stub_2_1 max" style="font-family: 'Source Sans Pro'; font-weight: 400">Skilled Nursing Facility</td>
+</tr>
+<tr class="even">
+<th id="stub_2_2" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">dist</th>
+<td class="gt_row gt_right" headers="cat stub_2_2 uniq" style="font-family: 'Source Sans Pro'; font-weight: 400">1</td>
+<td class="gt_row gt_left" headers="cat stub_2_2 min" style="font-family: 'Source Sans Pro'; font-weight: 400">Skilled Nursing Facilities/Nursing Facility (Distinct Part)</td>
+<td class="gt_row gt_left" headers="cat stub_2_2 max" style="font-family: 'Source Sans Pro'; font-weight: 400">Skilled Nursing Facilities/Nursing Facility (Distinct Part)</td>
+</tr>
+<tr class="odd">
+<th id="stub_2_3" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">dual</th>
+<td class="gt_row gt_right" headers="cat stub_2_3 uniq" style="font-family: 'Source Sans Pro'; font-weight: 400">1</td>
+<td class="gt_row gt_left" headers="cat stub_2_3 min" style="font-family: 'Source Sans Pro'; font-weight: 400">Skilled Nursing Facilities/Nursing Facility (Dually Certified)</td>
+<td class="gt_row gt_left" headers="cat stub_2_3 max" style="font-family: 'Source Sans Pro'; font-weight: 400">Skilled Nursing Facilities/Nursing Facility (Dually Certified)</td>
+</tr>
+<tr class="gt_row_group_first even">
+<td rowspan="3" class="gt_row gt_left gt_stub_row_group" headers="ccn stub_2_4 stub_1">ccn</td>
+<th id="stub_2_4" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">all</th>
+<td class="gt_row gt_right" headers="ccn stub_2_4 uniq" style="font-family: 'Source Sans Pro'; font-weight: 400">553</td>
+<td class="gt_row gt_left" headers="ccn stub_2_4 min" style="font-family: 'Source Sans Pro'; font-weight: 400">015423</td>
+<td class="gt_row gt_left" headers="ccn stub_2_4 max" style="font-family: 'Source Sans Pro'; font-weight: 400">745052</td>
+</tr>
+<tr class="odd">
+<th id="stub_2_5" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">dist</th>
+<td class="gt_row gt_right" headers="ccn stub_2_5 uniq" style="font-family: 'Source Sans Pro'; font-weight: 400">2097</td>
+<td class="gt_row gt_left" headers="ccn stub_2_5 min" style="font-family: 'Source Sans Pro'; font-weight: 400">015455</td>
+<td class="gt_row gt_left" headers="ccn stub_2_5 max" style="font-family: 'Source Sans Pro'; font-weight: 400">745050</td>
+</tr>
+<tr class="even">
+<th id="stub_2_6" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">dual</th>
+<td class="gt_row gt_right" headers="ccn stub_2_6 uniq" style="font-family: 'Source Sans Pro'; font-weight: 400">11820</td>
+<td class="gt_row gt_left" headers="ccn stub_2_6 min" style="font-family: 'Source Sans Pro'; font-weight: 400">015009</td>
+<td class="gt_row gt_left" headers="ccn stub_2_6 max" style="font-family: 'Source Sans Pro'; font-weight: 400">745059</td>
+</tr>
+<tr class="gt_row_group_first odd">
+<td rowspan="3" class="gt_row gt_left gt_stub_row_group" headers="city stub_2_7 stub_1">city</td>
+<th id="stub_2_7" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">all</th>
+<td class="gt_row gt_right" headers="city stub_2_7 uniq" style="font-family: 'Source Sans Pro'; font-weight: 400">395</td>
+<td class="gt_row gt_left" headers="city stub_2_7 min" style="font-family: 'Source Sans Pro'; font-weight: 400">Abilene</td>
+<td class="gt_row gt_left" headers="city stub_2_7 max" style="font-family: 'Source Sans Pro'; font-weight: 400">Yuma</td>
+</tr>
+<tr class="even">
+<th id="stub_2_8" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">dist</th>
+<td class="gt_row gt_right" headers="city stub_2_8 uniq" style="font-family: 'Source Sans Pro'; font-weight: 400">1019</td>
+<td class="gt_row gt_left" headers="city stub_2_8 min" style="font-family: 'Source Sans Pro'; font-weight: 400">Abbeville</td>
+<td class="gt_row gt_left" headers="city stub_2_8 max" style="font-family: 'Source Sans Pro'; font-weight: 400">Zionsville</td>
+</tr>
+<tr class="odd">
+<th id="stub_2_9" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">dual</th>
+<td class="gt_row gt_right" headers="city stub_2_9 uniq" style="font-family: 'Source Sans Pro'; font-weight: 400">4523</td>
+<td class="gt_row gt_left" headers="city stub_2_9 min" style="font-family: 'Source Sans Pro'; font-weight: 400">Abbeville</td>
+<td class="gt_row gt_left" headers="city stub_2_9 max" style="font-family: 'Source Sans Pro'; font-weight: 400">Zumbrota</td>
+</tr>
+<tr class="gt_row_group_first even">
+<td rowspan="3" class="gt_row gt_left gt_stub_row_group" headers="name stub_2_10 stub_1">name</td>
+<th id="stub_2_10" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">all</th>
+<td class="gt_row gt_right" headers="name stub_2_10 uniq" style="font-family: 'Source Sans Pro'; font-weight: 400">552</td>
+<td class="gt_row gt_left" headers="name stub_2_10 min" style="font-family: 'Source Sans Pro'; font-weight: 400">15 CRAIGSIDE</td>
+<td class="gt_row gt_left" headers="name stub_2_10 max" style="font-family: 'Source Sans Pro'; font-weight: 400">Windsor Point Continuing Care</td>
+</tr>
+<tr class="odd">
+<th id="stub_2_11" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">dist</th>
+<td class="gt_row gt_right" headers="name stub_2_11 uniq" style="font-family: 'Source Sans Pro'; font-weight: 400">2085</td>
+<td class="gt_row gt_left" headers="name stub_2_11 min" style="font-family: 'Source Sans Pro'; font-weight: 400">A.G. RHODES HOME WESLEY WOODS</td>
+<td class="gt_row gt_left" headers="name stub_2_11 max" style="font-family: 'Source Sans Pro'; font-weight: 400">ZIONSVILLE MEADOWS</td>
+</tr>
+<tr class="even">
+<th id="stub_2_12" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">dual</th>
+<td class="gt_row gt_right" headers="name stub_2_12 uniq" style="font-family: 'Source Sans Pro'; font-weight: 400">11731</td>
+<td class="gt_row gt_left" headers="name stub_2_12 min" style="font-family: 'Source Sans Pro'; font-weight: 400">24TH PLACE</td>
+<td class="gt_row gt_left" headers="name stub_2_12 max" style="font-family: 'Source Sans Pro'; font-weight: 400">Zumbrota Care Center</td>
+</tr>
+<tr class="gt_row_group_first odd">
+<td rowspan="3" class="gt_row gt_left gt_stub_row_group" headers="state stub_2_13 stub_1">state</td>
+<th id="stub_2_13" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">all</th>
+<td class="gt_row gt_right" headers="state stub_2_13 uniq" style="font-family: 'Source Sans Pro'; font-weight: 400">45</td>
+<td class="gt_row gt_left" headers="state stub_2_13 min" style="font-family: 'Source Sans Pro'; font-weight: 400">AL</td>
+<td class="gt_row gt_left" headers="state stub_2_13 max" style="font-family: 'Source Sans Pro'; font-weight: 400">WV</td>
+</tr>
+<tr class="even">
+<th id="stub_2_14" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">dist</th>
+<td class="gt_row gt_right" headers="state stub_2_14 uniq" style="font-family: 'Source Sans Pro'; font-weight: 400">37</td>
+<td class="gt_row gt_left" headers="state stub_2_14 min" style="font-family: 'Source Sans Pro'; font-weight: 400">AL</td>
+<td class="gt_row gt_left" headers="state stub_2_14 max" style="font-family: 'Source Sans Pro'; font-weight: 400">WV</td>
+</tr>
+<tr class="odd">
+<th id="stub_2_15" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">dual</th>
+<td class="gt_row gt_right" headers="state stub_2_15 uniq" style="font-family: 'Source Sans Pro'; font-weight: 400">52</td>
+<td class="gt_row gt_left" headers="state stub_2_15 min" style="font-family: 'Source Sans Pro'; font-weight: 400">AK</td>
+<td class="gt_row gt_left" headers="state stub_2_15 max" style="font-family: 'Source Sans Pro'; font-weight: 400">WY</td>
+</tr>
+<tr class="gt_row_group_first even">
+<td rowspan="3" class="gt_row gt_left gt_stub_row_group" headers="sub stub_2_16 stub_1">sub</td>
+<th id="stub_2_16" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">all</th>
+<td class="gt_row gt_right" headers="sub stub_2_16 uniq" style="font-family: 'Source Sans Pro'; font-weight: 400">1</td>
+<td class="gt_row gt_left" headers="sub stub_2_16 min" style="font-family: 'Source Sans Pro'; font-weight: 400">Title 18 Only</td>
+<td class="gt_row gt_left" headers="sub stub_2_16 max" style="font-family: 'Source Sans Pro'; font-weight: 400">Title 18 Only</td>
+</tr>
+<tr class="odd">
+<th id="stub_2_17" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">dist</th>
+<td class="gt_row gt_right" headers="sub stub_2_17 uniq" style="font-family: 'Source Sans Pro'; font-weight: 400">1</td>
+<td class="gt_row gt_left" headers="sub stub_2_17 min" style="font-family: 'Source Sans Pro'; font-weight: 400">Title 18/19</td>
+<td class="gt_row gt_left" headers="sub stub_2_17 max" style="font-family: 'Source Sans Pro'; font-weight: 400">Title 18/19</td>
+</tr>
+<tr class="even">
+<th id="stub_2_18" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">dual</th>
+<td class="gt_row gt_right" headers="sub stub_2_18 uniq" style="font-family: 'Source Sans Pro'; font-weight: 400">1</td>
+<td class="gt_row gt_left" headers="sub stub_2_18 min" style="font-family: 'Source Sans Pro'; font-weight: 400">Title 18/19</td>
+<td class="gt_row gt_left" headers="sub stub_2_18 max" style="font-family: 'Source Sans Pro'; font-weight: 400">Title 18/19</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 
@@ -831,33 +2041,73 @@ $`Skilled Nursing Facility`
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./icf.html" class="pagination-link" aria-label="ICF-IID">
+      <a href="./icf-iid.html" class="pagination-link" aria-label="ICF-IID">
         <span class="nav-page-text"><span class="chapter-title">ICF-IID</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span><span class="co"> html_document</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="an">editor_options:</span><span class="co"> </span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">  chunk_output_type: console</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># Nursing</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup}</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">#| cache: false</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">#| comment: ""</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ccn)</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"code/gt_theme.R"</span>)</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>ccn<span class="sc">:::</span><span class="fu">get_pin</span>(<span class="st">"snf_hrsa"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>   collapse<span class="sc">::</span><span class="fu">rsplit</span>(<span class="sc">~</span> cat)</span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span><span class="co"> html_document</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="an">editor_options:</span><span class="co"> </span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">  chunk_output_type: console</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># Nursing</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup}</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co">#| cache: false</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co">#| comment: ""</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ccn)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(collapse)</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"code/gt_theme.R"</span>)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>hrsa <span class="ot">&lt;-</span> collapse<span class="sc">::</span><span class="fu">gv</span>(ccn<span class="sc">:::</span><span class="fu">get_pin</span>(<span class="st">"snf_hrsa"</span>), <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>, <span class="dv">9</span><span class="sc">:</span><span class="dv">12</span>))</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>snf <span class="ot">&lt;-</span> ccn<span class="sc">:::</span><span class="fu">get_pin</span>(<span class="st">"snf"</span>)</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>snf <span class="ot">&lt;-</span> snf[<span class="fu">substr</span>(snf<span class="sc">$</span>ccn, <span class="dv">1</span>L, <span class="dv">6</span>L) <span class="sc">%!iin%</span> <span class="fu">substr</span>(hrsa<span class="sc">$</span>ccn, <span class="dv">1</span>L, <span class="dv">6</span>L), ]</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>ov <span class="ot">&lt;-</span> hrsa <span class="sc">|&gt;</span> </span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">rsplit</span>(<span class="sc">~</span>.id) <span class="sc">|&gt;</span> </span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>  purrr<span class="sc">::</span><span class="fu">map</span>(cheapr<span class="sc">::</span>overview)</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a><span class="fu">list</span>(</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>  <span class="at">all =</span> ov<span class="sc">$</span><span class="st">`</span><span class="at">SNF All</span><span class="st">`</span><span class="sc">$</span>numeric,</span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>  <span class="at">dist =</span> ov<span class="sc">$</span><span class="st">`</span><span class="at">SNF Dist</span><span class="st">`</span><span class="sc">$</span>numeric,</span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>  <span class="at">dual =</span> ov<span class="sc">$</span><span class="st">`</span><span class="at">SNF Dual</span><span class="st">`</span><span class="sc">$</span>numeric</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> </span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">rowbind</span>(<span class="at">idcol =</span> <span class="st">"id"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">slt</span>(id, col, <span class="at">uniq =</span> n_unique, mean<span class="sc">:</span>hist) <span class="sc">|&gt;</span> </span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">roworder</span>(col, id) <span class="sc">|&gt;</span> </span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>  tibble<span class="sc">::</span><span class="fu">as_tibble</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>(</span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">rowname_col =</span> <span class="st">"id"</span>, </span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">groupname_col =</span> <span class="st">"col"</span>,</span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a>    <span class="at">row_group_as_column =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">fmt_auto</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a>  gtExtras<span class="sc">::</span><span class="fu">gt_theme_nytimes</span>()</span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a><span class="fu">list</span>(</span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a>  <span class="at">all =</span> ov<span class="sc">$</span><span class="st">`</span><span class="at">SNF All</span><span class="st">`</span><span class="sc">$</span>categorical,</span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a>  <span class="at">dist =</span> ov<span class="sc">$</span><span class="st">`</span><span class="at">SNF Dist</span><span class="st">`</span><span class="sc">$</span>categorical,</span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a>  <span class="at">dual =</span> ov<span class="sc">$</span><span class="st">`</span><span class="at">SNF Dual</span><span class="st">`</span><span class="sc">$</span>categorical</span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> </span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">rowbind</span>(<span class="at">idcol =</span> <span class="st">"id"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">slt</span>(id, col, <span class="at">uniq =</span> n_unique, min, max) <span class="sc">|&gt;</span> </span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">roworder</span>(col, id) <span class="sc">|&gt;</span> </span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a>  tibble<span class="sc">::</span><span class="fu">as_tibble</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>(</span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a>    <span class="at">rowname_col =</span> <span class="st">"id"</span>, </span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a>    <span class="at">groupname_col =</span> <span class="st">"col"</span>,</span>
+<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a>    <span class="at">row_group_as_column =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a>  gtExtras<span class="sc">::</span><span class="fu">gt_theme_nytimes</span>()</span>
+<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a></span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

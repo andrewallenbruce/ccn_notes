@@ -16,9 +16,7 @@ library(ccn)
 source("code/gt_theme.R")
 ```
 
-<br>
-
-A __CMS Certification Number__ is a standardized^[_State Operations Manual_, CMS publication number 100-07](https://www.cms.gov/Regulations-and-Guidance/Guidance/Manuals/Internet-Only-Manuals-IOMs-Items/CMS1201984) sequence of alphanumeric characters that uniquely identify health care providers and suppliers who interact with the United States Medicare and Medicaid programs.
+A __CMS Certification Number__ is a standardized^[State Operations Manual, CMS publication number 100-07](https://www.cms.gov/Regulations-and-Guidance/Guidance/Manuals/Internet-Only-Manuals-IOMs-Items/CMS1201984) sequence of alphanumeric characters that uniquely identify health care providers and suppliers who interact with the United States Medicare and Medicaid programs.
 
 The __CCN__ is used to track provider agreements and cost reports. The __NPI__^[National
 Provider Identifier] and __PTAN__^[Provider Transaction Account Number] are
@@ -31,10 +29,6 @@ In [2007](https://www.cms.gov/medicare/provider-enrollment-and-certification/sur
    * OSCAR Number^[Online Survey, Certification, and Reporting System.]
 
 <br>
-
-:::{.callout-important}
-
-:::
 
 ## CCN Format
 

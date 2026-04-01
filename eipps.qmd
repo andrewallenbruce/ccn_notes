@@ -36,6 +36,8 @@ source("code/gt_theme.R")
 |
 
 
+<br>
+
 The RO assigns the following alpha-characters in the third position as indicated:
 
    - M = Psychiatric Unit in Critical Access Hospital

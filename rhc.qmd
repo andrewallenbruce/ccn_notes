@@ -1,0 +1,23 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+# RHC
+
+```{r setup}
+#| message: false
+#| warning: false
+#| echo: false
+#| cache: false
+#| comment: ""
+library(ccn)
+source("code/gt_theme.R")
+```
+
+## Rural Health Clinics
+
+```{r}
+ccn:::get_pin("rhc")
+```

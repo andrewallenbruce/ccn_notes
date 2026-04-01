@@ -1,0 +1,23 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+# IRF
+
+```{r setup}
+#| message: false
+#| warning: false
+#| echo: false
+#| cache: false
+#| comment: ""
+library(ccn)
+source("code/gt_theme.R")
+```
+
+## Inpatient Rehabilitation Facilities
+
+```{r}
+ccn:::get_pin("irf")
+```

@@ -6,9 +6,6 @@ execute:
   eval: true
   echo: true
   warning: false
-fig-align: center
-fig-height: 4
-fig-width: 6
 
 book:
   title: "CCNs"
@@ -30,17 +27,20 @@ book:
         - emergency.qmd
         - hha.qmd
         - esrd.qmd
+        - ltch.qmd
+        - rhc.qmd
+        - irf.qmd
         - cah.qmd
     - part: medicaid.qmd
       chapters:
         - nf.qmd
-        - icf.qmd
+        - icf-iid.qmd
         - moh.qmd
     - part: eipps.qmd
       chapters:
         - unit.qmd
         - subunit.qmd
-        - swingbed.qmd
+        - swing.qmd
     - part: supplier.qmd
       chapters:
         - asc.qmd
@@ -52,32 +52,32 @@ book:
 
 format:
   html:
-    grid:
-      body-width: 1000px
-    backgroundcolor: "#FFFFFF"
-    number-sections: false
     anchor-sections: true
+    backgroundcolor: "#FFFFFF"
     code-fold: false
     code-link: true
     code-overflow: scroll
     code-tools: true
     code-copy: true
     date: last-modified
-    embed-resources: false
-    footnotes-hover: true
-    reference-location: margin
-    toc: true
-    toc-depth: 2
-    toc-title: "Contents"
-    urlcolor: "#FC4C02"
-    linkcolor: "darkred"
-    fontcolor: "#43466b"
     default-image-extension: png
+    embed-resources: false
     fig-cap-location: margin
     fig-width: 5
     fig-asp: 0.67
     fig-align: center
     fig-dpi: 300
     fig-format: png
+    footnotes-hover: true
+    fontcolor: "#43464b"
+    grid:
+      body-width: 1000px
+    linkcolor: "darkred"
+    number-sections: false
+    reference-location: document
     smooth-scroll: true
     syntax-highlighting: tango
+    toc: true
+    toc-depth: 2
+    toc-title: "Contents"
+    urlcolor: "#FC4C02"

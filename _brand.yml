@@ -10,7 +10,7 @@ color:
     white: "#FFFFFF"
     black: "#000000"
     warmgraylight: "#F5F5F5"
-    warmgraydark: "#747474"
+    warmgraydark: "#747480"
     warmgraymedium: "#C4C4C4"
   foreground: black
   background: white
