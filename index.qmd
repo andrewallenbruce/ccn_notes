@@ -43,7 +43,7 @@ The canonical format observes the following constraints:
 
 and reflects the following structure, by character position:
 
-   - `1:2` -> Entity's __State Code__[^includes certain countries and territories.].
+   - `1:2` -> Entity's __State Code__^[includes certain countries and territories.].
    - `3` -> __Facility Type/Supplier Type__. Otherwise, part of __Sequence Number__.
    - `4` -> Subunit's Parent __Facility Type__. Otherwise, part of __Sequence Number__.
    - `5` -> Part of __Sequence Number__.

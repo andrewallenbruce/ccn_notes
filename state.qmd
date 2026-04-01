@@ -65,3 +65,32 @@ ccn::regions |>
     locations = gt::cells_body(columns = region)
   )
 ```
+
+
+## Assigning New State Codes
+
+New State codes must only be used when all of the existing assigned numbers have
+been assigned within each of the CCN ranges available for a facility type.
+
+Assign the last 4 digits, which identify the facility type, sequentially from
+within the appropriate CCN range. In a State that has more than one State code
+and/or a facility type that has more than one CCN range available, ensure that
+all the numbers available in one CCN range have been assigned before
+implementing the use of a new State code or numbers in a new CCN range.
+
+For example: You are assigning a CCN to a new Community Mental Health Center
+(CMHC) in Florida. Florida has three State Codes: 10, 68 and 69 and three number
+ranges for CMHCs: 1400-1499, 4600-4799, and 4900-4999. You have been using State
+Code 68 and the CCN range 4900-4999 for CMHC in Florida, and you last assigned
+4999 in that State to a CMHC. Given this information, consider the following
+scenarios:
+
+   1. Review the CCN records for Florida to determine if all the numbers in CCN range 4600-4799 were assigned. It is determined that all those numbers were previously assigned in Florida. Therefore, look to CMHC CCN range 1400-1499 as those numbers have not been assigned in Florida; assign 681400 as the CCN for the new CMHC that is being processed.
+   2. Review the CCN records for Florida to determine if all the numbers in CCN range 4600-4799 were previously assigned in Florida. It is determined that some, but not all, of the numbers in that CCN range were assigned. The last number in that range that was assigned was 4701. Assign 684702 as the CCN for the new CMHC that is being processed.
+   3. Review the CCN records for Florida to determine if all the numbers in CCN range 4600-4799 were previously assigned in Florida. It is determined that all the the numbers in that range were previously assigned in Florida. It is then determined after a review of the CCN records that all of the numbers in CCN range 1400-1499 were previously assigned in Florida. Look to see if all three CMHC CCN ranges for State Code 10 have been assigned. It is determined that all three CCN ranges have been previously assigned. Then look to State Code 69. You find that no CCN for CMHC in Florida has been assigned under State Code 69. The new CCN that will be assigned to the new Florida CMHC will be 691400 because is the first CCN range under State Code 69 listed for CMHCs. However, if it is determined that one of the CMHC CCN ranges under State Code 69 has been previously assigned, begin with the next available number in that CCN range.
+
+NOTE: Once the remaining pool of two digit State numeric codes are exhausted,
+CMS will implement a two-digit alpha-numeric code system for State Codes. For
+example: A0, A1, A2,...B0, B1, B2,..., Z8, and finally Z9. This numbering system
+will provide a pool of 260 new State Codes for future use.
+

@@ -31,11 +31,7 @@ book:
         - rhc.qmd
         - irf.qmd
         - cah.qmd
-    - part: medicaid.qmd
-      chapters:
-        - nf.qmd
-        - icf-iid.qmd
-        - moh.qmd
+        - snf.qmd
     - part: eipps.qmd
       chapters:
         - unit.qmd
@@ -46,8 +42,13 @@ book:
         - asc.qmd
         - clia.qmd
         - pxrf.qmd
+    - part: medicaid.qmd
+      chapters:
+        - nf.qmd
+        - icf-iid.qmd
+        - moh.qmd
   appendices:
-    - implementation.qmd
+    - vctrs.qmd
     - resources.qmd
 
 format:

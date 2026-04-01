@@ -1,0 +1,75 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+# SNFs
+
+```{r setup}
+#| message: false
+#| warning: false
+#| echo: false
+#| cache: false
+#| comment: ""
+library(ccn)
+library(collapse)
+source("code/gt_theme.R")
+```
+
+```{r}
+hrsa <- collapse::gv(ccn:::get_pin("snf_hrsa"), c(1:7, 9:12))
+snf <- ccn:::get_pin("snf")
+snf <- snf[substr(snf$ccn, 1L, 6L) %!iin% substr(hrsa$ccn, 1L, 6L), ]
+```
+
+### Overview
+
+```{r}
+ov <- hrsa |> 
+  collapse::rsplit(~.id) |> 
+  purrr::map(cheapr::overview)
+
+list(
+  all = ov$`SNF All`$numeric,
+  dist = ov$`SNF Dist`$numeric,
+  dual = ov$`SNF Dual`$numeric
+) |> 
+  collapse::rowbind(idcol = "id") |> 
+  collapse::slt(id, col, uniq = n_unique, mean:hist) |> 
+  collapse::roworder(col, id) |> 
+  tibble::as_tibble() |> 
+  gt::gt(
+    rowname_col = "id", 
+    groupname_col = "col",
+    row_group_as_column = TRUE) |> 
+  gt::fmt_auto() |> 
+  gtExtras::gt_theme_nytimes()
+
+list(
+  all = ov$`SNF All`$categorical,
+  dist = ov$`SNF Dist`$categorical,
+  dual = ov$`SNF Dual`$categorical
+) |> 
+  collapse::rowbind(idcol = "id") |> 
+  collapse::slt(id, col, uniq = n_unique, min, max) |> 
+  collapse::roworder(col, id) |> 
+  tibble::as_tibble() |> 
+  gt::gt(
+    rowname_col = "id", 
+    groupname_col = "col",
+    row_group_as_column = TRUE) |> 
+  gtExtras::gt_theme_nytimes()
+```
+
+### Parse
+
+```{r}
+x <- purrr::map(
+  collapse::funique(hrsa$ccn), \(x) as.data.frame(ccn::parse(x))) |> 
+  collapse::rowbind()
+x$type <- "SNF"
+x$state <- ccn::state_abbr(x$state)
+x$sequence <- as.integer(x$sequence)
+cheapr::overview(x)
+```
+
