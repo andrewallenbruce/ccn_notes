@@ -19,5 +19,6 @@ source("code/gt_theme.R")
 ## Long-Term Care Hospitals (LTCH)
 
 ```{r}
-ccn:::get_pin("ltch")
+x <- ccn:::get_pin("ltch")
+x |> collapse::descr()
 ```

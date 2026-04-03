@@ -42,6 +42,7 @@ list(
     rowname_col = "id", 
     groupname_col = "col",
     row_group_as_column = TRUE) |> 
+  gt::tab_options(quarto.disable_processing = TRUE) |> 
   gt::fmt_auto() |> 
   gtExtras::gt_theme_nytimes()
 
@@ -58,6 +59,7 @@ list(
     rowname_col = "id", 
     groupname_col = "col",
     row_group_as_column = TRUE) |> 
+  gt::tab_options(quarto.disable_processing = TRUE) |> 
   gtExtras::gt_theme_nytimes()
 ```
 

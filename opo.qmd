@@ -4,11 +4,11 @@ editor_options:
   chunk_output_type: console
 ---
 
-# OPOs
+# OPOs/TXNs
 
 <br>
 
-An Organ Procurement Organization performs or coordinates the procurement,
+An __Organ Procurement Organization__ performs or coordinates the procurement,
 preservation, and transport of organs and maintains a system for locating
 prospective recipients for available organs.
 
@@ -47,14 +47,14 @@ character P. The remaining 3 digits are the unique facility identifier.
 
 ```{r}
 #| label: opo-example
-organ("05P001") |> 
-  as_data_frame() |> 
-  str()
+organ("05P001")
 ```
 
 ## Codes
 
 ```{r}
+#| label: opo-codes
+#| echo: false
 x$opo_codes |> 
   collapse::roworder(code) |> 
   gt::gt() |> 
@@ -79,6 +79,7 @@ x$opo_codes |>
 
 ```{r}
 #| label: opo-county
+#| echo: false
 cnty <- x$opo_county |>
   collapse::slt(-code) |> 
   collapse::roworder(state, county) |>
@@ -111,6 +112,8 @@ x$opo_county |>
 ### Active
 
 ```{r}
+#| label: opo-active
+#| echo: false
 x$opo_active |> 
   collapse::roworder(ccn) |>
   collapse::slt(-region, -orig_date) |> 
@@ -131,11 +134,15 @@ x$opo_active |>
     locations = gt::cells_body(columns = opo))
 ```
 
-### Approved Transplant Programs
+## Approved Transplant Programs
+
+### Types
 
 ```{r}
+#| label: txc-types
+#| echo: false
 ccn:::get_pin("txc") |> 
-  collapse::slt(code = txc_code, desc = txc_type) |> 
+  collapse::slt(txc = txc_code, description = txc_type) |> 
   collapse::funique() |> 
   gt::gt() |> 
   gt::tab_options(quarto.disable_processing = TRUE) |> 
@@ -145,17 +152,20 @@ ccn:::get_pin("txc") |>
       font = gt::google_font(name = "JetBrains Mono"), 
       color = "grey30", 
       size = "small"), 
-    locations = gt::cells_body(columns = code)) |> 
+    locations = gt::cells_body(columns = txc)) |> 
   gt::tab_style(
     style = gt::cell_text(weight = "bold"), 
-    locations = gt::cells_body(columns = code)) |> 
+    locations = gt::cells_body(columns = txc)) |> 
   gt::tab_style(
     style = gt::cell_text(color = "grey50", size = "small"), 
-    locations = gt::cells_body(columns = desc))
+    locations = gt::cells_body(columns = description))
 ```
 
+### Facilities
 
 ```{r}
+#| label: txc-facs
+#| echo: false
 ccn:::get_pin("txc") |> 
   collapse::slt(-txc_type) |> 
   collapse::rnm(code = optn_code, txc = txc_code) |> 

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.35">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="dcterms.date" content="2026-04-01">
+<meta name="dcterms.date" content="2026-04-03">
 <title>LTCH – CCNs</title>
 <style>
 /* Default styles provided by pandoc.
@@ -161,7 +161,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./opo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">OPOs</span></a>
+  <a href="./opo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">OPOs/TXNs</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -329,7 +329,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 1, 2026</p>
+      <p class="date">April 3, 2026</p>
     </div>
   </div>
   
@@ -340,22 +340,89 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header><section id="long-term-care-hospitals-ltch" class="level2"><h2 class="anchored" data-anchor-id="long-term-care-hospitals-ltch">Long-Term Care Hospitals (LTCH)</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ccn</span><span class="fu">:::</span><span class="fu">get_pin</span><span class="op">(</span><span class="st">"ltch"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu">ccn</span><span class="fu">:::</span><span class="fu">get_pin</span><span class="op">(</span><span class="st">"ltch"</span><span class="op">)</span></span>
+<span><span class="va">x</span> <span class="op">|&gt;</span> <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/descr.html">descr</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 324 × 3
-   ccn    provider_name                              state
-   &lt;chr&gt;  &lt;chr&gt;                                      &lt;chr&gt;
- 1 012006 INFIRMARY LTAC HOSPITAL                    AL   
- 2 012008 SELECT SPECIALTY HOSPITAL - BIRMINGHAM     AL   
- 3 012009 NOLAND HOSPITAL BIRMINGHAM II, LLC         AL   
- 4 012010 NOLAND HOSPITAL DOTHAN II, LLC             AL   
- 5 012011 NOLAND HOSPITAL ANNISTON II, LLC           AL   
- 6 012012 NOLAND HOSPITAL TUSCALOOSA II, LLC         AL   
- 7 012014 NORTH ALABAMA SPECIALTY HOSPITAL           AL   
- 8 022001 ST ELIAS SPECIALTY HOSPITAL                AK   
- 9 032001 SELECT SPECIALTY HOSPITAL PHOENIX          AZ   
-10 032002 SELECT SPECIALTY HOSPITAL-TUCSON NORTHWEST AZ   
-# ℹ 314 more rows</code></pre>
+<pre><code>Dataset: x, 3 Variables, N = 324
+--------------------------------------------------------------------------------
+ccn (character): 
+Statistics
+    N  Ndist
+  324    324
+Table
+                Freq   Perc
+012006             1   0.31
+012008             1   0.31
+012009             1   0.31
+012010             1   0.31
+012011             1   0.31
+012012             1   0.31
+012014             1   0.31
+022001             1   0.31
+032001             1   0.31
+032002             1   0.31
+032004             1   0.31
+032005             1   0.31
+042004             1   0.31
+042008             1   0.31
+... 310 Others   310  95.68
+
+Summary of Table Frequencies
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+      1       1       1       1       1       1 
+--------------------------------------------------------------------------------
+provider_name (character): 
+Statistics
+    N  Ndist
+  324    324
+Table
+                                             Freq   Perc
+INFIRMARY LTAC HOSPITAL                         1   0.31
+SELECT SPECIALTY HOSPITAL - BIRMINGHAM          1   0.31
+NOLAND HOSPITAL BIRMINGHAM II, LLC              1   0.31
+NOLAND HOSPITAL DOTHAN II, LLC                  1   0.31
+NOLAND HOSPITAL ANNISTON II, LLC                1   0.31
+NOLAND HOSPITAL TUSCALOOSA II, LLC              1   0.31
+NORTH ALABAMA SPECIALTY HOSPITAL                1   0.31
+ST ELIAS SPECIALTY HOSPITAL                     1   0.31
+SELECT SPECIALTY HOSPITAL PHOENIX               1   0.31
+SELECT SPECIALTY HOSPITAL-TUCSON NORTHWEST      1   0.31
+CORNERSTONE SPECIALTY HOSPITALS TUCSON          1   0.31
+SELECT SPECIALTY HOSPITAL ARIZONA               1   0.31
+ARKANSAS EXTENDED CARE HOSPITAL HOT SPRINGS     1   0.31
+ARKANSAS EXTENDED CARE HOSPITAL-FT SMITH        1   0.31
+... 310 Others                                310  95.68
+
+Summary of Table Frequencies
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+      1       1       1       1       1       1 
+--------------------------------------------------------------------------------
+state (character): 
+Statistics
+    N  Ndist
+  324     47
+Table
+               Freq   Perc
+TX               41  12.65
+FL               23   7.10
+LA               22   6.79
+CA               20   6.17
+OH               18   5.56
+MI               12   3.70
+PA               12   3.70
+GA               11   3.40
+KY               10   3.09
+MA               10   3.09
+NJ                9   2.78
+MO                8   2.47
+OK                8   2.47
+TN                8   2.47
+... 33 Others   112  34.57
+
+Summary of Table Frequencies
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    1.0     2.0     6.0     6.9     8.0    41.0 
+--------------------------------------------------------------------------------</code></pre>
 </div>
 </div>
 
@@ -844,8 +911,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="fu">## Long-Term Care Hospitals (LTCH)</span></span>
 <span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>ccn<span class="sc">:::</span><span class="fu">get_pin</span>(<span class="st">"ltch"</span>)</span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> ccn<span class="sc">:::</span><span class="fu">get_pin</span>(<span class="st">"ltch"</span>)</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>x <span class="sc">|&gt;</span> collapse<span class="sc">::</span><span class="fu">descr</span>()</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
