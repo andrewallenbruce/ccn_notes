@@ -17,7 +17,7 @@ editor_options:
 library(vctrs)
 library(rlang)
 library(zeallot)
-library(ccn)
+# library(ccn)
 
 in_between <- function(x, min, max) {
   (x - min) * (max - x) >= 0L

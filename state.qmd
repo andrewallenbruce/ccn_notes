@@ -48,7 +48,10 @@ ccn::states |>
   collapse::fgroup_by(abbr, name) |>
   collapse::fsummarise(code = toString(code)) |>
   gt::gt() |>
-  gt::tab_options(quarto.disable_processing = TRUE) |>
+  gt::tab_options(
+    table.width = gt::pct(100),
+    quarto.disable_processing = TRUE
+  ) |>
   gtExtras::gt_theme_nytimes() |>
   gt::tab_style(
     style = gt::cell_text(
@@ -74,7 +77,10 @@ ccn::regions |>
   collapse::fgroup_by(region, office) |>
   collapse::fsummarise(state = toString(state)) |>
   gt::gt() |>
-  gt::tab_options(quarto.disable_processing = TRUE) |>
+  gt::tab_options(
+    table.width = gt::pct(100),
+    quarto.disable_processing = TRUE
+  ) |>
   gt::sub_missing(missing_text = "-") |>
   gtExtras::gt_theme_nytimes() |>
   gt::tab_style(

@@ -20,8 +20,8 @@ editor_options:
 ## Valdosta CMS Entities
 
 ```{r}
-list(
-  `Ambulatory Surgical Center (ASC)` = c(
+x <- list(
+  ASC = c(
     "AZALEA SURGERY CENTER",
     "CATARACT AND LASER SURGERY CTR OF SOUTH GA, PC",
     "ENT OF SOUTH GEORGIA SURGERY CENTER, LLC",
@@ -36,7 +36,7 @@ list(
     "VALDOSTA FOOT & ANKLE SURGERY",
     "VOA AMBULATORY SURG CTR"
   ),
-  `End Stage Renal Disease Facility (ESRD)` = c(
+  ESRD = c(
     "OAK STREET DIALYSIS",
     "US RENAL CARE CENTRAL VALDOSTA",
     "US RENAL CARE SOUTH GEORGIA DIALYSIS",
@@ -44,17 +44,17 @@ list(
     "VALDOSTA DIALYSIS CLINIC",
     "VALDOSTA HOME TRAINING"
   ),
-  `Federally Qualified Health Center (FQHC)` = c(
+  FQHC = c(
     "NORTHSIDE FAMILY HEALTH CENTER",
     "SOUTH CENTRAL PRIMARY CARE ASHLEY STREET"
   ),
-  `SNF/NF (Dually Certified)` = c(
+  `SNF/NF (Dual)` = c(
     "PRUITTHEALTH CRESTWOOD, LLC",
     "PRUITTHEALTH HOLLY HILL, LLC",
     "PRUITTHEALTH LAKEHAVEN, LLC",
     "PRUITTHEALTH VALDOSTA, LLC"
   ),
-  `Home Health Agency (HHA)` = c(
+  HHA = c(
     "ADORATION HOME HEALTH",
     "AMEDISYS HOME HEALTH OF VALDOSTA",
     "GEORGIA HOME HEALTH SERVICES"
@@ -70,10 +70,10 @@ list(
     "SGMC HEALTH",
     "US AIR FORCE HOSP"
   ),
-  `Intermediate Care Facility (ICF)` = c(
+  ICF = c(
     "PRUITTHEALTH-PARKWOOD, LLC"
   ),
-  `CLIA Laboratory` = c(
+  CLIA = c(
     "9 LINE HEALTH, LLC",
     "ADORATION HOME HEALTH CARE GEORGIA, LLC",
     "AIRPORT CLINIC INCORPORATED",
@@ -240,6 +240,31 @@ list(
     "WOMENS HEALTH PATTERSON"
   )
 )
+purrr::map(x, \(x) cheapr::fast_df(name = x)) |> 
+  purrr::list_rbind(names_to = "type") |> 
+  tibble::as_tibble() |> 
+  gt::gt(
+    groupname_col = "type", 
+    row_group_as_column = TRUE) |> 
+  gt::tab_options(
+    table.width = gt::pct(100),
+    quarto.disable_processing = TRUE) |>
+  gtExtras::gt_theme_nytimes() |>
+  gt::tab_style(
+    style = gt::cell_text(
+      font = gt::google_font(name = "JetBrains Mono"),
+      color = "grey50",
+      size = "small"
+    ),
+    locations = gt::cells_body(columns = name)
+  ) |>
+  gt::tab_style(
+    style = gt::cell_text(
+      font = gt::google_font(name = "JetBrains Mono"),
+      weight = "bold"
+      ),
+    locations = gt::cells_row_groups()
+  )
 ```
 
 

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.35">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="dcterms.date" content="2026-04-03">
+<meta name="dcterms.date" content="2026-04-04">
 <title>SNFs – CCNs</title>
 <style>
 /* Default styles provided by pandoc.
@@ -325,7 +325,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 3, 2026</p>
+      <p class="date">April 4, 2026</p>
     </div>
   </div>
   
@@ -341,47 +341,78 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="overview" class="level3"><h3 class="anchored" data-anchor-id="overview">Overview</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ov</span> <span class="op">&lt;-</span> <span class="va">hrsa</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/rsplit.html">rsplit</a></span><span class="op">(</span><span class="op">~</span><span class="va">.id</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ov</span> <span class="op">&lt;-</span> <span class="va">hrsa</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/rsplit.html">rsplit</a></span><span class="op">(</span><span class="op">~</span><span class="va">.id</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span><span class="op">(</span><span class="fu">cheapr</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/cheapr/man/overview.html">overview</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
-<span>  all <span class="op">=</span> <span class="va">ov</span><span class="op">$</span><span class="va">`SNF All`</span><span class="op">$</span><span class="va">numeric</span>,</span>
-<span>  dist <span class="op">=</span> <span class="va">ov</span><span class="op">$</span><span class="va">`SNF Dist`</span><span class="op">$</span><span class="va">numeric</span>,</span>
-<span>  dual <span class="op">=</span> <span class="va">ov</span><span class="op">$</span><span class="va">`SNF Dual`</span><span class="op">$</span><span class="va">numeric</span></span>
-<span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/rowbind.html">rowbind</a></span><span class="op">(</span>idcol <span class="op">=</span> <span class="st">"id"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/select_replace_vars.html">slt</a></span><span class="op">(</span><span class="va">id</span>, <span class="va">col</span>, uniq <span class="op">=</span> <span class="va">n_unique</span>, <span class="va">mean</span><span class="op">:</span><span class="va">hist</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/roworder.html">roworder</a></span><span class="op">(</span><span class="va">col</span>, <span class="va">id</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  ALL <span class="op">=</span> <span class="va">ov</span><span class="op">$</span><span class="va">`SNF All`</span><span class="op">$</span><span class="va">numeric</span>,</span>
+<span>  DISTINCT <span class="op">=</span> <span class="va">ov</span><span class="op">$</span><span class="va">`SNF Dist`</span><span class="op">$</span><span class="va">numeric</span>,</span>
+<span>  DUAL <span class="op">=</span> <span class="va">ov</span><span class="op">$</span><span class="va">`SNF Dual`</span><span class="op">$</span><span class="va">numeric</span></span>
+<span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/rowbind.html">rowbind</a></span><span class="op">(</span>idcol <span class="op">=</span> <span class="st">"id"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/select_replace_vars.html">slt</a></span><span class="op">(</span><span class="va">id</span>, <span class="va">col</span>, uniq <span class="op">=</span> <span class="va">n_unique</span>, <span class="va">mean</span><span class="op">:</span><span class="va">hist</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/roworder.html">roworder</a></span><span class="op">(</span><span class="va">col</span>, <span class="va">id</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/gt.html">gt</a></span><span class="op">(</span></span>
-<span>    rowname_col <span class="op">=</span> <span class="st">"id"</span>, </span>
+<span>    rowname_col <span class="op">=</span> <span class="st">"id"</span>,</span>
 <span>    groupname_col <span class="op">=</span> <span class="st">"col"</span>,</span>
-<span>    row_group_as_column <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/tab_options.html">tab_options</a></span><span class="op">(</span>quarto.disable_processing <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/fmt_auto.html">fmt_auto</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">gtExtras</span><span class="fu">::</span><span class="fu"><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_nytimes.html">gt_theme_nytimes</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span>    row_group_as_column <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span>  <span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/tab_options.html">tab_options</a></span><span class="op">(</span></span>
+<span>    table.width <span class="op">=</span> <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/pct.html">pct</a></span><span class="op">(</span><span class="fl">100</span><span class="op">)</span>,</span>
+<span>    quarto.disable_processing <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span>  <span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/fmt_auto.html">fmt_auto</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">gtExtras</span><span class="fu">::</span><span class="fu"><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_nytimes.html">gt_theme_nytimes</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/tab_style.html">tab_style</a></span><span class="op">(</span></span>
+<span>    style <span class="op">=</span> <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/cell_text.html">cell_text</a></span><span class="op">(</span></span>
+<span>      font <span class="op">=</span> <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/google_font.html">google_font</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"JetBrains Mono"</span><span class="op">)</span>,</span>
+<span>      color <span class="op">=</span> <span class="st">"grey50"</span>,</span>
+<span>      size <span class="op">=</span> <span class="st">"small"</span></span>
+<span>    <span class="op">)</span>,</span>
+<span>    locations <span class="op">=</span> <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/cells_body.html">cells_body</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/tab_style.html">tab_style</a></span><span class="op">(</span></span>
+<span>    style <span class="op">=</span> <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/cell_text.html">cell_text</a></span><span class="op">(</span></span>
+<span>      align <span class="op">=</span> <span class="st">"right"</span>,</span>
+<span>      font <span class="op">=</span> <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/google_font.html">google_font</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"JetBrains Mono"</span><span class="op">)</span>,</span>
+<span>      weight <span class="op">=</span> <span class="st">"bold"</span></span>
+<span>    <span class="op">)</span>,</span>
+<span>    locations <span class="op">=</span> <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/cells_row_groups.html">cells_row_groups</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/tab_style.html">tab_style</a></span><span class="op">(</span></span>
+<span>    style <span class="op">=</span> <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/cell_text.html">cell_text</a></span><span class="op">(</span></span>
+<span>      font <span class="op">=</span> <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/google_font.html">google_font</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"JetBrains Mono"</span><span class="op">)</span>,</span>
+<span>      color <span class="op">=</span> <span class="st">"grey50"</span>,</span>
+<span>      weight <span class="op">=</span> <span class="st">"bold"</span></span>
+<span>    <span class="op">)</span>,</span>
+<span>    locations <span class="op">=</span> <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/cells_stub.html">cells_stub</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="cwdhewcpqm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+<div id="ziwfsjlxei" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#cwdhewcpqm table {
+#ziwfsjlxei table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#cwdhewcpqm thead, #cwdhewcpqm tbody, #cwdhewcpqm tfoot, #cwdhewcpqm tr, #cwdhewcpqm td, #cwdhewcpqm th {
+#ziwfsjlxei thead, #ziwfsjlxei tbody, #ziwfsjlxei tfoot, #ziwfsjlxei tr, #ziwfsjlxei td, #ziwfsjlxei th {
   border-style: none;
 }
 
-#cwdhewcpqm p {
+#ziwfsjlxei p {
   margin: 0;
   padding: 0;
 }
 
-#cwdhewcpqm .gt_table {
+#ziwfsjlxei .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -392,7 +423,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   font-weight: normal;
   font-style: normal;
   background-color: #FFFFFF;
-  width: auto;
+  width: 100%;
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #A8A8A8;
@@ -407,12 +438,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#cwdhewcpqm .gt_caption {
+#ziwfsjlxei .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#cwdhewcpqm .gt_title {
+#ziwfsjlxei .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -424,7 +455,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#cwdhewcpqm .gt_subtitle {
+#ziwfsjlxei .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -436,7 +467,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#cwdhewcpqm .gt_heading {
+#ziwfsjlxei .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -448,13 +479,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#cwdhewcpqm .gt_bottom_border {
+#ziwfsjlxei .gt_bottom_border {
   border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#cwdhewcpqm .gt_col_headings {
+#ziwfsjlxei .gt_col_headings {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -469,7 +500,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#cwdhewcpqm .gt_col_heading {
+#ziwfsjlxei .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 12px;
@@ -489,7 +520,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#cwdhewcpqm .gt_column_spanner_outer {
+#ziwfsjlxei .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 12px;
@@ -501,15 +532,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#cwdhewcpqm .gt_column_spanner_outer:first-child {
+#ziwfsjlxei .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#cwdhewcpqm .gt_column_spanner_outer:last-child {
+#ziwfsjlxei .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#cwdhewcpqm .gt_column_spanner {
+#ziwfsjlxei .gt_column_spanner {
   border-bottom-style: none;
   border-bottom-width: 1px;
   border-bottom-color: #334422;
@@ -521,11 +552,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#cwdhewcpqm .gt_spanner_row {
+#ziwfsjlxei .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#cwdhewcpqm .gt_group_heading {
+#ziwfsjlxei .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -551,7 +582,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#cwdhewcpqm .gt_empty_group_heading {
+#ziwfsjlxei .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -566,15 +597,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#cwdhewcpqm .gt_from_md > :first-child {
+#ziwfsjlxei .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#cwdhewcpqm .gt_from_md > :last-child {
+#ziwfsjlxei .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#cwdhewcpqm .gt_row {
+#ziwfsjlxei .gt_row {
   padding-top: 7px;
   padding-bottom: 7px;
   padding-left: 5px;
@@ -593,7 +624,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#cwdhewcpqm .gt_stub {
+#ziwfsjlxei .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -606,7 +637,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#cwdhewcpqm .gt_stub_row_group {
+#ziwfsjlxei .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -620,15 +651,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#cwdhewcpqm .gt_row_group_first td {
+#ziwfsjlxei .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#cwdhewcpqm .gt_row_group_first th {
+#ziwfsjlxei .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#cwdhewcpqm .gt_summary_row {
+#ziwfsjlxei .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -638,16 +669,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#cwdhewcpqm .gt_first_summary_row {
+#ziwfsjlxei .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#cwdhewcpqm .gt_first_summary_row.thick {
+#ziwfsjlxei .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#cwdhewcpqm .gt_last_summary_row {
+#ziwfsjlxei .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -657,7 +688,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#cwdhewcpqm .gt_grand_summary_row {
+#ziwfsjlxei .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -667,7 +698,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#cwdhewcpqm .gt_first_grand_summary_row {
+#ziwfsjlxei .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -677,7 +708,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#cwdhewcpqm .gt_last_grand_summary_row_top {
+#ziwfsjlxei .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -687,11 +718,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#cwdhewcpqm .gt_striped {
+#ziwfsjlxei .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#cwdhewcpqm .gt_table_body {
+#ziwfsjlxei .gt_table_body {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -700,7 +731,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #FFFFFF;
 }
 
-#cwdhewcpqm .gt_footnotes {
+#ziwfsjlxei .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -714,7 +745,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#cwdhewcpqm .gt_footnote {
+#ziwfsjlxei .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -723,7 +754,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#cwdhewcpqm .gt_sourcenotes {
+#ziwfsjlxei .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -737,7 +768,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#cwdhewcpqm .gt_sourcenote {
+#ziwfsjlxei .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -745,72 +776,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#cwdhewcpqm .gt_left {
+#ziwfsjlxei .gt_left {
   text-align: left;
 }
 
-#cwdhewcpqm .gt_center {
+#ziwfsjlxei .gt_center {
   text-align: center;
 }
 
-#cwdhewcpqm .gt_right {
+#ziwfsjlxei .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#cwdhewcpqm .gt_font_normal {
+#ziwfsjlxei .gt_font_normal {
   font-weight: normal;
 }
 
-#cwdhewcpqm .gt_font_bold {
+#ziwfsjlxei .gt_font_bold {
   font-weight: bold;
 }
 
-#cwdhewcpqm .gt_font_italic {
+#ziwfsjlxei .gt_font_italic {
   font-style: italic;
 }
 
-#cwdhewcpqm .gt_super {
+#ziwfsjlxei .gt_super {
   font-size: 65%;
 }
 
-#cwdhewcpqm .gt_footnote_marks {
+#ziwfsjlxei .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#cwdhewcpqm .gt_asterisk {
+#ziwfsjlxei .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#cwdhewcpqm .gt_indent_1 {
+#ziwfsjlxei .gt_indent_1 {
   text-indent: 5px;
 }
 
-#cwdhewcpqm .gt_indent_2 {
+#ziwfsjlxei .gt_indent_2 {
   text-indent: 10px;
 }
 
-#cwdhewcpqm .gt_indent_3 {
+#ziwfsjlxei .gt_indent_3 {
   text-indent: 15px;
 }
 
-#cwdhewcpqm .gt_indent_4 {
+#ziwfsjlxei .gt_indent_4 {
   text-indent: 20px;
 }
 
-#cwdhewcpqm .gt_indent_5 {
+#ziwfsjlxei .gt_indent_5 {
   text-indent: 25px;
 }
 
-#cwdhewcpqm .katex-display {
+#ziwfsjlxei .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#cwdhewcpqm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ziwfsjlxei div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -830,164 +861,164 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </tr></thead>
 <tbody class="gt_table_body">
 <tr class="gt_row_group_first">
-<td headers="beds_cert stub_2_1 stub_1" rowspan="3" class="gt_row gt_left gt_stub_row_group">beds_cert</td>
-<th id="stub_2_1" scope="row" class="gt_row gt_center gt_stub">all</th>
-<td headers="beds_cert stub_2_1 uniq" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">121&nbsp;</td>
-<td headers="beds_cert stub_2_1 mean" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;"> 52.58 </td>
-<td headers="beds_cert stub_2_1 p0" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">2&nbsp;</td>
-<td headers="beds_cert stub_2_1 p25" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">30&nbsp;</td>
-<td headers="beds_cert stub_2_1 p50" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;"> 45&nbsp;</td>
-<td headers="beds_cert stub_2_1 p75" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;"> 64&nbsp;</td>
-<td headers="beds_cert stub_2_1 p100" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">336&nbsp;</td>
-<td headers="beds_cert stub_2_1 iqr" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">34&nbsp;</td>
-<td headers="beds_cert stub_2_1 sd" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">37.965</td>
-<td headers="beds_cert stub_2_1 hist" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">▇▂▁▁▁</td>
+<td headers="beds_cert stub_2_1 stub_1" rowspan="3" class="gt_row gt_left gt_stub_row_group" style="font-family: 'JetBrains Mono'; text-align: right; font-weight: bold;">beds_cert</td>
+<th id="stub_2_1" scope="row" class="gt_row gt_center gt_stub" style="color: #7F7F7F; font-family: 'JetBrains Mono'; font-weight: bold;">ALL</th>
+<td headers="beds_cert stub_2_1 uniq" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">121&nbsp;</td>
+<td headers="beds_cert stub_2_1 mean" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;"> 52.58 </td>
+<td headers="beds_cert stub_2_1 p0" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">2&nbsp;</td>
+<td headers="beds_cert stub_2_1 p25" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">30&nbsp;</td>
+<td headers="beds_cert stub_2_1 p50" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;"> 45&nbsp;</td>
+<td headers="beds_cert stub_2_1 p75" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;"> 64&nbsp;</td>
+<td headers="beds_cert stub_2_1 p100" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">336&nbsp;</td>
+<td headers="beds_cert stub_2_1 iqr" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">34&nbsp;</td>
+<td headers="beds_cert stub_2_1 sd" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">37.965</td>
+<td headers="beds_cert stub_2_1 hist" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">▇▂▁▁▁</td>
 </tr>
 <tr>
-<th id="stub_2_2" scope="row" class="gt_row gt_center gt_stub">dist</th>
-<td headers="beds_cert stub_2_2 uniq" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">236&nbsp;</td>
-<td headers="beds_cert stub_2_2 mean" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">115.92 </td>
-<td headers="beds_cert stub_2_2 p0" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">0&nbsp;</td>
-<td headers="beds_cert stub_2_2 p25" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">88&nbsp;</td>
-<td headers="beds_cert stub_2_2 p50" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">117&nbsp;</td>
-<td headers="beds_cert stub_2_2 p75" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">134&nbsp;</td>
-<td headers="beds_cert stub_2_2 p100" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">485&nbsp;</td>
-<td headers="beds_cert stub_2_2 iqr" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">46&nbsp;</td>
-<td headers="beds_cert stub_2_2 sd" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">47.102</td>
-<td headers="beds_cert stub_2_2 hist" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">▅▇▁▁▁</td>
+<th id="stub_2_2" scope="row" class="gt_row gt_center gt_stub" style="color: #7F7F7F; font-family: 'JetBrains Mono'; font-weight: bold;">DISTINCT</th>
+<td headers="beds_cert stub_2_2 uniq" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">236&nbsp;</td>
+<td headers="beds_cert stub_2_2 mean" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">115.92 </td>
+<td headers="beds_cert stub_2_2 p0" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">0&nbsp;</td>
+<td headers="beds_cert stub_2_2 p25" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">88&nbsp;</td>
+<td headers="beds_cert stub_2_2 p50" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">117&nbsp;</td>
+<td headers="beds_cert stub_2_2 p75" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">134&nbsp;</td>
+<td headers="beds_cert stub_2_2 p100" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">485&nbsp;</td>
+<td headers="beds_cert stub_2_2 iqr" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">46&nbsp;</td>
+<td headers="beds_cert stub_2_2 sd" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">47.102</td>
+<td headers="beds_cert stub_2_2 hist" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">▅▇▁▁▁</td>
 </tr>
 <tr>
-<th id="stub_2_3" scope="row" class="gt_row gt_center gt_stub">dual</th>
-<td headers="beds_cert stub_2_3 uniq" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">379&nbsp;</td>
-<td headers="beds_cert stub_2_3 mean" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">108.375</td>
-<td headers="beds_cert stub_2_3 p0" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">0&nbsp;</td>
-<td headers="beds_cert stub_2_3 p25" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">68&nbsp;</td>
-<td headers="beds_cert stub_2_3 p50" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">100&nbsp;</td>
-<td headers="beds_cert stub_2_3 p75" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">128&nbsp;</td>
-<td headers="beds_cert stub_2_3 p100" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">843&nbsp;</td>
-<td headers="beds_cert stub_2_3 iqr" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">60&nbsp;</td>
-<td headers="beds_cert stub_2_3 sd" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">60.403</td>
-<td headers="beds_cert stub_2_3 hist" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">▇▁▁▁▁</td>
+<th id="stub_2_3" scope="row" class="gt_row gt_center gt_stub" style="color: #7F7F7F; font-family: 'JetBrains Mono'; font-weight: bold;">DUAL</th>
+<td headers="beds_cert stub_2_3 uniq" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">379&nbsp;</td>
+<td headers="beds_cert stub_2_3 mean" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">108.375</td>
+<td headers="beds_cert stub_2_3 p0" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">0&nbsp;</td>
+<td headers="beds_cert stub_2_3 p25" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">68&nbsp;</td>
+<td headers="beds_cert stub_2_3 p50" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">100&nbsp;</td>
+<td headers="beds_cert stub_2_3 p75" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">128&nbsp;</td>
+<td headers="beds_cert stub_2_3 p100" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">843&nbsp;</td>
+<td headers="beds_cert stub_2_3 iqr" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">60&nbsp;</td>
+<td headers="beds_cert stub_2_3 sd" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">60.403</td>
+<td headers="beds_cert stub_2_3 hist" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">▇▁▁▁▁</td>
 </tr>
 <tr class="gt_row_group_first">
-<td headers="beds_dual stub_2_4 stub_1" rowspan="3" class="gt_row gt_left gt_stub_row_group">beds_dual</td>
-<th id="stub_2_4" scope="row" class="gt_row gt_center gt_stub">all</th>
-<td headers="beds_dual stub_2_4 uniq" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">  9&nbsp;</td>
-<td headers="beds_dual stub_2_4 mean" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">  0.633</td>
-<td headers="beds_dual stub_2_4 p0" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">0&nbsp;</td>
-<td headers="beds_dual stub_2_4 p25" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;"> 0&nbsp;</td>
-<td headers="beds_dual stub_2_4 p50" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">  0&nbsp;</td>
-<td headers="beds_dual stub_2_4 p75" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">  0&nbsp;</td>
-<td headers="beds_dual stub_2_4 p100" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">130&nbsp;</td>
-<td headers="beds_dual stub_2_4 iqr" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;"> 0&nbsp;</td>
-<td headers="beds_dual stub_2_4 sd" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;"> 6.674</td>
-<td headers="beds_dual stub_2_4 hist" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">▇▁▁▁▁</td>
+<td headers="beds_dual stub_2_4 stub_1" rowspan="3" class="gt_row gt_left gt_stub_row_group" style="font-family: 'JetBrains Mono'; text-align: right; font-weight: bold;">beds_dual</td>
+<th id="stub_2_4" scope="row" class="gt_row gt_center gt_stub" style="color: #7F7F7F; font-family: 'JetBrains Mono'; font-weight: bold;">ALL</th>
+<td headers="beds_dual stub_2_4 uniq" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">  9&nbsp;</td>
+<td headers="beds_dual stub_2_4 mean" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">  0.633</td>
+<td headers="beds_dual stub_2_4 p0" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">0&nbsp;</td>
+<td headers="beds_dual stub_2_4 p25" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;"> 0&nbsp;</td>
+<td headers="beds_dual stub_2_4 p50" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">  0&nbsp;</td>
+<td headers="beds_dual stub_2_4 p75" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">  0&nbsp;</td>
+<td headers="beds_dual stub_2_4 p100" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">130&nbsp;</td>
+<td headers="beds_dual stub_2_4 iqr" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;"> 0&nbsp;</td>
+<td headers="beds_dual stub_2_4 sd" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;"> 6.674</td>
+<td headers="beds_dual stub_2_4 hist" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">▇▁▁▁▁</td>
 </tr>
 <tr>
-<th id="stub_2_5" scope="row" class="gt_row gt_center gt_stub">dist</th>
-<td headers="beds_dual stub_2_5 uniq" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">216&nbsp;</td>
-<td headers="beds_dual stub_2_5 mean" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;"> 82.891</td>
-<td headers="beds_dual stub_2_5 p0" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">0&nbsp;</td>
-<td headers="beds_dual stub_2_5 p25" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">51&nbsp;</td>
-<td headers="beds_dual stub_2_5 p50" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;"> 84&nbsp;</td>
-<td headers="beds_dual stub_2_5 p75" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">109&nbsp;</td>
-<td headers="beds_dual stub_2_5 p100" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">382&nbsp;</td>
-<td headers="beds_dual stub_2_5 iqr" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">58&nbsp;</td>
-<td headers="beds_dual stub_2_5 sd" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">45.396</td>
-<td headers="beds_dual stub_2_5 hist" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">▇▇▁▁▁</td>
+<th id="stub_2_5" scope="row" class="gt_row gt_center gt_stub" style="color: #7F7F7F; font-family: 'JetBrains Mono'; font-weight: bold;">DISTINCT</th>
+<td headers="beds_dual stub_2_5 uniq" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">216&nbsp;</td>
+<td headers="beds_dual stub_2_5 mean" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;"> 82.891</td>
+<td headers="beds_dual stub_2_5 p0" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">0&nbsp;</td>
+<td headers="beds_dual stub_2_5 p25" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">51&nbsp;</td>
+<td headers="beds_dual stub_2_5 p50" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;"> 84&nbsp;</td>
+<td headers="beds_dual stub_2_5 p75" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">109&nbsp;</td>
+<td headers="beds_dual stub_2_5 p100" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">382&nbsp;</td>
+<td headers="beds_dual stub_2_5 iqr" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">58&nbsp;</td>
+<td headers="beds_dual stub_2_5 sd" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">45.396</td>
+<td headers="beds_dual stub_2_5 hist" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">▇▇▁▁▁</td>
 </tr>
 <tr>
-<th id="stub_2_6" scope="row" class="gt_row gt_center gt_stub">dual</th>
-<td headers="beds_dual stub_2_6 uniq" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">379&nbsp;</td>
-<td headers="beds_dual stub_2_6 mean" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">108.224</td>
-<td headers="beds_dual stub_2_6 p0" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">0&nbsp;</td>
-<td headers="beds_dual stub_2_6 p25" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">68&nbsp;</td>
-<td headers="beds_dual stub_2_6 p50" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">100&nbsp;</td>
-<td headers="beds_dual stub_2_6 p75" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">128&nbsp;</td>
-<td headers="beds_dual stub_2_6 p100" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">843&nbsp;</td>
-<td headers="beds_dual stub_2_6 iqr" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">60&nbsp;</td>
-<td headers="beds_dual stub_2_6 sd" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">60.471</td>
-<td headers="beds_dual stub_2_6 hist" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">▇▁▁▁▁</td>
+<th id="stub_2_6" scope="row" class="gt_row gt_center gt_stub" style="color: #7F7F7F; font-family: 'JetBrains Mono'; font-weight: bold;">DUAL</th>
+<td headers="beds_dual stub_2_6 uniq" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">379&nbsp;</td>
+<td headers="beds_dual stub_2_6 mean" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">108.224</td>
+<td headers="beds_dual stub_2_6 p0" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">0&nbsp;</td>
+<td headers="beds_dual stub_2_6 p25" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">68&nbsp;</td>
+<td headers="beds_dual stub_2_6 p50" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">100&nbsp;</td>
+<td headers="beds_dual stub_2_6 p75" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">128&nbsp;</td>
+<td headers="beds_dual stub_2_6 p100" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">843&nbsp;</td>
+<td headers="beds_dual stub_2_6 iqr" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">60&nbsp;</td>
+<td headers="beds_dual stub_2_6 sd" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">60.471</td>
+<td headers="beds_dual stub_2_6 hist" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">▇▁▁▁▁</td>
 </tr>
 <tr class="gt_row_group_first">
-<td headers="beds_mcr stub_2_7 stub_1" rowspan="3" class="gt_row gt_left gt_stub_row_group">beds_mcr</td>
-<th id="stub_2_7" scope="row" class="gt_row gt_center gt_stub">all</th>
-<td headers="beds_mcr stub_2_7 uniq" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">122&nbsp;</td>
-<td headers="beds_mcr stub_2_7 mean" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;"> 51.948</td>
-<td headers="beds_mcr stub_2_7 p0" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">0&nbsp;</td>
-<td headers="beds_mcr stub_2_7 p25" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">30&nbsp;</td>
-<td headers="beds_mcr stub_2_7 p50" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;"> 45&nbsp;</td>
-<td headers="beds_mcr stub_2_7 p75" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;"> 64&nbsp;</td>
-<td headers="beds_mcr stub_2_7 p100" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">336&nbsp;</td>
-<td headers="beds_mcr stub_2_7 iqr" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">34&nbsp;</td>
-<td headers="beds_mcr stub_2_7 sd" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">38.225</td>
-<td headers="beds_mcr stub_2_7 hist" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">▇▂▁▁▁</td>
+<td headers="beds_mcr stub_2_7 stub_1" rowspan="3" class="gt_row gt_left gt_stub_row_group" style="font-family: 'JetBrains Mono'; text-align: right; font-weight: bold;">beds_mcr</td>
+<th id="stub_2_7" scope="row" class="gt_row gt_center gt_stub" style="color: #7F7F7F; font-family: 'JetBrains Mono'; font-weight: bold;">ALL</th>
+<td headers="beds_mcr stub_2_7 uniq" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">122&nbsp;</td>
+<td headers="beds_mcr stub_2_7 mean" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;"> 51.948</td>
+<td headers="beds_mcr stub_2_7 p0" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">0&nbsp;</td>
+<td headers="beds_mcr stub_2_7 p25" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">30&nbsp;</td>
+<td headers="beds_mcr stub_2_7 p50" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;"> 45&nbsp;</td>
+<td headers="beds_mcr stub_2_7 p75" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;"> 64&nbsp;</td>
+<td headers="beds_mcr stub_2_7 p100" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">336&nbsp;</td>
+<td headers="beds_mcr stub_2_7 iqr" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">34&nbsp;</td>
+<td headers="beds_mcr stub_2_7 sd" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">38.225</td>
+<td headers="beds_mcr stub_2_7 hist" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">▇▂▁▁▁</td>
 </tr>
 <tr>
-<th id="stub_2_8" scope="row" class="gt_row gt_center gt_stub">dist</th>
-<td headers="beds_mcr stub_2_8 uniq" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">125&nbsp;</td>
-<td headers="beds_mcr stub_2_8 mean" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;"> 25.041</td>
-<td headers="beds_mcr stub_2_8 p0" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">0&nbsp;</td>
-<td headers="beds_mcr stub_2_8 p25" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;"> 7&nbsp;</td>
-<td headers="beds_mcr stub_2_8 p50" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;"> 19&nbsp;</td>
-<td headers="beds_mcr stub_2_8 p75" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;"> 36&nbsp;</td>
-<td headers="beds_mcr stub_2_8 p100" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">198&nbsp;</td>
-<td headers="beds_mcr stub_2_8 iqr" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">29&nbsp;</td>
-<td headers="beds_mcr stub_2_8 sd" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">24.835</td>
-<td headers="beds_mcr stub_2_8 hist" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">▇▂▁▁▁</td>
+<th id="stub_2_8" scope="row" class="gt_row gt_center gt_stub" style="color: #7F7F7F; font-family: 'JetBrains Mono'; font-weight: bold;">DISTINCT</th>
+<td headers="beds_mcr stub_2_8 uniq" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">125&nbsp;</td>
+<td headers="beds_mcr stub_2_8 mean" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;"> 25.041</td>
+<td headers="beds_mcr stub_2_8 p0" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">0&nbsp;</td>
+<td headers="beds_mcr stub_2_8 p25" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;"> 7&nbsp;</td>
+<td headers="beds_mcr stub_2_8 p50" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;"> 19&nbsp;</td>
+<td headers="beds_mcr stub_2_8 p75" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;"> 36&nbsp;</td>
+<td headers="beds_mcr stub_2_8 p100" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">198&nbsp;</td>
+<td headers="beds_mcr stub_2_8 iqr" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">29&nbsp;</td>
+<td headers="beds_mcr stub_2_8 sd" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">24.835</td>
+<td headers="beds_mcr stub_2_8 hist" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">▇▂▁▁▁</td>
 </tr>
 <tr>
-<th id="stub_2_9" scope="row" class="gt_row gt_center gt_stub">dual</th>
-<td headers="beds_mcr stub_2_9 uniq" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;"> 31&nbsp;</td>
-<td headers="beds_mcr stub_2_9 mean" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">  0.098</td>
-<td headers="beds_mcr stub_2_9 p0" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">0&nbsp;</td>
-<td headers="beds_mcr stub_2_9 p25" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;"> 0&nbsp;</td>
-<td headers="beds_mcr stub_2_9 p50" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">  0&nbsp;</td>
-<td headers="beds_mcr stub_2_9 p75" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">  0&nbsp;</td>
-<td headers="beds_mcr stub_2_9 p100" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;"> 92&nbsp;</td>
-<td headers="beds_mcr stub_2_9 iqr" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;"> 0&nbsp;</td>
-<td headers="beds_mcr stub_2_9 sd" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;"> 1.793</td>
-<td headers="beds_mcr stub_2_9 hist" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">▇▁▁▁▁</td>
+<th id="stub_2_9" scope="row" class="gt_row gt_center gt_stub" style="color: #7F7F7F; font-family: 'JetBrains Mono'; font-weight: bold;">DUAL</th>
+<td headers="beds_mcr stub_2_9 uniq" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;"> 31&nbsp;</td>
+<td headers="beds_mcr stub_2_9 mean" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">  0.098</td>
+<td headers="beds_mcr stub_2_9 p0" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">0&nbsp;</td>
+<td headers="beds_mcr stub_2_9 p25" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;"> 0&nbsp;</td>
+<td headers="beds_mcr stub_2_9 p50" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">  0&nbsp;</td>
+<td headers="beds_mcr stub_2_9 p75" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">  0&nbsp;</td>
+<td headers="beds_mcr stub_2_9 p100" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;"> 92&nbsp;</td>
+<td headers="beds_mcr stub_2_9 iqr" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;"> 0&nbsp;</td>
+<td headers="beds_mcr stub_2_9 sd" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;"> 1.793</td>
+<td headers="beds_mcr stub_2_9 hist" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">▇▁▁▁▁</td>
 </tr>
 <tr class="gt_row_group_first">
-<td headers="beds_tot stub_2_10 stub_1" rowspan="3" class="gt_row gt_left gt_stub_row_group">beds_tot</td>
-<th id="stub_2_10" scope="row" class="gt_row gt_center gt_stub">all</th>
-<td headers="beds_tot stub_2_10 uniq" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">131&nbsp;</td>
-<td headers="beds_tot stub_2_10 mean" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;"> 60.716</td>
-<td headers="beds_tot stub_2_10 p0" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">4&nbsp;</td>
-<td headers="beds_tot stub_2_10 p25" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">33&nbsp;</td>
-<td headers="beds_tot stub_2_10 p50" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;"> 50&nbsp;</td>
-<td headers="beds_tot stub_2_10 p75" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;"> 72&nbsp;</td>
-<td headers="beds_tot stub_2_10 p100" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">462&nbsp;</td>
-<td headers="beds_tot stub_2_10 iqr" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">39&nbsp;</td>
-<td headers="beds_tot stub_2_10 sd" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">47.192</td>
-<td headers="beds_tot stub_2_10 hist" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">▇▁▁▁▁</td>
+<td headers="beds_tot stub_2_10 stub_1" rowspan="3" class="gt_row gt_left gt_stub_row_group" style="font-family: 'JetBrains Mono'; text-align: right; font-weight: bold;">beds_tot</td>
+<th id="stub_2_10" scope="row" class="gt_row gt_center gt_stub" style="color: #7F7F7F; font-family: 'JetBrains Mono'; font-weight: bold;">ALL</th>
+<td headers="beds_tot stub_2_10 uniq" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">131&nbsp;</td>
+<td headers="beds_tot stub_2_10 mean" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;"> 60.716</td>
+<td headers="beds_tot stub_2_10 p0" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">4&nbsp;</td>
+<td headers="beds_tot stub_2_10 p25" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">33&nbsp;</td>
+<td headers="beds_tot stub_2_10 p50" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;"> 50&nbsp;</td>
+<td headers="beds_tot stub_2_10 p75" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;"> 72&nbsp;</td>
+<td headers="beds_tot stub_2_10 p100" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">462&nbsp;</td>
+<td headers="beds_tot stub_2_10 iqr" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">39&nbsp;</td>
+<td headers="beds_tot stub_2_10 sd" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">47.192</td>
+<td headers="beds_tot stub_2_10 hist" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">▇▁▁▁▁</td>
 </tr>
 <tr>
-<th id="stub_2_11" scope="row" class="gt_row gt_center gt_stub">dist</th>
-<td headers="beds_tot stub_2_11 uniq" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">243&nbsp;</td>
-<td headers="beds_tot stub_2_11 mean" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">121.122</td>
-<td headers="beds_tot stub_2_11 p0" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">0&nbsp;</td>
-<td headers="beds_tot stub_2_11 p25" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">92&nbsp;</td>
-<td headers="beds_tot stub_2_11 p50" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">120&nbsp;</td>
-<td headers="beds_tot stub_2_11 p75" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">138&nbsp;</td>
-<td headers="beds_tot stub_2_11 p100" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">667&nbsp;</td>
-<td headers="beds_tot stub_2_11 iqr" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">46&nbsp;</td>
-<td headers="beds_tot stub_2_11 sd" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">49.345</td>
-<td headers="beds_tot stub_2_11 hist" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">▇▃▁▁▁</td>
+<th id="stub_2_11" scope="row" class="gt_row gt_center gt_stub" style="color: #7F7F7F; font-family: 'JetBrains Mono'; font-weight: bold;">DISTINCT</th>
+<td headers="beds_tot stub_2_11 uniq" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">243&nbsp;</td>
+<td headers="beds_tot stub_2_11 mean" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">121.122</td>
+<td headers="beds_tot stub_2_11 p0" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">0&nbsp;</td>
+<td headers="beds_tot stub_2_11 p25" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">92&nbsp;</td>
+<td headers="beds_tot stub_2_11 p50" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">120&nbsp;</td>
+<td headers="beds_tot stub_2_11 p75" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">138&nbsp;</td>
+<td headers="beds_tot stub_2_11 p100" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">667&nbsp;</td>
+<td headers="beds_tot stub_2_11 iqr" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">46&nbsp;</td>
+<td headers="beds_tot stub_2_11 sd" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">49.345</td>
+<td headers="beds_tot stub_2_11 hist" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">▇▃▁▁▁</td>
 </tr>
 <tr>
-<th id="stub_2_12" scope="row" class="gt_row gt_center gt_stub">dual</th>
-<td headers="beds_tot stub_2_12 uniq" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">381&nbsp;</td>
-<td headers="beds_tot stub_2_12 mean" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">109.665</td>
-<td headers="beds_tot stub_2_12 p0" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">0&nbsp;</td>
-<td headers="beds_tot stub_2_12 p25" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">69&nbsp;</td>
-<td headers="beds_tot stub_2_12 p50" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">100&nbsp;</td>
-<td headers="beds_tot stub_2_12 p75" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">130&nbsp;</td>
-<td headers="beds_tot stub_2_12 p100" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">874&nbsp;</td>
-<td headers="beds_tot stub_2_12 iqr" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">61&nbsp;</td>
-<td headers="beds_tot stub_2_12 sd" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">60.926</td>
-<td headers="beds_tot stub_2_12 hist" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">▇▁▁▁▁</td>
+<th id="stub_2_12" scope="row" class="gt_row gt_center gt_stub" style="color: #7F7F7F; font-family: 'JetBrains Mono'; font-weight: bold;">DUAL</th>
+<td headers="beds_tot stub_2_12 uniq" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">381&nbsp;</td>
+<td headers="beds_tot stub_2_12 mean" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">109.665</td>
+<td headers="beds_tot stub_2_12 p0" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">0&nbsp;</td>
+<td headers="beds_tot stub_2_12 p25" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">69&nbsp;</td>
+<td headers="beds_tot stub_2_12 p50" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">100&nbsp;</td>
+<td headers="beds_tot stub_2_12 p75" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">130&nbsp;</td>
+<td headers="beds_tot stub_2_12 p100" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">874&nbsp;</td>
+<td headers="beds_tot stub_2_12 iqr" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">61&nbsp;</td>
+<td headers="beds_tot stub_2_12 sd" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">60.926</td>
+<td headers="beds_tot stub_2_12 hist" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">▇▁▁▁▁</td>
 </tr>
 </tbody>
 </table>
@@ -997,38 +1028,69 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>  all <span class="op">=</span> <span class="va">ov</span><span class="op">$</span><span class="va">`SNF All`</span><span class="op">$</span><span class="va">categorical</span>,</span>
 <span>  dist <span class="op">=</span> <span class="va">ov</span><span class="op">$</span><span class="va">`SNF Dist`</span><span class="op">$</span><span class="va">categorical</span>,</span>
 <span>  dual <span class="op">=</span> <span class="va">ov</span><span class="op">$</span><span class="va">`SNF Dual`</span><span class="op">$</span><span class="va">categorical</span></span>
-<span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/rowbind.html">rowbind</a></span><span class="op">(</span>idcol <span class="op">=</span> <span class="st">"id"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/select_replace_vars.html">slt</a></span><span class="op">(</span><span class="va">id</span>, <span class="va">col</span>, uniq <span class="op">=</span> <span class="va">n_unique</span>, <span class="va">min</span>, <span class="va">max</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/roworder.html">roworder</a></span><span class="op">(</span><span class="va">col</span>, <span class="va">id</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/rowbind.html">rowbind</a></span><span class="op">(</span>idcol <span class="op">=</span> <span class="st">"id"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/select_replace_vars.html">slt</a></span><span class="op">(</span><span class="va">id</span>, <span class="va">col</span>, uniq <span class="op">=</span> <span class="va">n_unique</span>, <span class="va">min</span>, <span class="va">max</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/roworder.html">roworder</a></span><span class="op">(</span><span class="va">col</span>, <span class="va">id</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/gt.html">gt</a></span><span class="op">(</span></span>
-<span>    rowname_col <span class="op">=</span> <span class="st">"id"</span>, </span>
+<span>    rowname_col <span class="op">=</span> <span class="st">"id"</span>,</span>
 <span>    groupname_col <span class="op">=</span> <span class="st">"col"</span>,</span>
-<span>    row_group_as_column <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/tab_options.html">tab_options</a></span><span class="op">(</span>quarto.disable_processing <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">gtExtras</span><span class="fu">::</span><span class="fu"><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_nytimes.html">gt_theme_nytimes</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span>    row_group_as_column <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span>  <span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/tab_options.html">tab_options</a></span><span class="op">(</span></span>
+<span>    table.width <span class="op">=</span> <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/pct.html">pct</a></span><span class="op">(</span><span class="fl">100</span><span class="op">)</span>,</span>
+<span>    quarto.disable_processing <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span>  <span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">gtExtras</span><span class="fu">::</span><span class="fu"><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_nytimes.html">gt_theme_nytimes</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/tab_style.html">tab_style</a></span><span class="op">(</span></span>
+<span>    style <span class="op">=</span> <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/cell_text.html">cell_text</a></span><span class="op">(</span></span>
+<span>      font <span class="op">=</span> <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/google_font.html">google_font</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"JetBrains Mono"</span><span class="op">)</span>,</span>
+<span>      color <span class="op">=</span> <span class="st">"grey50"</span>,</span>
+<span>      size <span class="op">=</span> <span class="st">"small"</span></span>
+<span>    <span class="op">)</span>,</span>
+<span>    locations <span class="op">=</span> <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/cells_body.html">cells_body</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/tab_style.html">tab_style</a></span><span class="op">(</span></span>
+<span>    style <span class="op">=</span> <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/cell_text.html">cell_text</a></span><span class="op">(</span></span>
+<span>      align <span class="op">=</span> <span class="st">"right"</span>,</span>
+<span>      font <span class="op">=</span> <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/google_font.html">google_font</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"JetBrains Mono"</span><span class="op">)</span>,</span>
+<span>      weight <span class="op">=</span> <span class="st">"bold"</span></span>
+<span>    <span class="op">)</span>,</span>
+<span>    locations <span class="op">=</span> <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/cells_row_groups.html">cells_row_groups</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/tab_style.html">tab_style</a></span><span class="op">(</span></span>
+<span>    style <span class="op">=</span> <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/cell_text.html">cell_text</a></span><span class="op">(</span></span>
+<span>      font <span class="op">=</span> <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/google_font.html">google_font</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"JetBrains Mono"</span><span class="op">)</span>,</span>
+<span>      color <span class="op">=</span> <span class="st">"grey50"</span>,</span>
+<span>      weight <span class="op">=</span> <span class="st">"bold"</span></span>
+<span>    <span class="op">)</span>,</span>
+<span>    locations <span class="op">=</span> <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/cells_stub.html">cells_stub</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="tuocxqozrl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+<div id="dewlsvykrc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#tuocxqozrl table {
+#dewlsvykrc table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#tuocxqozrl thead, #tuocxqozrl tbody, #tuocxqozrl tfoot, #tuocxqozrl tr, #tuocxqozrl td, #tuocxqozrl th {
+#dewlsvykrc thead, #dewlsvykrc tbody, #dewlsvykrc tfoot, #dewlsvykrc tr, #dewlsvykrc td, #dewlsvykrc th {
   border-style: none;
 }
 
-#tuocxqozrl p {
+#dewlsvykrc p {
   margin: 0;
   padding: 0;
 }
 
-#tuocxqozrl .gt_table {
+#dewlsvykrc .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1039,7 +1101,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   font-weight: normal;
   font-style: normal;
   background-color: #FFFFFF;
-  width: auto;
+  width: 100%;
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #A8A8A8;
@@ -1054,12 +1116,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#tuocxqozrl .gt_caption {
+#dewlsvykrc .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#tuocxqozrl .gt_title {
+#dewlsvykrc .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1071,7 +1133,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#tuocxqozrl .gt_subtitle {
+#dewlsvykrc .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1083,7 +1145,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#tuocxqozrl .gt_heading {
+#dewlsvykrc .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -1095,13 +1157,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#tuocxqozrl .gt_bottom_border {
+#dewlsvykrc .gt_bottom_border {
   border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#tuocxqozrl .gt_col_headings {
+#dewlsvykrc .gt_col_headings {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1116,7 +1178,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#tuocxqozrl .gt_col_heading {
+#dewlsvykrc .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 12px;
@@ -1136,7 +1198,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#tuocxqozrl .gt_column_spanner_outer {
+#dewlsvykrc .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 12px;
@@ -1148,15 +1210,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#tuocxqozrl .gt_column_spanner_outer:first-child {
+#dewlsvykrc .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#tuocxqozrl .gt_column_spanner_outer:last-child {
+#dewlsvykrc .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#tuocxqozrl .gt_column_spanner {
+#dewlsvykrc .gt_column_spanner {
   border-bottom-style: none;
   border-bottom-width: 1px;
   border-bottom-color: #334422;
@@ -1168,11 +1230,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#tuocxqozrl .gt_spanner_row {
+#dewlsvykrc .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#tuocxqozrl .gt_group_heading {
+#dewlsvykrc .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1198,7 +1260,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#tuocxqozrl .gt_empty_group_heading {
+#dewlsvykrc .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1213,15 +1275,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#tuocxqozrl .gt_from_md > :first-child {
+#dewlsvykrc .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#tuocxqozrl .gt_from_md > :last-child {
+#dewlsvykrc .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#tuocxqozrl .gt_row {
+#dewlsvykrc .gt_row {
   padding-top: 7px;
   padding-bottom: 7px;
   padding-left: 5px;
@@ -1240,7 +1302,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#tuocxqozrl .gt_stub {
+#dewlsvykrc .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1253,7 +1315,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#tuocxqozrl .gt_stub_row_group {
+#dewlsvykrc .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1267,15 +1329,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#tuocxqozrl .gt_row_group_first td {
+#dewlsvykrc .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#tuocxqozrl .gt_row_group_first th {
+#dewlsvykrc .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#tuocxqozrl .gt_summary_row {
+#dewlsvykrc .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1285,16 +1347,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#tuocxqozrl .gt_first_summary_row {
+#dewlsvykrc .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#tuocxqozrl .gt_first_summary_row.thick {
+#dewlsvykrc .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#tuocxqozrl .gt_last_summary_row {
+#dewlsvykrc .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1304,7 +1366,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#tuocxqozrl .gt_grand_summary_row {
+#dewlsvykrc .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1314,7 +1376,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#tuocxqozrl .gt_first_grand_summary_row {
+#dewlsvykrc .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1324,7 +1386,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#tuocxqozrl .gt_last_grand_summary_row_top {
+#dewlsvykrc .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1334,11 +1396,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#tuocxqozrl .gt_striped {
+#dewlsvykrc .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#tuocxqozrl .gt_table_body {
+#dewlsvykrc .gt_table_body {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1347,7 +1409,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #FFFFFF;
 }
 
-#tuocxqozrl .gt_footnotes {
+#dewlsvykrc .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1361,7 +1423,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#tuocxqozrl .gt_footnote {
+#dewlsvykrc .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1370,7 +1432,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#tuocxqozrl .gt_sourcenotes {
+#dewlsvykrc .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1384,7 +1446,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#tuocxqozrl .gt_sourcenote {
+#dewlsvykrc .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1392,72 +1454,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#tuocxqozrl .gt_left {
+#dewlsvykrc .gt_left {
   text-align: left;
 }
 
-#tuocxqozrl .gt_center {
+#dewlsvykrc .gt_center {
   text-align: center;
 }
 
-#tuocxqozrl .gt_right {
+#dewlsvykrc .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#tuocxqozrl .gt_font_normal {
+#dewlsvykrc .gt_font_normal {
   font-weight: normal;
 }
 
-#tuocxqozrl .gt_font_bold {
+#dewlsvykrc .gt_font_bold {
   font-weight: bold;
 }
 
-#tuocxqozrl .gt_font_italic {
+#dewlsvykrc .gt_font_italic {
   font-style: italic;
 }
 
-#tuocxqozrl .gt_super {
+#dewlsvykrc .gt_super {
   font-size: 65%;
 }
 
-#tuocxqozrl .gt_footnote_marks {
+#dewlsvykrc .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#tuocxqozrl .gt_asterisk {
+#dewlsvykrc .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#tuocxqozrl .gt_indent_1 {
+#dewlsvykrc .gt_indent_1 {
   text-indent: 5px;
 }
 
-#tuocxqozrl .gt_indent_2 {
+#dewlsvykrc .gt_indent_2 {
   text-indent: 10px;
 }
 
-#tuocxqozrl .gt_indent_3 {
+#dewlsvykrc .gt_indent_3 {
   text-indent: 15px;
 }
 
-#tuocxqozrl .gt_indent_4 {
+#dewlsvykrc .gt_indent_4 {
   text-indent: 20px;
 }
 
-#tuocxqozrl .gt_indent_5 {
+#dewlsvykrc .gt_indent_5 {
   text-indent: 25px;
 }
 
-#tuocxqozrl .katex-display {
+#dewlsvykrc .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#tuocxqozrl div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#dewlsvykrc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1470,118 +1532,118 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </tr></thead>
 <tbody class="gt_table_body">
 <tr class="gt_row_group_first">
-<td headers="cat stub_2_1 stub_1" rowspan="3" class="gt_row gt_left gt_stub_row_group">cat</td>
-<th id="stub_2_1" scope="row" class="gt_row gt_center gt_stub">all</th>
-<td headers="cat stub_2_1 uniq" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">1</td>
-<td headers="cat stub_2_1 min" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Skilled Nursing Facility</td>
-<td headers="cat stub_2_1 max" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Skilled Nursing Facility</td>
+<td headers="cat stub_2_1 stub_1" rowspan="3" class="gt_row gt_left gt_stub_row_group" style="font-family: 'JetBrains Mono'; text-align: right; font-weight: bold;">cat</td>
+<th id="stub_2_1" scope="row" class="gt_row gt_center gt_stub" style="color: #7F7F7F; font-family: 'JetBrains Mono'; font-weight: bold;">all</th>
+<td headers="cat stub_2_1 uniq" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">1</td>
+<td headers="cat stub_2_1 min" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">Skilled Nursing Facility</td>
+<td headers="cat stub_2_1 max" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">Skilled Nursing Facility</td>
 </tr>
 <tr>
-<th id="stub_2_2" scope="row" class="gt_row gt_center gt_stub">dist</th>
-<td headers="cat stub_2_2 uniq" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">1</td>
-<td headers="cat stub_2_2 min" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Skilled Nursing Facilities/Nursing Facility (Distinct Part)</td>
-<td headers="cat stub_2_2 max" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Skilled Nursing Facilities/Nursing Facility (Distinct Part)</td>
+<th id="stub_2_2" scope="row" class="gt_row gt_center gt_stub" style="color: #7F7F7F; font-family: 'JetBrains Mono'; font-weight: bold;">dist</th>
+<td headers="cat stub_2_2 uniq" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">1</td>
+<td headers="cat stub_2_2 min" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">Skilled Nursing Facilities/Nursing Facility (Distinct Part)</td>
+<td headers="cat stub_2_2 max" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">Skilled Nursing Facilities/Nursing Facility (Distinct Part)</td>
 </tr>
 <tr>
-<th id="stub_2_3" scope="row" class="gt_row gt_center gt_stub">dual</th>
-<td headers="cat stub_2_3 uniq" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">1</td>
-<td headers="cat stub_2_3 min" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Skilled Nursing Facilities/Nursing Facility (Dually Certified)</td>
-<td headers="cat stub_2_3 max" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Skilled Nursing Facilities/Nursing Facility (Dually Certified)</td>
+<th id="stub_2_3" scope="row" class="gt_row gt_center gt_stub" style="color: #7F7F7F; font-family: 'JetBrains Mono'; font-weight: bold;">dual</th>
+<td headers="cat stub_2_3 uniq" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">1</td>
+<td headers="cat stub_2_3 min" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">Skilled Nursing Facilities/Nursing Facility (Dually Certified)</td>
+<td headers="cat stub_2_3 max" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">Skilled Nursing Facilities/Nursing Facility (Dually Certified)</td>
 </tr>
 <tr class="gt_row_group_first">
-<td headers="ccn stub_2_4 stub_1" rowspan="3" class="gt_row gt_left gt_stub_row_group">ccn</td>
-<th id="stub_2_4" scope="row" class="gt_row gt_center gt_stub">all</th>
-<td headers="ccn stub_2_4 uniq" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">553</td>
-<td headers="ccn stub_2_4 min" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">015423</td>
-<td headers="ccn stub_2_4 max" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">745052</td>
+<td headers="ccn stub_2_4 stub_1" rowspan="3" class="gt_row gt_left gt_stub_row_group" style="font-family: 'JetBrains Mono'; text-align: right; font-weight: bold;">ccn</td>
+<th id="stub_2_4" scope="row" class="gt_row gt_center gt_stub" style="color: #7F7F7F; font-family: 'JetBrains Mono'; font-weight: bold;">all</th>
+<td headers="ccn stub_2_4 uniq" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">553</td>
+<td headers="ccn stub_2_4 min" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">015423</td>
+<td headers="ccn stub_2_4 max" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">745052</td>
 </tr>
 <tr>
-<th id="stub_2_5" scope="row" class="gt_row gt_center gt_stub">dist</th>
-<td headers="ccn stub_2_5 uniq" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">2097</td>
-<td headers="ccn stub_2_5 min" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">015455</td>
-<td headers="ccn stub_2_5 max" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">745050</td>
+<th id="stub_2_5" scope="row" class="gt_row gt_center gt_stub" style="color: #7F7F7F; font-family: 'JetBrains Mono'; font-weight: bold;">dist</th>
+<td headers="ccn stub_2_5 uniq" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">2097</td>
+<td headers="ccn stub_2_5 min" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">015455</td>
+<td headers="ccn stub_2_5 max" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">745050</td>
 </tr>
 <tr>
-<th id="stub_2_6" scope="row" class="gt_row gt_center gt_stub">dual</th>
-<td headers="ccn stub_2_6 uniq" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">11820</td>
-<td headers="ccn stub_2_6 min" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">015009</td>
-<td headers="ccn stub_2_6 max" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">745059</td>
+<th id="stub_2_6" scope="row" class="gt_row gt_center gt_stub" style="color: #7F7F7F; font-family: 'JetBrains Mono'; font-weight: bold;">dual</th>
+<td headers="ccn stub_2_6 uniq" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">11820</td>
+<td headers="ccn stub_2_6 min" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">015009</td>
+<td headers="ccn stub_2_6 max" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">745059</td>
 </tr>
 <tr class="gt_row_group_first">
-<td headers="city stub_2_7 stub_1" rowspan="3" class="gt_row gt_left gt_stub_row_group">city</td>
-<th id="stub_2_7" scope="row" class="gt_row gt_center gt_stub">all</th>
-<td headers="city stub_2_7 uniq" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">395</td>
-<td headers="city stub_2_7 min" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Abilene</td>
-<td headers="city stub_2_7 max" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Yuma</td>
+<td headers="city stub_2_7 stub_1" rowspan="3" class="gt_row gt_left gt_stub_row_group" style="font-family: 'JetBrains Mono'; text-align: right; font-weight: bold;">city</td>
+<th id="stub_2_7" scope="row" class="gt_row gt_center gt_stub" style="color: #7F7F7F; font-family: 'JetBrains Mono'; font-weight: bold;">all</th>
+<td headers="city stub_2_7 uniq" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">395</td>
+<td headers="city stub_2_7 min" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">Abilene</td>
+<td headers="city stub_2_7 max" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">Yuma</td>
 </tr>
 <tr>
-<th id="stub_2_8" scope="row" class="gt_row gt_center gt_stub">dist</th>
-<td headers="city stub_2_8 uniq" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">1019</td>
-<td headers="city stub_2_8 min" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Abbeville</td>
-<td headers="city stub_2_8 max" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Zionsville</td>
+<th id="stub_2_8" scope="row" class="gt_row gt_center gt_stub" style="color: #7F7F7F; font-family: 'JetBrains Mono'; font-weight: bold;">dist</th>
+<td headers="city stub_2_8 uniq" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">1019</td>
+<td headers="city stub_2_8 min" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">Abbeville</td>
+<td headers="city stub_2_8 max" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">Zionsville</td>
 </tr>
 <tr>
-<th id="stub_2_9" scope="row" class="gt_row gt_center gt_stub">dual</th>
-<td headers="city stub_2_9 uniq" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">4523</td>
-<td headers="city stub_2_9 min" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Abbeville</td>
-<td headers="city stub_2_9 max" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Zumbrota</td>
+<th id="stub_2_9" scope="row" class="gt_row gt_center gt_stub" style="color: #7F7F7F; font-family: 'JetBrains Mono'; font-weight: bold;">dual</th>
+<td headers="city stub_2_9 uniq" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">4523</td>
+<td headers="city stub_2_9 min" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">Abbeville</td>
+<td headers="city stub_2_9 max" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">Zumbrota</td>
 </tr>
 <tr class="gt_row_group_first">
-<td headers="name stub_2_10 stub_1" rowspan="3" class="gt_row gt_left gt_stub_row_group">name</td>
-<th id="stub_2_10" scope="row" class="gt_row gt_center gt_stub">all</th>
-<td headers="name stub_2_10 uniq" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">552</td>
-<td headers="name stub_2_10 min" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">15 CRAIGSIDE</td>
-<td headers="name stub_2_10 max" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Windsor Point Continuing Care</td>
+<td headers="name stub_2_10 stub_1" rowspan="3" class="gt_row gt_left gt_stub_row_group" style="font-family: 'JetBrains Mono'; text-align: right; font-weight: bold;">name</td>
+<th id="stub_2_10" scope="row" class="gt_row gt_center gt_stub" style="color: #7F7F7F; font-family: 'JetBrains Mono'; font-weight: bold;">all</th>
+<td headers="name stub_2_10 uniq" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">552</td>
+<td headers="name stub_2_10 min" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">15 CRAIGSIDE</td>
+<td headers="name stub_2_10 max" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">Windsor Point Continuing Care</td>
 </tr>
 <tr>
-<th id="stub_2_11" scope="row" class="gt_row gt_center gt_stub">dist</th>
-<td headers="name stub_2_11 uniq" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">2085</td>
-<td headers="name stub_2_11 min" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">A.G. RHODES HOME WESLEY WOODS</td>
-<td headers="name stub_2_11 max" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">ZIONSVILLE MEADOWS</td>
+<th id="stub_2_11" scope="row" class="gt_row gt_center gt_stub" style="color: #7F7F7F; font-family: 'JetBrains Mono'; font-weight: bold;">dist</th>
+<td headers="name stub_2_11 uniq" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">2085</td>
+<td headers="name stub_2_11 min" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">A.G. RHODES HOME WESLEY WOODS</td>
+<td headers="name stub_2_11 max" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">ZIONSVILLE MEADOWS</td>
 </tr>
 <tr>
-<th id="stub_2_12" scope="row" class="gt_row gt_center gt_stub">dual</th>
-<td headers="name stub_2_12 uniq" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">11731</td>
-<td headers="name stub_2_12 min" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">24TH PLACE</td>
-<td headers="name stub_2_12 max" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Zumbrota Care Center</td>
+<th id="stub_2_12" scope="row" class="gt_row gt_center gt_stub" style="color: #7F7F7F; font-family: 'JetBrains Mono'; font-weight: bold;">dual</th>
+<td headers="name stub_2_12 uniq" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">11731</td>
+<td headers="name stub_2_12 min" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">24TH PLACE</td>
+<td headers="name stub_2_12 max" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">Zumbrota Care Center</td>
 </tr>
 <tr class="gt_row_group_first">
-<td headers="state stub_2_13 stub_1" rowspan="3" class="gt_row gt_left gt_stub_row_group">state</td>
-<th id="stub_2_13" scope="row" class="gt_row gt_center gt_stub">all</th>
-<td headers="state stub_2_13 uniq" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">45</td>
-<td headers="state stub_2_13 min" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">AL</td>
-<td headers="state stub_2_13 max" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">WV</td>
+<td headers="state stub_2_13 stub_1" rowspan="3" class="gt_row gt_left gt_stub_row_group" style="font-family: 'JetBrains Mono'; text-align: right; font-weight: bold;">state</td>
+<th id="stub_2_13" scope="row" class="gt_row gt_center gt_stub" style="color: #7F7F7F; font-family: 'JetBrains Mono'; font-weight: bold;">all</th>
+<td headers="state stub_2_13 uniq" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">45</td>
+<td headers="state stub_2_13 min" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">AL</td>
+<td headers="state stub_2_13 max" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">WV</td>
 </tr>
 <tr>
-<th id="stub_2_14" scope="row" class="gt_row gt_center gt_stub">dist</th>
-<td headers="state stub_2_14 uniq" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">37</td>
-<td headers="state stub_2_14 min" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">AL</td>
-<td headers="state stub_2_14 max" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">WV</td>
+<th id="stub_2_14" scope="row" class="gt_row gt_center gt_stub" style="color: #7F7F7F; font-family: 'JetBrains Mono'; font-weight: bold;">dist</th>
+<td headers="state stub_2_14 uniq" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">37</td>
+<td headers="state stub_2_14 min" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">AL</td>
+<td headers="state stub_2_14 max" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">WV</td>
 </tr>
 <tr>
-<th id="stub_2_15" scope="row" class="gt_row gt_center gt_stub">dual</th>
-<td headers="state stub_2_15 uniq" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">52</td>
-<td headers="state stub_2_15 min" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">AK</td>
-<td headers="state stub_2_15 max" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">WY</td>
+<th id="stub_2_15" scope="row" class="gt_row gt_center gt_stub" style="color: #7F7F7F; font-family: 'JetBrains Mono'; font-weight: bold;">dual</th>
+<td headers="state stub_2_15 uniq" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">52</td>
+<td headers="state stub_2_15 min" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">AK</td>
+<td headers="state stub_2_15 max" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">WY</td>
 </tr>
 <tr class="gt_row_group_first">
-<td headers="sub stub_2_16 stub_1" rowspan="3" class="gt_row gt_left gt_stub_row_group">sub</td>
-<th id="stub_2_16" scope="row" class="gt_row gt_center gt_stub">all</th>
-<td headers="sub stub_2_16 uniq" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">1</td>
-<td headers="sub stub_2_16 min" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Title 18 Only</td>
-<td headers="sub stub_2_16 max" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Title 18 Only</td>
+<td headers="sub stub_2_16 stub_1" rowspan="3" class="gt_row gt_left gt_stub_row_group" style="font-family: 'JetBrains Mono'; text-align: right; font-weight: bold;">sub</td>
+<th id="stub_2_16" scope="row" class="gt_row gt_center gt_stub" style="color: #7F7F7F; font-family: 'JetBrains Mono'; font-weight: bold;">all</th>
+<td headers="sub stub_2_16 uniq" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">1</td>
+<td headers="sub stub_2_16 min" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">Title 18 Only</td>
+<td headers="sub stub_2_16 max" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">Title 18 Only</td>
 </tr>
 <tr>
-<th id="stub_2_17" scope="row" class="gt_row gt_center gt_stub">dist</th>
-<td headers="sub stub_2_17 uniq" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">1</td>
-<td headers="sub stub_2_17 min" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Title 18/19</td>
-<td headers="sub stub_2_17 max" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Title 18/19</td>
+<th id="stub_2_17" scope="row" class="gt_row gt_center gt_stub" style="color: #7F7F7F; font-family: 'JetBrains Mono'; font-weight: bold;">dist</th>
+<td headers="sub stub_2_17 uniq" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">1</td>
+<td headers="sub stub_2_17 min" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">Title 18/19</td>
+<td headers="sub stub_2_17 max" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">Title 18/19</td>
 </tr>
 <tr>
-<th id="stub_2_18" scope="row" class="gt_row gt_center gt_stub">dual</th>
-<td headers="sub stub_2_18 uniq" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">1</td>
-<td headers="sub stub_2_18 min" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Title 18/19</td>
-<td headers="sub stub_2_18 max" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">Title 18/19</td>
+<th id="stub_2_18" scope="row" class="gt_row gt_center gt_stub" style="color: #7F7F7F; font-family: 'JetBrains Mono'; font-weight: bold;">dual</th>
+<td headers="sub stub_2_18 uniq" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">1</td>
+<td headers="sub stub_2_18 min" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">Title 18/19</td>
+<td headers="sub stub_2_18 max" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">Title 18/19</td>
 </tr>
 </tbody>
 </table>
@@ -2107,55 +2169,111 @@ cols: 5
 <span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a><span class="fu">### Overview</span></span>
 <span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>ov <span class="ot">&lt;-</span> hrsa <span class="sc">|&gt;</span> </span>
-<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">rsplit</span>(<span class="sc">~</span>.id) <span class="sc">|&gt;</span> </span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>ov <span class="ot">&lt;-</span> hrsa <span class="sc">|&gt;</span></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">rsplit</span>(<span class="sc">~</span>.id) <span class="sc">|&gt;</span></span>
 <span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>  purrr<span class="sc">::</span><span class="fu">map</span>(cheapr<span class="sc">::</span>overview)</span>
 <span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a><span class="fu">list</span>(</span>
-<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>  <span class="at">all =</span> ov<span class="sc">$</span><span class="st">`</span><span class="at">SNF All</span><span class="st">`</span><span class="sc">$</span>numeric,</span>
-<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>  <span class="at">dist =</span> ov<span class="sc">$</span><span class="st">`</span><span class="at">SNF Dist</span><span class="st">`</span><span class="sc">$</span>numeric,</span>
-<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>  <span class="at">dual =</span> ov<span class="sc">$</span><span class="st">`</span><span class="at">SNF Dual</span><span class="st">`</span><span class="sc">$</span>numeric</span>
-<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> </span>
-<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">rowbind</span>(<span class="at">idcol =</span> <span class="st">"id"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">slt</span>(id, col, <span class="at">uniq =</span> n_unique, mean<span class="sc">:</span>hist) <span class="sc">|&gt;</span> </span>
-<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">roworder</span>(col, id) <span class="sc">|&gt;</span> </span>
-<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a>  tibble<span class="sc">::</span><span class="fu">as_tibble</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>  <span class="at">ALL =</span> ov<span class="sc">$</span><span class="st">`</span><span class="at">SNF All</span><span class="st">`</span><span class="sc">$</span>numeric,</span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>  <span class="at">DISTINCT =</span> ov<span class="sc">$</span><span class="st">`</span><span class="at">SNF Dist</span><span class="st">`</span><span class="sc">$</span>numeric,</span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>  <span class="at">DUAL =</span> ov<span class="sc">$</span><span class="st">`</span><span class="at">SNF Dual</span><span class="st">`</span><span class="sc">$</span>numeric</span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span></span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">rowbind</span>(<span class="at">idcol =</span> <span class="st">"id"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">slt</span>(id, col, <span class="at">uniq =</span> n_unique, mean<span class="sc">:</span>hist) <span class="sc">|&gt;</span></span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">roworder</span>(col, id) <span class="sc">|&gt;</span></span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a>  tibble<span class="sc">::</span><span class="fu">as_tibble</span>() <span class="sc">|&gt;</span></span>
 <span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>(</span>
-<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">rowname_col =</span> <span class="st">"id"</span>, </span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">rowname_col =</span> <span class="st">"id"</span>,</span>
 <span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a>    <span class="at">groupname_col =</span> <span class="st">"col"</span>,</span>
-<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a>    <span class="at">row_group_as_column =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_options</span>(<span class="at">quarto.disable_processing =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">fmt_auto</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a>  gtExtras<span class="sc">::</span><span class="fu">gt_theme_nytimes</span>()</span>
-<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a><span class="fu">list</span>(</span>
-<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a>  <span class="at">all =</span> ov<span class="sc">$</span><span class="st">`</span><span class="at">SNF All</span><span class="st">`</span><span class="sc">$</span>categorical,</span>
-<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a>  <span class="at">dist =</span> ov<span class="sc">$</span><span class="st">`</span><span class="at">SNF Dist</span><span class="st">`</span><span class="sc">$</span>categorical,</span>
-<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a>  <span class="at">dual =</span> ov<span class="sc">$</span><span class="st">`</span><span class="at">SNF Dual</span><span class="st">`</span><span class="sc">$</span>categorical</span>
-<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> </span>
-<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">rowbind</span>(<span class="at">idcol =</span> <span class="st">"id"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">slt</span>(id, col, <span class="at">uniq =</span> n_unique, min, max) <span class="sc">|&gt;</span> </span>
-<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">roworder</span>(col, id) <span class="sc">|&gt;</span> </span>
-<span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a>  tibble<span class="sc">::</span><span class="fu">as_tibble</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb6-62"><a href="#cb6-62" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>(</span>
-<span id="cb6-63"><a href="#cb6-63" aria-hidden="true" tabindex="-1"></a>    <span class="at">rowname_col =</span> <span class="st">"id"</span>, </span>
-<span id="cb6-64"><a href="#cb6-64" aria-hidden="true" tabindex="-1"></a>    <span class="at">groupname_col =</span> <span class="st">"col"</span>,</span>
-<span id="cb6-65"><a href="#cb6-65" aria-hidden="true" tabindex="-1"></a>    <span class="at">row_group_as_column =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb6-66"><a href="#cb6-66" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_options</span>(<span class="at">quarto.disable_processing =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb6-67"><a href="#cb6-67" aria-hidden="true" tabindex="-1"></a>  gtExtras<span class="sc">::</span><span class="fu">gt_theme_nytimes</span>()</span>
-<span id="cb6-68"><a href="#cb6-68" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-69"><a href="#cb6-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-70"><a href="#cb6-70" aria-hidden="true" tabindex="-1"></a><span class="fu">### Parse</span></span>
-<span id="cb6-71"><a href="#cb6-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-74"><a href="#cb6-74" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb6-75"><a href="#cb6-75" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> purrr<span class="sc">::</span><span class="fu">map</span>(</span>
-<span id="cb6-76"><a href="#cb6-76" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">funique</span>(hrsa<span class="sc">$</span>ccn), \(x) <span class="fu">as.data.frame</span>(ccn<span class="sc">::</span><span class="fu">parse</span>(x))) <span class="sc">|&gt;</span> </span>
-<span id="cb6-77"><a href="#cb6-77" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">rowbind</span>()</span>
-<span id="cb6-78"><a href="#cb6-78" aria-hidden="true" tabindex="-1"></a>x<span class="sc">$</span>type <span class="ot">&lt;-</span> <span class="st">"SNF"</span></span>
-<span id="cb6-79"><a href="#cb6-79" aria-hidden="true" tabindex="-1"></a>x<span class="sc">$</span>state <span class="ot">&lt;-</span> ccn<span class="sc">::</span><span class="fu">state_abbr</span>(x<span class="sc">$</span>state)</span>
-<span id="cb6-80"><a href="#cb6-80" aria-hidden="true" tabindex="-1"></a>x<span class="sc">$</span>sequence <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(x<span class="sc">$</span>sequence)</span>
-<span id="cb6-81"><a href="#cb6-81" aria-hidden="true" tabindex="-1"></a>cheapr<span class="sc">::</span><span class="fu">overview</span>(x)</span>
-<span id="cb6-82"><a href="#cb6-82" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a>    <span class="at">row_group_as_column =</span> <span class="cn">TRUE</span></span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_options</span>(</span>
+<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.width =</span> gt<span class="sc">::</span><span class="fu">pct</span>(<span class="dv">100</span>),</span>
+<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">quarto.disable_processing =</span> <span class="cn">TRUE</span></span>
+<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">fmt_auto</span>() <span class="sc">|&gt;</span></span>
+<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a>  gtExtras<span class="sc">::</span><span class="fu">gt_theme_nytimes</span>() <span class="sc">|&gt;</span></span>
+<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_style</span>(</span>
+<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> gt<span class="sc">::</span><span class="fu">cell_text</span>(</span>
+<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a>      <span class="at">font =</span> gt<span class="sc">::</span><span class="fu">google_font</span>(<span class="at">name =</span> <span class="st">"JetBrains Mono"</span>),</span>
+<span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a>      <span class="at">color =</span> <span class="st">"grey50"</span>,</span>
+<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a>      <span class="at">size =</span> <span class="st">"small"</span></span>
+<span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb6-62"><a href="#cb6-62" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> gt<span class="sc">::</span><span class="fu">cells_body</span>()</span>
+<span id="cb6-63"><a href="#cb6-63" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb6-64"><a href="#cb6-64" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_style</span>(</span>
+<span id="cb6-65"><a href="#cb6-65" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> gt<span class="sc">::</span><span class="fu">cell_text</span>(</span>
+<span id="cb6-66"><a href="#cb6-66" aria-hidden="true" tabindex="-1"></a>      <span class="at">align =</span> <span class="st">"right"</span>,</span>
+<span id="cb6-67"><a href="#cb6-67" aria-hidden="true" tabindex="-1"></a>      <span class="at">font =</span> gt<span class="sc">::</span><span class="fu">google_font</span>(<span class="at">name =</span> <span class="st">"JetBrains Mono"</span>),</span>
+<span id="cb6-68"><a href="#cb6-68" aria-hidden="true" tabindex="-1"></a>      <span class="at">weight =</span> <span class="st">"bold"</span></span>
+<span id="cb6-69"><a href="#cb6-69" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb6-70"><a href="#cb6-70" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> gt<span class="sc">::</span><span class="fu">cells_row_groups</span>()</span>
+<span id="cb6-71"><a href="#cb6-71" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb6-72"><a href="#cb6-72" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_style</span>(</span>
+<span id="cb6-73"><a href="#cb6-73" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> gt<span class="sc">::</span><span class="fu">cell_text</span>(</span>
+<span id="cb6-74"><a href="#cb6-74" aria-hidden="true" tabindex="-1"></a>      <span class="at">font =</span> gt<span class="sc">::</span><span class="fu">google_font</span>(<span class="at">name =</span> <span class="st">"JetBrains Mono"</span>),</span>
+<span id="cb6-75"><a href="#cb6-75" aria-hidden="true" tabindex="-1"></a>      <span class="at">color =</span> <span class="st">"grey50"</span>,</span>
+<span id="cb6-76"><a href="#cb6-76" aria-hidden="true" tabindex="-1"></a>      <span class="at">weight =</span> <span class="st">"bold"</span></span>
+<span id="cb6-77"><a href="#cb6-77" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb6-78"><a href="#cb6-78" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> gt<span class="sc">::</span><span class="fu">cells_stub</span>()</span>
+<span id="cb6-79"><a href="#cb6-79" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb6-80"><a href="#cb6-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-81"><a href="#cb6-81" aria-hidden="true" tabindex="-1"></a><span class="fu">list</span>(</span>
+<span id="cb6-82"><a href="#cb6-82" aria-hidden="true" tabindex="-1"></a>  <span class="at">all =</span> ov<span class="sc">$</span><span class="st">`</span><span class="at">SNF All</span><span class="st">`</span><span class="sc">$</span>categorical,</span>
+<span id="cb6-83"><a href="#cb6-83" aria-hidden="true" tabindex="-1"></a>  <span class="at">dist =</span> ov<span class="sc">$</span><span class="st">`</span><span class="at">SNF Dist</span><span class="st">`</span><span class="sc">$</span>categorical,</span>
+<span id="cb6-84"><a href="#cb6-84" aria-hidden="true" tabindex="-1"></a>  <span class="at">dual =</span> ov<span class="sc">$</span><span class="st">`</span><span class="at">SNF Dual</span><span class="st">`</span><span class="sc">$</span>categorical</span>
+<span id="cb6-85"><a href="#cb6-85" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span></span>
+<span id="cb6-86"><a href="#cb6-86" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">rowbind</span>(<span class="at">idcol =</span> <span class="st">"id"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb6-87"><a href="#cb6-87" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">slt</span>(id, col, <span class="at">uniq =</span> n_unique, min, max) <span class="sc">|&gt;</span></span>
+<span id="cb6-88"><a href="#cb6-88" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">roworder</span>(col, id) <span class="sc">|&gt;</span></span>
+<span id="cb6-89"><a href="#cb6-89" aria-hidden="true" tabindex="-1"></a>  tibble<span class="sc">::</span><span class="fu">as_tibble</span>() <span class="sc">|&gt;</span></span>
+<span id="cb6-90"><a href="#cb6-90" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>(</span>
+<span id="cb6-91"><a href="#cb6-91" aria-hidden="true" tabindex="-1"></a>    <span class="at">rowname_col =</span> <span class="st">"id"</span>,</span>
+<span id="cb6-92"><a href="#cb6-92" aria-hidden="true" tabindex="-1"></a>    <span class="at">groupname_col =</span> <span class="st">"col"</span>,</span>
+<span id="cb6-93"><a href="#cb6-93" aria-hidden="true" tabindex="-1"></a>    <span class="at">row_group_as_column =</span> <span class="cn">TRUE</span></span>
+<span id="cb6-94"><a href="#cb6-94" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb6-95"><a href="#cb6-95" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_options</span>(</span>
+<span id="cb6-96"><a href="#cb6-96" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.width =</span> gt<span class="sc">::</span><span class="fu">pct</span>(<span class="dv">100</span>),</span>
+<span id="cb6-97"><a href="#cb6-97" aria-hidden="true" tabindex="-1"></a>    <span class="at">quarto.disable_processing =</span> <span class="cn">TRUE</span></span>
+<span id="cb6-98"><a href="#cb6-98" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb6-99"><a href="#cb6-99" aria-hidden="true" tabindex="-1"></a>  gtExtras<span class="sc">::</span><span class="fu">gt_theme_nytimes</span>() <span class="sc">|&gt;</span></span>
+<span id="cb6-100"><a href="#cb6-100" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_style</span>(</span>
+<span id="cb6-101"><a href="#cb6-101" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> gt<span class="sc">::</span><span class="fu">cell_text</span>(</span>
+<span id="cb6-102"><a href="#cb6-102" aria-hidden="true" tabindex="-1"></a>      <span class="at">font =</span> gt<span class="sc">::</span><span class="fu">google_font</span>(<span class="at">name =</span> <span class="st">"JetBrains Mono"</span>),</span>
+<span id="cb6-103"><a href="#cb6-103" aria-hidden="true" tabindex="-1"></a>      <span class="at">color =</span> <span class="st">"grey50"</span>,</span>
+<span id="cb6-104"><a href="#cb6-104" aria-hidden="true" tabindex="-1"></a>      <span class="at">size =</span> <span class="st">"small"</span></span>
+<span id="cb6-105"><a href="#cb6-105" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb6-106"><a href="#cb6-106" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> gt<span class="sc">::</span><span class="fu">cells_body</span>()</span>
+<span id="cb6-107"><a href="#cb6-107" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb6-108"><a href="#cb6-108" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_style</span>(</span>
+<span id="cb6-109"><a href="#cb6-109" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> gt<span class="sc">::</span><span class="fu">cell_text</span>(</span>
+<span id="cb6-110"><a href="#cb6-110" aria-hidden="true" tabindex="-1"></a>      <span class="at">align =</span> <span class="st">"right"</span>,</span>
+<span id="cb6-111"><a href="#cb6-111" aria-hidden="true" tabindex="-1"></a>      <span class="at">font =</span> gt<span class="sc">::</span><span class="fu">google_font</span>(<span class="at">name =</span> <span class="st">"JetBrains Mono"</span>),</span>
+<span id="cb6-112"><a href="#cb6-112" aria-hidden="true" tabindex="-1"></a>      <span class="at">weight =</span> <span class="st">"bold"</span></span>
+<span id="cb6-113"><a href="#cb6-113" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb6-114"><a href="#cb6-114" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> gt<span class="sc">::</span><span class="fu">cells_row_groups</span>()</span>
+<span id="cb6-115"><a href="#cb6-115" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb6-116"><a href="#cb6-116" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_style</span>(</span>
+<span id="cb6-117"><a href="#cb6-117" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> gt<span class="sc">::</span><span class="fu">cell_text</span>(</span>
+<span id="cb6-118"><a href="#cb6-118" aria-hidden="true" tabindex="-1"></a>      <span class="at">font =</span> gt<span class="sc">::</span><span class="fu">google_font</span>(<span class="at">name =</span> <span class="st">"JetBrains Mono"</span>),</span>
+<span id="cb6-119"><a href="#cb6-119" aria-hidden="true" tabindex="-1"></a>      <span class="at">color =</span> <span class="st">"grey50"</span>,</span>
+<span id="cb6-120"><a href="#cb6-120" aria-hidden="true" tabindex="-1"></a>      <span class="at">weight =</span> <span class="st">"bold"</span></span>
+<span id="cb6-121"><a href="#cb6-121" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb6-122"><a href="#cb6-122" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> gt<span class="sc">::</span><span class="fu">cells_stub</span>()</span>
+<span id="cb6-123"><a href="#cb6-123" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb6-124"><a href="#cb6-124" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-125"><a href="#cb6-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-126"><a href="#cb6-126" aria-hidden="true" tabindex="-1"></a><span class="fu">### Parse</span></span>
+<span id="cb6-127"><a href="#cb6-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-130"><a href="#cb6-130" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb6-131"><a href="#cb6-131" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> purrr<span class="sc">::</span><span class="fu">map</span>(</span>
+<span id="cb6-132"><a href="#cb6-132" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">funique</span>(hrsa<span class="sc">$</span>ccn), \(x) <span class="fu">as.data.frame</span>(ccn<span class="sc">::</span><span class="fu">parse</span>(x))) <span class="sc">|&gt;</span> </span>
+<span id="cb6-133"><a href="#cb6-133" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">rowbind</span>()</span>
+<span id="cb6-134"><a href="#cb6-134" aria-hidden="true" tabindex="-1"></a>x<span class="sc">$</span>type <span class="ot">&lt;-</span> <span class="st">"SNF"</span></span>
+<span id="cb6-135"><a href="#cb6-135" aria-hidden="true" tabindex="-1"></a>x<span class="sc">$</span>state <span class="ot">&lt;-</span> ccn<span class="sc">::</span><span class="fu">state_abbr</span>(x<span class="sc">$</span>state)</span>
+<span id="cb6-136"><a href="#cb6-136" aria-hidden="true" tabindex="-1"></a>x<span class="sc">$</span>sequence <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(x<span class="sc">$</span>sequence)</span>
+<span id="cb6-137"><a href="#cb6-137" aria-hidden="true" tabindex="-1"></a>cheapr<span class="sc">::</span><span class="fu">overview</span>(x)</span>
+<span id="cb6-138"><a href="#cb6-138" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

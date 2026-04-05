@@ -25,42 +25,98 @@ snf <- snf[substr(snf$ccn, 1L, 6L) %!iin% substr(hrsa$ccn, 1L, 6L), ]
 ### Overview
 
 ```{r}
-ov <- hrsa |> 
-  collapse::rsplit(~.id) |> 
+ov <- hrsa |>
+  collapse::rsplit(~.id) |>
   purrr::map(cheapr::overview)
 
 list(
-  all = ov$`SNF All`$numeric,
-  dist = ov$`SNF Dist`$numeric,
-  dual = ov$`SNF Dual`$numeric
-) |> 
-  collapse::rowbind(idcol = "id") |> 
-  collapse::slt(id, col, uniq = n_unique, mean:hist) |> 
-  collapse::roworder(col, id) |> 
-  tibble::as_tibble() |> 
+  ALL = ov$`SNF All`$numeric,
+  DISTINCT = ov$`SNF Dist`$numeric,
+  DUAL = ov$`SNF Dual`$numeric
+) |>
+  collapse::rowbind(idcol = "id") |>
+  collapse::slt(id, col, uniq = n_unique, mean:hist) |>
+  collapse::roworder(col, id) |>
+  tibble::as_tibble() |>
   gt::gt(
-    rowname_col = "id", 
+    rowname_col = "id",
     groupname_col = "col",
-    row_group_as_column = TRUE) |> 
-  gt::tab_options(quarto.disable_processing = TRUE) |> 
-  gt::fmt_auto() |> 
-  gtExtras::gt_theme_nytimes()
+    row_group_as_column = TRUE
+  ) |>
+  gt::tab_options(
+    table.width = gt::pct(100),
+    quarto.disable_processing = TRUE
+  ) |>
+  gt::fmt_auto() |>
+  gtExtras::gt_theme_nytimes() |>
+  gt::tab_style(
+    style = gt::cell_text(
+      font = gt::google_font(name = "JetBrains Mono"),
+      color = "grey50",
+      size = "small"
+    ),
+    locations = gt::cells_body()
+  ) |>
+  gt::tab_style(
+    style = gt::cell_text(
+      align = "right",
+      font = gt::google_font(name = "JetBrains Mono"),
+      weight = "bold"
+    ),
+    locations = gt::cells_row_groups()
+  ) |>
+  gt::tab_style(
+    style = gt::cell_text(
+      font = gt::google_font(name = "JetBrains Mono"),
+      color = "grey50",
+      weight = "bold"
+    ),
+    locations = gt::cells_stub()
+  )
 
 list(
   all = ov$`SNF All`$categorical,
   dist = ov$`SNF Dist`$categorical,
   dual = ov$`SNF Dual`$categorical
-) |> 
-  collapse::rowbind(idcol = "id") |> 
-  collapse::slt(id, col, uniq = n_unique, min, max) |> 
-  collapse::roworder(col, id) |> 
-  tibble::as_tibble() |> 
+) |>
+  collapse::rowbind(idcol = "id") |>
+  collapse::slt(id, col, uniq = n_unique, min, max) |>
+  collapse::roworder(col, id) |>
+  tibble::as_tibble() |>
   gt::gt(
-    rowname_col = "id", 
+    rowname_col = "id",
     groupname_col = "col",
-    row_group_as_column = TRUE) |> 
-  gt::tab_options(quarto.disable_processing = TRUE) |> 
-  gtExtras::gt_theme_nytimes()
+    row_group_as_column = TRUE
+  ) |>
+  gt::tab_options(
+    table.width = gt::pct(100),
+    quarto.disable_processing = TRUE
+  ) |>
+  gtExtras::gt_theme_nytimes() |>
+  gt::tab_style(
+    style = gt::cell_text(
+      font = gt::google_font(name = "JetBrains Mono"),
+      color = "grey50",
+      size = "small"
+    ),
+    locations = gt::cells_body()
+  ) |>
+  gt::tab_style(
+    style = gt::cell_text(
+      align = "right",
+      font = gt::google_font(name = "JetBrains Mono"),
+      weight = "bold"
+    ),
+    locations = gt::cells_row_groups()
+  ) |>
+  gt::tab_style(
+    style = gt::cell_text(
+      font = gt::google_font(name = "JetBrains Mono"),
+      color = "grey50",
+      weight = "bold"
+    ),
+    locations = gt::cells_stub()
+  )
 ```
 
 ### Parse

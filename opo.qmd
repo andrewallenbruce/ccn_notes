@@ -58,7 +58,10 @@ organ("05P001")
 x$opo_codes |> 
   collapse::roworder(code) |> 
   gt::gt() |> 
-  gt::tab_options(quarto.disable_processing = TRUE) |> 
+  gt::tab_options(
+    table.width = gt::pct(100),
+    quarto.disable_processing = TRUE
+  ) |>
   gtExtras::gt_theme_nytimes() |> 
   gt::tab_style(
     style = gt::cell_text(
@@ -95,7 +98,10 @@ x$opo_county |>
   collapse::join(cnty, verbose = 0L) |> 
   collapse::roworder(state) |> 
   gt::gt() |> 
-  gt::tab_options(quarto.disable_processing = TRUE) |> 
+  gt::tab_options(
+    table.width = gt::pct(100),
+    quarto.disable_processing = TRUE
+  ) |>
   gtExtras::gt_theme_nytimes() |> 
   gt::tab_style(
     style = gt::cell_text(
@@ -118,7 +124,10 @@ x$opo_active |>
   collapse::roworder(ccn) |>
   collapse::slt(-region, -orig_date) |> 
    gt::gt() |> 
-   gt::tab_options(quarto.disable_processing = TRUE) |> 
+   gt::tab_options(
+    table.width = gt::pct(100),
+    quarto.disable_processing = TRUE
+  ) |>
   gtExtras::gt_theme_nytimes() |> 
   gt::tab_style(
     style = gt::cell_text(
@@ -145,7 +154,10 @@ ccn:::get_pin("txc") |>
   collapse::slt(txc = txc_code, description = txc_type) |> 
   collapse::funique() |> 
   gt::gt() |> 
-  gt::tab_options(quarto.disable_processing = TRUE) |> 
+  gt::tab_options(
+    table.width = gt::pct(100),
+    quarto.disable_processing = TRUE
+  ) |>
   gtExtras::gt_theme_nytimes() |> 
   gt::tab_style(
     style = gt::cell_text(
@@ -175,7 +187,10 @@ ccn:::get_pin("txc") |>
   collapse::fsummarise(txc = toString(txc)) |> 
   collapse::fungroup() |> 
   gt::gt() |> 
-  gt::tab_options(quarto.disable_processing = TRUE) |> 
+  gt::tab_options(
+    table.width = gt::pct(100),
+    quarto.disable_processing = TRUE
+  ) |>
   gtExtras::gt_theme_nytimes() |> 
   gt::tab_style(
     style = gt::cell_text(
