@@ -65,34 +65,71 @@ Facility it is describing, the following examples are provided:
 
 
 ```{r}
-#| label: canonical-ccns
+#| label: ex-medicare
 #| echo: false
-"670055" |>
-  strsplit("") |>
-  _[[1]] |>
-  as.integer() |>
-  rlang::set_names(1:6) |>
+SS_NNNN("670055") |>
   as.list() |>
   list2DF() |>
   gt::gt() |>
   gt::fmt_integer(columns = gt::everything()) |>
+  gt::cols_align("right") |>
+  gt::tab_header(
+    title = "670055",
+    subtitle = "Short-Term Hospital (General & Specialty)"
+  ) |>
   gt::tab_style(
     style = gt::cell_fill(
       color = "yellow",
       alpha = 0.4
     ),
-    locations = gt::cells_body(columns = c(1:2))
+    locations = gt::cells_body(columns = 1)
   ) |>
   gt::tab_style(
     style = list(
-      gt::cell_fill(color = "red", alpha = 0.5),
+      gt::cell_fill(color = "red"),
       gt::cell_text(color = "white", weight = "bold")
     ),
-    locations = gt::cells_body(columns = c(3:6))
+    locations = gt::cells_body(columns = 2)
   ) |>
   gt_chamber_theme()
 ```
 
+```{r}
+#| label: ex-organ
+#| echo: false
+SS_TNNN("05P001") |>
+  as.list() |>
+  list2DF() |>
+  gt::gt() |>
+  gt::fmt_integer(columns = gt::everything()) |>
+  gt::cols_align("right") |>
+  gt::tab_header(
+    title = "05P001",
+    subtitle = "Organ Procurement Organization"
+  ) |>
+  gt::tab_style(
+    style = gt::cell_fill(
+      color = "yellow",
+      alpha = 0.4
+    ),
+    locations = gt::cells_body(columns = 1)
+  ) |>
+  gt::tab_style(
+    style = list(
+      gt::cell_fill(color = "black"),
+      gt::cell_text(color = "white", weight = "bold")
+    ),
+    locations = gt::cells_body(columns = 2)
+  ) |>
+  gt::tab_style(
+    style = list(
+      gt::cell_fill(color = "red"),
+      gt::cell_text(color = "white", weight = "bold")
+    ),
+    locations = gt::cells_body(columns = 3)
+  ) |>
+  gt_chamber_theme()
+```
 
 ## Providers Vs. Suppliers
 

@@ -1,3 +1,24 @@
+SS_NNNN <- function(x) {
+  substring(x, c(1L, 3L), c(2L, 6L)) |>
+    rlang::set_names(c("state", "sequence"))
+}
+SS_NNNT <- function(x) {
+  substring(x, c(1L, 3L, 6L), c(2L, 5L, 6L)) |>
+    rlang::set_names(c("state", "sequence", "type"))
+}
+SS_TNNN <- function(x) {
+  substring(x, c(1L, 3L, 4L), c(2L, 3L, 6L)) |>
+    rlang::set_names(c("state", "type", "sequence"))
+}
+SS_TPNN <- function(x) {
+  substring(x, c(1L, 3L, 4L, 5L), c(2L, 3L, 4L, 6L)) |>
+    rlang::set_names(c("state", "type", "parent", "sequence"))
+}
+SS_TN10 <- function(x) {
+  substring(x, c(1L, 3L, 6L), c(2L, 5L, 10L)) |>
+    rlang::set_names(c("state", "type", "sequence"))
+}
+
 # gt_obj <- ccn::states |>
 #   collapse::fgroup_by(abbr, name) |>
 #   collapse::fsummarise(code = toString(code)) |>
@@ -72,7 +93,7 @@ gt_chamber_theme <- function(gt_obj, ...) {
     ) |>
     # gt::cols_align(align = "center", columns = gt::everything()) |>
     gt::tab_options(
-      table.font.size = 12,
+      table.font.size = 14,
       column_labels.border.top.style = "none",
       column_labels.border.bottom.style = "solid",
       column_labels.border.bottom.width = gt::px(0.5),
@@ -82,7 +103,7 @@ gt_chamber_theme <- function(gt_obj, ...) {
       table_body.border.top.style = "none",
       heading.border.bottom.style = "none",
       heading.align = "left",
-      heading.title.font.size = gt::px(26),
+      heading.title.font.size = gt::px(24),
       source_notes.border.lr.style = "none",
       source_notes.font.size = 10,
       row_group.border.top.style = "none",
