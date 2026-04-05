@@ -24,10 +24,6 @@ The last four characters identify the type of facility.
 
 ## Facility Ranges
 
-The facility type is encoded in the third character of the last four
-characters. The table below summarizes the valid facility type codes and their
-corresponding ranges. 
-
 ```{r}
 #| label: medicare-ranges
 #| echo: false
@@ -35,11 +31,14 @@ corresponding ranges.
 ccn::medicare_ranges |>
   collapse::fgroup_by(abbr) |>
   collapse::fsummarise(
-    desc = toString(desc), 
+    desc = toString(desc),
     range = toString(range)
-    ) |>
+  ) |>
   gt::gt() |>
-  gt::tab_options(quarto.disable_processing = TRUE) |>
+  gt::tab_options(
+    table.width = gt::pct(100),
+    quarto.disable_processing = TRUE
+  ) |>
   gtExtras::gt_theme_nytimes() |>
   gt::tab_style(
     style = gt::cell_text(
@@ -58,3 +57,63 @@ ccn::medicare_ranges |>
     locations = gt::cells_body(columns = desc)
   )
 ```
+
+
+## Examples
+
+```{r}
+#| label: medicare-examples
+#| echo: false
+#| message: false
+purrr::map(c("050599", "440058"), ccn::as_data_frame) |>
+  collapse::rowbind(fill = TRUE)
+
+hosp <- ccn:::get_pin("hosp")
+
+hosp |>
+  collapse::mtt(ccn = substring(ccn, 1L, 6L)) |>
+  collapse::sbt(stringi::stri_detect_regex(ccn, "[ABEFLJGHK]")) |>
+  gt::gt() |>
+  gtExtras::gt_theme_nytimes() |>
+  gt::tab_options(
+    table.width = gt::pct(100),
+    quarto.disable_processing = TRUE
+  )
+
+hcount <- hosp |>
+  collapse::sbt(!is.na(subgroup)) |>
+  collapse::sbt(
+    stringi::stri_detect_regex(subgroup, "REH[:]", negate = TRUE)
+  ) |>
+  collapse::fcount(subgroup) |>
+  collapse::roworder(-N)
+
+hcount |>
+  collapse::sbt(N > 11) |>
+  gt::gt() |>
+  gtExtras::gt_theme_nytimes() |>
+  gt::tab_options(
+    table.width = gt::pct(100),
+    quarto.disable_processing = TRUE
+  )
+
+hcount |>
+  collapse::sbt(N <= 11) |>
+  gt::gt(groupname_col = "N", row_group_as_column = TRUE) |>
+  gtExtras::gt_theme_nytimes() |>
+  gt::tab_options(
+    table.width = gt::pct(100),
+    quarto.disable_processing = TRUE
+  )
+
+hosp |>
+  collapse::sbt(!is.na(subgroup)) |>
+  collapse::sbt(stringi::stri_detect_regex(subgroup, "REH[:]")) |>
+  gt::gt() |>
+  gtExtras::gt_theme_nytimes() |>
+  gt::tab_options(
+    table.width = gt::pct(100),
+    quarto.disable_processing = TRUE
+  )
+```
+

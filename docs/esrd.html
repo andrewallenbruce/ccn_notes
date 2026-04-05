@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.35">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="dcterms.date" content="2026-03-30">
+<meta name="dcterms.date" content="2026-04-05">
 <title>ESRD – CCNs</title>
 <style>
 /* Default styles provided by pandoc.
@@ -78,9 +78,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-da20407cf26fa8485970518743f0f7f9.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b4e155474cb502a750d249776b6f914c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-b4e155474cb502a750d249776b6f914c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-b4e155474cb502a750d249776b6f914c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-97dbf932a91fe45e4e875d81672c575b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-97dbf932a91fe45e4e875d81672c575b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-97dbf932a91fe45e4e875d81672c575b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -161,7 +161,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./opo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">OPOs/TXNs</span></a>
+  <a href="./opo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">OPO/TXN</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -201,7 +201,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./snf.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">SNFs</span></a>
+  <a href="./snf.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">SNF</span></a>
   </div>
 </li>
       </ul>
@@ -269,17 +269,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./moh.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">MOH</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./nf.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Nursing Facilities</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./icf-iid.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">ICF-IID</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./moh.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">MOH</span></a>
   </div>
 </li>
       </ul>
@@ -315,7 +315,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
 <li><a href="#facility-ranges" id="toc-facility-ranges" class="nav-link active" data-scroll-target="#facility-ranges">Facility Ranges</a></li>
   <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
-  <li><a href="#counts" id="toc-counts" class="nav-link" data-scroll-target="#counts">Counts</a></li>
   </ul></nav>
     </div>
 <!-- main -->
@@ -331,7 +330,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 30, 2026</p>
+      <p class="date">April 5, 2026</p>
     </div>
   </div>
   
@@ -341,30 +340,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 </header><section id="facility-ranges" class="level2"><h2 class="anchored" data-anchor-id="facility-ranges">Facility Ranges</h2>
-<p>The last four characters of a Provider CCN represent the facility type and a unique identifier. The facility type is encoded in the third character of the last four characters. The table below summarizes the valid facility type codes and their corresponding ranges.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="bjzufmskqd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="bvvqvsuscw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#bjzufmskqd table {
+#bvvqvsuscw table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#bjzufmskqd thead, #bjzufmskqd tbody, #bjzufmskqd tfoot, #bjzufmskqd tr, #bjzufmskqd td, #bjzufmskqd th {
+#bvvqvsuscw thead, #bvvqvsuscw tbody, #bvvqvsuscw tfoot, #bvvqvsuscw tr, #bvvqvsuscw td, #bvvqvsuscw th {
   border-style: none;
 }
 
-#bjzufmskqd p {
+#bvvqvsuscw p {
   margin: 0;
   padding: 0;
 }
 
-#bjzufmskqd .gt_table {
+#bvvqvsuscw .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -375,7 +373,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   font-weight: normal;
   font-style: normal;
   background-color: #FFFFFF;
-  width: auto;
+  width: 100%;
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #A8A8A8;
@@ -390,12 +388,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#bjzufmskqd .gt_caption {
+#bvvqvsuscw .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#bjzufmskqd .gt_title {
+#bvvqvsuscw .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -407,7 +405,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#bjzufmskqd .gt_subtitle {
+#bvvqvsuscw .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -419,7 +417,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#bjzufmskqd .gt_heading {
+#bvvqvsuscw .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -431,13 +429,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#bjzufmskqd .gt_bottom_border {
+#bvvqvsuscw .gt_bottom_border {
   border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#bjzufmskqd .gt_col_headings {
+#bvvqvsuscw .gt_col_headings {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -452,7 +450,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#bjzufmskqd .gt_col_heading {
+#bvvqvsuscw .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 12px;
@@ -472,7 +470,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#bjzufmskqd .gt_column_spanner_outer {
+#bvvqvsuscw .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 12px;
@@ -484,15 +482,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#bjzufmskqd .gt_column_spanner_outer:first-child {
+#bvvqvsuscw .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#bjzufmskqd .gt_column_spanner_outer:last-child {
+#bvvqvsuscw .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#bjzufmskqd .gt_column_spanner {
+#bvvqvsuscw .gt_column_spanner {
   border-bottom-style: none;
   border-bottom-width: 1px;
   border-bottom-color: #334422;
@@ -504,11 +502,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#bjzufmskqd .gt_spanner_row {
+#bvvqvsuscw .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#bjzufmskqd .gt_group_heading {
+#bvvqvsuscw .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -534,7 +532,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#bjzufmskqd .gt_empty_group_heading {
+#bvvqvsuscw .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -549,15 +547,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#bjzufmskqd .gt_from_md > :first-child {
+#bvvqvsuscw .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#bjzufmskqd .gt_from_md > :last-child {
+#bvvqvsuscw .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#bjzufmskqd .gt_row {
+#bvvqvsuscw .gt_row {
   padding-top: 7px;
   padding-bottom: 7px;
   padding-left: 5px;
@@ -576,7 +574,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#bjzufmskqd .gt_stub {
+#bvvqvsuscw .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -589,7 +587,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#bjzufmskqd .gt_stub_row_group {
+#bvvqvsuscw .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -603,15 +601,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#bjzufmskqd .gt_row_group_first td {
+#bvvqvsuscw .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#bjzufmskqd .gt_row_group_first th {
+#bvvqvsuscw .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#bjzufmskqd .gt_summary_row {
+#bvvqvsuscw .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -621,16 +619,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#bjzufmskqd .gt_first_summary_row {
+#bvvqvsuscw .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#bjzufmskqd .gt_first_summary_row.thick {
+#bvvqvsuscw .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#bjzufmskqd .gt_last_summary_row {
+#bvvqvsuscw .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -640,7 +638,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#bjzufmskqd .gt_grand_summary_row {
+#bvvqvsuscw .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -650,7 +648,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#bjzufmskqd .gt_first_grand_summary_row {
+#bvvqvsuscw .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -660,7 +658,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#bjzufmskqd .gt_last_grand_summary_row_top {
+#bvvqvsuscw .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -670,11 +668,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#bjzufmskqd .gt_striped {
+#bvvqvsuscw .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#bjzufmskqd .gt_table_body {
+#bvvqvsuscw .gt_table_body {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -683,7 +681,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #FFFFFF;
 }
 
-#bjzufmskqd .gt_footnotes {
+#bvvqvsuscw .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -697,7 +695,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#bjzufmskqd .gt_footnote {
+#bvvqvsuscw .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -706,7 +704,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#bjzufmskqd .gt_sourcenotes {
+#bvvqvsuscw .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -720,7 +718,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#bjzufmskqd .gt_sourcenote {
+#bvvqvsuscw .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -728,116 +726,151 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#bjzufmskqd .gt_left {
+#bvvqvsuscw .gt_left {
   text-align: left;
 }
 
-#bjzufmskqd .gt_center {
+#bvvqvsuscw .gt_center {
   text-align: center;
 }
 
-#bjzufmskqd .gt_right {
+#bvvqvsuscw .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#bjzufmskqd .gt_font_normal {
+#bvvqvsuscw .gt_font_normal {
   font-weight: normal;
 }
 
-#bjzufmskqd .gt_font_bold {
+#bvvqvsuscw .gt_font_bold {
   font-weight: bold;
 }
 
-#bjzufmskqd .gt_font_italic {
+#bvvqvsuscw .gt_font_italic {
   font-style: italic;
 }
 
-#bjzufmskqd .gt_super {
+#bvvqvsuscw .gt_super {
   font-size: 65%;
 }
 
-#bjzufmskqd .gt_footnote_marks {
+#bvvqvsuscw .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#bjzufmskqd .gt_asterisk {
+#bvvqvsuscw .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#bjzufmskqd .gt_indent_1 {
+#bvvqvsuscw .gt_indent_1 {
   text-indent: 5px;
 }
 
-#bjzufmskqd .gt_indent_2 {
+#bvvqvsuscw .gt_indent_2 {
   text-indent: 10px;
 }
 
-#bjzufmskqd .gt_indent_3 {
+#bvvqvsuscw .gt_indent_3 {
   text-indent: 15px;
 }
 
-#bjzufmskqd .gt_indent_4 {
+#bvvqvsuscw .gt_indent_4 {
   text-indent: 20px;
 }
 
-#bjzufmskqd .gt_indent_5 {
+#bvvqvsuscw .gt_indent_5 {
   text-indent: 25px;
 }
 
-#bjzufmskqd .katex-display {
+#bvvqvsuscw .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#bjzufmskqd div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#bvvqvsuscw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 <table class="gt_table" data-quarto-disable-processing="true" data-quarto-bootstrap="false">
 <thead><tr class="gt_col_headings">
-<th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase;" scope="col" id="range">range</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase;" scope="col" id="abbr">abbr</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase;" scope="col" id="abbr">abbr</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase;" scope="col" id="desc">desc</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase;" scope="col" id="range">range</th>
     </tr></thead>
 <tbody class="gt_table_body">
 <tr>
-<td headers="range" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #999999; font-size: small;">0001-0879</td>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">ACUTE</td>
-<td headers="desc" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400; color: #7F7F7F; font-size: small;">Short-Term Hospital (General &amp; Specialty)</td>
+<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">ESRD-H</td>
+<td headers="desc" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">Hospital-based Renal Dialysis Facility</td>
+<td headers="range" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #999999; font-size: small;">2300-2499</td>
 </tr>
 <tr>
-<td headers="range" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #999999; font-size: small;">2000-2299</td>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">LTCH</td>
-<td headers="desc" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400; color: #7F7F7F; font-size: small;">Long-Term Care Hospital</td>
+<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">ESRD-I</td>
+<td headers="desc" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">Independent Renal Dialysis Facility</td>
+<td headers="range" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #999999; font-size: small;">2500-2899</td>
 </tr>
 <tr>
-<td headers="range" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #999999; font-size: small;">3300-3399</td>
-<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">CHILD</td>
-<td headers="desc" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400; color: #7F7F7F; font-size: small;">Children's Hospital</td>
+<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">ESRD-I-P</td>
+<td headers="desc" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">Independent Special Purpose Renal Dialysis Facility</td>
+<td headers="range" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #999999; font-size: small;">2900-2999</td>
+</tr>
+<tr>
+<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">ESRD-H-S</td>
+<td headers="desc" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">Hospital-based Satellite Renal Dialysis Facility</td>
+<td headers="range" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #999999; font-size: small;">3500-3699</td>
+</tr>
+<tr>
+<td headers="abbr" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: bold;">ESRD-H-P</td>
+<td headers="desc" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #7F7F7F; font-size: small;">Hospital-based Special Purpose Renal Dialysis Facility</td>
+<td headers="range" class="gt_row gt_right" style="font-family: 'JetBrains Mono'; font-weight: 400; color: #999999; font-size: small;">3700-3799</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 </div>
-<section id="details" class="level3"><h3 class="anchored" data-anchor-id="details">Details</h3>
-<ol type="1">
-<li><p><strong>Hospital-Based Renal Dialysis Facilities, [2300, 2499]</strong>: The physical location of an ESRD facility on the premises of a hospital is not considered when determining if the ESRD facility is hospital-based. Hospital corporate control is a critical factor in determining whether an ESRD facility is hospital-based. Hospitals may have a lease arrangement for the management of a hospital-based ESRD facility by a non-hospital manager. This CCN range is used for ESRD facilities that have been determined by the CMS to be hospital-owned, hospital-administered ESRD facilities physically located on the hospital’s premises as opposed to independent ESRD facilities and Hospital-Based Renal Disease Satellite Facilities. The satellites are hospital-based, but are physically located off the hospital’s premises.</p></li>
-<li>
-<p><strong>Hospital-Based Renal Dialysis Satellite Facilities, [3500, 3699]</strong>: This CCN range is used for those ESRD facilities that are hospital-owned and hospital-administered, but that are not located on the hospital’s premises. This is why they are referred to as hospital-based satellites. In determining whether such a satellite facility is hospital-based, use the same criteria as you would in making a hospital-based determination under the 2300-2499 series, except that you would assign a 3500-3699 number to such a facility because it is off the premises of the hospital to which it is based. The word “premises” is not explicitly defined in the statute, regulations, or State Operations Manual, but there is a definition of “furnishes on the premises” that states “the ESRD facility furnishes services on its main premises; or its other premises that are:</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist">
+<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">ESRD-H</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">ESRD-I</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">ESRD-I-P</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false" href="">ESRD-H-S</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-5" role="tab" aria-controls="tabset-1-5" aria-selected="false" href="">ESRD-H-P</a></li>
+<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-6-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-6" role="tab" aria-controls="tabset-1-6" aria-selected="false" href="">Other</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p><strong>Hospital-Based Renal Dialysis Facilities</strong> <code>[2300, 2499]</code></p>
+<p>This CCN range is used for ESRD facilities that have been determined by the CMS to be hospital-owned, hospital-administered ESRD facilities physically located on the hospital’s premises as opposed to independent ESRD facilities and Hospital-Based Renal Disease Satellite Facilities. The satellites are hospital-based, but are physically located off the hospital’s premises.</p>
+<p>The physical location of an ESRD facility on the premises of a hospital is not considered when determining if the ESRD facility is hospital-based. Hospital corporate control is a critical factor in determining whether an ESRD facility is hospital-based. Hospitals may have a lease arrangement for the management of a hospital-based ESRD facility by a non-hospital manager.</p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p><strong>Independent Renal Dialysis Facilities</strong> <code>[2500, 2899]</code></p>
+<p>These facilities do not meet the definition of hospital-based irrespective of whether they are located on or off the hospital’s premises. A determination of independent, as opposed to hospital-based, will be based on the statutory and regulatory provisions and manual instructions. Independent facilities bill under their own numbers. ESRD facilities located at skilled nursing facilities will be determined to be independent.</p>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<p><strong>Independent Special Purpose Renal Dialysis Facilities</strong> <code>[2900, 2999]</code></p>
+<p>The same requirements that apply to a Hospital-Based Special Purpose Renal Dialysis Facility apply to a facility of the same type which is independent except that the independent facility by virtue of its independent status, bills under its own number which is in the 2900-2999 series.</p>
+</div>
+<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
+<p><strong>Hospital-Based Renal Dialysis Satellite Facilities</strong> <code>[3500, 3699]</code></p>
+<p>This CCN range is used for those ESRD facilities that are hospital-owned and hospital-administered, but that are not located on the hospital’s premises. This is why they are referred to as hospital-based satellites.</p>
+<p>In determining whether such a satellite facility is hospital-based, use the same criteria as you would in making a hospital-based determination under the 2300-2499 series, except that you would assign a 3500-3699 number to such a facility because it is off the premises of the hospital to which it is based. The word <strong>“premises”</strong> is not explicitly defined in the statute, regulations, or State Operations Manual, but there is a definition of “furnishes on the premises” that states:</p>
+<ul>
+<li>The ESRD facility furnishes services on its main premises or its other premises that are:
 <ol type="a">
 <li>Contiguous with or in immediate proximity to the main premises, and under the direction of the same professional staff and governing body as the main premises, or</li>
-<li>Approved on a time-limited basis as a special purpose renal dialysis facility.”</li>
+<li>Approved on a time-limited basis as a special purpose renal dialysis facility.</li>
 </ol>
 </li>
-</ol>
+</ul>
 <p>Thus, in addition to the regulations, which should assist you in determining whether the facility is an integral part of the hospital, you may use the “furnishes on the premises” definition to distinguish between a hospital-based entity under the 2300-2499 series as opposed to an entity under the 3500-3699 number series.</p>
-<p>Also, we do not believe that these satellites will be furnishing inpatient dialysis services. The CMS will make or approve the determination that a particular ESRD facility meets the requirements to be hospital-based, and if it is off the hospital’s premises, a hospital-based satellite. It is conceivable that a hospital-based ESRD facility could have a 2300-2499 number assigned to the location on the hospital’s premises, and one or more 3500-3699 numbers for those locations (satellites) off the premises (each satellite is given a separate 3500- 3699 number). If an ESRD facility that is assigned a 2300-2499 number moves off the hospital’s premises and is determined to be a satellite, it should receive a number in the 3500-3699 series. However, if a satellite changes its address but is still considered off the hospital’s premises, it should retain the 3500-3699 number it was originally issued rather than being issued a new 3500-3699 number. Any questions concerning billing should be referred to the RO financial component or the fiscal intermediary as you determine appropriate.</p>
-<div id="note-hosp" class="callout callout-style-default callout-note callout-titled">
+<p>Also, we do not believe that these satellites will be furnishing inpatient dialysis services. CMS will make or approve the determination that a particular ESRD facility meets the requirements to be hospital-based, and if it is off the hospital’s premises, a hospital-based satellite. It is conceivable that a hospital-based ESRD facility could have a 2300-2499 number assigned to the location on the hospital’s premises, and one or more 3500-3699 numbers for those locations (satellites) off the premises (each satellite is given a separate 3500- 3699 number).</p>
+<p>If an ESRD facility that is assigned a 2300-2499 number moves off the hospital’s premises and is determined to be a satellite, it should receive a number in the 3500-3699 series. However, if a satellite changes its address but is still considered off the hospital’s premises, it should retain the 3500-3699 number it was originally issued rather than being issued a new 3500-3699 number. Any questions concerning billing should be referred to the RO financial component or the fiscal intermediary as you determine appropriate.</p>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -850,12 +883,15 @@ Note
 <p>In determining whether an entity is hospital-based for reimbursement purposes, the requirements at <a href="https://www.cms.gov/regulations-and-guidance/guidance/transmittals/downloads/r29soma.pdf#%5B%7B%22num%22%3A800%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C0%2C792%2Cnull%5D">§2287</a> must be met.</p>
 </div>
 </div>
-<ol start="3" type="1">
-<li><p><strong>Hospital-Based Special Purpose Renal Dialysis Facilities, [3700, 3799]</strong>: In order to be classified as a Hospital-Based Special Purpose Renal Dialysis Facility and issued a number under the 3700-3799 series, an ESRD facility must be determined to be hospital-based, and meet the definition at 42 CFR 405.2102, and the requirements at 42 CFR 405.2164 for such a facility. A facility under this category should bill Medicare under the CCN of the hospital to which it is based. There should be very few of these facilities.</p></li>
-<li><p><strong>Independent Renal Dialysis Facilities, [2500, 2899]</strong>: Independent Renal Dialysis Facilities, issued a number under the 2500-2899 series, are independent ESRD facilities. These facilities do not meet the definition of hospital-based irrespective of whether they are located on or off the hospital’s premises. A determination of independent, as opposed to hospital-based, will be based on the statutory and regulatory provisions and manual instructions. Independent facilities bill under their own numbers. ESRD facilities located at skilled nursing facilities will be determined to be independent.</p></li>
-<li><p><strong>Independent Special Purpose Renal Dialysis Facilities, [2900, 2999]</strong>: The same requirements that apply to a Hospital-Based Special Purpose Renal Dialysis Facility apply to a facility of the same type which is independent except that the independent facility by virtue of its independent status, bills under its own number which is in the 2900-2999 series.</p></li>
-<li><p><strong>Other</strong>: When an ESRD facility proposes to change from hospital-based to independent or vice-versa, an onsite survey is not necessary unless there is a physical relocation of the facility. However, a determination as to the proper facility definition and if necessary, the changing of the number designation, must be made in accordance with the guidance described here and in §2287. If an ESRD facility proposes to add a location that has not been previously surveyed, an onsite inspection would be required. In the absence of an onsite survey and certification, the proposed facility has no authority to bill Medicare for ESRD services provided at the proposed site. (See §3222.) There are some instances when an ESRD facility’s CCN requires a change as a result of an action taken by the ESRD facility. If a hospital-based facility converts to an independent ESRD facility or if an independent ESRD facility converts to a hospital-based ESRD facility, there must be a CCN change. Satellite ESRD facilities must be hospital owned and are considered hospital-based. A hospital may have more than one ESRD satellite facility.</p></li>
-</ol>
+</div>
+<div id="tabset-1-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-5-tab">
+<p><strong>Hospital-Based Special Purpose Renal Dialysis Facilities</strong> <code>[3700, 3799]</code></p>
+<p>In order to be classified as a Hospital-Based Special Purpose Renal Dialysis Facility and issued a number under the 3700-3799 series, an ESRD facility must be determined to be hospital-based, and meet the definition at 42 CFR 405.2102, and the requirements at 42 CFR 405.2164 for such a facility. A facility under this category should bill Medicare under the CCN of the hospital to which it is based. There should be very few of these facilities.</p>
+</div>
+<div id="tabset-1-6" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-6-tab">
+<p>When an ESRD facility proposes to change from hospital-based to independent or vice-versa, an onsite survey is not necessary unless there is a physical relocation of the facility. However, a determination as to the proper facility definition and if necessary, the changing of the number designation, must be made in accordance with the guidance described here and in §2287.</p>
+<p>If an ESRD facility proposes to add a location that has not been previously surveyed, an onsite inspection would be required. In the absence of an onsite survey and certification, the proposed facility has no authority to bill Medicare for ESRD services provided at the proposed site. (See §3222.) There are some instances when an ESRD facility’s CCN requires a change as a result of an action taken by the ESRD facility.</p>
+<p>If a hospital-based facility converts to an independent ESRD facility or if an independent ESRD facility converts to a hospital-based ESRD facility, there must be a CCN change. Satellite ESRD facilities must be hospital owned and are considered hospital-based. A hospital may have more than one ESRD satellite facility.</p>
 <p>The CCN of the ESRD facility may remain the same in the following situations:</p>
 <ul>
 <li>A hospital-based ESRD facility retains ownership of the facility but contracts with another entity for management of the facility;</li>
@@ -863,10 +899,12 @@ Note
 <li>The hospital closes the transplant program but retains the ESRD facility. In such case, CMS terminates the transplant program but keeps the ESRD CCN active for the dialysis program;</li>
 <li>The ESRD facility is purchased by another ESRD facility of the same type. For example, independent by independent or hospital-based by hospital-based; and</li>
 <li>The geographic location of the ESRD facility is changed within the same state. A recertification survey is always required when a dialysis facility relocates within a state. If a geographic location is changed to another state, the ESRD facility at the old location must be terminated and the relocated ESRD facility must qualify as a new applicant with a new identification number in the state to which it moved.</li>
-</ul></section></section><section id="examples" class="level2"><h2 class="anchored" data-anchor-id="examples">Examples</h2>
+</ul>
+</div>
+</div>
+</div>
+</section><section id="examples" class="level2"><h2 class="anchored" data-anchor-id="examples">Examples</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">esrd</span> <span class="op">&lt;-</span> <span class="fu">ccn</span><span class="fu">:::</span><span class="fu"><a href="https://andrewallenbruce.github.io/ccn/reference/get_pin.html">get_pin</a></span><span class="op">(</span><span class="st">"esrd"</span><span class="op">)</span></span>
-<span><span class="va">esrd</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 7,561 × 8
    ccn    state facility_name                    chain profit office  peri  home
@@ -884,1085 +922,16 @@ Note
 # ℹ 7,551 more rows</code></pre>
 </div>
 </div>
-<section id="overview" class="level3"><h3 class="anchored" data-anchor-id="overview">Overview</h3>
+<section id="types" class="level3"><h3 class="anchored" data-anchor-id="types">Types</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">over</span> <span class="op">&lt;-</span> <span class="fu">cheapr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/cheapr/man/overview.html">overview</a></span><span class="op">(</span><span class="va">esrd</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">over</span><span class="op">$</span><span class="va">numeric</span> <span class="op">|&gt;</span> </span>
-<span>   <span class="fu">fastplyr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/fastplyr/man/new_tbl.html">as_tbl</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>   <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/select_replace_vars.html">slt</a></span><span class="op">(</span><span class="va">col</span>, unique <span class="op">=</span> <span class="va">n_unique</span>, <span class="va">mean</span>, <span class="va">sd</span>, <span class="va">p0</span><span class="op">:</span><span class="va">iqr</span>, <span class="va">hist</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>   <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/gt.html">gt</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>   <span class="fu">gt_chamber_theme</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>   <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/tab_options.html">tab_options</a></span><span class="op">(</span>quarto.disable_processing <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>   <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/fmt_number.html">fmt_number</a></span><span class="op">(</span>columns <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">mean</span>, <span class="va">sd</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div id="jqgvvwnqme" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#jqgvvwnqme table {
-  font-family: 'Spline Sans Mono', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#jqgvvwnqme thead, #jqgvvwnqme tbody, #jqgvvwnqme tfoot, #jqgvvwnqme tr, #jqgvvwnqme td, #jqgvvwnqme th {
-  border-style: none;
-}
-
-#jqgvvwnqme p {
-  margin: 0;
-  padding: 0;
-}
-
-#jqgvvwnqme .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 14px;
-  font-weight: 500;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: none;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#jqgvvwnqme .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#jqgvvwnqme .gt_title {
-  color: #333333;
-  font-size: 24px;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#jqgvvwnqme .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#jqgvvwnqme .gt_heading {
-  background-color: #FFFFFF;
-  text-align: left;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#jqgvvwnqme .gt_bottom_border {
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#jqgvvwnqme .gt_col_headings {
-  border-top-style: none;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 0.5px;
-  border-bottom-color: #000000;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#jqgvvwnqme .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: 500;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#jqgvvwnqme .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: 500;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#jqgvvwnqme .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#jqgvvwnqme .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#jqgvvwnqme .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 0.5px;
-  border-bottom-color: #000000;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#jqgvvwnqme .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#jqgvvwnqme .gt_group_heading {
-  padding-top: 1.5px;
-  padding-bottom: 1.5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: none;
-  border-top-width: 2px;
-  border-top-color: #000000;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-bottom-color: #000000;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#jqgvvwnqme .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: none;
-  border-top-width: 2px;
-  border-top-color: #000000;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-bottom-color: #000000;
-  vertical-align: middle;
-}
-
-#jqgvvwnqme .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#jqgvvwnqme .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#jqgvvwnqme .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#jqgvvwnqme .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#jqgvvwnqme .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#jqgvvwnqme .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#jqgvvwnqme .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#jqgvvwnqme .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#jqgvvwnqme .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#jqgvvwnqme .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#jqgvvwnqme .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#jqgvvwnqme .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#jqgvvwnqme .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#jqgvvwnqme .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#jqgvvwnqme .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#jqgvvwnqme .gt_table_body {
-  border-top-style: none;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#jqgvvwnqme .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#jqgvvwnqme .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#jqgvvwnqme .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#jqgvvwnqme .gt_sourcenote {
-  font-size: 10px;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#jqgvvwnqme .gt_left {
-  text-align: left;
-}
-
-#jqgvvwnqme .gt_center {
-  text-align: center;
-}
-
-#jqgvvwnqme .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#jqgvvwnqme .gt_font_normal {
-  font-weight: normal;
-}
-
-#jqgvvwnqme .gt_font_bold {
-  font-weight: bold;
-}
-
-#jqgvvwnqme .gt_font_italic {
-  font-style: italic;
-}
-
-#jqgvvwnqme .gt_super {
-  font-size: 65%;
-}
-
-#jqgvvwnqme .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#jqgvvwnqme .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#jqgvvwnqme .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#jqgvvwnqme .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#jqgvvwnqme .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#jqgvvwnqme .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#jqgvvwnqme .gt_indent_5 {
-  text-indent: 25px;
-}
-
-#jqgvvwnqme .katex-display {
-  display: inline-flex !important;
-  margin-bottom: 0.75em !important;
-}
-
-#jqgvvwnqme div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
-  height: 0px !important;
-}
-
-#jqgvvwnqme tbody tr:last-child {
-  border-bottom: 2px solid #ffffff00;
-}
-
-#jqgvvwnqme .gt_subtitle {
-  padding-top: 0px !important;
-  padding-bottom: 4px !important;
-}
-
-#jqgvvwnqme .gt_sourcenote {
-  border-bottom-color: #FFFDF5 !important;
-}
-
-#jqgvvwnqme .gt_heading {
-  padding-bottom: 0px;
-  padding-top: 6px;
-}
-</style>
-<table class="gt_table" data-quarto-disable-processing="true" data-quarto-bootstrap="false">
-<thead><tr class="gt_col_headings">
-<th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="font-family: 'JetBrains Mono'; font-size: 12px; font-weight: 650; text-transform: uppercase;" scope="col" id="col">col</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-family: 'JetBrains Mono'; font-size: 12px; font-weight: 650; text-transform: uppercase;" scope="col" id="unique">unique</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-family: 'JetBrains Mono'; font-size: 12px; font-weight: 650; text-transform: uppercase;" scope="col" id="mean">mean</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-family: 'JetBrains Mono'; font-size: 12px; font-weight: 650; text-transform: uppercase;" scope="col" id="sd">sd</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-family: 'JetBrains Mono'; font-size: 12px; font-weight: 650; text-transform: uppercase;" scope="col" id="p0">p0</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-family: 'JetBrains Mono'; font-size: 12px; font-weight: 650; text-transform: uppercase;" scope="col" id="p25">p25</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-family: 'JetBrains Mono'; font-size: 12px; font-weight: 650; text-transform: uppercase;" scope="col" id="p50">p50</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-family: 'JetBrains Mono'; font-size: 12px; font-weight: 650; text-transform: uppercase;" scope="col" id="p75">p75</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-family: 'JetBrains Mono'; font-size: 12px; font-weight: 650; text-transform: uppercase;" scope="col" id="p100">p100</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-family: 'JetBrains Mono'; font-size: 12px; font-weight: 650; text-transform: uppercase;" scope="col" id="iqr">iqr</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="font-family: 'JetBrains Mono'; font-size: 12px; font-weight: 650; text-transform: uppercase;" scope="col" id="hist">hist</th>
-    </tr></thead>
-<tbody class="gt_table_body">
-<tr>
-<td headers="col" class="gt_row gt_left" style="border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">office</td>
-<td headers="unique" class="gt_row gt_right" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">2</td>
-<td headers="mean" class="gt_row gt_right" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">0.93</td>
-<td headers="sd" class="gt_row gt_right" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">0.25</td>
-<td headers="p0" class="gt_row gt_right" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">0</td>
-<td headers="p25" class="gt_row gt_right" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">1</td>
-<td headers="p50" class="gt_row gt_right" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">1</td>
-<td headers="p75" class="gt_row gt_right" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">1</td>
-<td headers="p100" class="gt_row gt_right" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">1</td>
-<td headers="iqr" class="gt_row gt_right" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">0</td>
-<td headers="hist" class="gt_row gt_left" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">▁▁▁▁▇</td>
-</tr>
-<tr>
-<td headers="col" class="gt_row gt_left" style="border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">peri</td>
-<td headers="unique" class="gt_row gt_right" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">2</td>
-<td headers="mean" class="gt_row gt_right" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">0.54</td>
-<td headers="sd" class="gt_row gt_right" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">0.50</td>
-<td headers="p0" class="gt_row gt_right" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">0</td>
-<td headers="p25" class="gt_row gt_right" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">0</td>
-<td headers="p50" class="gt_row gt_right" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">1</td>
-<td headers="p75" class="gt_row gt_right" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">1</td>
-<td headers="p100" class="gt_row gt_right" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">1</td>
-<td headers="iqr" class="gt_row gt_right" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">1</td>
-<td headers="hist" class="gt_row gt_left" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">▇▁▁▁▇</td>
-</tr>
-<tr>
-<td headers="col" class="gt_row gt_left" style="border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">home</td>
-<td headers="unique" class="gt_row gt_right" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">2</td>
-<td headers="mean" class="gt_row gt_right" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">0.32</td>
-<td headers="sd" class="gt_row gt_right" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">0.46</td>
-<td headers="p0" class="gt_row gt_right" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">0</td>
-<td headers="p25" class="gt_row gt_right" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">0</td>
-<td headers="p50" class="gt_row gt_right" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">0</td>
-<td headers="p75" class="gt_row gt_right" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">1</td>
-<td headers="p100" class="gt_row gt_right" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">1</td>
-<td headers="iqr" class="gt_row gt_right" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">1</td>
-<td headers="hist" class="gt_row gt_left" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">▇▁▁▁▃</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">over</span><span class="op">$</span><span class="va">categorical</span> <span class="op">|&gt;</span> </span>
-<span>   <span class="fu">fastplyr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/fastplyr/man/new_tbl.html">as_tbl</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>   <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/select_replace_vars.html">slt</a></span><span class="op">(</span><span class="va">col</span>, unique <span class="op">=</span> <span class="va">n_unique</span>, <span class="va">min</span>, <span class="va">max</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>   <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/ftransform.html">mtt</a></span><span class="op">(</span></span>
-<span>      min <span class="op">=</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_wrap.html">str_wrap</a></span><span class="op">(</span><span class="va">min</span>, width <span class="op">=</span> <span class="fl">40</span><span class="op">)</span>, </span>
-<span>      max <span class="op">=</span> <span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_wrap.html">str_wrap</a></span><span class="op">(</span><span class="va">max</span>, width <span class="op">=</span> <span class="fl">40</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>   <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/gt.html">gt</a></span><span class="op">(</span>process_md <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>   <span class="fu">gt_chamber_theme</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>   <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/tab_options.html">tab_options</a></span><span class="op">(</span>quarto.disable_processing <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>   <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/cols_align.html">cols_align</a></span><span class="op">(</span><span class="st">"left"</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">min</span>, <span class="va">max</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>   <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/cols_align.html">cols_align</a></span><span class="op">(</span><span class="st">"right"</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">col</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div id="pjdvlfnmrt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#pjdvlfnmrt table {
-  font-family: 'Spline Sans Mono', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#pjdvlfnmrt thead, #pjdvlfnmrt tbody, #pjdvlfnmrt tfoot, #pjdvlfnmrt tr, #pjdvlfnmrt td, #pjdvlfnmrt th {
-  border-style: none;
-}
-
-#pjdvlfnmrt p {
-  margin: 0;
-  padding: 0;
-}
-
-#pjdvlfnmrt .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 14px;
-  font-weight: 500;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: none;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#pjdvlfnmrt .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#pjdvlfnmrt .gt_title {
-  color: #333333;
-  font-size: 24px;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#pjdvlfnmrt .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#pjdvlfnmrt .gt_heading {
-  background-color: #FFFFFF;
-  text-align: left;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#pjdvlfnmrt .gt_bottom_border {
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#pjdvlfnmrt .gt_col_headings {
-  border-top-style: none;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 0.5px;
-  border-bottom-color: #000000;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#pjdvlfnmrt .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: 500;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#pjdvlfnmrt .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: 500;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#pjdvlfnmrt .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#pjdvlfnmrt .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#pjdvlfnmrt .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 0.5px;
-  border-bottom-color: #000000;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#pjdvlfnmrt .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#pjdvlfnmrt .gt_group_heading {
-  padding-top: 1.5px;
-  padding-bottom: 1.5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: none;
-  border-top-width: 2px;
-  border-top-color: #000000;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-bottom-color: #000000;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#pjdvlfnmrt .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: none;
-  border-top-width: 2px;
-  border-top-color: #000000;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-bottom-color: #000000;
-  vertical-align: middle;
-}
-
-#pjdvlfnmrt .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#pjdvlfnmrt .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#pjdvlfnmrt .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#pjdvlfnmrt .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#pjdvlfnmrt .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#pjdvlfnmrt .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#pjdvlfnmrt .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#pjdvlfnmrt .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#pjdvlfnmrt .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#pjdvlfnmrt .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#pjdvlfnmrt .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#pjdvlfnmrt .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#pjdvlfnmrt .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#pjdvlfnmrt .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#pjdvlfnmrt .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#pjdvlfnmrt .gt_table_body {
-  border-top-style: none;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#pjdvlfnmrt .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#pjdvlfnmrt .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#pjdvlfnmrt .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#pjdvlfnmrt .gt_sourcenote {
-  font-size: 10px;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#pjdvlfnmrt .gt_left {
-  text-align: left;
-}
-
-#pjdvlfnmrt .gt_center {
-  text-align: center;
-}
-
-#pjdvlfnmrt .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#pjdvlfnmrt .gt_font_normal {
-  font-weight: normal;
-}
-
-#pjdvlfnmrt .gt_font_bold {
-  font-weight: bold;
-}
-
-#pjdvlfnmrt .gt_font_italic {
-  font-style: italic;
-}
-
-#pjdvlfnmrt .gt_super {
-  font-size: 65%;
-}
-
-#pjdvlfnmrt .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#pjdvlfnmrt .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#pjdvlfnmrt .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#pjdvlfnmrt .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#pjdvlfnmrt .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#pjdvlfnmrt .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#pjdvlfnmrt .gt_indent_5 {
-  text-indent: 25px;
-}
-
-#pjdvlfnmrt .katex-display {
-  display: inline-flex !important;
-  margin-bottom: 0.75em !important;
-}
-
-#pjdvlfnmrt div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
-  height: 0px !important;
-}
-
-#pjdvlfnmrt tbody tr:last-child {
-  border-bottom: 2px solid #ffffff00;
-}
-
-#pjdvlfnmrt .gt_subtitle {
-  padding-top: 0px !important;
-  padding-bottom: 4px !important;
-}
-
-#pjdvlfnmrt .gt_sourcenote {
-  border-bottom-color: #FFFDF5 !important;
-}
-
-#pjdvlfnmrt .gt_heading {
-  padding-bottom: 0px;
-  padding-top: 6px;
-}
-</style>
-<table class="gt_table" data-quarto-disable-processing="true" data-quarto-bootstrap="false">
-<thead><tr class="gt_col_headings">
-<th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-family: 'JetBrains Mono'; font-size: 12px; font-weight: 650; text-transform: uppercase;" scope="col" id="col">col</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-family: 'JetBrains Mono'; font-size: 12px; font-weight: 650; text-transform: uppercase;" scope="col" id="unique">unique</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="font-family: 'JetBrains Mono'; font-size: 12px; font-weight: 650; text-transform: uppercase;" scope="col" id="min">min</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="font-family: 'JetBrains Mono'; font-size: 12px; font-weight: 650; text-transform: uppercase;" scope="col" id="max">max</th>
-    </tr></thead>
-<tbody class="gt_table_body">
-<tr>
-<td headers="col" class="gt_row gt_right" style="border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">ccn</td>
-<td headers="unique" class="gt_row gt_right" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">7561</td>
-<td headers="min" class="gt_row gt_left" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">012306</td>
-<td headers="max" class="gt_row gt_left" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">852609</td>
-</tr>
-<tr>
-<td headers="col" class="gt_row gt_right" style="border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">state</td>
-<td headers="unique" class="gt_row gt_right" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">56</td>
-<td headers="min" class="gt_row gt_left" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">AK</td>
-<td headers="max" class="gt_row gt_left" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">WY</td>
-</tr>
-<tr>
-<td headers="col" class="gt_row gt_right" style="border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">facility_name</td>
-<td headers="unique" class="gt_row gt_right" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">7550</td>
-<td headers="min" class="gt_row gt_left" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">032314 PHOENIX CHILDRENS HOSPITAL-
-DIALYSIS CENTER</td>
-<td headers="max" class="gt_row gt_left" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">zz_closed_DIALYSIS CARE CENTER TIPTON
-COUNTY LLC</td>
-</tr>
-<tr>
-<td headers="col" class="gt_row gt_right" style="border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">chain</td>
-<td headers="unique" class="gt_row gt_right" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">32</td>
-<td headers="min" class="gt_row gt_left" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">American Renal Associates</td>
-<td headers="max" class="gt_row gt_left" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">Wake Forest University</td>
-</tr>
-<tr>
-<td headers="col" class="gt_row gt_right" style="border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">profit</td>
-<td headers="unique" class="gt_row gt_right" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">2</td>
-<td headers="min" class="gt_row gt_left" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">N</td>
-<td headers="max" class="gt_row gt_left" style="border-left-width: 0.5px; border-left-style: solid; border-left-color: black; border-top-width: 1.5px; border-top-style: dotted; border-top-color: black;">P</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</section></section><section id="counts" class="level2"><h2 class="anchored" data-anchor-id="counts">Counts</h2>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span><span class="op">(</span><span class="va">esrd</span><span class="op">$</span><span class="va">ccn</span>, <span class="fu">ccn</span><span class="fu">::</span><span class="va"><a href="https://andrewallenbruce.github.io/ccn/reference/as_data_frame.html">as_data_frame</a></span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">data.table</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/data.table/man/rbindlist.html">rbindlist</a></span><span class="op">(</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">df</span> <span class="op">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/fcount.html">fcount</a></span><span class="op">(</span><span class="va">type</span>, <span class="va">range</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/roworder.html">roworder</a></span><span class="op">(</span><span class="op">-</span><span class="va">N</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/gt.html">gt</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/tab_options.html">tab_options</a></span><span class="op">(</span>quarto.disable_processing <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/tab_options.html">tab_options</a></span><span class="op">(</span></span>
+<span>    table.width <span class="op">=</span> <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/pct.html">pct</a></span><span class="op">(</span><span class="fl">100</span><span class="op">)</span>,</span>
+<span>    quarto.disable_processing <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span>  <span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">gtExtras</span><span class="fu">::</span><span class="fu"><a href="https://jthomasmock.github.io/gtExtras/reference/gt_theme_nytimes.html">gt_theme_nytimes</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/tab_style.html">tab_style</a></span><span class="op">(</span></span>
 <span>    style <span class="op">=</span> <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/cell_text.html">cell_text</a></span><span class="op">(</span></span>
@@ -1982,28 +951,28 @@ COUNTY LLC</td>
 <span>    locations <span class="op">=</span> <span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/cells_body.html">cells_body</a></span><span class="op">(</span>columns <span class="op">=</span> <span class="va">type</span><span class="op">)</span></span>
 <span>  <span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="uccnyvfktw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="znddxouinv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#uccnyvfktw table {
+#znddxouinv table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#uccnyvfktw thead, #uccnyvfktw tbody, #uccnyvfktw tfoot, #uccnyvfktw tr, #uccnyvfktw td, #uccnyvfktw th {
+#znddxouinv thead, #znddxouinv tbody, #znddxouinv tfoot, #znddxouinv tr, #znddxouinv td, #znddxouinv th {
   border-style: none;
 }
 
-#uccnyvfktw p {
+#znddxouinv p {
   margin: 0;
   padding: 0;
 }
 
-#uccnyvfktw .gt_table {
+#znddxouinv .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2014,7 +983,7 @@ COUNTY LLC</td>
   font-weight: normal;
   font-style: normal;
   background-color: #FFFFFF;
-  width: auto;
+  width: 100%;
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #A8A8A8;
@@ -2029,12 +998,12 @@ COUNTY LLC</td>
   border-left-color: #D3D3D3;
 }
 
-#uccnyvfktw .gt_caption {
+#znddxouinv .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#uccnyvfktw .gt_title {
+#znddxouinv .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2046,7 +1015,7 @@ COUNTY LLC</td>
   border-bottom-width: 0;
 }
 
-#uccnyvfktw .gt_subtitle {
+#znddxouinv .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2058,7 +1027,7 @@ COUNTY LLC</td>
   border-top-width: 0;
 }
 
-#uccnyvfktw .gt_heading {
+#znddxouinv .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -2070,13 +1039,13 @@ COUNTY LLC</td>
   border-right-color: #D3D3D3;
 }
 
-#uccnyvfktw .gt_bottom_border {
+#znddxouinv .gt_bottom_border {
   border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#uccnyvfktw .gt_col_headings {
+#znddxouinv .gt_col_headings {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2091,7 +1060,7 @@ COUNTY LLC</td>
   border-right-color: #D3D3D3;
 }
 
-#uccnyvfktw .gt_col_heading {
+#znddxouinv .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 12px;
@@ -2111,7 +1080,7 @@ COUNTY LLC</td>
   overflow-x: hidden;
 }
 
-#uccnyvfktw .gt_column_spanner_outer {
+#znddxouinv .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 12px;
@@ -2123,15 +1092,15 @@ COUNTY LLC</td>
   padding-right: 4px;
 }
 
-#uccnyvfktw .gt_column_spanner_outer:first-child {
+#znddxouinv .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#uccnyvfktw .gt_column_spanner_outer:last-child {
+#znddxouinv .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#uccnyvfktw .gt_column_spanner {
+#znddxouinv .gt_column_spanner {
   border-bottom-style: none;
   border-bottom-width: 1px;
   border-bottom-color: #334422;
@@ -2143,11 +1112,11 @@ COUNTY LLC</td>
   width: 100%;
 }
 
-#uccnyvfktw .gt_spanner_row {
+#znddxouinv .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#uccnyvfktw .gt_group_heading {
+#znddxouinv .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2173,7 +1142,7 @@ COUNTY LLC</td>
   text-align: left;
 }
 
-#uccnyvfktw .gt_empty_group_heading {
+#znddxouinv .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2188,15 +1157,15 @@ COUNTY LLC</td>
   vertical-align: middle;
 }
 
-#uccnyvfktw .gt_from_md > :first-child {
+#znddxouinv .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#uccnyvfktw .gt_from_md > :last-child {
+#znddxouinv .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#uccnyvfktw .gt_row {
+#znddxouinv .gt_row {
   padding-top: 7px;
   padding-bottom: 7px;
   padding-left: 5px;
@@ -2215,7 +1184,7 @@ COUNTY LLC</td>
   overflow-x: hidden;
 }
 
-#uccnyvfktw .gt_stub {
+#znddxouinv .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2228,7 +1197,7 @@ COUNTY LLC</td>
   padding-right: 5px;
 }
 
-#uccnyvfktw .gt_stub_row_group {
+#znddxouinv .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2242,15 +1211,15 @@ COUNTY LLC</td>
   vertical-align: top;
 }
 
-#uccnyvfktw .gt_row_group_first td {
+#znddxouinv .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#uccnyvfktw .gt_row_group_first th {
+#znddxouinv .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#uccnyvfktw .gt_summary_row {
+#znddxouinv .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2260,16 +1229,16 @@ COUNTY LLC</td>
   padding-right: 5px;
 }
 
-#uccnyvfktw .gt_first_summary_row {
+#znddxouinv .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#uccnyvfktw .gt_first_summary_row.thick {
+#znddxouinv .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#uccnyvfktw .gt_last_summary_row {
+#znddxouinv .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2279,7 +1248,7 @@ COUNTY LLC</td>
   border-bottom-color: #D3D3D3;
 }
 
-#uccnyvfktw .gt_grand_summary_row {
+#znddxouinv .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2289,7 +1258,7 @@ COUNTY LLC</td>
   padding-right: 5px;
 }
 
-#uccnyvfktw .gt_first_grand_summary_row {
+#znddxouinv .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2299,7 +1268,7 @@ COUNTY LLC</td>
   border-top-color: #D3D3D3;
 }
 
-#uccnyvfktw .gt_last_grand_summary_row_top {
+#znddxouinv .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2309,11 +1278,11 @@ COUNTY LLC</td>
   border-bottom-color: #D3D3D3;
 }
 
-#uccnyvfktw .gt_striped {
+#znddxouinv .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#uccnyvfktw .gt_table_body {
+#znddxouinv .gt_table_body {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2322,7 +1291,7 @@ COUNTY LLC</td>
   border-bottom-color: #FFFFFF;
 }
 
-#uccnyvfktw .gt_footnotes {
+#znddxouinv .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2336,7 +1305,7 @@ COUNTY LLC</td>
   border-right-color: #D3D3D3;
 }
 
-#uccnyvfktw .gt_footnote {
+#znddxouinv .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2345,7 +1314,7 @@ COUNTY LLC</td>
   padding-right: 5px;
 }
 
-#uccnyvfktw .gt_sourcenotes {
+#znddxouinv .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2359,7 +1328,7 @@ COUNTY LLC</td>
   border-right-color: #D3D3D3;
 }
 
-#uccnyvfktw .gt_sourcenote {
+#znddxouinv .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2367,72 +1336,72 @@ COUNTY LLC</td>
   padding-right: 5px;
 }
 
-#uccnyvfktw .gt_left {
+#znddxouinv .gt_left {
   text-align: left;
 }
 
-#uccnyvfktw .gt_center {
+#znddxouinv .gt_center {
   text-align: center;
 }
 
-#uccnyvfktw .gt_right {
+#znddxouinv .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#uccnyvfktw .gt_font_normal {
+#znddxouinv .gt_font_normal {
   font-weight: normal;
 }
 
-#uccnyvfktw .gt_font_bold {
+#znddxouinv .gt_font_bold {
   font-weight: bold;
 }
 
-#uccnyvfktw .gt_font_italic {
+#znddxouinv .gt_font_italic {
   font-style: italic;
 }
 
-#uccnyvfktw .gt_super {
+#znddxouinv .gt_super {
   font-size: 65%;
 }
 
-#uccnyvfktw .gt_footnote_marks {
+#znddxouinv .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#uccnyvfktw .gt_asterisk {
+#znddxouinv .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#uccnyvfktw .gt_indent_1 {
+#znddxouinv .gt_indent_1 {
   text-indent: 5px;
 }
 
-#uccnyvfktw .gt_indent_2 {
+#znddxouinv .gt_indent_2 {
   text-indent: 10px;
 }
 
-#uccnyvfktw .gt_indent_3 {
+#znddxouinv .gt_indent_3 {
   text-indent: 15px;
 }
 
-#uccnyvfktw .gt_indent_4 {
+#znddxouinv .gt_indent_4 {
   text-indent: 20px;
 }
 
-#uccnyvfktw .gt_indent_5 {
+#znddxouinv .gt_indent_5 {
   text-indent: 25px;
 }
 
-#uccnyvfktw .katex-display {
+#znddxouinv .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#uccnyvfktw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#znddxouinv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2473,11 +1442,606 @@ COUNTY LLC</td>
 </div>
 </div>
 </div>
+</section><section id="chains" class="level3"><h3 class="anchored" data-anchor-id="chains">Chains</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div id="ajooraiedx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+#ajooraiedx table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#ajooraiedx thead, #ajooraiedx tbody, #ajooraiedx tfoot, #ajooraiedx tr, #ajooraiedx td, #ajooraiedx th {
+  border-style: none;
+}
+
+#ajooraiedx p {
+  margin: 0;
+  padding: 0;
+}
+
+#ajooraiedx .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 100%;
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#ajooraiedx .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#ajooraiedx .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#ajooraiedx .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#ajooraiedx .gt_heading {
+  background-color: #FFFFFF;
+  text-align: left;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ajooraiedx .gt_bottom_border {
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ajooraiedx .gt_col_headings {
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: none;
+  border-bottom-width: 1px;
+  border-bottom-color: #334422;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ajooraiedx .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 12px;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#ajooraiedx .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 12px;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#ajooraiedx .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#ajooraiedx .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#ajooraiedx .gt_column_spanner {
+  border-bottom-style: none;
+  border-bottom-width: 1px;
+  border-bottom-color: #334422;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#ajooraiedx .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#ajooraiedx .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#ajooraiedx .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#ajooraiedx .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#ajooraiedx .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#ajooraiedx .gt_row {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#ajooraiedx .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ajooraiedx .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#ajooraiedx .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#ajooraiedx .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#ajooraiedx .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ajooraiedx .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#ajooraiedx .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#ajooraiedx .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ajooraiedx .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ajooraiedx .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#ajooraiedx .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ajooraiedx .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#ajooraiedx .gt_table_body {
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #FFFFFF;
+}
+
+#ajooraiedx .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ajooraiedx .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ajooraiedx .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ajooraiedx .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ajooraiedx .gt_left {
+  text-align: left;
+}
+
+#ajooraiedx .gt_center {
+  text-align: center;
+}
+
+#ajooraiedx .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#ajooraiedx .gt_font_normal {
+  font-weight: normal;
+}
+
+#ajooraiedx .gt_font_bold {
+  font-weight: bold;
+}
+
+#ajooraiedx .gt_font_italic {
+  font-style: italic;
+}
+
+#ajooraiedx .gt_super {
+  font-size: 65%;
+}
+
+#ajooraiedx .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#ajooraiedx .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#ajooraiedx .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#ajooraiedx .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#ajooraiedx .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#ajooraiedx .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#ajooraiedx .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#ajooraiedx .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#ajooraiedx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="true" data-quarto-bootstrap="false">
+<thead><tr class="gt_col_headings">
+<th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase;" scope="col" id="chain">chain</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase;" scope="col" id="N">N</th>
+    </tr></thead>
+<tbody class="gt_table_body">
+<tr>
+<td headers="chain" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: bold; color: #666666; font-size: small;">DaVita</td>
+<td headers="N" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">2798</td>
+</tr>
+<tr>
+<td headers="chain" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: bold; color: #666666; font-size: small;">Fresenius Medical Care</td>
+<td headers="N" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">2767</td>
+</tr>
+<tr>
+<td headers="chain" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: bold; color: #666666; font-size: small;">Independent</td>
+<td headers="N" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">749</td>
+</tr>
+<tr>
+<td headers="chain" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: bold; color: #666666; font-size: small;">US Renal Care, Inc.</td>
+<td headers="N" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">370</td>
+</tr>
+<tr>
+<td headers="chain" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: bold; color: #666666; font-size: small;">Dialysis Clinic, Inc.</td>
+<td headers="N" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">240</td>
+</tr>
+<tr>
+<td headers="chain" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: bold; color: #666666; font-size: small;">American Renal Associates</td>
+<td headers="N" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">223</td>
+</tr>
+<tr>
+<td headers="chain" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: bold; color: #666666; font-size: small;">Other</td>
+<td headers="N" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">97</td>
+</tr>
+<tr>
+<td headers="chain" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: bold; color: #666666; font-size: small;">Satellite Healthcare</td>
+<td headers="N" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">72</td>
+</tr>
+<tr>
+<td headers="chain" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: bold; color: #666666; font-size: small;">Kaiser Permanente</td>
+<td headers="N" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">22</td>
+</tr>
+<tr>
+<td headers="chain" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: bold; color: #666666; font-size: small;">State Owned</td>
+<td headers="N" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">19</td>
+</tr>
+<tr>
+<td headers="chain" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: bold; color: #666666; font-size: small;">Wake Forest University</td>
+<td headers="N" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">19</td>
+</tr>
+<tr>
+<td headers="chain" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: bold; color: #666666; font-size: small;">Northwest Kidney Centers</td>
+<td headers="N" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">19</td>
+</tr>
+<tr>
+<td headers="chain" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: bold; color: #666666; font-size: small;">Centers for Dialysis Care</td>
+<td headers="N" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">18</td>
+</tr>
+<tr>
+<td headers="chain" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: bold; color: #666666; font-size: small;">Atlantis Healthcare Group</td>
+<td headers="N" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">17</td>
+</tr>
+<tr>
+<td headers="chain" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: bold; color: #666666; font-size: small;">Greenfield Health Systems</td>
+<td headers="N" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">15</td>
+</tr>
+<tr>
+<td headers="chain" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: bold; color: #666666; font-size: small;">Satellite Dialysis</td>
+<td headers="N" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">14</td>
+</tr>
+<tr>
+<td headers="chain" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: bold; color: #666666; font-size: small;">Sanford Health</td>
+<td headers="N" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">13</td>
+</tr>
+<tr>
+<td headers="chain" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: bold; color: #666666; font-size: small;">Atlantic Dialysis Management Services</td>
+<td headers="N" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">13</td>
+</tr>
+<tr>
+<td headers="chain" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: bold; color: #666666; font-size: small;">Mayo Clinic Dialysis</td>
+<td headers="N" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">12</td>
+</tr>
+<tr>
+<td headers="chain" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: bold; color: #666666; font-size: small;">Puget Sound Kidney Centers</td>
+<td headers="N" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">12</td>
+</tr>
+<tr>
+<td headers="chain" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: bold; color: #666666; font-size: small;">Diversified Specialty Institutes (DSI)</td>
+<td headers="N" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">8</td>
+</tr>
+<tr>
+<td headers="chain" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: bold; color: #666666; font-size: small;">Central Florida Kidney Centers</td>
+<td headers="N" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">7</td>
+</tr>
+<tr>
+<td headers="chain" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: bold; color: #666666; font-size: small;">Intermountain Healthcare</td>
+<td headers="N" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">7</td>
+</tr>
+<tr>
+<td headers="chain" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: bold; color: #666666; font-size: small;">Independent Dialysis Foundation (IDF)</td>
+<td headers="N" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">6</td>
+</tr>
+<tr>
+<td headers="chain" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: bold; color: #666666; font-size: small;">Gundersen Lutheran</td>
+<td headers="N" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">5</td>
+</tr>
+<tr>
+<td headers="chain" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: bold; color: #666666; font-size: small;">Innovative Dialysis Systems</td>
+<td headers="N" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">4</td>
+</tr>
+<tr>
+<td headers="chain" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: bold; color: #666666; font-size: small;">North Central Pennsylvania Dialysis Clinics</td>
+<td headers="N" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">4</td>
+</tr>
+<tr>
+<td headers="chain" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: bold; color: #666666; font-size: small;">Scott &amp; White Memorial Hospital</td>
+<td headers="N" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">4</td>
+</tr>
+<tr>
+<td headers="chain" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: bold; color: #666666; font-size: small;">Veterans Administration</td>
+<td headers="N" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">3</td>
+</tr>
+<tr>
+<td headers="chain" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: bold; color: #666666; font-size: small;">UPMC Health System</td>
+<td headers="N" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">2</td>
+</tr>
+<tr>
+<td headers="chain" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: bold; color: #666666; font-size: small;">Memorial Hermann Healthcare System</td>
+<td headers="N" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">1</td>
+</tr>
+<tr>
+<td headers="chain" class="gt_row gt_left" style="font-family: 'JetBrains Mono'; font-weight: bold; color: #666666; font-size: small;">Dallas County Hospital District</td>
+<td headers="N" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 
 
 <!-- -->
 
-</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
     const anchorJS = new window.AnchorJS();
@@ -2938,246 +2502,265 @@ COUNTY LLC</td>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span><span class="co"> html_document</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="an">editor_options:</span><span class="co"> </span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">  chunk_output_type: console</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># ESRD</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup}</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co">#| cache: false</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co">#| comment: ""</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ccn)</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"code/gt_theme.R"</span>)</span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="fu">## Facility Ranges</span></span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>The last four characters of a Provider CCN represent the facility type and a unique</span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>identifier. The facility type is encoded in the third character of the last four</span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>characters. The table below summarizes the valid facility type codes and their</span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>corresponding ranges. </span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: esrd-ranges</span></span>
-<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>ccn<span class="sc">::</span>medicare_ranges <span class="sc">|&gt;</span></span>
-<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">sbt</span>(</span>
-<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>    start <span class="sc">==</span> <span class="dv">1</span>L <span class="sc">|</span> </span>
-<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>    start <span class="sc">==</span> <span class="dv">2000</span>L <span class="sc">|</span> </span>
-<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>    start <span class="sc">==</span> <span class="dv">3300</span>L <span class="sc">|</span> </span>
-<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>    abbr <span class="sc">==</span> <span class="st">"ESRD"</span>, </span>
-<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>    <span class="sc">-</span>start, </span>
-<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>    <span class="sc">-</span>end) <span class="sc">|&gt;</span></span>
-<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
-<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_options</span>(<span class="at">quarto.disable_processing =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
-<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>  gtExtras<span class="sc">::</span><span class="fu">gt_theme_nytimes</span>() <span class="sc">|&gt;</span></span>
-<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_style</span>(</span>
-<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> gt<span class="sc">::</span><span class="fu">cell_text</span>(</span>
-<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a>      <span class="at">font =</span> gt<span class="sc">::</span><span class="fu">google_font</span>(<span class="at">name =</span> <span class="st">"JetBrains Mono"</span>), </span>
-<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a>      <span class="at">color =</span> <span class="st">"grey60"</span>, </span>
-<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a>      <span class="at">size =</span> <span class="st">"small"</span>),</span>
-<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> gt<span class="sc">::</span><span class="fu">cells_body</span>(<span class="at">columns =</span> range)</span>
-<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_style</span>(</span>
-<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> gt<span class="sc">::</span><span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>),</span>
-<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> gt<span class="sc">::</span><span class="fu">cells_body</span>(<span class="at">columns =</span> abbr)</span>
-<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_style</span>(</span>
-<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> gt<span class="sc">::</span><span class="fu">cell_text</span>(<span class="at">color =</span> <span class="st">"grey50"</span>, <span class="at">size =</span> <span class="st">"small"</span>),</span>
-<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> gt<span class="sc">::</span><span class="fu">cells_body</span>(<span class="at">columns =</span> desc)</span>
-<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a><span class="fu">### Details</span></span>
-<span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-62"><a href="#cb6-62" aria-hidden="true" tabindex="-1"></a><span class="ss">   1. </span>__Hospital-Based Renal Dialysis Facilities, [2300, 2499]__: </span>
-<span id="cb6-63"><a href="#cb6-63" aria-hidden="true" tabindex="-1"></a>   The physical location of an ESRD facility on the premises of a</span>
-<span id="cb6-64"><a href="#cb6-64" aria-hidden="true" tabindex="-1"></a>   hospital is not considered when determining if the ESRD facility is</span>
-<span id="cb6-65"><a href="#cb6-65" aria-hidden="true" tabindex="-1"></a>   hospital-based. Hospital corporate control is a critical factor in</span>
-<span id="cb6-66"><a href="#cb6-66" aria-hidden="true" tabindex="-1"></a>   determining whether an ESRD facility is hospital-based. Hospitals may have a</span>
-<span id="cb6-67"><a href="#cb6-67" aria-hidden="true" tabindex="-1"></a>   lease arrangement for the management of a hospital-based ESRD facility by a</span>
-<span id="cb6-68"><a href="#cb6-68" aria-hidden="true" tabindex="-1"></a>   non-hospital manager. This CCN range is used for ESRD facilities that have </span>
-<span id="cb6-69"><a href="#cb6-69" aria-hidden="true" tabindex="-1"></a>   been determined by the CMS to be hospital-owned, hospital-administered ESRD </span>
-<span id="cb6-70"><a href="#cb6-70" aria-hidden="true" tabindex="-1"></a>   facilities physically located on the hospital's premises as opposed to </span>
-<span id="cb6-71"><a href="#cb6-71" aria-hidden="true" tabindex="-1"></a>   independent ESRD facilities and Hospital-Based Renal Disease Satellite </span>
-<span id="cb6-72"><a href="#cb6-72" aria-hidden="true" tabindex="-1"></a>   Facilities. The satellites are hospital-based, but are physically located </span>
-<span id="cb6-73"><a href="#cb6-73" aria-hidden="true" tabindex="-1"></a>   off the hospital’s premises.</span>
-<span id="cb6-74"><a href="#cb6-74" aria-hidden="true" tabindex="-1"></a>   </span>
-<span id="cb6-75"><a href="#cb6-75" aria-hidden="true" tabindex="-1"></a><span class="ss">   2. </span>__Hospital-Based Renal Dialysis Satellite Facilities, [3500, 3699]__: </span>
-<span id="cb6-76"><a href="#cb6-76" aria-hidden="true" tabindex="-1"></a>   This CCN range is used for those ESRD facilities that are hospital-owned and </span>
-<span id="cb6-77"><a href="#cb6-77" aria-hidden="true" tabindex="-1"></a>   hospital-administered, but that are not located on the hospital’s premises. </span>
-<span id="cb6-78"><a href="#cb6-78" aria-hidden="true" tabindex="-1"></a>   This is why they are referred to as hospital-based satellites. In determining </span>
-<span id="cb6-79"><a href="#cb6-79" aria-hidden="true" tabindex="-1"></a>   whether such a satellite facility is hospital-based, use the same criteria as </span>
-<span id="cb6-80"><a href="#cb6-80" aria-hidden="true" tabindex="-1"></a>   you would in making a hospital-based determination under the 2300-2499 series, </span>
-<span id="cb6-81"><a href="#cb6-81" aria-hidden="true" tabindex="-1"></a>   except that you would assign a 3500-3699 number to such a facility because it </span>
-<span id="cb6-82"><a href="#cb6-82" aria-hidden="true" tabindex="-1"></a>   is off the premises of the hospital to which it is based. The word "premises" </span>
-<span id="cb6-83"><a href="#cb6-83" aria-hidden="true" tabindex="-1"></a>   is not explicitly defined in the statute, regulations, or State Operations Manual, </span>
-<span id="cb6-84"><a href="#cb6-84" aria-hidden="true" tabindex="-1"></a>   but there is a definition of "furnishes on the premises" that states "the </span>
-<span id="cb6-85"><a href="#cb6-85" aria-hidden="true" tabindex="-1"></a>   ESRD facility furnishes services on its main premises; or its other premises </span>
-<span id="cb6-86"><a href="#cb6-86" aria-hidden="true" tabindex="-1"></a>   that are: </span>
-<span id="cb6-87"><a href="#cb6-87" aria-hidden="true" tabindex="-1"></a>   </span>
-<span id="cb6-88"><a href="#cb6-88" aria-hidden="true" tabindex="-1"></a>      a. Contiguous with or in immediate proximity to the main premises, and </span>
-<span id="cb6-89"><a href="#cb6-89" aria-hidden="true" tabindex="-1"></a>      under the direction of the same professional staff and governing body as </span>
-<span id="cb6-90"><a href="#cb6-90" aria-hidden="true" tabindex="-1"></a>      the main premises, or </span>
-<span id="cb6-91"><a href="#cb6-91" aria-hidden="true" tabindex="-1"></a>      b. Approved on a time-limited basis as a special purpose renal dialysis facility."</span>
-<span id="cb6-92"><a href="#cb6-92" aria-hidden="true" tabindex="-1"></a>   </span>
-<span id="cb6-93"><a href="#cb6-93" aria-hidden="true" tabindex="-1"></a>   Thus, in addition to the regulations, which should assist you in determining </span>
-<span id="cb6-94"><a href="#cb6-94" aria-hidden="true" tabindex="-1"></a>   whether the facility is an integral part of the hospital, you may use the </span>
-<span id="cb6-95"><a href="#cb6-95" aria-hidden="true" tabindex="-1"></a>   "furnishes on the premises" definition to distinguish between a hospital-based </span>
-<span id="cb6-96"><a href="#cb6-96" aria-hidden="true" tabindex="-1"></a>   entity under the 2300-2499 series as opposed to an entity under the 3500-3699 </span>
-<span id="cb6-97"><a href="#cb6-97" aria-hidden="true" tabindex="-1"></a>   number series. </span>
-<span id="cb6-98"><a href="#cb6-98" aria-hidden="true" tabindex="-1"></a>   </span>
-<span id="cb6-99"><a href="#cb6-99" aria-hidden="true" tabindex="-1"></a>   Also, we do not believe that these satellites will be furnishing inpatient dialysis </span>
-<span id="cb6-100"><a href="#cb6-100" aria-hidden="true" tabindex="-1"></a>   services. The CMS will make or approve the determination that a particular ESRD </span>
-<span id="cb6-101"><a href="#cb6-101" aria-hidden="true" tabindex="-1"></a>   facility meets the requirements to be hospital-based, and if it is off the hospital's </span>
-<span id="cb6-102"><a href="#cb6-102" aria-hidden="true" tabindex="-1"></a>   premises, a hospital-based satellite. It is conceivable that a hospital-based ESRD </span>
-<span id="cb6-103"><a href="#cb6-103" aria-hidden="true" tabindex="-1"></a>   facility could have a 2300-2499 number assigned to the location on the hospital’s </span>
-<span id="cb6-104"><a href="#cb6-104" aria-hidden="true" tabindex="-1"></a>   premises, and one or more 3500-3699 numbers for those locations (satellites) off </span>
-<span id="cb6-105"><a href="#cb6-105" aria-hidden="true" tabindex="-1"></a>   the premises (each satellite is given a separate 3500- 3699 number). If an ESRD </span>
-<span id="cb6-106"><a href="#cb6-106" aria-hidden="true" tabindex="-1"></a>   facility that is assigned a </span>
-<span id="cb6-107"><a href="#cb6-107" aria-hidden="true" tabindex="-1"></a>   2300-2499 number moves off the hospital’s premises and is determined to be a </span>
-<span id="cb6-108"><a href="#cb6-108" aria-hidden="true" tabindex="-1"></a>   satellite, it should receive a number in the 3500-3699 series. However, if a</span>
-<span id="cb6-109"><a href="#cb6-109" aria-hidden="true" tabindex="-1"></a>   satellite changes its address but is still considered off the hospital’s</span>
-<span id="cb6-110"><a href="#cb6-110" aria-hidden="true" tabindex="-1"></a>   premises, it should retain the 3500-3699 number it was originally issued rather</span>
-<span id="cb6-111"><a href="#cb6-111" aria-hidden="true" tabindex="-1"></a>   than being issued a new 3500-3699 number. Any questions concerning billing</span>
-<span id="cb6-112"><a href="#cb6-112" aria-hidden="true" tabindex="-1"></a>   should be referred to the RO financial component or the fiscal intermediary as</span>
-<span id="cb6-113"><a href="#cb6-113" aria-hidden="true" tabindex="-1"></a>   you determine appropriate. </span>
-<span id="cb6-114"><a href="#cb6-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-115"><a href="#cb6-115" aria-hidden="true" tabindex="-1"></a>::: {#note-hosp .callout-note}</span>
-<span id="cb6-116"><a href="#cb6-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-117"><a href="#cb6-117" aria-hidden="true" tabindex="-1"></a>In determining whether an entity is hospital-based for reimbursement </span>
-<span id="cb6-118"><a href="#cb6-118" aria-hidden="true" tabindex="-1"></a>purposes, the requirements at <span class="co">[</span><span class="ot">§2287</span><span class="co">](https://www.cms.gov/regulations-and-guidance/guidance/transmittals/downloads/r29soma.pdf#%5B%7B%22num%22%3A800%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C0%2C792%2Cnull%5D)</span> must be met.</span>
-<span id="cb6-119"><a href="#cb6-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-120"><a href="#cb6-120" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb6-121"><a href="#cb6-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-122"><a href="#cb6-122" aria-hidden="true" tabindex="-1"></a><span class="ss">   3. </span>__Hospital-Based Special Purpose Renal Dialysis Facilities, [3700, 3799]__: </span>
-<span id="cb6-123"><a href="#cb6-123" aria-hidden="true" tabindex="-1"></a>   In order to be classified as a Hospital-Based Special Purpose Renal Dialysis Facility </span>
-<span id="cb6-124"><a href="#cb6-124" aria-hidden="true" tabindex="-1"></a>   and issued a number under the 3700-3799 series, an ESRD facility must be determined to be</span>
-<span id="cb6-125"><a href="#cb6-125" aria-hidden="true" tabindex="-1"></a>   hospital-based, and meet the definition at 42 CFR 405.2102, and the requirements at</span>
-<span id="cb6-126"><a href="#cb6-126" aria-hidden="true" tabindex="-1"></a>   42 CFR 405.2164 for such a facility. A facility under this category should bill Medicare</span>
-<span id="cb6-127"><a href="#cb6-127" aria-hidden="true" tabindex="-1"></a>   under the CCN of the hospital to which it is based. There should be very few of these</span>
-<span id="cb6-128"><a href="#cb6-128" aria-hidden="true" tabindex="-1"></a>   facilities.</span>
-<span id="cb6-129"><a href="#cb6-129" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-130"><a href="#cb6-130" aria-hidden="true" tabindex="-1"></a><span class="ss">   4. </span>__Independent Renal Dialysis Facilities, [2500, 2899]__: </span>
-<span id="cb6-131"><a href="#cb6-131" aria-hidden="true" tabindex="-1"></a>   Independent Renal Dialysis Facilities, issued a number under the 2500-2899 series, are</span>
-<span id="cb6-132"><a href="#cb6-132" aria-hidden="true" tabindex="-1"></a>   independent ESRD facilities. These facilities do not meet the definition of hospital-based</span>
-<span id="cb6-133"><a href="#cb6-133" aria-hidden="true" tabindex="-1"></a>   irrespective of whether they are located on or off the hospital’s premises. A</span>
-<span id="cb6-134"><a href="#cb6-134" aria-hidden="true" tabindex="-1"></a>   determination of independent, as opposed to hospital-based, will be based on the statutory</span>
-<span id="cb6-135"><a href="#cb6-135" aria-hidden="true" tabindex="-1"></a>   and regulatory provisions and manual instructions. Independent facilities bill under their</span>
-<span id="cb6-136"><a href="#cb6-136" aria-hidden="true" tabindex="-1"></a>   own numbers. ESRD facilities located at skilled nursing facilities will be determined to</span>
-<span id="cb6-137"><a href="#cb6-137" aria-hidden="true" tabindex="-1"></a>   be independent.</span>
-<span id="cb6-138"><a href="#cb6-138" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-139"><a href="#cb6-139" aria-hidden="true" tabindex="-1"></a><span class="ss">   5. </span>__Independent Special Purpose Renal Dialysis Facilities, [2900, 2999]__: </span>
-<span id="cb6-140"><a href="#cb6-140" aria-hidden="true" tabindex="-1"></a>   The same requirements that apply to a Hospital-Based Special Purpose Renal Dialysis</span>
-<span id="cb6-141"><a href="#cb6-141" aria-hidden="true" tabindex="-1"></a>   Facility apply to a facility of the same type which is independent except that the</span>
-<span id="cb6-142"><a href="#cb6-142" aria-hidden="true" tabindex="-1"></a>   independent facility by virtue of its independent status, bills under its own number which</span>
-<span id="cb6-143"><a href="#cb6-143" aria-hidden="true" tabindex="-1"></a>   is in the 2900-2999 series.</span>
-<span id="cb6-144"><a href="#cb6-144" aria-hidden="true" tabindex="-1"></a>   </span>
-<span id="cb6-145"><a href="#cb6-145" aria-hidden="true" tabindex="-1"></a><span class="ss">   6. </span>__Other__:</span>
-<span id="cb6-146"><a href="#cb6-146" aria-hidden="true" tabindex="-1"></a>   When an ESRD facility proposes to change from hospital-based to independent or vice-versa, </span>
-<span id="cb6-147"><a href="#cb6-147" aria-hidden="true" tabindex="-1"></a>   an onsite survey is not necessary unless there is a physical relocation of the facility. </span>
-<span id="cb6-148"><a href="#cb6-148" aria-hidden="true" tabindex="-1"></a>   However, a determination as to the proper facility definition and if necessary, the changing </span>
-<span id="cb6-149"><a href="#cb6-149" aria-hidden="true" tabindex="-1"></a>   of the number designation, must be made in accordance with the guidance described here </span>
-<span id="cb6-150"><a href="#cb6-150" aria-hidden="true" tabindex="-1"></a>   and in §2287. If an ESRD facility proposes to add a location that has not been previously </span>
-<span id="cb6-151"><a href="#cb6-151" aria-hidden="true" tabindex="-1"></a>   surveyed, an onsite inspection would be required. In the absence of an onsite survey and </span>
-<span id="cb6-152"><a href="#cb6-152" aria-hidden="true" tabindex="-1"></a>   certification, the proposed facility has no authority to bill Medicare for ESRD services </span>
-<span id="cb6-153"><a href="#cb6-153" aria-hidden="true" tabindex="-1"></a>   provided at the proposed site. (See §3222.) There are some instances when an ESRD facility’s </span>
-<span id="cb6-154"><a href="#cb6-154" aria-hidden="true" tabindex="-1"></a>   CCN requires a change as a result of an action taken by the ESRD facility. If a hospital-based </span>
-<span id="cb6-155"><a href="#cb6-155" aria-hidden="true" tabindex="-1"></a>   facility converts to an independent ESRD facility or if an independent ESRD facility converts </span>
-<span id="cb6-156"><a href="#cb6-156" aria-hidden="true" tabindex="-1"></a>   to a hospital-based ESRD facility, there must be a CCN change. Satellite ESRD facilities must </span>
-<span id="cb6-157"><a href="#cb6-157" aria-hidden="true" tabindex="-1"></a>   be hospital owned and are considered hospital-based. A hospital may have more than one ESRD </span>
-<span id="cb6-158"><a href="#cb6-158" aria-hidden="true" tabindex="-1"></a>   satellite facility.</span>
-<span id="cb6-159"><a href="#cb6-159" aria-hidden="true" tabindex="-1"></a>   </span>
-<span id="cb6-160"><a href="#cb6-160" aria-hidden="true" tabindex="-1"></a>The CCN of the ESRD facility may remain the same in the following situations:</span>
-<span id="cb6-161"><a href="#cb6-161" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-162"><a href="#cb6-162" aria-hidden="true" tabindex="-1"></a><span class="ss">   * </span>A hospital-based ESRD facility retains ownership of the facility but contracts with another entity for management of the facility;</span>
-<span id="cb6-163"><a href="#cb6-163" aria-hidden="true" tabindex="-1"></a><span class="ss">   * </span>The hospital closes the dialysis facility but retains its transplant program. The CMS terminates the outpatient dialysis services but retains the ESRD CCN for the still active transplant program;</span>
-<span id="cb6-164"><a href="#cb6-164" aria-hidden="true" tabindex="-1"></a><span class="ss">   * </span>The hospital closes the transplant program but retains the ESRD facility. In such case, CMS terminates the transplant program but keeps the ESRD CCN active for the dialysis program;</span>
-<span id="cb6-165"><a href="#cb6-165" aria-hidden="true" tabindex="-1"></a><span class="ss">   * </span>The ESRD facility is purchased by another ESRD facility of the same type. For example, independent by independent or hospital-based by hospital-based; and</span>
-<span id="cb6-166"><a href="#cb6-166" aria-hidden="true" tabindex="-1"></a><span class="ss">   * </span>The geographic location of the ESRD facility is changed within the same state. A recertification survey is always required when a dialysis facility relocates within a state. If a geographic location is changed to another state, the ESRD facility at the old location must be terminated and the relocated ESRD facility must qualify as a new applicant with a new identification number in the state to which it moved.</span>
-<span id="cb6-167"><a href="#cb6-167" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-168"><a href="#cb6-168" aria-hidden="true" tabindex="-1"></a><span class="fu">## Examples</span></span>
-<span id="cb6-169"><a href="#cb6-169" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-172"><a href="#cb6-172" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb6-173"><a href="#cb6-173" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: esrd-data</span></span>
-<span id="cb6-174"><a href="#cb6-174" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb6-175"><a href="#cb6-175" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb6-176"><a href="#cb6-176" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
-<span id="cb6-177"><a href="#cb6-177" aria-hidden="true" tabindex="-1"></a>esrd <span class="ot">&lt;-</span> ccn<span class="sc">:::</span><span class="fu">get_pin</span>(<span class="st">"esrd"</span>)</span>
-<span id="cb6-178"><a href="#cb6-178" aria-hidden="true" tabindex="-1"></a>esrd</span>
-<span id="cb6-179"><a href="#cb6-179" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-180"><a href="#cb6-180" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-181"><a href="#cb6-181" aria-hidden="true" tabindex="-1"></a><span class="fu">### Overview</span></span>
-<span id="cb6-182"><a href="#cb6-182" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-185"><a href="#cb6-185" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb6-186"><a href="#cb6-186" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: esrd-overview</span></span>
-<span id="cb6-187"><a href="#cb6-187" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb6-188"><a href="#cb6-188" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb6-189"><a href="#cb6-189" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
-<span id="cb6-190"><a href="#cb6-190" aria-hidden="true" tabindex="-1"></a>over <span class="ot">&lt;-</span> cheapr<span class="sc">::</span><span class="fu">overview</span>(esrd)</span>
-<span id="cb6-191"><a href="#cb6-191" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-192"><a href="#cb6-192" aria-hidden="true" tabindex="-1"></a>over<span class="sc">$</span>numeric <span class="sc">|&gt;</span> </span>
-<span id="cb6-193"><a href="#cb6-193" aria-hidden="true" tabindex="-1"></a>   fastplyr<span class="sc">::</span><span class="fu">as_tbl</span>() <span class="sc">|&gt;</span></span>
-<span id="cb6-194"><a href="#cb6-194" aria-hidden="true" tabindex="-1"></a>   collapse<span class="sc">::</span><span class="fu">slt</span>(col, <span class="at">unique =</span> n_unique, mean, sd, p0<span class="sc">:</span>iqr, hist) <span class="sc">|&gt;</span></span>
-<span id="cb6-195"><a href="#cb6-195" aria-hidden="true" tabindex="-1"></a>   gt<span class="sc">::</span><span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb6-196"><a href="#cb6-196" aria-hidden="true" tabindex="-1"></a>   <span class="fu">gt_chamber_theme</span>() <span class="sc">|&gt;</span></span>
-<span id="cb6-197"><a href="#cb6-197" aria-hidden="true" tabindex="-1"></a>   gt<span class="sc">::</span><span class="fu">tab_options</span>(<span class="at">quarto.disable_processing =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb6-198"><a href="#cb6-198" aria-hidden="true" tabindex="-1"></a>   gt<span class="sc">::</span><span class="fu">fmt_number</span>(<span class="at">columns =</span> <span class="fu">c</span>(mean, sd))</span>
-<span id="cb6-199"><a href="#cb6-199" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-200"><a href="#cb6-200" aria-hidden="true" tabindex="-1"></a>over<span class="sc">$</span>categorical <span class="sc">|&gt;</span> </span>
-<span id="cb6-201"><a href="#cb6-201" aria-hidden="true" tabindex="-1"></a>   fastplyr<span class="sc">::</span><span class="fu">as_tbl</span>() <span class="sc">|&gt;</span></span>
-<span id="cb6-202"><a href="#cb6-202" aria-hidden="true" tabindex="-1"></a>   collapse<span class="sc">::</span><span class="fu">slt</span>(col, <span class="at">unique =</span> n_unique, min, max) <span class="sc">|&gt;</span></span>
-<span id="cb6-203"><a href="#cb6-203" aria-hidden="true" tabindex="-1"></a>   collapse<span class="sc">::</span><span class="fu">mtt</span>(</span>
-<span id="cb6-204"><a href="#cb6-204" aria-hidden="true" tabindex="-1"></a>      <span class="at">min =</span> stringr<span class="sc">::</span><span class="fu">str_wrap</span>(min, <span class="at">width =</span> <span class="dv">40</span>), </span>
-<span id="cb6-205"><a href="#cb6-205" aria-hidden="true" tabindex="-1"></a>      <span class="at">max =</span> stringr<span class="sc">::</span><span class="fu">str_wrap</span>(max, <span class="at">width =</span> <span class="dv">40</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb6-206"><a href="#cb6-206" aria-hidden="true" tabindex="-1"></a>   gt<span class="sc">::</span><span class="fu">gt</span>(<span class="at">process_md =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb6-207"><a href="#cb6-207" aria-hidden="true" tabindex="-1"></a>   <span class="fu">gt_chamber_theme</span>() <span class="sc">|&gt;</span></span>
-<span id="cb6-208"><a href="#cb6-208" aria-hidden="true" tabindex="-1"></a>   gt<span class="sc">::</span><span class="fu">tab_options</span>(<span class="at">quarto.disable_processing =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb6-209"><a href="#cb6-209" aria-hidden="true" tabindex="-1"></a>   gt<span class="sc">::</span><span class="fu">cols_align</span>(<span class="st">"left"</span>, <span class="fu">c</span>(min, max)) <span class="sc">|&gt;</span> </span>
-<span id="cb6-210"><a href="#cb6-210" aria-hidden="true" tabindex="-1"></a>   gt<span class="sc">::</span><span class="fu">cols_align</span>(<span class="st">"right"</span>, <span class="fu">c</span>(col))</span>
-<span id="cb6-211"><a href="#cb6-211" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-212"><a href="#cb6-212" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-213"><a href="#cb6-213" aria-hidden="true" tabindex="-1"></a><span class="fu">## Counts</span></span>
-<span id="cb6-214"><a href="#cb6-214" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-217"><a href="#cb6-217" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb6-218"><a href="#cb6-218" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: esrd-counts</span></span>
-<span id="cb6-219"><a href="#cb6-219" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb6-220"><a href="#cb6-220" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb6-221"><a href="#cb6-221" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
-<span id="cb6-222"><a href="#cb6-222" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> purrr<span class="sc">::</span><span class="fu">map</span>(esrd<span class="sc">$</span>ccn, ccn<span class="sc">::</span>as_data_frame) <span class="sc">|&gt;</span> </span>
-<span id="cb6-223"><a href="#cb6-223" aria-hidden="true" tabindex="-1"></a>  data.table<span class="sc">::</span><span class="fu">rbindlist</span>()</span>
-<span id="cb6-224"><a href="#cb6-224" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-225"><a href="#cb6-225" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span></span>
-<span id="cb6-226"><a href="#cb6-226" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">fcount</span>(type, range) <span class="sc">|&gt;</span></span>
-<span id="cb6-227"><a href="#cb6-227" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">roworder</span>(<span class="sc">-</span>N) <span class="sc">|&gt;</span></span>
-<span id="cb6-228"><a href="#cb6-228" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
-<span id="cb6-229"><a href="#cb6-229" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_options</span>(<span class="at">quarto.disable_processing =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
-<span id="cb6-230"><a href="#cb6-230" aria-hidden="true" tabindex="-1"></a>  gtExtras<span class="sc">::</span><span class="fu">gt_theme_nytimes</span>() <span class="sc">|&gt;</span></span>
-<span id="cb6-231"><a href="#cb6-231" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_style</span>(</span>
-<span id="cb6-232"><a href="#cb6-232" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> gt<span class="sc">::</span><span class="fu">cell_text</span>(</span>
-<span id="cb6-233"><a href="#cb6-233" aria-hidden="true" tabindex="-1"></a>      <span class="at">font =</span> gt<span class="sc">::</span><span class="fu">google_font</span>(<span class="at">name =</span> <span class="st">"JetBrains Mono"</span>),</span>
-<span id="cb6-234"><a href="#cb6-234" aria-hidden="true" tabindex="-1"></a>      <span class="at">color =</span> <span class="st">"grey60"</span>,</span>
-<span id="cb6-235"><a href="#cb6-235" aria-hidden="true" tabindex="-1"></a>      <span class="at">size =</span> <span class="st">"small"</span></span>
-<span id="cb6-236"><a href="#cb6-236" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb6-237"><a href="#cb6-237" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> gt<span class="sc">::</span><span class="fu">cells_body</span>(<span class="at">columns =</span> range)</span>
-<span id="cb6-238"><a href="#cb6-238" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb6-239"><a href="#cb6-239" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_style</span>(</span>
-<span id="cb6-240"><a href="#cb6-240" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> gt<span class="sc">::</span><span class="fu">cell_text</span>(</span>
-<span id="cb6-241"><a href="#cb6-241" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"grey40"</span>, </span>
-<span id="cb6-242"><a href="#cb6-242" aria-hidden="true" tabindex="-1"></a>       <span class="at">weight =</span> <span class="st">"bold"</span>,</span>
-<span id="cb6-243"><a href="#cb6-243" aria-hidden="true" tabindex="-1"></a>       <span class="at">size =</span> <span class="st">"small"</span>,</span>
-<span id="cb6-244"><a href="#cb6-244" aria-hidden="true" tabindex="-1"></a>       <span class="at">font =</span> gt<span class="sc">::</span><span class="fu">google_font</span>(<span class="at">name =</span> <span class="st">"JetBrains Mono"</span>)</span>
-<span id="cb6-245"><a href="#cb6-245" aria-hidden="true" tabindex="-1"></a>       ),</span>
-<span id="cb6-246"><a href="#cb6-246" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> gt<span class="sc">::</span><span class="fu">cells_body</span>(<span class="at">columns =</span> type)</span>
-<span id="cb6-247"><a href="#cb6-247" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb6-248"><a href="#cb6-248" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span><span class="co"> html_document</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="an">editor_options:</span><span class="co"> </span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">  chunk_output_type: console</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu"># ESRD</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup}</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">#| cache: false</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">#| comment: ""</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ccn)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"code/gt_theme.R"</span>)</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="fu">## Facility Ranges</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: esrd-ranges</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>ccn<span class="sc">::</span>medicare_ranges <span class="sc">|&gt;</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>   collapse<span class="sc">::</span><span class="fu">sbt</span>(stringi<span class="sc">::</span><span class="fu">stri_detect_regex</span>(abbr, <span class="st">"ESRD"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>   collapse<span class="sc">::</span><span class="fu">gv</span>(<span class="fu">c</span>(<span class="st">"abbr"</span>, <span class="st">"desc"</span>, <span class="st">"range"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_options</span>(</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.width =</span> gt<span class="sc">::</span><span class="fu">pct</span>(<span class="dv">100</span>),</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">quarto.disable_processing =</span> <span class="cn">TRUE</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>  gtExtras<span class="sc">::</span><span class="fu">gt_theme_nytimes</span>() <span class="sc">|&gt;</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_style</span>(</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> gt<span class="sc">::</span><span class="fu">cell_text</span>(</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>      <span class="at">font =</span> gt<span class="sc">::</span><span class="fu">google_font</span>(<span class="at">name =</span> <span class="st">"JetBrains Mono"</span>), </span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>      <span class="at">color =</span> <span class="st">"grey60"</span>, </span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>      <span class="at">size =</span> <span class="st">"small"</span>),</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> gt<span class="sc">::</span><span class="fu">cells_body</span>(<span class="at">columns =</span> <span class="fu">c</span>(desc, range))</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_style</span>(</span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> gt<span class="sc">::</span><span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>),</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> gt<span class="sc">::</span><span class="fu">cells_body</span>(<span class="at">columns =</span> abbr)</span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_style</span>(</span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> gt<span class="sc">::</span><span class="fu">cell_text</span>(<span class="at">color =</span> <span class="st">"grey50"</span>, <span class="at">size =</span> <span class="st">"small"</span>),</span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> gt<span class="sc">::</span><span class="fu">cells_body</span>(<span class="at">columns =</span> desc)</span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>::: panel-tabset</span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a><span class="fu">## ESRD-H</span></span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>**Hospital-Based Renal Dialysis Facilities** <span class="in">`[2300, 2499]`</span></span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>This CCN range is used for ESRD facilities that have been determined by the CMS</span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>to be hospital-owned, hospital-administered ESRD facilities physically located</span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>on the hospital's premises as opposed to independent ESRD facilities and</span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>Hospital-Based Renal Disease Satellite Facilities. The satellites are</span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>hospital-based, but are physically located off the hospital’s premises.</span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a>The physical location of an ESRD facility on the premises of a hospital is not</span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a>considered when determining if the ESRD facility is hospital-based. Hospital</span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a>corporate control is a critical factor in determining whether an ESRD facility</span>
+<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a>is hospital-based. Hospitals may have a lease arrangement for the management of</span>
+<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>a hospital-based ESRD facility by a non-hospital manager.</span>
+<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a><span class="fu">## ESRD-I</span></span>
+<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a>**Independent Renal Dialysis Facilities** <span class="in">`[2500, 2899]`</span></span>
+<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a>These facilities do not meet the definition of hospital-based irrespective of</span>
+<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a>whether they are located on or off the hospital’s premises. A determination of</span>
+<span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a>independent, as opposed to hospital-based, will be based on the statutory and</span>
+<span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a>regulatory provisions and manual instructions. Independent facilities bill under</span>
+<span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a>their own numbers. ESRD facilities located at skilled nursing facilities will be</span>
+<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a>determined to be independent.</span>
+<span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a><span class="fu">## ESRD-I-P</span></span>
+<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a>**Independent Special Purpose Renal Dialysis Facilities** <span class="in">`[2900, 2999]`</span></span>
+<span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a>The same requirements that apply to a Hospital-Based Special Purpose Renal</span>
+<span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a>Dialysis Facility apply to a facility of the same type which is independent</span>
+<span id="cb3-88"><a href="#cb3-88" aria-hidden="true" tabindex="-1"></a>except that the independent facility by virtue of its independent status, bills</span>
+<span id="cb3-89"><a href="#cb3-89" aria-hidden="true" tabindex="-1"></a>under its own number which is in the 2900-2999 series.</span>
+<span id="cb3-90"><a href="#cb3-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-91"><a href="#cb3-91" aria-hidden="true" tabindex="-1"></a><span class="fu">## ESRD-H-S</span></span>
+<span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a>**Hospital-Based Renal Dialysis Satellite Facilities** <span class="in">`[3500, 3699]`</span></span>
+<span id="cb3-94"><a href="#cb3-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-95"><a href="#cb3-95" aria-hidden="true" tabindex="-1"></a>This CCN range is used for those ESRD facilities that are hospital-owned and</span>
+<span id="cb3-96"><a href="#cb3-96" aria-hidden="true" tabindex="-1"></a>hospital-administered, but that are not located on the hospital’s premises. This</span>
+<span id="cb3-97"><a href="#cb3-97" aria-hidden="true" tabindex="-1"></a>is why they are referred to as hospital-based satellites.</span>
+<span id="cb3-98"><a href="#cb3-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-99"><a href="#cb3-99" aria-hidden="true" tabindex="-1"></a>In determining whether such a satellite facility is hospital-based, use the same</span>
+<span id="cb3-100"><a href="#cb3-100" aria-hidden="true" tabindex="-1"></a>criteria as you would in making a hospital-based determination under the</span>
+<span id="cb3-101"><a href="#cb3-101" aria-hidden="true" tabindex="-1"></a>2300-2499 series, except that you would assign a 3500-3699 number to such a</span>
+<span id="cb3-102"><a href="#cb3-102" aria-hidden="true" tabindex="-1"></a>facility because it is off the premises of the hospital to which it is based.</span>
+<span id="cb3-103"><a href="#cb3-103" aria-hidden="true" tabindex="-1"></a>The word __"premises"__ is not explicitly defined in the statute, regulations,</span>
+<span id="cb3-104"><a href="#cb3-104" aria-hidden="true" tabindex="-1"></a>or State Operations Manual, but there is a definition of "furnishes on the</span>
+<span id="cb3-105"><a href="#cb3-105" aria-hidden="true" tabindex="-1"></a>premises" that states:</span>
+<span id="cb3-106"><a href="#cb3-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-107"><a href="#cb3-107" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>The ESRD facility furnishes services on its main premises or its other premises that are:</span>
+<span id="cb3-108"><a href="#cb3-108" aria-hidden="true" tabindex="-1"></a>      a.  Contiguous with or in immediate proximity to the main premises, and under the direction of the same professional staff and governing body as the main premises, or</span>
+<span id="cb3-109"><a href="#cb3-109" aria-hidden="true" tabindex="-1"></a>      b.  Approved on a time-limited basis as a special purpose renal dialysis facility.</span>
+<span id="cb3-110"><a href="#cb3-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-111"><a href="#cb3-111" aria-hidden="true" tabindex="-1"></a>Thus, in addition to the regulations, which should assist you in determining</span>
+<span id="cb3-112"><a href="#cb3-112" aria-hidden="true" tabindex="-1"></a>whether the facility is an integral part of the hospital, you may use the</span>
+<span id="cb3-113"><a href="#cb3-113" aria-hidden="true" tabindex="-1"></a>"furnishes on the premises" definition to distinguish between a hospital-based</span>
+<span id="cb3-114"><a href="#cb3-114" aria-hidden="true" tabindex="-1"></a>entity under the 2300-2499 series as opposed to an entity under the 3500-3699</span>
+<span id="cb3-115"><a href="#cb3-115" aria-hidden="true" tabindex="-1"></a>number series.</span>
+<span id="cb3-116"><a href="#cb3-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-117"><a href="#cb3-117" aria-hidden="true" tabindex="-1"></a>Also, we do not believe that these satellites will be furnishing inpatient</span>
+<span id="cb3-118"><a href="#cb3-118" aria-hidden="true" tabindex="-1"></a>dialysis services. CMS will make or approve the determination that a</span>
+<span id="cb3-119"><a href="#cb3-119" aria-hidden="true" tabindex="-1"></a>particular ESRD facility meets the requirements to be hospital-based, and if it</span>
+<span id="cb3-120"><a href="#cb3-120" aria-hidden="true" tabindex="-1"></a>is off the hospital's premises, a hospital-based satellite. It is conceivable</span>
+<span id="cb3-121"><a href="#cb3-121" aria-hidden="true" tabindex="-1"></a>that a hospital-based ESRD facility could have a 2300-2499 number assigned to</span>
+<span id="cb3-122"><a href="#cb3-122" aria-hidden="true" tabindex="-1"></a>the location on the hospital’s premises, and one or more 3500-3699 numbers for</span>
+<span id="cb3-123"><a href="#cb3-123" aria-hidden="true" tabindex="-1"></a>those locations (satellites) off the premises (each satellite is given a</span>
+<span id="cb3-124"><a href="#cb3-124" aria-hidden="true" tabindex="-1"></a>separate 3500- 3699 number).</span>
+<span id="cb3-125"><a href="#cb3-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-126"><a href="#cb3-126" aria-hidden="true" tabindex="-1"></a>If an ESRD facility that is assigned a 2300-2499 number moves off the hospital’s</span>
+<span id="cb3-127"><a href="#cb3-127" aria-hidden="true" tabindex="-1"></a>premises and is determined to be a satellite, it should receive a number in the</span>
+<span id="cb3-128"><a href="#cb3-128" aria-hidden="true" tabindex="-1"></a>3500-3699 series. However, if a satellite changes its address but is still</span>
+<span id="cb3-129"><a href="#cb3-129" aria-hidden="true" tabindex="-1"></a>considered off the hospital’s premises, it should retain the 3500-3699 number it</span>
+<span id="cb3-130"><a href="#cb3-130" aria-hidden="true" tabindex="-1"></a>was originally issued rather than being issued a new 3500-3699 number. Any</span>
+<span id="cb3-131"><a href="#cb3-131" aria-hidden="true" tabindex="-1"></a>questions concerning billing should be referred to the RO financial component or</span>
+<span id="cb3-132"><a href="#cb3-132" aria-hidden="true" tabindex="-1"></a>the fiscal intermediary as you determine appropriate.</span>
+<span id="cb3-133"><a href="#cb3-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-134"><a href="#cb3-134" aria-hidden="true" tabindex="-1"></a>:::: {.callout-note}</span>
+<span id="cb3-135"><a href="#cb3-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-136"><a href="#cb3-136" aria-hidden="true" tabindex="-1"></a>In determining whether an entity is hospital-based for reimbursement purposes, the requirements at <span class="co">[</span><span class="ot">§2287</span><span class="co">](https://www.cms.gov/regulations-and-guidance/guidance/transmittals/downloads/r29soma.pdf#%5B%7B%22num%22%3A800%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C0%2C792%2Cnull%5D)</span> must be met.</span>
+<span id="cb3-137"><a href="#cb3-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-138"><a href="#cb3-138" aria-hidden="true" tabindex="-1"></a>:::: </span>
+<span id="cb3-139"><a href="#cb3-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-140"><a href="#cb3-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-141"><a href="#cb3-141" aria-hidden="true" tabindex="-1"></a><span class="fu">## ESRD-H-P</span></span>
+<span id="cb3-142"><a href="#cb3-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-143"><a href="#cb3-143" aria-hidden="true" tabindex="-1"></a>**Hospital-Based Special Purpose Renal Dialysis Facilities** <span class="in">`[3700, 3799]`</span></span>
+<span id="cb3-144"><a href="#cb3-144" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-145"><a href="#cb3-145" aria-hidden="true" tabindex="-1"></a>In order to be classified as a Hospital-Based Special Purpose Renal Dialysis</span>
+<span id="cb3-146"><a href="#cb3-146" aria-hidden="true" tabindex="-1"></a>Facility and issued a number under the 3700-3799 series, an ESRD facility must</span>
+<span id="cb3-147"><a href="#cb3-147" aria-hidden="true" tabindex="-1"></a>be determined to be hospital-based, and meet the definition at 42 CFR 405.2102,</span>
+<span id="cb3-148"><a href="#cb3-148" aria-hidden="true" tabindex="-1"></a>and the requirements at 42 CFR 405.2164 for such a facility. A facility under</span>
+<span id="cb3-149"><a href="#cb3-149" aria-hidden="true" tabindex="-1"></a>this category should bill Medicare under the CCN of the hospital to which it is</span>
+<span id="cb3-150"><a href="#cb3-150" aria-hidden="true" tabindex="-1"></a>based. There should be very few of these facilities.</span>
+<span id="cb3-151"><a href="#cb3-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-152"><a href="#cb3-152" aria-hidden="true" tabindex="-1"></a><span class="fu">## Other</span></span>
+<span id="cb3-153"><a href="#cb3-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-154"><a href="#cb3-154" aria-hidden="true" tabindex="-1"></a>When an ESRD facility proposes to change from hospital-based to independent or</span>
+<span id="cb3-155"><a href="#cb3-155" aria-hidden="true" tabindex="-1"></a>vice-versa, an onsite survey is not necessary unless there is a physical</span>
+<span id="cb3-156"><a href="#cb3-156" aria-hidden="true" tabindex="-1"></a>relocation of the facility. However, a determination as to the proper facility</span>
+<span id="cb3-157"><a href="#cb3-157" aria-hidden="true" tabindex="-1"></a>definition and if necessary, the changing of the number designation, must be</span>
+<span id="cb3-158"><a href="#cb3-158" aria-hidden="true" tabindex="-1"></a>made in accordance with the guidance described here and in §2287.</span>
+<span id="cb3-159"><a href="#cb3-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-160"><a href="#cb3-160" aria-hidden="true" tabindex="-1"></a>If an ESRD facility proposes to add a location that has not been previously</span>
+<span id="cb3-161"><a href="#cb3-161" aria-hidden="true" tabindex="-1"></a>surveyed, an onsite inspection would be required. In the absence of an onsite</span>
+<span id="cb3-162"><a href="#cb3-162" aria-hidden="true" tabindex="-1"></a>survey and certification, the proposed facility has no authority to bill</span>
+<span id="cb3-163"><a href="#cb3-163" aria-hidden="true" tabindex="-1"></a>Medicare for ESRD services provided at the proposed site. (See §3222.) There are</span>
+<span id="cb3-164"><a href="#cb3-164" aria-hidden="true" tabindex="-1"></a>some instances when an ESRD facility’s CCN requires a change as a result of an</span>
+<span id="cb3-165"><a href="#cb3-165" aria-hidden="true" tabindex="-1"></a>action taken by the ESRD facility.</span>
+<span id="cb3-166"><a href="#cb3-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-167"><a href="#cb3-167" aria-hidden="true" tabindex="-1"></a>If a hospital-based facility converts to an independent ESRD facility or if an</span>
+<span id="cb3-168"><a href="#cb3-168" aria-hidden="true" tabindex="-1"></a>independent ESRD facility converts to a hospital-based ESRD facility, there must</span>
+<span id="cb3-169"><a href="#cb3-169" aria-hidden="true" tabindex="-1"></a>be a CCN change. Satellite ESRD facilities must be hospital owned and are</span>
+<span id="cb3-170"><a href="#cb3-170" aria-hidden="true" tabindex="-1"></a>considered hospital-based. A hospital may have more than one ESRD satellite</span>
+<span id="cb3-171"><a href="#cb3-171" aria-hidden="true" tabindex="-1"></a>facility.</span>
+<span id="cb3-172"><a href="#cb3-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-173"><a href="#cb3-173" aria-hidden="true" tabindex="-1"></a>The CCN of the ESRD facility may remain the same in the following situations:</span>
+<span id="cb3-174"><a href="#cb3-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-175"><a href="#cb3-175" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>A hospital-based ESRD facility retains ownership of the facility but contracts with another entity for management of the facility;</span>
+<span id="cb3-176"><a href="#cb3-176" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>The hospital closes the dialysis facility but retains its transplant program. The CMS terminates the outpatient dialysis services but retains the ESRD CCN for the still active transplant program;</span>
+<span id="cb3-177"><a href="#cb3-177" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>The hospital closes the transplant program but retains the ESRD facility. In such case, CMS terminates the transplant program but keeps the ESRD CCN active for the dialysis program;</span>
+<span id="cb3-178"><a href="#cb3-178" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>The ESRD facility is purchased by another ESRD facility of the same type. For example, independent by independent or hospital-based by hospital-based; and</span>
+<span id="cb3-179"><a href="#cb3-179" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>The geographic location of the ESRD facility is changed within the same state. A recertification survey is always required when a dialysis facility relocates within a state. If a geographic location is changed to another state, the ESRD facility at the old location must be terminated and the relocated ESRD facility must qualify as a new applicant with a new identification number in the state to which it moved.</span>
+<span id="cb3-180"><a href="#cb3-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-181"><a href="#cb3-181" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb3-182"><a href="#cb3-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-183"><a href="#cb3-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-184"><a href="#cb3-184" aria-hidden="true" tabindex="-1"></a><span class="fu">## Examples</span></span>
+<span id="cb3-185"><a href="#cb3-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-188"><a href="#cb3-188" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb3-189"><a href="#cb3-189" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: esrd-data</span></span>
+<span id="cb3-190"><a href="#cb3-190" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb3-191"><a href="#cb3-191" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb3-192"><a href="#cb3-192" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb3-193"><a href="#cb3-193" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> ccn<span class="sc">:::</span><span class="fu">get_pin</span>(<span class="st">"esrd"</span>)</span>
+<span id="cb3-194"><a href="#cb3-194" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> purrr<span class="sc">::</span><span class="fu">map</span>(x<span class="sc">$</span>ccn, ccn<span class="sc">::</span>as_data_frame) <span class="sc">|&gt;</span> </span>
+<span id="cb3-195"><a href="#cb3-195" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">rowbind</span>()</span>
+<span id="cb3-196"><a href="#cb3-196" aria-hidden="true" tabindex="-1"></a>x</span>
+<span id="cb3-197"><a href="#cb3-197" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-198"><a href="#cb3-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-199"><a href="#cb3-199" aria-hidden="true" tabindex="-1"></a><span class="fu">### Types</span></span>
+<span id="cb3-200"><a href="#cb3-200" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-203"><a href="#cb3-203" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb3-204"><a href="#cb3-204" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: esrd-counts</span></span>
+<span id="cb3-205"><a href="#cb3-205" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb3-206"><a href="#cb3-206" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb3-207"><a href="#cb3-207" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb3-208"><a href="#cb3-208" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span></span>
+<span id="cb3-209"><a href="#cb3-209" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">fcount</span>(type, range) <span class="sc">|&gt;</span></span>
+<span id="cb3-210"><a href="#cb3-210" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">roworder</span>(<span class="sc">-</span>N) <span class="sc">|&gt;</span></span>
+<span id="cb3-211"><a href="#cb3-211" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb3-212"><a href="#cb3-212" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_options</span>(</span>
+<span id="cb3-213"><a href="#cb3-213" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.width =</span> gt<span class="sc">::</span><span class="fu">pct</span>(<span class="dv">100</span>),</span>
+<span id="cb3-214"><a href="#cb3-214" aria-hidden="true" tabindex="-1"></a>    <span class="at">quarto.disable_processing =</span> <span class="cn">TRUE</span></span>
+<span id="cb3-215"><a href="#cb3-215" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb3-216"><a href="#cb3-216" aria-hidden="true" tabindex="-1"></a>  gtExtras<span class="sc">::</span><span class="fu">gt_theme_nytimes</span>() <span class="sc">|&gt;</span></span>
+<span id="cb3-217"><a href="#cb3-217" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_style</span>(</span>
+<span id="cb3-218"><a href="#cb3-218" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> gt<span class="sc">::</span><span class="fu">cell_text</span>(</span>
+<span id="cb3-219"><a href="#cb3-219" aria-hidden="true" tabindex="-1"></a>      <span class="at">font =</span> gt<span class="sc">::</span><span class="fu">google_font</span>(<span class="at">name =</span> <span class="st">"JetBrains Mono"</span>),</span>
+<span id="cb3-220"><a href="#cb3-220" aria-hidden="true" tabindex="-1"></a>      <span class="at">color =</span> <span class="st">"grey60"</span>,</span>
+<span id="cb3-221"><a href="#cb3-221" aria-hidden="true" tabindex="-1"></a>      <span class="at">size =</span> <span class="st">"small"</span></span>
+<span id="cb3-222"><a href="#cb3-222" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb3-223"><a href="#cb3-223" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> gt<span class="sc">::</span><span class="fu">cells_body</span>(<span class="at">columns =</span> range)</span>
+<span id="cb3-224"><a href="#cb3-224" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb3-225"><a href="#cb3-225" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_style</span>(</span>
+<span id="cb3-226"><a href="#cb3-226" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> gt<span class="sc">::</span><span class="fu">cell_text</span>(</span>
+<span id="cb3-227"><a href="#cb3-227" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"grey40"</span>, </span>
+<span id="cb3-228"><a href="#cb3-228" aria-hidden="true" tabindex="-1"></a>       <span class="at">weight =</span> <span class="st">"bold"</span>,</span>
+<span id="cb3-229"><a href="#cb3-229" aria-hidden="true" tabindex="-1"></a>       <span class="at">size =</span> <span class="st">"small"</span>,</span>
+<span id="cb3-230"><a href="#cb3-230" aria-hidden="true" tabindex="-1"></a>       <span class="at">font =</span> gt<span class="sc">::</span><span class="fu">google_font</span>(<span class="at">name =</span> <span class="st">"JetBrains Mono"</span>)</span>
+<span id="cb3-231"><a href="#cb3-231" aria-hidden="true" tabindex="-1"></a>       ),</span>
+<span id="cb3-232"><a href="#cb3-232" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> gt<span class="sc">::</span><span class="fu">cells_body</span>(<span class="at">columns =</span> type)</span>
+<span id="cb3-233"><a href="#cb3-233" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb3-234"><a href="#cb3-234" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-235"><a href="#cb3-235" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-236"><a href="#cb3-236" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-237"><a href="#cb3-237" aria-hidden="true" tabindex="-1"></a><span class="fu">### Chains</span></span>
+<span id="cb3-238"><a href="#cb3-238" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-241"><a href="#cb3-241" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb3-242"><a href="#cb3-242" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: esrd-chains</span></span>
+<span id="cb3-243"><a href="#cb3-243" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb3-244"><a href="#cb3-244" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb3-245"><a href="#cb3-245" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb3-246"><a href="#cb3-246" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> ccn<span class="sc">:::</span><span class="fu">get_pin</span>(<span class="st">"esrd"</span>)</span>
+<span id="cb3-247"><a href="#cb3-247" aria-hidden="true" tabindex="-1"></a>x <span class="sc">|&gt;</span></span>
+<span id="cb3-248"><a href="#cb3-248" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">fcount</span>(chain) <span class="sc">|&gt;</span></span>
+<span id="cb3-249"><a href="#cb3-249" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">roworder</span>(<span class="sc">-</span>N) <span class="sc">|&gt;</span></span>
+<span id="cb3-250"><a href="#cb3-250" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb3-251"><a href="#cb3-251" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_options</span>(</span>
+<span id="cb3-252"><a href="#cb3-252" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.width =</span> gt<span class="sc">::</span><span class="fu">pct</span>(<span class="dv">100</span>),</span>
+<span id="cb3-253"><a href="#cb3-253" aria-hidden="true" tabindex="-1"></a>    <span class="at">quarto.disable_processing =</span> <span class="cn">TRUE</span></span>
+<span id="cb3-254"><a href="#cb3-254" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb3-255"><a href="#cb3-255" aria-hidden="true" tabindex="-1"></a>  gtExtras<span class="sc">::</span><span class="fu">gt_theme_nytimes</span>() <span class="sc">|&gt;</span></span>
+<span id="cb3-256"><a href="#cb3-256" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_style</span>(</span>
+<span id="cb3-257"><a href="#cb3-257" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> gt<span class="sc">::</span><span class="fu">cell_text</span>(</span>
+<span id="cb3-258"><a href="#cb3-258" aria-hidden="true" tabindex="-1"></a>      <span class="at">color =</span> <span class="st">"grey40"</span>,</span>
+<span id="cb3-259"><a href="#cb3-259" aria-hidden="true" tabindex="-1"></a>      <span class="at">weight =</span> <span class="st">"bold"</span>,</span>
+<span id="cb3-260"><a href="#cb3-260" aria-hidden="true" tabindex="-1"></a>      <span class="at">size =</span> <span class="st">"small"</span>,</span>
+<span id="cb3-261"><a href="#cb3-261" aria-hidden="true" tabindex="-1"></a>      <span class="at">font =</span> gt<span class="sc">::</span><span class="fu">google_font</span>(<span class="at">name =</span> <span class="st">"JetBrains Mono"</span>)</span>
+<span id="cb3-262"><a href="#cb3-262" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb3-263"><a href="#cb3-263" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> gt<span class="sc">::</span><span class="fu">cells_body</span>(<span class="at">columns =</span> chain)</span>
+<span id="cb3-264"><a href="#cb3-264" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb3-265"><a href="#cb3-265" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-266"><a href="#cb3-266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-267"><a href="#cb3-267" aria-hidden="true" tabindex="-1"></a></span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

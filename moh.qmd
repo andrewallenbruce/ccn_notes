@@ -18,7 +18,10 @@ source("code/gt_theme.R")
 
 ## Hospital Ranges
 
-The last three characters of a Medicaid-Only Hospital CCN represent the facility range. The facility type is encoded in the third character of the last four characters. The table below summarizes the valid facility type codes and their corresponding ranges. 
+The last three characters of a Medicaid-Only Hospital CCN represent the facility
+range. The facility type is encoded in the third character of the last four
+characters. The table below summarizes the valid facility type codes and their
+corresponding ranges.
 
 ```{r}
 #| label: medicaid-hospital-ranges
@@ -53,52 +56,21 @@ ccn::medicaid_ranges |>
 
 ## Examples
 
-```{r examples}
-parse("01J008")
-
-decode("01J008")
+```{r}
+#| label: moh-examples
+#| echo: false
+#| message: false
+ccn::parse("01J008")
+ccn::decode("01J008")
 
 purrr::map(c("01J008", "A5J508"), ccn::as_data_frame) |> 
   collapse::rowbind(fill = TRUE) |> 
   gt::gt() |> 
-  gt_chamber_theme() |>
-  gt::tab_options(quarto.disable_processing = TRUE)
-```
-
-
-```{r}
-purrr::map(c("050599", "440058"), ccn::as_data_frame) |> 
-  collapse::rowbind(fill = TRUE)
-```
-
-
-```{r}
-hosp <- ccn:::get_pin("hosp")
-
-hcount <- hosp |> 
-  collapse::sbt(!is.na(subgroup)) |>
-  collapse::sbt(
-    stringi::stri_detect_regex(subgroup, "REH[:]", negate = TRUE)) |> 
-  collapse::fcount(subgroup) |> 
-  collapse::roworder(-N)
-
-hcount |> 
-  collapse::sbt(N > 11) |>
-  gt::gt() |> 
-  gt_chamber_theme() |>
-  gt::tab_options(quarto.disable_processing = TRUE)
-
-hcount |> 
-  collapse::sbt(N <= 11) |>
-  gt::gt(groupname_col = "N", row_group_as_column = TRUE) |> 
-  gt_chamber_theme() |>
-  gt::tab_options(quarto.disable_processing = TRUE)
-
-hosp |> 
-  collapse::sbt(!is.na(subgroup)) |>
-  collapse::sbt(stringi::stri_detect_regex(subgroup, "REH[:]")) |> 
-  gt::gt() |> 
-  gt_chamber_theme() |>
-  gt::tab_options(quarto.disable_processing = TRUE)
+  gtExtras::gt_theme_nytimes() |> 
+  gt::sub_missing() |> 
+  gt::tab_options(
+    table.width = gt::pct(100),
+    quarto.disable_processing = TRUE
+  )
 ```
 

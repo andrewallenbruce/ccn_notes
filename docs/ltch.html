@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.35">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="dcterms.date" content="2026-04-03">
+<meta name="dcterms.date" content="2026-04-05">
 <title>LTCH – CCNs</title>
 <style>
 /* Default styles provided by pandoc.
@@ -78,9 +78,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-da20407cf26fa8485970518743f0f7f9.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b4e155474cb502a750d249776b6f914c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-b4e155474cb502a750d249776b6f914c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-b4e155474cb502a750d249776b6f914c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-97dbf932a91fe45e4e875d81672c575b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-97dbf932a91fe45e4e875d81672c575b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-97dbf932a91fe45e4e875d81672c575b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -161,7 +161,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./opo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">OPOs/TXNs</span></a>
+  <a href="./opo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">OPO/TXN</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -201,7 +201,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./snf.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">SNFs</span></a>
+  <a href="./snf.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">SNF</span></a>
   </div>
 </li>
       </ul>
@@ -269,17 +269,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./moh.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">MOH</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./nf.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Nursing Facilities</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./icf-iid.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">ICF-IID</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./moh.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">MOH</span></a>
   </div>
 </li>
       </ul>
@@ -329,7 +329,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 3, 2026</p>
+      <p class="date">April 5, 2026</p>
     </div>
   </div>
   
@@ -340,89 +340,719 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header><section id="long-term-care-hospitals-ltch" class="level2"><h2 class="anchored" data-anchor-id="long-term-care-hospitals-ltch">Long-Term Care Hospitals (LTCH)</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu">ccn</span><span class="fu">:::</span><span class="fu"><a href="https://andrewallenbruce.github.io/ccn/reference/get_pin.html">get_pin</a></span><span class="op">(</span><span class="st">"ltch"</span><span class="op">)</span></span>
-<span><span class="va">x</span> <span class="op">|&gt;</span> <span class="fu">collapse</span><span class="fu">::</span><span class="fu"><a href="https://fastverse.org/collapse/reference/descr.html">descr</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Dataset: x, 3 Variables, N = 324
---------------------------------------------------------------------------------
-ccn (character): 
-Statistics
-    N  Ndist
-  324    324
-Table
-                Freq   Perc
-012006             1   0.31
-012008             1   0.31
-012009             1   0.31
-012010             1   0.31
-012011             1   0.31
-012012             1   0.31
-012014             1   0.31
-022001             1   0.31
-032001             1   0.31
-032002             1   0.31
-032004             1   0.31
-032005             1   0.31
-042004             1   0.31
-042008             1   0.31
-... 310 Others   310  95.68
+<div class="cell-output-display">
+<div id="fkcjuxgkfs" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+#fkcjuxgkfs table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-Summary of Table Frequencies
-   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-      1       1       1       1       1       1 
---------------------------------------------------------------------------------
-provider_name (character): 
-Statistics
-    N  Ndist
-  324    324
-Table
-                                             Freq   Perc
-INFIRMARY LTAC HOSPITAL                         1   0.31
-SELECT SPECIALTY HOSPITAL - BIRMINGHAM          1   0.31
-NOLAND HOSPITAL BIRMINGHAM II, LLC              1   0.31
-NOLAND HOSPITAL DOTHAN II, LLC                  1   0.31
-NOLAND HOSPITAL ANNISTON II, LLC                1   0.31
-NOLAND HOSPITAL TUSCALOOSA II, LLC              1   0.31
-NORTH ALABAMA SPECIALTY HOSPITAL                1   0.31
-ST ELIAS SPECIALTY HOSPITAL                     1   0.31
-SELECT SPECIALTY HOSPITAL PHOENIX               1   0.31
-SELECT SPECIALTY HOSPITAL-TUCSON NORTHWEST      1   0.31
-CORNERSTONE SPECIALTY HOSPITALS TUCSON          1   0.31
-SELECT SPECIALTY HOSPITAL ARIZONA               1   0.31
-ARKANSAS EXTENDED CARE HOSPITAL HOT SPRINGS     1   0.31
-ARKANSAS EXTENDED CARE HOSPITAL-FT SMITH        1   0.31
-... 310 Others                                310  95.68
+#fkcjuxgkfs thead, #fkcjuxgkfs tbody, #fkcjuxgkfs tfoot, #fkcjuxgkfs tr, #fkcjuxgkfs td, #fkcjuxgkfs th {
+  border-style: none;
+}
 
-Summary of Table Frequencies
-   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-      1       1       1       1       1       1 
---------------------------------------------------------------------------------
-state (character): 
-Statistics
-    N  Ndist
-  324     47
-Table
-               Freq   Perc
-TX               41  12.65
-FL               23   7.10
-LA               22   6.79
-CA               20   6.17
-OH               18   5.56
-MI               12   3.70
-PA               12   3.70
-GA               11   3.40
-KY               10   3.09
-MA               10   3.09
-NJ                9   2.78
-MO                8   2.47
-OK                8   2.47
-TN                8   2.47
-... 33 Others   112  34.57
+#fkcjuxgkfs p {
+  margin: 0;
+  padding: 0;
+}
 
-Summary of Table Frequencies
-   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-    1.0     2.0     6.0     6.9     8.0    41.0 
---------------------------------------------------------------------------------</code></pre>
+#fkcjuxgkfs .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 100%;
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#fkcjuxgkfs .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#fkcjuxgkfs .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#fkcjuxgkfs .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#fkcjuxgkfs .gt_heading {
+  background-color: #FFFFFF;
+  text-align: left;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#fkcjuxgkfs .gt_bottom_border {
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#fkcjuxgkfs .gt_col_headings {
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: none;
+  border-bottom-width: 1px;
+  border-bottom-color: #334422;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#fkcjuxgkfs .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 12px;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#fkcjuxgkfs .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 12px;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#fkcjuxgkfs .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#fkcjuxgkfs .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#fkcjuxgkfs .gt_column_spanner {
+  border-bottom-style: none;
+  border-bottom-width: 1px;
+  border-bottom-color: #334422;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#fkcjuxgkfs .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#fkcjuxgkfs .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#fkcjuxgkfs .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#fkcjuxgkfs .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#fkcjuxgkfs .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#fkcjuxgkfs .gt_row {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#fkcjuxgkfs .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fkcjuxgkfs .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#fkcjuxgkfs .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#fkcjuxgkfs .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#fkcjuxgkfs .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fkcjuxgkfs .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#fkcjuxgkfs .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#fkcjuxgkfs .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#fkcjuxgkfs .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fkcjuxgkfs .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#fkcjuxgkfs .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#fkcjuxgkfs .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#fkcjuxgkfs .gt_table_body {
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #FFFFFF;
+}
+
+#fkcjuxgkfs .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#fkcjuxgkfs .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fkcjuxgkfs .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#fkcjuxgkfs .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#fkcjuxgkfs .gt_left {
+  text-align: left;
+}
+
+#fkcjuxgkfs .gt_center {
+  text-align: center;
+}
+
+#fkcjuxgkfs .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#fkcjuxgkfs .gt_font_normal {
+  font-weight: normal;
+}
+
+#fkcjuxgkfs .gt_font_bold {
+  font-weight: bold;
+}
+
+#fkcjuxgkfs .gt_font_italic {
+  font-style: italic;
+}
+
+#fkcjuxgkfs .gt_super {
+  font-size: 65%;
+}
+
+#fkcjuxgkfs .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#fkcjuxgkfs .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#fkcjuxgkfs .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#fkcjuxgkfs .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#fkcjuxgkfs .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#fkcjuxgkfs .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#fkcjuxgkfs .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#fkcjuxgkfs .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#fkcjuxgkfs div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="true" data-quarto-bootstrap="false">
+<thead><tr class="gt_col_headings">
+<th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase;" scope="col" id="ccn">ccn</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase;" scope="col" id="provider_name">provider_name</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="color: #A9A9A9; font-family: 'Source Sans Pro'; text-transform: uppercase;" scope="col" id="state">state</th>
+    </tr></thead>
+<tbody class="gt_table_body">
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">012006</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">INFIRMARY LTAC HOSPITAL</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">AL</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">012008</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">SELECT SPECIALTY HOSPITAL - BIRMINGHAM</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">AL</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">012009</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">NOLAND HOSPITAL BIRMINGHAM II, LLC</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">AL</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">012010</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">NOLAND HOSPITAL DOTHAN II, LLC</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">AL</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">012011</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">NOLAND HOSPITAL ANNISTON II, LLC</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">AL</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">012012</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">NOLAND HOSPITAL TUSCALOOSA II, LLC</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">AL</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">012014</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">NORTH ALABAMA SPECIALTY HOSPITAL</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">AL</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">022001</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">ST ELIAS SPECIALTY HOSPITAL</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">AK</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">032001</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">SELECT SPECIALTY HOSPITAL PHOENIX</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">AZ</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">032002</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">SELECT SPECIALTY HOSPITAL-TUCSON NORTHWEST</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">AZ</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">032004</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">CORNERSTONE SPECIALTY HOSPITALS TUCSON</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">AZ</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">032005</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">SELECT SPECIALTY HOSPITAL ARIZONA</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">AZ</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">042004</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">ARKANSAS EXTENDED CARE HOSPITAL HOT SPRINGS</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">AR</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">042008</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">ARKANSAS EXTENDED CARE HOSPITAL-FT SMITH</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">AR</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">042009</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">REGENCY HOSPITAL OF NORTHWEST ARKANSAS</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">AR</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">042010</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">CORNERSTONE SPECIALTY HOSPITALS LITTLE ROCK</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">AR</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">042011</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">ADVANCED CARE HOSPITAL WHITE COUNTY</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">AR</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">042012</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">BAPTIST HEALTH EXTENDED CARE HOSPITAL-LR INC</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">AR</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">042013</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">ARKANSAS CONTINUED CARE HOSPITAL OF JONESBORO</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">AR</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">052031</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">BARLOW RESPIRATORY HOSPITAL</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">CA</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">052032</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">KINDRED HOSPITAL - LOS ANGELES</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">CA</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">052033</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">VIBRA HOSPITAL OF SACRAMENTO</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">CA</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">052034</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">KINDRED HOSPITAL - SAN FRANCISCO BAY AREA</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">CA</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">052035</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">KINDRED HOSPITAL WESTMINSTER</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">CA</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">052036</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">KINDRED HOSPITAL - SAN DIEGO</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">CA</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">052037</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">KINDRED HOSPITAL ONTARIO</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">CA</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">052038</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">KINDRED HOSPITAL -- LA MIRADA</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">CA</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">052039</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">KINDRED HOSPITAL BREA</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">CA</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">052043</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">KENTFIELD HOSPITAL</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">CA</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">052044</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">SELECT SPECIALTY HOSPITAL - SAN DIEGO</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">CA</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">052045</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">KINDRED HOSPITAL BALDWIN PARK</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">CA</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">052046</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">KINDRED HOSPITAL PARAMOUNT</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">CA</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">052047</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">VIBRA HOSPITAL OF NORTHERN CALIFORNIA</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">CA</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">052049</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">KINDRED HOSPITAL RANCHO</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">CA</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">052050</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">KINDRED HOSPITAL SOUTH BAY</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">CA</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">052052</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">KINDRED HOSPITAL RIVERSIDE</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">CA</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">052054</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">MONROVIA MEMORIAL HOSPITAL</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">CA</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">052055</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">CENTRAL VALLEY SPECIALTY HOSPITAL</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">CA</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">052057</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">SONOMA SPECIALTY HOSPITAL</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">CA</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">062009</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">KINDRED HOSPITAL-DENVER</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">CO</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">062011</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">CRAIG HOSPITAL</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">CO</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">062012</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">PAM SPECIALTY HOSPITAL OF DENVER</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">CO</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">062013</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">KINDRED HOSPITAL AURORA</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">CO</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">062014</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">VIBRA HOSPITAL OF DENVER</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">CO</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">062017</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">NORTHERN COLORADO LONG TERM ACUTE HOSP - LONG TERM</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">CO</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">072003</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">GAYLORD HOSPITAL INC</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">CT</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">072004</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">HOSPITAL FOR SPECIAL CARE</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">CT</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">082000</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">SELECT SPECIALTY HOSPITAL WILMINGTON</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">DE</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">092002</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">BRIDGEPOINT CONT CARE HOSPITAL - CAPITOL HILL</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">DC</td>
+</tr>
+<tr>
+<td headers="ccn" class="gt_row gt_right" style="font-family: 'Source Sans Pro'; font-weight: 400;">092003</td>
+<td headers="provider_name" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">BRIDGEPOINT CONT CARE HOSPITAL - NAT HARBORSIDE</td>
+<td headers="state" class="gt_row gt_left" style="font-family: 'Source Sans Pro'; font-weight: 400;">DC</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 
@@ -890,30 +1520,40 @@ Summary of Table Frequencies
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span><span class="co"> html_document</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="an">editor_options:</span><span class="co"> </span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">  chunk_output_type: console</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu"># LTCH</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup}</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">#| cache: false</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">#| comment: ""</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ccn)</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"code/gt_theme.R"</span>)</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="fu">## Long-Term Care Hospitals (LTCH)</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> ccn<span class="sc">:::</span><span class="fu">get_pin</span>(<span class="st">"ltch"</span>)</span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>x <span class="sc">|&gt;</span> collapse<span class="sc">::</span><span class="fu">descr</span>()</span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span><span class="co"> html_document</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">editor_options:</span><span class="co"> </span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">  chunk_output_type: console</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu"># LTCH</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup}</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">#| cache: false</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">#| comment: ""</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ccn)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"code/gt_theme.R"</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">## Long-Term Care Hospitals (LTCH)</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ltch</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> ccn<span class="sc">:::</span><span class="fu">get_pin</span>(<span class="st">"ltch"</span>)</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>x <span class="sc">|&gt;</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">50</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  gtExtras<span class="sc">::</span><span class="fu">gt_theme_nytimes</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">tab_options</span>(</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.width =</span> gt<span class="sc">::</span><span class="fu">pct</span>(<span class="dv">100</span>),</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">quarto.disable_processing =</span> <span class="cn">TRUE</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

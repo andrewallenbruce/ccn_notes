@@ -19,6 +19,16 @@ source("code/gt_theme.R")
 ## Long-Term Care Hospitals (LTCH)
 
 ```{r}
+#| label: ltch
+#| echo: false
+#| message: false
 x <- ccn:::get_pin("ltch")
-x |> collapse::descr()
+x |>
+  head(50) |> 
+  gt::gt() |> 
+  gtExtras::gt_theme_nytimes() |> 
+  gt::tab_options(
+    table.width = gt::pct(100),
+    quarto.disable_processing = TRUE
+  )
 ```

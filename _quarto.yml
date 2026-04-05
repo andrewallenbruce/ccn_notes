@@ -44,9 +44,9 @@ book:
         - pxrf.qmd
     - part: medicaid.qmd
       chapters:
+        - moh.qmd
         - nf.qmd
         - icf-iid.qmd
-        - moh.qmd
   appendices:
     - vctrs.qmd
     - resources.qmd

@@ -4,7 +4,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-# OPOs/TXNs
+# OPO/TXN
 
 <br>
 
@@ -145,7 +145,7 @@ x$opo_active |>
 
 ## Approved Transplant Programs
 
-### Types
+### Procedure Types
 
 ```{r}
 #| label: txc-types
