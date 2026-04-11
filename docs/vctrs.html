@@ -420,16 +420,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span></span>
 <span><span class="va">x</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;ccn[25]&gt;
- [1]     001500     001502     001503 &lt;NA&gt;           001510     001511
- [7]     001513     001514     001515     001517 &lt;NA&gt;           001524
-[13] &lt;NA&gt;           001528     001529 &lt;NA&gt;           001534     001535
-[19]     001536     001541 &lt;NA&gt;           001550     001552     001556
-[25]     001557</code></pre>
+<pre><code>&lt;ccn_vctr[25]&gt;
+ [1] 001500 &lt;NA&gt;   001503 &lt;NA&gt;   &lt;NA&gt;   001511 001513 001514 &lt;NA&gt;   001517
+[11] 001518 001524 &lt;NA&gt;   &lt;NA&gt;   001529 &lt;NA&gt;   001534 001535 001536 &lt;NA&gt;  
+[21] 001545 001550 001552 001556 &lt;NA&gt;  </code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> ccn [1:25]     001500,     001502,     001503, &lt;NA&gt;,     001510,     00151...</code></pre>
+<pre><code> ccn [1:25] 001500, &lt;NA&gt;, 001503, &lt;NA&gt;, &lt;NA&gt;, 001511, 001513, 001514, &lt;NA&gt;,...</code></pre>
 </div>
 </div>
 <p>We then follow up with a user friendly helper. Here we’ll use <code><a href="https://vctrs.r-lib.org/reference/vec_cast.html">vec_cast()</a></code> to allow it to accept anything coercible to a character:</p>
@@ -443,11 +441,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">new_ccn</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;ccn[0]&gt;</code></pre>
+<pre><code>&lt;ccn_vctr[0]&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ccn</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;ccn[0]&gt;</code></pre>
+<pre><code>&lt;ccn_vctr[0]&gt;</code></pre>
 </div>
 </div>
 <p>For the convenience of your users, consider implementing an <code>is_ccn()</code> function:</p>
@@ -469,11 +467,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu">ccn</span><span class="op">(</span><span class="va">examples</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">20</span><span class="op">]</span><span class="op">)</span></span>
 <span><span class="va">x</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;ccn[20]&gt;
- [1]     001500     001502     001503 &lt;NA&gt;           001510     001511
- [7]     001513     001514     001515     001517 &lt;NA&gt;           001524
-[13] &lt;NA&gt;           001528     001529 &lt;NA&gt;           001534     001535
-[19]     001536     001541</code></pre>
+<pre><code>&lt;ccn_vctr[20]&gt;
+ [1] 001500 &lt;NA&gt;   001503 &lt;NA&gt;   &lt;NA&gt;   001511 001513 001514 &lt;NA&gt;   001517
+[11] 001518 001524 &lt;NA&gt;   &lt;NA&gt;   001529 &lt;NA&gt;   001534 001535 001536 &lt;NA&gt;  </code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -493,27 +489,27 @@ Tip
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>            x
-1      001500
-2      001502
-3      001503
-4        &lt;NA&gt;
-5      001510
-6      001511
-7      001513
-8      001514
-9      001515
-10     001517
-11       &lt;NA&gt;
-12     001524
-13       &lt;NA&gt;
-14     001528
-15     001529
-16       &lt;NA&gt;
-17     001534
-18     001535
-19     001536
-20     001541</code></pre>
+<pre><code>        x
+1  001500
+2    &lt;NA&gt;
+3  001503
+4    &lt;NA&gt;
+5    &lt;NA&gt;
+6  001511
+7  001513
+8  001514
+9    &lt;NA&gt;
+10 001517
+11 001518
+12 001524
+13   &lt;NA&gt;
+14   &lt;NA&gt;
+15 001529
+16   &lt;NA&gt;
+17 001534
+18 001535
+19 001536
+20   &lt;NA&gt;</code></pre>
 </div>
 </div>
 <p>For optimal display, I recommend also defining an abbreviated type name, which should be 4-5 letters for commonly used vectors. This is used in tibbles and in <code><a href="https://rdrr.io/r/utils/str.html">str()</a></code>:</p>
@@ -525,32 +521,32 @@ Tip
 <span><span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 20 × 1
-   x         
-   &lt;ccn&gt;     
- 1     001500
- 2     001502
- 3     001503
- 4 NA        
- 5     001510
- 6     001511
- 7     001513
- 8     001514
- 9     001515
-10     001517
-11 NA        
-12     001524
-13 NA        
-14     001528
-15     001529
-16 NA        
-17     001534
-18     001535
-19     001536
-20     001541</code></pre>
+   x     
+   &lt;ccn&gt; 
+ 1 001500
+ 2 NA    
+ 3 001503
+ 4 NA    
+ 5 NA    
+ 6 001511
+ 7 001513
+ 8 001514
+ 9 NA    
+10 001517
+11 001518
+12 001524
+13 NA    
+14 NA    
+15 001529
+16 NA    
+17 001534
+18 001535
+19 001536
+20 NA    </code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> ccn [1:20]     001500,     001502,     001503, &lt;NA&gt;,     001510,     00151...</code></pre>
+<pre><code> ccn [1:20] 001500, &lt;NA&gt;, 001503, &lt;NA&gt;, &lt;NA&gt;, 001511, 001513, 001514, &lt;NA&gt;,...</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -587,22 +583,22 @@ Tip
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://vctrs.r-lib.org/reference/vec_ptype2.html">vec_ptype2</a></span><span class="op">(</span><span class="st">"bogus"</span>, <span class="fu">ccn</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>character(0)</code></pre>
+<pre><code>&lt;ccn_vctr[0]&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://vctrs.r-lib.org/reference/vec_ptype2.html">vec_ptype2</a></span><span class="op">(</span><span class="fu">ccn</span><span class="op">(</span><span class="op">)</span>, <span class="cn">NA</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;ccn[0]&gt;</code></pre>
+<pre><code>&lt;ccn_vctr[0]&gt;</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://vctrs.r-lib.org/reference/vec_ptype2.html">vec_ptype2</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="fu">ccn</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;ccn[0]&gt;</code></pre>
+<pre><code>&lt;ccn_vctr[0]&gt;</code></pre>
 </div>
 </div>
 <p>By default and in simple cases, an object of the same class is compatible with itself:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://vctrs.r-lib.org/reference/vec_ptype2.html">vec_ptype2</a></span><span class="op">(</span><span class="fu">ccn</span><span class="op">(</span><span class="op">)</span>, <span class="fu">ccn</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;ccn[0]&gt;</code></pre>
+<pre><code>&lt;ccn_vctr[0]&gt;</code></pre>
 </div>
 </div>
 <p>However this only works if the attributes for both objects are the same. Also the default methods are a bit slower. It is always a good idea to provide an explicit coercion method for the case of identical classes.</p>
@@ -622,9 +618,9 @@ Tip
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://vctrs.r-lib.org/reference/vec_ptype.html">vec_ptype_show</a></span><span class="op">(</span><span class="fu">ccn</span><span class="op">(</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/character.html">character</a></span><span class="op">(</span><span class="op">)</span>, <span class="fu">ccn</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Prototype: &lt;character&gt;
-0. (             , &lt;ccn&gt;       ) = &lt;ccn&gt;      
-1. ( &lt;ccn&gt;       , &lt;character&gt; ) = &lt;character&gt;
-2. ( &lt;character&gt; , &lt;ccn&gt;       ) = &lt;character&gt;</code></pre>
+0. (             , &lt;ccn_vctr&gt;  ) = &lt;ccn_vctr&gt; 
+1. ( &lt;ccn_vctr&gt;  , &lt;character&gt; ) = &lt;character&gt;
+2. ( &lt;character&gt; , &lt;ccn_vctr&gt;  ) = &lt;character&gt;</code></pre>
 </div>
 </div>
 <p>The <code><a href="https://vctrs.r-lib.org/reference/vec_ptype2.html">vec_ptype2()</a></code> methods define which input is the richer type that <code>vctrs</code> should coerce to. However, they don’t perform any conversion.</p>
@@ -643,8 +639,8 @@ Tip
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://vctrs.r-lib.org/reference/vec_cast.html">vec_cast</a></span><span class="op">(</span><span class="st">"030113"</span>, <span class="fu">ccn</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;ccn[1]&gt;
-[1]     030113</code></pre>
+<pre><code>&lt;ccn_vctr[1]&gt;
+[1] 030113</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb38"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://vctrs.r-lib.org/reference/vec_cast.html">vec_cast</a></span><span class="op">(</span><span class="fu">ccn</span><span class="op">(</span><span class="st">"030113"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/character.html">character</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -659,22 +655,22 @@ Tip
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb42"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://vctrs.r-lib.org/reference/vec_c.html">vec_c</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="fu">ccn</span><span class="op">(</span><span class="st">"030113"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;ccn[2]&gt;
-[1] &lt;NA&gt;           030113</code></pre>
+<pre><code>&lt;ccn_vctr[2]&gt;
+[1] &lt;NA&gt;   030113</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb44"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># but</span></span>
 <span><span class="fu"><a href="https://vctrs.r-lib.org/reference/vec_c.html">vec_c</a></span><span class="op">(</span><span class="cn">TRUE</span>, <span class="fu">ccn</span><span class="op">(</span><span class="st">"030113"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in `vec_c()`:
-! Can't combine `..1` &lt;logical&gt; and `..2` &lt;ccn&gt;.</code></pre>
+! Can't combine `..1` &lt;logical&gt; and `..2` &lt;ccn_vctr&gt;.</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb46"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu">ccn</span><span class="op">(</span><span class="va">examples</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span><span class="op">)</span></span>
 <span><span class="va">x</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">LETTERS</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span></span>
 <span><span class="va">x</span><span class="op">[[</span><span class="fl">3</span><span class="op">]</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">LETTERS</span><span class="op">[</span><span class="fl">5</span><span class="op">]</span></span>
 <span><span class="va">x</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;ccn[5]&gt;
-[1]          A          B          E &lt;NA&gt;           001510</code></pre>
+<pre><code>&lt;ccn_vctr[5]&gt;
+[1]  A    B    E   &lt;NA&gt; &lt;NA&gt;</code></pre>
 </div>
 </div>
 <p>You’ll also get mostly correct behaviour for <code><a href="https://rdrr.io/r/base/c.html">c()</a></code>. The exception is when you use <code><a href="https://rdrr.io/r/base/c.html">c()</a></code> with a base R class:</p>
@@ -687,7 +683,7 @@ Tip
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb50"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu">ccn</span><span class="op">(</span><span class="st">"030113"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="st">"A"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in `vec_c()`:
-! Can't combine `..1` &lt;ccn&gt; and `..2` &lt;factor&lt;61b97&gt;&gt;.</code></pre>
+! Can't combine `..1` &lt;ccn_vctr&gt; and `..2` &lt;factor&lt;61b97&gt;&gt;.</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb52"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Incorrect</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>, <span class="fu">ccn</span><span class="op">(</span><span class="st">"030113"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>

@@ -28,8 +28,6 @@ In [2007](https://www.cms.gov/medicare/provider-enrollment-and-certification/sur
    * Medicare Identification Number
    * OSCAR Number^[Online Survey, Certification, and Reporting System.]
 
-<br>
-
 ## CCN Format
 
 The canonical format observes the following constraints:

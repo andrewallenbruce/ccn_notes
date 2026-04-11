@@ -6,8 +6,6 @@ editor_options:
 
 # CLIA
 
-<br>
-
 Laboratories that examine human specimens for the diagnosis, prevention, or
 treatment of any disease or impairment of, or the assessment of the health of,
 human beings are yet another category of suppliers and must meet Clinical
@@ -24,9 +22,13 @@ source("code/gt_theme.R")
 ```
 
 ```{r}
+#| label: api-clia
+#| message: true
 provider::clia(count = TRUE)
 # provider::clia(ccn = provider::starts_with("11D0"))
 ```
+
+## Examples
 
 ```{r}
 parse("45D0501072")

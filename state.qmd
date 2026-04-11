@@ -1,3 +1,8 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
 # State
 
 ```{r setup}
@@ -9,8 +14,6 @@
 library(ccn)
 source("code/gt_theme.R")
 ```
-
-<br>
 
 The first two characters of each CCN represents the state in which the provider
 or supplier is located.
@@ -35,10 +38,16 @@ scenarios:
    2. Review the CCN records for Florida to determine if all the numbers in CCN range 4600-4799 were previously assigned in Florida. It is determined that some, but not all, of the numbers in that CCN range were assigned. The last number in that range that was assigned was 4701. Assign 684702 as the CCN for the new CMHC that is being processed.
    3. Review the CCN records for Florida to determine if all the numbers in CCN range 4600-4799 were previously assigned in Florida. It is determined that all the the numbers in that range were previously assigned in Florida. It is then determined after a review of the CCN records that all of the numbers in CCN range 1400-1499 were previously assigned in Florida. Look to see if all three CMHC CCN ranges for State Code 10 have been assigned. It is determined that all three CCN ranges have been previously assigned. Then look to State Code 69. You find that no CCN for CMHC in Florida has been assigned under State Code 69. The new CCN that will be assigned to the new Florida CMHC will be 691400 because is the first CCN range under State Code 69 listed for CMHCs. However, if it is determined that one of the CMHC CCN ranges under State Code 69 has been previously assigned, begin with the next available number in that CCN range.
 
-NOTE: Once the remaining pool of two digit State numeric codes are exhausted,
+
+:::: {.callout-note}
+
+Once the remaining pool of two digit State numeric codes are exhausted,
 CMS will implement a two-digit alpha-numeric code system for State Codes. For
 example: A0, A1, A2,...B0, B1, B2,..., Z8, and finally Z9. This numbering system
 will provide a pool of 260 new State Codes for future use.
+
+:::: 
+
 
 ```{r}
 #| label: ccn-states

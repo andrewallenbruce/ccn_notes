@@ -13,10 +13,9 @@ editor_options:
 #| cache: false
 #| comment: ""
 library(ccn)
+library(collapse)
 source("code/gt_theme.R")
 ```
-
-<br>
 
 Providers and Suppliers paid under _Medicare Part A_ have __6 digit__ CCNs.
 The first two characters represent the state in which the provider is located.
@@ -29,12 +28,14 @@ The last four characters identify the type of facility.
 #| echo: false
 #| message: false
 ccn::medicare_ranges |>
-  collapse::fgroup_by(abbr) |>
+  collapse::gby(abbr) |>
   collapse::fsummarise(
-    desc = toString(desc),
+    desc = collapse::fslice(desc),
     range = toString(range)
   ) |>
+  collapse::slt(abbr, range, desc) |> 
   gt::gt() |>
+  gt::cols_align("left", columns = "range") |> 
   gt::tab_options(
     table.width = gt::pct(100),
     quarto.disable_processing = TRUE
@@ -62,15 +63,27 @@ ccn::medicare_ranges |>
 ## Examples
 
 ```{r}
+#| label: load-pin
+#| echo: false
+#| message: false
+hosp <- ccn:::get_pin("hosp")
+```
+
+### Overview
+
+```{r}
+#| label: decode
+#| echo: false
+#| message: false
+collapse::qtable(ccn::decode_ccnr(hosp$ccn)[.c(facility, form)])
+```
+
+```{r}
 #| label: medicare-examples
 #| echo: false
 #| message: false
-purrr::map(c("050599", "440058"), ccn::as_data_frame) |>
-  collapse::rowbind(fill = TRUE)
-
-hosp <- ccn:::get_pin("hosp")
-
 hosp |>
+  collapse::roworder(ccn) |> 
   collapse::mtt(ccn = substring(ccn, 1L, 6L)) |>
   collapse::sbt(stringi::stri_detect_regex(ccn, "[ABEFLJGHK]")) |>
   gt::gt() |>

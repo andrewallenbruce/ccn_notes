@@ -19,11 +19,6 @@ SS_TN10 <- function(x) {
     rlang::set_names(c("state", "type", "sequence"))
 }
 
-# gt_obj <- ccn::states |>
-#   collapse::fgroup_by(abbr, name) |>
-#   collapse::fsummarise(code = toString(code)) |>
-#   gt::gt()
-
 gt_chamber_theme <- function(gt_obj, ...) {
   stopifnot(`'gt_obj' must be a 'gt_tbl'` = "gt_tbl" %in% class(gt_obj))
 
@@ -139,5 +134,3 @@ gt_chamber_theme <- function(gt_obj, ...) {
       )
     )
 }
-
-# gt_chamber_theme(gt_obj)
