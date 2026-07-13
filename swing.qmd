@@ -14,10 +14,12 @@ editor_options:
 #| cache: false
 #| comment: ""
 library(ccn)
+library(provider)
+library(collapse)
 source("code/gt_theme.R")
 ```
 
-## Hospital Providers of Extended Care Services ("Swing-Beds"):
+## Hospital Providers of Extended Care Services (Swing-Beds):
 
 "Swing-bed" is a reimbursement term that means the care and reimbursement for
 the care of a patient in a small rural hospital or CAH "swings" from acute care
@@ -48,7 +50,7 @@ A medical order in the chart by the physician is required to change status from
 acute care to swing-bed because the patient is being discharge from acute care
 status and admitted to swing-bed status. This is necessary for reimbursement
 purposes because the billing and reimbursement change or "swing." Accordingly,
-the facility is given a subprovider number for billing swing-bed services.
+the facility is given a sub-provider number for billing swing-bed services.
 
 For Medicare patients, a 3-day qualifying stay in any hospital or CAH is
 required to prior to admission to a swing-bed and the admission must be for
@@ -71,3 +73,57 @@ information for the previous 12 months.
 The SA obtains written assurance from appropriate hospital officials that the
 hospital will not operate with a greater number of inpatient hospital beds than
 permitted by the category for which approval is requested.
+
+## Example
+
+```{r}
+x <- vctrs::vec_rbind(
+  hospital(loc_type = "swing"),
+  hospital(subgroup = subgroups(swing = TRUE)))
+
+x
+
+cheapr::counts(x$sub_group) |> collapse::roworderv(
+  "count", 
+  decreasing = TRUE) |> 
+  collapse::qTBL() |> 
+  print(n = Inf)
+
+cheapr::counts(x$loc_type) |> collapse::roworderv(
+  "count", 
+  decreasing = TRUE) |> 
+  collapse::qTBL() |> 
+  print(n = Inf)
+
+cheapr::counts(x$org_type) |> collapse::roworderv(
+  "count", 
+  decreasing = TRUE) |> 
+  collapse::qTBL() |> 
+  print(n = Inf)
+```
+
+
+```{r}
+vctrs::vec_size(x$ccn)
+vctrs::vec_unique_count(x$ccn)
+
+xc <- vctrs::vec_unique(x$ccn)
+xc <- as_ccn(xc)
+
+xr <- as_ccnr(xc)
+xr <- decode_ccnr(xr)
+xr <- collapse::ss(xr, j = 1:5, check = FALSE)
+xr <- collapse::rsplit(xr, xr$form)
+
+xr$care$parent <- NULL
+
+collapse::qtab(xr$care[.c(state, facility)], sort = TRUE, drop = TRUE)
+```
+
+
+```{r}
+length(xr$unit$parent)
+sum(nchar(xr$unit$parent) == 5L, na.rm = TRUE)
+index_types(as_ccn(xr$unit$parent))
+```
+

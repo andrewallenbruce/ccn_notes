@@ -421,13 +421,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="va">x</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;ccn_vctr[25]&gt;
- [1] 001500 001502 001503 001509 001510 001511 001513 001514 001515 &lt;NA&gt;  
-[11] 001518 &lt;NA&gt;   001527 001528 001529 001530 001534 001535 001536 001541
-[21] 001545 001550 001552 001556 &lt;NA&gt;  </code></pre>
+ [1] 001500 001502 001503 001509 001510 001511 &lt;NA&gt;   001514 001515 001517
+[11] &lt;NA&gt;   &lt;NA&gt;   001527 001528 001529 &lt;NA&gt;   001534 001535 001536 001541
+[21] 001545 001550 001552 001556 001557</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> ccn [1:25] 001500, 001502, 001503, 001509, 001510, 001511, 001513, 001514,...</code></pre>
+<pre><code> ccn [1:25] 001500, 001502, 001503, 001509, 001510, 001511, &lt;NA&gt;, 001514, 0...</code></pre>
 </div>
 </div>
 <p>We then follow up with a user friendly helper. Here we’ll use <code><a href="https://vctrs.r-lib.org/reference/vec_cast.html">vec_cast()</a></code> to allow it to accept anything coercible to a character:</p>
@@ -468,8 +468,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="va">x</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;ccn_vctr[20]&gt;
- [1] 001500 001502 001503 001509 001510 001511 001513 001514 001515 &lt;NA&gt;  
-[11] 001518 &lt;NA&gt;   001527 001528 001529 001530 001534 001535 001536 001541</code></pre>
+ [1] 001500 001502 001503 001509 001510 001511 &lt;NA&gt;   001514 001515 001517
+[11] &lt;NA&gt;   &lt;NA&gt;   001527 001528 001529 &lt;NA&gt;   001534 001535 001536 001541</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -496,16 +496,16 @@ Tip
 4  001509
 5  001510
 6  001511
-7  001513
+7    &lt;NA&gt;
 8  001514
 9  001515
-10   &lt;NA&gt;
-11 001518
+10 001517
+11   &lt;NA&gt;
 12   &lt;NA&gt;
 13 001527
 14 001528
 15 001529
-16 001530
+16   &lt;NA&gt;
 17 001534
 18 001535
 19 001536
@@ -529,16 +529,16 @@ Tip
  4 001509
  5 001510
  6 001511
- 7 001513
+ 7 NA    
  8 001514
  9 001515
-10 NA    
-11 001518
+10 001517
+11 NA    
 12 NA    
 13 001527
 14 001528
 15 001529
-16 001530
+16 NA    
 17 001534
 18 001535
 19 001536
@@ -546,7 +546,7 @@ Tip
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> ccn [1:20] 001500, 001502, 001503, 001509, 001510, 001511, 001513, 001514,...</code></pre>
+<pre><code> ccn [1:20] 001500, 001502, 001503, 001509, 001510, 001511, &lt;NA&gt;, 001514, 0...</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
