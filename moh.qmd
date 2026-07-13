@@ -6,12 +6,14 @@ editor_options:
 
 # MOH
 
-```{r setup}
+```{r}
+#| label: setup
 #| message: false
 #| warning: false
 #| echo: false
 #| cache: false
 #| comment: ""
+
 library(ccn)
 source("code/gt_theme.R")
 ```
@@ -27,6 +29,7 @@ corresponding ranges.
 #| label: medicaid-hospital-ranges
 #| echo: false
 #| message: false
+
 ccn::medicaid_ranges |>
   collapse::slt(abbr, desc, range) |>
   collapse::roworder(range) |>
@@ -60,17 +63,17 @@ ccn::medicaid_ranges |>
 #| label: moh-examples
 #| echo: false
 #| message: false
+
 ccn::parse("01J008")
 ccn::decode("01J008")
 
-purrr::map(c("01J008", "A5J508"), ccn::as_data_frame) |> 
-  collapse::rowbind(fill = TRUE) |> 
-  gt::gt() |> 
-  gtExtras::gt_theme_nytimes() |> 
-  gt::sub_missing() |> 
+purrr::map(c("01J008", "A5J508"), ccn::as_data_frame) |>
+  collapse::rowbind(fill = TRUE) |>
+  gt::gt() |>
+  gtExtras::gt_theme_nytimes() |>
+  gt::sub_missing() |>
   gt::tab_options(
     table.width = gt::pct(100),
     quarto.disable_processing = TRUE
   )
 ```
-

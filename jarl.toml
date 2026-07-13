@@ -1,0 +1,8 @@
+[lint]
+select = []
+ignore = ["internal_function"]
+extend-select = ["TESTTHAT"]
+include = ["**/*.{Rmd,rmd,qmd}"]
+
+[lint.assignment]
+operator = "<-"

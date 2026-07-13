@@ -6,65 +6,76 @@ editor_options:
 
 # Preface {.unnumbered}
 
-```{r setup}
+```{r}
+#| label: setup
 #| message: false
 #| warning: false
 #| echo: false
 #| cache: false
 #| comment: ""
+
 library(ccn)
 source("code/gt_theme.R")
 ```
 
-A __CMS Certification Number__ is a standardized sequence of alphanumeric characters that uniquely identify health care providers and suppliers who interact with the United States Medicare and Medicaid programs.
+A **CMS Certification Number** is a standardized sequence of alphanumeric
+characters that uniquely identify health care providers and suppliers who
+interact with the United States Medicare and Medicaid programs.
 
-The __CCN__ is used to track provider agreements and cost reports. The __NPI__^[National
-Provider Identifier] and __PTAN__^[Provider Transaction Account Number] are
-tied to an entity's CCN. The __RO__^[CMS Regional Office] (not the __SA__^[State Agency] or __MAC__^[Medicare Administrative Contractor]) assigns the CCN and maintains adequate controls.
+The **CCN** is used to track provider agreements and cost reports. The
+**NPI**^[National Provider Identifier] and **PTAN**^[Provider Transaction
+Account Number] are tied to an entity's CCN. The **RO**^[CMS Regional Office]
+(not the **SA**^[State Agency] or **MAC**^[Medicare Administrative Contractor])
+assigns the CCN and maintains adequate controls.
 
-In [2007](https://www.cms.gov/medicare/provider-enrollment-and-certification/surveycertificationgeninfo/policy-and-memos-to-states-and-regions-items/cms1206256), the __CCN__ replaced the following terms: 
+In
+[2007](https://www.cms.gov/medicare/provider-enrollment-and-certification/surveycertificationgeninfo/policy-and-memos-to-states-and-regions-items/cms1206256),
+the **CCN** replaced the following terms:
 
-   * Medicare Provider Number
-   * Medicare Identification Number
-   * OSCAR Number^[Online Survey, Certification, and Reporting System.]
+- Medicare Provider Number
+- Medicare Identification Number
+- OSCAR Number^[Online Survey, Certification, and Reporting System.]
 
 ## CCN Format
 
 The canonical format observes the following constraints:
 
-   1. Strings represented as sequences of UTF-8 characters.
-   2. Only characters in the Latin Alphabet are used: 
-      - Uppercase (`U+0041` - `U+005A`) 
-      - ASCII Digits (`U+0030` - `U+0039`)
-   3. **Providers** -> *6 characters*
-   4. **Suppliers** -> *10 characters*
+1. Strings represented as sequences of UTF-8 characters.
+2. Only characters in the Latin Alphabet are used:
+   - Uppercase (`U+0041` - `U+005A`)
+   - ASCII Digits (`U+0030` - `U+0039`)
+3. **Providers** -> *6 characters*
+4. **Suppliers** -> *10 characters*
 
 and reflects the following structure, by character position:
 
-   - `1:2` -> Entity's __State Code__^[includes certain countries and territories.].
-   - `3` -> __Facility Type/Supplier Type__. Otherwise, part of __Sequence Number__.
-   - `4` -> Subunit's Parent __Facility Type__. Otherwise, part of __Sequence Number__.
-   - `5` -> Part of __Sequence Number__.
-   - `6` -> __Emergency Hospital Type__. Otherwise, part of __Sequence Number__.
-   - `7:10` -> Only for __Suppliers__, part of __Sequence Number__.
+- `1:2` -> Entity's **State Code**^[includes certain countries and
+  territories.].
+- `3` -> **Facility Type/Supplier Type**. Otherwise, part of **Sequence
+  Number**.
+- `4` -> Subunit's Parent **Facility Type**. Otherwise, part of **Sequence
+  Number**.
+- `5` -> Part of **Sequence Number**.
+- `6` -> **Emergency Hospital Type**. Otherwise, part of **Sequence Number**.
+- `7:10` -> Only for **Suppliers**, part of **Sequence Number**.
 
 Because the structure of the CCN depends on the type of Provider, Supplier, or
 Facility it is describing, the following examples are provided:
 
-   - Medicare
-      - Provider: `670055 => 67 0055`
-      - Organ: `05P001 => 05 P 001`
-      - Emergency: `12345E => 12 345 E`
-      - Supplier: `10C0001062 => 10 C 0001062`
-   - Medicaid-Only: `01L008 => 01 L 008`
-   - IPPS-Excluded
-      - Unit: `21T101 => 21 T 101`
-      - Subunit: `02TA01 => 02 T A 01`
-
+- Medicare
+  - Provider: `670055 => 67 0055`
+  - Organ: `05P001 => 05 P 001`
+  - Emergency: `12345E => 12 345 E`
+  - Supplier: `10C0001062 => 10 C 0001062`
+- Medicaid-Only: `01L008 => 01 L 008`
+- IPPS-Excluded
+  - Unit: `21T101 => 21 T 101`
+  - Subunit: `02TA01 => 02 T A 01`
 
 ```{r}
 #| label: ex-medicare
 #| echo: false
+
 SS_NNNN("670055") |>
   as.list() |>
   list2DF() |>
@@ -95,6 +106,7 @@ SS_NNNN("670055") |>
 ```{r}
 #| label: ex-organ
 #| echo: false
+
 SS_TNNN("05P001") |>
   as.list() |>
   list2DF() |>
@@ -131,21 +143,21 @@ SS_TNNN("05P001") |>
 
 ## Providers Vs. Suppliers
 
-Medicare differentiates between __providers__ and __suppliers__, the general
+Medicare differentiates between **providers** and **suppliers**, the general
 distinction being that providers are parties who care for patients awaiting,
 receiving, or recuperating from treatment by intervening practitioners while
 suppliers include those who furnish goods and services used in care and
-treatment. 
+treatment.
 
 Medicare providers and suppliers are defined at 42 CFR 498.2. In Medicare, as
 specified in §1861(u) of the Social Security Act, providers include:
 
-   - Hospitals
-   - Critical Access Hospitals (CAHs)
-   - Skilled Nursing Facilities (SNFs)
-   - Home Health Agencies (HHAs)
-   - Hospices
-   - Comprehensive Outpatient Rehabilitation Facilities (CORFs)
+- Hospitals
+- Critical Access Hospitals (CAHs)
+- Skilled Nursing Facilities (SNFs)
+- Home Health Agencies (HHAs)
+- Hospices
+- Comprehensive Outpatient Rehabilitation Facilities (CORFs)
 
 Under §1835(a)(2) of the Act, clinics, rehabilitation agencies, or public health
 agencies are included as providers if such clinic or agency meets the
@@ -155,24 +167,23 @@ Community Mental Health Centers (CMHC) are providers of services for partial
 hospitalization services only. Providers must meet CoPs or Requirements for SNFs
 to participate in Medicare. (See definitions at 42 CFR 498.2.)
 
-
-_Suppliers_ that must meet conditions for coverage/certification to participate
+*Suppliers* that must meet conditions for coverage/certification to participate
 in Medicare are:
 
-   - Portable X-Ray Services (PXRF)
-   - End-Stage Renal Disease (ESRD) facilities
-   - Ambulatory Surgical Centers (ASC)
-   - Organ Procurement Organizations (OPO)
-   - Rural Health Clinics (RHC)
-   - Federally Qualified Health Centers (FQHC)
-   - Laboratories (CLIA)
+- Portable X-Ray Services (PXRF)
+- End-Stage Renal Disease (ESRD) facilities
+- Ambulatory Surgical Centers (ASC)
+- Organ Procurement Organizations (OPO)
+- Rural Health Clinics (RHC)
+- Federally Qualified Health Centers (FQHC)
+- Laboratories (CLIA)
 
 The above types of suppliers are distinguished from other suppliers, e.g.,
 pharmacies, prosthesis suppliers, etc., for which there are no conditions for
 coverage or certification, and which qualify for Medicare through the enrollment
 process.
 
-Medicaid, by contrast, uses __provider__ generically to include all health care
+Medicaid, by contrast, uses **provider** generically to include all health care
 vendors. (See 42 CFR 431.107(a) and 433.37) and does not distinguish between
 providers and suppliers. Section 1902(a)(27) of the Act provides for agreements
 with every person or institution providing services under the State plan. 42 CFR

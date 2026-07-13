@@ -8,14 +8,14 @@ editor_options:
 
 Portable X-Ray Facilities
 
-```{r setup}
+```{r}
+#| label: setup
 #| message: false
 #| warning: false
 #| echo: false
 #| cache: false
 #| comment: ""
+
 library(ccn)
 source("code/gt_theme.R")
 ```
-
-

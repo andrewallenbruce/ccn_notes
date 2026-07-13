@@ -8,7 +8,7 @@ editor_options:
 
 <br>
 
-An __Organ Procurement Organization__ performs or coordinates the procurement,
+An **Organ Procurement Organization** performs or coordinates the procurement,
 preservation, and transport of organs and maintains a system for locating
 prospective recipients for available organs.
 
@@ -28,12 +28,14 @@ years; the OPO must sign a new provider agreement (Form CMS-576A) and
 participate in the Organ Procurement and Transplantation Network. (See CMS Pub.
 100-07, chapter 2, sections 2810 and 2811.)
 
-```{r setup}
+```{r}
+#| label: setup
 #| message: false
 #| warning: false
 #| echo: false
 #| cache: false
 #| comment: ""
+
 library(ccn)
 source("code/gt_theme.R")
 x <- ccn:::get_pin("opo")
@@ -47,6 +49,7 @@ character P. The remaining 3 digits are the unique facility identifier.
 
 ```{r}
 #| label: opo-example
+
 organ("05P001")
 ```
 
@@ -55,64 +58,75 @@ organ("05P001")
 ```{r}
 #| label: opo-codes
 #| echo: false
-x$opo_codes |> 
-  collapse::roworder(code) |> 
-  gt::gt() |> 
+
+x$opo_codes |>
+  collapse::roworder(code) |>
+  gt::gt() |>
   gt::tab_options(
     table.width = gt::pct(100),
     quarto.disable_processing = TRUE
   ) |>
-  gtExtras::gt_theme_nytimes() |> 
+  gtExtras::gt_theme_nytimes() |>
   gt::tab_style(
     style = gt::cell_text(
-      font = gt::google_font(name = "JetBrains Mono"), 
-      color = "grey30", 
-      size = "small"), 
-    locations = gt::cells_body(columns = c(code, opo))) |> 
+      font = gt::google_font(name = "JetBrains Mono"),
+      color = "grey30",
+      size = "small"
+    ),
+    locations = gt::cells_body(columns = c(code, opo))
+  ) |>
   gt::tab_style(
-    style = gt::cell_text(weight = "bold"), 
-    locations = gt::cells_body(columns = code)) |> 
+    style = gt::cell_text(weight = "bold"),
+    locations = gt::cells_body(columns = code)
+  ) |>
   gt::tab_style(
-    style = gt::cell_text(color = "grey25"), 
-    locations = gt::cells_body(columns = opo))
+    style = gt::cell_text(color = "grey25"),
+    locations = gt::cells_body(columns = opo)
+  )
 ```
-
 
 ## Counties
 
 ```{r}
 #| label: opo-county
 #| echo: false
+
 cnty <- x$opo_county |>
-  collapse::slt(-code) |> 
+  collapse::slt(-code) |>
   collapse::roworder(state, county) |>
   collapse::fgroup_by(state) |>
-  collapse::fsummarise(counties = length(county)) |> 
+  collapse::fsummarise(counties = length(county)) |>
   collapse::fungroup()
 
-x$opo_county |> 
-  collapse::slt(-county) |> 
-  collapse::funique() |> 
+x$opo_county |>
+  collapse::slt(-county) |>
+  collapse::funique() |>
   collapse::fgroup_by(state) |>
-  collapse::fsummarise(codes = toString(code)) |> 
-  collapse::join(cnty, verbose = 0L) |> 
-  collapse::roworder(state) |> 
-  gt::gt() |> 
+  collapse::fsummarise(codes = toString(code)) |>
+  collapse::join(cnty, verbose = 0L) |>
+  collapse::roworder(state) |>
+  gt::gt() |>
   gt::tab_options(
     table.width = gt::pct(100),
     quarto.disable_processing = TRUE
   ) |>
-  gtExtras::gt_theme_nytimes() |> 
+  gtExtras::gt_theme_nytimes() |>
   gt::tab_style(
     style = gt::cell_text(
-      font = gt::google_font(name = "JetBrains Mono"), color = "grey30", size = "small"), 
-    locations = gt::cells_body(columns = c(codes, counties))) |> 
+      font = gt::google_font(name = "JetBrains Mono"),
+      color = "grey30",
+      size = "small"
+    ),
+    locations = gt::cells_body(columns = c(codes, counties))
+  ) |>
   gt::tab_style(
-    style = gt::cell_text(weight = "bold"), 
-    locations = gt::cells_body(columns = state)) |> 
+    style = gt::cell_text(weight = "bold"),
+    locations = gt::cells_body(columns = state)
+  ) |>
   gt::tab_style(
-    style = gt::cell_text(color = "grey25"), 
-    locations = gt::cells_body(columns = state))
+    style = gt::cell_text(color = "grey25"),
+    locations = gt::cells_body(columns = state)
+  )
 ```
 
 ### Active
@@ -120,27 +134,32 @@ x$opo_county |>
 ```{r}
 #| label: opo-active
 #| echo: false
-x$opo_active |> 
+
+x$opo_active |>
   collapse::roworder(ccn) |>
-  collapse::slt(-region, -orig_date) |> 
-   gt::gt() |> 
-   gt::tab_options(
+  collapse::slt(-region, -orig_date) |>
+  gt::gt() |>
+  gt::tab_options(
     table.width = gt::pct(100),
     quarto.disable_processing = TRUE
   ) |>
-  gtExtras::gt_theme_nytimes() |> 
+  gtExtras::gt_theme_nytimes() |>
   gt::tab_style(
     style = gt::cell_text(
-      font = gt::google_font(name = "JetBrains Mono"), 
-      color = "grey30", 
-      size = "small"), 
-    locations = gt::cells_body(columns = ccn)) |> 
+      font = gt::google_font(name = "JetBrains Mono"),
+      color = "grey30",
+      size = "small"
+    ),
+    locations = gt::cells_body(columns = ccn)
+  ) |>
   gt::tab_style(
-    style = gt::cell_text(weight = "bold"), 
-    locations = gt::cells_body(columns = state)) |> 
+    style = gt::cell_text(weight = "bold"),
+    locations = gt::cells_body(columns = state)
+  ) |>
   gt::tab_style(
-    style = gt::cell_text(color = "grey50", size = "small"), 
-    locations = gt::cells_body(columns = opo))
+    style = gt::cell_text(color = "grey50", size = "small"),
+    locations = gt::cells_body(columns = opo)
+  )
 ```
 
 ## Approved Transplant Programs
@@ -150,27 +169,32 @@ x$opo_active |>
 ```{r}
 #| label: txc-types
 #| echo: false
-ccn:::get_pin("txc") |> 
-  collapse::slt(txc = txc_code, description = txc_type) |> 
-  collapse::funique() |> 
-  gt::gt() |> 
+
+ccn:::get_pin("txc") |>
+  collapse::slt(txc = txc_code, description = txc_type) |>
+  collapse::funique() |>
+  gt::gt() |>
   gt::tab_options(
     table.width = gt::pct(100),
     quarto.disable_processing = TRUE
   ) |>
-  gtExtras::gt_theme_nytimes() |> 
+  gtExtras::gt_theme_nytimes() |>
   gt::tab_style(
     style = gt::cell_text(
-      font = gt::google_font(name = "JetBrains Mono"), 
-      color = "grey30", 
-      size = "small"), 
-    locations = gt::cells_body(columns = txc)) |> 
+      font = gt::google_font(name = "JetBrains Mono"),
+      color = "grey30",
+      size = "small"
+    ),
+    locations = gt::cells_body(columns = txc)
+  ) |>
   gt::tab_style(
-    style = gt::cell_text(weight = "bold"), 
-    locations = gt::cells_body(columns = txc)) |> 
+    style = gt::cell_text(weight = "bold"),
+    locations = gt::cells_body(columns = txc)
+  ) |>
   gt::tab_style(
-    style = gt::cell_text(color = "grey50", size = "small"), 
-    locations = gt::cells_body(columns = description))
+    style = gt::cell_text(color = "grey50", size = "small"),
+    locations = gt::cells_body(columns = description)
+  )
 ```
 
 ### Facilities
@@ -178,31 +202,35 @@ ccn:::get_pin("txc") |>
 ```{r}
 #| label: txc-facs
 #| echo: false
-ccn:::get_pin("txc") |> 
-  collapse::slt(-txc_type) |> 
-  collapse::rnm(code = optn_code, txc = txc_code) |> 
-  collapse::funique() |> 
+
+ccn:::get_pin("txc") |>
+  collapse::slt(-txc_type) |>
+  collapse::rnm(code = optn_code, txc = txc_code) |>
+  collapse::funique() |>
   collapse::roworder(ccn, state, code) |>
   collapse::fgroup_by(ccn, state, code) |>
-  collapse::fsummarise(txc = toString(txc)) |> 
-  collapse::fungroup() |> 
-  gt::gt() |> 
+  collapse::fsummarise(txc = toString(txc)) |>
+  collapse::fungroup() |>
+  gt::gt() |>
   gt::tab_options(
     table.width = gt::pct(100),
     quarto.disable_processing = TRUE
   ) |>
-  gtExtras::gt_theme_nytimes() |> 
+  gtExtras::gt_theme_nytimes() |>
   gt::tab_style(
     style = gt::cell_text(
-      font = gt::google_font(name = "JetBrains Mono"), 
-      color = "grey30", 
-      size = "small"), 
-    locations = gt::cells_body(columns = c(ccn, txc))) |> 
+      font = gt::google_font(name = "JetBrains Mono"),
+      color = "grey30",
+      size = "small"
+    ),
+    locations = gt::cells_body(columns = c(ccn, txc))
+  ) |>
   gt::tab_style(
-    style = gt::cell_text(weight = "bold"), 
-    locations = gt::cells_body(columns = state)) |> 
+    style = gt::cell_text(weight = "bold"),
+    locations = gt::cells_body(columns = state)
+  ) |>
   gt::tab_style(
-    style = gt::cell_text(color = "grey50", size = "small"), 
-    locations = gt::cells_body(columns = code))
+    style = gt::cell_text(color = "grey50", size = "small"),
+    locations = gt::cells_body(columns = code)
+  )
 ```
-

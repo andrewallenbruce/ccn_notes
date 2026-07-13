@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.35">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="dcterms.date" content="2026-04-04">
+<meta name="dcterms.date" content="2026-07-13">
 <title>Appendix A — Implementation – CCNs</title>
 <style>
 /* Default styles provided by pandoc.
@@ -333,7 +333,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 4, 2026</p>
+      <p class="date">July 13, 2026</p>
     </div>
   </div>
   
@@ -350,7 +350,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span></span>
 <span><span class="va">in_between</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">min</span>, <span class="va">max</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="op">(</span><span class="va">x</span> <span class="op">-</span> <span class="va">min</span><span class="op">)</span> <span class="op">*</span> <span class="op">(</span><span class="va">max</span> <span class="op">-</span> <span class="va">x</span><span class="op">)</span> <span class="op">&gt;=</span> <span class="fl">0L</span></span>
-<span><span class="co"># (N - 6L) * (14L - N) &gt;= 0L</span></span>
+<span>  <span class="co"># (N - 6L) * (14L - N) &gt;= 0L</span></span>
 <span><span class="op">}</span></span>
 <span></span>
 <span><span class="va">examples</span> <span class="op">&lt;-</span> <span class="fu">cheapr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/cheapr/man/extras.html">na_insert</a></span><span class="op">(</span><span class="fu">ccn</span><span class="fu">:::</span><span class="fu"><a href="https://andrewallenbruce.github.io/ccn/reference/get_pin.html">get_pin</a></span><span class="op">(</span><span class="st">"ccn"</span><span class="op">)</span>, prop <span class="op">=</span> <span class="fl">0.25</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -421,13 +421,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="va">x</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;ccn_vctr[25]&gt;
- [1] 001500 &lt;NA&gt;   001503 &lt;NA&gt;   &lt;NA&gt;   001511 001513 001514 &lt;NA&gt;   001517
-[11] 001518 001524 &lt;NA&gt;   &lt;NA&gt;   001529 &lt;NA&gt;   001534 001535 001536 &lt;NA&gt;  
+ [1] 001500 001502 001503 001509 001510 001511 001513 001514 001515 &lt;NA&gt;  
+[11] 001518 &lt;NA&gt;   001527 001528 001529 001530 001534 001535 001536 001541
 [21] 001545 001550 001552 001556 &lt;NA&gt;  </code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> ccn [1:25] 001500, &lt;NA&gt;, 001503, &lt;NA&gt;, &lt;NA&gt;, 001511, 001513, 001514, &lt;NA&gt;,...</code></pre>
+<pre><code> ccn [1:25] 001500, 001502, 001503, 001509, 001510, 001511, 001513, 001514,...</code></pre>
 </div>
 </div>
 <p>We then follow up with a user friendly helper. Here we’ll use <code><a href="https://vctrs.r-lib.org/reference/vec_cast.html">vec_cast()</a></code> to allow it to accept anything coercible to a character:</p>
@@ -468,8 +468,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="va">x</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;ccn_vctr[20]&gt;
- [1] 001500 &lt;NA&gt;   001503 &lt;NA&gt;   &lt;NA&gt;   001511 001513 001514 &lt;NA&gt;   001517
-[11] 001518 001524 &lt;NA&gt;   &lt;NA&gt;   001529 &lt;NA&gt;   001534 001535 001536 &lt;NA&gt;  </code></pre>
+ [1] 001500 001502 001503 001509 001510 001511 001513 001514 001515 &lt;NA&gt;  
+[11] 001518 &lt;NA&gt;   001527 001528 001529 001530 001534 001535 001536 001541</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -491,25 +491,25 @@ Tip
 <div class="cell-output cell-output-stdout">
 <pre><code>        x
 1  001500
-2    &lt;NA&gt;
+2  001502
 3  001503
-4    &lt;NA&gt;
-5    &lt;NA&gt;
+4  001509
+5  001510
 6  001511
 7  001513
 8  001514
-9    &lt;NA&gt;
-10 001517
+9  001515
+10   &lt;NA&gt;
 11 001518
-12 001524
-13   &lt;NA&gt;
-14   &lt;NA&gt;
+12   &lt;NA&gt;
+13 001527
+14 001528
 15 001529
-16   &lt;NA&gt;
+16 001530
 17 001534
 18 001535
 19 001536
-20   &lt;NA&gt;</code></pre>
+20 001541</code></pre>
 </div>
 </div>
 <p>For optimal display, I recommend also defining an abbreviated type name, which should be 4-5 letters for commonly used vectors. This is used in tibbles and in <code><a href="https://rdrr.io/r/utils/str.html">str()</a></code>:</p>
@@ -524,29 +524,29 @@ Tip
    x     
    &lt;ccn&gt; 
  1 001500
- 2 NA    
+ 2 001502
  3 001503
- 4 NA    
- 5 NA    
+ 4 001509
+ 5 001510
  6 001511
  7 001513
  8 001514
- 9 NA    
-10 001517
+ 9 001515
+10 NA    
 11 001518
-12 001524
-13 NA    
-14 NA    
+12 NA    
+13 001527
+14 001528
 15 001529
-16 NA    
+16 001530
 17 001534
 18 001535
 19 001536
-20 NA    </code></pre>
+20 001541</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> ccn [1:20] 001500, &lt;NA&gt;, 001503, &lt;NA&gt;, &lt;NA&gt;, 001511, 001513, 001514, &lt;NA&gt;,...</code></pre>
+<pre><code> ccn [1:20] 001500, 001502, 001503, 001509, 001510, 001511, 001513, 001514,...</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -670,7 +670,7 @@ Tip
 <span><span class="va">x</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;ccn_vctr[5]&gt;
-[1]  A    B    E   &lt;NA&gt; &lt;NA&gt;</code></pre>
+[1]      A      B      E 001509 001510</code></pre>
 </div>
 </div>
 <p>You’ll also get mostly correct behaviour for <code><a href="https://rdrr.io/r/base/c.html">c()</a></code>. The exception is when you use <code><a href="https://rdrr.io/r/base/c.html">c()</a></code> with a base R class:</p>
@@ -682,8 +682,8 @@ Tip
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb50"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu">ccn</span><span class="op">(</span><span class="st">"030113"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="st">"A"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
-<pre><code>Error in `vec_c()`:
-! Can't combine `..1` &lt;ccn_vctr&gt; and `..2` &lt;factor&lt;61b97&gt;&gt;.</code></pre>
+<pre><code>Error in `vec_c()` at vctrs/R/type-vctr.R:178:3:
+! Can't combine `..1` &lt;ccn_vctr&gt; and `..2` &lt;factor&lt;3c469&gt;&gt;.</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb52"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Incorrect</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>, <span class="fu">ccn</span><span class="op">(</span><span class="st">"030113"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1195,340 +1195,412 @@ Tip
 <span id="cb56-16"><a href="#cb56-16" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
 <span id="cb56-17"><a href="#cb56-17" aria-hidden="true" tabindex="-1"></a><span class="co">#| cache: false</span></span>
 <span id="cb56-18"><a href="#cb56-18" aria-hidden="true" tabindex="-1"></a><span class="co">#| comment: ""</span></span>
-<span id="cb56-19"><a href="#cb56-19" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(vctrs)</span>
-<span id="cb56-20"><a href="#cb56-20" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rlang)</span>
-<span id="cb56-21"><a href="#cb56-21" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(zeallot)</span>
-<span id="cb56-22"><a href="#cb56-22" aria-hidden="true" tabindex="-1"></a><span class="co"># library(ccn)</span></span>
-<span id="cb56-23"><a href="#cb56-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-24"><a href="#cb56-24" aria-hidden="true" tabindex="-1"></a>in_between <span class="ot">&lt;-</span> <span class="cf">function</span>(x, min, max) {</span>
-<span id="cb56-25"><a href="#cb56-25" aria-hidden="true" tabindex="-1"></a>  (x <span class="sc">-</span> min) <span class="sc">*</span> (max <span class="sc">-</span> x) <span class="sc">&gt;=</span> <span class="dv">0</span>L</span>
-<span id="cb56-26"><a href="#cb56-26" aria-hidden="true" tabindex="-1"></a><span class="co"># (N - 6L) * (14L - N) &gt;= 0L</span></span>
-<span id="cb56-27"><a href="#cb56-27" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb56-28"><a href="#cb56-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-29"><a href="#cb56-29" aria-hidden="true" tabindex="-1"></a>examples <span class="ot">&lt;-</span> cheapr<span class="sc">::</span><span class="fu">na_insert</span>(ccn<span class="sc">:::</span><span class="fu">get_pin</span>(<span class="st">"ccn"</span>), <span class="at">prop =</span> <span class="fl">0.25</span>)</span>
-<span id="cb56-30"><a href="#cb56-30" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb56-31"><a href="#cb56-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-32"><a href="#cb56-32" aria-hidden="true" tabindex="-1"></a><span class="fu">## `ccn` Validation</span></span>
-<span id="cb56-33"><a href="#cb56-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-36"><a href="#cb56-36" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-37"><a href="#cb56-37" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn_validation</span></span>
-<span id="cb56-38"><a href="#cb56-38" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
-<span id="cb56-39"><a href="#cb56-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-40"><a href="#cb56-40" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co"> Need to handle NAs</span></span>
-<span id="cb56-41"><a href="#cb56-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-42"><a href="#cb56-42" aria-hidden="true" tabindex="-1"></a>is_valid_nchar <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb56-43"><a href="#cb56-43" aria-hidden="true" tabindex="-1"></a>  N <span class="ot">&lt;-</span> collapse<span class="sc">::</span><span class="fu">vlengths</span>(x)</span>
-<span id="cb56-44"><a href="#cb56-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">in_between</span>(N, <span class="dv">6</span>L, <span class="dv">14</span>L)</span>
-<span id="cb56-45"><a href="#cb56-45" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb56-46"><a href="#cb56-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-47"><a href="#cb56-47" aria-hidden="true" tabindex="-1"></a><span class="co"># is_valid_nchar(examples[1:10])</span></span>
-<span id="cb56-48"><a href="#cb56-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-49"><a href="#cb56-49" aria-hidden="true" tabindex="-1"></a>all_valid_nchar <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb56-50"><a href="#cb56-50" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">allv</span>(<span class="fu">is_valid_nchar</span>(x), <span class="cn">TRUE</span>)</span>
-<span id="cb56-51"><a href="#cb56-51" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb56-52"><a href="#cb56-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-53"><a href="#cb56-53" aria-hidden="true" tabindex="-1"></a><span class="co"># all_valid_nchar(examples)</span></span>
-<span id="cb56-54"><a href="#cb56-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-55"><a href="#cb56-55" aria-hidden="true" tabindex="-1"></a>which_not_valid_nchar <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb56-56"><a href="#cb56-56" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">whichv</span>(<span class="fu">is_valid_nchar</span>(x), <span class="cn">FALSE</span>)</span>
-<span id="cb56-57"><a href="#cb56-57" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb56-58"><a href="#cb56-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-59"><a href="#cb56-59" aria-hidden="true" tabindex="-1"></a><span class="co"># which_not_valid_nchar(examples)</span></span>
-<span id="cb56-60"><a href="#cb56-60" aria-hidden="true" tabindex="-1"></a><span class="co"># examples[which_not_valid_nchar(examples)]</span></span>
-<span id="cb56-61"><a href="#cb56-61" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb56-62"><a href="#cb56-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-63"><a href="#cb56-63" aria-hidden="true" tabindex="-1"></a><span class="fu">## `ccn` Checks</span></span>
-<span id="cb56-64"><a href="#cb56-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-67"><a href="#cb56-67" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-68"><a href="#cb56-68" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn_checks</span></span>
-<span id="cb56-69"><a href="#cb56-69" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
-<span id="cb56-70"><a href="#cb56-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-71"><a href="#cb56-71" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co"> Need to handle NAs</span></span>
-<span id="cb56-72"><a href="#cb56-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-73"><a href="#cb56-73" aria-hidden="true" tabindex="-1"></a>check_valid_nchar <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb56-74"><a href="#cb56-74" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">all_valid_nchar</span>(x)) {</span>
-<span id="cb56-75"><a href="#cb56-75" aria-hidden="true" tabindex="-1"></a>    i <span class="ot">&lt;-</span> <span class="fu">which_not_valid_nchar</span>(x)</span>
-<span id="cb56-76"><a href="#cb56-76" aria-hidden="true" tabindex="-1"></a>    n <span class="ot">&lt;-</span> <span class="fu">length</span>(i)</span>
-<span id="cb56-77"><a href="#cb56-77" aria-hidden="true" tabindex="-1"></a>    cli<span class="sc">::</span><span class="fu">cli_abort</span>(</span>
-<span id="cb56-78"><a href="#cb56-78" aria-hidden="true" tabindex="-1"></a>      <span class="fu">c</span>(</span>
-<span id="cb56-79"><a href="#cb56-79" aria-hidden="true" tabindex="-1"></a>        <span class="st">"{.strong {n}} Invalid {cli::qty(n)} CCN{?s}:"</span>,</span>
-<span id="cb56-80"><a href="#cb56-80" aria-hidden="true" tabindex="-1"></a>        <span class="st">"x"</span> <span class="ot">=</span> <span class="st">"{.val {x[i]}}"</span></span>
-<span id="cb56-81"><a href="#cb56-81" aria-hidden="true" tabindex="-1"></a>      )</span>
-<span id="cb56-82"><a href="#cb56-82" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb56-83"><a href="#cb56-83" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb56-84"><a href="#cb56-84" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb56-85"><a href="#cb56-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-86"><a href="#cb56-86" aria-hidden="true" tabindex="-1"></a><span class="co"># check_valid_nchar(examples)</span></span>
-<span id="cb56-87"><a href="#cb56-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-88"><a href="#cb56-88" aria-hidden="true" tabindex="-1"></a>check_character <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb56-89"><a href="#cb56-89" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is_character</span>(x)) {</span>
-<span id="cb56-90"><a href="#cb56-90" aria-hidden="true" tabindex="-1"></a>    cli<span class="sc">::</span><span class="fu">cli_abort</span>(<span class="st">"`x` must be a character vector."</span>)</span>
-<span id="cb56-91"><a href="#cb56-91" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb56-92"><a href="#cb56-92" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb56-93"><a href="#cb56-93" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb56-94"><a href="#cb56-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-19"><a href="#cb56-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-20"><a href="#cb56-20" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(vctrs)</span>
+<span id="cb56-21"><a href="#cb56-21" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rlang)</span>
+<span id="cb56-22"><a href="#cb56-22" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(zeallot)</span>
+<span id="cb56-23"><a href="#cb56-23" aria-hidden="true" tabindex="-1"></a><span class="co"># library(ccn)</span></span>
+<span id="cb56-24"><a href="#cb56-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-25"><a href="#cb56-25" aria-hidden="true" tabindex="-1"></a>in_between <span class="ot">&lt;-</span> <span class="cf">function</span>(x, min, max) {</span>
+<span id="cb56-26"><a href="#cb56-26" aria-hidden="true" tabindex="-1"></a>  (x <span class="sc">-</span> min) <span class="sc">*</span> (max <span class="sc">-</span> x) <span class="sc">&gt;=</span> <span class="dv">0</span>L</span>
+<span id="cb56-27"><a href="#cb56-27" aria-hidden="true" tabindex="-1"></a>  <span class="co"># (N - 6L) * (14L - N) &gt;= 0L</span></span>
+<span id="cb56-28"><a href="#cb56-28" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb56-29"><a href="#cb56-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-30"><a href="#cb56-30" aria-hidden="true" tabindex="-1"></a>examples <span class="ot">&lt;-</span> cheapr<span class="sc">::</span><span class="fu">na_insert</span>(ccn<span class="sc">:::</span><span class="fu">get_pin</span>(<span class="st">"ccn"</span>), <span class="at">prop =</span> <span class="fl">0.25</span>)</span>
+<span id="cb56-31"><a href="#cb56-31" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-32"><a href="#cb56-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-33"><a href="#cb56-33" aria-hidden="true" tabindex="-1"></a><span class="fu">## `ccn` Validation</span></span>
+<span id="cb56-34"><a href="#cb56-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-37"><a href="#cb56-37" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-38"><a href="#cb56-38" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn_validation</span></span>
+<span id="cb56-39"><a href="#cb56-39" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
+<span id="cb56-40"><a href="#cb56-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-41"><a href="#cb56-41" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co"> Need to handle NAs</span></span>
+<span id="cb56-42"><a href="#cb56-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-43"><a href="#cb56-43" aria-hidden="true" tabindex="-1"></a>is_valid_nchar <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb56-44"><a href="#cb56-44" aria-hidden="true" tabindex="-1"></a>  N <span class="ot">&lt;-</span> collapse<span class="sc">::</span><span class="fu">vlengths</span>(x)</span>
+<span id="cb56-45"><a href="#cb56-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">in_between</span>(N, <span class="dv">6</span>L, <span class="dv">14</span>L)</span>
+<span id="cb56-46"><a href="#cb56-46" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb56-47"><a href="#cb56-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-48"><a href="#cb56-48" aria-hidden="true" tabindex="-1"></a><span class="co"># is_valid_nchar(examples[1:10])</span></span>
+<span id="cb56-49"><a href="#cb56-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-50"><a href="#cb56-50" aria-hidden="true" tabindex="-1"></a>all_valid_nchar <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb56-51"><a href="#cb56-51" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">allv</span>(<span class="fu">is_valid_nchar</span>(x), <span class="cn">TRUE</span>)</span>
+<span id="cb56-52"><a href="#cb56-52" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb56-53"><a href="#cb56-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-54"><a href="#cb56-54" aria-hidden="true" tabindex="-1"></a><span class="co"># all_valid_nchar(examples)</span></span>
+<span id="cb56-55"><a href="#cb56-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-56"><a href="#cb56-56" aria-hidden="true" tabindex="-1"></a>which_not_valid_nchar <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb56-57"><a href="#cb56-57" aria-hidden="true" tabindex="-1"></a>  collapse<span class="sc">::</span><span class="fu">whichv</span>(<span class="fu">is_valid_nchar</span>(x), <span class="cn">FALSE</span>)</span>
+<span id="cb56-58"><a href="#cb56-58" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb56-59"><a href="#cb56-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-60"><a href="#cb56-60" aria-hidden="true" tabindex="-1"></a><span class="co"># which_not_valid_nchar(examples)</span></span>
+<span id="cb56-61"><a href="#cb56-61" aria-hidden="true" tabindex="-1"></a><span class="co"># examples[which_not_valid_nchar(examples)]</span></span>
+<span id="cb56-62"><a href="#cb56-62" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-63"><a href="#cb56-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-64"><a href="#cb56-64" aria-hidden="true" tabindex="-1"></a><span class="fu">## `ccn` Checks</span></span>
+<span id="cb56-65"><a href="#cb56-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-68"><a href="#cb56-68" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-69"><a href="#cb56-69" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn_checks</span></span>
+<span id="cb56-70"><a href="#cb56-70" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
+<span id="cb56-71"><a href="#cb56-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-72"><a href="#cb56-72" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co"> Need to handle NAs</span></span>
+<span id="cb56-73"><a href="#cb56-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-74"><a href="#cb56-74" aria-hidden="true" tabindex="-1"></a>check_valid_nchar <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb56-75"><a href="#cb56-75" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">all_valid_nchar</span>(x)) {</span>
+<span id="cb56-76"><a href="#cb56-76" aria-hidden="true" tabindex="-1"></a>    i <span class="ot">&lt;-</span> <span class="fu">which_not_valid_nchar</span>(x)</span>
+<span id="cb56-77"><a href="#cb56-77" aria-hidden="true" tabindex="-1"></a>    n <span class="ot">&lt;-</span> <span class="fu">length</span>(i)</span>
+<span id="cb56-78"><a href="#cb56-78" aria-hidden="true" tabindex="-1"></a>    cli<span class="sc">::</span><span class="fu">cli_abort</span>(</span>
+<span id="cb56-79"><a href="#cb56-79" aria-hidden="true" tabindex="-1"></a>      <span class="fu">c</span>(</span>
+<span id="cb56-80"><a href="#cb56-80" aria-hidden="true" tabindex="-1"></a>        <span class="st">"{.strong {n}} Invalid {cli::qty(n)} CCN{?s}:"</span>,</span>
+<span id="cb56-81"><a href="#cb56-81" aria-hidden="true" tabindex="-1"></a>        <span class="st">"x"</span> <span class="ot">=</span> <span class="st">"{.val {x[i]}}"</span></span>
+<span id="cb56-82"><a href="#cb56-82" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb56-83"><a href="#cb56-83" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb56-84"><a href="#cb56-84" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb56-85"><a href="#cb56-85" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb56-86"><a href="#cb56-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-87"><a href="#cb56-87" aria-hidden="true" tabindex="-1"></a><span class="co"># check_valid_nchar(examples)</span></span>
+<span id="cb56-88"><a href="#cb56-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-89"><a href="#cb56-89" aria-hidden="true" tabindex="-1"></a>check_character <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb56-90"><a href="#cb56-90" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is_character</span>(x)) {</span>
+<span id="cb56-91"><a href="#cb56-91" aria-hidden="true" tabindex="-1"></a>    cli<span class="sc">::</span><span class="fu">cli_abort</span>(<span class="st">"`x` must be a character vector."</span>)</span>
+<span id="cb56-92"><a href="#cb56-92" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb56-93"><a href="#cb56-93" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb56-94"><a href="#cb56-94" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb56-95"><a href="#cb56-95" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb56-96"><a href="#cb56-96" aria-hidden="true" tabindex="-1"></a><span class="fu">## `ccn` class</span></span>
 <span id="cb56-97"><a href="#cb56-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-98"><a href="#cb56-98" aria-hidden="true" tabindex="-1"></a>First, make a <span class="in">`ccn`</span> class, i.e., a character vector that is printed as a <span class="in">`ccn`</span>. Start by defining a low-level <span class="co">[</span><span class="ot">constructor</span><span class="co">](https://adv-r.hadley.nz/s3.html#s3-constrcutor)</span> to check types and/or sizes and call <span class="in">`new_vctr()`</span>.</span>
-<span id="cb56-99"><a href="#cb56-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-100"><a href="#cb56-100" aria-hidden="true" tabindex="-1"></a><span class="in">`ccn`</span> is built on a character vector of any length and doesn’t have any attributes.</span>
-<span id="cb56-101"><a href="#cb56-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-98"><a href="#cb56-98" aria-hidden="true" tabindex="-1"></a>First, make a <span class="in">`ccn`</span> class, i.e., a character vector that is printed as a <span class="in">`ccn`</span>.</span>
+<span id="cb56-99"><a href="#cb56-99" aria-hidden="true" tabindex="-1"></a>Start by defining a low-level</span>
+<span id="cb56-100"><a href="#cb56-100" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">constructor</span><span class="co">](https://adv-r.hadley.nz/s3.html#s3-constrcutor)</span> to check types</span>
+<span id="cb56-101"><a href="#cb56-101" aria-hidden="true" tabindex="-1"></a>and/or sizes and call <span class="in">`new_vctr()`</span>.</span>
 <span id="cb56-102"><a href="#cb56-102" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-105"><a href="#cb56-105" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-106"><a href="#cb56-106" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: new_ccn</span></span>
-<span id="cb56-107"><a href="#cb56-107" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
-<span id="cb56-108"><a href="#cb56-108" aria-hidden="true" tabindex="-1"></a>new_ccn <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">x =</span> <span class="fu">character</span>()) {</span>
-<span id="cb56-109"><a href="#cb56-109" aria-hidden="true" tabindex="-1"></a>  <span class="fu">check_character</span>(x)</span>
-<span id="cb56-110"><a href="#cb56-110" aria-hidden="true" tabindex="-1"></a>  <span class="fu">new_vctr</span>(x, <span class="at">class =</span> <span class="st">"ccn"</span>)</span>
-<span id="cb56-111"><a href="#cb56-111" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb56-112"><a href="#cb56-112" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-113"><a href="#cb56-113" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">new_ccn</span>(examples[<span class="dv">1</span><span class="sc">:</span><span class="dv">25</span>])</span>
-<span id="cb56-114"><a href="#cb56-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-115"><a href="#cb56-115" aria-hidden="true" tabindex="-1"></a>x</span>
+<span id="cb56-103"><a href="#cb56-103" aria-hidden="true" tabindex="-1"></a><span class="in">`ccn`</span> is built on a character vector of any length and doesn't have any</span>
+<span id="cb56-104"><a href="#cb56-104" aria-hidden="true" tabindex="-1"></a>attributes.</span>
+<span id="cb56-105"><a href="#cb56-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-108"><a href="#cb56-108" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-109"><a href="#cb56-109" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: new_ccn</span></span>
+<span id="cb56-110"><a href="#cb56-110" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
+<span id="cb56-111"><a href="#cb56-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-112"><a href="#cb56-112" aria-hidden="true" tabindex="-1"></a>new_ccn <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">x =</span> <span class="fu">character</span>()) {</span>
+<span id="cb56-113"><a href="#cb56-113" aria-hidden="true" tabindex="-1"></a>  <span class="fu">check_character</span>(x)</span>
+<span id="cb56-114"><a href="#cb56-114" aria-hidden="true" tabindex="-1"></a>  <span class="fu">new_vctr</span>(x, <span class="at">class =</span> <span class="st">"ccn"</span>)</span>
+<span id="cb56-115"><a href="#cb56-115" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb56-116"><a href="#cb56-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-117"><a href="#cb56-117" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(x)</span>
-<span id="cb56-118"><a href="#cb56-118" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb56-119"><a href="#cb56-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-120"><a href="#cb56-120" aria-hidden="true" tabindex="-1"></a>We then follow up with a user friendly helper. Here we’ll use <span class="in">`vec_cast()`</span> to allow it to accept anything coercible to a character:</span>
-<span id="cb56-121"><a href="#cb56-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-124"><a href="#cb56-124" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-125"><a href="#cb56-125" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn-helper</span></span>
-<span id="cb56-126"><a href="#cb56-126" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
-<span id="cb56-127"><a href="#cb56-127" aria-hidden="true" tabindex="-1"></a>ccn <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">x =</span> <span class="fu">character</span>()) {</span>
-<span id="cb56-128"><a href="#cb56-128" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">vec_cast</span>(x, <span class="fu">character</span>())</span>
-<span id="cb56-129"><a href="#cb56-129" aria-hidden="true" tabindex="-1"></a>  <span class="fu">new_ccn</span>(x)</span>
-<span id="cb56-130"><a href="#cb56-130" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb56-131"><a href="#cb56-131" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-117"><a href="#cb56-117" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">new_ccn</span>(examples[<span class="dv">1</span><span class="sc">:</span><span class="dv">25</span>])</span>
+<span id="cb56-118"><a href="#cb56-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-119"><a href="#cb56-119" aria-hidden="true" tabindex="-1"></a>x</span>
+<span id="cb56-120"><a href="#cb56-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-121"><a href="#cb56-121" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(x)</span>
+<span id="cb56-122"><a href="#cb56-122" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-123"><a href="#cb56-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-124"><a href="#cb56-124" aria-hidden="true" tabindex="-1"></a>We then follow up with a user friendly helper. Here we'll use <span class="in">`vec_cast()`</span> to</span>
+<span id="cb56-125"><a href="#cb56-125" aria-hidden="true" tabindex="-1"></a>allow it to accept anything coercible to a character:</span>
+<span id="cb56-126"><a href="#cb56-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-129"><a href="#cb56-129" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-130"><a href="#cb56-130" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn-helper</span></span>
+<span id="cb56-131"><a href="#cb56-131" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
 <span id="cb56-132"><a href="#cb56-132" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-133"><a href="#cb56-133" aria-hidden="true" tabindex="-1"></a>Before you go on, check that user-friendly constructor returns a zero-length vector when called with no arguments. This makes it easy to use as a prototype.</span>
-<span id="cb56-134"><a href="#cb56-134" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-137"><a href="#cb56-137" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-138"><a href="#cb56-138" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn-prototype</span></span>
-<span id="cb56-139"><a href="#cb56-139" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
-<span id="cb56-140"><a href="#cb56-140" aria-hidden="true" tabindex="-1"></a><span class="fu">new_ccn</span>()</span>
-<span id="cb56-141"><a href="#cb56-141" aria-hidden="true" tabindex="-1"></a><span class="fu">ccn</span>()</span>
-<span id="cb56-142"><a href="#cb56-142" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb56-143"><a href="#cb56-143" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-144"><a href="#cb56-144" aria-hidden="true" tabindex="-1"></a>For the convenience of your users, consider implementing an <span class="in">`is_ccn()`</span> function:</span>
-<span id="cb56-145"><a href="#cb56-145" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-148"><a href="#cb56-148" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-149"><a href="#cb56-149" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn-inherits</span></span>
-<span id="cb56-150"><a href="#cb56-150" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
-<span id="cb56-151"><a href="#cb56-151" aria-hidden="true" tabindex="-1"></a>is_ccn <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb56-152"><a href="#cb56-152" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inherits</span>(x, <span class="st">"ccn"</span>)</span>
-<span id="cb56-153"><a href="#cb56-153" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb56-154"><a href="#cb56-154" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb56-155"><a href="#cb56-155" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-156"><a href="#cb56-156" aria-hidden="true" tabindex="-1"></a><span class="fu">## `format()` method</span></span>
-<span id="cb56-157"><a href="#cb56-157" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-158"><a href="#cb56-158" aria-hidden="true" tabindex="-1"></a>The first method for every class should almost always be a <span class="in">`format()`</span> method. This should return a character vector the same length as x. The easiest way to do this is to rely on one of R’s low-level formatting functions like <span class="in">`formatC()`</span>:</span>
+<span id="cb56-133"><a href="#cb56-133" aria-hidden="true" tabindex="-1"></a>ccn <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">x =</span> <span class="fu">character</span>()) {</span>
+<span id="cb56-134"><a href="#cb56-134" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">vec_cast</span>(x, <span class="fu">character</span>())</span>
+<span id="cb56-135"><a href="#cb56-135" aria-hidden="true" tabindex="-1"></a>  <span class="fu">new_ccn</span>(x)</span>
+<span id="cb56-136"><a href="#cb56-136" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb56-137"><a href="#cb56-137" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-138"><a href="#cb56-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-139"><a href="#cb56-139" aria-hidden="true" tabindex="-1"></a>Before you go on, check that user-friendly constructor returns a zero-length</span>
+<span id="cb56-140"><a href="#cb56-140" aria-hidden="true" tabindex="-1"></a>vector when called with no arguments. This makes it easy to use as a prototype.</span>
+<span id="cb56-141"><a href="#cb56-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-144"><a href="#cb56-144" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-145"><a href="#cb56-145" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn-prototype</span></span>
+<span id="cb56-146"><a href="#cb56-146" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
+<span id="cb56-147"><a href="#cb56-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-148"><a href="#cb56-148" aria-hidden="true" tabindex="-1"></a><span class="fu">new_ccn</span>()</span>
+<span id="cb56-149"><a href="#cb56-149" aria-hidden="true" tabindex="-1"></a><span class="fu">ccn</span>()</span>
+<span id="cb56-150"><a href="#cb56-150" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-151"><a href="#cb56-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-152"><a href="#cb56-152" aria-hidden="true" tabindex="-1"></a>For the convenience of your users, consider implementing an <span class="in">`is_ccn()`</span> function:</span>
+<span id="cb56-153"><a href="#cb56-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-156"><a href="#cb56-156" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-157"><a href="#cb56-157" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn-inherits</span></span>
+<span id="cb56-158"><a href="#cb56-158" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
 <span id="cb56-159"><a href="#cb56-159" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-162"><a href="#cb56-162" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-163"><a href="#cb56-163" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn-format</span></span>
-<span id="cb56-164"><a href="#cb56-164" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
-<span id="cb56-165"><a href="#cb56-165" aria-hidden="true" tabindex="-1"></a>format.ccn <span class="ot">&lt;-</span> <span class="cf">function</span>(x, ...) {</span>
-<span id="cb56-166"><a href="#cb56-166" aria-hidden="true" tabindex="-1"></a>  out <span class="ot">&lt;-</span> <span class="fu">formatC</span>(<span class="fu">vec_data</span>(x))</span>
-<span id="cb56-167"><a href="#cb56-167" aria-hidden="true" tabindex="-1"></a>  out[<span class="fu">is.na</span>(x)] <span class="ot">&lt;-</span> <span class="cn">NA_character_</span></span>
-<span id="cb56-168"><a href="#cb56-168" aria-hidden="true" tabindex="-1"></a>  out</span>
-<span id="cb56-169"><a href="#cb56-169" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb56-170"><a href="#cb56-170" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-171"><a href="#cb56-171" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">ccn</span>(examples[<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>])</span>
-<span id="cb56-172"><a href="#cb56-172" aria-hidden="true" tabindex="-1"></a>x</span>
-<span id="cb56-173"><a href="#cb56-173" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb56-174"><a href="#cb56-174" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-175"><a href="#cb56-175" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
-<span id="cb56-176"><a href="#cb56-176" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-177"><a href="#cb56-177" aria-hidden="true" tabindex="-1"></a>Note the use of <span class="in">`vec_data()`</span> so <span class="in">`format()`</span> doesn’t get stuck in an infinite loop, and that I take a little care to not convert <span class="in">`NA`</span> to <span class="in">`"NA"`</span>; this leads to better printing.</span>
-<span id="cb56-178"><a href="#cb56-178" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-179"><a href="#cb56-179" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb56-180"><a href="#cb56-180" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-181"><a href="#cb56-181" aria-hidden="true" tabindex="-1"></a>The format method is also used by data frames, tibbles, and <span class="in">`str()`</span>:</span>
-<span id="cb56-182"><a href="#cb56-182" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-185"><a href="#cb56-185" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-186"><a href="#cb56-186" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn-data.frame</span></span>
-<span id="cb56-187"><a href="#cb56-187" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
-<span id="cb56-188"><a href="#cb56-188" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(x)</span>
-<span id="cb56-189"><a href="#cb56-189" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb56-190"><a href="#cb56-190" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-191"><a href="#cb56-191" aria-hidden="true" tabindex="-1"></a>For optimal display, I recommend also defining an abbreviated type name, which should be 4-5 letters for commonly used vectors. This is used in tibbles and in <span class="in">`str()`</span>:</span>
-<span id="cb56-192"><a href="#cb56-192" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-195"><a href="#cb56-195" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-196"><a href="#cb56-196" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn-abbr</span></span>
-<span id="cb56-197"><a href="#cb56-197" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
-<span id="cb56-198"><a href="#cb56-198" aria-hidden="true" tabindex="-1"></a>vec_ptype_abbr.ccn <span class="ot">&lt;-</span> <span class="cf">function</span>(x, ...) {</span>
-<span id="cb56-199"><a href="#cb56-199" aria-hidden="true" tabindex="-1"></a>  <span class="st">"ccn"</span></span>
-<span id="cb56-200"><a href="#cb56-200" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb56-160"><a href="#cb56-160" aria-hidden="true" tabindex="-1"></a>is_ccn <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb56-161"><a href="#cb56-161" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inherits</span>(x, <span class="st">"ccn"</span>)</span>
+<span id="cb56-162"><a href="#cb56-162" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb56-163"><a href="#cb56-163" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-164"><a href="#cb56-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-165"><a href="#cb56-165" aria-hidden="true" tabindex="-1"></a><span class="fu">## `format()` method</span></span>
+<span id="cb56-166"><a href="#cb56-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-167"><a href="#cb56-167" aria-hidden="true" tabindex="-1"></a>The first method for every class should almost always be a <span class="in">`format()`</span> method.</span>
+<span id="cb56-168"><a href="#cb56-168" aria-hidden="true" tabindex="-1"></a>This should return a character vector the same length as x. The easiest way to</span>
+<span id="cb56-169"><a href="#cb56-169" aria-hidden="true" tabindex="-1"></a>do this is to rely on one of R's low-level formatting functions like</span>
+<span id="cb56-170"><a href="#cb56-170" aria-hidden="true" tabindex="-1"></a><span class="in">`formatC()`</span>:</span>
+<span id="cb56-171"><a href="#cb56-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-174"><a href="#cb56-174" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-175"><a href="#cb56-175" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn-format</span></span>
+<span id="cb56-176"><a href="#cb56-176" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
+<span id="cb56-177"><a href="#cb56-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-178"><a href="#cb56-178" aria-hidden="true" tabindex="-1"></a>format.ccn <span class="ot">&lt;-</span> <span class="cf">function</span>(x, ...) {</span>
+<span id="cb56-179"><a href="#cb56-179" aria-hidden="true" tabindex="-1"></a>  out <span class="ot">&lt;-</span> <span class="fu">formatC</span>(<span class="fu">vec_data</span>(x))</span>
+<span id="cb56-180"><a href="#cb56-180" aria-hidden="true" tabindex="-1"></a>  out[<span class="fu">is.na</span>(x)] <span class="ot">&lt;-</span> <span class="cn">NA_character_</span></span>
+<span id="cb56-181"><a href="#cb56-181" aria-hidden="true" tabindex="-1"></a>  out</span>
+<span id="cb56-182"><a href="#cb56-182" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb56-183"><a href="#cb56-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-184"><a href="#cb56-184" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">ccn</span>(examples[<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>])</span>
+<span id="cb56-185"><a href="#cb56-185" aria-hidden="true" tabindex="-1"></a>x</span>
+<span id="cb56-186"><a href="#cb56-186" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-187"><a href="#cb56-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-188"><a href="#cb56-188" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
+<span id="cb56-189"><a href="#cb56-189" aria-hidden="true" tabindex="-1"></a>Note the use of <span class="in">`vec_data()`</span> so <span class="in">`format()`</span> doesn't get stuck in an infinite</span>
+<span id="cb56-190"><a href="#cb56-190" aria-hidden="true" tabindex="-1"></a>loop, and that I take a little care to not convert <span class="in">`NA`</span> to <span class="in">`"NA"`</span>; this leads to</span>
+<span id="cb56-191"><a href="#cb56-191" aria-hidden="true" tabindex="-1"></a>better printing.</span>
+<span id="cb56-192"><a href="#cb56-192" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb56-193"><a href="#cb56-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-194"><a href="#cb56-194" aria-hidden="true" tabindex="-1"></a>The format method is also used by data frames, tibbles, and <span class="in">`str()`</span>:</span>
+<span id="cb56-195"><a href="#cb56-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-198"><a href="#cb56-198" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-199"><a href="#cb56-199" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn-data.frame</span></span>
+<span id="cb56-200"><a href="#cb56-200" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
 <span id="cb56-201"><a href="#cb56-201" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-202"><a href="#cb56-202" aria-hidden="true" tabindex="-1"></a>tibble<span class="sc">::</span><span class="fu">tibble</span>(x)</span>
-<span id="cb56-203"><a href="#cb56-203" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-204"><a href="#cb56-204" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(x)</span>
-<span id="cb56-205"><a href="#cb56-205" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb56-206"><a href="#cb56-206" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-207"><a href="#cb56-207" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-208"><a href="#cb56-208" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
-<span id="cb56-209"><a href="#cb56-209" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-210"><a href="#cb56-210" aria-hidden="true" tabindex="-1"></a>If you need more control over printing in tibbles, implement a method for <span class="in">`pillar::pillar_shaft()`</span>. See <span class="in">`vignette("pillar", package = "vctrs")`</span> for details.</span>
-<span id="cb56-211"><a href="#cb56-211" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-212"><a href="#cb56-212" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb56-213"><a href="#cb56-213" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-214"><a href="#cb56-214" aria-hidden="true" tabindex="-1"></a><span class="fu">## Casting and coercion</span></span>
-<span id="cb56-215"><a href="#cb56-215" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-216"><a href="#cb56-216" aria-hidden="true" tabindex="-1"></a>The next set of methods you are likely to need are those related to coercion and casting. Coercion and casting are two sides of the same coin: changing the prototype of an existing object. When the change happens implicitly (e.g in <span class="in">`c()`</span>) we call it __coercion__; when the change happens explicitly (e.g. with `as.integer(x)`), we call it __casting__.</span>
-<span id="cb56-217"><a href="#cb56-217" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-218"><a href="#cb56-218" aria-hidden="true" tabindex="-1"></a>One of the main goals of __vctrs__ is to put coercion and casting on a robust theoretical footing so it’s possible to make accurate predictions about what (e.g.) <span class="in">`c(x, y)`</span> should do when <span class="in">`x`</span> and <span class="in">`y`</span> have different prototypes. <span class="in">`vctrs`</span> achieves this goal through two generics:</span>
-<span id="cb56-219"><a href="#cb56-219" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-220"><a href="#cb56-220" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span><span class="in">`vec_ptype2(x, y)`</span> defines a possible set of __coercions__. It returns a prototype if <span class="in">`x`</span> and <span class="in">`y`</span> can be safely coerced to the same prototype; otherwise it returns an error. The set of automatic coercions is usually quite small because too many tend to make code harder to reason about and silently propagate mistakes.</span>
-<span id="cb56-221"><a href="#cb56-221" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span><span class="in">`vec_cast(x, to)`</span> defines the possible sets of __casts__. It returns `x` translated to have prototype `to`, or throws an error if the conversion isn’t possible. The set of possible casts is a _superset_ of possible __coercions__ because they’re requested explicitly.</span>
-<span id="cb56-222"><a href="#cb56-222" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-223"><a href="#cb56-223" aria-hidden="true" tabindex="-1"></a><span class="fu">### Double dispatch</span></span>
-<span id="cb56-224"><a href="#cb56-224" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-225"><a href="#cb56-225" aria-hidden="true" tabindex="-1"></a>Both generics use <span class="co">[</span><span class="ot">double dispatch</span><span class="co">](https://en.wikipedia.org/wiki/Double_dispatch)</span> which means that the implementation is selected based on the class of two arguments, not just one. __S3__ does not natively support double dispatch, so we implement our own dispatch mechanism. In practice, this means:</span>
-<span id="cb56-226"><a href="#cb56-226" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-227"><a href="#cb56-227" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>You end up with method names with two classes, like <span class="in">`vec_ptype2.foo.bar()`</span>.</span>
-<span id="cb56-228"><a href="#cb56-228" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>You don’t need to implement default methods (they would never be called if you do).</span>
-<span id="cb56-229"><a href="#cb56-229" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>You can’t call <span class="in">`NextMethod()`</span>.</span>
-<span id="cb56-230"><a href="#cb56-230" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-231"><a href="#cb56-231" aria-hidden="true" tabindex="-1"></a><span class="fu">### CCN class</span></span>
-<span id="cb56-232"><a href="#cb56-232" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-233"><a href="#cb56-233" aria-hidden="true" tabindex="-1"></a>We’ll make our <span class="in">`ccn`</span> class coercible back and forth with character vectors.</span>
-<span id="cb56-234"><a href="#cb56-234" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-235"><a href="#cb56-235" aria-hidden="true" tabindex="-1"></a><span class="in">`vec_ptype2()`</span> provides a user friendly error message if the coercion doesn’t exist and makes sure <span class="in">`NA`</span> is handled in a standard way. <span class="in">`NA`</span> is technically a <span class="in">`logical`</span> vector, but we want it to stand in for a missing value of any type.</span>
-<span id="cb56-236"><a href="#cb56-236" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-239"><a href="#cb56-239" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-240"><a href="#cb56-240" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn-ptype2-1</span></span>
-<span id="cb56-241"><a href="#cb56-241" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
-<span id="cb56-242"><a href="#cb56-242" aria-hidden="true" tabindex="-1"></a><span class="fu">vec_ptype2</span>(<span class="st">"bogus"</span>, <span class="fu">ccn</span>())</span>
-<span id="cb56-243"><a href="#cb56-243" aria-hidden="true" tabindex="-1"></a><span class="fu">vec_ptype2</span>(<span class="fu">ccn</span>(), <span class="cn">NA</span>)</span>
-<span id="cb56-244"><a href="#cb56-244" aria-hidden="true" tabindex="-1"></a><span class="fu">vec_ptype2</span>(<span class="cn">NA</span>, <span class="fu">ccn</span>())</span>
-<span id="cb56-245"><a href="#cb56-245" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb56-246"><a href="#cb56-246" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-247"><a href="#cb56-247" aria-hidden="true" tabindex="-1"></a>By default and in simple cases, an object of the same class is compatible with itself:</span>
-<span id="cb56-248"><a href="#cb56-248" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-251"><a href="#cb56-251" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-252"><a href="#cb56-252" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn-ptype2-2</span></span>
-<span id="cb56-253"><a href="#cb56-253" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
-<span id="cb56-254"><a href="#cb56-254" aria-hidden="true" tabindex="-1"></a><span class="fu">vec_ptype2</span>(<span class="fu">ccn</span>(), <span class="fu">ccn</span>())</span>
-<span id="cb56-255"><a href="#cb56-255" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb56-256"><a href="#cb56-256" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-257"><a href="#cb56-257" aria-hidden="true" tabindex="-1"></a>However this only works if the attributes for both objects are the same. Also the default methods are a bit slower. It is always a good idea to provide an explicit coercion method for the case of identical classes. </span>
-<span id="cb56-258"><a href="#cb56-258" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-259"><a href="#cb56-259" aria-hidden="true" tabindex="-1"></a>So we’ll start by saying that a <span class="in">`ccn`</span> combined with a <span class="in">`ccn`</span> yields a <span class="in">`ccn`</span>, which we indicate by returning a prototype generated by the constructor.</span>
+<span id="cb56-202"><a href="#cb56-202" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(x)</span>
+<span id="cb56-203"><a href="#cb56-203" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-204"><a href="#cb56-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-205"><a href="#cb56-205" aria-hidden="true" tabindex="-1"></a>For optimal display, I recommend also defining an abbreviated type name, which</span>
+<span id="cb56-206"><a href="#cb56-206" aria-hidden="true" tabindex="-1"></a>should be 4-5 letters for commonly used vectors. This is used in tibbles and in</span>
+<span id="cb56-207"><a href="#cb56-207" aria-hidden="true" tabindex="-1"></a><span class="in">`str()`</span>:</span>
+<span id="cb56-208"><a href="#cb56-208" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-211"><a href="#cb56-211" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-212"><a href="#cb56-212" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn-abbr</span></span>
+<span id="cb56-213"><a href="#cb56-213" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
+<span id="cb56-214"><a href="#cb56-214" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-215"><a href="#cb56-215" aria-hidden="true" tabindex="-1"></a>vec_ptype_abbr.ccn <span class="ot">&lt;-</span> <span class="cf">function</span>(x, ...) {</span>
+<span id="cb56-216"><a href="#cb56-216" aria-hidden="true" tabindex="-1"></a>  <span class="st">"ccn"</span></span>
+<span id="cb56-217"><a href="#cb56-217" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb56-218"><a href="#cb56-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-219"><a href="#cb56-219" aria-hidden="true" tabindex="-1"></a>tibble<span class="sc">::</span><span class="fu">tibble</span>(x)</span>
+<span id="cb56-220"><a href="#cb56-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-221"><a href="#cb56-221" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(x)</span>
+<span id="cb56-222"><a href="#cb56-222" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-223"><a href="#cb56-223" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-224"><a href="#cb56-224" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
+<span id="cb56-225"><a href="#cb56-225" aria-hidden="true" tabindex="-1"></a>If you need more control over printing in tibbles, implement a method for</span>
+<span id="cb56-226"><a href="#cb56-226" aria-hidden="true" tabindex="-1"></a><span class="in">`pillar::pillar_shaft()`</span>. See <span class="in">`vignette("pillar", package = "vctrs")`</span> for</span>
+<span id="cb56-227"><a href="#cb56-227" aria-hidden="true" tabindex="-1"></a>details.</span>
+<span id="cb56-228"><a href="#cb56-228" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb56-229"><a href="#cb56-229" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-230"><a href="#cb56-230" aria-hidden="true" tabindex="-1"></a><span class="fu">## Casting and coercion</span></span>
+<span id="cb56-231"><a href="#cb56-231" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-232"><a href="#cb56-232" aria-hidden="true" tabindex="-1"></a>The next set of methods you are likely to need are those related to coercion and</span>
+<span id="cb56-233"><a href="#cb56-233" aria-hidden="true" tabindex="-1"></a>casting. Coercion and casting are two sides of the same coin: changing the</span>
+<span id="cb56-234"><a href="#cb56-234" aria-hidden="true" tabindex="-1"></a>prototype of an existing object. When the change happens implicitly (e.g in</span>
+<span id="cb56-235"><a href="#cb56-235" aria-hidden="true" tabindex="-1"></a><span class="in">`c()`</span>) we call it **coercion**; when the change happens explicitly (e.g. with</span>
+<span id="cb56-236"><a href="#cb56-236" aria-hidden="true" tabindex="-1"></a><span class="in">`as.integer(x)`</span>), we call it **casting**.</span>
+<span id="cb56-237"><a href="#cb56-237" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-238"><a href="#cb56-238" aria-hidden="true" tabindex="-1"></a>One of the main goals of **vctrs** is to put coercion and casting on a robust</span>
+<span id="cb56-239"><a href="#cb56-239" aria-hidden="true" tabindex="-1"></a>theoretical footing so it's possible to make accurate predictions about what</span>
+<span id="cb56-240"><a href="#cb56-240" aria-hidden="true" tabindex="-1"></a>(e.g.) <span class="in">`c(x, y)`</span> should do when <span class="in">`x`</span> and <span class="in">`y`</span> have different prototypes. <span class="in">`vctrs`</span></span>
+<span id="cb56-241"><a href="#cb56-241" aria-hidden="true" tabindex="-1"></a>achieves this goal through two generics:</span>
+<span id="cb56-242"><a href="#cb56-242" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-243"><a href="#cb56-243" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`vec_ptype2(x, y)`</span> defines a possible set of **coercions**. It returns a</span>
+<span id="cb56-244"><a href="#cb56-244" aria-hidden="true" tabindex="-1"></a>  prototype if <span class="in">`x`</span> and <span class="in">`y`</span> can be safely coerced to the same prototype;</span>
+<span id="cb56-245"><a href="#cb56-245" aria-hidden="true" tabindex="-1"></a>  otherwise it returns an error. The set of automatic coercions is usually quite</span>
+<span id="cb56-246"><a href="#cb56-246" aria-hidden="true" tabindex="-1"></a>  small because too many tend to make code harder to reason about and silently</span>
+<span id="cb56-247"><a href="#cb56-247" aria-hidden="true" tabindex="-1"></a>  propagate mistakes.</span>
+<span id="cb56-248"><a href="#cb56-248" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`vec_cast(x, to)`</span> defines the possible sets of **casts**. It returns <span class="in">`x`</span></span>
+<span id="cb56-249"><a href="#cb56-249" aria-hidden="true" tabindex="-1"></a>  translated to have prototype <span class="in">`to`</span>, or throws an error if the conversion isn't</span>
+<span id="cb56-250"><a href="#cb56-250" aria-hidden="true" tabindex="-1"></a>  possible. The set of possible casts is a *superset* of possible **coercions**</span>
+<span id="cb56-251"><a href="#cb56-251" aria-hidden="true" tabindex="-1"></a>  because they're requested explicitly.</span>
+<span id="cb56-252"><a href="#cb56-252" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-253"><a href="#cb56-253" aria-hidden="true" tabindex="-1"></a><span class="fu">### Double dispatch</span></span>
+<span id="cb56-254"><a href="#cb56-254" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-255"><a href="#cb56-255" aria-hidden="true" tabindex="-1"></a>Both generics use [double</span>
+<span id="cb56-256"><a href="#cb56-256" aria-hidden="true" tabindex="-1"></a>dispatch](https://en.wikipedia.org/wiki/Double_dispatch) which means that the</span>
+<span id="cb56-257"><a href="#cb56-257" aria-hidden="true" tabindex="-1"></a>implementation is selected based on the class of two arguments, not just one.</span>
+<span id="cb56-258"><a href="#cb56-258" aria-hidden="true" tabindex="-1"></a>**S3** does not natively support double dispatch, so we implement our own</span>
+<span id="cb56-259"><a href="#cb56-259" aria-hidden="true" tabindex="-1"></a>dispatch mechanism. In practice, this means:</span>
 <span id="cb56-260"><a href="#cb56-260" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-263"><a href="#cb56-263" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-264"><a href="#cb56-264" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn-ptype2-3</span></span>
-<span id="cb56-265"><a href="#cb56-265" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
-<span id="cb56-266"><a href="#cb56-266" aria-hidden="true" tabindex="-1"></a>vec_ptype2.ccn.ccn <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y, ...) <span class="fu">new_ccn</span>()</span>
-<span id="cb56-267"><a href="#cb56-267" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb56-268"><a href="#cb56-268" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-269"><a href="#cb56-269" aria-hidden="true" tabindex="-1"></a>Next we define methods that say that combining a <span class="in">`ccn`</span> and <span class="in">`character`</span> should yield a <span class="in">`character`</span>.</span>
-<span id="cb56-270"><a href="#cb56-270" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-271"><a href="#cb56-271" aria-hidden="true" tabindex="-1"></a>Because double dispatch is a bit of a hack, we need to provide two methods. It’s your responsibility to ensure that each member of the pair returns the same result: if they don’t you will get weird and unpredictable behaviour.</span>
-<span id="cb56-272"><a href="#cb56-272" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-273"><a href="#cb56-273" aria-hidden="true" tabindex="-1"></a>The double dispatch mechanism requires us to refer to the underlying type, <span class="in">`character`</span>, in the method name. If we implemented <span class="in">`vec_ptype2.ccn.numeric()`</span>, it would never be called.</span>
-<span id="cb56-274"><a href="#cb56-274" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-277"><a href="#cb56-277" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-278"><a href="#cb56-278" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn-ptype2-4</span></span>
-<span id="cb56-279"><a href="#cb56-279" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
-<span id="cb56-280"><a href="#cb56-280" aria-hidden="true" tabindex="-1"></a>vec_ptype2.ccn.character <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y, ...) <span class="fu">character</span>()</span>
-<span id="cb56-281"><a href="#cb56-281" aria-hidden="true" tabindex="-1"></a>vec_ptype2.character.ccn <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y, ...) <span class="fu">character</span>()</span>
-<span id="cb56-282"><a href="#cb56-282" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb56-283"><a href="#cb56-283" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-284"><a href="#cb56-284" aria-hidden="true" tabindex="-1"></a>We can check that we’ve implemented this correctly with <span class="in">`vec_ptype_show()`</span>:</span>
-<span id="cb56-285"><a href="#cb56-285" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-288"><a href="#cb56-288" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-289"><a href="#cb56-289" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn-ptype-show</span></span>
-<span id="cb56-290"><a href="#cb56-290" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
-<span id="cb56-291"><a href="#cb56-291" aria-hidden="true" tabindex="-1"></a><span class="fu">vec_ptype_show</span>(<span class="fu">ccn</span>(), <span class="fu">character</span>(), <span class="fu">ccn</span>())</span>
-<span id="cb56-292"><a href="#cb56-292" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-261"><a href="#cb56-261" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>You end up with method names with two classes, like <span class="in">`vec_ptype2.foo.bar()`</span>.</span>
+<span id="cb56-262"><a href="#cb56-262" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>You don't need to implement default methods (they would never be called if you</span>
+<span id="cb56-263"><a href="#cb56-263" aria-hidden="true" tabindex="-1"></a>  do).</span>
+<span id="cb56-264"><a href="#cb56-264" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>You can't call <span class="in">`NextMethod()`</span>.</span>
+<span id="cb56-265"><a href="#cb56-265" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-266"><a href="#cb56-266" aria-hidden="true" tabindex="-1"></a><span class="fu">### CCN class</span></span>
+<span id="cb56-267"><a href="#cb56-267" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-268"><a href="#cb56-268" aria-hidden="true" tabindex="-1"></a>We'll make our <span class="in">`ccn`</span> class coercible back and forth with character vectors.</span>
+<span id="cb56-269"><a href="#cb56-269" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-270"><a href="#cb56-270" aria-hidden="true" tabindex="-1"></a><span class="in">`vec_ptype2()`</span> provides a user friendly error message if the coercion doesn't</span>
+<span id="cb56-271"><a href="#cb56-271" aria-hidden="true" tabindex="-1"></a>exist and makes sure <span class="in">`NA`</span> is handled in a standard way. <span class="in">`NA`</span> is technically a</span>
+<span id="cb56-272"><a href="#cb56-272" aria-hidden="true" tabindex="-1"></a><span class="in">`logical`</span> vector, but we want it to stand in for a missing value of any type.</span>
+<span id="cb56-273"><a href="#cb56-273" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-276"><a href="#cb56-276" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-277"><a href="#cb56-277" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn-ptype2-1</span></span>
+<span id="cb56-278"><a href="#cb56-278" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
+<span id="cb56-279"><a href="#cb56-279" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-280"><a href="#cb56-280" aria-hidden="true" tabindex="-1"></a><span class="fu">vec_ptype2</span>(<span class="st">"bogus"</span>, <span class="fu">ccn</span>())</span>
+<span id="cb56-281"><a href="#cb56-281" aria-hidden="true" tabindex="-1"></a><span class="fu">vec_ptype2</span>(<span class="fu">ccn</span>(), <span class="cn">NA</span>)</span>
+<span id="cb56-282"><a href="#cb56-282" aria-hidden="true" tabindex="-1"></a><span class="fu">vec_ptype2</span>(<span class="cn">NA</span>, <span class="fu">ccn</span>())</span>
+<span id="cb56-283"><a href="#cb56-283" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-284"><a href="#cb56-284" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-285"><a href="#cb56-285" aria-hidden="true" tabindex="-1"></a>By default and in simple cases, an object of the same class is compatible with</span>
+<span id="cb56-286"><a href="#cb56-286" aria-hidden="true" tabindex="-1"></a>itself:</span>
+<span id="cb56-287"><a href="#cb56-287" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-290"><a href="#cb56-290" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-291"><a href="#cb56-291" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn-ptype2-2</span></span>
+<span id="cb56-292"><a href="#cb56-292" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
 <span id="cb56-293"><a href="#cb56-293" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-294"><a href="#cb56-294" aria-hidden="true" tabindex="-1"></a>The <span class="in">`vec_ptype2()`</span> methods define which input is the richer type that <span class="in">`vctrs`</span> should coerce to. However, they don’t perform any conversion. </span>
-<span id="cb56-295"><a href="#cb56-295" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-296"><a href="#cb56-296" aria-hidden="true" tabindex="-1"></a>This is the job of <span class="in">`vec_cast()`</span>, which we implement next. We’ll provide a method to cast a <span class="in">`ccn`</span> to a <span class="in">`ccn`</span>:</span>
-<span id="cb56-297"><a href="#cb56-297" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-300"><a href="#cb56-300" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-301"><a href="#cb56-301" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn-cast</span></span>
-<span id="cb56-302"><a href="#cb56-302" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
-<span id="cb56-303"><a href="#cb56-303" aria-hidden="true" tabindex="-1"></a>vec_cast.ccn.ccn <span class="ot">&lt;-</span> <span class="cf">function</span>(x, to, ...) x</span>
-<span id="cb56-304"><a href="#cb56-304" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb56-305"><a href="#cb56-305" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-306"><a href="#cb56-306" aria-hidden="true" tabindex="-1"></a>And then for converting back and forth between <span class="in">`character`</span>s. To convert a <span class="in">`character`</span> to a <span class="in">`ccn`</span> we use the <span class="in">`ccn()`</span> helper (not the constructor; this is un-validated user input). To convert a <span class="in">`ccn`</span> to a <span class="in">`character`</span>, we strip the attributes.</span>
-<span id="cb56-307"><a href="#cb56-307" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-308"><a href="#cb56-308" aria-hidden="true" tabindex="-1"></a>Note that for historical reasons the order of argument in the signature is the opposite as for <span class="in">`vec_ptype2()`</span>. The class for <span class="in">`to`</span> comes first, and the class for <span class="in">`x`</span> comes second.</span>
+<span id="cb56-294"><a href="#cb56-294" aria-hidden="true" tabindex="-1"></a><span class="fu">vec_ptype2</span>(<span class="fu">ccn</span>(), <span class="fu">ccn</span>())</span>
+<span id="cb56-295"><a href="#cb56-295" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-296"><a href="#cb56-296" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-297"><a href="#cb56-297" aria-hidden="true" tabindex="-1"></a>However this only works if the attributes for both objects are the same. Also</span>
+<span id="cb56-298"><a href="#cb56-298" aria-hidden="true" tabindex="-1"></a>the default methods are a bit slower. It is always a good idea to provide an</span>
+<span id="cb56-299"><a href="#cb56-299" aria-hidden="true" tabindex="-1"></a>explicit coercion method for the case of identical classes.</span>
+<span id="cb56-300"><a href="#cb56-300" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-301"><a href="#cb56-301" aria-hidden="true" tabindex="-1"></a>So we'll start by saying that a <span class="in">`ccn`</span> combined with a <span class="in">`ccn`</span> yields a <span class="in">`ccn`</span>,</span>
+<span id="cb56-302"><a href="#cb56-302" aria-hidden="true" tabindex="-1"></a>which we indicate by returning a prototype generated by the constructor.</span>
+<span id="cb56-303"><a href="#cb56-303" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-306"><a href="#cb56-306" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-307"><a href="#cb56-307" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn-ptype2-3</span></span>
+<span id="cb56-308"><a href="#cb56-308" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
 <span id="cb56-309"><a href="#cb56-309" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-310"><a href="#cb56-310" aria-hidden="true" tabindex="-1"></a>Again, the double dispatch mechanism requires us to refer to the underlying type, <span class="in">`character`</span>, in the method name:</span>
-<span id="cb56-311"><a href="#cb56-311" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-314"><a href="#cb56-314" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-315"><a href="#cb56-315" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
-<span id="cb56-316"><a href="#cb56-316" aria-hidden="true" tabindex="-1"></a>vec_cast.ccn.character <span class="ot">&lt;-</span> <span class="cf">function</span>(x, to, ...) <span class="fu">ccn</span>(x)</span>
-<span id="cb56-317"><a href="#cb56-317" aria-hidden="true" tabindex="-1"></a>vec_cast.character.ccn <span class="ot">&lt;-</span> <span class="cf">function</span>(x, to, ...) <span class="fu">vec_data</span>(x)</span>
-<span id="cb56-318"><a href="#cb56-318" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-310"><a href="#cb56-310" aria-hidden="true" tabindex="-1"></a>vec_ptype2.ccn.ccn <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y, ...) <span class="fu">new_ccn</span>()</span>
+<span id="cb56-311"><a href="#cb56-311" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-312"><a href="#cb56-312" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-313"><a href="#cb56-313" aria-hidden="true" tabindex="-1"></a>Next we define methods that say that combining a <span class="in">`ccn`</span> and <span class="in">`character`</span> should</span>
+<span id="cb56-314"><a href="#cb56-314" aria-hidden="true" tabindex="-1"></a>yield a <span class="in">`character`</span>.</span>
+<span id="cb56-315"><a href="#cb56-315" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-316"><a href="#cb56-316" aria-hidden="true" tabindex="-1"></a>Because double dispatch is a bit of a hack, we need to provide two methods. It's</span>
+<span id="cb56-317"><a href="#cb56-317" aria-hidden="true" tabindex="-1"></a>your responsibility to ensure that each member of the pair returns the same</span>
+<span id="cb56-318"><a href="#cb56-318" aria-hidden="true" tabindex="-1"></a>result: if they don't you will get weird and unpredictable behaviour.</span>
 <span id="cb56-319"><a href="#cb56-319" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-320"><a href="#cb56-320" aria-hidden="true" tabindex="-1"></a>Then we can check this works with <span class="in">`vec_cast()`</span>:</span>
-<span id="cb56-321"><a href="#cb56-321" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-324"><a href="#cb56-324" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-325"><a href="#cb56-325" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
-<span id="cb56-326"><a href="#cb56-326" aria-hidden="true" tabindex="-1"></a><span class="fu">vec_cast</span>(<span class="st">"030113"</span>, <span class="fu">ccn</span>())</span>
-<span id="cb56-327"><a href="#cb56-327" aria-hidden="true" tabindex="-1"></a><span class="fu">vec_cast</span>(<span class="fu">ccn</span>(<span class="st">"030113"</span>), <span class="fu">character</span>())</span>
-<span id="cb56-328"><a href="#cb56-328" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-320"><a href="#cb56-320" aria-hidden="true" tabindex="-1"></a>The double dispatch mechanism requires us to refer to the underlying type,</span>
+<span id="cb56-321"><a href="#cb56-321" aria-hidden="true" tabindex="-1"></a><span class="in">`character`</span>, in the method name. If we implemented <span class="in">`vec_ptype2.ccn.numeric()`</span>,</span>
+<span id="cb56-322"><a href="#cb56-322" aria-hidden="true" tabindex="-1"></a>it would never be called.</span>
+<span id="cb56-323"><a href="#cb56-323" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-326"><a href="#cb56-326" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-327"><a href="#cb56-327" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn-ptype2-4</span></span>
+<span id="cb56-328"><a href="#cb56-328" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
 <span id="cb56-329"><a href="#cb56-329" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-330"><a href="#cb56-330" aria-hidden="true" tabindex="-1"></a>Once you’ve implemented <span class="in">`vec_ptype2()`</span> and <span class="in">`vec_cast()`</span>, you get <span class="in">`vec_c()`</span>, <span class="in">`[&lt;-`</span>, and <span class="in">`[[&lt;-`</span> implementations for free.</span>
-<span id="cb56-331"><a href="#cb56-331" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-334"><a href="#cb56-334" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-335"><a href="#cb56-335" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
-<span id="cb56-336"><a href="#cb56-336" aria-hidden="true" tabindex="-1"></a><span class="fu">vec_c</span>(<span class="fu">ccn</span>(<span class="st">"030113"</span>), <span class="st">"1"</span>)</span>
-<span id="cb56-337"><a href="#cb56-337" aria-hidden="true" tabindex="-1"></a><span class="fu">vec_c</span>(<span class="cn">NA</span>, <span class="fu">ccn</span>(<span class="st">"030113"</span>))</span>
-<span id="cb56-338"><a href="#cb56-338" aria-hidden="true" tabindex="-1"></a><span class="co"># but</span></span>
-<span id="cb56-339"><a href="#cb56-339" aria-hidden="true" tabindex="-1"></a><span class="fu">vec_c</span>(<span class="cn">TRUE</span>, <span class="fu">ccn</span>(<span class="st">"030113"</span>))</span>
-<span id="cb56-340"><a href="#cb56-340" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-341"><a href="#cb56-341" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">ccn</span>(examples[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>])</span>
-<span id="cb56-342"><a href="#cb56-342" aria-hidden="true" tabindex="-1"></a>x[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>] <span class="ot">&lt;-</span> LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span>
-<span id="cb56-343"><a href="#cb56-343" aria-hidden="true" tabindex="-1"></a>x[[<span class="dv">3</span>]] <span class="ot">&lt;-</span> LETTERS[<span class="dv">5</span>]</span>
-<span id="cb56-344"><a href="#cb56-344" aria-hidden="true" tabindex="-1"></a>x</span>
-<span id="cb56-345"><a href="#cb56-345" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb56-346"><a href="#cb56-346" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-347"><a href="#cb56-347" aria-hidden="true" tabindex="-1"></a>You’ll also get mostly correct behaviour for <span class="in">`c()`</span>. The exception is when you use <span class="in">`c()`</span> with a base R class:</span>
-<span id="cb56-348"><a href="#cb56-348" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-351"><a href="#cb56-351" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-352"><a href="#cb56-352" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
-<span id="cb56-353"><a href="#cb56-353" aria-hidden="true" tabindex="-1"></a><span class="co"># Correct</span></span>
-<span id="cb56-354"><a href="#cb56-354" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="fu">ccn</span>(<span class="st">"030113"</span>), <span class="st">"AB"</span>)</span>
-<span id="cb56-355"><a href="#cb56-355" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="fu">ccn</span>(<span class="st">"030113"</span>), <span class="fu">factor</span>(<span class="st">"A"</span>))</span>
+<span id="cb56-330"><a href="#cb56-330" aria-hidden="true" tabindex="-1"></a>vec_ptype2.ccn.character <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y, ...) <span class="fu">character</span>()</span>
+<span id="cb56-331"><a href="#cb56-331" aria-hidden="true" tabindex="-1"></a>vec_ptype2.character.ccn <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y, ...) <span class="fu">character</span>()</span>
+<span id="cb56-332"><a href="#cb56-332" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-333"><a href="#cb56-333" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-334"><a href="#cb56-334" aria-hidden="true" tabindex="-1"></a>We can check that we've implemented this correctly with <span class="in">`vec_ptype_show()`</span>:</span>
+<span id="cb56-335"><a href="#cb56-335" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-338"><a href="#cb56-338" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-339"><a href="#cb56-339" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn-ptype-show</span></span>
+<span id="cb56-340"><a href="#cb56-340" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
+<span id="cb56-341"><a href="#cb56-341" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-342"><a href="#cb56-342" aria-hidden="true" tabindex="-1"></a><span class="fu">vec_ptype_show</span>(<span class="fu">ccn</span>(), <span class="fu">character</span>(), <span class="fu">ccn</span>())</span>
+<span id="cb56-343"><a href="#cb56-343" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-344"><a href="#cb56-344" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-345"><a href="#cb56-345" aria-hidden="true" tabindex="-1"></a>The <span class="in">`vec_ptype2()`</span> methods define which input is the richer type that <span class="in">`vctrs`</span></span>
+<span id="cb56-346"><a href="#cb56-346" aria-hidden="true" tabindex="-1"></a>should coerce to. However, they don't perform any conversion.</span>
+<span id="cb56-347"><a href="#cb56-347" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-348"><a href="#cb56-348" aria-hidden="true" tabindex="-1"></a>This is the job of <span class="in">`vec_cast()`</span>, which we implement next. We'll provide a method</span>
+<span id="cb56-349"><a href="#cb56-349" aria-hidden="true" tabindex="-1"></a>to cast a <span class="in">`ccn`</span> to a <span class="in">`ccn`</span>:</span>
+<span id="cb56-350"><a href="#cb56-350" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-353"><a href="#cb56-353" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-354"><a href="#cb56-354" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ccn-cast</span></span>
+<span id="cb56-355"><a href="#cb56-355" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
 <span id="cb56-356"><a href="#cb56-356" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-357"><a href="#cb56-357" aria-hidden="true" tabindex="-1"></a><span class="co"># Incorrect</span></span>
-<span id="cb56-358"><a href="#cb56-358" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="fu">factor</span>(<span class="dv">1</span>), <span class="fu">ccn</span>(<span class="st">"030113"</span>))</span>
-<span id="cb56-359"><a href="#cb56-359" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb56-360"><a href="#cb56-360" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-361"><a href="#cb56-361" aria-hidden="true" tabindex="-1"></a>Unfortunately there’s no way to fix this problem with the current design of <span class="in">`c()`</span>.</span>
-<span id="cb56-362"><a href="#cb56-362" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-363"><a href="#cb56-363" aria-hidden="true" tabindex="-1"></a>Again, as a convenience, consider providing an <span class="in">`as_ccn()`</span> function that makes use of the casts defined in your <span class="in">`vec_cast.ccn()`</span> methods:</span>
+<span id="cb56-357"><a href="#cb56-357" aria-hidden="true" tabindex="-1"></a>vec_cast.ccn.ccn <span class="ot">&lt;-</span> <span class="cf">function</span>(x, to, ...) x</span>
+<span id="cb56-358"><a href="#cb56-358" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-359"><a href="#cb56-359" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-360"><a href="#cb56-360" aria-hidden="true" tabindex="-1"></a>And then for converting back and forth between <span class="in">`character`</span>s. To convert a</span>
+<span id="cb56-361"><a href="#cb56-361" aria-hidden="true" tabindex="-1"></a><span class="in">`character`</span> to a <span class="in">`ccn`</span> we use the <span class="in">`ccn()`</span> helper (not the constructor; this is</span>
+<span id="cb56-362"><a href="#cb56-362" aria-hidden="true" tabindex="-1"></a>un-validated user input). To convert a <span class="in">`ccn`</span> to a <span class="in">`character`</span>, we strip the</span>
+<span id="cb56-363"><a href="#cb56-363" aria-hidden="true" tabindex="-1"></a>attributes.</span>
 <span id="cb56-364"><a href="#cb56-364" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-367"><a href="#cb56-367" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-368"><a href="#cb56-368" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
-<span id="cb56-369"><a href="#cb56-369" aria-hidden="true" tabindex="-1"></a>as_ccn <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb56-370"><a href="#cb56-370" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vec_cast</span>(x, <span class="fu">new_ccn</span>())</span>
-<span id="cb56-371"><a href="#cb56-371" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb56-372"><a href="#cb56-372" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb56-373"><a href="#cb56-373" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-374"><a href="#cb56-374" aria-hidden="true" tabindex="-1"></a>Occasionally, it is useful to provide conversions that go beyond what’s allowed in casting. For example, we could offer a parsing method for character vectors. </span>
-<span id="cb56-375"><a href="#cb56-375" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-376"><a href="#cb56-376" aria-hidden="true" tabindex="-1"></a>In this case, <span class="in">`as_ccn()`</span> should be generic, the default method should cast, and then additional methods should implement more flexible conversion:</span>
-<span id="cb56-377"><a href="#cb56-377" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-380"><a href="#cb56-380" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb56-381"><a href="#cb56-381" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
-<span id="cb56-382"><a href="#cb56-382" aria-hidden="true" tabindex="-1"></a>as_ccn <span class="ot">&lt;-</span> <span class="cf">function</span>(x, ...) {</span>
-<span id="cb56-383"><a href="#cb56-383" aria-hidden="true" tabindex="-1"></a>  <span class="fu">UseMethod</span>(<span class="st">"as_ccn"</span>)</span>
-<span id="cb56-384"><a href="#cb56-384" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb56-385"><a href="#cb56-385" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-386"><a href="#cb56-386" aria-hidden="true" tabindex="-1"></a>as_ccn.default <span class="ot">&lt;-</span> <span class="cf">function</span>(x, ...) {</span>
-<span id="cb56-387"><a href="#cb56-387" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vec_cast</span>(x, <span class="fu">new_ccn</span>())</span>
-<span id="cb56-388"><a href="#cb56-388" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb56-389"><a href="#cb56-389" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-390"><a href="#cb56-390" aria-hidden="true" tabindex="-1"></a>as_ccn.character <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb56-391"><a href="#cb56-391" aria-hidden="true" tabindex="-1"></a>  <span class="co"># value &lt;- as.numeric(gsub(" *% *$", "", x)) / 100</span></span>
-<span id="cb56-392"><a href="#cb56-392" aria-hidden="true" tabindex="-1"></a>  <span class="fu">new_ccn</span>(x)</span>
-<span id="cb56-393"><a href="#cb56-393" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb56-394"><a href="#cb56-394" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-365"><a href="#cb56-365" aria-hidden="true" tabindex="-1"></a>Note that for historical reasons the order of argument in the signature is the</span>
+<span id="cb56-366"><a href="#cb56-366" aria-hidden="true" tabindex="-1"></a>opposite as for <span class="in">`vec_ptype2()`</span>. The class for <span class="in">`to`</span> comes first, and the class</span>
+<span id="cb56-367"><a href="#cb56-367" aria-hidden="true" tabindex="-1"></a>for <span class="in">`x`</span> comes second.</span>
+<span id="cb56-368"><a href="#cb56-368" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-369"><a href="#cb56-369" aria-hidden="true" tabindex="-1"></a>Again, the double dispatch mechanism requires us to refer to the underlying</span>
+<span id="cb56-370"><a href="#cb56-370" aria-hidden="true" tabindex="-1"></a>type, <span class="in">`character`</span>, in the method name:</span>
+<span id="cb56-371"><a href="#cb56-371" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-374"><a href="#cb56-374" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-375"><a href="#cb56-375" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
+<span id="cb56-376"><a href="#cb56-376" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-377"><a href="#cb56-377" aria-hidden="true" tabindex="-1"></a>vec_cast.ccn.character <span class="ot">&lt;-</span> <span class="cf">function</span>(x, to, ...) <span class="fu">ccn</span>(x)</span>
+<span id="cb56-378"><a href="#cb56-378" aria-hidden="true" tabindex="-1"></a>vec_cast.character.ccn <span class="ot">&lt;-</span> <span class="cf">function</span>(x, to, ...) <span class="fu">vec_data</span>(x)</span>
+<span id="cb56-379"><a href="#cb56-379" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-380"><a href="#cb56-380" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-381"><a href="#cb56-381" aria-hidden="true" tabindex="-1"></a>Then we can check this works with <span class="in">`vec_cast()`</span>:</span>
+<span id="cb56-382"><a href="#cb56-382" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-385"><a href="#cb56-385" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-386"><a href="#cb56-386" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
+<span id="cb56-387"><a href="#cb56-387" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-388"><a href="#cb56-388" aria-hidden="true" tabindex="-1"></a><span class="fu">vec_cast</span>(<span class="st">"030113"</span>, <span class="fu">ccn</span>())</span>
+<span id="cb56-389"><a href="#cb56-389" aria-hidden="true" tabindex="-1"></a><span class="fu">vec_cast</span>(<span class="fu">ccn</span>(<span class="st">"030113"</span>), <span class="fu">character</span>())</span>
+<span id="cb56-390"><a href="#cb56-390" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-391"><a href="#cb56-391" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-392"><a href="#cb56-392" aria-hidden="true" tabindex="-1"></a>Once you've implemented <span class="in">`vec_ptype2()`</span> and <span class="in">`vec_cast()`</span>, you get <span class="in">`vec_c()`</span>,</span>
+<span id="cb56-393"><a href="#cb56-393" aria-hidden="true" tabindex="-1"></a><span class="in">`[&lt;-`</span>, and <span class="in">`[[&lt;-`</span> implementations for free.</span>
+<span id="cb56-394"><a href="#cb56-394" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-397"><a href="#cb56-397" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-398"><a href="#cb56-398" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
+<span id="cb56-399"><a href="#cb56-399" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-400"><a href="#cb56-400" aria-hidden="true" tabindex="-1"></a><span class="fu">vec_c</span>(<span class="fu">ccn</span>(<span class="st">"030113"</span>), <span class="st">"1"</span>)</span>
+<span id="cb56-401"><a href="#cb56-401" aria-hidden="true" tabindex="-1"></a><span class="fu">vec_c</span>(<span class="cn">NA</span>, <span class="fu">ccn</span>(<span class="st">"030113"</span>))</span>
+<span id="cb56-402"><a href="#cb56-402" aria-hidden="true" tabindex="-1"></a><span class="co"># but</span></span>
+<span id="cb56-403"><a href="#cb56-403" aria-hidden="true" tabindex="-1"></a><span class="fu">vec_c</span>(<span class="cn">TRUE</span>, <span class="fu">ccn</span>(<span class="st">"030113"</span>))</span>
+<span id="cb56-404"><a href="#cb56-404" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-405"><a href="#cb56-405" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">ccn</span>(examples[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>])</span>
+<span id="cb56-406"><a href="#cb56-406" aria-hidden="true" tabindex="-1"></a>x[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>] <span class="ot">&lt;-</span> LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span>
+<span id="cb56-407"><a href="#cb56-407" aria-hidden="true" tabindex="-1"></a>x[[<span class="dv">3</span>]] <span class="ot">&lt;-</span> LETTERS[<span class="dv">5</span>]</span>
+<span id="cb56-408"><a href="#cb56-408" aria-hidden="true" tabindex="-1"></a>x</span>
+<span id="cb56-409"><a href="#cb56-409" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-410"><a href="#cb56-410" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-411"><a href="#cb56-411" aria-hidden="true" tabindex="-1"></a>You'll also get mostly correct behaviour for <span class="in">`c()`</span>. The exception is when you</span>
+<span id="cb56-412"><a href="#cb56-412" aria-hidden="true" tabindex="-1"></a>use <span class="in">`c()`</span> with a base R class:</span>
+<span id="cb56-413"><a href="#cb56-413" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-416"><a href="#cb56-416" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-417"><a href="#cb56-417" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
+<span id="cb56-418"><a href="#cb56-418" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-419"><a href="#cb56-419" aria-hidden="true" tabindex="-1"></a><span class="co"># Correct</span></span>
+<span id="cb56-420"><a href="#cb56-420" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="fu">ccn</span>(<span class="st">"030113"</span>), <span class="st">"AB"</span>)</span>
+<span id="cb56-421"><a href="#cb56-421" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="fu">ccn</span>(<span class="st">"030113"</span>), <span class="fu">factor</span>(<span class="st">"A"</span>))</span>
+<span id="cb56-422"><a href="#cb56-422" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-423"><a href="#cb56-423" aria-hidden="true" tabindex="-1"></a><span class="co"># Incorrect</span></span>
+<span id="cb56-424"><a href="#cb56-424" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="fu">factor</span>(<span class="dv">1</span>), <span class="fu">ccn</span>(<span class="st">"030113"</span>))</span>
+<span id="cb56-425"><a href="#cb56-425" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-426"><a href="#cb56-426" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-427"><a href="#cb56-427" aria-hidden="true" tabindex="-1"></a>Unfortunately there's no way to fix this problem with the current design of</span>
+<span id="cb56-428"><a href="#cb56-428" aria-hidden="true" tabindex="-1"></a><span class="in">`c()`</span>.</span>
+<span id="cb56-429"><a href="#cb56-429" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-430"><a href="#cb56-430" aria-hidden="true" tabindex="-1"></a>Again, as a convenience, consider providing an <span class="in">`as_ccn()`</span> function that makes</span>
+<span id="cb56-431"><a href="#cb56-431" aria-hidden="true" tabindex="-1"></a>use of the casts defined in your <span class="in">`vec_cast.ccn()`</span> methods:</span>
+<span id="cb56-432"><a href="#cb56-432" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-435"><a href="#cb56-435" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-436"><a href="#cb56-436" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
+<span id="cb56-437"><a href="#cb56-437" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-438"><a href="#cb56-438" aria-hidden="true" tabindex="-1"></a>as_ccn <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb56-439"><a href="#cb56-439" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vec_cast</span>(x, <span class="fu">new_ccn</span>())</span>
+<span id="cb56-440"><a href="#cb56-440" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb56-441"><a href="#cb56-441" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb56-442"><a href="#cb56-442" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-443"><a href="#cb56-443" aria-hidden="true" tabindex="-1"></a>Occasionally, it is useful to provide conversions that go beyond what's allowed</span>
+<span id="cb56-444"><a href="#cb56-444" aria-hidden="true" tabindex="-1"></a>in casting. For example, we could offer a parsing method for character vectors.</span>
+<span id="cb56-445"><a href="#cb56-445" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-446"><a href="#cb56-446" aria-hidden="true" tabindex="-1"></a>In this case, <span class="in">`as_ccn()`</span> should be generic, the default method should cast, and</span>
+<span id="cb56-447"><a href="#cb56-447" aria-hidden="true" tabindex="-1"></a>then additional methods should implement more flexible conversion:</span>
+<span id="cb56-448"><a href="#cb56-448" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-451"><a href="#cb56-451" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb56-452"><a href="#cb56-452" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: true</span></span>
+<span id="cb56-453"><a href="#cb56-453" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-454"><a href="#cb56-454" aria-hidden="true" tabindex="-1"></a>as_ccn <span class="ot">&lt;-</span> <span class="cf">function</span>(x, ...) {</span>
+<span id="cb56-455"><a href="#cb56-455" aria-hidden="true" tabindex="-1"></a>  <span class="fu">UseMethod</span>(<span class="st">"as_ccn"</span>)</span>
+<span id="cb56-456"><a href="#cb56-456" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb56-457"><a href="#cb56-457" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-458"><a href="#cb56-458" aria-hidden="true" tabindex="-1"></a>as_ccn.default <span class="ot">&lt;-</span> <span class="cf">function</span>(x, ...) {</span>
+<span id="cb56-459"><a href="#cb56-459" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vec_cast</span>(x, <span class="fu">new_ccn</span>())</span>
+<span id="cb56-460"><a href="#cb56-460" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb56-461"><a href="#cb56-461" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-462"><a href="#cb56-462" aria-hidden="true" tabindex="-1"></a>as_ccn.character <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb56-463"><a href="#cb56-463" aria-hidden="true" tabindex="-1"></a>  <span class="co"># value &lt;- as.numeric(gsub(" *% *$", "", x)) / 100</span></span>
+<span id="cb56-464"><a href="#cb56-464" aria-hidden="true" tabindex="-1"></a>  <span class="fu">new_ccn</span>(x)</span>
+<span id="cb56-465"><a href="#cb56-465" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb56-466"><a href="#cb56-466" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

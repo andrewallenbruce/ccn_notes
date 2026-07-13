@@ -6,18 +6,19 @@ editor_options:
 
 # HHA
 
-```{r setup}
+```{r}
+#| label: setup
 #| message: false
 #| warning: false
 #| echo: false
 #| cache: false
 #| comment: ""
+
 library(ccn)
 source("code/gt_theme.R")
 ```
 
 ```{r}
-ccn:::get_pin("hha") |> 
+ccn:::get_pin("hha") |>
   collapse::roworder(ccn)
 ```
-

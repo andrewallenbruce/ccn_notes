@@ -3,14 +3,17 @@ output: html_document
 editor_options: 
   chunk_output_type: console
 ---
+
 # Subunit
 
-```{r setup}
+```{r}
+#| label: setup
 #| message: false
 #| warning: false
 #| echo: false
 #| cache: false
 #| comment: ""
+
 library(ccn)
 library(cheapr)
 source("code/gt_theme.R")
@@ -19,22 +22,20 @@ source("code/gt_theme.R")
 ```{r}
 aff <- ccn:::get_pin("aff")
 
-aff$fac |> 
-  collapse::fcount(facility_type) |> 
+aff$fac |>
+  collapse::fcount(facility_type) |>
   collapse::roworder(-N)
 
-aff$sub |> 
-  collapse::fcount(facility_type) |> 
+aff$sub |>
+  collapse::fcount(facility_type) |>
   collapse::roworder(-N)
 
-aff$fac[cheapr::which_(aff$sub$parent %in_% aff$fac$ccn), ] |> 
-  collapse::fcount(facility_type) |> 
+aff$fac[cheapr::which_(aff$sub$parent %in_% aff$fac$ccn), ] |>
+  collapse::fcount(facility_type) |>
   collapse::roworder(-N)
 ```
-
 
 ```{r}
 aff$fac
 aff$sub
 ```
-

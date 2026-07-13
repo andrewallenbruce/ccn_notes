@@ -6,12 +6,14 @@ editor_options:
 
 # Medicaid
 
-```{r setup}
+```{r}
+#| label: setup
 #| message: false
 #| warning: false
 #| echo: false
 #| cache: false
 #| comment: ""
+
 library(ccn)
 source("code/gt_theme.R")
 ```
@@ -24,15 +26,16 @@ sequence beginning with `001`.
 
 ## Facility Types
 
-The third character of a Medicaid-Only Provider CCN represents the facility
-type and a unique identifier. The facility type is encoded in the third
-character of the last four characters. The table below summarizes the valid
-facility type codes and their corresponding ranges.
+The third character of a Medicaid-Only Provider CCN represents the facility type
+and a unique identifier. The facility type is encoded in the third character of
+the last four characters. The table below summarizes the valid facility type
+codes and their corresponding ranges.
 
 ```{r}
 #| label: medicaid-types
 #| echo: false
 #| message: false
+
 ccn::medicaid_types |>
   collapse::fgroup_by(abbr, desc) |>
   collapse::fsummarise(code = toString(code)) |>
@@ -62,20 +65,22 @@ ccn::medicaid_types |>
 
 ## Facility Ranges
 
-The last three characters of a Medicaid-Only Provider CCN represent the facility type and a unique
-identifier. The facility type is encoded in the third character of the last four
-characters. The table below summarizes the valid facility type codes and their
-corresponding ranges. 
+The last three characters of a Medicaid-Only Provider CCN represent the facility
+type and a unique identifier. The facility type is encoded in the third
+character of the last four characters. The table below summarizes the valid
+facility type codes and their corresponding ranges.
 
 ```{r}
 #| label: medicaid-ranges
 #| echo: false
 #| message: false
+
 ccn::medicaid_ranges |>
   collapse::fgroup_by(abbr) |>
   collapse::fsummarise(
-    desc = toString(desc), 
-    range = toString(range)) |>
+    desc = toString(desc),
+    range = toString(range)
+  ) |>
   gt::gt() |>
   gt::tab_options(
     table.width = gt::pct(100),
@@ -99,4 +104,3 @@ ccn::medicaid_ranges |>
     locations = gt::cells_body(columns = desc)
   )
 ```
-

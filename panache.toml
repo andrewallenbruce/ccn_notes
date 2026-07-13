@@ -1,0 +1,26 @@
+flavor = "quarto"
+
+[format]
+line-width = 80
+line-ending = "auto"
+wrap = "reflow"
+math-delimiter-style = "preserve"
+math-indent = 2
+table-indent = 2
+tab-stops = "normalize"
+tab-width = 4
+
+[compat]
+pandoc = "latest"
+quarto = "1.9"
+
+[formatters]
+r = "air"
+python = "ruff"
+
+[linters]
+r = "jarl"
+python = "ruff"
+
+[lint.rules] 
+missing-chunk-labels = false

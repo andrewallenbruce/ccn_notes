@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.35">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="dcterms.date" content="2026-04-10">
+<meta name="dcterms.date" content="2026-07-13">
 <title>CLIA – CCNs</title>
 <style>
 /* Default styles provided by pandoc.
@@ -329,7 +329,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 10, 2026</p>
+      <p class="date">July 13, 2026</p>
     </div>
   </div>
   
@@ -342,13 +342,60 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">provider</span><span class="fu">::</span><span class="fu"><a href="https://andrewallenbruce.github.io/provider/reference/clia.html">clia</a></span><span class="op">(</span>count <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>✔ `clia` returned 671,570 results.</code></pre>
+<pre><code>◼ clia | 676,051 rows | 136 pages</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># provider::clia(ccn = provider::starts_with("11D0"))</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="examples" class="level2"><h2 class="anchored" data-anchor-id="examples">Examples</h2>
+<ul>
+<li>Name: <code>MISSION AT AIR FORCE VILLAGE I, THE</code>
+</li>
+<li>CCN: <code>45D0501072</code>
+</li>
+<li>Address: <code>4949 RAVENSWOOD DRIVE</code>
+</li>
+<li>City: <code>SAN ANTONIO</code>
+</li>
+<li>State: <code>TX</code>
+</li>
+<li>Zip: <code>78227</code>
+</li>
+<li>Cert: <code>1993-02-18</code>
+</li>
+<li>Region: <code>(VI) Dallas</code>
+</li>
+<li>Owner: <code>Private</code>
+</li>
+</ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/parse.html">parse</a></span><span class="op">(</span><span class="st">"45D0501072"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">provider</span><span class="fu">::</span><span class="fu"><a href="https://andrewallenbruce.github.io/provider/reference/clia.html">clia</a></span><span class="op">(</span>ccn <span class="op">=</span> <span class="st">"45D0501072"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 1
+Columns: 20
+$ name        &lt;chr&gt; "MISSION AT AIR FORCE VILLAGE I,, THE"
+$ ccn         &lt;chr&gt; "45D0501072"
+$ clia        &lt;chr&gt; NA
+$ status      &lt;chr&gt; "Active"
+$ labs        &lt;int&gt; 0
+$ sites       &lt;int&gt; 0
+$ certificate &lt;chr&gt; "Waiver"
+$ address     &lt;chr&gt; "4949 RAVENSWOOD DRIVE"
+$ fac_type    &lt;chr&gt; "SNF"
+$ owner       &lt;chr&gt; "Private"
+$ action      &lt;chr&gt; NA
+$ cert_date   &lt;date&gt; 1993-02-18
+$ eff_date    &lt;date&gt; 2024-09-01
+$ term_date   &lt;date&gt; 2026-08-31
+$ elig        &lt;int&gt; 0
+$ city        &lt;chr&gt; "SAN ANTONIO"
+$ state       &lt;chr&gt; "TX"
+$ zip         &lt;chr&gt; "78227"
+$ multi       &lt;chr&gt; NA
+$ accredit    &lt;chr&gt; NA</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/parse.html">parse</a></span><span class="op">(</span><span class="st">"45D0501072"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;parse:supplier&gt;
      ccn: 45D0501072
@@ -356,7 +403,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     type: D
 sequence: 0501072</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">decode</span><span class="op">(</span><span class="st">"45D0501072"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">decode</span><span class="op">(</span><span class="st">"45D0501072"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;ccn::Supplier&gt;
  @ ccn      : chr "45D0501072"
@@ -371,36 +418,72 @@ sequence: 0501072</code></pre>
  .. @ desc: chr "Clinical Laboratory Improvement Amendments of 1988 (CLIA) Laboratory"
  @ extension: chr NA</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">as_data_frame</span><span class="op">(</span><span class="st">"45D0501072"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">as_data_frame</span><span class="op">(</span><span class="st">"45D0501072"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>         ccn   entity      state      region           range eipps
-1 45D0501072 Supplier TX (Texas) VI (Dallas) 0000001-9999999    NA
-                                                                         type
-1 CLIA (Clinical Laboratory Improvement Amendments of 1988 (CLIA) Laboratory)
-  parent  ext
-1   &lt;NA&gt; &lt;NA&gt;</code></pre>
+<pre><code>Rows: 1
+Columns: 9
+$ ccn    &lt;chr&gt; "45D0501072"
+$ entity &lt;chr&gt; "Supplier"
+$ state  &lt;chr&gt; "TX (Texas)"
+$ region &lt;chr&gt; "VI (Dallas)"
+$ range  &lt;chr&gt; "0000001-9999999"
+$ eipps  &lt;lgl&gt; NA
+$ type   &lt;chr&gt; "CLIA (Clinical Laboratory Improvement Amendments of 1988 (CLIA…
+$ parent &lt;chr&gt; NA
+$ ext    &lt;chr&gt; NA</code></pre>
 </div>
 </div>
 <ul>
-<li>Supplier Name: <code>MISSION AT AIR FORCE VILLAGE I, THE</code>
+<li>Name: <code>SCOTT AIR FORCE BASE OUTPATIENT CLINIC</code>
 </li>
-<li>CCN: <code>45D0501072</code>
+<li>CCN: <code>14D2326049</code>
 </li>
-<li>Supplier Type: <code>Laboratory</code>
+<li>Address: <code>310 W LOSEY ST</code>
 </li>
-<li>Address: <code>4949 RAVENSWOOD DRIVE SAN ANTONIO, TX 78227</code>
+<li>City: <code>SCOTT AIR FORCE BASE</code>
 </li>
-<li>Phone Number: <code>(210) 568-5162</code>
+<li>State: <code>IL</code>
 </li>
-<li>Participation Date: <code>1993-02-18</code>
+<li>Zip: <code>62225</code>
 </li>
-<li>Region: <code>(VI) Dallas</code>
+<li>Cert: <code>2025-06-26</code>
 </li>
-<li>Ownership Type: <code>Private</code>
+<li>Region: <code>(V) Chicago</code>
+</li>
+<li>Owner: <code>Government - Federal</code>
 </li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/parse.html">parse</a></span><span class="op">(</span><span class="st">"14D2326049"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">provider</span><span class="fu">::</span><span class="fu"><a href="https://andrewallenbruce.github.io/provider/reference/clia.html">clia</a></span><span class="op">(</span>ccn <span class="op">=</span> <span class="st">"14D2326049"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 1
+Columns: 20
+$ name        &lt;chr&gt; "SCOTT AIR FORCE BASE OUTPATIENT CLINIC"
+$ ccn         &lt;chr&gt; "14D2326049"
+$ clia        &lt;chr&gt; NA
+$ status      &lt;chr&gt; "Active"
+$ labs        &lt;int&gt; 3
+$ sites       &lt;int&gt; 0
+$ certificate &lt;chr&gt; "Accreditation"
+$ address     &lt;chr&gt; "310 W LOSEY ST"
+$ fac_type    &lt;chr&gt; "Community Clinic"
+$ owner       &lt;chr&gt; "[GOV] Federal"
+$ action      &lt;chr&gt; NA
+$ cert_date   &lt;date&gt; 2025-06-26
+$ eff_date    &lt;date&gt; 2025-06-26
+$ term_date   &lt;date&gt; 2026-05-22
+$ elig        &lt;int&gt; 0
+$ city        &lt;chr&gt; "SCOTT AIR FORCE BASE"
+$ state       &lt;chr&gt; "IL"
+$ zip         &lt;chr&gt; "62225"
+$ multi       &lt;chr&gt; NA
+$ accredit    &lt;chr&gt; NA</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/parse.html">parse</a></span><span class="op">(</span><span class="st">"14D2326049"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;parse:supplier&gt;
      ccn: 14D2326049
@@ -408,7 +491,7 @@ sequence: 0501072</code></pre>
     type: D
 sequence: 2326049</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">decode</span><span class="op">(</span><span class="st">"14D2326049"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">decode</span><span class="op">(</span><span class="st">"14D2326049"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;ccn::Supplier&gt;
  @ ccn      : chr "14D2326049"
@@ -423,36 +506,52 @@ sequence: 2326049</code></pre>
  .. @ desc: chr "Clinical Laboratory Improvement Amendments of 1988 (CLIA) Laboratory"
  @ extension: chr NA</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">as_data_frame</span><span class="op">(</span><span class="st">"14D2326049"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">as_data_frame</span><span class="op">(</span><span class="st">"14D2326049"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>         ccn   entity         state      region           range eipps
-1 14D2326049 Supplier IL (Illinois) V (Chicago) 0000001-9999999    NA
-                                                                         type
-1 CLIA (Clinical Laboratory Improvement Amendments of 1988 (CLIA) Laboratory)
-  parent  ext
-1   &lt;NA&gt; &lt;NA&gt;</code></pre>
+<pre><code>Rows: 1
+Columns: 9
+$ ccn    &lt;chr&gt; "14D2326049"
+$ entity &lt;chr&gt; "Supplier"
+$ state  &lt;chr&gt; "IL (Illinois)"
+$ region &lt;chr&gt; "V (Chicago)"
+$ range  &lt;chr&gt; "0000001-9999999"
+$ eipps  &lt;lgl&gt; NA
+$ type   &lt;chr&gt; "CLIA (Clinical Laboratory Improvement Amendments of 1988 (CLIA…
+$ parent &lt;chr&gt; NA
+$ ext    &lt;chr&gt; NA</code></pre>
 </div>
 </div>
-<ul>
-<li>Supplier Name: <code>SCOTT AIR FORCE BASE OUTPATIENT CLINIC</code>
-</li>
-<li>CCN: <code>14D2326049</code>
-</li>
-<li>Supplier Type: <code>Laboratory</code>
-</li>
-<li>Address: <code>310 W LOSEY ST SCOTT AIR FORCE BASE, IL 62225</code>
-</li>
-<li>Phone Number: <code>(314) 652-4100</code>
-</li>
-<li>Participation Date: <code>2025-06-26</code>
-</li>
-<li>Region: <code>(V) Chicago</code>
-</li>
-<li>Ownership Type: <code>Government - Federal</code>
-</li>
-</ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/parse.html">parse</a></span><span class="op">(</span><span class="st">"05D0975224"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">provider</span><span class="fu">::</span><span class="fu"><a href="https://andrewallenbruce.github.io/provider/reference/clia.html">clia</a></span><span class="op">(</span>ccn <span class="op">=</span> <span class="st">"05D0975224"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 1
+Columns: 20
+$ name        &lt;chr&gt; "AIR FORCE VILLAGE WEST"
+$ ccn         &lt;chr&gt; "05D0975224"
+$ clia        &lt;chr&gt; NA
+$ status      &lt;chr&gt; "Active"
+$ labs        &lt;int&gt; 0
+$ sites       &lt;int&gt; 0
+$ certificate &lt;chr&gt; "Waiver"
+$ address     &lt;chr&gt; "17050 ARNOLD DR"
+$ fac_type    &lt;chr&gt; "Physician"
+$ owner       &lt;chr&gt; "Private"
+$ action      &lt;chr&gt; NA
+$ cert_date   &lt;date&gt; 2000-06-29
+$ eff_date    &lt;date&gt; 2024-06-29
+$ term_date   &lt;date&gt; 2026-06-28
+$ elig        &lt;int&gt; 0
+$ city        &lt;chr&gt; "RIVERSIDE"
+$ state       &lt;chr&gt; "CA"
+$ zip         &lt;chr&gt; "92518"
+$ multi       &lt;chr&gt; NA
+$ accredit    &lt;chr&gt; NA</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/parse.html">parse</a></span><span class="op">(</span><span class="st">"05D0975224"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;parse:supplier&gt;
      ccn: 05D0975224
@@ -460,7 +559,7 @@ sequence: 2326049</code></pre>
     type: D
 sequence: 0975224</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">decode</span><span class="op">(</span><span class="st">"05D0975224"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">decode</span><span class="op">(</span><span class="st">"05D0975224"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;ccn::Supplier&gt;
  @ ccn      : chr "05D0975224"
@@ -475,32 +574,40 @@ sequence: 0975224</code></pre>
  .. @ desc: chr "Clinical Laboratory Improvement Amendments of 1988 (CLIA) Laboratory"
  @ extension: chr NA</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">as_data_frame</span><span class="op">(</span><span class="st">"05D0975224"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">as_data_frame</span><span class="op">(</span><span class="st">"05D0975224"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html">glimpse</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>         ccn   entity           state             region           range eipps
-1 05D0975224 Supplier CA (California) IX (San Francisco) 0000001-9999999    NA
-                                                                         type
-1 CLIA (Clinical Laboratory Improvement Amendments of 1988 (CLIA) Laboratory)
-  parent  ext
-1   &lt;NA&gt; &lt;NA&gt;</code></pre>
+<pre><code>Rows: 1
+Columns: 9
+$ ccn    &lt;chr&gt; "05D0975224"
+$ entity &lt;chr&gt; "Supplier"
+$ state  &lt;chr&gt; "CA (California)"
+$ region &lt;chr&gt; "IX (San Francisco)"
+$ range  &lt;chr&gt; "0000001-9999999"
+$ eipps  &lt;lgl&gt; NA
+$ type   &lt;chr&gt; "CLIA (Clinical Laboratory Improvement Amendments of 1988 (CLIA…
+$ parent &lt;chr&gt; NA
+$ ext    &lt;chr&gt; NA</code></pre>
 </div>
 </div>
 <ul>
-<li>Supplier Name: <code>AIR FORCE VILLAGE WEST</code>
+<li>Name: <code>AIR FORCE VILLAGE WEST</code>
 </li>
 <li>CCN: <code>05D0975224</code>
 </li>
-<li>Supplier Type: <code>Laboratory</code>
+<li>Address: <code>17050 ARNOLD DR</code>
 </li>
-<li>Address: <code>17050 ARNOLD DR RIVERSIDE, CA 92518</code>
+<li>City: <code>RIVERSIDE</code>
 </li>
-<li>Phone Number: <code>(909) 697-2059</code>
+<li>State: <code>CA</code>
 </li>
-<li>Participation Date: <code>2000-06-29</code>
+<li>Zip: <code>92518</code>
+</li>
+<li>Cert: <code>2000-06-29</code>
 </li>
 <li>Region: <code>(IX) San Francisco</code>
 </li>
-<li>Ownership Type: <code>Private</code>
+<li>Owner: <code>Private</code>
 </li>
 </ul>
 
@@ -968,82 +1075,110 @@ sequence: 0975224</code></pre>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span><span class="co"> html_document</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="an">editor_options:</span><span class="co"> </span></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co">  chunk_output_type: console</span></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="fu"># CLIA</span></span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>Laboratories that examine human specimens for the diagnosis, prevention, or</span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>treatment of any disease or impairment of, or the assessment of the health of,</span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>human beings are yet another category of suppliers and must meet Clinical</span>
-<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>Laboratory Improvements of 1988 Act (CLIA) requirements. </span>
-<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup}</span></span>
-<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a><span class="co">#| cache: false</span></span>
-<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a><span class="co">#| comment: ""</span></span>
-<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ccn)</span>
-<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"code/gt_theme.R"</span>)</span>
-<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: api-clia</span></span>
-<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: true</span></span>
-<span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a>provider<span class="sc">::</span><span class="fu">clia</span>(<span class="at">count =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb22-30"><a href="#cb22-30" aria-hidden="true" tabindex="-1"></a><span class="co"># provider::clia(ccn = provider::starts_with("11D0"))</span></span>
-<span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb22-32"><a href="#cb22-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-33"><a href="#cb22-33" aria-hidden="true" tabindex="-1"></a><span class="fu">## Examples</span></span>
-<span id="cb22-34"><a href="#cb22-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-37"><a href="#cb22-37" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb22-38"><a href="#cb22-38" aria-hidden="true" tabindex="-1"></a><span class="fu">parse</span>(<span class="st">"45D0501072"</span>)</span>
-<span id="cb22-39"><a href="#cb22-39" aria-hidden="true" tabindex="-1"></a><span class="fu">decode</span>(<span class="st">"45D0501072"</span>)</span>
-<span id="cb22-40"><a href="#cb22-40" aria-hidden="true" tabindex="-1"></a><span class="fu">as_data_frame</span>(<span class="st">"45D0501072"</span>)</span>
-<span id="cb22-41"><a href="#cb22-41" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb22-42"><a href="#cb22-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-43"><a href="#cb22-43" aria-hidden="true" tabindex="-1"></a><span class="ss">   * </span>Supplier Name: <span class="in">`MISSION AT AIR FORCE VILLAGE I, THE`</span></span>
-<span id="cb22-44"><a href="#cb22-44" aria-hidden="true" tabindex="-1"></a><span class="ss">   * </span>CCN: <span class="in">`45D0501072`</span></span>
-<span id="cb22-45"><a href="#cb22-45" aria-hidden="true" tabindex="-1"></a><span class="ss">   * </span>Supplier Type: <span class="in">`Laboratory`</span></span>
-<span id="cb22-46"><a href="#cb22-46" aria-hidden="true" tabindex="-1"></a><span class="ss">   * </span>Address: <span class="in">`4949 RAVENSWOOD DRIVE SAN ANTONIO, TX 78227`</span></span>
-<span id="cb22-47"><a href="#cb22-47" aria-hidden="true" tabindex="-1"></a><span class="ss">   * </span>Phone Number: <span class="in">`(210) 568-5162`</span></span>
-<span id="cb22-48"><a href="#cb22-48" aria-hidden="true" tabindex="-1"></a><span class="ss">   * </span>Participation Date: <span class="in">`1993-02-18`</span></span>
-<span id="cb22-49"><a href="#cb22-49" aria-hidden="true" tabindex="-1"></a><span class="ss">   * </span>Region: <span class="in">`(VI) Dallas`</span></span>
-<span id="cb22-50"><a href="#cb22-50" aria-hidden="true" tabindex="-1"></a><span class="ss">   * </span>Ownership Type: <span class="in">`Private`</span></span>
-<span id="cb22-51"><a href="#cb22-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-54"><a href="#cb22-54" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb22-55"><a href="#cb22-55" aria-hidden="true" tabindex="-1"></a><span class="fu">parse</span>(<span class="st">"14D2326049"</span>)</span>
-<span id="cb22-56"><a href="#cb22-56" aria-hidden="true" tabindex="-1"></a><span class="fu">decode</span>(<span class="st">"14D2326049"</span>)</span>
-<span id="cb22-57"><a href="#cb22-57" aria-hidden="true" tabindex="-1"></a><span class="fu">as_data_frame</span>(<span class="st">"14D2326049"</span>)</span>
-<span id="cb22-58"><a href="#cb22-58" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb22-59"><a href="#cb22-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-60"><a href="#cb22-60" aria-hidden="true" tabindex="-1"></a><span class="ss">   * </span>Supplier Name: <span class="in">`SCOTT AIR FORCE BASE OUTPATIENT CLINIC`</span></span>
-<span id="cb22-61"><a href="#cb22-61" aria-hidden="true" tabindex="-1"></a><span class="ss">   * </span>CCN: <span class="in">`14D2326049`</span></span>
-<span id="cb22-62"><a href="#cb22-62" aria-hidden="true" tabindex="-1"></a><span class="ss">   * </span>Supplier Type: <span class="in">`Laboratory`</span></span>
-<span id="cb22-63"><a href="#cb22-63" aria-hidden="true" tabindex="-1"></a><span class="ss">   * </span>Address: <span class="in">`310 W LOSEY ST SCOTT AIR FORCE BASE, IL 62225`</span></span>
-<span id="cb22-64"><a href="#cb22-64" aria-hidden="true" tabindex="-1"></a><span class="ss">   * </span>Phone Number: <span class="in">`(314) 652-4100`</span></span>
-<span id="cb22-65"><a href="#cb22-65" aria-hidden="true" tabindex="-1"></a><span class="ss">   * </span>Participation Date: <span class="in">`2025-06-26`</span></span>
-<span id="cb22-66"><a href="#cb22-66" aria-hidden="true" tabindex="-1"></a><span class="ss">   * </span>Region: <span class="in">`(V) Chicago`</span></span>
-<span id="cb22-67"><a href="#cb22-67" aria-hidden="true" tabindex="-1"></a><span class="ss">   * </span>Ownership Type: <span class="in">`Government - Federal`</span></span>
-<span id="cb22-68"><a href="#cb22-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-71"><a href="#cb22-71" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb22-72"><a href="#cb22-72" aria-hidden="true" tabindex="-1"></a><span class="fu">parse</span>(<span class="st">"05D0975224"</span>)</span>
-<span id="cb22-73"><a href="#cb22-73" aria-hidden="true" tabindex="-1"></a><span class="fu">decode</span>(<span class="st">"05D0975224"</span>)</span>
-<span id="cb22-74"><a href="#cb22-74" aria-hidden="true" tabindex="-1"></a><span class="fu">as_data_frame</span>(<span class="st">"05D0975224"</span>)</span>
-<span id="cb22-75"><a href="#cb22-75" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb22-76"><a href="#cb22-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-77"><a href="#cb22-77" aria-hidden="true" tabindex="-1"></a><span class="ss">   * </span>Supplier Name: <span class="in">`AIR FORCE VILLAGE WEST`</span></span>
-<span id="cb22-78"><a href="#cb22-78" aria-hidden="true" tabindex="-1"></a><span class="ss">   * </span>CCN: <span class="in">`05D0975224`</span></span>
-<span id="cb22-79"><a href="#cb22-79" aria-hidden="true" tabindex="-1"></a><span class="ss">   * </span>Supplier Type: <span class="in">`Laboratory`</span></span>
-<span id="cb22-80"><a href="#cb22-80" aria-hidden="true" tabindex="-1"></a><span class="ss">   * </span>Address: <span class="in">`17050 ARNOLD DR RIVERSIDE, CA 92518`</span></span>
-<span id="cb22-81"><a href="#cb22-81" aria-hidden="true" tabindex="-1"></a><span class="ss">   * </span>Phone Number: <span class="in">`(909) 697-2059`</span></span>
-<span id="cb22-82"><a href="#cb22-82" aria-hidden="true" tabindex="-1"></a><span class="ss">   * </span>Participation Date: <span class="in">`2000-06-29`</span></span>
-<span id="cb22-83"><a href="#cb22-83" aria-hidden="true" tabindex="-1"></a><span class="ss">   * </span>Region: <span class="in">`(IX) San Francisco`</span></span>
-<span id="cb22-84"><a href="#cb22-84" aria-hidden="true" tabindex="-1"></a><span class="ss">   * </span>Ownership Type: <span class="in">`Private`</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span><span class="co"> html_document</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="an">editor_options:</span><span class="co"> </span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co">  chunk_output_type: console</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="fu"># CLIA</span></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>Laboratories that examine human specimens for the diagnosis, prevention, or</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>treatment of any disease or impairment of, or the assessment of the health of,</span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>human beings are yet another category of suppliers and must meet Clinical</span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>Laboratory Improvements of 1988 Act (CLIA) requirements.</span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup</span></span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a><span class="co">#| cache: false</span></span>
+<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a><span class="co">#| comment: ""</span></span>
+<span id="cb27-23"><a href="#cb27-23" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ccn)</span>
+<span id="cb27-24"><a href="#cb27-24" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(provider)</span>
+<span id="cb27-25"><a href="#cb27-25" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"code/gt_theme.R"</span>)</span>
+<span id="cb27-26"><a href="#cb27-26" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb27-27"><a href="#cb27-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-30"><a href="#cb27-30" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb27-31"><a href="#cb27-31" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: api-clia</span></span>
+<span id="cb27-32"><a href="#cb27-32" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: true</span></span>
+<span id="cb27-33"><a href="#cb27-33" aria-hidden="true" tabindex="-1"></a>provider<span class="sc">::</span><span class="fu">clia</span>(<span class="at">count =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb27-34"><a href="#cb27-34" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb27-35"><a href="#cb27-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-36"><a href="#cb27-36" aria-hidden="true" tabindex="-1"></a><span class="fu">## Examples</span></span>
+<span id="cb27-37"><a href="#cb27-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-38"><a href="#cb27-38" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Name: <span class="in">`MISSION AT AIR FORCE VILLAGE I, THE`</span></span>
+<span id="cb27-39"><a href="#cb27-39" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>CCN: <span class="in">`45D0501072`</span></span>
+<span id="cb27-40"><a href="#cb27-40" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Address: <span class="in">`4949 RAVENSWOOD DRIVE`</span></span>
+<span id="cb27-41"><a href="#cb27-41" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>City: <span class="in">`SAN ANTONIO`</span></span>
+<span id="cb27-42"><a href="#cb27-42" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>State: <span class="in">`TX`</span></span>
+<span id="cb27-43"><a href="#cb27-43" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Zip: <span class="in">`78227`</span></span>
+<span id="cb27-44"><a href="#cb27-44" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Cert: <span class="in">`1993-02-18`</span></span>
+<span id="cb27-45"><a href="#cb27-45" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Region: <span class="in">`(VI) Dallas`</span></span>
+<span id="cb27-46"><a href="#cb27-46" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Owner: <span class="in">`Private`</span></span>
+<span id="cb27-47"><a href="#cb27-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-50"><a href="#cb27-50" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb27-51"><a href="#cb27-51" aria-hidden="true" tabindex="-1"></a>provider<span class="sc">::</span><span class="fu">clia</span>(<span class="at">ccn =</span> <span class="st">"45D0501072"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb27-52"><a href="#cb27-52" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">glimpse</span>()</span>
+<span id="cb27-53"><a href="#cb27-53" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb27-54"><a href="#cb27-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-57"><a href="#cb27-57" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb27-58"><a href="#cb27-58" aria-hidden="true" tabindex="-1"></a><span class="fu">parse</span>(<span class="st">"45D0501072"</span>)</span>
+<span id="cb27-59"><a href="#cb27-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-60"><a href="#cb27-60" aria-hidden="true" tabindex="-1"></a><span class="fu">decode</span>(<span class="st">"45D0501072"</span>)</span>
+<span id="cb27-61"><a href="#cb27-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-62"><a href="#cb27-62" aria-hidden="true" tabindex="-1"></a><span class="fu">as_data_frame</span>(<span class="st">"45D0501072"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb27-63"><a href="#cb27-63" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">glimpse</span>()</span>
+<span id="cb27-64"><a href="#cb27-64" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb27-65"><a href="#cb27-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-66"><a href="#cb27-66" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Name: <span class="in">`SCOTT AIR FORCE BASE OUTPATIENT CLINIC`</span></span>
+<span id="cb27-67"><a href="#cb27-67" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>CCN: <span class="in">`14D2326049`</span></span>
+<span id="cb27-68"><a href="#cb27-68" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Address: <span class="in">`310 W LOSEY ST`</span></span>
+<span id="cb27-69"><a href="#cb27-69" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>City: <span class="in">`SCOTT AIR FORCE BASE`</span></span>
+<span id="cb27-70"><a href="#cb27-70" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>State: <span class="in">`IL`</span></span>
+<span id="cb27-71"><a href="#cb27-71" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Zip: <span class="in">`62225`</span></span>
+<span id="cb27-72"><a href="#cb27-72" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Cert: <span class="in">`2025-06-26`</span></span>
+<span id="cb27-73"><a href="#cb27-73" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Region: <span class="in">`(V) Chicago`</span></span>
+<span id="cb27-74"><a href="#cb27-74" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Owner: <span class="in">`Government - Federal`</span></span>
+<span id="cb27-75"><a href="#cb27-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-78"><a href="#cb27-78" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb27-79"><a href="#cb27-79" aria-hidden="true" tabindex="-1"></a>provider<span class="sc">::</span><span class="fu">clia</span>(<span class="at">ccn =</span> <span class="st">"14D2326049"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb27-80"><a href="#cb27-80" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">glimpse</span>()</span>
+<span id="cb27-81"><a href="#cb27-81" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb27-82"><a href="#cb27-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-85"><a href="#cb27-85" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb27-86"><a href="#cb27-86" aria-hidden="true" tabindex="-1"></a><span class="fu">parse</span>(<span class="st">"14D2326049"</span>)</span>
+<span id="cb27-87"><a href="#cb27-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-88"><a href="#cb27-88" aria-hidden="true" tabindex="-1"></a><span class="fu">decode</span>(<span class="st">"14D2326049"</span>)</span>
+<span id="cb27-89"><a href="#cb27-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-90"><a href="#cb27-90" aria-hidden="true" tabindex="-1"></a><span class="fu">as_data_frame</span>(<span class="st">"14D2326049"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb27-91"><a href="#cb27-91" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">glimpse</span>()</span>
+<span id="cb27-92"><a href="#cb27-92" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb27-93"><a href="#cb27-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-96"><a href="#cb27-96" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb27-97"><a href="#cb27-97" aria-hidden="true" tabindex="-1"></a>provider<span class="sc">::</span><span class="fu">clia</span>(<span class="at">ccn =</span> <span class="st">"05D0975224"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb27-98"><a href="#cb27-98" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">glimpse</span>()</span>
+<span id="cb27-99"><a href="#cb27-99" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb27-100"><a href="#cb27-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-103"><a href="#cb27-103" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb27-104"><a href="#cb27-104" aria-hidden="true" tabindex="-1"></a><span class="fu">parse</span>(<span class="st">"05D0975224"</span>)</span>
+<span id="cb27-105"><a href="#cb27-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-106"><a href="#cb27-106" aria-hidden="true" tabindex="-1"></a><span class="fu">decode</span>(<span class="st">"05D0975224"</span>)</span>
+<span id="cb27-107"><a href="#cb27-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-108"><a href="#cb27-108" aria-hidden="true" tabindex="-1"></a><span class="fu">as_data_frame</span>(<span class="st">"05D0975224"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb27-109"><a href="#cb27-109" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">glimpse</span>()</span>
+<span id="cb27-110"><a href="#cb27-110" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb27-111"><a href="#cb27-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-112"><a href="#cb27-112" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Name: <span class="in">`AIR FORCE VILLAGE WEST`</span></span>
+<span id="cb27-113"><a href="#cb27-113" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>CCN: <span class="in">`05D0975224`</span></span>
+<span id="cb27-114"><a href="#cb27-114" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Address: <span class="in">`17050 ARNOLD DR`</span></span>
+<span id="cb27-115"><a href="#cb27-115" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>City: <span class="in">`RIVERSIDE`</span></span>
+<span id="cb27-116"><a href="#cb27-116" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>State: <span class="in">`CA`</span></span>
+<span id="cb27-117"><a href="#cb27-117" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Zip: <span class="in">`92518`</span></span>
+<span id="cb27-118"><a href="#cb27-118" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Cert: <span class="in">`2000-06-29`</span></span>
+<span id="cb27-119"><a href="#cb27-119" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Region: <span class="in">`(IX) San Francisco`</span></span>
+<span id="cb27-120"><a href="#cb27-120" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Owner: <span class="in">`Private`</span></span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

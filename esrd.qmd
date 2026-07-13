@@ -6,12 +6,14 @@ editor_options:
 
 # ESRD
 
-```{r setup}
+```{r}
+#| label: setup
 #| message: false
 #| warning: false
 #| echo: false
 #| cache: false
 #| comment: ""
+
 library(ccn)
 source("code/gt_theme.R")
 ```
@@ -22,9 +24,10 @@ source("code/gt_theme.R")
 #| label: esrd-ranges
 #| echo: false
 #| message: false
+
 ccn::medicare_ranges |>
-   collapse::sbt(stringi::stri_detect_regex(abbr, "ESRD")) |>
-   collapse::gv(c("abbr", "desc", "range")) |> 
+  collapse::sbt(stringi::stri_detect_regex(abbr, "ESRD")) |>
+  collapse::gv(c("abbr", "desc", "range")) |>
   gt::gt() |>
   gt::tab_options(
     table.width = gt::pct(100),
@@ -33,9 +36,10 @@ ccn::medicare_ranges |>
   gtExtras::gt_theme_nytimes() |>
   gt::tab_style(
     style = gt::cell_text(
-      font = gt::google_font(name = "JetBrains Mono"), 
-      color = "grey60", 
-      size = "small"),
+      font = gt::google_font(name = "JetBrains Mono"),
+      color = "grey60",
+      size = "small"
+    ),
     locations = gt::cells_body(columns = c(desc, range))
   ) |>
   gt::tab_style(
@@ -49,7 +53,6 @@ ccn::medicare_ranges |>
 ```
 
 ::: panel-tabset
-
 ## ESRD-H
 
 **Hospital-Based Renal Dialysis Facilities** `[2300, 2499]`
@@ -58,7 +61,7 @@ This CCN range is used for ESRD facilities that have been determined by the CMS
 to be hospital-owned, hospital-administered ESRD facilities physically located
 on the hospital's premises as opposed to independent ESRD facilities and
 Hospital-Based Renal Disease Satellite Facilities. The satellites are
-hospital-based, but are physically located off the hospital’s premises.
+hospital-based, but are physically located off the hospital's premises.
 
 The physical location of an ESRD facility on the premises of a hospital is not
 considered when determining if the ESRD facility is hospital-based. Hospital
@@ -71,7 +74,7 @@ a hospital-based ESRD facility by a non-hospital manager.
 **Independent Renal Dialysis Facilities** `[2500, 2899]`
 
 These facilities do not meet the definition of hospital-based irrespective of
-whether they are located on or off the hospital’s premises. A determination of
+whether they are located on or off the hospital's premises. A determination of
 independent, as opposed to hospital-based, will be based on the statutory and
 regulatory provisions and manual instructions. Independent facilities bill under
 their own numbers. ESRD facilities located at skilled nursing facilities will be
@@ -91,20 +94,24 @@ under its own number which is in the 2900-2999 series.
 **Hospital-Based Renal Dialysis Satellite Facilities** `[3500, 3699]`
 
 This CCN range is used for those ESRD facilities that are hospital-owned and
-hospital-administered, but that are not located on the hospital’s premises. This
+hospital-administered, but that are not located on the hospital's premises. This
 is why they are referred to as hospital-based satellites.
 
 In determining whether such a satellite facility is hospital-based, use the same
 criteria as you would in making a hospital-based determination under the
 2300-2499 series, except that you would assign a 3500-3699 number to such a
 facility because it is off the premises of the hospital to which it is based.
-The word __"premises"__ is not explicitly defined in the statute, regulations,
+The word **"premises"** is not explicitly defined in the statute, regulations,
 or State Operations Manual, but there is a definition of "furnishes on the
 premises" that states:
 
-   - The ESRD facility furnishes services on its main premises or its other premises that are:
-      a.  Contiguous with or in immediate proximity to the main premises, and under the direction of the same professional staff and governing body as the main premises, or
-      b.  Approved on a time-limited basis as a special purpose renal dialysis facility.
+- The ESRD facility furnishes services on its main premises or its other
+  premises that are:
+  a. Contiguous with or in immediate proximity to the main premises, and under
+     the direction of the same professional staff and governing body as the main
+     premises, or
+  b. Approved on a time-limited basis as a special purpose renal dialysis
+     facility.
 
 Thus, in addition to the regulations, which should assist you in determining
 whether the facility is an integral part of the hospital, you may use the
@@ -113,28 +120,28 @@ entity under the 2300-2499 series as opposed to an entity under the 3500-3699
 number series.
 
 Also, we do not believe that these satellites will be furnishing inpatient
-dialysis services. CMS will make or approve the determination that a
-particular ESRD facility meets the requirements to be hospital-based, and if it
-is off the hospital's premises, a hospital-based satellite. It is conceivable
-that a hospital-based ESRD facility could have a 2300-2499 number assigned to
-the location on the hospital’s premises, and one or more 3500-3699 numbers for
-those locations (satellites) off the premises (each satellite is given a
-separate 3500- 3699 number).
+dialysis services. CMS will make or approve the determination that a particular
+ESRD facility meets the requirements to be hospital-based, and if it is off the
+hospital's premises, a hospital-based satellite. It is conceivable that a
+hospital-based ESRD facility could have a 2300-2499 number assigned to the
+location on the hospital's premises, and one or more 3500-3699 numbers for those
+locations (satellites) off the premises (each satellite is given a separate
+3500- 3699 number).
 
-If an ESRD facility that is assigned a 2300-2499 number moves off the hospital’s
+If an ESRD facility that is assigned a 2300-2499 number moves off the hospital's
 premises and is determined to be a satellite, it should receive a number in the
 3500-3699 series. However, if a satellite changes its address but is still
-considered off the hospital’s premises, it should retain the 3500-3699 number it
+considered off the hospital's premises, it should retain the 3500-3699 number it
 was originally issued rather than being issued a new 3500-3699 number. Any
 questions concerning billing should be referred to the RO financial component or
 the fiscal intermediary as you determine appropriate.
 
-:::: {.callout-note}
-
-In determining whether an entity is hospital-based for reimbursement purposes, the requirements at [§2287](https://www.cms.gov/regulations-and-guidance/guidance/transmittals/downloads/r29soma.pdf#%5B%7B%22num%22%3A800%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C0%2C792%2Cnull%5D) must be met.
-
-:::: 
-
+::::: {.callout-note}
+In determining whether an entity is hospital-based for reimbursement purposes,
+the requirements at
+[§2287](https://www.cms.gov/regulations-and-guidance/guidance/transmittals/downloads/r29soma.pdf#%5B%7B%22num%22%3A800%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C0%2C792%2Cnull%5D)
+must be met.
+:::::
 
 ## ESRD-H-P
 
@@ -159,7 +166,7 @@ If an ESRD facility proposes to add a location that has not been previously
 surveyed, an onsite inspection would be required. In the absence of an onsite
 survey and certification, the proposed facility has no authority to bill
 Medicare for ESRD services provided at the proposed site. (See §3222.) There are
-some instances when an ESRD facility’s CCN requires a change as a result of an
+some instances when an ESRD facility's CCN requires a change as a result of an
 action taken by the ESRD facility.
 
 If a hospital-based facility converts to an independent ESRD facility or if an
@@ -170,14 +177,23 @@ facility.
 
 The CCN of the ESRD facility may remain the same in the following situations:
 
-   - A hospital-based ESRD facility retains ownership of the facility but contracts with another entity for management of the facility;
-   - The hospital closes the dialysis facility but retains its transplant program. The CMS terminates the outpatient dialysis services but retains the ESRD CCN for the still active transplant program;
-   - The hospital closes the transplant program but retains the ESRD facility. In such case, CMS terminates the transplant program but keeps the ESRD CCN active for the dialysis program;
-   - The ESRD facility is purchased by another ESRD facility of the same type. For example, independent by independent or hospital-based by hospital-based; and
-   - The geographic location of the ESRD facility is changed within the same state. A recertification survey is always required when a dialysis facility relocates within a state. If a geographic location is changed to another state, the ESRD facility at the old location must be terminated and the relocated ESRD facility must qualify as a new applicant with a new identification number in the state to which it moved.
-
+- A hospital-based ESRD facility retains ownership of the facility but contracts
+  with another entity for management of the facility;
+- The hospital closes the dialysis facility but retains its transplant program.
+  The CMS terminates the outpatient dialysis services but retains the ESRD CCN
+  for the still active transplant program;
+- The hospital closes the transplant program but retains the ESRD facility. In
+  such case, CMS terminates the transplant program but keeps the ESRD CCN active
+  for the dialysis program;
+- The ESRD facility is purchased by another ESRD facility of the same type. For
+  example, independent by independent or hospital-based by hospital-based; and
+- The geographic location of the ESRD facility is changed within the same state.
+  A recertification survey is always required when a dialysis facility relocates
+  within a state. If a geographic location is changed to another state, the ESRD
+  facility at the old location must be terminated and the relocated ESRD
+  facility must qualify as a new applicant with a new identification number in
+  the state to which it moved.
 :::
-
 
 ## Examples
 
@@ -186,8 +202,9 @@ The CCN of the ESRD facility may remain the same in the following situations:
 #| message: false
 #| warning: false
 #| echo: false
+
 x <- ccn:::get_pin("esrd")
-df <- purrr::map(x$ccn, ccn::as_data_frame) |> 
+df <- purrr::map(x$ccn, ccn::as_data_frame) |>
   collapse::rowbind()
 x
 ```
@@ -199,6 +216,7 @@ x
 #| message: false
 #| warning: false
 #| echo: true
+
 df |>
   collapse::fcount(type, range) |>
   collapse::roworder(-N) |>
@@ -218,15 +236,14 @@ df |>
   ) |>
   gt::tab_style(
     style = gt::cell_text(
-       color = "grey40", 
-       weight = "bold",
-       size = "small",
-       font = gt::google_font(name = "JetBrains Mono")
-       ),
+      color = "grey40",
+      weight = "bold",
+      size = "small",
+      font = gt::google_font(name = "JetBrains Mono")
+    ),
     locations = gt::cells_body(columns = type)
   )
 ```
-
 
 ### Chains
 
@@ -235,6 +252,7 @@ df |>
 #| message: false
 #| warning: false
 #| echo: false
+
 x <- ccn:::get_pin("esrd")
 x |>
   collapse::fcount(chain) |>
@@ -255,6 +273,3 @@ x |>
     locations = gt::cells_body(columns = chain)
   )
 ```
-
-
-

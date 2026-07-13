@@ -6,7 +6,8 @@ editor_options:
 
 # Swing-Bed
 
-```{r setup}
+```{r}
+#| label: setup
 #| message: false
 #| warning: false
 #| echo: false
@@ -16,9 +17,7 @@ library(ccn)
 source("code/gt_theme.R")
 ```
 
-<br>
-
-Hospital Providers of Extended Care Services ("Swing-Beds"):
+## Hospital Providers of Extended Care Services ("Swing-Beds"):
 
 "Swing-bed" is a reimbursement term that means the care and reimbursement for
 the care of a patient in a small rural hospital or CAH "swings" from acute care
@@ -60,7 +59,7 @@ Section 1883 of the Act authorizes payment under Medicare for post-hospital SNF
 services provided by any hospital that meets the following requirements at 42
 CFR 482.66. These requirements include the following.
 
-### Calculation of Bed Count
+## Calculation of Bed Count
 
 Exclude from the bed count newborn and intensive care beds. A hospital licensed
 for more than 100 beds may be eligible for swing-bed approval if it utilizes and
@@ -72,4 +71,3 @@ information for the previous 12 months.
 The SA obtains written assurance from appropriate hospital officials that the
 hospital will not operate with a greater number of inpatient hospital beds than
 permitted by the category for which approval is requested.
-

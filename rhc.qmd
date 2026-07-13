@@ -6,12 +6,14 @@ editor_options:
 
 # RHC
 
-```{r setup}
+```{r}
+#| label: setup
 #| message: false
 #| warning: false
 #| echo: false
 #| cache: false
 #| comment: ""
+
 library(ccn)
 source("code/gt_theme.R")
 ```
@@ -21,4 +23,3 @@ source("code/gt_theme.R")
 ```{r}
 ccn:::get_pin("rhc")
 ```
-

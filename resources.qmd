@@ -6,14 +6,20 @@ editor_options:
 
 # Resources
 
-  - [State Operations Manual, CMS publication number 100-07](https://www.cms.gov/Regulations-and-Guidance/Guidance/Manuals/Internet-Only-Manuals-IOMs-Items/CMS1201984)
-  - [CMS Manual](https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/som107c02.pdf)
-  - [ResDAC: CMS Certification Number](https://resdac.org/cms-data/variables/full-cms-certification-number-provider)
-  - [ResDAC: Provider Number](https://resdac.org/cms-data/variables/provider-number)
-  - [The Joint Commission](https://manual.jointcommission.org/releases/TJC2025A/DataElem0276.html)
-  - [QCOR](https://qcor.cms.gov/main.jsp)
-  - [QSO: Policy & Memos](https://www.cms.gov/medicare/health-safety-standards/quality-safety-oversight-general-information/policy-memos/policy-memos-states-regions)
-  - [CMS: Glossary](https://www.cms.gov/glossary)
+- [State Operations Manual, CMS publication number
+  100-07](https://www.cms.gov/Regulations-and-Guidance/Guidance/Manuals/Internet-Only-Manuals-IOMs-Items/CMS1201984)
+- [CMS
+  Manual](https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/som107c02.pdf)
+- [ResDAC: CMS Certification
+  Number](https://resdac.org/cms-data/variables/full-cms-certification-number-provider)
+- [ResDAC: Provider
+  Number](https://resdac.org/cms-data/variables/provider-number)
+- [The Joint
+  Commission](https://manual.jointcommission.org/releases/TJC2025A/DataElem0276.html)
+- [QCOR](https://qcor.cms.gov/main.jsp)
+- [QSO: Policy &
+  Memos](https://www.cms.gov/medicare/health-safety-standards/quality-safety-oversight-general-information/policy-memos/policy-memos-states-regions)
+- [CMS: Glossary](https://www.cms.gov/glossary)
 
 <br>
 
@@ -23,6 +29,7 @@ editor_options:
 #| label: valdosta
 #| echo: false
 #| message: false
+
 x <- list(
   ASC = c(
     "AZALEA SURGERY CENTER",
@@ -243,15 +250,17 @@ x <- list(
     "WOMENS HEALTH PATTERSON"
   )
 )
-purrr::map(x, \(x) cheapr::fast_df(name = x)) |> 
-  purrr::list_rbind(names_to = "type") |> 
-  tibble::as_tibble() |> 
+purrr::map(x, \(x) cheapr::fast_df(name = x)) |>
+  purrr::list_rbind(names_to = "type") |>
+  tibble::as_tibble() |>
   gt::gt(
-    groupname_col = "type", 
-    row_group_as_column = TRUE) |> 
+    groupname_col = "type",
+    row_group_as_column = TRUE
+  ) |>
   gt::tab_options(
     table.width = gt::pct(100),
-    quarto.disable_processing = TRUE) |>
+    quarto.disable_processing = TRUE
+  ) |>
   gtExtras::gt_theme_nytimes() |>
   gt::tab_style(
     style = gt::cell_text(
@@ -265,9 +274,7 @@ purrr::map(x, \(x) cheapr::fast_df(name = x)) |>
     style = gt::cell_text(
       font = gt::google_font(name = "JetBrains Mono"),
       weight = "bold"
-      ),
+    ),
     locations = gt::cells_row_groups()
   )
 ```
-
-

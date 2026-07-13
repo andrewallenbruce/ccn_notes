@@ -6,12 +6,14 @@ editor_options:
 
 # SNF
 
-```{r setup}
+```{r}
+#| label: setup
 #| message: false
 #| warning: false
 #| echo: false
 #| cache: false
 #| comment: ""
+
 library(ccn)
 library(collapse)
 source("code/gt_theme.R")
@@ -20,12 +22,13 @@ snf <- ccn:::get_pin("snf")
 snf <- snf[substr(snf$ccn, 1L, 6L) %!iin% substr(hrsa$ccn, 1L, 6L), ]
 ```
 
-### Overview
+## Overview
 
 ```{r}
 #| label: snf-overview
 #| echo: false
 #| message: false
+
 ov <- hrsa |>
   collapse::rsplit(~.id) |>
   purrr::map(cheapr::overview)
@@ -122,19 +125,19 @@ list(
 
 ### Parse
 
-
 ```{r}
 #| label: snf-parse
 #| echo: false
 #| message: false
-hrsa |> 
-  collapse::gby(.id, sub) |> 
+
+hrsa |>
+  collapse::gby(.id, sub) |>
   collapse::fsummarise(
     Medicare = collapse::fsum(beds_mcr),
     Dual = collapse::fsum(beds_dual),
     Certified = collapse::fsum(beds_cert),
     Total = collapse::fsum(beds_tot)
-  ) |> 
+  ) |>
   gt::gt(
     rowname_col = ".id",
     groupname_col = "sub",
@@ -170,4 +173,3 @@ hrsa |>
     locations = gt::cells_stub()
   )
 ```
-

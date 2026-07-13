@@ -6,12 +6,14 @@ editor_options:
 
 # LTCH
 
-```{r setup}
+```{r}
+#| label: setup
 #| message: false
 #| warning: false
 #| echo: false
 #| cache: false
 #| comment: ""
+
 library(ccn)
 source("code/gt_theme.R")
 ```
@@ -22,11 +24,12 @@ source("code/gt_theme.R")
 #| label: ltch
 #| echo: false
 #| message: false
+
 x <- ccn:::get_pin("ltch")
 x |>
-  head(50) |> 
-  gt::gt() |> 
-  gtExtras::gt_theme_nytimes() |> 
+  head(50) |>
+  gt::gt() |>
+  gtExtras::gt_theme_nytimes() |>
   gt::tab_options(
     table.width = gt::pct(100),
     quarto.disable_processing = TRUE

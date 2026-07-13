@@ -6,20 +6,22 @@ editor_options:
 
 # Medicare
 
-```{r setup}
+```{r}
+#| label: setup
 #| message: false
 #| warning: false
 #| echo: false
 #| cache: false
 #| comment: ""
+
 library(ccn)
 library(collapse)
 source("code/gt_theme.R")
 ```
 
-Providers and Suppliers paid under _Medicare Part A_ have __6 digit__ CCNs.
-The first two characters represent the state in which the provider is located.
-The last four characters identify the type of facility.
+Providers and Suppliers paid under *Medicare Part A* have **6 digit** CCNs. The
+first two characters represent the state in which the provider is located. The
+last four characters identify the type of facility.
 
 ## Facility Ranges
 
@@ -27,15 +29,16 @@ The last four characters identify the type of facility.
 #| label: medicare-ranges
 #| echo: false
 #| message: false
+
 ccn::medicare_ranges |>
   collapse::gby(abbr) |>
   collapse::fsummarise(
     desc = collapse::fslice(desc),
     range = toString(range)
   ) |>
-  collapse::slt(abbr, range, desc) |> 
+  collapse::slt(abbr, range, desc) |>
   gt::gt() |>
-  gt::cols_align("left", columns = "range") |> 
+  gt::cols_align("left", columns = "range") |>
   gt::tab_options(
     table.width = gt::pct(100),
     quarto.disable_processing = TRUE
@@ -59,13 +62,13 @@ ccn::medicare_ranges |>
   )
 ```
 
-
 ## Examples
 
 ```{r}
 #| label: load-pin
 #| echo: false
 #| message: false
+
 hosp <- ccn:::get_pin("hosp")
 ```
 
@@ -75,6 +78,7 @@ hosp <- ccn:::get_pin("hosp")
 #| label: decode
 #| echo: false
 #| message: false
+
 collapse::qtable(ccn::decode_ccnr(hosp$ccn)[.c(facility, form)])
 ```
 
@@ -82,8 +86,9 @@ collapse::qtable(ccn::decode_ccnr(hosp$ccn)[.c(facility, form)])
 #| label: medicare-examples
 #| echo: false
 #| message: false
+
 hosp |>
-  collapse::roworder(ccn) |> 
+  collapse::roworder(ccn) |>
   collapse::mtt(ccn = substring(ccn, 1L, 6L)) |>
   collapse::sbt(stringi::stri_detect_regex(ccn, "[ABEFLJGHK]")) |>
   gt::gt() |>
@@ -129,4 +134,3 @@ hosp |>
     quarto.disable_processing = TRUE
   )
 ```
-
