@@ -30,6 +30,5 @@ asc
 ```{r}
 provider::ambulatory(count = TRUE)
 provider::ambulatory(state = c("GA", "FL"))
-provider::ambulatory(county = provider::not_blank())
 ```
 

@@ -51,6 +51,33 @@ character P. The remaining 3 digits are the unique facility identifier.
 organ("05P001")
 ```
 
+## Join OPO
+
+```{r}
+x$opo_codes <- collapse::tfmv(x$opo_codes, "opo", toupper)
+x$opo_county <- collapse::tfmv(x$opo_county, "county", toupper)
+x$opo_active <- collapse::tfmv(x$opo_active, "county", toupper)
+x$opo_active <- collapse::ss(x$opo_active, j = c(1:3, 5:6), check = FALSE)
+
+opo <- collapse::join(
+  x$opo_codes, 
+  x$opo_county, 
+  on = "code", 
+  verbose = 0L, 
+  multiple = TRUE
+) |> 
+  collapse::join(
+    x$opo_active, 
+    on = c("opo" ,"state"), 
+    verbose = 0L
+  ) |> 
+  fastplyr::f_fill(.cols = c("ccn", "region", "orig_date")) |>
+  collapse::colorderv("ccn") |> 
+  collapse::roworderv("ccn")
+
+opo
+```
+
 ## Codes
 
 ```{r}
@@ -132,7 +159,7 @@ x$opo_county |>
 #| echo: false
 x$opo_active |>
   collapse::roworder(ccn) |>
-  collapse::slt(-region, -orig_date) |>
+  # collapse::slt(-region, -orig_date) |>
   gt::gt() |>
   gt::tab_options(
     table.width = gt::pct(100),
@@ -145,7 +172,7 @@ x$opo_active |>
       color = "grey30",
       size = "small"
     ),
-    locations = gt::cells_body(columns = ccn)
+    locations = gt::cells_body(columns = c(ccn, orig_date))
   ) |>
   gt::tab_style(
     style = gt::cell_text(weight = "bold"),
@@ -153,7 +180,7 @@ x$opo_active |>
   ) |>
   gt::tab_style(
     style = gt::cell_text(color = "grey50", size = "small"),
-    locations = gt::cells_body(columns = opo)
+    locations = gt::cells_body(columns = c(opo, region))
   )
 ```
 
