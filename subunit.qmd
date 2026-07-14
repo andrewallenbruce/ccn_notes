@@ -13,10 +13,9 @@ editor_options:
 #| echo: false
 #| cache: false
 #| comment: ""
-
 library(ccn)
+library(provider)
 library(cheapr)
-source("code/gt_theme.R")
 ```
 
 ```{r}

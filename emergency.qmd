@@ -13,19 +13,8 @@ editor_options:
 #| echo: false
 #| cache: false
 #| comment: ""
-
 library(ccn)
-source("code/gt_theme.R")
-# c(
-#   "45D0501072",
-#   "14D2326049",
-#   "05D0975224",
-#   "02012F",
-#   "02011F",
-#   "04008F",
-#   "04013F",
-#   "03006F"
-#   )
+library(provider)
 ```
 
 <br>
@@ -99,3 +88,9 @@ requirements that a hospital must meet to qualify as an emergency hospital
   professional nurse and have a licensed, practical, or registered professional
   nurse on duty at all times
 - Be licensed or meet standards for licensing pursuant to State and local law
+
+```{r}
+provider::veteran(count = TRUE)
+provider::veteran(ccn = provider::contains("F"))
+```
+

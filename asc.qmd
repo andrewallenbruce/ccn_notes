@@ -18,11 +18,18 @@ hospital-based surgeries.
 #| echo: false
 #| cache: false
 #| comment: ""
-
 library(ccn)
-source("code/gt_theme.R")
+library(provider)
 ```
 
 ```{r}
-ccn:::get_pin("asc")
+asc <- ccn:::get_pin("asc")
+asc
 ```
+
+```{r}
+provider::ambulatory(count = TRUE)
+provider::ambulatory(state = c("GA", "FL"))
+provider::ambulatory(county = provider::not_blank())
+```
+

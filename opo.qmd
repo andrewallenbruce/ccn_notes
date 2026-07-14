@@ -35,9 +35,8 @@ participate in the Organ Procurement and Transplantation Network. (See CMS Pub.
 #| echo: false
 #| cache: false
 #| comment: ""
-
 library(ccn)
-source("code/gt_theme.R")
+library(provider)
 x <- ccn:::get_pin("opo")
 ```
 
@@ -49,7 +48,6 @@ character P. The remaining 3 digits are the unique facility identifier.
 
 ```{r}
 #| label: opo-example
-
 organ("05P001")
 ```
 
@@ -58,7 +56,6 @@ organ("05P001")
 ```{r}
 #| label: opo-codes
 #| echo: false
-
 x$opo_codes |>
   collapse::roworder(code) |>
   gt::gt() |>
@@ -90,7 +87,6 @@ x$opo_codes |>
 ```{r}
 #| label: opo-county
 #| echo: false
-
 cnty <- x$opo_county |>
   collapse::slt(-code) |>
   collapse::roworder(state, county) |>
@@ -134,7 +130,6 @@ x$opo_county |>
 ```{r}
 #| label: opo-active
 #| echo: false
-
 x$opo_active |>
   collapse::roworder(ccn) |>
   collapse::slt(-region, -orig_date) |>
@@ -169,7 +164,6 @@ x$opo_active |>
 ```{r}
 #| label: txc-types
 #| echo: false
-
 ccn:::get_pin("txc") |>
   collapse::slt(txc = txc_code, description = txc_type) |>
   collapse::funique() |>
@@ -202,7 +196,6 @@ ccn:::get_pin("txc") |>
 ```{r}
 #| label: txc-facs
 #| echo: false
-
 ccn:::get_pin("txc") |>
   collapse::slt(-txc_type) |>
   collapse::rnm(code = optn_code, txc = txc_code) |>
