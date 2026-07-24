@@ -4,7 +4,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-# Swing-Beds
+# Swing-Bed
 
 ```{r}
 #| label: setup
@@ -58,14 +58,17 @@ staffs for fewer than 100 beds.
 
 ## Example
 
-```r
+```{r}
+#| label: example
+#| message: true
 x <- vctrs::vec_rbind(
   hospital(loc_type = "swing"),
   hospital(subgroup = subgroups(swing = TRUE)))
 
 x
 
-cheapr::counts(x$sub_group) |> collapse::roworderv(
+cheapr::counts(x$sub_group) |> 
+  collapse::roworderv(
   "count", 
   decreasing = TRUE) |> 
   collapse::qTBL() |> 
@@ -86,28 +89,38 @@ cheapr::counts(x$org_type) |>
   print(n = Inf)
 ```
 
+## Parent Examples
 
-```r
+```{r}
+#| label: ex-ccn
+#| message: true
 vctrs::vec_size(x$ccn)
 vctrs::vec_unique_count(x$ccn)
 
 xc <- vctrs::vec_unique(x$ccn)
 xc <- as_ccn(xc)
+head(xc)
 
 xr <- as_ccnr(xc)
 xr <- decode_ccnr(xr)
-xr <- collapse::ss(xr, j = 1:5, check = FALSE)
-xr <- collapse::rsplit(xr, xr$form)
+xr <- collapse::rsplit(xr, xr$entity)
 
-xr$care$parent <- NULL
-
-collapse::qtab(xr$care[.c(state, facility)], sort = TRUE, drop = TRUE)
+xr$Medicare$parent <- NULL
+xr$Medicare
 ```
 
 
-```r
-length(xr$unit$parent)
-sum(nchar(xr$unit$parent) == 5L, na.rm = TRUE)
-index_ccn_types(as_ccn(xr$unit$parent))
+```{r}
+#| label: ex-ccn-unit
+#| message: true
+xr$Unit$parent[
+  grep(" ", 
+    xr$Unit$parent, 
+    fixed = TRUE
+    )] <- NA_character_
+
+xr$Unit
+
+decode_ccnr(xr$Unit$parent)
 ```
 

@@ -14,7 +14,6 @@ editor_options:
 #| cache: false
 #| comment: ""
 library(ccn)
-source("code/gt_theme.R")
 ```
 
 ## Facility Ranges
@@ -79,7 +78,7 @@ regulatory provisions and manual instructions. Independent facilities bill under
 their own numbers. ESRD facilities located at skilled nursing facilities will be
 determined to be independent.
 
-## ESRD-I-P
+## ESRD-IP
 
 **Independent Special Purpose Renal Dialysis Facilities** `[2900, 2999]`
 
@@ -88,7 +87,7 @@ Dialysis Facility apply to a facility of the same type which is independent
 except that the independent facility by virtue of its independent status, bills
 under its own number which is in the 2900-2999 series.
 
-## ESRD-H-S
+## ESRD-HS
 
 **Hospital-Based Renal Dialysis Satellite Facilities** `[3500, 3699]`
 
@@ -142,7 +141,7 @@ the requirements at
 must be met.
 :::::
 
-## ESRD-H-P
+## ESRD-HP
 
 **Hospital-Based Special Purpose Renal Dialysis Facilities** `[3700, 3799]`
 
@@ -206,7 +205,7 @@ x
 ```
 
 ```{r}
-#| label: ccn-s7
+#| label: ccn-S7
 tictoc::tic()
 df <- purrr::map(x$ccn, ccn::as_data_frame) |>
   collapse::rowbind()

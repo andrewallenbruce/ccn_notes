@@ -13,7 +13,5 @@ editor_options:
 #| echo: false
 #| cache: false
 #| comment: ""
-
 library(ccn)
-source("code/gt_theme.R")
 ```

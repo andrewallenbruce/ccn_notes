@@ -13,9 +13,7 @@ editor_options:
 #| echo: false
 #| cache: false
 #| comment: ""
-
 library(ccn)
-source("code/gt_theme.R")
 ```
 
 The first two characters of each CCN represents the state in which the provider
@@ -72,7 +70,6 @@ provide a pool of 260 new State Codes for future use.
 #| label: ccn-states
 #| echo: false
 #| message: false
-
 ccn::states |>
   collapse::fgroup_by(abbr, name) |>
   collapse::fsummarise(code = toString(code)) |>
@@ -102,7 +99,6 @@ ccn::states |>
 #| label: ccn-regions
 #| echo: false
 #| message: false
-
 ccn::regions |>
   collapse::fgroup_by(region, office) |>
   collapse::fsummarise(state = toString(state)) |>

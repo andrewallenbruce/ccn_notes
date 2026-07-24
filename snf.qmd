@@ -13,10 +13,8 @@ editor_options:
 #| echo: false
 #| cache: false
 #| comment: ""
-
 library(ccn)
 library(collapse)
-source("code/gt_theme.R")
 hrsa <- collapse::gv(ccn:::get_pin("snf_hrsa"), c(1:7, 9:12))
 snf <- ccn:::get_pin("snf")
 snf <- snf[substr(snf$ccn, 1L, 6L) %!iin% substr(hrsa$ccn, 1L, 6L), ]
@@ -129,7 +127,6 @@ list(
 #| label: snf-parse
 #| echo: false
 #| message: false
-
 hrsa |>
   collapse::gby(.id, sub) |>
   collapse::fsummarise(

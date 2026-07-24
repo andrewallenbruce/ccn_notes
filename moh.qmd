@@ -13,9 +13,7 @@ editor_options:
 #| echo: false
 #| cache: false
 #| comment: ""
-
 library(ccn)
-source("code/gt_theme.R")
 ```
 
 ## Hospital Ranges
@@ -29,7 +27,6 @@ corresponding ranges.
 #| label: medicaid-hospital-ranges
 #| echo: false
 #| message: false
-
 ccn::medicaid_ranges |>
   collapse::slt(abbr, desc, range) |>
   collapse::roworder(range) |>

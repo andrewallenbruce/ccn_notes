@@ -15,7 +15,7 @@ library(ccn)
 library(provider)
 ```
 
-# Nonparticipating Emergency Hospitals
+# ERH
 Any nonparticipating hospital meeting the definition of an emergency hospital
 for Medicare purposes may claim payment for emergency inpatient and outpatient
 diagnostic services furnished to Medicare patients. There are six statutory
@@ -59,7 +59,7 @@ provider::veteran(ccn = provider::contains("F"))
 ```{r}
 #| label: hospital
 #| message: true
-provider::hospital(ccn = provider::ends("E"))
-provider::hospital(ccn = provider::ends("F"))
+provider::hospital(ccn = provider::ends("E")) |> str()
+provider::hospital(ccn = provider::ends("F")) |> str()
 ```
 

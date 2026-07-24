@@ -13,9 +13,7 @@ editor_options:
 #| echo: false
 #| cache: false
 #| comment: ""
-
 library(ccn)
-source("code/gt_theme.R")
 ```
 
 ## Long-Term Care Hospitals (LTCH)
@@ -24,14 +22,12 @@ source("code/gt_theme.R")
 #| label: ltch
 #| echo: false
 #| message: false
+ccn:::get_pin("ltch")
+```
 
-x <- ccn:::get_pin("ltch")
-x |>
-  head(50) |>
-  gt::gt() |>
-  gtExtras::gt_theme_nytimes() |>
-  gt::tab_options(
-    table.width = gt::pct(100),
-    quarto.disable_processing = TRUE
-  )
+
+```{r}
+#| label: ltc-provider
+provider::long_term(count = TRUE)
+provider::long_term()
 ```

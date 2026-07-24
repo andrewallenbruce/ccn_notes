@@ -4,7 +4,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-# CAHs
+# CAH
 
 ```{r}
 #| label: setup
@@ -13,9 +13,7 @@ editor_options:
 #| echo: false
 #| cache: false
 #| comment: ""
-
 library(ccn)
-source("code/gt_theme.R")
 ```
 
 A **Critical Access Hospital** is a facility that satisfies the following
@@ -38,8 +36,6 @@ criteria:
     provided no more than 15 are used at any one time for acute care.
 - Maintains an annual ALOS (Average Length of Stay) of 96 Hours per Patient for
   Acute Care patients
-
-<br>
 
 ## Medicare Rural Hospital Flexibility Program (MRHFP)
 

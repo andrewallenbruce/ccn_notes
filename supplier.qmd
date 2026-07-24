@@ -13,9 +13,7 @@ editor_options:
 #| echo: false
 #| cache: false
 #| comment: ""
-
 library(ccn)
-source("code/gt_theme.R")
 ```
 
 Suppliers that are paid by Part B carriers have a 10-digit alphanumeric CCN. The
@@ -25,10 +23,10 @@ digit is an alpha character that identifies the type of facility. The remaining
 
 The following characters in the third position indicate:
 
-- `C` [ASC]: Ambulatory Surgical Centers
-- `D` [CLIA]: Clinical Laboratory Improvement Amendments of 1988 (CLIA)
+- `C`: Ambulatory Surgical Centers
+- `D`: Clinical Laboratory Improvement Amendments of 1988 (CLIA)
   Laboratories
-- `X` [PXRF]: Portable X-Ray Facilities
+- `X`: Portable X-Ray Facilities
 
 The last 7 digits of the CCN for the above suppliers will be within the number
 series `0000001-9999999`.
