@@ -13,7 +13,6 @@ editor_options:
 #| echo: false
 #| cache: false
 #| comment: ""
-
 library(ccn)
 source("code/gt_theme.R")
 ```
@@ -24,10 +23,10 @@ source("code/gt_theme.R")
 #| label: esrd-ranges
 #| echo: false
 #| message: false
-
 ccn::medicare_ranges |>
-  collapse::sbt(stringi::stri_detect_regex(abbr, "ESRD")) |>
-  collapse::gv(c("abbr", "desc", "range")) |>
+  cheapr::sset(j = c("abbr", "desc", "range")) |> 
+  collapse::sbt(
+    stringi::stri_detect_regex(abbr, "ESRD")) |>
   gt::gt() |>
   gt::tab_options(
     table.width = gt::pct(100),
@@ -202,11 +201,25 @@ The CCN of the ESRD facility may remain the same in the following situations:
 #| message: false
 #| warning: false
 #| echo: false
-
 x <- ccn:::get_pin("esrd")
+x
+```
+
+```{r}
+#| label: ccn-s7
+tictoc::tic()
 df <- purrr::map(x$ccn, ccn::as_data_frame) |>
   collapse::rowbind()
-x
+tictoc::toc()
+df
+```
+
+```{r}
+#| label: ccn-vctrs
+tictoc::tic()
+df2 <- ccn::decode_ccnr(x$ccn)
+tictoc::toc()
+df2
 ```
 
 ### Types
@@ -216,7 +229,6 @@ x
 #| message: false
 #| warning: false
 #| echo: true
-
 df |>
   collapse::fcount(type, range) |>
   collapse::roworder(-N) |>
@@ -232,7 +244,7 @@ df |>
       color = "grey60",
       size = "small"
     ),
-    locations = gt::cells_body(columns = range)
+    locations = gt::cells_body(columns = gt::everything())
   ) |>
   gt::tab_style(
     style = gt::cell_text(
@@ -252,8 +264,6 @@ df |>
 #| message: false
 #| warning: false
 #| echo: false
-
-x <- ccn:::get_pin("esrd")
 x |>
   collapse::fcount(chain) |>
   collapse::roworder(-N) |>

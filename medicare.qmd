@@ -75,7 +75,7 @@ hosp <- ccn:::get_pin("hosp")
 #| label: decode
 #| echo: false
 #| message: false
-collapse::qtable(ccn::decode_ccnr(hosp$ccn)[.c(facility, form)])
+collapse::qtable(ccn::decode_ccnr(hosp$ccn)[.c(facility, entity)])
 ```
 
 #### Units/Subunits

@@ -58,7 +58,7 @@ staffs for fewer than 100 beds.
 
 ## Example
 
-```{r}
+```r
 x <- vctrs::vec_rbind(
   hospital(loc_type = "swing"),
   hospital(subgroup = subgroups(swing = TRUE)))
@@ -87,7 +87,7 @@ cheapr::counts(x$org_type) |>
 ```
 
 
-```{r}
+```r
 vctrs::vec_size(x$ccn)
 vctrs::vec_unique_count(x$ccn)
 
@@ -105,9 +105,9 @@ collapse::qtab(xr$care[.c(state, facility)], sort = TRUE, drop = TRUE)
 ```
 
 
-```{r}
+```r
 length(xr$unit$parent)
 sum(nchar(xr$unit$parent) == 5L, na.rm = TRUE)
-index_types(as_ccn(xr$unit$parent))
+index_ccn_types(as_ccn(xr$unit$parent))
 ```
 

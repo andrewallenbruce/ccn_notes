@@ -6,7 +6,17 @@ editor_options:
 
 # OPO/TXN
 
-<br>
+```{r}
+#| label: setup
+#| message: false
+#| warning: false
+#| echo: false
+#| cache: false
+#| comment: ""
+library(ccn)
+library(provider)
+x <- ccn:::get_pin("opo")
+```
 
 An **Organ Procurement Organization** performs or coordinates the procurement,
 preservation, and transport of organs and maintains a system for locating
@@ -28,34 +38,16 @@ years; the OPO must sign a new provider agreement (Form CMS-576A) and
 participate in the Organ Procurement and Transplantation Network. (See CMS Pub.
 100-07, chapter 2, sections 2810 and 2811.)
 
-```{r}
-#| label: setup
-#| message: false
-#| warning: false
-#| echo: false
-#| cache: false
-#| comment: ""
-library(ccn)
-library(provider)
-x <- ccn:::get_pin("opo")
-```
-
-<br>
-
 Organ procurement organizations (OPOs) are assigned a 6-digit alphanumeric CCN.
 The first 2 digits identify the State code. The third digit is the alpha
 character P. The remaining 3 digits are the unique facility identifier.
 
-```{r}
-#| label: opo-example
-organ("05P001")
-```
-
-## Join OPO
+## OPOs
 
 ```{r}
 x$opo_codes <- collapse::tfmv(x$opo_codes, "opo", toupper)
 x$opo_county <- collapse::tfmv(x$opo_county, "county", toupper)
+x$opo_county[cheapr::which_val(x$opo_county$code, "PRLL"), ]$state <- "PR"
 x$opo_active <- collapse::tfmv(x$opo_active, "county", toupper)
 x$opo_active <- collapse::ss(x$opo_active, j = c(1:3, 5:6), check = FALSE)
 
@@ -78,13 +70,23 @@ opo <- collapse::join(
 opo
 ```
 
-## Codes
+### Codes
 
 ```{r}
 #| label: opo-codes
-#| echo: false
+cnty <- x$opo_county |>
+  # collapse::slt(-code) |>
+  collapse::roworder(state, county) |>
+  collapse::fgroup_by(state, code) |>
+  collapse::fsummarise(counties = length(county)) |>
+  collapse::fungroup()
+
+x$opo_codes$id <- cheapr::sequence_(nrow(x$opo_codes))
+
 x$opo_codes |>
+  collapse::colorder(id) |> 
   collapse::roworder(code) |>
+  collapse::join(cnty, verbose = 0L, multiple = TRUE, on = "code") |>
   gt::gt() |>
   gt::tab_options(
     table.width = gt::pct(100),
@@ -97,15 +99,15 @@ x$opo_codes |>
       color = "grey30",
       size = "small"
     ),
-    locations = gt::cells_body(columns = c(code, opo))
+    locations = gt::cells_body(columns = gt::everything())
   ) |>
   gt::tab_style(
     style = gt::cell_text(weight = "bold"),
-    locations = gt::cells_body(columns = code)
+    locations = gt::cells_body(columns = c(code, state))
   ) |>
   gt::tab_style(
-    style = gt::cell_text(color = "grey25"),
-    locations = gt::cells_body(columns = opo)
+    style = gt::cell_text(color = "grey60"),
+    locations = gt::cells_body(columns = c(id, opo))
   )
 ```
 
@@ -113,7 +115,6 @@ x$opo_codes |>
 
 ```{r}
 #| label: opo-county
-#| echo: false
 cnty <- x$opo_county |>
   collapse::slt(-code) |>
   collapse::roworder(state, county) |>
