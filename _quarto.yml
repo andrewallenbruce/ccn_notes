@@ -5,13 +5,13 @@ project:
 execute: 
   eval: true
   echo: true
+  message: true
   warning: false
 
 book:
   title: "CCNs"
   subtitle: "CMS Certification Numbers"
   author: "Andrew Allen Bruce"
-  date: "07/24/2026"
   back-to-top-navigation: true
   page-navigation: true
   page-footer: "© Copyright 2026 Andrew Allen Bruce."
@@ -21,32 +21,25 @@ book:
   chapters:
     - index.qmd
     - state.qmd
+    - opo.qmd
+    - erh.qmd
     - part: medicare.qmd
       chapters:
-        - opo.qmd
-        - emergency.qmd
         - hha.qmd
         - esrd.qmd
         - ltch.qmd
         - rhc.qmd
         - irf.qmd
         - cah.qmd
-        - snf.qmd
-    - part: eipps.qmd
-      chapters:
-        - unit.qmd
-        - subunit.qmd
-        - swing.qmd
+    - eipps.qmd
+    - swing.qmd
+    - medicaid.qmd
+    - snf_nf.qmd
     - part: supplier.qmd
       chapters:
         - asc.qmd
         - clia.qmd
         - pxrf.qmd
-    - part: medicaid.qmd
-      chapters:
-        - moh.qmd
-        - nf.qmd
-        - icf-iid.qmd
   appendices:
     - vctrs.qmd
     - resources.qmd
@@ -72,7 +65,7 @@ format:
     footnotes-hover: true
     fontcolor: "#43464b"
     grid:
-      body-width: 1000px
+      body-width: 800px
     linkcolor: "darkred"
     number-sections: false
     reference-location: document

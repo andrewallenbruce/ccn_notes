@@ -13,12 +13,27 @@ editor_options:
 #| echo: false
 #| cache: false
 #| comment: ""
-
 library(ccn)
-source("code/gt_theme.R")
+library(provider)
 ```
 
 ```{r}
+#| label: pin
+#| message: false
 ccn:::get_pin("hha") |>
   collapse::roworder(ccn)
+```
+
+```{r}
+#| label: provider
+#| message: true
+provider::facility(fac_type = "HHA", count = TRUE)
+provider::facility(fac_type = "HHA")
+```
+
+```{r}
+#| label: provider2
+#| message: true
+provider::facility(fac_type = "Hospice", count = TRUE)
+provider::facility(fac_type = "Hospice")
 ```

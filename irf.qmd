@@ -19,5 +19,14 @@ library(ccn)
 ## Inpatient Rehabilitation Facilities
 
 ```{r}
+#| label: pin
+#| message: false
 ccn:::get_pin("irf")
+```
+
+```{r}
+#| label: provider
+#| message: true
+provider::rehab(count = TRUE)
+provider::rehab()
 ```

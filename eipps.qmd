@@ -4,21 +4,15 @@ editor_options:
   chunk_output_type: console
 ---
 
-# IPPS-Excluded
+# IPPS-Excluded Units
 
-<br>
-
-Units of Hospitals That Are Excluded From the Inpatient Prospective Payment
-System (IPPS)
-
-and Hospitals and CAHs with Swing-Bed Approval
+> Hospital Units Excluded From the Inpatient Prospective Payment System (IPPS)
 
 An alpha character in the third position of the CCN identifies either hospitals
-with swing- bed approval, or rehabilitation units, or psychiatric units excluded
+with swing-bed approval, rehabilitation units, or psychiatric units excluded
 from PPS payment.
 
-The first 2 digits identify the State in which the provider is located. The
-third position (which is alpha) identifies the type of unit or swing-bed
+The third position (which is alpha) identifies the type of unit or swing-bed
 designation. The last 3 digits must be exactly the same as the last 3 digits of
 the parent provider.
 
@@ -29,27 +23,87 @@ the parent provider.
 #| echo: false
 #| cache: false
 #| comment: ""
-
 library(ccn)
-source("code/gt_theme.R")
+library(cheapr)
 ```
-
-| EXAMPLE
-|    21-0101 - ABC Hospital
-|    21-T101 - ABC Hospital Rehabilitation Unit
-
-\|
-
-<br>
 
 The RO assigns the following alpha-characters in the third position as
 indicated:
 
-- M = Psychiatric Unit in Critical Access Hospital
-- R = Rehabilitation Unit in Critical Access Hospital
-- S = Psychiatric Unit
-- T = Rehabilitation Unit
-- U = Swing-Bed Hospital Designation for Short-Term Hospitals
-- W = Swing-Bed Hospital Designation for Long Term Care Hospitals
-- Y = Swing-Bed Hospital Designation for Rehabilitation Hospitals
-- Z = Swing-Bed Designation for Critical Access Hospitals
+```{r}
+#| label: unit_types
+ccn::unit_types |>
+  gt::gt() |>
+  gt::tab_options(
+    table.width = gt::pct(100),
+    quarto.disable_processing = TRUE
+  ) |>
+  gtExtras::gt_theme_nytimes() |>
+  gt::tab_style(
+    style = gt::cell_text(
+      font = gt::google_font(name = "JetBrains Mono"),
+      color = "grey30",
+      size = "small"
+    ),
+    locations = gt::cells_body(columns = gt::everything())
+  ) |>
+  gt::tab_style(
+    style = gt::cell_text(weight = "bold"),
+    locations = gt::cells_body(columns = abbr)
+  ) |>
+  gt::tab_style(
+    style = gt::cell_text(color = "grey50", size = "small"),
+    locations = gt::cells_body(columns = desc)
+  )
+```
+
+## IPPS-Excluded Subunits
+
+```{r}
+#| label: subunit_types
+ccn::subunit_types |>
+  gt::gt() |>
+  gt::tab_options(
+    table.width = gt::pct(100),
+    quarto.disable_processing = TRUE
+  ) |>
+  gtExtras::gt_theme_nytimes() |>
+  gt::tab_style(
+    style = gt::cell_text(
+      font = gt::google_font(name = "JetBrains Mono"),
+      color = "grey30",
+      size = "small"
+    ),
+    locations = gt::cells_body(columns = gt::everything())
+  ) |>
+  gt::tab_style(
+    style = gt::cell_text(weight = "bold"),
+    locations = gt::cells_body(columns = abbr)
+  ) |>
+  gt::tab_style(
+    style = gt::cell_text(color = "grey50", size = "small"),
+    locations = gt::cells_body(columns = prefix)
+  )
+```
+
+
+### Subunit Examples
+
+```{r}
+aff <- ccn:::get_pin("aff")
+
+aff$fac |>
+  collapse::fcount(facility_type) |>
+  collapse::roworder(-N)
+
+aff$sub |>
+  collapse::fcount(facility_type) |>
+  collapse::roworder(-N)
+
+aff$fac[cheapr::which_(aff$sub$parent %in_% aff$fac$ccn), ] |>
+  collapse::fcount(facility_type) |>
+  collapse::roworder(-N)
+
+aff$fac
+aff$sub
+```

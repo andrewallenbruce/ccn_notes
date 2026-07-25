@@ -50,12 +50,6 @@ Medicare patient. Section 1883 of the Act authorizes payment under Medicare for
 post-hospital SNF services provided by any hospital that meets the requirements
 at 42 CFR 482.66.
 
-## Calculation of Bed Count
-
-Exclude from the bed count newborn and intensive care beds. A hospital licensed
-for more than 100 beds may be eligible for swing-bed approval if it utilizes and
-staffs for fewer than 100 beds.
-
 ## Example
 
 ```{r}

@@ -4,7 +4,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-# Medicaid
+# Medicaid-Only
 
 ```{r}
 #| label: setup
@@ -16,18 +16,12 @@ editor_options:
 library(ccn)
 ```
 
-Title XIX-only providers are identified by a 6-position alphanumeric CCN.
-Positions one and two identify the state in which the provider is located.
-Position three, an alpha character, identifies the type of facility, by either
-level or type of care being provided. Positions four, five and six represent a
-sequence beginning with `001`.
+*Title XIX-Only* Providers are identified by a 6-position alphanumeric CCN.
 
 ## Facility Types
 
-The third character of a Medicaid-Only Provider CCN represents the facility type
-and a unique identifier. The facility type is encoded in the third character of
-the last four characters. The table below summarizes the valid facility type
-codes and their corresponding ranges.
+Position `3`, an alpha character, identifies the type of facility, either by
+level or type of care being provided:
 
 ```{r}
 #| label: medicaid-types
@@ -60,12 +54,12 @@ ccn::medicaid_types |>
   )
 ```
 
-## Facility Ranges
+Positions `4`, `5` and `6` represent a sequence beginning with `001`.
 
-The last three characters of a Medicaid-Only Provider CCN represent the facility
-type and a unique identifier. The facility type is encoded in the third
-character of the last four characters. The table below summarizes the valid
-facility type codes and their corresponding ranges.
+## Medicaid-Only Hospitals
+
+If position `3` is `J`, then the position `4`, `5` and `6` sequence identifies
+the type of hospital:
 
 ```{r}
 #| label: medicaid-ranges
@@ -100,3 +94,25 @@ ccn::medicaid_ranges |>
     locations = gt::cells_body(columns = desc)
   )
 ```
+
+## MOH Example
+
+```{r}
+#| label: moh-examples
+#| echo: false
+#| message: false
+ccn::parse("01J008")
+
+ccn::decode("01J008")
+
+purrr::map(c("01J008", "A5J508"), ccn::as_data_frame) |>
+  collapse::rowbind(fill = TRUE) |>
+  gt::gt() |>
+  gtExtras::gt_theme_nytimes() |>
+  gt::sub_missing() |>
+  gt::tab_options(
+    table.width = gt::pct(100),
+    quarto.disable_processing = TRUE
+  )
+```
+

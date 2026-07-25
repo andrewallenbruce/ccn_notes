@@ -14,10 +14,27 @@ editor_options:
 #| cache: false
 #| comment: ""
 library(ccn)
+library(provider)
 ```
 
 ## Rural Health Clinics
 
 ```{r}
+#| label: pin
+#| message: false
 ccn:::get_pin("rhc")
+```
+
+```{r}
+#| label: provider-rhc
+#| message: true
+provider::facility(fac_type = "RHC", count = TRUE)
+provider::facility(fac_type = "RHC")
+```
+
+```{r}
+#| label: provider-fqhc
+#| message: true
+provider::facility(fac_type = "FQHC", count = TRUE)
+provider::facility(fac_type = "FQHC")
 ```
