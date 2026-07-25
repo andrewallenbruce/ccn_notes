@@ -31,9 +31,202 @@ provider::facility(fac_type = "HHA", count = TRUE)
 provider::facility(fac_type = "HHA")
 ```
 
+Section 1861(o) of the Act defines an HHA as an agency or organization which:
+
+- Is primarily engaged in providing skilled nursing services and other therapeutic services;
+- Has policies established by a group of professionals (associated with the agency or
+organization), including one or more physicians and one or more registered
+professional nurses, to govern the services which it provides;
+- Provides for supervision of above-mentioned services by a physician or registered
+professional nurse;
+- Maintains clinical records on all patients;
+- Is licensed pursuant to State or local law, or has approval as meeting the standards
+established for licensing by the State or locality;
+- Has in effect an overall plan and budget for institutional planning;
+- Meets the CoPs in the interest of the health and safety of individuals who are furnished services by the HHA; and
+- Meets additional requirements as the Secretary finds necessary for the effective
+and efficient operation of the program.
+
+For purposes of Part A home health services under Title XVIII, the term “home
+health agency” does not include any agency or organization which is primarily
+for the care and treatment of mental diseases.
+
+The CoPs for a Medicare-approved HHA found in 42 CFR Part 484 are also based on
+§1891 of the Act. These CoPs are listed in Appendix B, Interpretive Guidelines
+for HHAs. Section 1891 of the Act requires, among other things, that the HHA:
+
+- Protect and promote the rights of each individual under its care;
+- Disclose ownership and management information required under the Act;
+- Not use as a home health aide (on a full-time, temporary, per diem, or other basis)
+any individual to provide items and services described in §1861(m) of the Act,
+unless the individual has completed a training and competency evaluation program
+(CEP) or a CEP that meets minimum standards established by the Secretary, and is
+competent to provide such items and services;
+- Operate and provide services in compliance with all applicable Federal, State, and
+local laws and regulations (including the requirements of §1124 of the Act);
+- Operate and provide services in compliance with accepted professional standards
+and principles which apply to professionals providing items and services for the
+HHA;
+- Include an individual’s plan of care (PoC) required under §1861(m) of the Act as
+part of the clinical record described in §1861(o)(3) of the Act; and
+- Comply with the requirements of §1866(f) of the Act relating to maintaining
+written policies and procedures respecting advance directives.
+
+## Types of Agencies
+
+An HHA may be a public, nonprofit or proprietary agency or a subdivision of such
+an agency or organization.
+
+1. Public agency is an agency operated by a State or local government. Examples
+include State-operated HHAs and county hospitals. For regulatory purposes,
+“public” means “governmental.” 2. Nonprofit agency is a private (i.e.,
+nongovernmental) agency exempt from Federal income taxation under §501 of the
+Internal Revenue Code of 1954. These HHAs are often supported, in part, by
+private contributions or other philanthropic sources, such as foundations.
+Examples would include non-profit visiting nurse associations or non-profit
+hospitals. 3. Proprietary agency is a private, profit-making agency or
+profit-making hospital.
+
+# Hospice
+
 ```{r}
 #| label: provider2
 #| message: true
 provider::facility(fac_type = "Hospice", count = TRUE)
 provider::facility(fac_type = "Hospice")
 ```
+
+A hospice is a public agency or private organization or a subdivision of either
+of these that is primarily engaged in providing care and services to terminally
+ill individuals, meets the CoPs for hospices, and has a valid Medicare provider
+agreement. The law governing the provision of Medicare hospice services is found
+at Section 1861(dd) of the Act. The law further clarifies that “terminally ill
+individuals” are individuals having a “medical prognosis that the individual’s
+life expectancy is 6 months or less.” This definition is further clarified at 42
+CFR 418.3 to provide for a life expectancy of 6 months or less “if the illness
+runs its normal course.”
+
+Although the law does not explicitly define its expectations for “primarily
+engaged,” CMS has interpreted it to mean exactly what it says, that a hospice
+provider must be primarily engaged in providing hospice care and services
+(Section 1861(dd)(2)(A)(i)). “Primarily” does not mean “exclusively.” This
+requirement does not preclude the hospice from providing services to terminally
+ill individuals who have not elected the hospice benefit or providing services
+to individuals who are not terminally ill, as long as the primary activity of
+the hospice is the provision of hospice services to terminally ill individuals
+and the hospice meets all requirements for participation in Medicare.
+
+
+## Hospice Benefit Periods
+
+An individual may elect to receive Medicare hospice benefits for two periods of 90 days
+and an unlimited amount of periods for 60 days each. (See 42 CFR 418.21.)
+
+## Eligibility Requirements
+
+In order to be eligible to elect hospice care under Medicare, an individual must be entitled
+to Part A of Medicare and be certified as being terminally ill. (See 42 CFR 418.20.) An
+individual is considered to be terminally ill if the individual has a medical prognosis that
+his or her life expectancy is 6 months or less if the illness runs its normal course.
+Referrals may come from any source, but patients must be assessed by the hospice
+medical director for appropriateness of admission in consultation with the patient’s
+attending physician (if the individual has one). 
+
+The hospice medical director must consider the diagnosis of the terminal
+condition of the patient, other health conditions, whether related or unrelated
+to the terminal illness, and current clinically relevant information supporting
+all diagnoses. The medical director may consult with the attending physician
+directly or through information obtained indirectly. Information could be
+obtained through the hospice nurse or others who would bring the attending
+physician’s knowledge of the patient to the medical director when the admission
+decision is being made.
+
+The hospice must obtain written certification of terminal illness within 2
+calendar days for each of the benefit periods listed in 42 CFR 418.21, even if a
+single election continues in effect for an unlimited number of periods. If the
+hospice cannot obtain the written certification within 2 calendar days, after a
+period begins, it must obtain oral certification within 2 calendar days and
+written certification before a claim for payment is submitted.
+
+For the initial 90-day period, certification of terminal illness must be
+obtained from the medical director of the hospice or the physician member of the
+hospice interdisciplinary group (IDG) and the individual’s attending physician
+(if the individual has one). Recertification for subsequent periods only
+requires the certification of the hospice medical director or the physician
+member of the IDG. Certification statements must be on file and dated by the
+physician before the hospice submits a claim for payment. (See 42 CFR 418.22.)
+
+### Description
+
+Hospice care means a comprehensive set of services described in
+Section1861(dd)(1) of the Act, identified and coordinated by the individual’s
+attending physician, medical director and by an interdisciplinary group to
+provide for the physical, psychosocial, spiritual and emotional needs of a
+terminally ill patient and family members, as delineated in a specific patient
+plan of care.
+
+Hospice uses an interdisciplinary approach to caring for terminally ill
+individuals that stresses palliative care as opposed to curative care.
+Palliative care means patient and family-centered care that optimizes quality of
+life by anticipating, preventing, and treating suffering. Palliative care
+throughout the continuum of illness involves addressing physical, intellectual,
+emotional, social, and spiritual needs and facilitating patient autonomy, access
+to information, and choice.
+
+The emphasis of hospice care is on effective symptom management, with the goal
+of making the patient as physically and emotionally comfortable as possible, and
+enabling the patient to remain at home as long as possible with minimal
+disruption to normal activities. Counseling and respite services are available
+to the family of the hospice patient. Hospice considers both the patient and the
+family as the unit of care.
+
+Although some hospices are located as part of a hospital, skilled nursing
+facility (SNF), and home health agency (HHA), hospices must meet specific CoPs
+and be separately certified and approved for Medicare participation as a hospice
+provider of services. (See Exhibit 129 for “Hospice Survey and Deficiencies
+Report,” Form CMS-643, and Exhibit 72 for “Hospice Request for Certification in
+the Medicare Program,” Form CMS-417.)
+
+### Hospice Core Services
+
+With the exception of physician services, substantially all core services must
+be provided directly by hospice employees on a routine basis. These services
+must be provided in a manner consistent with acceptable standards of practice.
+The following are hospice core services:
+
+- Physician services;
+- Nursing services, (routinely available and/or on call on a 24-hour basis, 7 days a
+week) provided by or under the supervision of a registered nurse (RN)
+functioning within a plan of care developed by the hospice (IDG) in consultation
+with the patient’s attending physician, if the patient has one;
+- Medical social services by a qualified social worker under the direction of a
+physician; and
+- Counseling (including, but not limited to, bereavement, dietary, and spiritual
+counseling) with respect to care of the terminally ill individual and adjustment
+to death. The hospice must make bereavement services available to the family and
+other individuals identified in the bereavement plan of care up to 1 year
+following the death of the patient.
+
+The hospice may contract for physician services as specified in 42 CFR
+418.64(a). A hospice may use contracted staff, if necessary, to supplement
+hospice employees in order to meet the needs of patients under extraordinary or
+other non-routine circumstances.
+
+When the hospice provides inpatient care directly, it may do so either in space
+that it owns or leases or in space shared with a Medicare certified hospital,
+SNF, or Medicaid certified nursing facility (NF).
+
+- If the hospice provides care in its own inpatient facility, the care may be provided
+in space that the hospice either owns or leases from another facility or
+building. The inpatient unit may consist of several beds, a group of beds, or a
+wing and must meet all applicable Federal and State requirements and be surveyed
+for compliance with 42 CFR 418.110 prior to providing inpatient care to
+patients. This survey includes a Life Safety Code survey (which has currently
+adopted the 2000 edition of the Life Safety Code of the National Fire Protection
+Association) that must be done both at the time of initial certification of the
+inpatient facility and at the time of recertification surveys.
+- If the hospice provides care directly with hospice staff in space shared with a
+Medicare-certified Hospital, SNF, or a Medicaid certified NF (for respite care
+only), the SA reviews the agreement and patient files for compliance with 42 CFR
+418.110(b) and 42 CFR 418.110(e) since the location already meets the remaining
+requirements of 42 CFR 418.110 as a Medicare/Medicaid participating facility.

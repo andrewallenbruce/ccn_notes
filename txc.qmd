@@ -1,0 +1,63 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+# TXC
+
+```{r}
+#| label: setup
+#| message: false
+library(ccn)
+library(collapse)
+library(provider)
+x <- ccn::decode_ccnr(ccn:::get_pin("hosp")$ccn)
+x <- collapse::ss(x, x$facility %==% "TXC")$ccn
+txc <- ccn:::get_pin("txc")
+class(txc) <- setdiff(class(txc), "spec_tbl_df")
+collapse::colorderv(txc, c("ccn", "state", "optn_code"))
+```
+
+## Approved Transplant Programs
+
+```{r}
+#| label: txc-types
+#| echo: false
+collapse::ss(txc, txc$ccn %iin% x) |> 
+  gt::gt() |>
+  gt::tab_options(
+    table.width = gt::pct(100),
+    quarto.disable_processing = TRUE
+  ) |>
+  gtExtras::gt_theme_nytimes() |>
+  gt::tab_style(
+    style = gt::cell_text(
+      font = gt::google_font(name = "JetBrains Mono"),
+      color = "grey30",
+      size = "small"
+    ),
+    locations = gt::cells_body(columns = gt::everything())
+  ) |>
+  gt::tab_style(
+    style = gt::cell_text(weight = "bold"),
+    locations = gt::cells_body(columns = txc_code)
+  ) |>
+  gt::tab_style(
+    style = gt::cell_text(color = "grey50", size = "small"),
+    locations = gt::cells_body(columns = txc_type)
+  )
+```
+
+## Organ Procurement and Transplantation Network (OPTN) 
+
+The OPTN is a public-private partnership that links all professionals involved
+in the donation and transplantation system. The OPTN operates the national
+network for organ procurement and allocation and works to promote organ
+donation. The OPTN was established by the National Organ Transplant Act of 1984
+and is operated by United Network for Organ Sharing (UNOS) under a contract from
+the Health Resources and Services Administration (HRSA) in accordance with
+section 372 of the Public Health Service (PHS) Act. Through its policies, the
+OPTN works to increase the number of transplants, provide equity in access to
+transplants, improve outcomes for wait-listed patients, living donors, and
+transplant recipients, and promote living donor and transplant recipient safety.

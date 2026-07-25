@@ -45,6 +45,7 @@ character P. The remaining 3 digits are the unique facility identifier.
 ## OPOs
 
 ```{r}
+#| label: opo-load
 x$opo_codes <- collapse::tfmv(x$opo_codes, "opo", toupper)
 x$opo_county <- collapse::tfmv(x$opo_county, "county", toupper)
 x$opo_county[cheapr::which_val(x$opo_county$code, "PRLL"), ]$state <- "PR"
@@ -185,73 +186,3 @@ x$opo_active |>
   )
 ```
 
-## Approved Transplant Programs
-
-### Procedure Types
-
-```{r}
-#| label: txc-types
-#| echo: false
-ccn:::get_pin("txc") |>
-  collapse::slt(txc = txc_code, description = txc_type) |>
-  collapse::funique() |>
-  gt::gt() |>
-  gt::tab_options(
-    table.width = gt::pct(100),
-    quarto.disable_processing = TRUE
-  ) |>
-  gtExtras::gt_theme_nytimes() |>
-  gt::tab_style(
-    style = gt::cell_text(
-      font = gt::google_font(name = "JetBrains Mono"),
-      color = "grey30",
-      size = "small"
-    ),
-    locations = gt::cells_body(columns = txc)
-  ) |>
-  gt::tab_style(
-    style = gt::cell_text(weight = "bold"),
-    locations = gt::cells_body(columns = txc)
-  ) |>
-  gt::tab_style(
-    style = gt::cell_text(color = "grey50", size = "small"),
-    locations = gt::cells_body(columns = description)
-  )
-```
-
-### Facilities
-
-```{r}
-#| label: txc-facs
-#| echo: false
-ccn:::get_pin("txc") |>
-  collapse::slt(-txc_type) |>
-  collapse::rnm(code = optn_code, txc = txc_code) |>
-  collapse::funique() |>
-  collapse::roworder(ccn, state, code) |>
-  collapse::fgroup_by(ccn, state, code) |>
-  collapse::fsummarise(txc = toString(txc)) |>
-  collapse::fungroup() |>
-  gt::gt() |>
-  gt::tab_options(
-    table.width = gt::pct(100),
-    quarto.disable_processing = TRUE
-  ) |>
-  gtExtras::gt_theme_nytimes() |>
-  gt::tab_style(
-    style = gt::cell_text(
-      font = gt::google_font(name = "JetBrains Mono"),
-      color = "grey30",
-      size = "small"
-    ),
-    locations = gt::cells_body(columns = c(ccn, txc))
-  ) |>
-  gt::tab_style(
-    style = gt::cell_text(weight = "bold"),
-    locations = gt::cells_body(columns = state)
-  ) |>
-  gt::tab_style(
-    style = gt::cell_text(color = "grey50", size = "small"),
-    locations = gt::cells_body(columns = code)
-  )
-```

@@ -116,3 +116,38 @@ purrr::map(c("01J008", "A5J508"), ccn::as_data_frame) |>
   )
 ```
 
+## Intermediate Care Facilities
+
+An ICF/IID is an institution that meets Federal CoPs and has as its primary
+purpose the provision of health or rehabilitation services to individuals with
+intellectual disabilities or related conditions receiving care and services
+under the Medicaid program.
+
+The ICF/IID CoPs recognize the developmental, social, and behavioral needs of
+individuals with intellectual disabilities who live in residential settings by
+requiring that each individual both require and receive active treatment for the
+ICF/IID care to be eligible for Medicaid funding.
+
+Active treatment means the aggressive, consistent implementation of a program of
+specialized and generic training, treatment, health, and related services
+directed toward the acquisition of the behaviors necessary for the individual to
+function with as much self-determination and independence as possible. It
+includes the prevention or deceleration of regression or loss of current optimal
+functional status.
+
+### Distinct Part ICF/IID
+
+Neither the law nor Federal regulations define or require ICF/IID services in
+terms of distinct parts. However, as a State Medicaid program requirement,
+States may provide for distinct part ICF/IID approvals. Where the SMA elects to
+define the ICF/IID program in terms of distinct parts, these additional Federal
+provisions must be met:
+
+- The distinct part must be a clearly identified unit, such as an entire ward, wing,
+floor, building, or a number of designated rooms;
+- The distinct part consists of all beds and related facilities in the unit; and
+- The institution does not need require transfer of patients or individuals to or from
+the distinct part, where, in the opinion of the attending physician, transfer
+might be harmful to the physical or mental health of the patient or individual.
+Otherwise, the unit houses all ICF/IID residents in the institution.
+

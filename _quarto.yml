@@ -22,6 +22,7 @@ book:
     - index.qmd
     - state.qmd
     - opo.qmd
+    - txc.qmd
     - erh.qmd
     - part: medicare.qmd
       chapters:
