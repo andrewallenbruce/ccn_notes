@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.35">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="dcterms.date" content="2026-07-13">
-<title>ICF-IID – CCNs</title>
+<meta name="dcterms.date" content="2026-07-24">
+<title>ERH – CCNs</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -65,8 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./vctrs.html" rel="next">
-<link href="./nf.html" rel="prev">
+<link href="./medicare.html" rel="next">
+<link href="./opo.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -78,9 +78,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-da20407cf26fa8485970518743f0f7f9.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-97dbf932a91fe45e4e875d81672c575b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-97dbf932a91fe45e4e875d81672c575b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-97dbf932a91fe45e4e875d81672c575b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-4c2866362c89b9222e83fa4f3f9ef42a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-4c2866362c89b9222e83fa4f3f9ef42a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-4c2866362c89b9222e83fa4f3f9ef42a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./medicaid.html">Medicaid</a></li><li class="breadcrumb-item"><a href="./icf-iid.html"><span class="chapter-title">ICF-IID</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./erh.html"><span class="chapter-title">ERH</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -150,6 +150,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <a href="./state.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">State</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./opo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">OPO</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./erh.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">ERH</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./medicare.html" class="sidebar-item-text sidebar-link">
@@ -160,16 +170,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./opo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">OPO</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./emergency.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">ERH</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./hha.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">HHA</span></a>
   </div>
@@ -199,48 +199,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <a href="./cah.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">CAH</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./snf.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">SNF</span></a>
-  </div>
-</li>
       </ul>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./eipps.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">IPPS-Excluded</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./unit.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Unit</span></a>
+  <a href="./eipps.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">IPPS-Excluded Units</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./subunit.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Subunit</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./swing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Swing-Bed</span></a>
   </div>
 </li>
-      </ul>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./medicaid.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Medicaid-Only</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./snf_nf.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">SNF/NF</span></a>
+  </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./supplier.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Supplier</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./asc.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">ASC</span></a>
@@ -260,39 +249,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./medicaid.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Medicaid</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
-<li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./moh.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">MOH</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./nf.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Nursing Facilities</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./icf-iid.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">ICF-IID</span></a>
-  </div>
-</li>
-      </ul>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./vctrs.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Implementation</span></a>
@@ -309,12 +272,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Contents</h2>
+   
+  <ul class="collapse">
+<li><a href="#emergency-hospital-services-only" id="toc-emergency-hospital-services-only" class="nav-link active" data-scroll-target="#emergency-hospital-services-only">‘Emergency Hospital Services’ Only</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./medicaid.html">Medicaid</a></li><li class="breadcrumb-item"><a href="./icf-iid.html"><span class="chapter-title">ICF-IID</span></a></li></ol></nav><div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-title">ICF-IID</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-title">ERH</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -325,7 +293,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 13, 2026</p>
+      <p class="date">July 24, 2026</p>
     </div>
   </div>
   
@@ -334,12 +302,100 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header>
+</header><p>Any nonparticipating hospital meeting the definition of an emergency hospital for Medicare purposes may claim payment for emergency inpatient and outpatient diagnostic services furnished to Medicare patients. There are six statutory requirements that a hospital must meet to qualify as an emergency hospital (§1861(e)(1), (2), (3), (4), (5), and (7)).</p>
+<p>The hospital must:</p>
+<ul>
+<li>Be primarily engaged in providing, by or under the supervision of physicians, to inpatients, diagnostic and therapeutic services or rehabilitation services;</li>
+<li>Maintain clinical records on all patients;</li>
+<li>Have bylaws in effect with respect to its staff of physicians;</li>
+<li>Have a requirement that every patient must be under the care of a physician;</li>
+<li>Provide 24-hour nursing service rendered or supervised by a registered professional nurse and have a licensed, practical, or registered professional nurse on duty at all times; and,</li>
+<li>Be licensed or meet standards for licensing pursuant to State and local law.</li>
+</ul>
+<section id="emergency-hospital-services-only" class="level2"><h2 class="anchored" data-anchor-id="emergency-hospital-services-only">‘Emergency Hospital Services’ Only</h2>
+<p>Emergency Hospitals (both Federal and non-Federal) that do not participate in the Medicare program are identified by a 6-position alphanumeric CCN. Positions one and two identify the state in which the hospital is located. Position six, an alpha character, identifies whether the hospital is Federal (<code>F</code>) or non-Federal (<code>E</code>). Positions three, four and five represent a sequence beginning with <code>001</code>. This sequence identifies the order, by state, in which the CCN was issued.</p>
+<p>For example, the CCN of the 34th emergency hospital in Maryland would be <code>21034E</code>. The Regional Office assigns the CCN in strict numerical sequence without regard to the Federal or non-Federal status.</p>
+</section><section id="examples" class="level2"><h2 class="anchored" data-anchor-id="examples">Examples</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">provider</span><span class="fu">::</span><span class="fu"><a href="https://andrewallenbruce.github.io/provider/reference/veteran.html">veteran</a></span><span class="op">(</span>count <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>◼ veteran | 132 rows | 1 pages</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">provider</span><span class="fu">::</span><span class="fu"><a href="https://andrewallenbruce.github.io/provider/reference/veteran.html">veteran</a></span><span class="op">(</span>ccn <span class="op">=</span> <span class="fu">provider</span><span class="fu">::</span><span class="fu"><a href="https://andrewallenbruce.github.io/provider/reference/modifier.html">contains</a></span><span class="op">(</span><span class="st">"F"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>✔ veteran returned 132 results</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A data frame: 132 × 11
+   ccn    name     address city  state zip   county prov_type own_type emergency
+   &lt;chr&gt;  &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt;        &lt;int&gt;
+ 1 01014F BIRMING… 700 SO… BIRM… AL    35233 JEFFE… Acute Ca… Veteran…         1
+ 2 01019F VA CENT… 215 PE… MONT… AL    36109 MONTG… Acute Ca… Veteran…         1
+ 3 01021F TUSCALO… 3701 L… TUSC… AL    35404 TUSCA… Acute Ca… Veteran…         0
+ 4 03012F PHOENIX… 650 E.… PHOE… AZ    85012 MARIC… Acute Ca… Veteran…         1
+ 5 03013F VA S. A… 3601 S… TUCS… AZ    85723 PIMA   Acute Ca… Veteran…         1
+ 6 03033F VA NORT… 500 HI… PRES… AZ    86313 YAVAP… Acute Ca… Veteran…         1
+ 7 04009F FAYETTE… 1100 N… FAYE… AR    72703 WASHI… Acute Ca… Veteran…         1
+ 8 04010F VA CENT… 4300 W… LITT… AR    72205 PULAS… Acute Ca… Veteran…         1
+ 9 05025F FRESNO … 2615 E… FRES… CA    93703 FRESNO Acute Ca… Veteran…         1
+10 05027F VA LONG… 5901 E… LONG… CA    90822 LOS A… Acute Ca… Veteran…         1
+# ℹ 122 more rows
+# ℹ 1 more variable: rating &lt;int&gt;</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">provider</span><span class="fu">::</span><span class="fu"><a href="https://andrewallenbruce.github.io/provider/reference/hospital.html">hospital</a></span><span class="op">(</span>ccn <span class="op">=</span> <span class="fu">provider</span><span class="fu">::</span><span class="fu"><a href="https://andrewallenbruce.github.io/provider/reference/modifier.html">ends</a></span><span class="op">(</span><span class="st">"E"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>✔ hospital returned 2 results</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Classes 'hospital', 'tbl_df', 'tbl' and 'data.frame':   2 obs. of  16 variables:
+ $ org_name : chr  "DEPARTMENT OF STATE HOSPITALS" "DEPARTMENT OF STATE HOSPITALS"
+ $ org_dba  : chr  "PATTON STATE HOSPITAL" "ATASCADERO STATE HOSPITAL"
+ $ ccn      : chr  "05124E" "05125E"
+ $ npi      : int  1043249204 1174573802
+ $ pac      : chr  "9638174238" "9638174238"
+ $ enid     : chr  "O20090129000379" "O20090129000519"
+ $ multi    : int  0 0
+ $ inc_date : Date, format: NA NA
+ $ org_type : chr  "Other: STATE AGENCY" "Other: FEDERAL AND/OR STATE GOVERNMENT TYPE"
+ $ status   : chr  "Non-Profit" "Non-Profit"
+ $ loc_type : chr  "Other: INPATIENT ACUTE PSYCHIATRIC HOSPITAL" "Other: ACUTE INPATIENT PSYCHIATRIC HOSPITAL"
+ $ address  : chr  "3102 E HIGHLAND AVE" "10333 EL CAMINO REAL"
+ $ city     : chr  "PATTON" "ATASCADERO"
+ $ state    : chr  "CA" "CA"
+ $ zip      : chr  "923697813" "934225808"
+ $ sub_group: chr  "Psychiatric Hospital" "Inpatient Psychiatric Unit"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">provider</span><span class="fu">::</span><span class="fu"><a href="https://andrewallenbruce.github.io/provider/reference/hospital.html">hospital</a></span><span class="op">(</span>ccn <span class="op">=</span> <span class="fu">provider</span><span class="fu">::</span><span class="fu"><a href="https://andrewallenbruce.github.io/provider/reference/modifier.html">ends</a></span><span class="op">(</span><span class="st">"F"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>✔ hospital returned 1 result</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Classes 'hospital', 'tbl_df', 'tbl' and 'data.frame':   1 obs. of  16 variables:
+ $ org_name : chr "BROOKE ARMY MEDICAL CENTER"
+ $ org_dba  : chr NA
+ $ ccn      : chr "45069F"
+ $ npi      : int 1922195510
+ $ pac      : chr "4587646948"
+ $ enid     : chr "O20040601001244"
+ $ multi    : int 0
+ $ inc_date : Date, format: NA
+ $ org_type : chr "Other: DEPARTMENT OF DEFENSE FACILITY"
+ $ status   : chr "Non-Profit"
+ $ loc_type : chr "Primary"
+ $ address  : chr "3551 ROGER BROOKE DR"
+ $ city     : chr "FORT SAM HOUSTON"
+ $ state    : chr "TX"
+ $ zip      : chr "782344504"
+ $ sub_group: chr "General"</code></pre>
+</div>
+</div>
+
 
 <!-- -->
 
-
-</main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
     const anchorJS = new window.AnchorJS();
@@ -790,35 +846,80 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
   });
   </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="./nf.html" class="pagination-link" aria-label="Nursing Facilities">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Nursing Facilities</span></span>
+      <a href="./opo.html" class="pagination-link" aria-label="OPO">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">OPO</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./vctrs.html" class="pagination-link" aria-label="Implementation">
-        <span class="nav-page-text"><span class="chapter-title">Implementation</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./medicare.html" class="pagination-link" aria-label="Medicare">
+        <span class="nav-page-text">Medicare</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span><span class="co"> html_document</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">editor_options:</span><span class="co"> </span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">  chunk_output_type: console</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu"># ICF-IID</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">#| cache: false</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">#| comment: ""</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ccn)</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"code/gt_theme.R"</span>)</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span><span class="co"> html_document</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="an">editor_options:</span><span class="co"> </span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">  chunk_output_type: console</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="co">#| cache: false</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="co">#| comment: ""</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ccn)</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(provider)</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a><span class="fu"># ERH</span></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>Any nonparticipating hospital meeting the definition of an emergency hospital</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>for Medicare purposes may claim payment for emergency inpatient and outpatient</span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>diagnostic services furnished to Medicare patients. There are six statutory</span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>requirements that a hospital must meet to qualify as an emergency hospital</span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>(§1861(e)(1), (2), (3), (4), (5), and (7)).</span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>The hospital must:</span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Be primarily engaged in providing, by or under the supervision of physicians, to inpatients, diagnostic and therapeutic services or rehabilitation services;</span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Maintain clinical records on all patients;</span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Have bylaws in effect with respect to its staff of physicians;</span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Have a requirement that every patient must be under the care of a physician;</span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Provide 24-hour nursing service rendered or supervised by a registered</span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>professional nurse and have a licensed, practical, or registered professional</span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>nurse on duty at all times; and,</span>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Be licensed or meet standards for licensing pursuant to State and local law.</span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a><span class="fu">## 'Emergency Hospital Services' Only</span></span>
+<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a>Emergency Hospitals (both Federal and non-Federal) that do not</span>
+<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a>participate in the Medicare program are identified by a 6-position alphanumeric CCN. Positions</span>
+<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a>one and two identify the state in which the hospital is located. Position six,</span>
+<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a>an alpha character, identifies whether the hospital is Federal (<span class="in">`F`</span>) or</span>
+<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a>non-Federal (<span class="in">`E`</span>). Positions three, four and five represent a sequence beginning</span>
+<span id="cb12-45"><a href="#cb12-45" aria-hidden="true" tabindex="-1"></a>with <span class="in">`001`</span>. This sequence identifies the order, by state, in which the CCN was</span>
+<span id="cb12-46"><a href="#cb12-46" aria-hidden="true" tabindex="-1"></a>issued.</span>
+<span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a>For example, the CCN of the 34th emergency hospital in Maryland would be</span>
+<span id="cb12-49"><a href="#cb12-49" aria-hidden="true" tabindex="-1"></a><span class="in">`21034E`</span>. The Regional Office assigns the CCN in strict numerical sequence</span>
+<span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a>without regard to the Federal or non-Federal status.</span>
+<span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-52"><a href="#cb12-52" aria-hidden="true" tabindex="-1"></a><span class="fu">## Examples</span></span>
+<span id="cb12-53"><a href="#cb12-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-56"><a href="#cb12-56" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-57"><a href="#cb12-57" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: veterans</span></span>
+<span id="cb12-58"><a href="#cb12-58" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: true</span></span>
+<span id="cb12-59"><a href="#cb12-59" aria-hidden="true" tabindex="-1"></a>provider<span class="sc">::</span><span class="fu">veteran</span>(<span class="at">count =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb12-60"><a href="#cb12-60" aria-hidden="true" tabindex="-1"></a>provider<span class="sc">::</span><span class="fu">veteran</span>(<span class="at">ccn =</span> provider<span class="sc">::</span><span class="fu">contains</span>(<span class="st">"F"</span>))</span>
+<span id="cb12-61"><a href="#cb12-61" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-62"><a href="#cb12-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-65"><a href="#cb12-65" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-66"><a href="#cb12-66" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: hospital</span></span>
+<span id="cb12-67"><a href="#cb12-67" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: true</span></span>
+<span id="cb12-68"><a href="#cb12-68" aria-hidden="true" tabindex="-1"></a>provider<span class="sc">::</span><span class="fu">hospital</span>(<span class="at">ccn =</span> provider<span class="sc">::</span><span class="fu">ends</span>(<span class="st">"E"</span>)) <span class="sc">|&gt;</span> <span class="fu">str</span>()</span>
+<span id="cb12-69"><a href="#cb12-69" aria-hidden="true" tabindex="-1"></a>provider<span class="sc">::</span><span class="fu">hospital</span>(<span class="at">ccn =</span> provider<span class="sc">::</span><span class="fu">ends</span>(<span class="st">"F"</span>)) <span class="sc">|&gt;</span> <span class="fu">str</span>()</span>
+<span id="cb12-70"><a href="#cb12-70" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
